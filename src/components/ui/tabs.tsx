@@ -98,7 +98,7 @@ function TabsTrigger({ className, children, value, disabled, ...props }: TabsTri
     <button
       type="button"
       data-slot="tabs-trigger"
-      data-active={isActive ? "" : undefined}
+data-state={isActive ? "active" : "inactive"}
       aria-selected={isActive}
       role="tab"
       disabled={disabled}
