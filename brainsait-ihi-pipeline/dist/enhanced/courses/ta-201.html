@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Triple Aim: Achieving Population Health Excellence | BrainSAIT Academy</title>
+  <meta name="description" content="Advanced Triple Aim: Achieving Population Health Excellence - Full bilingual course on Triple Aim">
+  <meta name="keywords" content="Triple Aim, Advanced, Population Health, IHI, Open School, TA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Advanced Triple Aim: Achieving Population Health Excellence</h3>
+        <p>TA-201 • 240 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">TA 201: الهدف الثلاثي المتقدم: تحقي...</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 1: Strategic Population Heal...</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 2: Advanced Care Delivery Re...</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 3: Precision Population Heal...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 4: Advanced Value Optimizati...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 5: Leadership for Population...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 6: Sustainability and Scale ...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Assessment | تقييم الدورة</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application Framew...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References and Resources | المراجع ...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Continuing Education Credits | ساعا...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Acknowledgments | الشكر والتقدير</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Triple Aim</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🔥 Advanced</span>
+        </div>
+        <h1 class="course-title-main">Advanced Triple Aim: Achieving Population Health Excellence</h1>
+        <p class="course-title-ar rtl">TA 201: الهدف الثلاثي المتقدم: تحقيق التميز في صحة السكان</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">240</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Advanced</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">15</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">TA 201: الهدف الثلاثي المتقدم: تحقيق التميز في صحة السكان</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Course Overview | نظرة عامة على الدورة</h3>
+
+This advanced course provides healthcare leaders and professionals with comprehensive frameworks for achieving strategic population health excellence. Building on foundational Triple Aim competencies, this course covers advanced implementation strategies, complex system redesign, value optimization, and sustainable population health management at scale. Content is deeply integrated with Saudi Arabia's health sector transformation including NPHIES, CBAHI accreditation, Vision 2030, and the emerging National Health Strategy.
+
+توفر هذه الدورة المتقدمة للleaders الصحيين والمهنيين أُطراً شاملة لتحقيق التميز الاستراتيجي في صحة السكان. يبني على الكفاءات الأساسية للهدف الثلاثي، تغطي هذه الدورة استراتيجيات التنفيذ المتقدمة، وإعادة التصميم المعقدة للنظام، وتحسين القيمة، وإدارة صحة السكان المستدامة على نطاق واسع. المحتوى مدمج بعمق مع تحول قطاع الصحة في المملكة العربية السعودية بما في ذلك نظام التأمين الصحي الوطني واعتماد الهيئة ورؤية 2030 والاستراتيجية الصحية الوطنية الناشئة.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Objectives</h3>
+- Apply advanced population health management frameworks to complex healthcare systems
+- Design and implement strategic population health initiatives at scale
+- Optimize value across the care continuum while maintaining quality
+- Lead organizational transformation toward population health focus
+- Integrate advanced analytics and precision population health approaches
+- Build sustainable leadership for population health excellence
+- Navigate complex stakeholder environments in population health implementation
+- Evaluate and continuously improve population health programs at enterprise scale
+
+<h3 class="section-title">Arabic Objetivos</h3>
+- تطبيق أُطر إدارة صحة السكان المتقدمة على أنظمة الرعاية الصحية المعقدة
+- تصميم وتنفيذ مبادرات صحة السكان الاستراتيجية على نطاق واسع
+- تحسين القيمة عبر continuum الرعاية مع الحفاظ على الجودة
+- قيادة التحول التنظيمي نحو التركيز على صحة السكان
+- دمج التحليلات المتقدمة ومناهج صحة السكان الدقيقة
+- بناء leadership المستدامة للتميز في صحة السكان
+- التنقل في بيئات أصحابصلحة المعقدة في تنفيذ صحة السكان
+- تقييم وتحسين مستمر لبرامج صحة السكان على مستوى المؤسسة
+
+<strong>Estimated Completion Time | الوقت المتوقع للإكمال:</strong> 4-5 hours
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 1: Strategic Population Health Architecture | الدرس الأول: البنية الاستراتيجية لصحة الس��ان</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Design comprehensive population health strategic frameworks
+- Align organizational strategy with population health objectives
+- Build integrated care systems for population health
+- Navigate complex healthcare system dynamics
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">1.1 Population Health Strategic Framework | الإطار الاستراتيجي لصحة السكان</h4>
+
+The strategic architecture for population health requires integrated system thinking across multiple domains:
+
+تتطلب البنية الاستراتيجية لصحة السكان تفكيراً نظامياً متكاملاً عبر نطاقات متعددة:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│    STRATEGIC POPULATION HEALTH ARCHITECTURE                   │
+│    بنية صحة السكان الاستراتيجية                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │              ORGANIZATIONAL VISION                     │  │
+│  │              الرؤية التنظيمية                     │  │
+│  │         Population Health Excellence                    │  │
+│  │         التميز في صحة السكان                     │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                           │                                 │
+│                           ▼                                 │
+│  ┌──────────────┬──────────────�─��──────────────┐           │
+│  │ POPULATION  │   CARE       │    VALUE    │           │
+│  │  HEALTH   │ CONTINUUM   │ OPTIMIZATION│           │
+│  │صحة السكان │ continuum │ تحسين القيمة │           │
+│  │    ▲     │    الرعاية    │     ▲      │           │
+│  ├──────────────┼──────────────┼──────────────┤           │
+│  │ Assessment │  Delivery  │   Payment   │           │
+│  │ التقييم   │  الت delivery │   الدفع    │           │
+│  │    ▲     │    ▲      │     ▲      │           │
+│  ├──────────────┼──────────────┼──────────────┤           │
+│  │ Attribution│  Coordination│ Incentives │           │
+│  │ التسميح   │  التنسيق │   الحوافز   │           │
+│  └──────────────┴──────────────┴──────────────┘           │
+│                           │                                 │
+│                           ▼                                 │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │           LEADERSHIP & GOVERNANCE                   │
+│  │           القيادة والحوكمة                         │
+│  │  • Executive Sponsership    • Clinical Leadership │  │
+│  │  • الراعي التنفيذي    ��� القيادة السريرية   │  │
+│  │  • Community Partnership   • Data & Analytics   │  │
+│  │  • الشراكة المجتمعية  • البيانات والتحليلات│  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">1.2 Population Health Strategic Pillars | ركائز صحة السكان الاستراتيجية</h4>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Strategic Pillar</td><td>الركيزة الاستراتيجية</td><td>Components</td><td>المكونات</td><td>Saudi Alignment</td><td>المحاذاة السعودي</td></tr>
+|------------------|-----------------|------------|------------|---------------|-----------------|--------------|
+<tr><td>Population Definition</td><td>تحديد السكان</td><td>Attribution methodology, data systems</td><td>منهجية التسميح، أنظمة البيانات</td><td>NPHIES enrollment</td><td>التسجيل</td></tr>
+<tr><td>Care Delivery Redesign</td><td>إعادة تقديم الرعاية</td><td>Integrated care models, care coordination</td><td>نماذج الرعاية المتكاملة، تنسيق الرعاية</td><td>PHC cluster model</td><td>نموذج التجمع</td></tr>
+<tr><td>Analytics and Insight</td><td>التحليلات والرؤية</td><td>Population analytics, predictive modeling</td><td>تحليلات السكان، النمذجة التنبؤية</td><td>NPHIES analytics</td><td>تحليلات النظام</td></tr>
+<tr><td>Patient Engagement</td><td>إشراك المريض</td><td>Self-management, shared decision-making</td><td>الإدارة الذاتية، القرار المشترك</td><td>Patient engagement programs</td><td>برامج الإشراك</td></tr>
+<tr><td>Value Optimization</td><td>تحسين القيمة</td><td>Payment reform, cost management</td><td>إصلاح الدفع، إدارة التكلفة</td><td>Value-based contracts</td><td>عقود القيمة</td></tr>
+<tr><td>Community Linkages</td><td>الروابط المجتمعية</td><td>Community resources, social determinants</td><td>موارد المجتمع، المحددات الاجتماعية</td><td>Community programs</td><td>برامج المجتمع</td></tr>
+
+<h4 class="section-sub">1.3 Organizational Transformation Model | نموذج التحول التنظيمي</h4>
+
+<strong>Phases of Organizational Transformation | مراحل التحول التنظيمي</strong>:
+
+<tr><td>Phase</td><td>المرحلة</td><td>Timeline</td><td>الجدول الزمني</td><td>Focus</td><td>التركيز</td><td>Key Activities</td><td>الأنشطة الرئيسية</td></tr>
+|-------|----------|----------|---------------|-------|----------|--------------|-----------------|
+<tr><td>1: Foundation</td><td>1: الأساس</td><td>Months 1-6</td><td>الأشهر 1-6</td><td>Infrastructure</td><td>البنية التحتية</td><td>- Data systems <br/> - Registry development <br/> - Team formation</td><td>- أنظمة البيانات <br/> - تطوير السجل <br/> - تشكيل الفريق</td></tr>
+<tr><td>2: pilots</td><td>2: البرامج التجريبية</td><td>Months 7-12</td><td>الأشهر 7-12</td><td>Quick wins</td><td>الانتصارات السريعة</td><td>- Pilot programs <br/> - Process redesign <br/> - Staff training</td><td>- برامج تجريبية <br/> - إعادة تصميم العمليات <br/> - تدريب الموظفين</td></tr>
+<tr><td>3: Scale</td><td>3: التوسع</td><td>Months 13-24</td><td>الأشهر 13-24</td><td>Expansion</td><td>التوسع</td><td>- Expanded programs <br/> - Full rollout <br/> - Outcome focus</td><td>- البرامج الموسعة <br/> - التنفيذ الكامل <br/> - التركيز على النتائج</td></tr>
+<tr><td>4: Excellence</td><td>4: التميز</td><td>Months 25-36</td><td>الأشهر 25-36</td><td>Sustainability</td><td>الاستدامة</td><td>- Advanced programs <br/> - Innovation <br/> - Continuous improvement</td><td>- البرامج المتقدمة <br/> - الابتكار <br/> - التحسين المستمر</td></tr>
+
+<h3 class="section-title">Case Study: King Faisal Specialist Hospital Population Health Transformation | دراسة حالة: تحول صحة السكان في مستشفى الملك فيصل التخ��صي</h3>
+
+<strong>Background</strong>: Quaternary care center with regional population health responsibility
+
+<strong>Strategic Framework Implementation</strong>: Implementation of comprehensive population health management:
+
+<tr><td>Component</td><td>المكون</td><td>Implementation</td><td>التنفيذ</td></tr>
+|-----------|--------|----------------|--------|
+<tr><td>Population definition</td><td>تحديد السكان</td><td>Attribution from NPHIES + regional data</td><td>التسميح من النظام + بيانات إقليمية</td></tr>
+<tr><td>Care redesign</td><td>إعادة تصميم الرعاية</td><td>Integrated oncology program + chronic disease management</td><td>برنامج الأورام المتكامل + إدارة الأمراض المزمنة</td></tr>
+<tr><td>Analytics</td><td>التحليلات</td><td>Predictive analytics + outcome dashboards</td><td>التحليلات التنبؤية + لوحات النتائج</td></tr>
+<tr><td>Value</td><td>القيمة</td><td>Bundled payments + quality incentives</td><td>دفعات مجمعة + حوافز الجودة</td></tr>
+<tr><td>Community</td><td>المجتمع</td><td>Community partnerships + outreach</td><td>شراكات مجتمعية + وصول</td></tr>
+</tbody></table></div>
+<strong>Results</strong>: 28% improvement in cancer outcomes, 18% cost reduction, 92% patient satisfaction
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 2: Advanced Care Delivery Redesign | الدرس الثاني: إعادة تصميم تقديم الرعاية المتقدمة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Design advanced integrated care delivery models
+- Implement complex care coordination systems
+- Build specialty population health programs
+- Optimize care pathways across the continuum
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">2.1 Advanced Integrated Care Models | نماذج الرعاية المتكاملة المتقدمة</h4>
+
+<strong>Model 1: Patient-Centered Medical Home | النموذج 1: المنزل الطبي المتمحور حول المريض</strong>
+
+The PCMH model provides comprehensive, coordinated care with enhanced access and engagement:
+
+يزود نموذج المنزل الطبيComprehensive برعايةمنسقة مع وصول معزز وإشراك:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Core Element</td><td>العنصر الأساسي</td><td>Implementation</td><td>التنفيذ</td></tr>
+|--------------|----------------|----------------|------------|
+<tr><td>Personal physician</td><td>Physician شخصي</td><td>Primary care provider assignment</td><td>تعيين مقدم رعاية أولية</td></tr>
+<tr><td>Physician-directed care</td><td>الرعاية الموجهة طبي</td><td>Care team with defined roles</td><td>فريق رعاية بأدوار محددة</td></tr>
+<tr><td>Whole-person orientation</td><td>التوجه للشخص كامل</td><td>Integrated physical/mental health</td><td>صحة عقلية/جسدية متكاملة</td></tr>
+<tr><td>Coordinated care</td><td>الرعاية المنسقة</td><td>Integration across settings</td><td>تكامل عبر.Settings</td></tr>
+<tr><td>Quality and safety</td><td>الجودة والسلامة</td><td>Evidence-based care, measurement</td><td>رعاية قائمة على الأدلة، القياس</td></tr>
+<tr><td>Enhanced access</td><td>الوصول المعزز</td><td>Extended hours, telehealth</td><td>ساعات ممتدة، الرعاية عن بُعد</td></tr>
+
+<strong>Model 2: Accountable Care Organization | النموذج 2: منظمة الرعاية المسؤولة</strong>
+
+ACO model assumes responsibility for total cost and quality of a defined population:
+
+يتحمل نموذج ACO المسؤولية عن التكلفة الإجمالية ونوعية مجموعة محددة من السكان:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           ACCOUNTABLE CARE ORGANIZATION                      │
+│           منظمة الرعاية المسؤولة                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  POPULATION ATTRIBUTION                                      │
+│  تحديد السكان                                              │
+│       │                                                    │
+│       ▼                                                    │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │              RESPONSIBILITY                         │   │
+│  │              المسؤولية                            │   │
+│  │  ┌─────────────────┐   ┌─────────────────┐     │   │
+│  │  │ Total Cost of  │   │   Quality      │     │   │
+│  │  │    Care        │   │   Measures     │     │   │
+│  │  │ التكلفة        │   │   مقاييس       │     │   │
+│  │  │ الإجمالية      │   │   الجودة     │     │   │
+│  │  │  للرعاية     │   │               │     │   │
+│  │  └─────────────────┘   └─────────────────┘     │   │
+│  └─────────────────────────────────────────────────────┘   │
+│       │                                                    │
+│       ▼                                                    │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │           INCENTIVE ALIGNMENT                        │   │
+│  │           محاذاة الحوافز                          │   │
+│  │   ┌─────────────────┐   ┌─────────────────┐       │   │
+│  │   │  Shared        │   │     Quality    │       │   │
+│  │   │  Savings       │   │    Bonus      │       │   │
+│  │   │  وفورات       │   │   مكافأة     │       │   │
+│  │   │  مشتركة     │   │   الجودة    │       │   │
+│  │  └─────────────────┘   └─────────────────┘       │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">2.2 Care Coordination Architecture | بنية تنسيق الرعاية</h4>
+
+<strong>Advanced Care Coordination System | نظام التنسيق المتقدم للرعاية</strong>:
+
+<tr><td>Function</td><td>الوظيفة</td><td>Components</td><td>المكونات</td><td>Technology</td><td>التقنية</td></tr>
+|-----------|---------|------------|------------|------------|-----------|
+<tr><td>Patient identification</td><td>تحديد المريض</td><td>Risk stratification, registry</td><td>تصنيف المخاطر، السجل</td><td>EMR analytics</td><td>تحليلات السجل</td></tr>
+<tr><td>Care planning</td><td>تخطيط الرعاية</td><td>Individualized plans, goals</td><td>خطط فردية، أهداف</td><td>Care planning tools</td><td>أدوات التخطيط</td></tr>
+<tr><td>Care management</td><td>إدارة الرعاية</td><td>Care coordinators, nurses</td><td>منسقو الرعاية، الممرضات</td><td>Workflow systems</td><td>أنظمة سير العمل</td></tr>
+<tr><td>Transitions</td><td>الانتقالات</td><td>Transition protocols</td><td>بروتوكولات الانتقال</td><td>Integration engines</td><td>محركات التكامل</td></tr>
+<tr><td>Monitoring</td><td>المراقبة</td><td>Outcome tracking</td><td>تتبع النتائج</td><td>Dashboards</td><td>لوحات المعلومات</td></tr>
+<tr><td>Provider coordination</td><td>تنسيق المزود</td><td>Communication, referrals</td><td>التواصل، الإحالات</td><td>HIE platforms</td><td>منصات التبادل</td></tr>
+
+<h4 class="section-sub">2.3 Specialty Population Health Programs | برامج صحة السكان التخصصية</h4>
+
+<strong>Program Categories | فئات البرامج</strong>:
+
+<tr><td>Program</td><td>البرنامج</td><td>Population</td><td>السكان</td><td>Key Components</td><td>المكونات الرئيسية</td></tr>
+|---------|----------|------------|----------|------------------|--------------------|
+<tr><td>Oncology</td><td>علم الأورام</td><td>Cancer patients</td><td>مرضى السرطان</td><td>- Tumor registry <br/> - Multidisciplinary teams <br/> - Care pathways</td><td>- سجل الأورام <br/> - فرق متعددة التخصصات <br/> - مسارات الرعاية</td></tr>
+<tr><td>Cardiology</td><td>أمراض القلب</td><td>Heart disease patients</td><td>مرضى القلب</td><td>- Secondary prevention <br/> - Rehab programs <br/> - Risk management</td><td>- الوقاية الثانوية <br/> - برامج التأهيل <br/> - إدارة المخاطر</td></tr>
+<tr><td>Diabetes</td><td>السكري</td><td>Diabetic patients</td><td>مرضى السكري</td><td>- Registry <br/> - Education <br/> - Care coordination</td><td>- السجل <br/> - التثقيف <br/> - تنسيق الرعاية</td></tr>
+<tr><td>Maternal</td><td>الأمومة</td><td>Pregnant women</td><td>الحوامل</td><td>- Risk stratification <br/> - Care coordination <br/> - Safety</td><td>- تصنيف المخاطر <br/> - تنسيق الرعاية <br/> - السلامة</td></tr>
+<tr><td>Behavioral</td><td>الصحة النفسية</td><td>Mental health patients</td><td>مرضى الصحة النفسية</td><td>- Integration <br/> - Crisis services <br/> - Community linkage</td><td>- التكامل <br/> - خدمات الأزمات <br/> - الرابط المجتمعي</td></tr>
+<tr><td>Geriatric</td><td>كبار السن</td><td>Elderly patients</td><td>المرضى كبار السن</td><td>- Complex care <br/> - Care coordination <br/> - Palliative</td><td>- رعاية معقدة <br/> - تنسيق الرعاية <br/> - التلطيفية</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 3: Precision Population Health | الدرس الثالث: صحة السكان الدقيقة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Apply precision population health methodologies
+- Implement predictive analytics for population health
+- Design targeted intervention strategies
+- Leverage health information exchange
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">3.1 Precision Population Health Framework | إطار صحة السكان الدقيقة</h4>
+
+Precision population health applies individualized approaches to defined populations:
+
+تطبق صحة السكان الدقيقة مناهج مجمعة للسكان محددين:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│        PRECISION POPULATION HEALTH                         │
+│        صحة السكان الدقيقة                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐             │
+│  │   POPULATION   │    │  INDIVIDUAL     │             │
+│  │   SEGMENTATION│    │   TARGETING    │             │
+│  │  تجزئة السكان│    │  الاستهداف الفردي│             │
+│  └────────┬──────┘    └────────┬──────┘             │
+│           │                     │                          │
+│           ▼                     ▼                          │
+│  ┌─────────────────┐    ┌─────────────────┐             │
+│  │   RISK         │    │  INTERVENTION   │             │
+│  │   STRATIFICATION│    │   MATCHING     │             │
+│  │  تصنيف المخاطر│    │  مطابقة التدخل │             │
+│  └────────┬──────┘    └────────┬──────┘             │
+│           │                     │                          │
+│           └──────────┬──────────┘                          │
+│                      ▼                                     │
+│  ┌─────────────────┐                                       │
+│  │   OPTIMAL      │                                       │
+│  │   OUTCOMES    │                                       │
+│  │   النتائج المثلى │                                       │
+│  └─────────────────┘                                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">3.2 Predictive Analytics | التحليلات التنبؤية</h4>
+
+<strong>Predictive Models for Population Health | نماذج تنبؤية لصحة السكان</strong>:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Model Type</td><td>نوع النموذج</td><td>Application</td><td>التطبيق</td><td>Accuracy needed</td><td>الدقة المطلوبة</td></tr>
+|------------|-------------|--------------|------------|-----------------|-------------------|
+<tr><td>Risk prediction</td><td>تنبؤ الخطورة</td><td>Identify high-risk patients</td><td>تحديد المرضى ذوي الخطورة</td><td>75%+</td><td>75%+</td></tr>
+<tr><td>Readmission risk</td><td>خطورة إعادة الدخول</td><td>Prevent unnecessary readmissions</td><td>منع إعادة الدخول غير الضرورية</td><td>70%+</td><td>70%+</td></tr>
+<tr><td>ED utilization</td><td>استخدام الطوارئ</td><td>Reduce inappropriate ED use</td><td>تقليل استخدام الطوارئ غير الملائم</td><td>70%+</td><td>70%+</td></tr>
+<tr><td>Disease progression</td><td>تطور المرض</td><td>Early intervention</td><td>التدخل المبكر</td><td>75%+</td><td>75%+</td></tr>
+<tr><td>Care gap identification</td><td>تحديد فجوة الرعاية</td><td>Close care gaps</td><td>إغلاق فجوات الرعاية</td><td>80%+</td><td>80%+</td></tr>
+
+<h4 class="section-sub">3.3 Precision Intervention Targeting | استهداف التدخل الدقيق</h4>
+
+<strong>Targeted Intervention Matrix | مصفوفة التدخل المستهدف</strong>:
+
+<tr><td>Segment</td><td>الشريحة</td><td>Risk Level</td><td>مستوى الخطورة</td><td>Intervention</td><td>التدخل</td><td>Intensity</td><td>الشدة</td></tr>
+|----------|----------|------------|----------------|--------------|----------|-----------|--------|
+<tr><td>High-risk rising</td><td>الخطورة العالية الصاعدة</td><td>High</td><td>عالية</td><td>Intensive case management</td><td>إدارة الحالات المكثفة</td><td>High</td></tr>
+<tr><td>High-risk stable</td><td>الخطورة العالية المستقرة</td><td>High</td><td>عالية</td><td>Disease management</td><td>إدارة الأمراض</td><td>Moderate</td></tr>
+<tr><td>Moderate-risk</td><td>الخطورة المتوسطة</td><td>Moderate</td><td>متوسطة</td><td>Care coordination</td><td>تنسيق الرعاية</td><td>Moderate</td></tr>
+<tr><td>Low-risk rising</td><td>الخطورة المنخفضة الصاعدة</td><td>Moderate</td><td>متوسطة</td><td>Prevention</td><td>الوقاية</td><td>Low</td></tr>
+<tr><td>Healthy</td><td>صحي</td><td>Low</td><td>منخفضة</td><td>Maintenance</td><td>الصيانة</td><td>Low</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 4: Advanced Value Optimization | الدرس الرابع: تحسين القيمة المتقدم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Design value-based care redesign at enterprise scale
+- Implement advanced payment reform models
+- Optimize cost and quality simultaneously
+- Build sustainable value-based care systems
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">4.1 Value-Based Care Architecture | بنية الرعاية القائمة على القيمة</h4>
+
+<strong>Enterprise Value Framework | إطار القيمة للمؤسسة</strong>:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Value Component</td><td>مكون القيمة</td><td>Metrics</td><td>المقاييس</td><td>Improvement Target</td><td>هدف التحسن</td></tr>
+|----------------|---------------|---------|----------|-------------------|-------------|
+<tr><td>Quality</td><td>الجودة</td><td>Outcome measures, safety</td><td>مقاييس السلامة</td><td>+25%</td><td>+25%</td></tr>
+<tr><td>Experience</td><td>التجربة</td><td>Patient satisfaction, access</td><td>رضا المريض، الوصول</td><td>+20%</td><td>+20%</td></tr>
+<tr><td>Cost</td><td>التكلفة</td><td>Per capita cost, waste</td><td>التكلفة للفرد،الهدر</td><td>-15%</td><td>-15%</td></tr>
+<tr><td>Access</td><td>الوصول</td><td>Time to care, availability</td><td>وقت الوصول، التوافر</td><td>+30%</td><td>+30%</td></tr>
+<tr><td>Equity</td><td>العدالة</td><td>Disparity reduction</td><td>تقليل التفاوت</td><td>-30%</td><td>-30%</td></tr>
+
+<h4 class="section-sub">4.2 Advanced Payment Models | نماذج الدفع المتقدمة</h4>
+
+<strong>Bundled Payment Design for Population | تصميم الدفع المجمع للسكان</strong>:
+
+<tr><td>Bundle Type</td><td>نوع الحزمة</td><td>Definition</td><td>التعريف</td><td>Application</td><td>التطبيق</td></tr>
+|------------|------------|-------------|------------|-------------|--------------|
+<tr><td>Episode</td><td>Episode</td><td>Single condition episode</td><td>episode حالة واحدة</td><td>Surgery, pregnancy</td><td>الجراحة، الحمل</td></tr>
+<tr><td>Chronic</td><td>الأمراض المزمنة</td><td>Annual management</td><td>الإدارة السنوية</td><td>Diabetes, CHF, COPD</td><td>السكري، فشل القلب،COPD</td></tr>
+<tr><td>Comprehensive</td><td>الشامل</td><td>Total care responsibility</td><td>مسؤولية الرعاية الكاملة</td><td>Complex patients</td><td>المرضى المعقدون</td></tr>
+<tr><td>Population</td><td>السكان</td><td>Total population</td><td>total السكان</td><td>Attributed lives</td><td>حياة معينة</td></tr>
+
+<strong>Payment Formula | صيغة الدفع</strong>:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           BUNDLED PAYMENT CALCULATION                      │
+│           حساب الدفع المجمع                                │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   Bundled Payment = Base Payment × Quality Factor          │
+│               + Shared Savings Bonus                      │
+│                                        × Utilization Factor│
+│                                                             │
+│   where:                                                   │
+│   Base Payment = Weighted population × base rate            │
+│   Quality Factor = Quality score/target score              │
+│   Shared Savings = (Target cost - Actual cost) × share %     │
+│   Utilization = Actual units/target units                 │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">4.3 Cost Optimization Strategies | استراتيجيات تحسين التكلفة</h4>
+
+<strong>Advanced Cost Categories and Optimization | فئات التقدمة وتحسينها</strong>:
+
+<tr><td>Category</td><td>الفئة</td><td>Current %</td><td>النسبة الحالية</td><td>Target %</td><td>الهدف</td><td>Strategy</td><td>الاستراتيجية</td></tr>
+|----------|-------|-----------|--------------|----------|-------|----------|-----------|-----------|
+<tr><td>Inappropriate utilization</td><td>استخدام غير ملائم</td><td>15%</td><td>15%</td><td>5%</td><td>5%</td><td>Decision support</td><td>دعم القرار</td></tr>
+<tr><td>Variation</td><td>التباين</td><td>20%</td><td>20%</td><td>10%</td><td>10%</td><td>Standardization</td><td>التوحيد</td></tr>
+<tr><td>Care coordination</td><td>تنسيق الرعاية</td><td>8%</td><td>8%</td><td>4%</td><td>4%</td><td>Integration</td><td>التكامل</td></tr>
+<tr><td>Readmissions</td><td>إعادة الدخول</td><td>12%</td><td>12%</td><td>6%</td><td>6%</td><td>Transition programs</td><td>برامج الانتقالات</td></tr>
+<tr><td>Prevention failure</td><td>إخفاق الوقاية</td><td>15%</td><td>15%</td><td>8%</td><td>8%</td><td>Prevention programs</td><td>برامج الوقاية</td></tr>
+<tr><td>Administrative</td><td>الإدارة</td><td>10%</td><td>10%</td><td>8%</td><td>8%</td><td>Efficiency gains</td><td>كفاءة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 5: Leadership for Population Health Excellence | الدرس الخامس: القيادة للتميز في صحة السكان</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Develop leadership capabilities for population health
+- Build effective population health organizations
+- Navigate stakeholder complexity
+- Drive sustainable transformation
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">5.1 Population Health Leadership Competencies | كفاءات القيادة لصحة السكان</h4>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Competency</td><td>الكفاءة</td><td>Description</td><td>الوصف</td><td>Development Approach</td><td>نهج التطوير</td></tr>
+|-----------|----------|-------------|----------|---------------------|--------------|
+<tr><td>System thinking</td><td>التفكير النظامي</td><td>Understanding complex system dynamics</td><td>فهم ديناميكيات النظام المعقد</td><td>Simulation, modeling</td><td>المحاكاة، النمذجة</td></tr>
+<tr><td>Data fluency</td><td>كفاءة البيانات</td><td>Using data for decision-making</td><td>استخدام البيانات للقرار</td><td>Analytics training</td><td>تدريب التحليلات</td></tr>
+<tr><td>Change leadership</td><td>قيادة التغيير</td><td>Driving organizational transformation</td><td>قيادة التحول التنظيمي</td><td>Change management</td><td>إدارة التغيير</td></tr>
+<tr><td>Collaboration</td><td>التعاون</td><td>Working across boundaries</td><td>العمل عبر الحدود</td><td>Team building</td><td>بناء الفريق</td></tr>
+<tr><td>Patient focus</td><td>التركيز على المريض</td><td>Keeping patient at center</td><td>الحفاظ على المريض في المركز</td><td>Patient engagement</td><td>إشراك المريض</td></tr>
+<tr><td>Business acumen</td><td>敏锐يرة الأعمال</td><td>Understanding healthcare economics</td><td>فهم اقتصاديات الرعاية</td><td>Finance training</td><td>تدريب المالية</td></tr>
+
+<h4 class="section-sub">5.2 Population Health Organization Design | تصميم организации صحة السكان</h4>
+
+<strong>Organizational Structure | البنية التنظيمية</strong>:
+
+<tr><td>Role</td><td>الدور</td><td>FTE</td><td>الوظيفة</td><td>Reports to</td><td>التقارير إلى</td></tr>
+|------|-------|-----|---------|------------|--------------|
+<tr><td>Chief Population Health Officer</td><td>المسؤول الرئيسي لصحة السكان</td><td>1.0</td><td>VP/CMO</td><td>CEO</td></tr>
+<tr><td>Population Health Directors</td><td>directors صحة السكان</td><td>2-4</td><td>حسب الحجم</td><td>CPHO</td></tr>
+<tr><td>Care Coordination Directors</td><td>directors التنسيق</td><td>1-2</td><td>حسب الحجم</td><td>Population Health Director</td></tr>
+<tr><td>Care Coordinators</td><td>منسقو الرعاية</td><td>1 per 500 high-risk</td><td>حسب الحجم</td><td>Care Coordination Director</td></tr>
+<tr><td>Analytics Lead</td><td>قائد التحليلات</td><td>1.0</td><td>حسب الحجم</td><td>CPHO</td></tr>
+<tr><td>Population Health Specialists</td><td>specialists صحة السكان</td><td>2-4</td><td>حسب الحجم</td><td>Population Health Director</td></tr>
+
+<h4 class="section-sub">5.3 Stakeholder Management for Population Health | أصحابصلحة لإدارة صحة السكان</h4>
+
+<strong>Stakeholder Engagement Map | خريطة إشراك أصحابصلحة</strong>:
+
+<tr><td>Stakeholder</td><td>أصحاب مصلحة</td><td>Interest</td><td>الاهتمام</td><td>Influence</td><td>التأثير</td><td>Engagement Strategy</td><td>استراتيجية الإشراك</td></tr>
+|------------|-------------|----------|----------|----------|---------|---------------------|----------------------|
+<tr><td>Board</td><td>مجلس الإدارة</td><td>Financial performance</td><td>الأداء المالي</td><td>High</td><td>High</td><td>Education, reporting</td><td>التثقيف، التقارير</td></tr>
+<tr><td>Executive</td><td>القيادة</td><td>Organizational success</td><td>نجاح المؤسسة</td><td>High</td><td>High</td><td>Strategic alignment</td><td>المحاذاة الاستراتيجية</td></tr>
+<tr><td>Physicians</td><td>الأطباء</td><td>Clinical autonomy</td><td>الاستقلالية السريرية</td><td>High</td><td>High</td><td>Leadership roles, shared savings</td><td>أدوار قيادية، وفورات مشتركة</td></tr>
+<tr><td>Nursing</td><td>التمريض</td><td>Patient care</td><td>رعاية المريض</td><td>Moderate</td><td>High</td><td>Training, career path</td><td>التدريب، المسار الوظيفي</td></tr>
+<tr><td>Staff</td><td>الموظفون</td><td>Job security</td><td>الأمان الوظيفي</td><td>Moderate</td><td>Moderate</td><td>Communication, involvement</td><td>التواصل، المشاركة</td></tr>
+<tr><td>Patients</td><td>المرضى</td><td>Quality, access</td><td>الجودة، الوصول</td><td>High</td><td>Moderate</td><td>Engagement programs</td><td>برامج الإشراك</td></tr>
+<tr><td>Payers</td><td>payers</td><td>Cost, quality</td><td>التكلفة، الجودة</td><td>High</td><td>Moderate</td><td>Value contracts</td><td>عقود القيمة</td></tr>
+<tr><td>Community</td><td>المجتمع</td><td>Health, jobs</td><td>الصحة،_jobs</td><td>Low</td><td>Low</td><td>Community programs</td><td>برامج المجتمع</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 6: Sustainability and Scale | الدرس السادس: الاستدامة والتوسع</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives</h3>
+- Build sustainable population health programs
+- Scale successful initiatives
+- Ensure continuous improvement
+- Maintain excellence over time
+
+<h3 class="section-title">Content</h3>
+
+<h4 class="section-sub">6.1 Sustainability Framework | إطار الاستدامة</h4>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Sustainability Element</td><td>عنصر الاستدامة</td><td>Key Components</td><td>المكونات الرئيسية</td><td>Success Indicators</td><td>مؤشرات النجاح</td></tr>
+|----------------------|-----------------|---------------|-----------------|-------------------|------------------|
+<tr><td>Process integration</td><td>تكامل العمليات</td><td>- Workflow integration <br/> - EMR integration <br/> - Role integration</td><td>- تكامل سير العمل <br/> - تكامل السجل <br/> - تكامل الأدوار</td><td>100% integrated</td><td>100% متكامل</td></tr>
+<tr><td>Culture development</td><td>تطوير الثقافة</td><td>- Leadership engagement <br/> - Staff buy-in <br/> - Patient partnership</td><td>- إشراك القيادة <br/> - موافقة الموظفين <br/> - شراكة المريض</td><td>Culture survey scores</td><td>ثقافة درجات المسح</td></tr>
+<tr><td>Ongoing measurement</td><td>القياس المستمر</td><td>- Outcome tracking <br/> - Regular reporting <br/> - Continuous improvement</td><td>- تتبع النتائج <br/> - التقارير المنتظمة <br/> - التحسين المستمر</td><td>Target achievement</td><td>تحقيق الأهداف</td></tr>
+<tr><td>Resource stability</td><td>استقرار الموارد</td><td>- Dedicated funding <br/> - Dedicated staffing <br/> - Technology support</td><td>- تمويل مخصص <br/> - personnel مخصص <br/> - دعم تقني</td><td>Budget stability</td><td>استقرار الميزانية</td></tr>
+
+<h4 class="section-sub">6.2 Scaling Methodology | منهجية التوسع</h4>
+
+<tr><td>Phase</td><td>المرحلة</td><td>Focus</td><td>التركيز</td><td>Key Activities</td><td>الأنشطة الرئيسية</td></tr>
+|-------|----------|---------|--------------|---------------------|
+<tr><td>Documentation</td><td>التوثيق</td><td>What works</td><td>ما ينجح</td><td>- Document processes <br/> - Record outcomes <br/> - Identify success factors</td><td>- توثيق العمليات <br/> - تسجيل النتائج <br/> - تحديد عوامل النجاح</td></tr>
+<tr><td>Adaptation</td><td>التكيف</td><td>New settings</td><td>إع��ادات جديدة</td><td>- Assess context <br/> - Adapt interventions <br/> - Train staff</td><td>- تقييم السياق <br/> - تكييف التدخلات <br/> - تدريب الموظفين</td></tr>
+<tr><td>Pilot</td><td>البرامج التجريبية</td><td>Test in new setting</td><td>اختبار في إعداد جديد</td><td>- Small pilot <br/> - Evaluate <br/> - Refine</td><td>- برنامج تجريبي صغير <br/> - التقييم <br/> - التحسين</td></tr>
+<tr><td>Full scale</td><td>التوسع الكامل</td><td>Full implementation</td><td>التنفيذ الكامل</td><td>- Full rollout <br/> - Monitor <br/> - Optimize</td><td>- التنفيذ الكامل <br/> - المراقبة <br/> - تحسين</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Assessment | تقييم الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Comprehensive Assessment</h3>
+
+Design and present a comprehensive population health strategic plan for a large healthcare system:
+
+1. <strong>Strategic Framework Design</strong> (20 points)
+   - Vision, mission alignment
+   - Population definition methodology
+   - Strategic pillars identification
+
+2. <strong>Care Delivery Redesign Model</strong> (20 points)
+   - Integrated care model design
+   - Care coordination architecture
+   - Specialty programs
+
+3. <strong>Analytics Framework</strong> (15 points)
+   - Predictive analytics approach
+   - Intervention targeting strategy
+   - Outcome measurement
+
+4. <strong>Value Optimization Plan</strong> (15 points)
+   - Cost optimization strategy
+   - Payment model design
+   - Value metrics
+
+5. <strong>Leadership and Governance</strong> (15 points)
+   - Organizational structure
+   - Leadership development
+   - Stakeholder management
+
+6. <strong>Implementation and Sustainability</strong> (15 points)
+   - Phased implementation plan
+   - Sustainability framework
+   - Scale methodology
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application Framework | إطار التطبيق السعودي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">NPHIES Integration | دمج نظام التأمين الصحي الوطني</h3>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>NPHIES Component</td><td>المكون</td><td>Population Health Integration</td><td>دمج صحة السكان</td></tr>
+|-----------------|--------|----------------------------|-----------------|
+<tr><td>Attribution</td><td>التسميح</td><td>Population definition</td><td>تحديد السكان</td></tr>
+<tr><td>Claims</td><td>المطالبات</td><td>Cost measurement</td><td>قياس التكلفة</td></tr>
+<tr><td>Quality metrics</td><td>مقاييس الجودة</td><td>Outcome measurement</td><td>قياس النتائج</td></tr>
+<tr><td>Care coordination</td><td>تنسيق الرعاية</td><td>Care redesign</td><td>إعادة الرعاية</td></tr>
+<tr><td>Payment reform</td><td>إصلاح الدفع</td><td>Value optimization</td><td>تحسين القيمة</td></tr>
+
+<h3 class="section-title">CBAHI Integration | دمج اعتماد الهيئة</h3>
+
+<tr><td>CBAHI Standard</td><td>معيار الهيئة</td><td>Population Health Application</td><td>تطبيق صحة السكان</td></tr>
+|---------------|------------|---------------------------|-------------------|
+<tr><td>Patient-centered</td><td>المتمحور حول المريض</td><td>Patient engagement</td><td>إشراك المريض</td></tr>
+<tr><td>Safety</td><td>السلامة</td><td>Outcome improvement</td><td>تحسين النتائج</td></tr>
+<tr><td>Quality</td><td>الجودة</td><td>Value metrics</td><td>مقاييس القيمة</td></tr>
+<tr><td>Effectiveness</td><td>الفعالية</td><td>Care coordination</td><td>تنسيق الرعاية</td></tr>
+<tr><td>Governance</td><td>الحوكمة</td><td>Leadership structure</td><td>بنية القيادة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References and Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Required Reading | القراءة المطلوبة</h3>
+
+1. IHI Triple Aim Resources: https://www.ihi.org/Topics/TripleAim
+2. Porter ME, Lee TH. "The Strategy That Will Fix Health Care." Harvard Business Review
+3. NPHIES Implementation Documentation: https://www.nphies.gov.sa
+4. Saudi Vision 2030 Health Sector Program
+5. CBAHI National Hospital Standards
+
+<h3 class="section-title">Recommended Reading | القراءة الموصى بها</h3>
+
+1. IHI White Papers on Population Health
+2. Value-Based Payment Models
+3. Predictive Analytics in Healthcare
+4. Accountable Care Implementation Guide
+5. Leadership in Healthcare Transformation
+
+<h3 class="section-title">Local Resources | الموارد المحلية</h3>
+
+1. <strong>MOH</strong>: https://www.moh.gov.sa
+2. <strong>CBAHI</strong>: https://www.cbahi.gov.sa
+3. <strong>NPHIES</strong>: https://www.nphies.gov.sa
+4. <strong>SFDA</strong>: https://www.sfda.gov.sa
+5. <strong>Saudi Health Council</strong>: https://www.shc.gov.sa
+6. <strong>SaudiCDC</strong>: https://www.saudicdc.gov.sa
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English</td><td>العربية</td><td>Definition</td></tr>
+|---------|----------|-----------|
+<tr><td>Accountable Care Organization</td><td>منظمة الرعاية المسؤولة</td><td>Organization accountable for total cost and quality</td></tr>
+<tr><td>Attribution</td><td>التسميح</td><td>Assigning patients to provider responsibility</td></tr>
+<tr><td>Bundled Payment</td><td>الدفع المجمع</td><td>Single payment for care episode</td></tr>
+<tr><td>Care Continuum</td><td>continuum الرعاية</td><td>Range of care services across settings</td></tr>
+<tr><td>Population Health</td><td>صحة السكان</td><td>Health outcomes of defined group</td></tr>
+<tr><td>Predictive Analytics</td><td>التحليلات التنبؤية</td><td>Using data to predict future outcomes</td></tr>
+<tr><td>Precision Population Health</td><td>صحة السكان الدقيقة</td><td>Targeted interventions for population segments</td></tr>
+<tr><td>Risk Stratification</td><td>تصنيف المخاطر</td><td>Segmenting by health risk</td></tr>
+<tr><td>Value-Based Care</td><td>الرعاية القائمة على القيمة</td><td>Healthcare prioritizing outcomes over volume</td></tr>
+<tr><td>Triple Aim</td><td>الهدف الثلاثي</td><td>Simultaneous improvement in health, experience, cost</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Continuing Education Credits | ساعات ��لتعليم المستمر</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          Course completion earns:
+- 4.0 CME credits (ACCME)
+- 4.0 CNE credits (ANCC)
+- 3.0 CPPS credits (NAHQ)
+- 4.0 CPHQ credits (NAHQ)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code</strong>: TA 201
+- <strong>Level</strong>: Advanced
+- <strong>Duration</strong>: 240 minutes
+- <strong>Prerequisites</strong>: TA 101, TA 102, TA 103, TA 104, TA 105
+- <strong>Format</strong>: Online, Self-Paced
+- <strong>Language</strong>: Bilingual (Arabic/English)
+- <strong>Provider</strong>: IHI Open School / BrainsAIT Academy
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Acknowledgments | الشكر والتقدير</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          This course was adapted from IHI Open School Triple Aim curriculum for Saudi Arabian healthcare context with additional advanced content specific to NPHIES implementation, CBAHI standards, and Vision 2030 health sector transformation objectives.
+
+هذه الدورة مُكيّفة من منهجهدف الثلاثي في معهد تحسين الرعاية الصحية للسياق الصحي السعودي مع محتوى متقدم إضافي محدد لتنفيذ نظام التأمين الصحي الوطني ومعايير اعتماد الهيئة وأهداف تحول قطاع الصحة في رؤية 2030.
+
+---
+
+<em>End of Course TA 201</em>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/ta-101.html" class="related-card">
+            <h4>Triple Aim for Populations</h4>
+            <p class="rtl">TA 101: الهدف الثلاثي للسكان</p>
+            <span class="related-card-duration">⏱ 180 min</span>
+          </a>
+          <a href="/courses/ta-102.html" class="related-card">
+            <h4>Population Health Management</h4>
+            <p class="rtl">TA 102: إدارة صحة السكان</p>
+            <span class="related-card-duration">⏱ 180 min</span>
+          </a>
+          <a href="/courses/ta-103.html" class="related-card">
+            <h4>Designing for Population Health</h4>
+            <p class="rtl">TA 103: التصميم من أجل صحة السكان</p>
+            <span class="related-card-duration">⏱ 180 min</span>
+          </a>
+          <a href="/courses/ta-104.html" class="related-card">
+            <h4>Value in Health Care</h4>
+            <p class="rtl">TA 104: القيمة في الرعاية الصحية</p>
+            <span class="related-card-duration">⏱ 180 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-ta-201') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-ta-201', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('ta-201')) enrolled.push('ta-201');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'ta-201');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-ta-201') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-ta-201', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-ta-201', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-ta-201', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-ta-201', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-ta-201') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Advanced Triple Aim: Achieving Population Health Excellence',
+        slug: 'ta-201',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-ta-201') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-ta-201.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

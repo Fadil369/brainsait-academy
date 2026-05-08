@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPHIES-AI Mastery | BrainSAIT Academy</title>
+  <meta name="description" content="NPHIES-AI Mastery - Full bilingual course on NPHIES">
+  <meta name="keywords" content="NPHIES, FHIR R4, Healthcare Claims, AI Automation, Saudi Arabia, Insurance">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>NPHIES-AI Mastery</h3>
+        <p>NPHIES-AI-MASTERY • 180 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">إتقان NPHIES بالذكاء الاصطناعي — إت...</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Overview | نظرة عامة على الد...</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Modules | الوحدات</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Action Checklist | قائمة الإجراءات</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">NPHIES</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">NPHIES-AI Mastery</h1>
+        <p class="course-title-ar rtl">إتقان NPHIES بالذكاء الاصطناعي - إتقان منصة تبادل المعلومات الصحية الوطنية</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">180</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">9</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">إتقان NPHIES بالذكاء الاصطناعي — إتقان منصة تبادل المعلومات الصحية الوطنية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <strong>Master the National Health Insurance Information Exchange System with AI-Powered Automation</strong>
+
+<strong>أتقن نظام تبادل معلومات التأمين الصحي الوطني مع الأتمتة المدعومة بالذكاء الاصطناعي</strong>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Overview | نظرة عامة على الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+This comprehensive course provides healthcare professionals with in-depth knowledge and practical skills to master NPHIES (National Health Insurance Information Exchange System) and integrate it with AI-powered automation. You will learn the technical foundations, regulatory requirements, and operational workflows essential for successful NPHIES implementation.
+
+Designed specifically for Saudi Arabia's healthcare ecosystem, this course covers NPHIES v3.2 certification requirements, FHIR R4 compliance, and the integration of BrainSAIT's ClaimLINC automation for seamless claims processing. Aligned with Vision 2030's health sector transformation, this course prepares you to lead NPHIES initiatives in your organization.
+
+<h3 class="section-title">العربية</h3>
+توفر هذه الدورة الشاملة للمهنيين الصحيين المعرفة والمهارات العملية للتعمق في إتقان NPHIES (نظام تبادل معلومات التأمين الصحي الوطني) ودمجه مع الأتمتة المدعومة بالذكاء الاصطناعي. ستتعلم الأسس التقنية والمتطلبات التنظيمية وسير العمل التشغيلي الضرورية لتنفيذ NPHIES بنجاح.
+
+مصممة خصيصاً للنظام البيئي للرعاية الصحية في المملكة العربية السعودية، تغطي هذه الدورة متطلبات شهادة NPHIES v3.2 وامتثال FHIR R4 ودمج أتمتة ClaimLINC من BrainSAIT للمعالجة السلسة للمطالبات. بما يتوافق مع تحول قطاع الصحة في رؤية 2030، تعدك هذه الدورة لقيادة مبادرات NPHIES في مؤسستك.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Learning Outcomes</h3>
+After completing this course, you will be able to:
+
+- <strong>Understand</strong> the architecture and components of NPHIES
+- <strong>Navigate</strong> NPHIES certification requirements and processes
+- <strong>Implement</strong> FHIR R4 compliant data exchanges
+- <strong>Process</strong> claims through the complete NPHIES lifecycle
+- <strong>Integrate</strong> AI automation (ClaimLINC) for optimized workflows
+- <strong>Troubleshoot</strong> common NPHIES issues and rejections
+- <strong>Ensure</strong> regulatory compliance with SCIO and CCHI requirements
+- <strong>Optimize</strong> claim approval rates using AI-powered analysis
+- <strong>Align</strong> NPHIES operations with Vision 2030 health objectives
+
+<h3 class="section-title">مخرجات التعلم بالعربية</h3>
+بنهاية هذه الدورة، ستكون قادراً على:
+
+- <strong>فهم</strong> عمارة ومكونات NPHIES
+- <strong>التنقل</strong> في متطلبات وعمليات شهادة NPHIES
+- <strong>تنفيذ</strong> تبادلات البيانات المتوافقة مع FHIR R4
+- <strong>معالجة</strong> المطالبات خلال دورة NPHIES الكاملة
+- <strong>دمج</strong> الأتمتة بالذكاء الاصطناعي (ClaimLINC) لسير عمل محسّن
+- <strong>استكشاف الأخطاء وإصلاحها</strong> في المشكلات والرفض الشائعة لـ NPHIES
+- <strong>ضمان</strong> الامتثال التنظيمي مع متطلبات SCIO وCCHI
+- <strong>تحسين</strong> معدلات موافقة المطالبات باستخدام التحليل بالذكاء الاصطناعي
+- <strong>محاذاة</strong> عمليات NPHIES مع أهداف الصحة في رؤية 2030
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Modules | الوحدات</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Module 1: NPHIES Architecture and Foundations</h3>
+<h3 class="section-title">الوحدة الأولى: عمارة وأساسيات NPHIES</h3>
+
+<strong>Duration:</strong> 45 minutes | <strong>Level:</strong> Foundation
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>What is NPHIES?</strong>
+
+NPHIES (National Health Insurance Information Exchange System) is Saudi Arabia's unified health insurance platform enabling electronic data interchange between healthcare providers, insurers, and government entities.
+
+<strong>Key Features:</strong>
+
+- <strong>Real-time Processing:</strong> Immediate claim submission and response
+- <strong>FHIR R4 Compliance:</strong> International standards for health data exchange
+- <strong>Pre-Authorization:</strong> Prior approval workflow for specified services
+- <strong>Audit Trail:</strong> Complete documentation of all transactions
+- <strong>Integration APIs:</strong> Standard interfaces for system connectivity
+
+<strong>NPHIES v3.2 Updates:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Feature</td><td>v3.1</td><td>v3.2</td></tr>
+|---------|------|------|
+<tr><td>Claim Types</td><td>Basic</td><td>Enhanced specialty claims</td></tr>
+<tr><td>Real-time Eligibility</td><td>Limited</td><td>Comprehensive</td></tr>
+<tr><td>Pre-Authorization</td><td>Manual</td><td>Automated workflows</td></tr>
+<tr><td>Document Attachments</td><td>PDF only</td><td>Multi-format support</td></tr>
+<tr><td>API Performance</td><td>Standard</td><td>Optimized (<1s latency)</td></tr>
+
+<strong>NPHIES Certification Requirements:</strong>
+
+Healthcare facilities must achieve NPHIES certification:
+
+1. <strong>Technical Readiness:</strong>
+   - FHIR R4 compliant systems
+   - Secure API integration
+   - Data quality standards
+
+2. <strong>Operational Readiness:</strong>
+   - Trained staff on NPHIES workflows
+   - Documented procedures
+   - Quality assurance processes
+
+3. <strong>Compliance Requirements:</strong>
+   - SCIO/CCHI registration
+   - Data privacy controls
+   - Audit logging capabilities
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>ما هو NPHIES؟</strong>
+
+NPHIES (نظام تبادل معلومات التأمين الصحي الوطني) هو منصة التأمين الصحي الموحدة في المملكة العربية السعودية التي تتيح تبادل البيانات الإلكترونية بين مقدمي الرعاية الصحية وشركات التأمين والكيانات الحكومية.
+
+<strong>الميزات الرئيسية:</strong>
+
+- <strong>المعالجة الفورية:</strong> تقديم مطالبات واستجابة فورية
+- <strong>امتثال FHIR R4:</strong> معايير دولية لتبادل البيانات الصحية
+- <strong>التفويض المسبق:</strong> سير عمل الموافقة المسبقة للخدمات المحددة
+- <strong>مسار التدقيق:</strong> توثيق كامل لجميع المعاملات
+- <strong>واجهات API التكامل:</strong> واجهات معيارية للاتصال بالأنظمة
+
+<strong>تحديثات NPHIES v3.2:</strong>
+
+<tr><td>الميزة</td><td>v3.1</td><td>v3.2</td></tr>
+|--------|------|------|
+<tr><td>أنواع المطالبات</td><td>الأساسية</td><td>تخصصات معززة</td></tr>
+<tr><td>أهلية الوقت الفعلي</td><td>محدودة</td><td>شاملة</td></tr>
+<tr><td>التفويض المسبق</td><td>يدوي</td><td>سير عمل مؤتمت</td></tr>
+<tr><td>مرفقات المستندات</td><td>PDF فقط</td><td>دعم تنسيقات متعددة</td></tr>
+<tr><td>أداء API</td><td>معياري</td><td>محسّن (<1 ثانية زمن الاستجابة)</td></tr>
+
+<strong>متطلبات شهادة NPHIES:</strong>
+
+يجب على المرافق الصحية تحقيق شهادة NPHIES:
+
+1. <strong>الجاهزية التقنية:</strong>
+   - أنظمة متوافقة مع FHIR R4
+   - تكامل API آمن
+   - معايير جودة البيانات
+
+2. <strong>الجاهزية التشغيلية:</strong>
+   - موظفون مدربون على سير عمل NPHIES
+   - إجراءات موثقة
+   - عمليات ضمان الجودة
+
+3. <strong>متطلبات الامتثال:</strong>
+   - تسجيل SCIO/CCHI
+   - ضوابط خصوصية البيانات
+   - قدرات تسجيل التدقيق
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Assess your facility's NPHIES readiness:
+
+1. Review your current claim processing workflow
+2. Identify FHIR R4 compliance gaps
+3. Document integration requirements
+4. Create a certification readiness checklist
+5. Develop a remediation action plan
+
+<strong>نشاط عملي:</strong>
+
+قيّم جاهزية منشأتك لـ NPHIES:
+
+1. راجع سير عمل معالجة المطالبات الحالي
+2. حدد فجوات امتثال FHIR R4
+3. وثّق متطلبات التكامل
+4. أنشئ قائمة التحقق من جاهزية الشهادة
+5. طوّر خطة إجراء للإصلاح
+
+---
+
+<h3 class="section-title">Module 2: FHIR R4 Implementation for NPHIES</h3>
+<h3 class="section-title">الوحدة الثانية: تنفيذ FHIR R4 لـ NPHIES</h3>
+
+<strong>Duration:</strong> 45 minutes | <strong>Level:</strong> Intermediate
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>FHIR R4 Fundamentals:</strong>
+
+FHIR (Fast Healthcare Interoperability Resources) is the HL7 standard enabling healthcare data exchange. NPHIES requires FHIR R4 compliance for all data submissions.
+
+<strong>Core FHIR Resources:</strong>
+
+<tr><td>Resource</td><td>Purpose</td><td>NPHIES Usage</td></tr>
+|----------|---------|--------------|
+<tr><td>Patient</td><td>Patient demographics</td><td>Member identification</td></tr>
+<tr><td>Coverage</td><td>Insurance information</td><td>Eligibility verification</td></tr>
+<tr><td>Practitioner</td><td>Healthcare provider info</td><td>Provider credentials</td></tr>
+<tr><td>Organization</td><td>Facility details</td><td>Facility registration</td></tr>
+<tr><td>Encounter</td><td>Clinical visit</td><td>Service documentation</td></tr>
+<tr><td>Claim</td><td>Billing information</td><td>Claim submission</td></tr>
+<tr><td>ExplanationOfBenefit</td><td>Payment details</td><td>Remittance information</td></tr>
+
+<strong>FHIR Bundle Structure:</strong>
+
+NPHIES claims require properly structured FHIR bundles:
+
+```json
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    { "resource": "Patient" },
+    { "resource": "Coverage" },
+    { "resource": "Encounter" },
+    { "resource": "Claim" },
+    { "resource": "Observation" },
+    { "resource": "Condition" }
+  ]
+}
+```
+
+<strong>NPHIES-Specific Requirements:</strong>
+
+- <strong>Patient Identifier:</strong> Saudi national ID (Iqama) or border number
+- <strong>Insurance ID:</strong> Member ID from insurer
+- <strong>Provider ID:</strong> SCIO-registered provider number
+- <strong>Facility ID:</strong> Facility registration number
+- <strong>Service Codes:</strong> Approved service codes per tariff agreement
+
+<strong>Common FHIR Errors:</strong>
+
+<tr><td>Error</td><td>Cause</td><td>Solution</td></tr>
+|--------|-------|----------|
+<tr><td>Invalid Patient</td><td>Wrong ID format</td><td>Validate ID pattern</td></tr>
+<tr><td>Missing Coverage</td><td>Coverage not active</td><td>Verify eligibility</td></tr>
+<tr><td>Code Not Found</td><td>Invalid service code</td><td>Check tariff database</td></tr>
+<tr><td>Reference Error</td><td>Missing linked resource</td><td>Include all dependencies</td></tr>
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>أساسيات FHIR R4:</strong>
+
+FHIR (موارد التشغيل البيني السريع للرعاية الصحية) هو معيار HL7 الذي يتيح تبادل بيانات الرعاية الصحية. تتطلب NPHIES امتثال FHIR R4 لجميع تقديمات البيانات.
+
+<strong>موارد FHIR الأساسية:</strong>
+
+<tr><td>المورد</td><td>الغرض</td><td>استخدام NPHIES</td></tr>
+|--------|--------|---------------|
+<tr><td>Patient</td><td>بيانات المريض</td><td>تعريف العضو</td></tr>
+<tr><td>Coverage</td><td>معلومات التأمين</td><td>التحقق من الأهلية</td></tr>
+<tr><td>Practitioner</td><td>معلومات مقدم الرعاية</td><td>بيانات اعتماد المقدم</td></tr>
+<tr><td>Organization</td><td>تفاصيل المنشأة</td><td>تسجيل المنشأة</td></tr>
+<tr><td>Encounter</td><td>زيارة سريرية</td><td>توثيق الخدمة</td></tr>
+<tr><td>Claim</td><td>معلومات الفوترة</td><td>تقديم المطالبات</td></tr>
+<tr><td>ExplanationOfBenefit</td><td>تفاصيل الدفع</td><td>معلومات الحوالة</td></tr>
+
+<strong>هيكل حزمة FHIR:</strong>
+
+تتطلب مطالبات NPHIES حزم FHIR مهيكلة بشكل صحيح:
+
+```json
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    { "resource": "Patient" },
+    { "resource": "Coverage" },
+    { "resource": "Encounter" },
+    { "resource": "Claim" },
+    { "resource": "Observation" },
+    { "resource": "Condition" }
+  ]
+}
+```
+
+<strong>متطلبات خاصة بـ NPHIES:</strong>
+
+- <strong>معرف المريض:</strong> رقم الهوية الوطنية السعودية (الإقامة) أو رقم الحدود
+- <strong>معرف التأمين:</strong> رقم العضو من شركة التأمين
+- <strong>معرف المقدم:</strong> رقم المقدم المسجل في SCIO
+- <strong>معرف المنشأة:</strong> رقم تسجيل المنشأة
+- <strong>رموز الخدمات:</strong> رموز الخدمة المعتمدة لكل اتفاقية تعريفة
+
+<strong>أخطاء FHIR الشائعة:</strong>
+
+<tr><td>الخطأ</td><td>السبب</td><td>الحل</td></tr>
+|-------|-------|------|
+<tr><td>مريض غير صالح</td><td>تنسيق ID خاطئ</td><td>التحقق من نمط ID</td></tr>
+<tr><td>تغطية مفقودة</td><td>التغطية غير نشطة</td><td>التحقق من الأهلية</td></tr>
+<tr><td>الرمز غير موجود</td><td>رمز خدمة غير صالح</td><td>التحقق من قاعدة بيانات التعريفة</td></tr>
+<tr><td>خطأ في المرجع</td><td>مورد مرتبط مفقود</td><td>تضمين جميع التبعيات</td></tr>
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Build a FHIR-compliant claim:
+
+1. Identify all required FHIR resources
+2. Populate Patient resource with correct IDs
+3. Create Coverage resource with insurance details
+4. Build Encounter resource with visit information
+5. Compose Claim resource with service codes
+6. Validate bundle against FHIR R4 schema
+7. Submit to NPHIES sandbox environment
+
+<strong>نشاط عملي:</strong>
+
+أنشئ مطالبة متوافقة مع FHIR:
+
+1. حدد جميع موارد FHIR المطلوبة
+2. املأ مورد Patient بالمعرفات الصحيحة
+3. أنشئ مورد Coverage بتفاصيل التأمين
+4.Build Encounter resource with visit information
+5. compose Claim resource with service codes
+6. تحقق من الحزمة مقابل مخطط FHIR R4
+7. قدّم لبيئة NPHIES التجريبية
+
+---
+
+<h3 class="section-title">Module 3: Claim Processing and AI Automation</h3>
+<h3 class="section-title">الوحدة الثالثة: معالجة المطالبات والأتمتة بالذكاء الاصطناعي</h3>
+
+<strong>Duration:</strong> 45 minutes | <strong>Level:</strong> Advanced
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The NPHIES Claim Lifecycle:</strong>
+
+```
+Pre-Authorization → Submission → Validation → Processing → Approval/Rejection → Payment
+      ↓                    ↓            ↓            ↓               ↓
+   [AI Review]         [AI Check]   [FHIR Check]  [Rules Engine]  [Appeal if Rejected]
+```
+
+<strong>ClaimLINC AI Integration:</strong>
+
+BrainSAIT's ClaimLINC automates NPHIES claim processing:
+
+<tr><td>Stage</td><td>Manual Process</td><td>ClaimLINC Automation</td></tr>
+|-------|---------------|---------------------|
+<tr><td>Eligibility</td><td>Login to portal, manual check</td><td>Real-time API query</td></tr>
+<tr><td>Pre-Authorization</td><td>Form submission, waiting</td><td>Auto-submit, tracking</td></tr>
+<tr><td>Claim Preparation</td><td>Manual data entry</td><td>Auto-populate from EHR</td></tr>
+<tr><td>FHIR Validation</td><td>Manual review</td><td>Rule-based validation</td></tr>
+<tr><td>Submission</td><td>Portal upload</td><td>Direct API submission</td></tr>
+<tr><td>Follow-up</td><td>Manual tracking</td><td>Automated status checks</td></tr>
+<tr><td>Reconciliation</td><td>Spreadsheet matching</td><td>Auto-match with remittance</td></tr>
+
+<strong>AI-Powered Features:</strong>
+
+1. <strong>Smart Validation:</strong>
+   - Real-time FHIR R4 schema validation
+   - Business rule verification
+   - Duplicate detection
+
+2. <strong>Error Prevention:</strong>
+   - Pre-submission error highlighting
+   - Suggested corrections
+   - One-click fixes
+
+3. <strong>Predictive Analytics:</strong>
+   - Claim approval probability scoring
+   - Rejection pattern analysis
+   - Optimization recommendations
+
+4. <strong>Auto-Correction:</strong>
+   - Missing data population
+   - Code mapping and translation
+   - Format standardization
+
+<strong>Claim Approval Optimization:</strong>
+
+Key factors affecting approval rates:
+
+<tr><td>Factor</td><td>Impact</td><td>Optimization Strategy</td></tr>
+|--------|--------|----------------------|
+<tr><td>Documentation Quality</td><td>35%</td><td>AI-assisted completeness check</td></tr>
+<tr><td>Code Accuracy</td><td>25%</td><td>Intelligent code suggestion</td></tr>
+<tr><td>Eligibility Verification</td><td>20%</td><td>Real-time eligibility status</td></tr>
+<tr><td>Timely Submission</td><td>10%</td><td>Automated scheduling</td></tr>
+<tr><td>Follow-up Efficiency</td><td>10%</td><td>Proactive rejection handling</td></tr>
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>دورة حياة مطالبة NPHIES:</strong>
+
+```
+التفويض المسبق → التقديم → التحقق → المعالجة → الموافقة/الرفض → الدفع
+      ↓                    ↓            ↓            ↓               ↓
+   [مراجعة الذكاء الاصطناعي]         [فحص الذكاء الاصطناعي]   [فحص FHIR]  [محرك القواعد]  [الطعن إذا رفض]
+```
+
+<strong>دمج ClaimLINC بالذكاء الاصطناعي:</strong>
+
+يُؤتمت ClaimLINC من BrainSAIT معالجة مطالبات NPHIES:
+
+<tr><td>المرحلة</td><td>العملية اليدوية</td><td>أتمتة ClaimLINC</td></tr>
+|---------|-----------------|------------------|
+<tr><td>الأهلية</td><td>تسجيل الدخول للبوابة، الفحص اليدوي</td><td>استعلام API فوري</td></tr>
+<tr><td>التفويض المسبق</td><td>تقديم النموذج، الانتظار</td><td>إرسال تلقائي، التتبع</td></tr>
+<tr><td>إعداد المطالبة</td><td>إدخال البيانات يدوياً</td><td>ملء تلقائي من EHR</td></tr>
+<tr><td>التحقق من FHIR</td><td>المراجعة اليدوية</td><td>التحقق المستند إلى القواعد</td></tr>
+<tr><td>التقديم</td><td>رفع البوابة</td><td>إرسال API مباشر</td></tr>
+<tr><td>المتابعة</td><td>التتبع اليدوي</td><td>فحوصات الحالة الآلية</td></tr>
+<tr><td>التسوية</td><td>مطابقة جدول البيانات</td><td>المطابقة التلقائية مع الحوالة</td></tr>
+
+<strong>الميزات المدعومة بالذكاء الاصطناعي:</strong>
+
+1. <strong>التحقق الذكي:</strong>
+   - التحقق الفوري من مخطط FHIR R4
+   - التحقق من قواعد العمل
+   - كشف التكرار
+
+2. <strong>منع الأخطاء:</strong>
+   - تسليط الضوء على الأخطاء قبل التقديم
+   - الاقتراحات التصحيحية
+   - الإصلاحات بنقرة واحدة
+
+3. <strong>التحليلات التنبؤية:</strong>
+   - تسجيل احتمالية موافقة المطالبة
+   - تحليل أنماط الرفض
+   - توصيات التحسين
+
+4. <strong>التصحيح التلقائي:</strong>
+   - ملء البيانات المفقودة
+   - تعيين وترجمة الرموز
+   - توحيد التنسيق
+
+<strong>تحسين موافقة المطالبات:</strong>
+
+العوامل الرئيسية المؤثرة على معدلات الموافقة:
+
+<tr><td>العامل</td><td>التأثير</td><td>استراتيجية التحسين</td></tr>
+|--------|---------|---------------------|
+<tr><td>جودة التوثيق</td><td>35%</td><td>فحص الاكتمال بمساعدة الذكاء الاصطناعي</td></tr>
+<tr><td>دقة الترميز</td><td>25%</td><td>اقتراح رمز ذكي</td></tr>
+<tr><td>التحقق من الأهلية</td><td>20%</td><td>حالة الأهلية في الوقت الفعلي</td></tr>
+<tr><td>التقديم في الوقت المناسب</td><td>10%</td><td>الجدولة الآلية</td></tr>
+<tr><td>كفاءة المتابعة</td><td>10%</td><td>معالجة الرفض الاستباقية</td></tr>
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Optimize your claim workflow:
+
+1. Document your current claim processing steps
+2. Identify bottlenecks and manual touchpoints
+3. Design ClaimLINC integration workflow
+4. Configure validation rules for your facility
+5. Run parallel processing (manual vs AI)
+6. Measure improvement in approval rates
+7. Document ROI and present to leadership
+
+<strong>نشاط عملي:</strong>
+
+حسّن سير عمل مطالباتك:
+
+1. وثّق خطوات معالجة المطالبات الحالية
+2. حدد الاختناقات ونقاط اللمس اليدوية
+3. صمم سير عمل دمج ClaimLINC
+4.Configure قواعد التحقق لمنشأتك
+5. تشغيل المعالجة المتوازية (يدوي مقابل الذكاء الاصطناعي)
+6. قس التحسن في معدلات الموافقة
+7. وثّق العائد على الاستثمار وقدم للقيادة
+
+---
+
+<h3 class="section-title">Module 4: Compliance and Best Practices</h3>
+<h3 class="section-title">الوحدة الرابعة: الامتثال وأفضل الممارسات</h3>
+
+<strong>Duration:</strong> 45 minutes | <strong>Level:</strong> Advanced
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Regulatory Framework:</strong>
+
+NPHIES operates under multiple regulatory bodies:
+
+<tr><td>Authority</td><td>Role</td><td>Key Requirements</td></tr>
+|-----------|------|------------------|
+<tr><td>CCHI</td><td>Insurance regulation</td><td>Coverage standards, member rights</td></tr>
+<tr><td>SCIO</td><td>Provider registration</td><td>Credentialing, facility approval</td></tr>
+<tr><td>MOH</td><td>Health policy</td><td>Clinical standards, quality metrics</td></tr>
+<tr><td>SDA</td><td>Data standards</td><td>FHIR compliance, security</td></tr>
+<tr><td>CITC</td><td>Telecommunications</td><td>API standards, connectivity</td></tr>
+
+<strong>Compliance Checklist:</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>SCIO facility registration current</div>
+<div class="checklist-item"><span class="checkbox"></span>Provider credentials verified</div>
+<div class="checklist-item"><span class="checkbox"></span>FHIR R4 certification achieved</div>
+<div class="checklist-item"><span class="checkbox"></span>Data privacy controls implemented</div>
+<div class="checklist-item"><span class="checkbox"></span>Audit logging enabled</div>
+<div class="checklist-item"><span class="checkbox"></span>Security protocols followed</div>
+<div class="checklist-item"><span class="checkbox"></span>Quality assurance processes documented</div>
+<div class="checklist-item"><span class="checkbox"></span>Staff training records maintained</div>
+
+<strong>Data Privacy and Security:</strong>
+
+HIPAA and Saudi PDPL requirements:
+
+- <strong>Patient Consent:</strong> Obtain and document consent for data sharing
+- <strong>Data Minimization:</strong> Only collect data necessary for claims
+- <strong>Access Controls:</strong> Implement role-based access
+- <strong>Encryption:</strong> TLS for transit, AES for at-rest
+- <strong>Audit Trails:</strong> Log all access and transactions
+- <strong>Retention Policies:</strong> Retain documentation per requirements
+
+<strong>Best Practices for NPHIES Operations:</strong>
+
+1. <strong>Quality First:</strong>
+   - Implement pre-submission QA checks
+   - Regular FHIR validation audits
+   - Continuous staff training
+
+2. <strong>Performance Monitoring:</strong>
+   - Track approval rates by provider
+   - Monitor rejection patterns
+   - Measure turnaround times
+
+3. <strong>Escalation Procedures:</strong>
+   - Define rejection handling workflows
+   - Establish appeal timelines
+   - Document resolution patterns
+
+4. <strong>Continuous Improvement:</strong>
+   - Monthly performance reviews
+   - Quarterly process optimization
+   - Annual system audits
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>الإطار التنظيمي:</strong>
+
+تعمل NPHIES تحت جهات تنظيمية متعددة:
+
+<tr><td>السلطة</td><td>الدور</td><td>المتطلبات الرئيسية</td></tr>
+|--------|-------|---------------------|
+<tr><td>CCHI</td><td>تنظيم التأمين</td><td>معايير التغطية، حقوق الأعضاء</td></tr>
+<tr><td>SCIO</td><td>تسجيل المقدم</td><td>الاعتماد، موافقة المنشأة</td></tr>
+<tr><td>وزارة الصحة</td><td>سياسة الصحة</td><td>المعايير السريرية، مقاييس الجودة</td></tr>
+<tr><td>SDA</td><td>معايير البيانات</td><td>امتثال FHIR، الأمان</td></tr>
+<tr><td>CITC</td><td>الاتصالات</td><td>معايير API، الاتصال</td></tr>
+</tbody></table></div>
+<strong>قائمة التحقق من الامتثال:</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>تسجيل المنشأة في SCIO ساري</div>
+<div class="checklist-item"><span class="checkbox"></span>التحقق من بيانات اعتماد المقدم</div>
+<div class="checklist-item"><span class="checkbox"></span>تحقيق شهادة FHIR R4</div>
+<div class="checklist-item"><span class="checkbox"></span>تنفيذ ضوابط خصوصية البيانات</div>
+<div class="checklist-item"><span class="checkbox"></span>تمكين تسجيل التدقيق</div>
+<div class="checklist-item"><span class="checkbox"></span>اتباع بروتوكولات الأمان</div>
+<div class="checklist-item"><span class="checkbox"></span>توثيق عمليات ضمان الجودة</div>
+<div class="checklist-item"><span class="checkbox"></span>صيانة سجلات تدريب الموظفين</div>
+
+<strong>خصوصية البيانات والأمان:</strong>
+
+متطلبات HIPAA وقانون حماية البيانات السعودي:
+
+- <strong>موافقة المريض:</strong> الحصول على موافقة وتوثيقها لمشاركة البيانات
+- <strong>تقليل البيانات:</strong> جمع البيانات الضرورية للمطالبات فقط
+- <strong>ضوابط الوصول:</strong> تنفيذ الوصول القائم على الأدوار
+- <strong>التشفير:</strong> TLS للنقل، AES للتخزين
+- <strong>مسارات التدقيق:</strong> تسجيل جميع الوصول والمعاملات
+- <strong>سياسات الاحتفاظ:</strong> الاحتفاظ بالوثائق حسب المتطلبات
+
+<strong>أفضل الممارسات لعمليات NPHIES:</strong>
+
+1. <strong>الجودة أولاً:</strong>
+   - تنفيذ فحوصات ضمان الجودة قبل التقديم
+   - مراجعات تدقيق FHIR المنتظمة
+   - تدريب الموظفين المستمر
+
+2. <strong>مراقبة الأداء:</strong>
+   - تتبع معدلات الموافقة حسب المقدم
+   - مراقبة أنماط الرفض
+   - قياس أوقات الدوران
+
+3. <strong>إجراءات التصعيد:</strong>
+   - تحديد سير عمل معالجة الرفض
+   - إنشاء جداول زمنية للطعن
+   - توثيق أنماط الحل
+
+4. <strong>التحسين المستمر:</strong>
+   - مراجعات الأداء الشهرية
+   - تحسين العمليات الربع سنوية
+   - تدقيق الأنظمة السنوي
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Conduct a compliance audit:
+
+1. Review your NPHIES operational procedures
+2. Verify all registration and certifications
+3. Assess data privacy controls
+4. Check audit trail completeness
+5. Evaluate staff training compliance
+6. Document findings and remediation plan
+7. Schedule follow-up audit
+
+<strong>نشاط عملي:</strong>
+
+إجراء تدقيق امتثال:
+
+1. راجع إجراءات تشغيل NPHIES لديك
+2. تحقق من جميع التسجيلات والشهادات
+3. قيّم ضوابط خصوصية البيانات
+4. تحقق من اكتمال مسار التدقيق
+5. قيّم امتثال تدريب الموظفين
+6. وثّق النتائج وخطة الإصلاح
+7. جدولة تدقيق المتابعة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في الرعاية الصحية السعودية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Application</h3>
+- <strong>Insurance Providers:</strong> GCF (Tawuniya), Bupa, SAICO, All others connected via NPHIES
+- <strong>Claim Types:</strong> Outpatient, Inpatient, Dental, Optical, Pharmaceutical
+- <strong>Regulatory Bodies:</strong> CCHI, SCIO, MOH alignment
+- <strong>Integration Points:</strong> EHR, ERP (Oracle), Practice Management Systems
+- <strong>Vision 2030 Alignment:</strong> Digital health transformation, claim automation
+
+<h3 class="section-title">التطبيق بالعربية</h3>
+- <strong>شركات التأمين:</strong> التعاونية (تأمين)، بوبا، الخليجية، وغيرها متصلة عبر NPHIES
+- <strong>أنواع المطالبات:</strong> العيادات الخارجية، التنويم، الأسنان، البصريات، الصيدلة
+- <strong>الجهات التنظيمية:</strong> CCHI، SCIO، محاذاة وزارة الصحة
+- <strong>نقاط التكامل:</strong> EHR، ERP (Oracle)، أنظمة إدارة الممارسة
+- <strong>محاذاة رؤية 2030:</strong> التحول الصحي الرقمي، أتمتة المطالبات
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Category</td></tr>
+|--------------|---------------|----------|
+<tr><td>NPHIES</td><td>نظام تبادل معلومات التأمين الصحي الوطني</td><td>System</td></tr>
+<tr><td>FHIR R4</td><td>FHIR الإصدار الرابع</td><td>Standard</td></tr>
+<tr><td>Claim</td><td>مطالبة</td><td>Process</td></tr>
+<tr><td>Pre-Authorization</td><td>التفويض المسبق</td><td>Process</td></tr>
+<tr><td>Eligibility</td><td>الأهلية</td><td>Verification</td></tr>
+<tr><td>SCIO</td><td>مجلس滩 التأمين الصحي</td><td>Authority</td></tr>
+<tr><td>CCHI</td><td>مجلس滩 الضمان الصحي التعاوني</td><td>Authority</td></tr>
+<tr><td>Coverage</td><td>التغطية</td><td>Insurance</td></tr>
+<tr><td>Remittance</td><td>الحوالة</td><td>Payment</td></tr>
+<tr><td>Rejection</td><td>الرفض</td><td>Status</td></tr>
+<tr><td>Appeal</td><td>الطعن</td><td>Process</td></tr>
+<tr><td>ClaimLINC</td><td>نظام ClaimLINC</td><td>Tool</td></tr>
+<tr><td>Bundle</td><td>حزمة FHIR</td><td>FHIR</td></tr>
+<tr><td>API</td><td>واجهة برمجة التطبيقات</td><td>Technology</td></tr>
+<tr><td>Member ID</td><td>رقم العضو</td><td>Identifier</td></tr>
+<tr><td>Provider ID</td><td>رقم المقدم</td><td>Identifier</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Resources</h3>
+- <a href="https://www.nphies.gov.sa/" target="_blank" rel="noopener">NPHIES Portal</a>
+- <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 Specification</a>
+- <a href="https://www.cchi.gov.sa/" target="_blank" rel="noopener">CCHI Guidelines</a>
+- <a href="https://portal.elfadil.com" target="_blank" rel="noopener">BrainSAIT ClaimLINC</a>
+- <a href="https://github.com/Fadil369/nphies-course-platform" target="_blank" rel="noopener">NPHIES Course Platform</a>
+
+<h3 class="section-title">مصادر عربية</h3>
+- <a href="https://www.nphies.gov.sa/" target="_blank" rel="noopener">بوابة NPHIES</a>
+- <a href="https://www.cchi.gov.sa/" target="_blank" rel="noopener">إرشادات مجلس滩 الضمان الصحي</a>
+- <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">معايير FHIR</a>
+- <a href="https://github.com/Fadil369/nphies-course-platform" target="_blank" rel="noopener">منصة تدريب NPHIES</a>
+- <a href="https://www.vision2030.gov.sa/" target="_blank" rel="noopener">رؤية 2030 - التحول الصحي</a>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Action Checklist | قائمة الإجراءات</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Actions</h3>
+<div class="checklist-item"><span class="checkbox"></span>Complete NPHIES certification requirements</div>
+<div class="checklist-item"><span class="checkbox"></span>Achieve FHIR R4 compliance for your systems</div>
+<div class="checklist-item"><span class="checkbox"></span>Integrate ClaimLINC for automated processing</div>
+<div class="checklist-item"><span class="checkbox"></span>Establish compliance monitoring processes</div>
+<div class="checklist-item"><span class="checkbox"></span>Train staff on NPHIES workflows</div>
+<div class="checklist-item"><span class="checkbox"></span>Set up performance dashboards</div>
+<div class="checklist-item"><span class="checkbox"></span>Define escalation procedures</div>
+<div class="checklist-item"><span class="checkbox"></span>Schedule regular compliance audits</div>
+
+<h3 class="section-title">قائمة الإجراءات بالعربية</h3>
+<div class="checklist-item"><span class="checkbox"></span>إكمال متطلبات شهادة NPHIES</div>
+<div class="checklist-item"><span class="checkbox"></span>تحقيق امتثال FHIR R4 لأنظمتك</div>
+<div class="checklist-item"><span class="checkbox"></span>دمج ClaimLINC للمعالجة المؤتمتة</div>
+<div class="checklist-item"><span class="checkbox"></span>إنشاء عمليات مراقبة الامتثال</div>
+<div class="checklist-item"><span class="checkbox"></span>تدريب الموظفين على سير عمل NPHIES</div>
+<div class="checklist-item"><span class="checkbox"></span>إعداد لوحات معلومات الأداء</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد إجراءات التصعيد</div>
+<div class="checklist-item"><span class="checkbox"></span>جدولة مراجعات الامتثال المنتظمة</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Property</td><td>English</td><td>العربية</td></tr>
+|----------|---------|---------|
+<tr><td><strong>Code</strong></td><td>NPHIES-101</td><td>الكود</td></tr>
+<tr><td><strong>Format</strong></td><td>Online, On-Demand</td><td>عبر الإنترنت</td></tr>
+<tr><td><strong>Duration</strong></td><td>180 minutes</td><td>180 دقيقة</td></tr>
+<tr><td><strong>Level</strong></td><td>Foundation-Advanced</td><td>متعدد المستويات</td></tr>
+<tr><td><strong>Language</strong></td><td>Bilingual AR/EN</td><td>ثنائي اللغة</td></tr>
+<tr><td><strong>Provider</strong></td><td>BrainSAIT Academy</td><td>مقدم الدورة</td></tr>
+</tbody></table></div>
+---
+
+<strong>© 2026 BrainSAIT Academy | Powering Healthcare Excellence</strong>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-nphies-ai-mastery') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-nphies-ai-mastery', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('nphies-ai-mastery')) enrolled.push('nphies-ai-mastery');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'nphies-ai-mastery');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-nphies-ai-mastery') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-nphies-ai-mastery', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-nphies-ai-mastery', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-nphies-ai-mastery', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-nphies-ai-mastery', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-nphies-ai-mastery') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'NPHIES-AI Mastery',
+        slug: 'nphies-ai-mastery',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-nphies-ai-mastery') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-nphies-ai-mastery.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

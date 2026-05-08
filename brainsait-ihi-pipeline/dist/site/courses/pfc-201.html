@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A Guide to Shadowing | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Person- and Family-Centered Care</span>
+        <span class="bg-secondary-container/20 text-on-secondary-container px-sm py-1 rounded-full font-label-md text-label-md">PFC-201</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">A Guide to Shadowing</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">PFC 201: دليل الظللة</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">60</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">16 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="0">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          After completing this course, you will be able to:
+
+- Define patient and family shadowing.
+- List five steps for conducting a successful shadowing project.
+- Describe how to interact with patients, families, and clinical staff involved in a shadowing project.
+- Discuss how you can use your shadowing experience to create a care experience flow map, observational summary, and final report.
+- Explain how shadowing can help you come up with ideas for changes to improve care.
+
+<strong class="text-on-surface font-semibold">Estimated Time of Completion</strong>: 30 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="1">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">English Overview</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course equips health professionals to strengthen person-centered communication, shared decisions, and family engagement while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="2">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">نظرة عامة بالعربية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في التواصل المتمحور حول الشخص، والقرار المشترك، وإشراك الأسرة مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Learning Outcomes | مخرجات التعلم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- Define patient and family shadowing.
+- List five steps for conducting a successful shadowing project.
+- Describe how to interact with patients, families, and clinical staff involved in a shadowing project.
+- Discuss how you can use your shadowing experience to create a care experience flow map, observational summary, and final report.
+- Explain how shadowing can help you come up with ideas for changes to improve care.
+- <strong class="text-on-surface font-semibold">Code:</strong> PFC 201
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-201" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+- <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-201" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- تطبيق مبادئ الرعاية المتمحورة حول الشخص والأسرة في المسار العلاجي.
+- تحسين مهارات التواصل وبناء القرار المشترك مع المستفيدين.
+- رفع جودة تجربة المستفيد عبر خطوات عملية قابلة للمتابعة.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="4">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: Core Concepts</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> This lesson introduces core concepts of A Guide to Shadowing and how to operationalize them. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 1: المفاهيم الجوهرية</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- <strong class="text-on-surface font-semibold">Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong class="text-on-surface font-semibold">Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong class="text-on-surface font-semibold">Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong class="text-on-surface font-semibold">Local scenario:</strong> Use this course to improve communication at discharge and involve families in care transitions.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- <strong class="text-on-surface font-semibold">بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong class="text-on-surface font-semibold">الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong class="text-on-surface font-semibold">الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong class="text-on-surface font-semibold">سيناريو محلي:</strong> تُستخدم الدورة من أجل تحسين التواصل عند الخروج وإشراك الأسرة في انتقالات الرعاية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+1. <strong class="text-on-surface font-semibold">Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong class="text-on-surface font-semibold">Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong class="text-on-surface font-semibold">Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong class="text-on-surface font-semibold">Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+1. <strong class="text-on-surface font-semibold">استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong class="text-on-surface font-semibold">اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong class="text-on-surface font-semibold">مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong class="text-on-surface font-semibold">نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td></tr>
+|<hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shared decision-making</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتخاذ القرار المشترك</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care transition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انتقال الرعاية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Experience measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر تجربة المستفيد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Empathy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعاطف المهني</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Activation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تمكين المستفيد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Health literacy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الثقافة الصحية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient-centered care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية المتمحورة حول المريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Teach-back method</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تقنية التحقق من الفهم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cultural competence</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الكفاءة الثقافية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient rights</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حقوق المريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Informed consent</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموافقة المستنيرة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient portal</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بوابة المريض الإلكترونية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care plan</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خطة الرعاية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient advocate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مناصر المريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Discharge planning</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخطيط الخروج</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Bedside manner</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأسلوب السريري مع المريض</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/pfc-201
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- Institute for Patient- and Family-Centered Care: https://www.ipfcc.org
+- MOH Patient Rights Charter (Saudi): https://www.moh.gov.sa
+- CBAHI PFCC Standards: https://www.cbahi.gov.sa
+- IHI PFC Resource Hub: https://www.ihi.org/Topics/PFCC
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Select one department and one measurable problem.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Form a multidisciplinary micro-team.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Define baseline, target, and data collection frequency.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Run at least one improvement test and document findings.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Report outcomes to quality governance and plan next-cycle spread.</span></div>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Develop a one-page patient communication guide in Arabic for your department.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Invite at least one patient or family representative to a quality or care planning meeting.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Audit patient satisfaction data and identify two improvement priorities for your unit.</span></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">اختيار قسم واحد ومشكلة قابلة للقياس.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تشكيل فريق مصغر متعدد التخصصات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تحديد خط الأساس والهدف وتواتر جمع البيانات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] إعداد دليل تواصل مع المريض من صفحة واحدة باللغة العربية لقسمك.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">دعوة مريض أو ممثل أسرة واحد على الأقل للمشاركة في اجتماع جودة أو تخطيط رعاية.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">مراجعة بيانات رضا المستفيدين وتحديد أولويتين للتحسين في وحدتك.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="10">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Continuing Education Credits</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          Course completion typically earns 0.5 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/education/ihi-open-school/continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a>
+
+See full detailsSuccessful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to .5 Medical Knowledge MOC points in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program. It is the CME activity provider's responsibility to submit participant completion information to ACCME for the purpose of granting ABIM MOC credit.
+
+In support of improving patient care, the Institute for Healthcare Improvement is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC) to provide continuing education for the health care team.
+
+The Institute for Healthcare Improvement designates this internet enduring activity for a maximum of .5 <em class="text-on-surface">AMA PRA Category 1 Credit(s)™.</em> Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+The Institute for Healthcare Improvement designates this internet enduring activity for a maximum of .5 credits for nurses and pharmacists. This activity is approved to award .5 credits toward Certified Professional in Patient Safety (CPPS) recertification.
+
+This activity/program is approved by NAHQ® for .5 CPHQ CE credits. 
+
+By attending PFC 201 offered by the Institute for Healthcare Improvement participants may earn up to .5 ACHE Qualifying Education Hours toward initial certification or recertification of the Fellow of the American College of Healthcare Executives (FACHE) designation.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="11">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1 Deep Dive: The Art and Science of Shadowing | الدرس الأول approfondi: فن وعلم الظللة</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.1: Understanding Patient and Family Shadowing | فهم ظلة المريض والأسرة</h4>
+
+Patient and family shadowing is a qualitative research and improvement method that involves observing patients and families as they move through the healthcare experience. Unlike traditional quality assessment methods that rely on surveys, chart reviews, or staff interviews, shadowing places the patient experience at the center of investigation.
+
+ظلة المريض والأسرة هي طريقة بحث نوعية وتحسين تتضمن مراقبة المرضى والعائلات أثناء انتقالهم عبر تجربة الرعاية الصحية. على عكس طرق تقييم الجودة التقليدية التي تعتمد على الاستبيانات ومراجعة السجلات أو مقابلات الموظفين، تضع الظللة تجربة المريض في مركز التحقيق.
+
+The power of shadowing lies in its ability to reveal what actually happens in the patient journey—the delays, the gaps in communication, the moments of confusion, the instances where the system works well, and the opportunities for improvement. Staff often believe they understand the patient experience, but shadowing frequently reveals surprising insights that challenge assumptions.
+
+تكمن قوة الظللة في قدرتها على كشف ما يحدث بالفعل في رحلة المريض—التأخيرات وفجوات التواصل وح moments of الارتباك واللحظات التي يعمل فيها النظام بشكل جيد والفرص للتحسين. غالبًا ما يعتقد الموظفون أنهم يفهمون تجربة المريض، لكن الظللة frequently تكشف رؤى surprising تتحدى الافتراضات.
+
+<strong class="text-on-surface font-semibold">Why Shadowing Matters in Saudi Healthcare | لماذا الظللة مهمة في الرعاية الصحية السعودية:</strong>
+
+In the Saudi healthcare context, shadowing takes on particular importance due to several factors:
+
+في سياق الرعاية الصحية السعودي، تأخذ الظللة أهمية خاصة due to عدة عوامل:
+
+1. <strong class="text-on-surface font-semibold">Cultural considerations | الاعتبارات الثقافية</strong>: Saudi patients often are accompanied by extended family members whose experiences and perspectives are integral to understanding the care journey. Shadowing captures these multiple perspectives.
+
+often يرافق المرضى السعوديين أفراد من family الموسعة whose experiences و perspectives هي جزء لا يتجزأ من فهم رحلة الرعاية. تلتقط الظللة هذه المنظورات المتعددة.
+
+2. <strong class="text-on-surface font-semibold">Rapid transformation | التحول السريع</strong>: Under Vision 2030, Saudi healthcare is undergoing significant transformation. Shadowing provides insights into how transformation initiatives affect actual patient experience.
+
+في إطار رؤية 2030، الرعاية الصحية السعودية تمر بتحول كبير. توفر الظللة رؤى حول كيفية تأثير مبادرات التحول على تجربة المريض الفعلية.
+
+3. <strong class="text-on-surface font-semibold">Quality improvement priorities | أولويات تحسين الجودة</strong>: As Saudi Arabia works toward international quality standards through CBAHI, understanding patient experience becomes essential for achieving accreditation goals.
+
+بينما تسعى المملكة العربية السعودية لتحقيق معايير الجودة الدولية من خلال CBAHI، فإن فهم تجربة المريض يصبح ضروريًا لتحقيق أهداف الاعتماد.
+
+4. <strong class="text-on-surface font-semibold">Patient-centered care emphasis | تأكيد الرعاية المتمحورة حول المريض</strong>: Shadowing directly supports the PFCC principles embedded in CBAHI standards and MOH quality initiatives.
+
+الظللة تدعم directly مبادئ PFCC المدمجة في معايير CBAHI ومبادرات وزارة الصحة للجودة.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.2: The Five Steps of Shadowing | الخطوات الخمس للظللة</h4>
+
+Effective shadowing requires systematic planning and execution. The following five steps provide a comprehensive framework for conducting shadowing projects:
+
+تتطلب الظللة الفعالة تخطيطًا وتنفيذًا منهجيًا. توفر الخطوات الخمس التالية إطارًا شاملاً لإجراء مشاريع الظللة:
+
+<strong class="text-on-surface font-semibold">Step 1: Define the Purpose and Scope | الخطوة 1: تحديد الغرض والنطاق</strong>
+
+Before beginning any shadowing project, clearly define what you hope to learn and what boundaries will guide the observation. Consider:
+
+قبل البدء في أي مشروع ظللة، حدد بوضوح ما تأمل تعلمه وما هي الحدود التي ستوجه الملاحظة. النظر في:
+
+- What specific question are you trying to answer?
+- What patient populations or care processes will be included?
+- What is the time frame for observation?
+- What resources are available for the project?
+
+- ما السؤال المحدد الذي تحاول الإجابة عليه؟
+- ما مجتمعات المرضى أو عمليات الرعاية التي سيتم تضمينها؟
+- ما الإطار الزمني للملاحظة؟
+- ما الموارد المتاحة للمشروع؟
+
+Example purpose statements:
+- "To understand the experience of elderly patients navigating the discharge process from hospital to home"
+- "To identify barriers to timely cancer diagnosis in the PHC setting"
+- "To understand how patients perceive the quality of communication during outpatient visits"
+
+<strong class="text-on-surface font-semibold">Step 2: Obtain Necessary Approvals and Prepare | الخطوة 2: الحصول على الموافقات اللازمة والاستعداد</strong>
+
+Shadowing involves human subjects and requires appropriate ethical oversight and preparation:
+
+تتضمن الظللة بشرًا وتتطلب إشرافًا أخلاقيًا مناسبًا وإعدادًا:
+
+- Obtain IRB or ethics committee approval as required
+- Develop consent procedures for patients and families
+- Prepare observation tools and documentation forms
+- Brief staff in the observation areas
+- Establish protocols for handling observed safety concerns
+
+- الحصول على موافقة IRB أو لجنة الأخلاقيات حسب الحاجة
+- تطوير إجراءات الموافقة للمرضى والعائلات
+- إعداد أدوات الملاحظة ونماذج التوثيق
+- إدراج الموظفين في مناطق الملاحظة
+- إنشاء بروتوكولات للتعامل مع مخاوف السلامة المرصودة
+
+<strong class="text-on-surface font-semibold">Step 3: Conduct Observations | الخطوة 3: إجراء الملاحظات</strong>
+
+During shadowing, focus on capturing the complete patient journey:
+
+أثناء الظللة، ركز على التقاط رحلة المريض الكاملة:
+
+- Observe from the patient/family perspective, not from staff perspective
+- Take detailed notes on what you see, hear, and experience
+- Note both positive interactions and opportunities
+- Capture timing of key activities and waits
+- Observe non-verbal communication
+- Document physical environment factors
+- Be unobtrusive but engaged
+
+- الملاحظة من منظور المريض/العائلة، وليس من منظور الموظف
+- خذ ملاحظات مفصلة عما تراه وتسمعه وتختبره
+- لاحظ التفاعلات الإيجابية والفرص معًا
+- capture توقيت الأنشطة الرئيسية والانتظارات
+- observe التواصل غير اللفظي
+- توثيق عوامل البيئة المادية
+-كن غير واضح maar enga ged
+
+<strong class="text-on-surface font-semibold">Step 4: Analyze and Synthesize Findings | الخطوة 4: تحليل وتوليف النتائج</strong>
+
+After observations, systematically analyze your findings:
+
+بعد الملاحظات، حلل findings الخاصة بك بشكل منهجي:
+
+- Review notes and identify patterns
+- Group observations into themes
+- Identify "pain points" and "bright spots"
+- Look for root causes of problems
+- Consider the patient/family perspective
+- Connect findings to improvement opportunities
+
+- مراجعة الملاحظات وتحديد الأنماط
+- تجميع الملاحظات في موضوعات
+- تحديد "نقاط الألم" و"النقاط المشرقة"
+- ابحث عن الأسباب الجذرية للمشاكل
+- ضع في اعتبارك منظور المريض/العائلة
+- ربط النتائج بفرص التحسين
+
+<strong class="text-on-surface font-semibold">Step 5: Share Findings and Drive Improvement | الخطوة 5: مشاركة النتائج ودفع التحسين</strong>
+
+The value of shadowing lies in translating observations into action:
+
+تكمن قيمة الظللة في تحويل الملاحظات إلى إجراء:
+
+- Create clear, compelling reports of findings
+- Share with staff and leadership
+- Involve patients/families in presenting findings
+- Connect observations to specific improvement ideas
+- Track implementation of improvements
+- Close the loop with observers and staff
+
+- إنشاء تقارير واضحة وجذابة للنتائج
+- المشاركة مع الموظفين والقيادة
+- إشراك المرضى/العائلات في تقديم النتائج
+- ربط الملاحظات بأفكار تحسين محددة
+- تتبع تنفيذ التحسينات
+-闭环 مع المراقبين والموظفين
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.3: Shadowing in Different Care Settings | الظللة في إعدادات الرعاية المختلفة</h4>
+
+Shadowing techniques can be adapted to various healthcare settings:
+
+يمكن تكييف تقنيات الظللة مع إعدادات الرعاية الصحية المختلفة:
+
+<strong class="text-on-surface font-semibold">Hospital Inpatient Settings | إعدادات المرضى الداخليين في المستشفى:</strong>
+- Shadow from admission through discharge
+- Observe care transitions between units
+- Document family involvement and communication
+- Capture the physical environment impact
+
+<strong class="text-on-surface font-semibold">Ambulatory/Outpatient Settings | إعدادات العيادات الخارجية/الط ambulatory:</strong>
+- Observe the full visit from arrival to departure
+- Document wait times and flow
+- Assess communication between providers and patients
+- Observe patient education and understanding
+
+<strong class="text-on-surface font-semibold">Primary Care Settings | إعدادات الرعاية الأولية:</strong>
+- Focus on the patient-centered medical home elements
+- Document care coordination activities
+- Observe preventive care delivery
+- Capture chronic disease management interactions
+
+<strong class="text-on-surface font-semibold">Emergency Department Settings | إعدادات قسم الطوارئ:</strong>
+- Observe patient prioritization and flow
+- Document communication during high-stress situations
+- Capture transition to inpatient or discharge
+- Assess pain management and comfort
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2 Deep Dive: Creating Shadowing Documentation Tools | الدرس الثاني approfondi: إنشاء أدوات توثيق الظللة</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.1: Care Experience Flow Maps | خرائط تجربة الرعاية التدفقية</h4>
+
+A care experience flow map is a visual representation of the patient journey that captures the sequence of interactions, locations, and experiences. Creating these maps helps teams see the patient experience holistically and identify improvement opportunities.
+
+خرائط تجربة الرعاية هي تمثيل مرئي لرحلة المريض يلتقط تسلسل التفاعلات والمواقع والتجارب. helps إنشاء هذه الخرائط الفرق على رؤية تجربة المريض بشكل شامل وتحديد فرص التحسين.
+
+<strong class="text-on-surface font-semibold">Components of a Flow Map | مكونات خريطة التدفق:</strong>
+
+1. <strong class="text-on-surface font-semibold">Timeline | الجدول الزمني</strong>: Sequential events from first contact through completion
+
+2. <strong class="text-on-surface font-semibold">Locations | المواقع</strong>: Physical spaces encountered (waiting room, exam room, etc.)
+
+3. <strong class="text-on-surface font-semibold">Interactions | التفاعلات</strong>: Contacts with staff, providers, systems
+
+4. <strong class="text-on-surface font-semibold">Emotions | المشاعر</strong>: Patient/family emotional states (anxiety, confusion, relief, etc.)
+
+5. <strong class="text-on-surface font-semibold">Pain points | نقاط الألم</strong>: Difficult or frustrating elements
+
+6. <strong class="text-on-surface font-semibold">Bright spots | النقاط المشرقة</strong>: Positive experiences
+
+7. <strong class="text-on-surface font-semibold">Opportunities | الفرص</strong>: Areas for potential improvement
+
+<strong class="text-on-surface font-semibold">Flow Map Example: Outpatient Visit | مثال خريطة التدفق: زيارة العيادات الخارجية</strong>
+
+```
+[Arrival at facility]
+    ↓
+[Check-in (wait: 15 min)] → Emotion: anxiety
+    ↓
+[Vital signs/rooming] → Interaction: nurse
+    ↓
+[Waiting for provider (wait: 25 min)] → Emotion: frustration
+    ↓
+[Provider encounter (15 min)] → Interaction: physician
+    ↓
+[Discharge/ checkout (wait: 10 min)] → Emotion: relief
+    ↓
+[Departure]
+```
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.2: Observational Summary Tools | أدوات الملخص الملاحظ</h4>
+
+The observational summary captures key findings from shadowing in a structured format that can be shared with stakeholders and used for improvement planning.
+
+يلخص الملخص الملاحظ النتائج الرئيسية من الظللة بتنسيق منظم يمكن مشاركته مع أصحاب المصلحة واستخدامه لتخطيط التحسين.
+
+<strong class="text-on-surface font-semibold">Observational Summary Template | قالب الملخص الملاحظ:</strong>
+
+<strong class="text-on-surface font-semibold">Project Information | معلومات المشروع:</strong>
+- Date(s) of observation: _____________________
+- Observer name: _____________________
+- Setting: _____________________
+- Number of patients/families observed: _____________________
+
+<strong class="text-on-surface font-semibold">Summary of Observations | ملخص الملاحظات:</strong>
+
+<em class="text-on-surface">What did you see that was unexpected?</em>
+_________________________________________________
+
+<em class="text-on-surface">What worked well from the patient/family perspective?</em>
+_________________________________________________
+
+<em class="text-on-surface">What caused difficulty, delay, or confusion?</em>
+_________________________________________________
+
+<em class="text-on-surface">What emotional moments did you observe?</em>
+_________________________________________________
+
+<em class="text-on-surface">What would patients/families change if they could?</em>
+_________________________________________________
+
+<strong class="text-on-surface font-semibold">Themes Identified | الموضوعات المحددة:</strong>
+1. _____________________
+2. _____________________
+3. _____________________
+
+<strong class="text-on-surface font-semibold">Recommended Improvements | التحسينات الموصى بها:</strong>
+1. _____________________
+2. _____________________
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Patient Experience Case Studies | دراسات حالة تجربة المريض السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 1: Shadowing to Improve Discharge Process | دراسة حالة 1: الظللة لتحسين عملية الخروج</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: Medical unit at a MOH hospital in Dammam
+
+<strong class="text-on-surface font-semibold">Shadowing Approach | نهج الظللة</strong>:
+- Observed 15 patients throughout the discharge process
+- Documented each step from physician discharge order to patient departure
+- Captured patient and family emotional states and questions
+
+<strong class="text-on-surface font-semibold">Key Findings | النتائج الرئيسية</strong>:
+- Average time from discharge order to departure: 4.2 hours
+- Primary delay: waiting for medication reconciliation and discharge instructions
+- Patient confusion about follow-up appointments and medication changes
+- Family members often not present during discharge education
+
+<strong class="text-on-surface font-semibold">Improvements Implemented | التحسينات المنفذة</strong>:
+1. Implemented discharge checklist started 24 hours before planned discharge
+2. Created standardized discharge education session with teach-back verification
+3. Added family notification system to ensure family presence for discharge
+4. Developed discharge summary in Arabic with visual timeline
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Average discharge time reduced to 2.1 hours (50% improvement)
+- Patient understanding scores improved from 62% to 89%
+- Family satisfaction with discharge process improved significantly
+- Readmission rates within 30 days decreased by 18%
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 2: Shadowing to Enhance PHC Patient Experience | دراسة حالة 2: الظللة لتعزيز تجربة المريض في الرعاية الأولية</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإ_setting</strong>: PHC cluster with 12 health centers in Riyadh
+
+<strong class="text-on-surface font-semibold">Shadowing Approach | نهج الظللة</strong>:
+- Shadowed patients with chronic diseases (diabetes, hypertension)
+- Observed appointment scheduling, wait times, provider interactions
+- Captured patient challenges with medication adherence and lifestyle changes
+
+<strong class="text-on-surface font-semibold">Key Findings | النتائج الرئيسية</strong>:
+- Average total visit time: 95 minutes, with only 12 minutes with provider
+- Patients frequently confused about medication changes made at each visit
+- Limited time for lifestyle counseling due to time constraints
+- Difficulty reaching clinic by phone for questions or appointment changes
+
+<strong class="text-on-surface font-semibold">Improvements Implemented | التحسينات المنفذة</strong>:
+1. Implemented "after-visit summary" given to each patient
+2. Created chronic disease management care coordinator role
+3. Established callback system for medication questions
+4. Added patient portal for appointment management
+5. Extended appointment slots for chronic disease management
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Patient-reported understanding improved by 40%
+- Phone call volume decreased by 35%
+- Patient satisfaction scores increased from 71% to 88%
+- Medication adherence rates improved by 22%
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Patient Shadowing Toolkit for Saudi Healthcare | مجموعة أدوات الظللة للرعاية الصحية السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Shadowing Preparation Checklist | قائمة التحقق من إعداد الظللة</h4>
+
+<strong class="text-on-surface font-semibold">Before Observation | قبل الملاحظة:</strong>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Obtain ethical approval/waiver as required</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Identify patient population and settings to observe</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Develop observation protocol and tools</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Prepare consent materials in Arabic and English</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Brief staff in observation areas</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Schedule observation times to capture different days/shifts</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Ensure observer has appropriate identification and access</span></div>
+
+<strong class="text-on-surface font-semibold">During Observation | أثناء الملاحظة:</strong>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Obtain verbal consent from patient/family</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Introduce yourself and explain your role</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Position yourself to observe without interfering</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Take detailed, timestamped notes</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Note both positive and negative observations</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Capture patient/family quotes when possible</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Observe physical environment factors</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Note non-verbal communication</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Be prepared to stop if patient becomes distressed</span></div>
+
+<strong class="text-on-surface font-semibold">After Observation | بعد الملاحظة:</strong>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Thank patient/family for their time</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Review and expand notes while fresh</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Complete observational summary</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Store data securely</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Share preliminary findings with team</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Plan analysis and synthesis</span></div>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Bilingual Observation Guide | دليل الملاحظة ثنائي اللغة</h4>
+
+<strong class="text-on-surface font-semibold">Key Observations to Capture | الملاحظات الرئيسية للتقاطها:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Observation Area</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منطقة الملاحظة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">English Questions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Arabic الأسئلة</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Wait times</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أوقات الانتظار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">How long did they wait at each step?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">كم من الوقت انتظروا في كل مرحلة؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Communication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التواصل</td><td class="px-sm py-xs text-body-md text-on-surface-variant">How were they spoken to?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">كيف تحدثوا إليهم؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Decision-making</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتخاذ القرار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Were they involved in decisions?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل أشركوا في القرارات؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Information</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المعلومات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Did they receive clear information?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل تلقوا معلومات واضحة؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Emotions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المشاعر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">What emotions were evident?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ما المشاعر الواضحة؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Environment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البيئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Was the environment comfortable?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل كانت البيئة مريحة؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Barriers</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العوائق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">What challenges did they face?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ما التحديات التي واجهوها؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Positive moments</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اللحظات الإيجابية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">What worked well for them?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ما الذي نجح لهم؟</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shadowing</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الظللة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Observational method for understanding patient experience</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient experience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تجربة المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Overall interaction with healthcare system</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient journey</td><td class="px-sm py-xs text-body-md text-on-surface-variant">رحلة المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sequence of encounters from first to last contact</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient-centered care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية المتمحورة حول المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Care that respects patient preferences and needs</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Family-centered care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية المتمحورة حول الأسرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Care that involves family in decision-making</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care experience flow map</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خريطة تدفق تجربة الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual representation of patient journey</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pain point</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نقطة الألم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Area of difficulty or frustration</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Bright spot</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نقطة مشرقة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Positive aspect of experience</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Observational summary</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ملخص الملاحظات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Structured capture of key findings</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Teach-back method</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طريقة التحقق من الفهم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Verify patient understanding by having them explain</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shared decision-making</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتخاذ القرار المشترك</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Collaborative process between provider and patient</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient engagement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إشراك المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Active involvement of patients in care</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Emotional journey</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرحلة العاطفية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Changes in patient emotions during care</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient narrative</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سرد المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Story of care experience from patient perspective</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Service recovery</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استعادة الخدمة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process of addressing patient complaints</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient advisory council</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مجلس استشاري المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Group of patients advising on policies</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient and family advisor</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مستشار المريض والأسرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient/family member advising organization</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Experience of care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تجربة الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Broader concept including quality and satisfaction</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient satisfaction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">رضا المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure of patient subjective evaluation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Service quality</td><td class="px-sm py-xs text-body-md text-on-surface-variant">جودة الخدمة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure of meeting patient expectations</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cultural competence</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الكفاءة الثقافية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability to work across cultures</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Language services</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خدمات اللغة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Translation/interpretation services</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Health literacy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الثقافة الصحية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability to understand health information</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Informed consent</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموافقة المستنيرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Permission based on adequate information</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient rights</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حقوق المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Entitlements of patients in healthcare</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care transition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انتقال الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Movement between care settings</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Discharge planning</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخطيط الخروج</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Planning for leaving healthcare facility</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Continuity of care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استمرارية الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Coherent care over time</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care coordination</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تنسيق الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Organizing care activities</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3 Deep Dive: Creating Patient-Centered Care Environments | الدرس الثالث approfondi: إنشاء بيئات رعاية متمحورة حول المريض</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.1: Physical Environment and Patient Experience | البيئة المادية وتجربة المريض</h4>
+
+The physical healthcare environment significantly impacts patient experience, outcomes, and safety. Research demonstrates that environmental factors influence healing, satisfaction, and even clinical outcomes.
+
+تؤثر بيئة الرعاية الصحية المادية بشكل كبير على تجربة المريض والنتائج والسلامة. يوضح البحث أن العوامل البيئية تؤثر على الشفاء والرضا والنتائج السريرية.
+
+<strong class="text-on-surface font-semibold">Key Environmental Factors | العوامل البيئية الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Lighting | الإضاءة</strong>: Natural light improves outcomes and satisfaction; adequate task lighting supports clinical care
+2. <strong class="text-on-surface font-semibold">Noise | الضوضاء</strong>: Excess noise causes stress and interferes with rest; quiet environments support healing
+3. <strong class="text-on-surface font-semibold">Temperature | درجة الحرارة</strong>: Comfortable temperatures support patient comfort and safety
+4. <strong class="text-on-surface font-semibold">Space | المساحة</strong>: Adequate space supports patient dignity and family involvement
+5. <strong class="text-on-surface font-semibold">Cleanliness | النظافة</strong>: Clean environments reduce infection risk and affect patient perception
+
+<strong class="text-on-surface font-semibold">Environmental Improvement Strategies | استراتيجيات تحسين البيئة:</strong>
+- Involve patients in evaluating environment
+- Use patient feedback for improvements
+- Implement environmental standards
+- Create healing-friendly designs
+- Maintain cleanliness rigorously
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.2: Communication Excellence | التميز في التواصل</h4>
+
+Effective communication is fundamental to patient-centered care. Communication failures are a leading cause of patient complaints and adverse events.
+
+التواصل الفعال أساسي للرعاية المتمحورة حول المريض. إخفاقات التواصل هي السبب الرئيسي لشكاوى المرضى والأحداث السلبية.
+
+<strong class="text-on-surface font-semibold">Communication Competencies | كفاءات التواصل:</strong>
+
+1. <strong class="text-on-surface font-semibold">Active listening | الاستماع النشط</strong>: Hearing and understanding patient concerns
+2. <strong class="text-on-surface font-semibold">Clear explanation | التوضيح الواضح</strong>: Using language patients understand
+3. <strong class="text-on-surface font-semibold">Empathy | التعاطف</strong>: Recognizing and responding to patient emotions
+4. <strong class="text-on-surface font-semibold">Shared decision-making | اتخاذ القرار المشترك</strong>: Involving patients in care decisions
+5. <strong class="text-on-surface font-semibold">Teach-back technique | تقنية التحقق من الفهم</strong>: Confirming patient understanding
+
+<strong class="text-on-surface font-semibold">Improving Communication | تحسين التواصل:</strong>
+
+- Communication skills training
+- Using plain language
+- Providing written information
+- Using interpreters as needed
+- Implementing communication standards
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.3: Patient Engagement Strategies | استراتيجيات إشراك المريض</h4>
+
+Engaged patients have better outcomes and experiences. Healthcare organizations can implement strategies to increase patient engagement:
+
+المرضى المنخرطون لديهم نتائج وتجارب أفضل. يمكن للمؤسسات الصحية تنفيذ استراتيجيات لزيادة إشراك المريض:
+
+<strong class="text-on-surface font-semibold">Engagement Strategies | استراتيجيات الإشراك:</strong>
+
+1. <strong class="text-on-surface font-semibold">Health education | التثقيف الصحي</strong>: Provide knowledge and skills for self-management
+2. <strong class="text-on-surface font-semibold">Goal setting | تحديد الأهداف</strong>: Collaboratively set health goals with patients
+3. <strong class="text-on-surface font-semibold">Care planning | تخطيط الرعاية</strong>: Develop care plans with patient input
+4. <strong class="text-on-surface font-semibold">Self-monitoring | المراقبة الذاتية</strong>: Support patient monitoring of health status
+5. <strong class="text-on-surface font-semibold">Feedback mechanisms | آليات التغذية الراجعة</strong>: Collect and act on patient feedback
+6. <strong class="text-on-surface font-semibold">Digital engagement | الإشراك الرقمي</strong>: Use patient portals and apps
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 4 Deep Dive: Advanced Patient-Centered Concepts | الدرس الرابع approfondi: مفاهيم متقدمة متمحورة حول المريض</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 4.1: Patient-Reported Outcomes and Experience | النتائج والتجربة المُبلغ عنها من المريض</h4>
+
+Measuring outcomes and experience from the patient perspective provides essential information for improving care. Patient-reported outcome measures (PROMs) and patient-reported experience measures (PREMs) capture information that traditional clinical measures miss.
+
+قياس النتائج والتجربة من منظور المريض provides معلومات أساسية لتحسين الرعاية. تلتقط مقاييس النتائج المُبلغ عنها من المريض (PROMs) ومقاييس التجربة المُبلغ عنها من المريض (PREMs) information التي تفقدها المقاييس السريرية التقليدية.
+
+<strong class="text-on-surface font-semibold">Implementing PROs and PREs | تنفيذ PROs و PREs:</strong>
+
+- Select relevant measures for your population
+- Collect data systematically
+- Use data for improvement
+- Report to patients and families
+- Link to quality improvement
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 4.2: Shared Decision-Making in Practice | اتخاذ القرار المشترك في الممارسة</h4>
+
+Shared decision-making involves patients and providers collaborating on care decisions, considering evidence and patient preferences. This approach improves decision quality and patient satisfaction.
+
+يتضمن اتخاذ القرار المشترك المرضى والمقدمين يتعاونون في قرارات الرعاية، مع مراعاة الأدلة وتفضيلات المريض. هذا النهج يحسن جودة القرار ورضا المريض.
+
+<strong class="text-on-surface font-semibold">Shared Decision-Making Components | مكونات اتخاذ القرار المشترك:</strong>
+
+1. <strong class="text-on-surface font-semibold">Choice talk | حديث الاختيار</strong>: Discuss that decision is to be made and options exist
+2. <strong class="text-on-surface font-semibold">Option talk | حديث الخيارات</strong>: Present options and describe benefits/harms
+3. <strong class="text-on-surface font-semibold">Decision talk | حديث القرار</strong>: Discuss patient preferences and make decision
+
+<strong class="text-on-surface font-semibold">Implementation Tools | أدوات التنفيذ:</strong>
+- Decision aids for specific decisions
+- Training for clinicians
+- Documentation systems
+- Patient education materials
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 4.3: Family Engagement in Care | إشراك الأسرة في الرعاية</h4>
+
+Family members often play critical roles in patient care and support. Engaging families appropriately improves outcomes and experience.
+
+ تلعب أفراد الأسرة often أدوارًا مهمة في رعاية ودعم المريض. إشراك العائلات بشكل مناسب يحسن النتائج والتجربة.
+
+<strong class="text-on-surface font-semibold">Family Engagement Strategies | استراتيجيات إشراك الأسرة:</strong>
+- Flexible visiting policies
+- Family involvement in care planning
+- Family education and training
+- Caregiver support programs
+- Family conferences as needed
+- Communication with family members
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Patient-Centered Care Case Studies | دراسات حالة الرعاية المتمحورة حول المريض في السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 3: Patient Communication Improvement | دراسة حالة 3: تحسين التواصل مع المريض</h4>
+
+<strong class="text-on-surface font-semibold">Setting</strong>: MOH hospital in Jeddah
+
+<strong class="text-on-surface font-semibold">Challenge</strong>: Low patient satisfaction scores related to communication, particularly among non-Arabic speaking patients
+
+<strong class="text-on-surface font-semibold">Intervention</strong>:
+- Communication skills training for all clinical staff
+- Implementation of standardized communication tools
+- Enhanced interpretation services
+- Patient communication guide in multiple languages
+- Real-time feedback collection
+
+<strong class="text-on-surface font-semibold">Results</strong>:
+- Patient satisfaction with communication improved from 58% to 87%
+- Complaint rate decreased significantly
+- Staff confidence in communication improved
+- Model spread to other hospitals
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 4: Family-Centered Care in Pediatric | دراسة حالة 4: الرعاية المتمحورة حول الأسرة في طب الأطفال</h4>
+
+<strong class="text-on-surface font-semibold">Setting</strong>: Pediatric hospital in Riyadh
+
+<strong class="text-on-surface font-semibold">Challenge</strong>: Parents expressed concerns about involvement in their child's care and access to information
+
+<strong class="text-on-surface font-semibold">Intervention</strong>:
+- Parent room rounds where families participate
+- Parent education sessions daily
+- Parent-friendly information materials
+- Family advisory council established
+- Parent feedback system implemented
+
+<strong class="text-on-surface font-semibold">Results</strong>:
+- Parent satisfaction improved from 62% to 91%
+- Parent engagement in care increased
+- Better clinical outcomes observed
+- Model adopted by other pediatric facilities
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Patient Engagement Tools | أدوات إشراك المريض</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Patient-Centered Care Assessment Tool | أداة تقييم الرعاية المتمحورة حول المريض</h4>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dimension</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البُعد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Current Practice</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الممارسة الحالية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement Opportunity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فرصة التحسين</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Respect and dignity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاحترام والكرامة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Information sharing</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تبادل المعلومات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Participation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المشاركة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Collaboration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعاون</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Physical comfort</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الراحة الجسدية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Emotional support</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الدعم العاطفي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Family involvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إشراك الأسرة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Continuity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستمرارية</td></tr>
+</table></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Resources and Tools | موارد وأدوات إضافية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Patient Experience Improvement Toolkit | مجموعة أدوات تحسين تجربة المريض</h4>
+
+<strong class="text-on-surface font-semibold">Self-Assessment | التقييم الذاتي:</strong>
+- Review patient feedback
+- Assess staff communication skills
+- Evaluate physical environment
+- Identify gaps in family engagement
+- Determine readiness for improvement
+
+<strong class="text-on-surface font-semibold">Improvement Planning | تخطيط التحسين:</strong>
+- Prioritize improvement areas
+- Set measurable goals
+- Design interventions
+- Implement systematically
+- Measure and adjust
+
+<strong class="text-on-surface font-semibold">Sustainability | الاستدامة:</strong>
+- Embed in standard work
+- Train new staff
+- Monitor continuously
+- Recognize and reinforce
+- Continuously improve
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Summary and Application | الملخص والتطبيق</h3>
+
+This course has provided comprehensive knowledge and tools for implementing patient and family-centered care. Key learning points include:
+
+قدمت هذه الدورة معرفة وأدوات شاملة لتنفيذ الرعاية المتمحورة حول المريض والأسرة. تشمل نقاط التعلم الرئيسية:
+
+1. Shadowing provides powerful insights into patient experience
+2. Creating care experience flow maps helps identify improvement opportunities
+3. Effective communication is fundamental to PFCC
+4. Patient engagement improves outcomes and experience
+5. Family involvement is essential, especially in Saudi cultural context
+6. Measurement drives improvement
+7. PFCC requires ongoing commitment and action
+
+<strong class="text-on-surface font-semibold">Application Steps | خطوات التطبيق:</strong>
+
+1. Conduct shadowing in your setting
+2. Identify key patient experience issues
+3. Design improvements with patient/family input
+4. Implement and measure
+5. Spread successful practices
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Advanced Content</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="12">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Advanced Topics in Patient and Family-Centered Care</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 1: The Evolution of Patient-Centered Care</h3>
+
+Patient-centered care has evolved from a relatively simple concept to a comprehensive framework that influences all aspects of healthcare delivery. Understanding this evolution helps practitioners appreciate the depth and breadth of PFCC.
+
+The origins of patient-centered care can be traced to the patient rights movement of the 1970s, which emphasized respect for patient autonomy and the importance of patient preferences. Since then, the concept has expanded to include multiple dimensions of care.
+
+Modern PFCC encompasses multiple domains including respect for patient values, coordination and integration of care, information and education, comfort, family involvement, and continuity and transition. Each domain requires specific attention and actions.
+
+The Institute of Medicine identified patient-centeredness as one of six aims for improved healthcare, along with safety, effectiveness, timeliness, efficiency, and equity. This recognition elevated patient-centeredness to a fundamental goal for healthcare systems.
+
+International organizations have also championed patient-centered approaches. The WHO has called for people-centered healthcare that places people and communities at the center of health systems. This global focus has accelerated adoption of PFCC principles.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 2: Implementing PFCC at the Organizational Level</h3>
+
+Implementing PFCC requires changes at the organizational level, not just in individual interactions. Successful implementation involves multiple dimensions.
+
+Leadership is essential for PFCC implementation. Leaders must establish patient-centeredness as a priority, allocate resources, set expectations, and model patient-centered behaviors. Without visible leadership commitment, PFCC remains superficial.
+
+Organizational policies and procedures should reflect PFCC principles. This includes policies related to patient rights, family involvement, communication, consent, and complaints handling. Policy review should ensure alignment with PFCC values.
+
+Physical environment improvements support patient-centered care. This includes creating welcoming spaces, ensuring privacy, providing comfortable amenities, and designing spaces that support family involvement.
+
+Measurement and accountability systems should include patient experience metrics. This creates accountability for PFCC and provides data for improvement. Measures should be meaningful and actionable.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 3: PFCC in Specific Healthcare Settings</h3>
+
+PFCC principles apply to all healthcare settings, but implementation varies based on context. Understanding specific considerations helps in different settings.
+
+In primary care, PFCC focuses on continuous relationships, comprehensive care, and coordination. Patient-centered medical homes embody these principles in their structure and operations.
+
+In hospitals, PFCC involves attention to multiple dimensions including communication, involvement in care decisions, family engagement, and transitions. Hospitalized patients are particularly vulnerable and need extra attention to their preferences and comfort.
+
+In emergency settings, PFCC must balance efficiency with patient-centeredness. Providing information, involving families, and respecting preferences can be challenging in fast-paced environments but is still important.
+
+In palliative care, PFCC is especially critical. Respecting patient values, preferences, and goals of care is central to quality palliative care. Family involvement is particularly important at end of life.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 4: Measuring and Improving Patient Experience</h3>
+
+Measuring patient experience is essential for improving PFCC. Several approaches can be used.
+
+Surveys are the most common method for measuring patient experience. Standardized instruments like CAHPS provide reliable, comparable data. Custom surveys can address specific issues or aspects of care.
+
+Real-time feedback provides immediate information that can be used for rapid improvement. This includes patient comments, suggestion systems, and patient advisory councils.
+
+Patient advisory involvement provides input on policies, programs, and practices. Advisory councils meet regularly and provide ongoing perspective on patient experience.
+
+Root cause analysis of patient complaints can identify systemic issues and guide improvement. Learning from complaints should be systematic and lead to action.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 5: Building PFCC Culture</h3>
+
+Creating a culture that supports PFCC requires ongoing effort. Several factors are critical.
+
+Staff recruitment and training should emphasize PFCC values and skills. Hiring for service orientation and training in communication and customer service is important.
+
+Recognition and reward systems should recognize staff who demonstrate PFCC. This includes both formal recognition programs and informal acknowledgment.
+
+Quality improvement projects should include PFCC dimensions. This integrates patient-centeredness into improvement work rather than treating it separately.
+
+Leaders should be evaluated on PFCC performance. Accountability drives attention and action.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="13">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Summary and Application</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course has provided comprehensive knowledge for implementing patient and family-centered care. The principles and practices can be applied in any healthcare setting. Applying PFCC improves patient outcomes, experience, and satisfaction.
+
+The course has covered the foundational concepts of PFCC, including definition, key dimensions, and evidence of importance. Methods for understanding patient experience through shadowing have been provided. Practical approaches for improving communication, patient engagement, and family involvement have been presented. Strategies for implementing PFCC at the organizational level have been discussed.
+
+Implementation of PFCC requires commitment, resources, and ongoing effort. The tools and frameworks provided can guide implementation. Leadership, staff engagement, measurement, and continuous improvement are all essential.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="14">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Code:</strong> PFC 201
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-201" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="15">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-201" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+    <section>
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Related Courses</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+        
+        <a href="/courses/pfc-101.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Introduction to Person- and Family-Centered Care</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">PFC 101: مقدمة في الرعاية المتمركزة على الشخص والعائلة</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>90 min</span>
+        </a>
+        <a href="/courses/pfc-102.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Key Dimensions of Patient- and Family-Centered Care</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">PFC 102: الأبعاد الرئيسية للرعاية المتمركزة على المريض والعائلة</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>90 min</span>
+        </a>
+        <a href="/courses/pfc-103.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Incorporating Mindfulness into Clinical Practice</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">PFC 103: دمج اليقظة الذهنية في الممارسة السريرية</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>90 min</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/16</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-pfc-201') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-pfc-201', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('pfc-201')) list.push('pfc-201');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-pfc-201') === 'true';
+    localStorage.setItem('saved-pfc-201', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-pfc-201') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-pfc-201') === 'true';
+    localStorage.setItem('complete-pfc-201', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-pfc-201') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-pfc-201', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'A Guide to Shadowing', slug: 'pfc-201', enrolled: localStorage.getItem('enrolled-pfc-201') === 'true', complete: localStorage.getItem('complete-pfc-201') === 'true', quizPassed: localStorage.getItem('quiz-pass-pfc-201') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-pfc-201.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

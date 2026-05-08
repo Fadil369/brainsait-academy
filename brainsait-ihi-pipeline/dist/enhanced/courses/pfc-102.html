@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Dimensions of Patient- and Family-Centered Care | BrainSAIT Academy</title>
+  <meta name="description" content="Key Dimensions of Patient- and Family-Centered Care - Full bilingual course on Person- and Family-Centered Care">
+  <meta name="keywords" content="Person- and Family-Centered Care, IHI, Open School, Health Care, PFC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Key Dimensions of Patient- and Family-Centered Care</h3>
+        <p>PFC-102 • 90 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lessons | الدروس</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">English Overview | نظرة عامة بالإنج...</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 1 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 2 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 3 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 4 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 5 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Interactive Exercises | التمارين ال...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Assessment | التقييم</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Activities & Assessment |...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="15" onclick="scrollToSection(15)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Apply in Your Hospital/Clinic | الت...</span>
+          </li>
+          <li class="section-item " data-section="16" onclick="scrollToSection(16)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="17" onclick="scrollToSection(17)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="18" onclick="scrollToSection(18)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Additional Resources and Implementa...</span>
+          </li>
+          <li class="section-item " data-section="19" onclick="scrollToSection(19)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="20" onclick="scrollToSection(20)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Person- and Family-Centered Care</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Key Dimensions of Patient- and Family-Centered Care</h1>
+        <p class="course-title-ar rtl">PFC 102: الأبعاد الرئيسية للرعاية المتمركزة على المريض والعائلة</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">90</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">21</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          After completing this course, you will be able to:
+
+بعد إكمال هذه الدورة، ستتمكن من:
+
+- Describe four key dimensions of patient- and family-centered care.
+- Identify practices that promote person- and family-centered care.
+- Discuss how healthcare systems can collaborate with patients and families at the institutional level.
+- Apply PFCC dimensions to improve patient experience in Saudi healthcare settings.
+- Develop institutional strategies for PFCC implementation aligned with CBAHI standards.
+
+- وصف الأبعاد الأربعة الرئيسية للرعاية المتمركزة حول المريض والأسرة.
+- تحديد الممارسات التي تعزز الرعاية المتمركزة حول الشخص والأسرة.
+- مناقشة كيفية تعاون أنظمة الرعاية الصحية مع المرضى والعائلات على المستوى المؤسسي.
+- تطبيق أبعاد الرعاية المتمركزة لتحسين تجربة المريض في بيئات الرعاية الصحية السعودية.
+- تطوير استراتيجيات مؤسسية لتنفيذ الرعاية المتمركزة بما يتوافق مع معايير هيئة الصحة.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lessons | الدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: The Four Dimensions of PFCC | الأبعاد الأربعة للرعاية المتمركزة</h3>
+This lesson introduces the four core dimensions that define person- and family-centered care: dignity and respect, information sharing, participation, and collaboration. You will learn how each dimension translates into concrete practices in clinical settings.
+
+يقدم هذا الدرس الأبعاد الأربعة الأساسية التي تحدد الرعاية المتمركزة حول المريض والأسرة: الكرامة والاحترام، ومشاركة المعلومات، والمشاركة، والتعاون. ستتعلم كيف يترجم كل بُعد إلى ممارسات ملموسة في البيئات السريرية.
+
+<strong>Estimated Time:</strong> 20 minutes | الوقت المقدر: 20 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 2: Dimension 1 - Dignity and Respect | البُعد الأول - الكرامة والاحترام</h3>
+This lesson explores how dignity and respect manifest in healthcare interactions, including honoring patient values, preferences, and expressed needs; acknowledging cultural and religious requirements; and treating all patients with equal respect.
+
+يستكشف هذا الدرس كيف يتجلى الكرامة والاحترام في تفاعلات الرعاية الصحية، بما في ذلك تكريم قيم المريض وتفضيلاته واحتياجاته المُعَبَّرة عنها؛ والاعتراف بالمتطلبات الثقافية والدينية؛ ومعاملة جميع المرضى باحترام متساوٍ.
+
+<strong>Estimated Time:</strong> 25 minutes | الوقت المقدر: 25 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 3: Dimension 2 - Information Sharing | البُعد الثاني - مشاركة المعلومات</h3>
+This lesson examines how information sharing differs in PFCC, focusing on complete, timely, and understandable information that enables patients and families to participate effectively in care decisions.
+
+يفحص هذا الدرس كيف تختلف مشاركة المعلومات في الرعاية المتمركزة، مع التركيز على المعلومات الكاملة والفي وقابلة للفهم والتي تمكّن المرضى والعائلات من المشاركة بفعالية في قرارات الرعاية.
+
+<strong>Estimated Time:</strong> 25 minutes | الوقت المقدر: 25 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 4: Dimensions 3 & 4 - Participation and Collaboration | البُعدان الثالث والرابع - المشاركة والتعاون</h3>
+This lesson addresses how patients and families are encouraged and enabled to participate in care decisions and how healthcare systems collaborate with patients and families at the institutional level, including governance and policy development.
+
+يتناول هذا الدرس كيف يتم تشجيع وتمكين المرضى والعائلات من المشاركة في قرارات الرعاية وكيف تتعاون أنظمة الرعاية الصحية مع المرضى والعائلات على المستوى المؤسسي، بما في ذلك الحوكمة وتطوير السياسات.
+
+<strong>Estimated Time:</strong> 25 minutes | الوقت المقدر: 25 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 5: Implementing PFCC at the Institutional Level | تنفيذ الرعاية المتمركزة على المستوى المؤسسي</h3>
+This lesson provides practical strategies for healthcare organizations to embed PFCC into their culture, policies, and operations, with specific attention to Saudi healthcare context and CBAHI requirements.
+
+يوفر هذا الدرس استراتيجيات عملية للمؤسسات الصحية لتضمين الرعاية المتمركزة في ثقافتها وسياساتها وعملياتها، مع اهتمام خاص بسياق الرعاية الصحية السعودي ومتطلبات هيئة الصحة.
+
+<strong>Estimated Time:</strong> 20 minutes | الوقت المقدر: 20 دقيقة
+
+---
+
+<strong>Estimated Total Time of Completion</strong>: 1 hour 35 minutes
+
+<strong>الوقت الإجمالي المقدر للإكمال</strong>: ساعة و35 دقيقة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">English Overview | نظرة عامة بالإنجليزية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          This course explores the four key dimensions of patient- and family-centered care (PFCC): dignity and respect, information sharing, participation, and collaboration. The content provides healthcare professionals with practical frameworks for implementing PFCC in clinical practice and at the organizational level. Adapted for Saudi Arabia's healthcare environment, aligning with Vision 2030, CBAHI standards, and MOH quality initiatives.
+
+تستكشف هذه الدورة الأبعاد الأربعة الرئيسية للرعاية المتمركزة حول المريض والأسرة: الكرامة والاحترام، ومشاركة المعلومات، والمشاركة، والتعاون. توفر المحتوى للممارسين الصحيين أطرًا عملية لتنفيذ الرعاية المتمركزة في الممارسة السريرية وعلى المستوى المؤسسي. تم تكييفه لبيئة الرعاية الصحية السعودية، بما يتوافق مع رؤية 2030 ومعايير هيئة الصحة ومبادرات وزارة الصحة.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+Upon successful completion of this course, participants will be able to:
+
+1. <strong>Describe</strong> the four key dimensions of person- and family-centered care and explain how they interrelate.
+
+2. <strong>Identify</strong> specific practices within each dimension that promote PFCC in clinical settings.
+
+3. <strong>Assess</strong> current institutional practices against PFCC dimensions and identify improvement opportunities.
+
+4. <strong>Develop</strong> strategies for institutionalizing PFCC at the organizational level.
+
+5. <strong>Apply</strong> PFCC principles to enhance patient experience in Saudi healthcare settings.
+
+6. <strong>Align</strong> PFCC initiatives with CBAHI accreditation requirements and Vision 2030 quality goals.
+
+<h3 class="section-title">العربية</h3>
+
+عند إكمال هذه الدورة بنجاح، سيتمكن المشاركون من:
+
+1. <strong>وصف</strong> الأبعاد الأربعة الرئيسية للرعاية المتمركزة حول الشخص والأسرة وتوضيح كيفية ترابطها.
+
+2. <strong>تحديد</strong> ممارسات محددة ضمن كل بُعد تعزز الرعاية المتمركزة في البيئات السريرية.
+
+3. <strong>تقييم</strong> الممارسات المؤسسية الحالية مقابل أبعاد الرعاية المتمركزة وتحديد فرص التحسين.
+
+4. <strong>تطوير</strong> استراتيجيات مؤسسية لإضفاء الطابع المؤسسي على الرعاية المتمركزة على مستوى المؤسسة.
+
+5. <strong>تطبيق</strong> مبادئ الرعاية المتمركزة لتعزيز تجربة المريض في بيئات الرعاية الصحية السعودية.
+
+6. <strong>محاذاة</strong> مبادرات الرعاية المتمركزة مع متطلبات اعتماد هيئة الصحة وأهداف الجودة رؤية 2030.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 1 Detailed Content | المحتوى التفصيلي للدرس الأول</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">The Four Dimensions of PFCC | الأبعاد الأربعة للرعاية المتمركزة</h3>
+
+Person- and family-centered care is built on four interrelated dimensions that together create a comprehensive approach to healthcare. Each dimension reinforces and enables the others, creating a holistic framework for patient care.
+
+تستند الرعاية المتمركزة حول الشخص والأسرة إلى أربعة أبعاد مترابطة التي تخلق معًا نهجًا شاملًا للرعاية الصحية. يعزز كل بُعد ويُمكّن من الأخرى، مما يخلق إطارًا شاملًا لرعاية المريض.
+
+<h3 class="section-title">Overview of the Four Dimensions | نظرة عامة على الأبعاد الأربعة</h3>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Dimension</td><td>English</td><td>العربية</td><td>Key Question</td></tr>
+|-----------|---------|---------|--------------|
+<tr><td><strong>1. Dignity and Respect</strong></td><td>Treating every patient with dignity and respect, honoring their values, preferences, and expressed needs</td><td>معاملة كل مريض بالكرامة والاحترام، تكريم قيمه وتفضيلاته واحتياجاته المُعَبَّرة عنها</td><td>"Do we see and treat this person as an individual?"</td></tr>
+<tr><td><strong>2. Information Sharing</strong></td><td>Sharing complete, timely, and understandable information</td><td>مشاركة معلومات كاملة وفي وقت مناسب وقابلة للفهم</td><td>"Does the patient have the information they need?"</td></tr>
+<tr><td><strong>3. Participation</strong></td><td>Encouraging and enabling patients and families to participate in care decisions</td><td>تشجيع وتمكين المرضى والعائلات من المشاركة في قرارات الرعاية</td><td>"Is the patient an active participant in their care?"</td></tr>
+<tr><td><strong>4. Collaboration</strong></td><td>Working with patients and families as partners at all levels of the system</td><td>العمل مع المرضى والعائلات كشركاء على جميع مستويات النظام</td><td>"Are patients and families involved in shaping care?"</td></tr>
+</tbody></table></div>
+<h3 class="section-title">How the Dimensions Interrelate | كيفية ترابط الأبعاد</h3>
+
+The four dimensions work together as an integrated system. Dignity and respect create the foundation for meaningful information sharing. When patients feel respected, they are more likely to engage in shared decision-making. Participation naturally leads to collaboration at the institutional level, where patient and family perspectives shape policy and practice.
+
+تعمل الأبعاد الأربعة معًا كنظام متكامل. يخلق الكرامة والاحترام الأساس لمشاركة المعلومات الهادفة. عندما يشعر المرضى بالاحترام، من المرجح أن يشاركوا في اتخاذ القرارات المشتركة. تؤدي المشاركة بشكل طبيعي إلى التعاون على المستوى المؤسسي، حيث تشكل وجهات نظر المريض والعائلة السياسة والممارسة.
+
+<strong>The PFCC Framework in Action | إطار الرعاية المتمركزة في الممارسة:</strong>
+
+Consider a patient newly diagnosed with diabetes. Under the PFCC framework:
+
+- <strong>Dignity and Respect:</strong> The physician acknowledges the patient's concerns about lifestyle changes and respects the patient's cultural dietary preferences.
+- <strong>Information Sharing:</strong> The physician provides comprehensive education about diabetes management in Arabic, using visual aids and the teach-back method.
+- <strong>Participation:</strong> The patient is invited to set their own health goals, with the physician offering guidance and support.
+- <strong>Collaboration:</strong> The care team includes a dietitian who coordinates with the patient's family to ensure supportive home environment.
+
+ضع في اعتبارك مريضًا تم تشخيصه حديثًا بمرض السكري. ضمن إطار الرعاية المتمركزة:
+
+- <strong>الكرامة والاحترام:</strong> يعترف الطبيب بمخاوف المريض بشأن تغييرات نمط الحياة ويحترم تفضيلات المريض الغذائية الثقافية.
+- <strong>مشاركة المعلومات:</strong> يوفر الطبيب تعليمات شاملة حول إدارة مرض السكري باللغة العربية، باستخدام وسائل إيضاحية وطريقة التحقق من الفهم.
+- <strong>المشاركة:</strong> يُدعى المريض لتحديد أهدافه الصحية الخاصة، مع تقديم الطبيب للإرشاد والدعم.
+- <strong>التعاون:</strong> يتضمن فريق الرعاية أخصائي تغذية يتواصل مع عائلة المريض لضمان بيئة منزلية داعمة.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 2 Detailed Content | المحتوى التفصيلي للدرس الثاني</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Dimension 1: Dignity and Respect | البُعد الأول: الكرامة والاحترام</h3>
+
+Dignity and respect are the foundational elements of person- and family-centered care. This dimension encompasses how healthcare providers view and treat patients as unique individuals with their own values, preferences, and life circumstances.
+
+الكرامة والاحترام هي العناصر الأساسية للرعاية المتمركزة حول الشخص والأسرة. يشمل هذا البُعد كيف يرى مقدمو الرعاية الصحية المرضى ويعاملونهم كأفراد فريدين بقيمهم وتفضيلاتهم وظروفهم الحياتية الخاصة.
+
+<h4 class="section-sub">Components of Dignity and Respect | مكونات الكرامة والاحترام</h4>
+
+<strong>1. Honoring Patient Values and Preferences | تكريم قيم المريض وتفضيلاته</strong>
+
+Healthcare providers must recognize that each patient has unique values shaped by their cultural background, religious beliefs, personal experiences, and life goals. These values influence healthcare decisions and should be respected even when they differ from the provider's own values.
+
+يجب على مقدمي الرعاية الصحية أن يتعرفوا على أن كل مريض لديه قيم فريدةformed by خلفيته الثقافية ومعتقداته الدينية وخبراته الشخصية وأهدافه الحياتية. تؤثر هذه القيم على قرارات الرعاية الصحية ويجب احترامها حتى عندما تختلف عن قيم الطبيب نفسه.
+
+<strong>2. Acknowledging Cultural and Religious Requirements | الاعتراف بالمتطلبات الثقافية والدينية</strong>
+
+In Saudi Arabia, cultural and religious requirements significantly influence healthcare interactions. Providers must:
+
+في المملكة العربية السعودية، تؤثر المتطلبات الثقافية والدينية بشكل كبير على تفاعلات الرعاية الصحية. يجب على مقدمي الخدمات:
+
+- Respect fasting during Ramadan, adjusting medication schedules appropriately
+- Accommodate prayer times in treatment planning
+- Provide gender-appropriate care when requested
+- Honor family involvement in care decisions
+- Respect preferences regarding end-of-life care aligned with Islamic principles
+- Ensure privacy and modesty requirements are met
+
+- احترام الصيام خلال شهر رمضان، مع تعديل جداول medication بشكل مناسب
+- تخصيص وقت الصلاة في تخطيط العلاج
+- توفير رعاية مناسبة للجنس عند الطلب
+- تكريم إشراك العائلة في قرارات الرعاية
+- احترام تفضيلات الرعاية في نهاية الحياة وفقًا للمبادئ الإسلامية
+- ضمان تلبية متطلبات الخصوصية والحشمة
+
+<strong>3. Treating All Patients with Equal Respect | معاملة جميع المرضى باحترام متساوٍ</strong>
+
+Dignity and respect must be extended to every patient regardless of:
+- Socioeconomic status
+- Nationality or ethnicity
+- Education level
+- Health condition (including mental health)
+- Social circumstances
+
+يجب أن تمتد الكرامة والاحترام إلى كل مريض بغض النظر عن:
+- الوضع الاجتماعي والاقتصادي
+- الجنسية أو العرق
+- المستوى التعليمي
+- الحالة الصحية (بما في ذلك الصحة النفسية)
+- الظروف الاجتماعية
+
+<strong>4. Active Listening as Respect | الاستماع النشط كاحترام</strong>
+
+Respect is demonstrated through active listening, which includes:
+- Giving full attention to the patient
+- Not interrupting
+- Reflecting back what was heard
+- Asking clarifying questions
+- Acknowledging emotions
+
+يتجلى الاحترام من خلال الاستماع النشط، والذي يشمل:
+- إعطاء الاهتمام الكامل للمريض
+- عدم المقاطعة
+- عكس ما سمع
+- طرح أسئلة توضيحية
+- الاعتراف بالمشاعر
+
+<h3 class="section-title">Practical Applications in Saudi Settings | التطبيقات العملية في البيئات السعودية</h3>
+
+<strong>Scenario: Respecting Family Dynamics | السيناريو: احترام ديناميكيات الأسرة</strong>
+
+In Saudi Arabia, family involvement in healthcare decisions is culturally expected. A provider demonstrates dignity and respect by:
+
+في المملكة العربية السعودية، يُتوقع إشراك العائلة في قرارات الرعاية الصحية بشكل ثقافي. يُظهر الطبيب الكرامة والاحترام من خلال:
+
+1. <strong>Asking about family preferences</strong> - "Would you like any family members to be present during this consultation?"
+2. <strong>Acknowledging family expertise</strong> - "You know your mother best. What do you think would help her most?"
+3. <strong>Respecting family roles</strong> - Recognizing that decisions may need to involve elder family members
+4. <strong>Accommodating family schedules</strong> - Offering appointment times that work for family escorts
+
+1. <strong>السؤال عن تفضيلات العائلة</strong> - "هل تودين حضور أحد أفراد العائلة خلال هذه الاستشارة؟"
+2. <strong>الاعتراف بخبرة العائلة</strong> - "أنتِ تعرفين والدتكِ أفضل ما يمكن. ما الذي تعتقدين أنه سيساعدها أكثر؟"
+3. <strong>احترام أدوار العائلة</strong> -Recognition قد تحتاج القرارات إلى إشراك أفراد العائلة الأكبر سنًا
+4. <strong>تخصيص مواعيد العائلة</strong> - تقديم مواعيد تناسب مرافقي العائلة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 3 Detailed Content | المحتوى التفصيلي للدرس الثالث</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Dimension 2: Information Sharing | البُعد الثاني: مشاركة المعلومات</h3>
+
+Information sharing in PFCC differs fundamentally from traditional approaches. Rather than selective information sharing based on what providers think patients should know, PFCC emphasizes complete, timely, and understandable information that enables meaningful participation.
+
+تختلف مشاركة المعلومات في الرعاية المتمركزة جوهريًا عن النهج التقليدي. بدلاً من مشاركة المعلومات الانتقائية بناءً على ما يعتقده الأطباء يجب أن يعرفه المرضى، تؤكد الرعاية المتمركزة على المعلومات الكاملة والفي الوقت المناسب والقابلة للفهم والتي تمكّن من المشاركة الهادفة.
+
+<h4 class="section-sub">Principles of Effective Information Sharing | مبادئ مشاركة المعلومات الفعالة</h4>
+
+<strong>1. Completeness | الاكتمال</strong>
+
+Patients and families have a right to complete information about:
+- Diagnosis and prognosis
+- Treatment options and alternatives
+- Benefits and risks of each option
+- Potential outcomes of no treatment
+- Costs and resource implications
+
+لدى المرضى والعائلات الحق في معلومات كاملة حول:
+- التشخيص والتشخيص
+- خيارات العلاج والبدائل
+- فوائد ومخاطر كل خيار
+- النتائج المحتملة لعدم العلاج
+- التكاليف والآثار المرتبطة بالموارد
+
+<strong>2. Timing | التوقيت</strong>
+
+Information should be shared:
+- At the time it is needed for decision-making
+- In advance of procedures or treatments
+- Continuously throughout the care episode
+- At transition points (admission, transfer, discharge)
+
+يجب مشاركة المعلومات:
+- في الوقت اللازم لاتخاذ القرار
+- مسبقًا للجراءات أو العلاجات
+- بشكل مستمر طوالpisode الرعاية
+- عند نقاط الانتقال (الدخول، النقل، الخروج)
+
+<strong>3. Understandability | القابلية للفهم</strong>
+
+Information must be presented in ways that patients can understand:
+- Use plain language, avoiding medical jargon
+- Provide written materials in Arabic
+- Use visual aids and demonstrations
+- Check understanding using teach-back
+- Offer interpreter services when needed
+
+يجب تقديم المعلومات بطرق يستطيع المرضى فهمها:
+- استخدام لغة بسيطة، وتجنب المصطلحات الطبية
+- توفير مواد مكتوبة باللغة العربية
+- استخدام وسائل إيضاحية وعروض توضيحية
+- التحقق من الفهم باستخدام طريقة التحقق من الفهم
+- تقديم خدمات الترجمة عند الحاجة
+
+<strong>4. Bidirectional Communication | التواصل ثنائي الاتجاه</strong>
+
+Information sharing is not one-way. Providers must also listen to understand:
+- What the patient already knows
+- What the patient wants to know
+- What the patient believes and understands
+- What concerns the patient has
+
+مشاركة المعلومات ليست أحادية الاتجاه. يجب على الأطباء أيضًا الاستماع لفهم:
+- ما يعرفه المريض بالفعل
+- ما يريد المريض معرفته
+- ما يعتقده المريض ويفهمه
+- ما يقلق المريض
+
+<h3 class="section-title">Information Sharing in Different Care Settings | مشاركة المعلومات في بيئات الرعاية المختلفة</h3>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Setting</td><td>Key Information Needs</td><td>Saudi Context Considerations</td></tr>
+|---------|---------------------|------------------------------|
+<tr><td><strong>Primary Care</strong></td><td>Health promotion, chronic disease management</td><td>Emphasize lifestyle modification; involve family; consider health literacy</td></tr>
+<tr><td><strong>Emergency</strong></td><td>Acute condition, immediate treatment options</td><td>Provide clear, concise information; repeat key points; acknowledge stress</td></tr>
+<tr><td><strong>Inpatient</strong></td><td>Diagnosis, treatment plan, discharge planning</td><td>Regular family updates; written discharge instructions in Arabic</td></tr>
+<tr><td><strong>Surgical</strong></td><td>Procedure details, risks, recovery expectations</td><td>Detailed consent process; address cultural concerns about surgery</td></tr>
+<tr><td><strong>End-of-Life</strong></td><td>Prognosis, care goals, advance care planning</td><td>Sensitive communication; involve family; respect Islamic principles</td></tr>
+
+<tr><td>البيئة</td><td>احتياجات المعلومات الرئيسية</td><td>الاعتبارات للسياق السعودي</td></tr>
+|--------|---------------------------|---------------------------|
+<tr><td><strong>الرعاية الأولية</strong></td><td>تعزيز الصحة، إدارة الأمراض المزمنة</td><td>تأكيد تعديل نمط الحياة؛ إشراك العائلة؛ النظر في الثقافة الصحية</td></tr>
+<tr><td><strong>الطوارئ</strong></td><td>الحالة الحادة، خيارات العلاج الفورية</td><td>تقديم معلومات واضحة وموجزة؛ تكرار النقاط الرئيسية؛ الاعتراف بالتوتر</td></tr>
+<tr><td><strong>المستشفى</strong></td><td>التشخيص، خطة العلاج، تخطيط الخروج</td><td>تحديثات عائلية منتظمة؛ تعليمات خروج مكتوبة بالعربية</td></tr>
+<tr><td><strong>الجراحة</strong></td><td>تفاصيل الإجراء، المخاطر، توقعات التعافي</td><td>عملية موافقة تفصيلية؛ معالجة المخاوف الثقافية حول الجراحة</td></tr>
+<tr><td><strong>نهاية الحياة</strong></td><td>التشخيص، أهداف الرعاية، تخطيط الرعاية المسبقة</td><td>تواصل حساس؛ إشراك العائلة؛ احترام المبادئ الإسلامية</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 4 Detailed Content | المحتوى التفصيلي للدرس الرابع</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Dimensions 3 & 4: Participation and Collaboration | البُعدان الثالث والرابع: المشاركة والتعاون</h3>
+
+<h4 class="section-sub">Dimension 3: Participation | البُعد الثالث: المشاركة</h4>
+
+Participation means encouraging and enabling patients and families to participate in care decisions and in the design of care processes. This goes beyond simply informing patients; it involves actively engaging them as partners.
+
+المشاركة تعني تشجيع وتمكين المرضى والعائلات من المشاركة في قرارات الرعاية وفي تصميم عمليات الرعاية. يتجاوز هذا مجرد إبلاغ المرضى؛ يتضمن إشراكهم نشطًا كشركاء.
+
+<strong>Levels of Patient Participation | مستويات مشاركة المريض:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Level</td><td>Description</td><td>Example</td></tr>
+|-------|-------------|---------|
+<tr><td><strong>Informed</strong></td><td>Patient receives information but does not actively participate</td><td>Standard informed consent</td></tr>
+<tr><td><strong>Consulted</strong></td><td>Provider asks for patient input but makes final decision</td><td>Treatment options discussed, provider chooses</td></tr>
+<tr><td><strong>Collaborative</strong></td><td>Patient and provider jointly make decisions</td><td>Shared decision-making</td></tr>
+<tr><td><strong>Autonomous</strong></td><td>Patient makes independent decisions with provider support</td><td>Patient leads, provider advises</td></tr>
+
+<tr><td>المستوى</td><td>الوصف</td><td>المثال</td></tr>
+|---------|------|--------|
+<tr><td><strong>مُعلم</strong></td><td>يتلقى المريض المعلومات لكنه لا يشارك نشطًا</td><td>موافقة مستنيرة قياسية</td></tr>
+<tr><td><strong>مستشار</strong></td><td>يسأل الطبيب عن رأي المريض لكن يتخذ القرار النهائي</td><td>مناقشة خيارات العلاج، يختار الطبيب</td></tr>
+<tr><td><strong>تعاوني</strong></td><td>يتخذ المريض والطبيب القرارات معًا</td><td>اتخاذ القرار المشترك</td></tr>
+<tr><td><strong>مستقل</strong></td><td>يتخذ المريض قرارات مستقلة بدعم الطبيب</td><td>المريض يقود، الطبيب ينصح</td></tr>
+</tbody></table></div>
+<strong>Barriers to Participation | حواجز المشاركة:</strong>
+
+To promote participation, providers must address common barriers:
+- Time constraints in clinical encounters
+- Power imbalances between provider and patient
+- Patient health literacy and confidence
+- Cultural expectations about provider authority
+- Language and communication challenges
+
+لتعزيز المشاركة، يجب على الأطباء معالجة الحواجز الشائعة:
+- قيود الوقت في اللقاءات السريرية
+- اختلال توازن القوة بين الطبيب والمريض
+- ثقافة المريض الصحية وثقته
+- التوقعات الثقافية حول سلطة الطبيب
+- التحديات اللغوية والتواصل
+
+<h4 class="section-sub">Dimension 4: Collaboration | البُعد الرابع: التعاون</h4>
+
+Collaboration extends participation beyond individual care decisions to include patients and families in organizational governance, policy development, and quality improvement.
+
+يمتد التعاونBeyond المشاركة في قرارات الرعاية الفردية ليشمل المرضى والعائلات في الحوكمة المؤسسية وتطوير السياسة وتحسين الجودة.
+
+<strong>Levels of Collaboration | مستويات التعاون:</strong>
+
+1. <strong>Direct Care Level | مستوى الرعاية المباشرة</strong>
+   - Patient and family as part of care team
+   - Family presence during care
+   - Shared decision-making in treatment
+
+2. <strong>Program/Unit Level | مستوى البرنامج/القسم</strong>
+   - Patient and family advisors on unit councils
+   - Participation in service design
+   - Feedback on care processes
+
+3. <strong>Organizational Level | المستوى المؤسسي</strong>
+   - Patient and family on hospital committees
+   - Involvement in policy development
+   - Participation in quality improvement initiatives
+
+4. <strong>Community Level | المستوى المجتمعي</strong>
+   - Patient advocates in community health initiatives
+   - Partnership with patient organizations
+   - Input on community health priorities
+
+1. <strong>مستوى الرعاية المباشرة</strong>
+   - المريض والعائلة كجزء من فريق الرعاية
+   - حضور العائلة أثناء الرعاية
+   - اتخاذ القرار المشترك في العلاج
+
+2. <strong>مستوى البرنامج/القسم</strong>
+   - مستشارو المريض والعائلة في مجالس القسم
+   - المشاركة في تصميم الخدمة
+   - ملاحظات على عمليات الرعاية
+
+3. <strong>المستوى المؤسسي</strong>
+   - المريض والعائلة في لجان المستشفى
+   - المشاركة في تطوير السياسة
+   - المشاركة في مبادرات تحسين الجودة
+
+4. <strong>المستوى المجتمعي</strong>
+   - مناصرو المريض في مبادرات الصحة المجتمعية
+   - شراكة مع منظمات المرضى
+   - المدخلات حول أولويات الصحة المجتمعية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 5 Detailed Content | المحتوى التفصيلي للدرس الخامس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Implementing PFCC at the Institutional Level | تنفيذ الرعاية المتمركزة على المستوى المؤسسي</h3>
+
+Translating PFCC from concept to institutional practice requires systematic approaches that embed the four dimensions into organizational culture, policies, and operations. This lesson provides a roadmap for healthcare organizations in Saudi Arabia to achieve PFCC excellence.
+
+يتطلب ترجمة الرعاية المتمركزة من مفهوم إلى ممارسة مؤسسية نهجًا منهجيًا يضمين الأبعاد الأربعة في ثقافة المؤسسة وسياساتها وعملياتها. يوفر هذا الدرس خارطة طريق للمؤسسات الصحية في المملكة العربية السعودية لتحقيق التميز في الرعاية المتمركزة.
+
+<h4 class="section-sub">Institutional Assessment | التقييم المؤسسي</h4>
+
+Before implementing PFCC improvements, organizations should assess their current state:
+
+قبل تنفيذ تحسينات الرعاية المتمركزة، يجب على المؤسسات تقييم وضعها الراهن:
+
+<strong>PFCC Maturity Assessment | تقييم نضج الرعاية المتمركزة:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Dimension</td><td>Developing (1-2)</td><td>Achieving (3-4)</td><td>Exemplary (5)</td></tr>
+|-----------|------------------|-----------------|---------------|
+<tr><td><strong>Dignity & Respect</strong></td><td>Inconsistent application; no measurement</td><td>Consistent application; regular monitoring</td><td>Continuous improvement; patient input</td></tr>
+<tr><td><strong>Information Sharing</strong></td><td>Provider-determined; limited sharing</td><td>Complete information; teach-back used</td><td>Patient portal; ongoing communication</td></tr>
+<tr><td><strong>Participation</strong></td><td>Allowed but not encouraged</td><td>Active invitation; supported participation</td><td>Patient leads; provider supports</td></tr>
+<tr><td><strong>Collaboration</strong></td><td>Ad hoc patient input</td><td>Formal advisory roles</td><td>Patient governance partnership</td></tr>
+
+<tr><td>البُعد</td><td>التطوير (1-2)</td><td>التحقيق (3-4)</td><td>Excellence (5)</td></tr>
+|--------|---------------|---------------|---------------|
+<tr><td><strong>الكرامة والاحترام</strong></td><td>تطبيق غير متسق؛ لا يوجد قياس</td><td>تطبيق متسق؛ مراقبة منتظمة</td><td>تحسين مستمر؛ مدخلات المريض</td></tr>
+<tr><td><strong>مشاركة المعلومات</strong></td><td>تحديد الطبيب؛ مشاركة محدودة</td><td>معلومات كاملة؛ استخدام التحقق</td><td>بوابة المريض؛ تواصل مستمر</td></tr>
+<tr><td><strong>المشاركة</strong></td><td>مسموح لكن غير مشجع</td><td>دعوة نشطة؛ مشاركة مدعومة</td><td>المريض يقود؛ الطبيب يدعم</td></tr>
+<tr><td><strong>التعاون</strong></td><td>مدخلات المريض غير رسمية</td><td>أدوار استشارية رسمية</td><td>شراكة حوكمة المريض</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">Action Planning for PFCC Excellence | تخطيط الإجراءات للتميز في الرعاية المتمركزة</h4>
+
+<strong>Step 1: Establish PFCC Leadership | الخطوة 1: تأسيس قيادة الرعاية المتمركزة</strong>
+
+- Designate a PFCC champion or council
+- Include patient and family advisors in leadership
+- Integrate PFCC into organizational strategic plan
+- Allocate resources for PFCC initiatives
+
+- تحديد بطل أو مجلس للرعاية المتمركزة
+- إشراك مستشاري المريض والعائلة في القيادة
+- دمج الرعاية المتمركزة في الخطة الاستراتيجية للمؤسسة
+- تخصيص موارد لمبادرات الرعاية المتمركزة
+
+<strong>Step 2: Develop Policies and Procedures | الخطوة 2: تطوير السياسات والإجراءات</strong>
+
+- Update patient rights policies to reflect PFCC principles
+- Develop family presence and participation guidelines
+- Create information sharing standards and protocols
+- Establish patient feedback mechanisms
+- Align policies with CBAHI PFCC standards
+
+- تحديث سياسات حقوق المريض لتعكس مبادئ الرعاية المتمركزة
+- تطوير إرشادات حضور ومشاركة العائلة
+- إنشاء معايير وبروتوكولات مشاركة المعلومات
+- إنشاء آليات ملاحظات المريض
+- محاذاة السياسات مع معايير PFCC لهيئة الصحة
+
+<strong>Step 3: Train and Educate Staff | الخطوة 3: تدريب وتثقيف الموظفين</strong>
+
+- Provide PFCC foundation training for all staff
+- Offer advanced training for patient-facing roles
+- Include PFCC competencies in performance evaluations
+- Recognize and reward PFCC excellence
+
+- توفير تدريب أساسي على الرعاية المتمركزة لجميع الموظفين
+- تقديم تدريب متقدم للأدوار التي تتعامل مع المرضى
+- تضمين كفاءات الرعاية المتمركزة في تقييمات الأداء
+-Recognition مكافأة التميز في الرعاية المتمركزة
+
+<strong>Step 4: Implement Measurement and Feedback | الخطوة 4: تنفيذ القياس والملاحظات</strong>
+
+- Integrate PFCC metrics into quality dashboard
+- Conduct regular patient experience surveys
+- Use patient feedback for improvement
+- Report PFCC performance to leadership
+
+- دمج مقاييس الرعاية المتمركزة في لوحة الجودة
+- إجراء استبيانات منتظمة لتجربة المريض
+- استخدام ملاحظات المريض للتحسين
+-Reporting أداء الرعاية المتمركزة للقيادة
+
+<strong>Step 5: Sustain and Improve | الخطوة 5: الاستدامة والتحسين</strong>
+
+- Standardize successful practices
+- Share learnings across departments
+- Continuously monitor and improve
+- Engage patients and families in ongoing development
+
+- توحيد الممارسات الناجحة
+- مشاركة الدروس عبر الأقسام
+- المراقبة والتحسين المستمر
+- إشراك المرضى والعائلات في التطوير المستمر
+
+<h4 class="section-sub">Saudi Context Implementation | التنفيذ في السياق السعودي</h4>
+
+<strong>CBAHI Alignment | محاذاة هيئة الصحة:</strong>
+
+The Saudi Health Center Accreditation (CBAHI) requires hospitals to demonstrate PFCC in their accreditation standards. Key CBAHI PFCC requirements include:
+
+يتطلب اعتماد هيئة الصحة hospitals لإظهار الرعاية المتمركزة في معايير الاعتماد. تشمل متطلبات PFCC الرئيسية لهيئة الصحة:
+
+1. Written patient and family rights policies
+2. Patient and family involvement in care planning
+3. Effective communication in understandable language
+4. Informed consent processes
+5. Complaint handling mechanisms
+6. Patient satisfaction measurement
+
+1. سياسات مكتوبة لحقوق المريض والعائلة
+2. إشراك المريض والعائلة في تخطيط الرعاية
+3. تواصل فعال بلغة مفهومة
+4. عمليات الموافقة المستنيرة
+5. آليات معالجة الشكاوى
+6. قياس رضا المريض
+
+<strong>Vision 2030 Alignment | محاذاة رؤية 2030:</strong>
+
+PFCC implementation supports Vision 2030 healthcare transformation goals:
+- Improving patient experience and satisfaction
+- Enhancing quality and safety
+- Increasing private sector participation
+- Developing patient-centered digital health
+
+يدعم تنفيذ الرعاية المتمركزة أهداف تحول رؤية 2030 للرعاية الصحية:
+- تحسين تجربة المريض ورضاه
+- تعزيز الجودة والسلامة
+- زيادة مشاركة القطاع الخاص
+- تطوير الصحة الرقمية المتمركزة حول المريض
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study 1: Institutionalizing Family Presence | حالة دراسية الأولى: إضفاء الطابع المؤسسي على حضور العائلة</h3>
+
+<strong>Challenge | التحدي:</strong>
+
+A MOH hospital wanted to expand family presence beyond traditional visiting hours to align with PFCC principles. However, staff expressed concerns about:
+- Infection control
+- Privacy of other patients
+- Staff workload
+- Physical space limitations
+
+أرادت مستشفى تابعة لوزارة الصحة توسيع حضور العائلةBeyond ساعات الزيارة التقليدية لمحاذاة مع مبادئ الرعاية المتمركزة. لكن عبّر الموظفون عن مخاوف بشأن:
+- مكافحة العدوى
+- خصوصية المرضى الآخرين
+- عبء العمل
+- قيود المساحة المادية
+
+<strong>Solution | الحل:</strong>
+
+The hospital formed a task force including patient advisors to:
+1. Research best practices for family presence in ICU settings
+2. Develop clear policies balancing family access with clinical needs
+3. Implement pilot program in one unit
+4. Evaluate impact on patient outcomes and staff workload
+5. Expand based on results
+
+شكلت المستشفى فريقًا يضم مستشاري المريض لـ:
+1. البحث عن أفضل الممارسات لحضور العائلة في وحدات العناية المركزة
+2. تطوير سياسات واضحة توازن وصول العائلة مع الاحتياجات السريرية
+3. تنفيذ برنامج تجريبي في وحدة واحدة
+4. تقييم تأثيره على نتائج المرضى和工作量 الموظفين
+5. التوسع بناءً على النتائج
+
+<strong>Results | النتائج:</strong>
+
+- Family satisfaction increased by 40%
+- Patient anxiety scores decreased
+- No increase in infection rates
+- Staff concerns addressed through clear guidelines
+- Model adopted by other MOH hospitals
+
+- زاد رضا العائلة بنسبة 40%
+- انخفضت درجات قلق المريض
+- لمزيد من زيادات في معدلات العدوى
+- تم معالجة مخاوف الموظفين من خلال إرشادات واضحة
+- اعتمدت مستشفيات وزارة صحية أخرى هذا النموذج
+
+---
+
+<h3 class="section-title">Case Study 2: Patient Advisory Council | الحالة الثانية: مجلس مستشاري المريض</h3>
+
+<strong>Challenge | التحدي:</strong>
+
+A private hospital wanted to establish formal patient and family advisory council to meet CBAHI standards and improve PFCC practices.
+
+أرادت مستشفى خاصة إنشاء مجلس استشاري رسمي للمريض والعائلة للوفاء بمعايير هيئة الصحة وتحسين ممارسات الرعاية المتمركزة.
+
+<strong>Solution | الحل:</strong>
+
+1. Recruited diverse patient and family advisors through discharge surveys
+2. Provided orientation and training on advisory roles
+3. Established regular council meetings with hospital leadership
+4. Created structure for advisors to review policies and provide input
+5. Integrated advisor feedback into quality improvement initiatives
+
+1. استقطبت مستشاري patients وعائلات متنوعين من خلال استبيانات الخروج
+2. قدّمت_orientation وتدريبًا على الأدوار الاستشارية
+3. أسست اجتماعات منتظمة للمجلس مع leadership المستشفى
+4. أنشأت هيكلًا للمراجعين لمراجعة السياسات وتقديم المدخلات
+5. دمجت ملاحظات المستشارين في مبادرات تحسين الجودة
+
+<strong>Impact | الأثر:</strong>
+
+Advisors provided valuable input on:
+- Patient education materials
+- Discharge planning processes
+- Facility design and signage
+- Staff communication training
+- Complaint resolution processes
+
+قدم المستشارون مدخلات قيمة حول:
+- مواد تثقيف المريض
+- عمليات تخطيط الخروج
+- تصميم المرافق والإشارات
+- تدريب موظفين على التواصل
+- عمليات حل الشكاوى
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Interactive Exercises | التمارين التفاعلية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Group Discussion: PFCC Barriers and Solutions | نقاش جماعي: حواجز الرعاية المتمركزة وحلولها</h3>
+
+<strong>Scenario | السيناريو:</strong>
+
+Your hospital's patient satisfaction data shows low scores on "respect for patient preferences" and "family involvement in care." Leadership has asked your unit to develop an improvement plan.
+
+تظهر بيانات رضا المرضى في المستشفى الخاص بك درجات منخفضة على "احترام تفضيلات المريض" و"إشراك العائلة في الرعاية". طلب leadership من وحدتك تطوير خطة تحسين.
+
+<strong>Discussion Questions | أسئلة النقاش:</strong>
+
+1. What might be contributing to these low scores in our Saudi context?
+2. What specific practices could we implement to improve?
+3. What resources and support do we need?
+4. How would we measure improvement?
+5. How can we engage patients and families in our improvement efforts?
+
+1. ما الذي قد يساهم في هذه الدرجات المنخفضة في سياقنا السعودي؟
+2. ما الممارسات المحددة التي يمكننا تنفيذها للتحسين؟
+3. ما الموارد والدعم الذي نحتاجه؟
+4. كيف نقيس التحسين؟
+5. كيف نشارك المرضى والعائلات في جهود التحسين لدينا؟
+
+<h3 class="section-title">Role Play: Shared Decision-Making | لعب الأدوار: اتخاذ القرار المشترك</h3>
+
+<strong>Scenario | السيناريو:</strong>
+
+A 55-year-old Saudi man with newly diagnosed Type 2 Diabetes needs to decide between starting medication immediately or trying lifestyle modification first. His religious beliefs make him hesitant about "chemical" treatments, but his family is concerned about disease progression.
+
+رجل سعودي عمره 55 عامًا تم تشخيصه حديثًا بمرض السكري من النوع الثاني يحتاج إلى قرار بين بدء العلاج الدوائي فورًا أو محاولة تعديل نمط الحياة أولاً. تجعله معتقداته الدينية يتردد في العلاجات "الكيميائية"، لكن عائلته قلقة من تطور المرض.
+
+<strong>Task | المهمة:</strong>
+
+Using the SHARE model for shared decision-making, conduct this conversation with a colleague role-playing the patient.
+
+باستخدام نموذج SHARE لاتخاذ القرار المشترك، أجرِ هذه المحادثة مع زميل يلعب دور المريض.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Assessment | التقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Knowledge Check | فحص المعرفة</h3>
+
+1. Which dimension of PFCC focuses on complete, timely, and understandable information?
+   a) Dignity and Respect
+   b) Information Sharing
+   c) Participation
+   d) Collaboration
+
+2. In the Saudi healthcare context, family participation is:
+   a) Discouraged to maintain patient privacy
+   b) Only allowed in certain departments
+   c) Culturally expected and should be supported
+   d) Only for pediatric patients
+
+3. Patient advisory councils operate at which level of collaboration?
+   a) Direct care level
+   b) Program/Unit level
+   c) Organizational level
+   d) Community level
+
+4. CBAHI PFCC standards require:
+   a) Limited family presence
+   b) Written patient rights policies
+   c) Restriction of patient information
+   d) Provider-dominated decision-making
+
+5. Which is NOT a level of patient participation?
+   a) Informed
+   b) Consulted
+   c) Directed
+   d) Collaborative
+
+1. أي بُعد من الرعاية المتمركزة يركز على المعلومات الكاملة والفي الوقت المناسب والقابلة للفهم؟
+   أ) الكرامة والاحترام
+   ب) مشاركة المعلومات
+   ج) المشاركة
+   د) التعاون
+
+2. في سياق الرعاية الصحية السعودي، يُتوقع مشاركة العائلة:
+   أ) discourage للحفاظ على خصوصية المريض
+   ب) مسموح فقط في أقسام معينة
+   ج) متوقع ثقافيًا ويجب دعمه
+   د) فقط لمرضى الأطفال
+
+3. تعمل مجالس المستشارين المرضى على مستوى أي تعاون؟
+   أ) مستوى الرعاية المباشرة
+   ب) مستوى البرنامج/القسم
+   ج) المستوى المؤسسي
+   د) المستوى المجتمعي
+
+4. تتطلب معايير PFCC لهيئة الصحة:
+   أ) حضور عائلة محدود
+   ب) سياسات مكتوبة لحقوق المريض
+   ج) تقييد معلومات المريض
+   د) اتخاذ القرار المهيمن من الطبيب
+
+5. أي مما يلي ليس مستوى من مشاركة المريض؟
+   أ) مُعلم
+   ب) مستشار
+   ج) موجه
+   د) تعاوني
+
+<h3 class="section-title">Answers | الإجابات</h3>
+
+1. b | 2. c | 3. c | 4. b | 5. c
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+1. <strong>Department Assessment:</strong> Conduct a PFCC dimension assessment in your department using the maturity framework.
+2. <strong>Policy Review:</strong> Review your current patient rights and family involvement policies against CBAHI standards.
+3. <strong>Patient Engagement:</strong> Identify one patient or family advisor to participate in your unit quality activities.
+4. <strong>Improvement Project:</strong> Design and implement one PFCC improvement initiative using PDSA methodology.
+
+<h3 class="section-title">العربية</h3>
+
+1. <strong>تقييم القسم:</strong> قم بتقييم بُعد الرعاية المتمركزة في قسمك باستخدام إطار النضج.
+2. <strong>مراجعة السياسة:</strong> راجع سياسات حقوق المريض الحالية ومشاركة العائلة مقابل معايير هيئة الصحة.
+3. <strong>إشراك المريض:</strong>确定 مريض واحد أو مستشار عائلة للمشاركة في أنشطة الجودة بوحدتك.
+4. <strong>مشروع تحسين:</strong> صمّم ونفّذ مبادرة تحسين واحدة للرعاية المتمركزة باستخدام منهجية PDSA.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>العربية</td></tr>
+|--------------|--------|
+<tr><td>Patient-centered care</td><td>الرعاية المتمحورة حول المريض</td></tr>
+<tr><td>Family-centered care</td><td>الرعاية المتمحورة حول العائلة</td></tr>
+<tr><td>Shared decision-making</td><td>اتخاذ القرار المشترك</td></tr>
+<tr><td>Care partnership</td><td>شراكة الرعاية</td></tr>
+<tr><td>Patient rights</td><td>حقوق المريض</td></tr>
+<tr><td>Family engagement</td><td>إشراك العائلة</td></tr>
+<tr><td>Informed consent</td><td>الموافقة المستنيرة</td></tr>
+<tr><td>Health literacy</td><td>الثقافة الصحية</td></tr>
+<tr><td>Patient experience</td><td>تجربة المريض</td></tr>
+<tr><td>Quality improvement</td><td>تحسين الجودة</td></tr>
+<tr><td>CBABHI accreditation</td><td>اعتماد هيئة الصحة</td></tr>
+<tr><td>Patient advisor</td><td>مستشار المريض</td></tr>
+<tr><td>Care coordination</td><td>تنسيق الرعاية</td></tr>
+<tr><td>Patient empowerment</td><td>تمكين المريض</td></tr>
+<tr><td>Dignity and respect</td><td>الكرامة والاحترام</td></tr>
+<tr><td>Information sharing</td><td>مشاركة المعلومات</td></tr>
+<tr><td>Participation</td><td>المشاركة</td></tr>
+<tr><td>Collaboration</td><td>التعاون</td></tr>
+<tr><td>Vision 2030</td><td>رؤية 2030</td></tr>
+<tr><td>MOH (Ministry of Health)</td><td>وزارة الصحة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+1. Institute for Patient- and Family-Centered Care. (2024). <em>PFCC Assessment and Improvement Tools</em>. https://www.ipfcc.org
+
+2. Institute for Healthcare Improvement. (2024). <em>Patient-Centered Care Resources</em>. https://www.ihi.org
+
+3. Saudi Health Center Accreditation (CBAHI). (2024). <em>National Hospital Standards</em>. https://www.cbahi.gov.sa
+
+4. Ministry of Health Saudi Arabia. (2024). <em>Patient Experience Framework</em>. https://www.moh.gov.sa
+
+5. Vision 2030. (2024). <em>Healthcare Sector Transformation</em>. https://www.vision2030.gov.sa
+
+<h3 class="section-title">الموارد العربية</h3>
+
+1. هيئة الصحة السعودية. (2024). <em>معايير اعتماد المنشآت الصحية - معايير الرعاية المتمركزة</em>. الرياض: هيئة الصحة.
+
+2. وزارة الصحة السعودية. (2024). <em>دليل حقوق المريض والمرافق</em>. الرياض: وزارة الصحة.
+
+3. برنامج التحول الصحي. (2024). <em>مبادرات تحسين تجربة المريض</em>. الرياض: رؤية 2030.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-15">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>Complete PFCC maturity assessment for your department.</div>
+<div class="checklist-item"><span class="checkbox"></span>Review current policies against CBAHI PFCC standards.</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify gaps and develop improvement plan.</div>
+<div class="checklist-item"><span class="checkbox"></span>Implement one PFCC improvement initiative this quarter.</div>
+<div class="checklist-item"><span class="checkbox"></span>Recruit at least one patient/family advisor for your unit.</div>
+<div class="checklist-item"><span class="checkbox"></span>Train staff on PFCC dimensions and practices.</div>
+<div class="checklist-item"><span class="checkbox"></span>Establish PFCC metrics on your unit quality dashboard.</div>
+<div class="checklist-item"><span class="checkbox"></span>Report PFCC performance to leadership monthly.</div>
+
+<h3 class="section-title">قائمة إجراءات بالعربية</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>أكمل تقييم نضج الرعاية المتمركزة لقسمك.</div>
+<div class="checklist-item"><span class="checkbox"></span>راجع السياسات الحالية مقابل معايير PFCC لهيئة الصحة.</div>
+<div class="checklist-item"><span class="checkbox"></span>حدد الفجوات وطور خطة تحسين.</div>
+<div class="checklist-item"><span class="checkbox"></span>نفّذ مبادرة تحسين واحدة للرعاية المتمركزة هذا الربع.</div>
+<div class="checklist-item"><span class="checkbox"></span>استقطب advisor واحد على الأقل للمريض/العائلة لوحدتك.</div>
+<div class="checklist-item"><span class="checkbox"></span>درب الموظفين على أبعاد وممارسات الرعاية المتمركزة.</div>
+<div class="checklist-item"><span class="checkbox"></span>أنشئ مقاييس الرعاية المتمركزة على لوحة الجودة بوحدتك.</div>
+<div class="checklist-item"><span class="checkbox"></span>أبلغ عن أداء الرعاية المتمركزة للقيادة شهريًا.</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-16">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> PFC 102
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-102" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 90 minutes (enhanced)
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-17">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الرمز:</strong> PFC 102
+- <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-102" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 90 دقيقة (محسّنة)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-18">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Additional Resources and Implementation Support | موارد إضافية ودعم التنفيذ</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Appendix A: Institutional Assessment Tools | الملحق أ: أدوات التقييم المؤسسي</h3>
+
+<h4 class="section-sub">PFCC Implementation Self-Assessment | تقييم الذات لتطبيق الرعاية المتمركزة</h4>
+
+<strong>Executive Leadership Assessment | تقييم القيادة التنفيذية:</strong>
+
+Rate your organization on each statement (1-4):
+
+قيّم مؤسستك على كل عبارة (1-4):
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Statement</td><td>1 (Strongly Disagree)</td><td>2 (Disagree)</td><td>3 (Agree)</td><td>4 (Strongly Agree)</td></tr>
+|-----------|----------------------|--------------|-----------|-------------------|
+<tr><td>Senior leadership prioritizes PFCC</td></tr>
+<tr><td>PFCC is included in strategic plan</td></tr>
+<tr><td>Resources allocated for PFCC</td></tr>
+<tr><td>PFCC metrics reviewed in leadership meetings</td></tr>
+<tr><td>Staff recognition includes PFCC</td></tr>
+
+<tr><td>العبارة</td><td>1 (لا أوافق بشدة)</td><td>2 (لا أوافق)</td><td>3 (أوافق)</td><td>4 (أوافق بشدة)</td></tr>
+|----------|-----------------|-------------|----------|----------------|
+<tr><td>القيادة العليا تعطي الأولوية للرعاية المتمركزة</td></tr>
+<tr><td>الرعاية المتمركزة مدرجة في الخطة الاستراتيجية</td></tr>
+<tr><td>الموارد مخصصة للرعاية المتمركزة</td></tr>
+<tr><td>مقاييس الرعاية المتمركزة تُراجع في اجتماعات القيادة</td></tr>
+<tr><td>التقدير يشمل الرعاية المتمركزة</td></tr>
+
+<strong>Staff Readiness Assessment | تقييم جاهزية الموظفين:</strong>
+
+<tr><td>Competency Area</td><td>Level 1</td><td>Level 2</td><td>Level 3</td><td>Level 4</td></tr>
+|-----------------|--------|---------|---------|---------|
+<tr><td>PFCC Knowledge</td></tr>
+<tr><td>Communication Skills</td></tr>
+<tr><td>Family Engagement</td></tr>
+<tr><td>Documentation</td></tr>
+<tr><td>Quality Improvement</td></tr>
+
+<tr><td>مجال الكفاءة</td><td>المستوى 1</td><td>المستوى 2</td><td>المستوى 3</td><td>المستوى 4</td></tr>
+|--------------|-----------|-----------|-----------|-----------|
+<tr><td>معرفة الرعاية المتمركزة</td></tr>
+<tr><td>مهارات التواصل</td></tr>
+<tr><td>إشراك العائلة</td></tr>
+<tr><td>التوثيق</td></tr>
+<tr><td>تحسين الجودة</td></tr>
+
+<h3 class="section-title">Appendix B: Policy Development Guide | الملحق ب: دليل تطوير السياسة</h3>
+
+<h4 class="section-sub">Sample PFCC Policy Elements | عناصر سياسة الرعاية المتمركزة النموذجية</h4>
+
+<strong>1. Patient Rights Policy | سياسة حقوق المريض:</strong>
+
+The healthcare organization shall:
+
+1.1 Treat all patients with dignity and respect regardless of background
+1.2 Honor patient cultural, religious, and personal values
+1.3 Provide care that respects patient privacy
+1.4 Share complete, understandable information with patients
+1.5 Involve patients in care decisions
+1.6 Support patient self-determination
+1.7 Protect patient personal health information
+1.8 Provide mechanisms for patient feedback and complaints
+1.9 Ensure patients have access to their health records
+1.10 Respect patient right to refuse treatment
+
+يجب على المؤسسة الصحية:
+
+1.1 معاملة جميع المرضى بالكرامة والاحترام بغض النظر عن الخلفية
+1.2 تكريم القيم الثقافية والدينية والشخصية للمريض
+1.3 تقديم رعاية تحترم خصوصية المريض
+1.4 مشاركة معلومات كاملة ومفهومة مع المرضى
+1.5 إشراك المرضى في قرارات الرعاية
+1.6 دعم تقرير المصير للمريض
+1.7 حماية المعلومات الصحية الشخصية للمريض
+1.8 توفير آليات لملاحظات وشكاوى المرضى
+1.9 ضمان حصول المرضى على الوصول إلى سجلاتهم الصحية
+1.10 احترام حق المريض في رفض العلاج
+
+<strong>2. Family Involvement Policy | سياسة إشراك العائلة:</strong>
+
+The healthcare organization shall:
+
+2.1 Welcome family participation in care (as patient wishes)
+2.2 Provide flexible visiting hours that accommodate family needs
+2.3 Include family in care conferences and discussions (with patient consent)
+2.4 Support family involvement in discharge planning
+2.5 Provide family education to support patient care
+2.6 Respect patient preferences for family involvement
+2.7 Accommodate family cultural and religious practices
+2.8 Provide comfortable spaces for families
+2.9 Include family in patient safety processes
+2.10 Support family well-being during patient illness
+
+يجب على المؤسسة الصحية:
+
+2.1 welcomes participation العائلة في الرعاية (كما يرغب المريض)
+2.2 provide visiting hours مرنة تلبي احتياجات العائلة
+2.3 include family in care conferences و المناقشات (بموافقة المريض)
+2.4 support family involvement في تخطيط الخروج
+2.5 provide family education لدعم رعاية المريض
+2.6 respect patient preferences for family involvement
+2.7 accommodate family cultural و religious practices
+2.8 provide مساحات مريحة للعائلات
+2.9 include family في عمليات سلامة المريض
+2.10 support family well-being during patient illness
+
+<strong>3. Information Sharing Policy | سياسة مشاركة المعلومات:</strong>
+
+The healthcare organization shall:
+
+3.1 Provide information in language patient understands
+3.2 Use interpreter services when needed
+3.3 Share complete information about diagnosis, treatment, and prognosis
+3.4 Use teach-back method to verify understanding
+3.5 Provide written information in Arabic
+3.6 Encourage patient questions
+3.7 Provide information at appropriate times
+3.8 Respect patient preferences for information
+3.9 Document patient understanding
+3.10 Support patient decision-making with information
+
+يجب على المؤسسة الصحية:
+
+3.1 provide information بلغة يفهمها المريض
+3.2 use interpreter services عند الحاجة
+3.3 share complete information حول التشخيص والعلاج والتشخيص
+3.4 use teach-back method للتحقق من الفهم
+3.5 provide written information بالعربية
+3.6 encourage patient questions
+3.7 provide information at appropriate times
+3.8 respect patient preferences for information
+3.9 document patient understanding
+3.10 support patient decision-making with information
+
+<h3 class="section-title">Appendix C: Quality Improvement Project Template | الملحق ج: قالب مشروع تحسين الجودة</h3>
+
+<h4 class="section-sub">Project Charter | ميثاق المشروع</h4>
+
+<strong>Project Name:</strong> [Insert PFCC Improvement Project Name]
+<strong>Project Lead:</strong> [Name]
+<strong>Team Members:</strong> [Names]
+<strong>Start Date:</strong> 
+<strong>Target Completion:</strong>
+
+<strong>Problem Statement:</strong>
+[Describe the PFCC problem you are addressing]
+
+<strong>Aim Statement:</strong>
+[What will you accomplish? By when?]
+
+<strong>Measures:</strong>
+- Primary: [Outcome measure]
+- Process: [Process measure]
+- Balancing: [Potential negative effects]
+
+<strong>Changes to Test:</strong>
+1. [Change Idea 1]
+2. [Change Idea 2]
+3. [Change Idea 3]
+
+<strong>Project Timeline:</strong>
+
+<tr><td>Phase</td><td>Activities</td><td>Timeline</td></tr>
+|-------|-----------|----------|
+<tr><td>Planning</td></tr>
+<tr><td>Implementation</td></tr>
+<tr><td>Analysis</td></tr>
+<tr><td>Spread</td></tr>
+
+<h3 class="section-title">Appendix D: Staff Education Materials | الملحق د: مواد تعليم الموظفين</h3>
+
+<h4 class="section-sub">PFCC Core Concepts Training Outline |outline تدريب المفاهيم الأساسية للرعاية المتمركزة</h4>
+
+<strong>Module 1: Introduction to PFCC (30 minutes)</strong>
+
+Objectives:
+- Define patient- and family-centered care
+- Explain four dimensions of PFCC
+- Identify benefits for patients, families, and staff
+- Connect PFCC to organizational mission and values
+
+Objectives:
+- Define patient- and family-centered care
+- Explain four dimensions of PFCC
+- Identify benefits for patients, families, and staff
+- Connect PFCC to organizational mission and values
+
+Content:
+- Definition and history of PFCC
+- The four dimensions in depth
+- Evidence supporting PFCC
+- PFCC in Saudi healthcare context
+- Connection to CBAHI standards
+
+<strong>Module 2: Communication Skills (45 minutes)</strong>
+
+Objectives:
+- Demonstrate active listening
+- Practice teach-back method
+- Use plain language
+- Conduct effective family discussions
+
+Content:
+- Active listening techniques
+- Teach-back method practice
+- Language simplification strategies
+- Working with interpreters
+- Difficult conversation scenarios
+
+<strong>Module 3: Patient Engagement (30 minutes)</strong>
+
+Objectives:
+- Set collaborative goals with patients
+- Support patient decision-making
+- Involve families appropriately
+- Assess patient preferences
+
+Content:
+- Goal-setting approaches
+- Shared decision-making model
+- Family engagement strategies
+- Preference assessment tools
+- Cultural humility
+
+<strong>Module 4: Documentation and Measurement (30 minutes)</strong>
+
+Objectives:
+- Document PFCC activities
+- Use measurement tools
+- Contribute to quality improvement
+- Report PFCC outcomes
+
+Content:
+- Documentation requirements
+- Measurement tools
+- Data collection processes
+- Quality improvement methods
+- Reporting mechanisms
+
+<h3 class="section-title">Appendix E: Patient and Family Communication Tools | الملحق ه: أدوات التواصل مع المريض والعائلة</h3>
+
+<h4 class="section-sub">Patient Welcome Guide | دليل ترحيب المريض</h4>
+
+<strong>Welcome to [Hospital Name]</strong>
+
+We are committed to providing you with excellent care that respects your values, preferences, and needs. As our patient, you can expect:
+
+<strong>Your Rights | حقوقك:</strong>
+
+- To be treated with dignity and respect
+- To receive clear information about your care
+- To participate in decisions about your treatment
+- To have your family involved as you wish
+- To privacy and confidentiality
+- To voice concerns and provide feedback
+- To access your health information
+- To refuse treatment
+
+<strong>Your Responsibilities | مسؤولياتك:</strong>
+
+- To share complete and accurate health information
+- To ask questions when you don't understand
+- To follow treatment plans when you agree to them
+- To respect staff and other patients
+- To provide feedback about your care
+
+<strong>How We Will Partner With You | كيف سنتعاون معك:</strong>
+
+1. We will ask about what matters most to you
+2. We will share information in ways you understand
+3. We will encourage you to ask questions
+4. We will involve your family as you wish
+5. We will respect your values and preferences
+6. We will listen to your concerns
+7. We will work with you to achieve your health goals
+
+<strong>Your Care Team | فريق رعايتك:</strong>
+
+Your care team includes physicians, nurses, pharmacists, therapists, and other professionals. You will be introduced to each team member. Please feel free to ask any questions.
+
+<strong>Questions to Ask Your Care Team | أسئلة لطرحها على فريق رعايتك:</strong>
+
+- What is my diagnosis?
+- What are my treatment options?
+- What are the benefits and risks of each option?
+- What should I expect?
+- What can I do to help with my care?
+- When will I get my test results?
+- When can I go home?
+- What happens after I leave?
+
+<h3 class="section-title">Appendix F: Saudi Healthcare Context - Detailed Reference | الملحق و: السياق الصحي السعودي - مرجع تفصيلي</h3>
+
+<h4 class="section-sub">Saudi Healthcare System Structure | هيكل النظام الصحي السعودي</h4>
+
+<strong>Ministry of Health (MOH) | وزارة الصحة:</strong>
+
+- Provides healthcare through a network of hospitals and primary healthcare centers
+- Manages public health programs
+- Regulates healthcare sector
+- Coordinates with other government health entities
+- Vision 2030 health transformation leadership
+
+-Provides الرعاية الصحية من خلال شبكة من hospitals ومراكز الرعاية الأولية
+-يدير برامج الصحة العامة
+-ينظم القطاع الصحي
+-يتcoordination مع كيانات الصحة الحكومية الأخرى
+- leadership تحول الصحة رؤية 2030
+
+<strong>Other Healthcare Providers | другие مزودي الرعاية الصحية:</strong>
+
+- Private hospitals and clinics
+- Academic medical centers
+- Specialized healthcare companies
+- Military health services
+- National Guard health services
+
+- hospitals الخاصة والعيادات
+- المراكز الطبية الأكاديمية
+- شركات الرعاية الصحية المتخصصة
+- الخدمات الصحية العسكرية
+- الخدمات الصحية للحرس الوطني
+
+<h4 class="section-sub">Professional Organizations | المنظمات المهنية</h4>
+
+- Saudi Commission for Health Specialties
+- Saudi Medical Association
+- Saudi Nursing Association
+- Saudi Pharmaceutical Association
+- Patient Experience forums
+
+- الهيئة السعودية للتخصصات الصحية
+- الجمعية الطبية السعودية
+- جمعية التمريض السعودية
+- الجمعية الصيدلية السعودية
+- منتديات تجربة المريض
+
+<h3 class="section-title">Appendix G: Measurement and Monitoring | الملحق ز: القياس والمراقبة</h3>
+
+<h4 class="section-sub">PFCC Dashboard Metrics | مقاييس لوحة الرعاية المتمركزة</h4>
+
+<strong>Monthly Dashboard Elements | عناصر اللوحة الشهرية:</strong>
+
+<tr><td>Metric</td><td>Target</td><td>Current</td><td>Trend</td></tr>
+|--------|--------|---------|-------|
+<tr><td>Patient satisfaction (communication)</td><td>>90%</td></tr>
+<tr><td>Documented patient goals</td><td>>80%</td></tr>
+<tr><td>Teach-back completion rate</td><td>>75%</td></tr>
+<tr><td>Family involvement in care planning</td><td>>70%</td></tr>
+<tr><td>Patient complaints related to communication</td><td><5%</td></tr>
+<tr><td>Staff PFCC training completion</td><td>100%</td></tr>
+
+<tr><td>المقياس</td><td>الهدف</td><td>الحالي</td><td>الاتجاه</td></tr>
+|---------|-------|--------|---------|
+<tr><td>رضا المريض (التواصل)</td><td>>90%</td></tr>
+<tr><td>الأهداف الموثقة للمريض</td><td>>80%</td></tr>
+<tr><td>معدل إكمال التحقق من الفهم</td><td>>75%</td></tr>
+<tr><td>إشراك العائلة في تخطيط الرعاية</td><td>>70%</td></tr>
+<tr><td>الشكاوى المتعلقة بالتواصل</td><td><5%</td></tr>
+<tr><td>إكتمال تدريب الموظفين</td><td>100%</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">Quality Improvement Cycle | دورة تحسين الجودة</h4>
+
+<strong>PDSA Template | نموذج PDSA:</strong>
+
+<strong>Plan:</strong>
+- What change will we make?
+- What do we expect will happen?
+- Who will implement?
+- When will it happen?
+
+- What تغيير سنقوم به؟
+- What نتوقع أن يحدث؟
+- Who سينفذه؟
+- متى سيحدث؟
+
+<strong>Do:</strong>
+- Implement the change
+- Document observations
+- Note any problems
+
+- نفّذ التغيير
+- وثّق الملاحظات
+- لاحظ أي مشاكل
+
+<strong>Study:</strong>
+- Analyze data
+- Compare to predictions
+- Identify lessons learned
+
+- حلّل البيانات
+- قارن بالتوقعات
+- حدد الدروس المستفادة
+
+<strong>Act:</strong>
+- Adapt the change
+- Abandon if not working
+- Spread if successful
+
+- عادل التغيير
+- abandan إذا لم يعمل
+- انشر إذا نجح
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-19">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> PFC 102
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-102" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 95 minutes (enhanced)
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-20">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الرمز:</strong> PFC 102
+- <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-102" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 95 دقيقة (محسّنة)
+
+---
+
+<em>This course was enhanced for the Brainsait Academy with Saudi healthcare context, CBAHI alignment, interactive case studies, and bilingual content.</em>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/pfc-101.html" class="related-card">
+            <h4>Introduction to Person- and Family-Centered Care</h4>
+            <p class="rtl">PFC 101: مقدمة في الرعاية المتمركزة على الشخص والعائلة</p>
+            <span class="related-card-duration">⏱ 90 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-pfc-102') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-pfc-102', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('pfc-102')) enrolled.push('pfc-102');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'pfc-102');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-pfc-102') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-pfc-102', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-pfc-102', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-pfc-102', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-pfc-102', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-pfc-102') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Key Dimensions of Patient- and Family-Centered Care',
+        slug: 'pfc-102',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-pfc-102') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-pfc-102.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

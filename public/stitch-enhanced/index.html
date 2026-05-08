@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stitch Gallery | BrainSAIT Academy</title>
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo"><span class="logo-icon">🧠</span><span class="logo-text">BrainSAIT Academy</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link active">Stitch Hub</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+      </div>
+    </div>
+  </nav>
+  <main class="main-content">
+    <section class="stitch-showcase">
+      <div class="section-header">
+        <h1 class="section-title">🎨 Stitch Screen Gallery</h1>
+        <span class="course-count-badge">10 screens</span>
+      </div>
+      <div class="stitch-grid">
+        
+        <article class="stitch-card">
+          <img src="/stitch/images/61ce4578d40f42458abe416579fea198.png" alt="Gamified Dashboard" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Gamified Dashboard</h3>
+            <a href="/stitch/screens/61ce4578d40f42458abe416579fea198.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/79df5bfb544749208fc3dd15b1c58a47.png" alt="Intelligent Workspace" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Intelligent Workspace</h3>
+            <a href="/stitch/screens/79df5bfb544749208fc3dd15b1c58a47.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/dbbbbbbc495a4dd68708ffa9f8eedda9.png" alt="Community Hub" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Community Hub</h3>
+            <a href="/stitch/screens/dbbbbbbc495a4dd68708ffa9f8eedda9.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/d6a5fd085fa24e52a3dc6bce59b9f502.png" alt="Reflect & Retain" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Reflect & Retain</h3>
+            <a href="/stitch/screens/d6a5fd085fa24e52a3dc6bce59b9f502.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/47b21420993e43299bcebedf85d668e2.png" alt="AR Course Explorer" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>AR Course Explorer</h3>
+            <a href="/stitch/screens/47b21420993e43299bcebedf85d668e2.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/e6bea9014e7e48938ad1c27abe8a9964.png" alt="Brain Power Shop" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Brain Power Shop</h3>
+            <a href="/stitch/screens/e6bea9014e7e48938ad1c27abe8a9964.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/0fefc8fff0c448569ee835cc067e1d8d.png" alt="Workspace with AI Tutor" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Workspace with AI Tutor</h3>
+            <a href="/stitch/screens/0fefc8fff0c448569ee835cc067e1d8d.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/8ec7d7be5b504e389bc9d6ba97d516e0.png" alt="Workspace with Exam Prep Mode" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Workspace with Exam Prep Mode</h3>
+            <a href="/stitch/screens/8ec7d7be5b504e389bc9d6ba97d516e0.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/4d7fcb33090d471c870c1264db1dd673.png" alt="Exam Results & AI Feedback" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Exam Results & AI Feedback</h3>
+            <a href="/stitch/screens/4d7fcb33090d471c870c1264db1dd673.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+        <article class="stitch-card">
+          <img src="/stitch/images/b58f6628552c4fc9b161c861b264c949.png" alt="Refined Performance Analytics" loading="lazy" class="stitch-preview">
+          <div class="stitch-card-body">
+            <h3>Refined Performance Analytics</h3>
+            <a href="/stitch/screens/b58f6628552c4fc9b161c861b264c949.html" class="btn-stitch" target="_blank">Open Screen</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+    function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  </script>
+</body>
+</html>

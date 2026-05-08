@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exam Results - BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=Noto+Naskh+Arabic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed": "#001f26",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "background": "#f9f9ff",
+                        "primary-container": "#6063ee",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#dc2c4f",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-surface-variant": "#464554",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-fixed": "#ffdadb",
+                        "on-error": "#ffffff",
+                        "primary": "#4648d4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-secondary-container": "#006172",
+                        "tertiary-fixed-dim": "#ffb2b7",
+                        "on-surface": "#111c2d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#57dffe",
+                        "surface-tint": "#494bd6",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#263143",
+                        "secondary": "#00687a",
+                        "outline": "#767586",
+                        "surface-variant": "#d8e3fb",
+                        "inverse-primary": "#c0c1ff",
+                        "on-background": "#111c2d",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed": "#07006c",
+                        "on-tertiary-fixed-variant": "#92002a",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e1e0ff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed": "#40000d",
+                        "surface-container": "#e7eeff",
+                        "secondary-fixed": "#acedff",
+                        "surface-dim": "#cfdaf2",
+                        "tertiary": "#b90538",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-primary-container": "#fffbff",
+                        "outline-variant": "#c7c4d7",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "container-padding": "20px",
+                        "xl": "48px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "lg": "32px"
+                    },
+                    "fontFamily": {
+                        "arabic-body": ["Noto Naskh Arabic"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "arabic-body": ["17px", {"lineHeight": "30px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl docked full-width top-0 sticky z-50 bg-white/70 backdrop-blur-md border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-container-padding h-16 w-full">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/30">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional medical student in a bright, modern learning environment. The lighting is soft and flattering, highlighting a friendly and focused expression. The color palette is clean, with pristine whites and subtle blue undertones, reflecting a modern healthcare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyA7JqERh4PcCgqysMfa2Dn6rmx3-EDVDbqRlb-erAycKocTcwTYC_akq0Th8qdGb8cMMG-3akopZr4_2GuAvqENdwX1x_P-pl3-FGRTpxXQry9FpABpuYH4yNNR4zUvKcjg2uVwRay6C86mW6t-nAsu81rOvoBWxqlusoZIL-SNgrSclLAxlJ2VNtVElWbX55l5iFQ2WzVRAU-W2oSnwR-wziwFR58JnsMmrw95sTexJxqiH97ha5tFdEyjWqsCOUx_cvd7hJiATD"/>
+</div>
+</div>
+<div class="font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed">BrainsAIT Academy</div>
+<div class="flex items-center">
+<button class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim px-sm py-xs rounded-full hover:bg-primary/5 transition-colors scale-95 active:opacity-80 transition-all">AR/EN</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col md:flex-row max-w-7xl mx-auto w-full">
+<!-- Web SideNav (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col w-64 border-r border-outline-variant/20 bg-surface/80 backdrop-blur-lg sticky top-16 h-[calc(100vh-4rem)] p-md">
+<nav class="flex flex-col gap-sm">
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-primary font-bold bg-primary-container/20 transition-colors font-label-md text-label-md relative after:content-[''] after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:w-1 after:h-8 after:bg-primary after:rounded-r-full" href="#">
+<span class="material-symbols-outlined fill">psychology</span>
+                    Workspace
+                </a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">rebase_edit</span>
+                    Follow-up
+                </a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">groups</span>
+                    Community
+                </a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Account
+                </a>
+</nav>
+</aside>
+<!-- Canvas -->
+<div class="flex-grow p-container-padding space-y-lg">
+<!-- Result Header Card (Glassmorphism) -->
+<section class="relative overflow-hidden rounded-xl bg-white/70 backdrop-blur-[20px] shadow-[0_10px_30px_rgba(30,41,59,0.05)] border border-outline-variant/30 p-md flex flex-col md:flex-row items-center justify-between gap-md">
+<!-- Background decorative elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
+<div class="flex flex-col items-center md:items-start z-10 text-center md:text-left">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-xs">Advanced Diagnostic Medicine</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Final Assessment Complete</p>
+<div class="inline-flex items-center gap-xs px-sm py-xs bg-primary-container/20 text-primary font-label-md text-label-md rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                        Status: Passed
+                    </div>
+</div>
+<div class="z-10 flex flex-col items-center justify-center relative">
+<!-- Progress Ring Style -->
+<div class="w-32 h-32 rounded-full border-8 border-surface-container flex items-center justify-center relative shadow-[0_0_20px_rgba(70,72,212,0.15)]">
+<svg class="absolute top-0 left-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-primary" cx="50" cy="50" fill="none" r="46" stroke-dasharray="289" stroke-dashoffset="34.68" stroke-width="8"></circle>
+</svg>
+<div class="text-center">
+<span class="font-headline-xl text-headline-xl text-primary block">88</span>
+<span class="font-label-md text-label-md text-on-surface-variant block -mt-1">/ 100</span>
+</div>
+</div>
+<!-- Celebratory Badge -->
+<div class="absolute -bottom-4 bg-tertiary text-on-tertiary px-sm py-[2px] rounded-full font-label-md text-label-md flex items-center gap-xs shadow-md border border-white/20">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+                        Excellence
+                    </div>
+</div>
+</section>
+<!-- AI Tutor Feedback -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/20 p-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1 bg-secondary"></div>
+<div class="flex items-start gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs flex items-center gap-xs">
+                            AI Tutor Insights
+                            <span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Excellent diagnostic reasoning, but consider reviewing Cardiovascular Ethics. Your critical thinking speed was in the top 15% of peers. To achieve mastery, focus on edge-case scenarios involving complex patient histories.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Grid Layout for Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Strengths & Weaknesses (Bento Item) -->
+<section class="bg-white/50 backdrop-blur-md border border-outline-variant/30 rounded-xl p-md shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Performance Breakdown</h3>
+<div class="space-y-sm">
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-xs">
+<span class="text-on-surface">Diagnostic Reasoning</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-xs">
+<span class="text-on-surface">Clinical Guidelines</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-xs">
+<span class="text-on-surface">Cardiovascular Ethics</span>
+<span class="text-tertiary">65%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions & Next Steps (Bento Item) -->
+<section class="bg-white/50 backdrop-blur-md border border-outline-variant/30 rounded-xl p-md shadow-sm flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Next Steps</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Reviewing your mistakes is crucial for closing knowledge gaps before the clinical rotation phase.</p>
+<ul class="space-y-xs mb-md">
+<li class="flex items-center gap-xs font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                3 questions require review
+                            </li>
+<li class="flex items-center gap-xs font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                1 recommended reading module
+                            </li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row gap-sm pt-sm border-t border-outline-variant/20">
+<button class="flex-1 bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm px-md rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-xs relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-white/40"></div>
+<span class="material-symbols-outlined">rule</span>
+                            Review Mistakes
+                        </button>
+<button class="flex-1 bg-transparent border-2 border-primary text-primary font-label-md text-label-md py-sm px-md rounded-lg hover:bg-primary/5 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined">arrow_forward</span>
+                            Continue Module
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-md text-label-md text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined fill mb-1">psychology</span>
+<span class="font-label-md text-label-md text-[10px]">Workspace</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1">rebase_edit</span>
+<span class="font-label-md text-label-md text-[10px]">Follow-up</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1">groups</span>
+<span class="font-label-md text-label-md text-[10px]">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md text-[10px]">Account</span>
+</a>
+</nav>
+</body></html>

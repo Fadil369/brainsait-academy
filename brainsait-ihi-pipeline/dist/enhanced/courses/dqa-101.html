@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improving Dental Care with the Model for Improvement | BrainSAIT Academy</title>
+  <meta name="description" content="Improving Dental Care with the Model for Improvement - Full bilingual course on Dental Care">
+  <meta name="keywords" content="Dental Care, IHI, Open School, Health Care, DQA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Improving Dental Care with the Model for Improvement</h3>
+        <p>DQA-101 • 60 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Objectives</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Lessons</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">English Overview</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">نظرة عامة بالعربية</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Expanded Lesson Summaries | الملخصا...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Activities & Assessment |...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Apply in Your Hospital/Clinic | الت...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Continuing Education Credits</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Detailed Lesson Content | محتوى الد...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Final Course Summary</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Summary and Course Completion</span>
+          </li>
+          <li class="section-item " data-section="15" onclick="scrollToSection(15)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Details</span>
+          </li>
+          <li class="section-item " data-section="16" onclick="scrollToSection(16)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Dental Care</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Improving Dental Care with the Model for Improvement</h1>
+        <p class="course-title-ar rtl">DQA 101: تحسين الرعاية الصحية للاستخدام النموذج للتحسين</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">60</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">17</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Objectives</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          After completing this course, you will be able to:
+
+- List the three questions you must ask to apply the Model for Improvement.
+- Identify the key elements of an effective aim statement.
+- Identify three kinds of measures: process measures, outcome measures, and balancing measures.
+- Use change concepts and critical thinking tools to come up with good ideas for changes to test.
+- Test changes on a small scale using the Plan-Do-Study-Act (PDSA) cycle.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Lessons</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          - <strong>Lesson 1: An Overview of the Model for Improvement</strong>
+You'll learn how to use the Model for Improvement (MFI) to improve oral care in hospitals.
+
+- <strong>Lesson 2: Setting an Aim</strong>
+You'll learn how to craft a measurable aim statement to help reduce patient wait times and increase oral care services.
+
+- <strong>Lesson 3: Choosing Measures</strong>
+You'll learn the importance of building measurable systems by using the Model for Improvement (MFI) to improve outcomes and processes.
+
+- <strong>Lesson 4: Developing Changes</strong>
+You'll identify change concepts using the Associates in Process Improvement (API) and Cause and Effects diagrams to improve dental care within hospital settings.
+
+- <strong>Lesson 5: Testing Changes</strong>
+You'll examine the testing phase within the Model of Improvement to help minimize risks and foster change within complex healthcare systems.
+
+<strong>Estimated Time of Completion</strong>: Time
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">English Overview</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          This course equips health professionals to strengthen dental quality improvement, preventive care workflows, and outcome measurement while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">نظرة عامة بالعربية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في تحسين جودة طب الأسنان، وسير عمل الرعاية الوقائية، وقياس النتائج مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- List the three questions you must ask to apply the Model for Improvement.
+- Identify the key elements of an effective aim statement.
+- Identify three kinds of measures: process measures, outcome measures, and balancing measures.
+- Use change concepts and critical thinking tools to come up with good ideas for changes to test.
+- Test changes on a small scale using the Plan-Do-Study-Act (PDSA) cycle.
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="section-title">العربية</h3>
+- تطوير مسارات جودة فعالة في خدمات طب الأسنان الوقائية والعلاجية.
+- قياس نتائج الخدمة وتحسين الالتزام والمتابعة للمستفيدين.
+- تنفيذ تدخلات عملية تقلل التأخير وتحسن تجربة المراجع.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: An Overview of the Model for Improvement</h3>
+- <strong>Expanded Summary:</strong> You'll learn how to use the Model for Improvement (MFI) to improve oral care in hospitals. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 1: نموذج التحسين</h3>
+- <strong>الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 2: Setting an Aim</h3>
+- <strong>Expanded Summary:</strong> You'll learn how to craft a measurable aim statement to help reduce patient wait times and increase oral care services. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 2: تحديد الهدف</h3>
+- <strong>الملخص الموسّع:</strong> تنتقل هذه الوحدة من الفهم النظري إلى التحليل التطبيقي: كيف تُقيِّم الوضع الراهن، وتُحدِّد الفجوات، وتختار الأدوات المناسبة لبيئة عملك. تُقدِّم أمثلة على التحديات الشائعة في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية، وتُمكِّن الممارس من ترجمة المشكلة إلى فرصة تحسين محددة.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> صمِّم قائمة تحقق مكوَّنة من خمسة بنود لمشكلة تشغيلية محددة في وحدتك، وحدِّد مؤشرًا للقياس القبلي ومؤشرًا للقياس البعدي قبل تنفيذ أي تدخل.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 3: Choosing Measures</h3>
+- <strong>Expanded Summary:</strong> You'll learn the importance of building measurable systems by using the Model for Improvement (MFI) to improve outcomes and processes. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 3: اختيار مؤشرات القياس</h3>
+- <strong>الملخص الموسّع:</strong> تُركِّز هذه الوحدة على التطبيق الميداني: تصميم التدخل، وبناء الفريق متعدد التخصصات، وتحديد مؤشرات المتابعة. تُعدِّل المقاربات التدخلية لتناسب الموارد والكوادر المتاحة في بيئات الرعاية السعودية، وتُخرِّج الممارس بخطة عمل قابلة للتنفيذ الفوري.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> نفِّذ دورة PDSA واحدة (سبعة أيام): طبِّق تغييرًا صغيرًا واحدًا، وقِس أثره على المؤشر المحدد، وأعدَّ ورقة نتائج تُشارك بها الفريق في الاجتماع الأسبوعي القادم.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 4: Developing Changes</h3>
+- <strong>Expanded Summary:</strong> You'll identify change concepts using the Associates in Process Improvement (API) and Cause and Effects diagrams to improve dental care within hospital settings. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 4: تطوير التغييرات</h3>
+- <strong>الملخص الموسّع:</strong> تُعمِّق هذه الوحدة المعرفة بمراجعة حالات تطبيقية وتحديات متقدمة. تُعالج إشكاليات النشر والتوسع، وتُقدِّم استراتيجيات للحفاظ على المكتسبات وإشراك القيادة في ترسيخ الثقافة المؤسسية للتحسين المستمر.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> أعرض مشروع التحسين أمام المسؤولين المعنيين في لجنة الجودة أو الاجتماع الإداري، وضمِّن العرض: المشكلة، والهدف، والبيانات، والخطوات التالية.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 5: Testing Changes</h3>
+- <strong>Expanded Summary:</strong> You'll examine the testing phase within the Model of Improvement to help minimize risks and foster change within complex healthcare systems. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 5: اختبار التغييرات</h3>
+- <strong>الملخص الموسّع:</strong> تُلخِّص هذه الوحدة مسار التعلم وتُرسِّخ الجاهزية للنقل المعرفي. تُقدِّم أدوات لقياس أثر التطبيق على مدى 90 يومًا، وتُرشد الممارس إلى آليات الإبلاغ لجهات الحوكمة وإدارة الجودة في منشأته.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> ضع خطة نشر ثلاثية المراحل (30/60/90 يومًا) تشمل: المسؤولين، وآليات المتابعة، والمؤشرات، وجهة الإبلاغ الحوكمية في منشأتك.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- <strong>Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong>Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong>Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong>Local scenario:</strong> Use this course to improve preventive oral health follow-up and reduce treatment delays in dental clinics.
+
+<h3 class="section-title">العربية</h3>
+- <strong>بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong>الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong>الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong>سيناريو محلي:</strong> تُستخدم الدورة من أجل تحسين متابعة صحة الفم الوقائية وتقليل تأخر العلاج في عيادات الأسنان.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+1. <strong>Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong>Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong>Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong>Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="section-title">العربية</h3>
+1. <strong>استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong>اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong>مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong>نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td></tr>
+|---|---|
+<tr><td>Preventive care</td><td>الرعاية الوقائية</td></tr>
+<tr><td>Recall system</td><td>نظام الاستدعاء</td></tr>
+<tr><td>Oral health outcome</td><td>نتيجة صحة الفم</td></tr>
+<tr><td>Care bundle</td><td>حزمة رعاية</td></tr>
+<tr><td>Standard work</td><td>العمل المعياري</td></tr>
+<tr><td>Patient adherence</td><td>الالتزام العلاجي</td></tr>
+<tr><td>Caries prevention</td><td>الوقاية من تسوس الأسنان</td></tr>
+<tr><td>Periodontal disease</td><td>مرض اللثة</td></tr>
+<tr><td>Fluoride therapy</td><td>علاج الفلوريد</td></tr>
+<tr><td>Dental radiograph safety</td><td>سلامة التصوير الشعاعي لطب الأسنان</td></tr>
+<tr><td>Infection control in dentistry</td><td>مكافحة العدوى في طب الأسنان</td></tr>
+<tr><td>Dental wait time</td><td>وقت انتظار طب الأسنان</td></tr>
+<tr><td>Patient recall system</td><td>نظام استدعاء المريض</td></tr>
+<tr><td>Oral health literacy</td><td>الثقافة الصحية الفموية</td></tr>
+<tr><td>Treatment planning</td><td>التخطيط للعلاج</td></tr>
+<tr><td>Dental outcome measure</td><td>مؤشر نتائج طب الأسنان</td></tr></tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/dqa-101
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- Saudi Dental Society: https://www.saudidental.com
+- MOH Oral Health Program Saudi Arabia: https://www.moh.gov.sa
+- CBAHI Dental Quality Standards: https://www.cbahi.gov.sa
+- FDI World Dental Federation: https://www.fdiworlddental.org
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+<div class="checklist-item"><span class="checkbox"></span>Select one department and one measurable problem.</div>
+<div class="checklist-item"><span class="checkbox"></span>Form a multidisciplinary micro-team.</div>
+<div class="checklist-item"><span class="checkbox"></span>Define baseline, target, and data collection frequency.</div>
+<div class="checklist-item"><span class="checkbox"></span>Run at least one improvement test and document findings.</div>
+<div class="checklist-item"><span class="checkbox"></span>Report outcomes to quality governance and plan next-cycle spread.</div>
+
+<div class="checklist-item"><span class="checkbox"></span>Present your course implementation findings at a team meeting within 30 days.</div>
+<div class="checklist-item"><span class="checkbox"></span>Share one lesson learned with a peer and document the exchange.</div>
+<div class="checklist-item"><span class="checkbox"></span>Link your improvement work to your facility's quality governance and reporting cycle.</div>
+<h3 class="section-title">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item"><span class="checkbox"></span>اختيار قسم واحد ومشكلة قابلة للقياس.</div>
+<div class="checklist-item"><span class="checkbox"></span>تشكيل فريق مصغر متعدد التخصصات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد خط الأساس والهدف وتواتر جمع البيانات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</div>
+<div class="checklist-item"><span class="checkbox"></span>رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] عرض نتائج تطبيق الدورة في اجتماع الفريق خلال 30 يومًا.</div>
+<div class="checklist-item"><span class="checkbox"></span>مشاركة درس مستفاد واحد مع زميل وتوثيق التبادل.</div>
+<div class="checklist-item"><span class="checkbox"></span>ربط عمل التحسين بدورة حوكمة الجودة والإبلاغ في منشأتك.</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Continuing Education Credits</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          Course completion typically earns 2.5 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/education/ihi-open-school/continuing-education-credits" target="_blank" rel="noopener">Learn more about Continuing Education credits</a>
+
+See full detailsThis course is approved by the American Dental Association for 2.5 continuing education credits. The ADA is an ADA Continuing Education Recognition Program (CERP) recognized provider.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1 Deep Dive: Overview of the Model for Improvement | الدرس الأول approfondi: نظرة عامة على نموذج التحسين</h3>
+
+<h4 class="section-sub">Section 1.1: Foundations of Quality Improvement in Dental Care | أسس تحسين الجودة في الرعاية الصحية لطب الأسنان</h4>
+
+Quality improvement in dental care represents a systematic approach to enhancing the delivery of oral health services. At its core, QA involves identifying problems, analyzing root causes, implementing changes, and measuring outcomes. Unlike traditional quality assurance which often focuses on compliance and inspection, modern QI emphasizes continuous improvement and the engagement of all team members in the improvement process.
+
+يمثل تحسين الجودة في الرعاية الصحية لطب النفس نهجًا منهجيًا لتعزيز تقديم خدمات صحة الفم. في جوهره، QA يتضمن تحديد المشكلات وتحليل الأسباب الجذرية وتنفيذ التغييرات وقياس النتائج. على عكس ضمان الجودة التقليدي الذي يركز غالبًا على الامتثال والفحص، يشدد QI الحديث على التحسين المستمر وإشراك جميع أعضاء الفريق في عملية التحسين.
+
+The Model for Improvement (MFI), developed by Associates in Process Improvement (API) and popularized by the Institute for Healthcare Improvement (IHI), provides a simple yet powerful framework for driving improvement. The model asks three fundamental questions:
+
+يوفر نموذج التحسين (MFI)، الذي طورته Associates in Process Improvement (API) وشاعه معهد تحسين الرعاية الصحية (IHI)، إطارًا بسيطًا Powerful لدفع التحسين. يسأل النموذج ثلاثة أسئلة أساسية:
+
+1. <strong>What are we trying to accomplish?</strong> | ما الذي نسعى لتحقيقه؟**
+   This question requires teams to develop a clear, specific aim statement that defines what they are trying to achieve, by how much, and by when. A good aim statement is time-specific, measurable, and focuses on a specific population and setting.
+
+تتطلب هذه السؤال من الفرق تطوير هدف واضح ومحدد يحدد ما يسعون لتحقيقه وبكم وبمتى. الهدف الجيد محدد بوقت وقابل للقياس ويركز على مجموعة وإعداد محددين.
+
+2. <strong>How will we know that a change is an improvement?</strong> | كيف سنعرف أن التغيير هو تحسن؟**
+   This question focuses on measurement. Teams must identify measures that will help them determine whether their changes are leading to improvement. These measures should be clearly defined, practical to collect, and meaningful to the improvement effort.
+
+تركز هذه السؤال على القياس. يجب على الفرق تحديد مقاييس ستساعدهم في تحديد ما إذا كانت تغييراتهم تؤدي إلى تحسين. يجب أن تكون هذه المقاييس محددة بوضوح عملية للجمع وذابلة смысла لجهود التحسين.
+
+3. <strong>What changes can we make that will result in improvement?</strong> | ما التغييرات التي يمكننا إجراؤها والتي ستؤدي إلى تحسن؟**
+   This question encourages teams to generate and test ideas for change. Rather than implementing large-scale changes immediately, the MFI encourages testing changes on a small scale using Plan-Do-Study-Act (PDSA) cycles.
+
+هذا السؤال يشجع الفرق على توليد واختبار أفكار للتغيير. بدلًا من تنفيذ تغييرات واسعة النطاق على الفور، يشجع MFI على اختبار التغييرات على نطاق صغير باستخدام دورات PDSA.
+
+<strong>Application to Dental Care | التطبيق على رعاية طب الأسنان:</strong>
+
+In the dental care context, these questions translate into specific improvement efforts. For example:
+
+في سياق رعاية طب义词، تترجم هذه الأسئلة إلى جهود تحسين محددة. على سبيل المثال:
+
+- <strong>Aim</strong>: Reduce mean wait time for routine dental appointments from 21 days to 7 days within 6 months in the PHC dental clinic.
+- <strong>Measures</strong>: Average appointment wait time, patient satisfaction scores, percentage of same-day appointments available.
+- <strong>Changes</strong>: Implement online scheduling, adjust staff allocation, add additional hygiene appointment slots.
+
+- <strong>Objective</strong>: Reduce average wait time for routine dental appointments from 21 days to 7 days within 6 months in the PHC dental clinic.
+- <strong>Measures</strong>: Average wait time for appointments, patient satisfaction scores, percentage of same-day appointments available.
+- <strong>Changes</strong>: Implement online scheduling, adjust staff allocation, add additional hygiene appointment slots.
+
+<h4 class="section-sub">Section 1.2: Understanding Variation in Dental Processes | فهم التباين في العمليات السنية</h4>
+
+A key concept in quality improvement is understanding variation. All processes have variation—some variation is inherent (common cause), while some results from special circumstances (special cause). Understanding the type of variation is essential for determining whether improvement is needed and whether changes are effective.
+
+مفهوم رئيسي في تحسين الجودة هو فهم التباين. جميع العمليات لها تباين—بعض التباين متأصل (السبب المشترك)، بينما ينتج البعض الآخر عن ظروف خاصة (السبب الخاص). فهم نوع التباين ضروري لتحديد ما إذا كان التحسن مطلوبًا وما إذا كانت التغييرات فعالة.
+
+In dental care, common sources of variation include:
+
+في رعاية طب义词، تشمل مصادر التباين الشائعة:
+
+- <strong>Appointment scheduling | جدولة المواعيد</strong>: Variation in how appointments are scheduled, allocated, and managed leads to different wait times and utilization patterns.
+
+- <strong>Treatment time | وقت العلاج</strong>: Variation in procedure times based on operator experience, patient complexity, and equipment availability.
+
+- <strong>Material usage | استخدام المواد</strong>: Variation in supplies and materials used for similar procedures.
+
+- <strong>Documentation | التوثيق</strong>: Variation in how clinical notes are recorded and maintained.
+
+<strong>Using Run Charts to Understand Variation | استخدام مخططات التشغيل لفهم التباين:</strong>
+
+Run charts are simple but powerful tools for understanding variation over time. They plot data points in time order, allowing teams to see patterns, trends, and unusual observations.
+
+مخططات التشغيل هي أدوات بسيطة Powerful لفهم التباين بمرور الوقت. ترسم نقاط البيانات بترتيب زمني، مما يتيح للفرق رؤية الأنماط والاتجاهات والملاحظات غير المعتادة.
+
+Key patterns to look for include:
+
+الأنماط الرئيسية التي يجب البحث عنها تشمل:
+
+- <strong>Shifts | التحولات</strong>: Six or more consecutive points above or below the median indicate a process change.
+
+- <strong>Trends | الاتجاهات</strong>: Seven or more consecutive points increasing or decreasing indicate a trend.
+
+- <strong>Runs | التشغيل</strong>: A run is a sequence of points on one side of the median; too few or too many runs indicate non-random patterns.
+
+- <strong>Oscillations | التذبذبات</strong>: Regular up-and-down patterns may indicate systematic influences.
+
+<h4 class="section-sub">Section 1.3: Building the Improvement Team | بناء فريق التحسين</h4>
+
+Successful quality improvement requires a well-functioning team with clear roles, effective communication, and shared commitment to the improvement goal. In dental care settings, team composition should reflect the scope of the improvement effort.
+
+يتطلب تحسين الجودة الناجح فريقًا يعمل بشكل جيد بأدوار واضحة وتواصل فعال والتزام مشترك بهدف التحسين. في إعدادات رعاية طب义词، يجب أن يعكس تكوين الفريق نطاق جهد التحسين.
+
+<strong>Team Composition for Dental QI | تكوين الفريق لتحسين الجودة في طب الأسنان:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Role</td><td>الدور</td><td>Responsibilities</td><td>المسؤوليات</td></tr>
+|------|------|------------------|------------|
+<tr><td>Team Lead</td><td>قائد الفريق</td><td>Coordinate activities, facilitate meetings</td><td>تنسيق الأنشطة، تسهيل الاجتماعات</td></tr>
+<tr><td>Dentist</td><td>طبيب أسنان</td><td>Clinical expertise, protocol development</td><td>الخبرة السريرية، تطوير البروتوكول</td></tr>
+<tr><td>Dental Hygienist</td><td>أخصائي صحة الفم</td><td>Preventive care, patient education</td><td>الرعاية الوقائية، تثقيف المريض</td></tr>
+<tr><td>Dental Assistant</td><td>مساعد طبيب أسنان</td><td>Clinical support, data collection</td><td>الدعم السريري، جمع البيانات</td></tr>
+<tr><td>Front Desk Staff</td><td>موظف الاستقبال</td><td>Scheduling, patient communication</td><td>جدولة الاتصال بالمريض</td></tr>
+<tr><td>Quality Coordinator</td><td>منسق الجودة</td><td>Data analysis, measurement support</td><td>تحليل البيانات، دعم القياس</td></tr>
+
+<strong>Effective Team Meetings | اجتماعات الفريق الفعالة:</strong>
+
+Team meetings should be regular, focused, and action-oriented. Key elements include:
+
+يجب أن تكون اجتماعات الفريق منتظمة ومركزة وموجهة نحو الإجراء. تشمل العناصر الرئيسية:
+
+1. <strong>Clear agenda | جدول أعمال واضح</strong>: Each meeting should have specific topics and time allocations.
+
+2. <strong>Role rotation | دور الدور</strong>: Rotate different team members to lead different aspects of meetings.
+
+3. <strong>Action tracking | تتبع الإجراء</strong>: Document actions, owners, and due dates; review at each meeting.
+
+4. <strong>Data review | مراجعة البيانات</strong>: Regularly review measurement data to understand progress.
+
+5. <strong>Celebration | الاحتفال</strong>: Acknowledge successes and progress to maintain motivation.
+
+<h3 class="section-title">Lesson 2 Deep Dive: Setting an Aim | الدرس الثاني approfondi: تحديد الهدف</h3>
+
+<h4 class="section-sub">Section 2.1: Developing Effective Aim Statements | تطوير أهداف فعالة</h4>
+
+An effective aim statement is the foundation of any improvement effort. It provides focus and direction, enabling team members to align their efforts toward a common goal. A well-crafted aim statement is specific, measurable, time-bound, and achievable.
+
+الهدف الفعال هو أساس أي جهد تحسين. يوفر تركيزًا واتجاهًا، مما يتيح لأعضاء الفريق محاذاة جهودهم نحو هدف مشترك. الهدف المصاغ جيدًا محدد وقابل للقياس ومحدد بوقت وقابل للتحقيق.
+
+<strong>Characteristics of Effective Aim Statements | خصائص الأهداف الفعالة:</strong>
+
+1. <strong>Specific | محدد</strong>: Clearly defines what will be improved and for whom.
+   - Instead of: "Improve dental care"
+   - Use: "Reduce wait times for routine dental appointments"
+
+   - Instead of: "تحسين رعاية طب للأسنان"
+   - Use: "تقليل أوقات الانتظار لمواعيد طب الأسنان الروتينية"
+
+2. <strong>Measurable | قابل للقياس</strong>: Includes a numeric target.
+   - "Reduce from 21 days to 7 days"
+
+3. <strong>Time-bound | محدد بوقت</strong>: Specifies when the goal will be achieved.
+   - "Within 6 months"
+
+4. <strong>Aligned | محاذي</strong>: Supports broader organizational goals and patient needs.
+
+5. <strong>Achievable | قابل للتحقيق</strong>: Based on realistic assessment of current state and capacity.
+
+<strong>Examples of Dental Care Aim Statements | أمثلة على أهداف الرعاية الصحية لطب الأسنان:</strong>
+
+1. <strong>Patient Access | وصول المريض</strong>:
+   - Reduce new patient dental appointment wait time from 30 days to 14 days within 12 months.
+   - Increase percentage of patients receiving same-day emergency appointments from 40% to 80% within 6 months.
+
+2. <strong>Clinical Quality | الجودة السريرية</strong>:
+   - Increase percentage of diabetic patients receiving annual diabetic eye exams from 45% to 75% within 9 months.
+   - Reduce rate of unplanned returns for post-operative complications from 8% to 4% within 12 months.
+
+3. <strong>Prevention | الوقاية</strong>:
+   - Increase percentage of children receiving dental sealants from 25% to 50% within 12 months.
+   - Increase percentage of adult patients receiving oral cancer screening from 60% to 90% within 9 months.
+
+4. <strong>Patient Experience | تجربة المريض</strong>:
+   - Improve patient satisfaction scores for dental visit from 75% to 90% within 12 months.
+   - Reduce patient-reported pain and discomfort during dental procedures by 30% within 9 months.
+
+<h4 class="section-sub">Section 2.2: Setting Boundaries and Scope | تحديد الحدود والنطاق</h4>
+
+Defining boundaries helps clarify what is included and excluded from the improvement effort. This includes:
+
+تساعد تحديد الحدود في توضيح ماIncluded وما excluded من جهد التحسين. يشمل ذلك:
+
+- <strong>Patient population | مجتمع المرضى</strong>: Which patients are included (age, condition, geography)?
+
+- <strong>Setting | الإعداد</strong>: Which facilities or departments are included?
+
+- <strong>Timeframe | الإطار الزمني</strong>: What time period is being considered?
+
+- <strong>Process boundaries | حدود العملية</strong>: Where does the process start and end?
+
+<strong>Example for Dental Recall System | مثال لنظام استدعاء طب义词:</strong>
+
+- <strong>Population</strong>: All patients aged 18 and older with documented periodontal disease who have completed active treatment.
+- <strong>Setting</strong>: All dental clinics within the PHC cluster.
+- <strong>Timeframe</strong>: January 2026 through December 2026.
+- <strong>Process start</strong>: Patient completion of active periodontal therapy.
+- <strong>Process end</strong>: Patient scheduled for next maintenance appointment.
+
+<h4 class="section-sub">Section 2.3: Testing the Aim Statement | اختبار الهدف</h4>
+
+Before committing to an aim statement, teams should test it through discussion with stakeholders and preliminary data review. This helps identify potential issues and refine the aim.
+
+قبل الالتزام بهدف، يجب على الفرق اختباره من خلال مناقشة أصحاب المصلحة ومراجعة البيانات الأولية. يساعد هذا في تحديد المشكلات المحتملة وصقل الهدف.
+
+<strong>Questions to Ask | الأسئلة التي يجب طرحها:</strong>
+
+1. Is this aim important to our patients and organization?
+2. Do we have data to measure progress?
+3. Is this aim achievable with our current resources?
+4. Does this aim align with our organizational priorities?
+5. Can we achieve meaningful improvement within the timeframe?
+
+<h3 class="section-title">Lesson 3 Deep Dive: Choosing Measures | الدرس الثالث approfondi: اختيار المقاييس</h3>
+
+<h4 class="section-sub">Section 3.1: Types of Measures | أنواع المقاييس</h4>
+
+Effective measurement requires balancing different types of measures. The IHI framework identifies three types of measures essential for improvement:
+
+يتطلب القياس الفعال الموازنة بين أنواع مختلفة من المقاييس. يحدد إطار IHI ثلاثة أنواع من المقاييس ضرورية للتحسين:
+
+<strong>Outcome Measures | مقاييس النتائج:</strong>
+
+Outcome measures reflect the ultimate goal of the improvement effort—the impact on patients, populations, or organizations. These measures answer: "Did we achieve what we were trying to accomplish?"
+
+تعكس مقاييس النتائج الهدف النهائي لجهود التحسين—التأثير على المرضى أو السكان أو المنظمات. تجيب هذه المقاييس: "هل حققنا ما كنا نسعى لتحقيقه؟"
+
+Examples for dental care:
+- Patient satisfaction with dental services (measured via survey)
+- Rate of dental caries in pediatric population
+- Rate of tooth loss due to periodontal disease
+- Number of oral cancer cases detected at early stage
+
+<strong>Process Measures | مقاييس العملية:</strong>
+
+Process measures track the activities that lead to outcomes. These measures answer: "Are we doing the right things to achieve our aim?" They help teams understand if their changes are being implemented as intended.
+
+تتبع مقاييس العملية الأنشطة التي تؤدي إلى النتائج. تجيب هذه المقاييس: "هل نفعل الأشياء الصحيحة لتحقيق هدفنا؟" تساعد الفرق على فهم ما إذا كانت تغييراتهم تُنفذ كما هو مقصود.
+
+Examples for dental care:
+- Percentage of patients receiving dental screening at each visit
+- Percentage of patients receiving preventive care instructions
+- Time from dental emergency presentation to treatment initiation
+- Percentage of dental instruments properly sterilized
+
+<strong>Balancing Measures | مقاييس الموازنة:</strong>
+
+Balancing measures help ensure that improvements in one area do not cause problems in other areas. These measures answer: "What might we have broken while trying to improve?"
+
+تساعد مقاييس الموازنة على ضمان أن التحسينات في منطقة واحدة لا تسبب مشكلات في مناطق أخرى. تجيب هذه المقاييس: "ماذا قد يكون لدينا المكسور أثناء محاولة التحسين؟"
+
+Examples for dental care:
+- Staff satisfaction and workload (to ensure improvement doesn't create burnout)
+- Cost per patient (to ensure improvements are financially sustainable)
+- Wait times in other areas (to ensure improvements don't create new bottlenecks)
+- Patient safety indicators (to ensure quality improvements don't compromise safety)
+
+<h4 class="section-sub">Section 3.2: Operational Definitions | التعريفات التشغيلية</h4>
+
+A measure is only useful if everyone understands and applies the same definition. Operational definitions specify exactly how a measure will be calculated and what data will be included.
+
+المقياس مفيد فقط إذا فهم الجميع وطبقوا نفس التعريف. تحدد التعريفات التشغيلية بدقة كيف سيتم حساب المقياس وما البيانات التي سيتم تضمينها.
+
+<strong>Components of Operational Definitions | مكونات التعريفات التشغيلية:</strong>
+
+1. <strong>Numerator | البسط</strong>: What is being counted in the top part of the calculation?
+   - Example: Number of patients receiving oral cancer screening
+
+2. <strong>Denominator | المقام</strong>: What is the total population in the bottom part of the calculation?
+   - Example: Total number of patients aged 18 and older seen in the dental clinic
+
+3. <strong>Data source | مصدر البيانات</strong>: Where will the data be collected from?
+   - Example: Electronic health record, patient surveys
+
+4. <strong>Time period | الفترة الزمنية</strong>: What time period does the measure cover?
+   - Example: Calendar year, rolling 12 months
+
+5. <strong>Inclusion/exclusion criteria | معايير التضمين والاستبعاد</strong>: What cases are included or excluded?
+   - Example: Include all adults aged 18+; exclude patients seen only for emergency visits
+
+<strong>Example: Complete Operational Definition | مثال: تعريف تشغيلي كامل</strong>
+
+<strong>Measure</strong>: Percentage of adult dental patients receiving oral cancer screening
+
+- <strong>Definition</strong>: Oral cancer screening is defined as visual and tactile examination of the oral cavity and surrounding tissues, documented in the patient's record using the designated screening code.
+
+- <strong>Numerator</strong>: Number of adult dental patients receiving oral cancer screening during the measurement period
+
+- <strong>Denominator</strong>: Total number of adult dental patients (age 18+) with at least one dental visit during the measurement period
+
+- <strong>Data source</strong>: Electronic health record (EHR) data extraction
+
+- <strong>Time period</strong>: Rolling 12 months, updated monthly
+
+- <strong>Exclusions</strong>: Patients with no natural teeth (edentulous)
+
+<h4 class="section-sub">Section 3.2: Data Collection Planning | تخطيط جمع البيانات</h4>
+
+Effective measurement requires planning for data collection. This includes determining data sources, collection methods, frequency, and responsibilities.
+
+يتطلب القياس الفعال التخطيط لجمع البيانات. يشمل ذلك تحديد مصادر البيانات وطرق الجمع والتكرار والمسؤوليات.
+
+<strong>Data Collection Plan Template | قالب خطة جمع البيانات:</strong>
+
+<tr><td>Measure</td><td>المقياس</td><td>Data Source</td><td>مصدر البيانات</td><td>Collection Method</td><td>طريقة الجمع</td><td>Frequency</td><td>التكرار</td><td>Responsible</td><td>المسؤول</td></tr>
+|---------|---------|-------------|--------------|-------------------|-------------|-----------|---------|-------------|--------|
+<tr><td>Appointment wait time</td><td>وقت انتظار الموعد</td><td>EMR</td><td>السجل الطبي الإلكتروني</td><td>Auto-extraction</td><td>استخراج تلقائي</td><td>Weekly</td><td>أسبوعيًا</td><td>Quality team</td><td>فريق الجودة</td></tr>
+<tr><td>Patient satisfaction</td><td>رضا المريض</td><td>Survey</td><td>استبيان</td><td>Paper/online</td><td>ورقي/عبر الإنترنت</td><td>Monthly</td><td>شهريًا</td><td>Front desk</td><td>الاستقبال</td></tr>
+<tr><td>Treatment completion</td><td>إكمال العلاج</td><td>EMR</td><td>السجل الطبي الإلكتروني</td><td>Manual review</td><td>مراجعة يدوية</td><td>Monthly</td><td>شهريًا</td><td>Dentist lead</td><td>طبيب الأسنان lider</td></tr>
+
+<h3 class="section-title">Lesson 4 Deep Dive: Developing Changes | الدرس الرابع approfondi: تطوير التغييرات</h3>
+
+<h4 class="section-sub">Section 4.1: Generating Ideas for Change | توليد أفكار للتغيير</h4>
+
+Change ideas come from many sources: scientific evidence, best practices from other organizations, staff suggestions, patient feedback, and observation of current processes. The key is generating a rich set of ideas that can be tested.
+
+تأتي أفكار التغيير من مصادر many: الأدلة العلمية وأفضل الممارسات من المنظمات الأخرى واقتراحات الموظفين وملاحظات المرضى وملاحظة العمليات الحالية. المفتاح هو توليد مجموعة غنية من الأفكار التي يمكن اختبارها.
+
+<strong>Change Concepts for Dental Care | مفاهيم التغيير لرعاية طب义词:</strong>
+
+A change concept is a general idea that has been found to be useful in improving performance. Some change concepts relevant to dental care include:
+
+مفهوم التغيير هو فكرة عامة وجد أنها مفيدة في تحسين الأداء. تشمل بعض مفاهيم التغيير ذات الصلة برعاية طب义词:
+
+1. <strong>Reduce wait times | تقليل أوقات الانتظار</strong>
+   - Change concept: Eliminate delays between process steps
+   - Examples: Streamline check-in process, reduce handoff delays
+
+2. <strong>Increase patient engagement | زيادة إشراك المريض</strong>
+   - Change concept: Increase patient participation in care decisions
+   - Examples: Shared decision-making, patient education materials
+
+3. <strong>Standardize processes | توحيد العمليات</strong>
+   - Change concept: Reduce variation by standardizing work processes
+   - Examples: Standardized treatment protocols, consistent documentation
+
+4. <strong>Improve workflow | تحسين سير العمل</strong>
+   - Change concept: Optimize space and staff utilization
+   - Examples: Layout changes, role redesign, scheduling optimization
+
+5. <strong>Enhance prevention | تعزيز الوقاية</strong>
+   - Change concept: Shift focus from treatment to prevention
+   - Examples: Risk-based recall systems, preventive care protocols
+
+<h4 class="section-sub">Section 4.2: Using the Cause and Effect Diagram | استخدام مخطط السبب والنتيجة</h4>
+
+The cause and effect diagram (also called Ishikawa or fishbone diagram) is a tool for systematically identifying potential causes of a problem. It helps teams move beyond surface-level symptoms to understand underlying factors.
+
+مخطط السبب والنتيجة (المعروف أيضًا Ishikawa أو fishbone) هو أداة لتحديد بشكل منهجي الأسباب المحتملة لمشكلة. يساعد الفرق على الانتقال إلى ما وراء الأعراض السطحية لفهم العوامل الكامنة.
+
+<strong>Steps for Creating a Cause and Effect Diagram | خطوات إنشاء مخطط السبب والنتيجة:</strong>
+
+1. <strong>Identify the problem | تحديد المشكلة</strong>: Define clearly what you are trying to solve.
+   - Example: Long wait times for dental appointments
+
+2. <strong>Select categories | اختيار الفئات</strong>: Use standard categories or customize for your situation
+   - Common categories: People, Process, Equipment, Materials, Environment, Management
+
+3. <strong>Brainstorm causes | العصف الذهني للأسباب</strong>: Generate as many potential causes as possible within each category
+
+4. <strong>Analyze and prioritize | التحليل وتحديد الأولويات</strong>: Identify the most likely root causes for testing
+
+<strong>Example: Cause and Effect Diagram for Dental Wait Times | مثال: مخطط السبب والنتيجة لأوقات انتظار طب义词</strong>
+
+<strong>Effect</strong>: Long wait times for dental appointments
+
+- <strong>People | الأشخاص</strong>
+  - Insufficient dentist coverage
+  - Staff training gaps
+  - Inadequate scheduling skills
+
+- <strong>Process | العملية</strong>
+  - Complex booking process
+  - Inefficient patient flow
+  - Multiple handoffs
+  - Inadequate follow-up
+
+- <strong>Equipment | المعدات</strong>
+  - Limited operatories
+  - Equipment breakdowns
+  - Outdated technology
+
+- <strong>Materials | المواد</strong>
+  - Supply shortages
+  - Material ordering delays
+
+- <strong>Environment | البيئة</strong>
+  - Facility layout
+  - Limited parking
+  - Inadequate waiting space
+
+- <strong>Management | الإدارة</strong>
+  - Scheduling policies
+  - Staffing decisions
+  - Communication gaps
+  - Resource allocation
+
+<h3 class="section-title">Lesson 5 Deep Dive: Testing Changes | الدرس الخامس approfondi: اختبار التغييرات</h3>
+
+<h4 class="section-sub">Section 5.1: The PDSA Cycle | دورة PDSA</h4>
+
+The Plan-Do-Study-Act (PDSA) cycle is the core methodology for testing changes in improvement work. It provides a structured approach for trying new ideas on a small scale, learning from the results, and deciding whether to adopt, adapt, or abandon the change.
+
+دورة Plan-Do-Study-Act (PDSA) هي المنهجية الأساسية لاختبار التغييرات في عمل التحسين. يوفر نهجًا منظمًا لتجربة أفكار جديدة على نطاق صغير، والتعلم من النتائج، وتحديد ما إذا كان يجب تبنّي التغيير أو تكييفه أو التخلي عنه.
+
+<strong>Plan | الخطة:</strong>
+- What change will we test?
+- What prediction do we have?
+- Who will do what, when, and where?
+- What data will we collect?
+
+- ما التغيير الذي سنختبره؟
+- ما تنبؤنا؟
+- من سيفعل ماذا ومتى وأين؟
+- ما البيانات التي سنجمعها؟
+
+<strong>Do | التنفيذ:</strong>
+- Implement the change on a small scale
+- Document what happens, including any unexpected problems
+- Collect data as planned
+
+- تنفيذ التغيير على نطاق صغير
+- توثيق ما يحدث، بما في ذلك أي مشاكل غير متوقعة
+- جمع البيانات كما هو مخطط
+
+<strong>Study | الدراسة:</strong>
+- Compare results to predictions
+- Analyze what worked and what didn't
+- Identify lessons learned
+
+- مقارنة النتائج بالتنبؤات
+- تحليل ما نجح وما لم ينجح
+- تحديد الدروس المستفادة
+
+<strong>Act | الإجراء:</strong>
+- Based on results, decide: adopt, adapt, or abandon
+- Plan next test cycle
+
+- بناءً على النتائج، تحديد: تبنّي أو تكييف أو تخلي
+- تخطيط دورة الاختبار التالية
+
+<h4 class="section-sub">Section 5.2: Testing on a Small Scale | الاختبار على نطاق صغير</h4>
+
+Testing on a small scale before full implementation is crucial because:
+- It reduces risk if the change doesn't work
+- It allows learning and refinement
+- It builds evidence for the change
+- It builds staff buy-in and confidence
+
+الاختبار على نطاق صغير قبل التنفيذ الكامل أمر crucial لأن:
+- يقلل المخاطر إذا لم ينجح التغيير
+- يسمح بالتعلم والتحسين
+- يبني دليلًا للتغيير
+- يبني موافقة员工 وثقتها
+
+<strong>Example PDSA for Dental Appointment Scheduling | مثال PDSA لجدولة مواعيد طب义词:</strong>
+
+<strong>First Cycle (1 week):</strong>
+- Plan: Test online appointment booking with 20 patients in one clinic. Predict 80% will complete booking successfully.
+- Do: Implement with 22 patients; 18 complete successfully.
+- Study: 82% success rate; main barrier is patient unfamiliarity with system.
+- Act: Modify approach to include in-person registration assistance; plan second test.
+
+<strong>Second Cycle (2 weeks):</strong>
+- Plan: Test online booking with 50 patients in two clinics, with registration assistance available.
+- Do: Implement with 48 patients; 44 complete successfully.
+- Study: 92% success rate; improved from first cycle.
+- Act: Expand to all clinics; continue to monitor.
+
+<h3 class="section-title">Saudi Dental Quality Case Studies | دراسات حالة الجودة السنية السعودية</h3>
+
+<h4 class="section-sub">Case Study 1: Reducing Dental Wait Times in Riyadh PHC | دراسة حالة 1: تقليل أوقات انتظار طب الأسنان في الرعاية الأولية بالرياض</h4>
+
+<strong>Setting | الإعداد</strong>: Urban PHC dental clinic serving 45,000 registered patients
+<strong>Problem | المشكلة</strong>: Average wait time for routine appointments was 28 days
+<strong>Aim | الهدف</strong>: Reduce to 10 days within 6 months
+
+<strong>Key Changes Tested | التغييرات الرئيسية المختبرة:</strong>
+
+1. <strong>Online scheduling system | نظام الجدولة الإلكترونية</strong>
+   - PDSA 1: Pilot with 50 patients → 85% success
+   - PDSA 2: Expand to all patients → 92% success
+   
+2. <strong>Adjusted staffing model | نموذج توظيف معدل</strong>
+   - Added additional hygiene hours during peak times
+   - Implemented direct scheduling for hygiene follow-up
+
+3. <strong>Process improvements | تحسين العمليات</strong>
+   - Reduced check-in time from 15 minutes to 5 minutes
+   - Implemented automated reminders to reduce no-shows
+
+<strong>Results | النتائج</strong>:
+- Wait time reduced from 28 days to 8 days (71% improvement)
+- Patient satisfaction increased from 72% to 89%
+- No-show rate reduced from 18% to 9%
+
+<h4 class="section-sub">Case Study 2: Improving Pediatric Dental Sealant Rates | دراسة حالة 2: تحسين معدلات سدادات طب الأسنان للأطفال</h4>
+
+<strong>Setting | الإعداد</strong>: School-based dental program serving 15 elementary schools
+<strong>Problem | المشكلة</strong>: Only 22% of eligible children receiving dental sealants
+<strong>Aim | الهدف</strong>: Increase to 50% within school year
+
+<strong>Key Changes Tested | التغييرات الرئيسية المختبرة:</strong>
+
+1. <strong>Enhanced screening process | عملية فحص محسنة</strong>
+   - Implemented universal screening at annual check-ups
+   - Created standardized documentation template
+
+2. <strong>Parental engagement strategy | استراتيجية إشراك أولياء الأمور</strong>
+   - Developed Arabic-language informational materials
+   - Implemented same-day consent processing
+
+3. <strong>Workflow optimization | تحسين سير العمل</strong>
+   - Dedicated sealant days with expanded capacity
+   - Mobile dental unit for hard-to-reach schools
+
+<strong>Results | النتائج</strong>:
+- Sealant rate increased from 22% to 58%
+- Program expanded to additional 8 schools
+- Parent satisfaction score: 94%
+
+<h3 class="section-title">Quality Improvement Tools for Dental Practice | أدوات تحسين الجودة لممارسة طب الأسنان</h3>
+
+<h4 class="section-sub">Dental QI Project Charter Template | قالب ميثاق مشروع تحسين الجودة لطب الأسنان</h4>
+
+<strong>Project Information | معلومات المشروع:</strong>
+- Project name: _____________________
+- Lead: _____________________
+- Team members: _____________________
+- Start date: _____________________
+- Target completion: _____________________
+
+<strong>Aim Statement | بيان الهدف:</strong>
+[Insert aim statement with specific, measurable target and timeframe]
+
+<strong>Background | الخلفية:</strong>
+[Describe the problem, its impact, and why improvement is important]
+
+<strong>Stakeholders | أصحاب المصلحة:</strong>
+- Patients: _____________________
+- Staff: _____________________
+- Organization: _____________________
+
+<strong>Measures | المقاييس:</strong>
+- Primary outcome measure: _____________________
+- Process measures: _____________________
+- Balancing measures: _____________________
+
+<strong>Changes Being Tested | التغييرات المختبرة:</strong>
+1. _____________________
+2. _____________________
+3. _____________________
+
+<strong>Timeline | الجدول الزمني:</strong>
+- PDSA cycle 1: [dates]
+- PDSA cycle 2: [dates]
+- PDSA cycle 3: [dates]
+- Evaluation: [date]
+
+<strong>Resources Required | الموارد المطلوبة:</strong>
+- Staff time: _____________________
+- Equipment/supplies: _____________________
+- Budget: _____________________
+
+<h3 class="section-title">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Definition</td></tr>
+|--------------|----------------|------------|
+<tr><td>Model for Improvement</td><td>نموذج التحسين</td><td>Framework for improvement using three questions and PDSA cycles</td></tr>
+<tr><td>Aim statement</td><td>بيان الهدف</td><td>Clear, specific description of what the team is trying to accomplish</td></tr>
+<tr><td>PDSA cycle</td><td>دورة PDSA</td><td>Plan-Do-Study-Act cycle for testing changes</td></tr>
+<tr><td>Run chart</td><td>مخطط زمني تشغيلي</td><td>Graph showing data over time to understand variation</td></tr>
+<tr><td>Outcome measure</td><td>مؤشر النتائج</td><td>Measure reflecting the ultimate goal of the improvement</td></tr>
+<tr><td>Process measure</td><td>مؤشر العملية</td><td>Measure tracking activities that lead to outcomes</td></tr>
+<tr><td>Balancing measure</td><td>مؤشر الموازنة</td><td>Measure ensuring changes don't cause problems elsewhere</td></tr>
+<tr><td>Change concept</td><td>مفهوم التغيير</td><td>General idea useful for improving performance</td></tr>
+<tr><td>Cause and effect diagram</td><td>مخطط السبب والنتيجة</td><td>Tool for identifying root causes of problems</td></tr>
+<tr><td>Root cause analysis</td><td>تحليل السبب الجذري</td><td>Method for identifying underlying causes of problems</td></tr>
+<tr><td>Baseline data</td><td>بيانات خط الأساس</td><td>Data collected before improvements begin</td></tr>
+<tr><td>Statistical process control</td><td>الضبط الإحصائي للعمليات</td><td>Methods for understanding and reducing variation</td></tr>
+<tr><td>Shewhart chart</td><td>مخطط شيوارت</td><td>Control chart for monitoring process stability</td></tr>
+<tr><td>Stakeholder</td><td>صاحب المصلحة</td><td>Person or group affected by or having interest in the project</td></tr>
+<tr><td>Driver diagram</td><td>مخطط المحركات</td><td>Visual display of primary and secondary drivers</td></tr>
+<tr><td>Theory of change</td><td>نظرية التغيير</td><td>Description of how and why change is expected to occur</td></tr>
+<tr><td>Sustainability</td><td>الاستدامة</td><td>Maintaining improvements over time</td></tr>
+<tr><td>Spread</td><td>الانتشار</td><td>Extending improvements beyond initial implementation site</td></tr>
+<tr><td>Benchmarking</td><td>المعايرة</td><td>Comparing performance to external standards or peers</td></tr>
+<tr><td>Evidence-based practice</td><td>الممارسة القائمة على الأدلة</td><td>Using best available research in clinical decisions</td></tr>
+<tr><td>Clinical pathway</td><td>المسار السريري</td><td>Standardized approach to patient care for specific conditions</td></tr>
+<tr><td>Care bundle</td><td>حزمة الرعاية</td><td>Set of interventions that together improve outcomes</td></tr>
+<tr><td>Standard work</td><td>العمل المعياري</td><td>Documented best practice for specific process</td></tr>
+<tr><td>Lean methodology</td><td>منهجية ليين</td><td>System for eliminating waste and improving flow</td></tr>
+<tr><td>Six Sigma</td><td>سيجما ستة</td><td>Methodology for reducing process variation</td></tr>
+<tr><td>Quality dashboard</td><td>لوحة الجودة</td><td>Visual display of key performance indicators</td></tr>
+<tr><td>Root cause analysis</td><td>تحليل السبب الجذري</td><td>Method for identifying underlying causes of problems</td></tr>
+<tr><td>Plan-Do-Study-Act</td><td>الخطة-نفّذ-ادرس-صحّح</td><td>Iterative improvement cycle</td></tr>
+
+<h3 class="section-title">Section 6: Advanced Quality Improvement Applications in Dental Care | تطبيقات تحسين الجودة المتقدمة في رعاية طب الأسنان</h3>
+
+<h4 class="section-sub">6.1 Lean Six Sigma in Dental Practice | لين سيجما ستة في ممارسة طب الأسنان</h4>
+
+Lean Six Sigma combines the waste elimination principles of Lean with the process improvement tools of Six Sigma to create a powerful methodology for dental quality improvement. This approach is particularly valuable for addressing efficiency and quality simultaneously in dental care settings.
+
+يجمع لين سيجما ستة بين مبادئ إزالة الهدر في لين وأدوات تحسين العمليات في سيجما ستة لمنهجية قوية لتحسين الجودة في طب الأسنان. هذا النهج valuable بشكل خاص لمعالجة الكفاءة والجودة في آن واحد في إعدادات الرعاية السنية.
+
+<strong>Lean Principles in Dental Care | مبادئ لين في رعاية طب义词:</strong>
+
+1. <strong>Identify Value | تحديد القيمة</strong>: Understand what the patient values and prioritize those activities
+2. <strong>Map the Value Stream | رسم خريطة تدفق القيمة</strong>: Document all steps in the care process
+3. <strong>Create Flow | خلق التدفق</strong>: Eliminate barriers to smooth patient flow
+4. <strong>Establish Pull | إنشاء السحب</strong>: Respond to patient demand rather than pushing work
+5. <strong>Seek Perfection | السعي للكمال</strong>: Continuously improve toward the ideal state
+
+<strong>Six Sigma Tools for Dental QI | أدوات سيجما ستة لتحسين الجودة في طب义词:</strong>
+
+- DMAIC (Define, Measure, Analyze, Improve, Control) methodology
+- Statistical process control charts
+- Root cause analysis with fishbone diagrams
+- Failure mode and effects analysis
+- Design of experiments for optimizing processes
+
+<h4 class="section-sub">6.2 Patient Safety in Dental Settings | سلامة المريض في إعدادات طب义词</h4>
+
+Patient safety is a critical dimension of dental quality. While dental procedures are generally safe, adverse events can occur and must be prevented through systematic approaches.
+
+سلامة المريض هي بُعد حاسم لجودة طب义词. على الرغم من أن الإجراءات السنية Generally آمنة، يمكن أن تحدث أحداث سلبية ويجب منعها من خلال منهجيات منهجية.
+
+<strong>Common Safety Concerns in Dental Care | مخاوف السلامة الشائعة في الرعاية السنية:</strong>
+
+- Medication errors (wrong drug, wrong dose)
+- Infection control breaches
+- Wrong tooth/procedure documentation errors
+- Instrument retention
+- Anesthetic complications
+- Patient identification errors
+- Fall prevention in dental chair
+
+<strong>Safety Improvement Strategies | استراتيجيات تحسين السلامة:</strong>
+
+1. <strong>Standardization | التوحيد</strong>: Create standardized protocols for high-risk processes
+2. <strong>Forcing functions | وظائف الإلغاء</strong>: Design processes that make errors impossible
+3. <strong>Checklists | قوائم التحقق</strong>: Implement procedure-specific checklists
+4. <strong>Team training | تدريب الفريق</strong>: Use crew resource management techniques
+5. <strong>Safety culture | ثقافة السلامة</strong>: Foster non-punitive error reporting and learning
+
+<h4 class="section-sub">6.3 Quality Metrics for Dental Practice | مقاييس الجودة لممارسة طب义词</h4>
+
+Effective quality management requires meaningful metrics that capture both clinical outcomes and patient experience. Dental practices should develop comprehensive measurement systems that support continuous improvement.
+
+يتطلب إدارة الجودة الفعالة مقاييس ذات معنى تلتقط النتائج السريرية وتجربة المريض. يجب على عيادات طب义词 تطوير أنظمة قياس شاملة تدعم التحسين المستمر.
+
+<strong>Key Dental Quality Metrics | مقاييس الجودة السنية الرئيسية:</strong>
+
+<tr><td>Metric Category</td><td>الفئة</td><td>Specific Measures</td><td>المقاييس المحددة</td><td>Target</td><td>الهدف</td></tr>
+|-----------------|-------|-------------------|------------------|--------|-------|
+<tr><td>Clinical outcomes</td><td>النتائج السريرية</td><td>Caries recurrence rate, periodontal status</td><td>معدل تكرار التسوس، حالة اللثة</td><td>Based on evidence</td><td>بناءً على الأدلة</td></tr>
+<tr><td>Prevention</td><td>الوقاية</td><td>Sealant rate, fluoride application rate</td><td>معدل السدادات، معدل تطبيق الفلوريد</td><td>Increasing trend</td><td>اتجاه تصاعدي</td></tr>
+<tr><td>Patient safety</td><td>سلامة المريض</td><td>Adverse event rate, infection rate</td><td>معدل الأحداث السلبية، معدل العدوى</td><td>Zero harm</td><td>ضرر صفري</td></tr>
+<tr><td>Patient experience</td><td>تجربة المريض</td><td>Satisfaction score, wait time</td><td>درجة الرضا، وقت الانتظار</td><td>High satisfaction</td><td>رضا عالي</td></tr>
+<tr><td>Access</td><td>الوصول</td><td>Appointment availability, wait time</td><td>توفر المواعيد، وقت الانتظار</td><td>Target levels</td><td>مستويات مستهدفة</td></tr>
+<tr><td>Efficiency</td><td>الكفاءة</td><td>Treatment time, productivity</td><td>وقت العلاج، الإنتاجية</td><td>Balanced targets</td><td>أهداف متوازنة</td></tr>
+
+<h3 class="section-title">Section 7: Dental Quality Improvement Case Studies | دراسات حالة لتحسين الجودة السنية</h3>
+
+<h4 class="section-sub">Case Study 3: Reducing Dental Caries in Pediatric Population | دراسة حالة 3: تقليل تسوس الأسنان في فئة الأطفال</h4>
+
+<strong>Setting | الإعداد</strong>: School-based dental program in Eastern Province serving 50,000 students
+
+<strong>Problem | المشكلة</strong>: High caries prevalence (42%) among elementary school students
+
+<strong>Improvement Approach | نهج التحسين:</strong>
+
+1. <strong>Baseline measurement</strong>: Established caries prevalence and identified contributing factors
+
+2. <strong>Intervention bundle</strong>: 
+   - Enhanced screening and sealant application
+   - Oral health education program (students, parents, teachers)
+   - Fluoride varnish application (semi-annual)
+   - Sugar reduction initiatives in school canteens
+
+3. <strong>Implementation</strong>: Phase-in approach across schools over 2 years
+
+4. <strong>Measurement</strong>: Annual prevalence surveys, process measures
+
+<strong>Results | النتائج</strong>:
+- Caries prevalence reduced from 42% to 28% (33% improvement)
+- Sealant application rate increased from 25% to 78%
+- Cost savings from reduced treatment needs estimated at SAR 2.4 million
+- Program recognized as national best practice
+
+<h4 class="section-sub">Case Study 4: Improving Dental Implant Success Rates | دراسة حالة 4: تحسين معدلات نجاح زراعة الأسنان</h4>
+
+<strong>Setting | الإعداد</strong>: Specialty dental center with implantology services
+
+<strong>Problem | المشكلة</strong>: Higher than expected implant failure rate (8%)
+
+<strong>Improvement Approach | نهج التحسين:</strong>
+
+1. <strong>Root cause analysis</strong>: Identified contributing factors through systematic analysis
+
+2. <strong>Process improvements</strong>:
+   - Enhanced pre-operative assessment protocol
+   - Improved sterilization procedures
+   - Standardized surgical technique
+   - Post-operative care standardization
+   - Patient selection criteria refinement
+
+3. <strong>Measurement</strong>: Tracked outcomes and process adherence
+
+4. <strong>Continuous refinement</strong>: Ongoing analysis and improvement
+
+<strong>Results | النتائج</strong>:
+- Implant failure rate reduced to 2.5% (69% improvement)
+- Patient satisfaction increased significantly
+- Cost savings from reduced complications
+- Published as benchmark in specialty literature
+
+<h3 class="section-title">Section 8: Advanced Topics in Dental Quality | موضوعات متقدمة في الجودة السنية</h3>
+
+<h4 class="section-sub">8.1 Evidence-Based Dentistry | طب الأسنان المستند إلى الأدلة</h4>
+
+Evidence-based dentistry integrates clinical expertise, patient values, and best available research to inform clinical decision-making. Implementing EBD in dental practice requires:
+
+طب义词 المستند إلى الأدلة يدمج الخبرة السريرية وقيم المريض وأفضل البحوث المتاحة لإعلام اتخاذ القرار السريري. تنفيذ EBD في ممارسة طب义词 يتطلب:
+
+- Access to evidence databases and resources
+- Skills in evidence appraisal
+- Systems for incorporating evidence into practice
+- Patient communication about evidence-based options
+
+<h4 class="section-sub">8.2 Technology and Quality | التكنولوجيا والجودة</h4>
+
+Advances in dental technology offer opportunities for quality improvement:
+
+التقدم في تقنية طب义词 يقدم فرصًا لتحسين الجودة:
+
+- Digital imaging for improved diagnosis
+- CAD/CAM for precise restorations
+- 3D printing for custom appliances
+- AI-assisted diagnosis
+- Electronic health records for coordination
+- Tele-dentistry for access
+
+<h4 class="section-sub">8.3 Dental Quality in Value-Based Care | الجودة السنية في الرعاية القائمة على القيمة</h4>
+
+As dental care moves toward value-based payment models, dental practices must develop capabilities for measuring and demonstrating value:
+
+مع تحرك رعاية طب义词 نحو نماذج الدفع القائمة على القيمة، يجب على عيادات طب义词 تطوير قدرات قياس وإظهار القيمة:
+
+- Outcome measurement systems
+- Cost accounting and management
+- Care coordination infrastructure
+- Population health management
+- Patient engagement capabilities
+
+<h3 class="section-title">Section 9: Resources and Implementation Tools | الموارد وأدوات التنفيذ</h3>
+
+<h4 class="section-sub">Quality Improvement Project Selection Criteria | معايير اختيار مشروع تحسين الجودة</h4>
+
+When selecting a QI project in dental care, consider:
+
+عند اختيار مشروع تحسين الجودة في رعاية طب义词، think:
+
+- Impact on patient outcomes and experience
+- Feasibility of implementation
+- Available resources and expertise
+- Alignment with organizational priorities
+- Potential for measurable improvement
+- Likelihood of sustainability
+
+<h4 class="section-sub">Dental QI Project Prioritization Matrix | مصفوفة تحديد أولويات مشروع تحسين الجودة السنية</h4>
+
+<tr><td>Criterion</td><td>المعيار</td><td>Weight</td><td>الوزن</td><td>Score (1-5)</td><td>الدرجة</td></tr>
+|-----------|---------|--------|--------|-------------|--------|
+<tr><td>Patient impact</td><td>تأثير المريض</td><td>25%</td></tr>
+<tr><td>Feasibility</td><td>الجدوى</td><td>20%</td></tr>
+<tr><td>Alignment</td><td>المحاذاة</td><td>15%</td></tr>
+<tr><td>Measurement</td><td>القياس</td><td>15%</td></tr>
+<tr><td>Resources</td><td>الموارد</td><td>15%</td></tr>
+<tr><td>Sustainability</td><td>الاستدامة</td><td>10%</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>الإجمالي</strong></td><td><strong>100%</strong></td></tr>
+</tbody></table></div>
+<h3 class="section-title">Section 10: Summary and Next Steps | الملخص والخطوات التالية</h3>
+
+This comprehensive course has equipped dental professionals with the knowledge and tools to implement effective quality improvement in dental care settings. The key takeaways include:
+
+زودت هذه الدورة الشاملة المهنيين السنيين بالمعرفة والأدوات لتنفيذ تحسين الجودة الفعال في إعدادات رعاية طب义词. تشمل النقاط الرئيسية:
+
+<strong>Key Learning Summary | ملخص التعلم الأساسي:</strong>
+
+1. The Model for Improvement provides a practical framework for dental QI work
+2. Effective aim statements must be specific, measurable, time-bound, and aligned with patient needs
+3. Measurement using process, outcome, and balancing measures is essential for tracking improvement
+4. Change concepts and PDSA cycles enable systematic testing and refinement of improvements
+5. Spread planning is critical for achieving large-scale impact beyond initial pilots
+6. Sustainability requires embedding changes in standard work and organizational culture
+7. Saudi healthcare context (CBAHI, MOH, Vision 2030) provides both requirements and opportunities for dental QI
+
+<strong>Next Steps for Participants | الخطوات التالية للمشاركين:</strong>
+
+As you complete this course, apply your learning by:
+
+أثناء إكمال هذه الدورة، طبق ما تعلمته من خلال:
+
+1. Identifying one quality opportunity in your dental practice setting
+2. Developing a preliminary aim statement using SMART criteria
+3. Mapping current processes and identifying improvement opportunities
+4. Designing a first PDSA cycle to test a change concept
+5. Engaging colleagues in quality improvement efforts
+
+<h3 class="section-title">Additional Content: Advanced Dental Quality Improvement</h3>
+
+<h3 class="section-title">Chapter 1: Advanced Quality Improvement Methods</h3>
+
+Beyond the basics, dental quality improvement can benefit from advanced methods that enable deeper understanding and more effective interventions.
+
+Lean methodology provides powerful tools for eliminating waste and improving flow in dental practice. Key tools include value stream mapping, 5S, and continuous flow.
+
+Value stream mapping identifies steps in the patient journey and distinguishes value-added from non-value-added activities. This enables targeted improvement.
+
+5S (Sort, Set in Order, Shine, Standardize, Sustain) organizes the workspace for efficiency and safety. This is particularly valuable in dental operatories.
+
+Continuous flow creates smooth patient progression through appointments, reducing wait times and improving efficiency.
+
+Six Sigma provides statistical methods for reducing variation and defects. DMAIC (Define, Measure, Analyze, Improve, Control) provides a structured improvement approach.
+
+Statistical process control uses control charts to understand process variation and identify improvement opportunities. This enables data-driven decision making.
+
+<h3 class="section-title">Chapter 2: Quality Improvement in Different Dental Settings</h3>
+
+Quality improvement approaches vary by dental setting. Understanding specific considerations helps in effective application.
+
+In private practice, QI focuses on patient satisfaction, efficiency, and clinical outcomes. Practice size and resources affect what is feasible.
+
+In public health dental programs, QI addresses access, equity, and population health outcomes. Programs serving underserved populations face specific challenges.
+
+In dental education, QI includes educational outcomes, clinical training quality, and research. Academic mission requires specific approaches.
+
+In dental specialties, QI addresses procedure-specific outcomes and quality. Different specialties have different quality considerations.
+
+<h3 class="section-title">Chapter 3: Quality Improvement Leadership</h3>
+
+Effective dental quality improvement requires leadership at various levels. Understanding leadership roles helps in driving improvement.
+
+Clinical leadership involves dentists leading improvement efforts. This requires clinical credibility and improvement skills.
+
+Management leadership involves practice and organizational leaders supporting improvement. This requires resources, prioritization, and accountability.
+
+Team leadership involves dental teams working collaboratively on improvement. This requires communication, coordination, and shared purpose.
+
+Professional leadership involves professional associations and organizations supporting improvement. This requires standards, guidelines, and professional development.
+
+<h3 class="section-title">Chapter 4: Sustaining Quality Improvement</h3>
+
+Sustaining improvement over time requires ongoing attention. Several factors are critical.
+
+Embedding in standard work integrates improvements into routine operations. This requires documenting work and training staff.
+
+Ongoing measurement tracks performance and triggers action when needed. This requires data systems and review processes.
+
+Continuous improvement creates a culture of ongoing enhancement. This requires learning orientation and improvement skills.
+
+Leadership attention maintains focus and resources. This requires visible commitment and accountability.
+
+<h3 class="section-title">Chapter 5: Quality Improvement in the Saudi Context</h3>
+
+Quality improvement in Saudi dental settings benefits from understanding the specific context.
+
+CBAHI accreditation provides quality standards for healthcare facilities, including dental services. Meeting and exceeding these standards is important.
+
+MOH quality initiatives provide frameworks and expectations for quality improvement. Alignment with these initiatives supports success.
+
+Vision 2030 creates a context of transformation and improvement. Quality improvement aligns with national goals.
+
+Professional development opportunities support quality improvement capability. Continuing education and training are available.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Final Course Summary</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          This comprehensive course on Improving Dental Care with the Model for Improvement has provided dental professionals with the knowledge and tools to implement effective quality improvement in dental care settings.
+
+The course covered the Model for Improvement framework, aim setting, measurement, change concepts, and testing. These provide a foundation for effective improvement.
+
+Practical applications demonstrated how these methods can be applied to improve dental care quality, access, and efficiency. Examples from Saudi settings showed local applicability.
+
+The course addressed the specific Saudi context including CBAHI standards, MOH initiatives, and Vision 2030. This provides practical knowledge for Saudi dental settings.
+
+Implementation of quality improvement requires commitment, resources, and ongoing effort. The frameworks and tools provided should guide implementation.
+
+As dental care continues to evolve, quality improvement will become increasingly important. The skills and knowledge from this course will support continuous improvement in dental care.
+
+<h3 class="section-title">Final Course Content Section</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Summary and Course Completion</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          <h3 class="section-title">Course Learning Review</h3>
+
+This comprehensive course on Improving Dental Care has provided dental professionals with the Model for Improvement framework and related tools for enhancing quality in dental practice settings. The course covered the three questions of the Model for Improvement: What are we trying to accomplish? How will we know that a change is an improvement? What changes can we make that will result in improvement?
+
+The course included detailed guidance on setting effective aims, developing appropriate measures, identifying change concepts, and testing changes using PDSA cycles. These fundamental skills are essential for any dental quality improvement initiative.
+
+The course addressed the importance of three types of measures: outcome measures that reflect the ultimate goals of improvement, process measures that track the activities leading to outcomes, and balancing measures that ensure improvements in one area do not cause problems elsewhere.
+
+Understanding change concepts and using creative brainstorming to generate ideas for improvement were covered. Change concepts provide starting points for generating specific change ideas.
+
+The course included guidance on testing changes on a small scale before full implementation. PDSA cycles provide a structured approach for testing, learning, and refining improvements.
+
+<h3 class="section-title">Application in Practice</h3>
+
+Applying this learning to your practice requires identifying a specific quality issue, developing an aim statement, selecting measures, generating change ideas, and testing changes using PDSA cycles. The tools and templates provided can guide this work.
+
+Quality improvement is iterative and ongoing. Each cycle provides learning that informs subsequent cycles. Continuous improvement is a journey, not a destination.
+
+Collaboration with team members enhances improvement efforts. Engaging dental team members in improvement creates shared ownership and leverages diverse perspectives.
+
+Measurement provides evidence of improvement. Collecting and analyzing data systematically helps track progress and identify areas for further work.
+
+<h3 class="section-title">Saudi Healthcare Context</h3>
+
+The course addressed the Saudi healthcare context and specific applications. CBAHI accreditation standards provide quality requirements that dental practices should meet. MOH quality initiatives guide improvement priorities. Vision 2030 creates a transformation context that supports quality improvement.
+
+Dental quality improvement in Saudi Arabia benefits from alignment with these frameworks and initiatives. Connecting improvement work to these larger goals enhances impact.
+
+Professional development and continuing education in quality improvement build capability. Investing in quality improvement skills benefits individuals and organizations.
+
+<h3 class="section-title">Congratulations and Next Steps</h3>
+
+Congratulations on completing this course. You have gained knowledge and tools that can significantly enhance your ability to improve dental care quality.
+
+As next steps, apply your learning by identifying a specific quality improvement opportunity in your practice. Use the Model for Improvement framework to guide your work. Engage your team in improvement efforts. Measure your results and iterate.
+
+Share your learning with colleagues and contribute to the dental quality improvement community. Collaboration and knowledge sharing accelerate progress.
+
+Continue learning and developing your quality improvement capabilities. Quality improvement is a journey, and ongoing development enhances your effectiveness.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-15">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Details</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> DQA 101
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dqa-101" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-16">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dqa-101" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-dqa-101') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-dqa-101', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('dqa-101')) enrolled.push('dqa-101');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'dqa-101');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-dqa-101') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-dqa-101', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-dqa-101', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-dqa-101', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-dqa-101', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-dqa-101') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Improving Dental Care with the Model for Improvement',
+        slug: 'dqa-101',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-dqa-101') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-dqa-101.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

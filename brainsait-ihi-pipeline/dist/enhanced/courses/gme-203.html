@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Roadmap for Facilitating Experiential Learning in Quality Improvement | BrainSAIT Academy</title>
+  <meta name="description" content="A Roadmap for Facilitating Experiential Learning in Quality Improvement - Full bilingual course on Graduate Medical Education">
+  <meta name="keywords" content="Graduate Medical Education, IHI, Open School, Health Care, GME, Experiential Learning, Quality Improvement">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>A Roadmap for Facilitating Experiential Learning in Quality Improvement</h3>
+        <p>GME-203 • 120 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">خارطة طريق لتسهيل التعلم التجريبي ف...</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Overview | نظرة عامة على الد...</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Expanded Lesson Summaries | الملخصا...</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Exercises | التمارين العم...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Interactive Checklists | قوائم التف...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Quizzes | الاختبارات</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Reflection Questions | أسئلة للتأمل</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | المعجم ثنائي ا...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References and Resources | المراجع ...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Completion | إتمام الدورة</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Graduate Medical Education</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">A Roadmap for Facilitating Experiential Learning in Quality Improvement</h1>
+        <p class="course-title-ar rtl">خارطة طريق لتسهيل التعلم التجريبي في تحسين الجودة</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">120</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">13</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">خارطة طريق لتسهيل التعلم التجريبي في تحسين الجودة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <strong>GME 203 | الكود: GME 203</strong>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Overview | نظرة عامة على الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+This comprehensive course provides a roadmap for implementing experiential learning in quality improvement within Graduate Medical Education programs. Participants will explore evidence-based models for experiential learning, practical strategies for facilitation, and assessment methods to measure learning outcomes. The curriculum is specifically designed for Saudi healthcare institutions, with adaptation to SCFHS requirements, CBAHI educational standards, and Vision 2030 quality initiatives.
+
+The course builds upon foundational GME concepts and advances to implementation-level skills for medical educators, program directors, and quality leaders in teaching hospitals.
+
+<strong>Estimated Time of Completion</strong>: 2 hours | <strong>المدة المقدرة للإنجاز</strong>: ساعتان
+
+<h3 class="section-title">العربية</h3>
+
+تقدم هذه الدورة الشاملة خارطة طريق لتنفيذ التعلم التجريبي في مجال تحسين الجودة ضمن برامج التعليم الطبي العالي. سيستكشف المشاركون نماذج قائمة على الأدلة للتعلم التجريبي، واستراتيجيات عملية للتيسير، وطرق التقييم لقياس مخرجات التعلم. تم تصميم المنهج خصيصاً للمؤسسات الصحية السعودية، مع التكيف مع متطلبات SCFHS، ومعايير التعليم CBAHI، ومبادرات جودة رؤية ٢٠٣٠.
+
+تبني الدورة على مفاهيم التعليم الطبي العالي الأساسية وتتقدم إلى مهارات مستوى التنفيذ للمنظمين الطبيين ومديري البرامج وقادة الجودة في المستشفيات التعليمية.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Learning Outcomes</h3>
+
+Upon successful completion of this course, learners will be able to:
+
+1. <strong>Compare three models</strong> for experiential learning in healthcare quality improvement
+2. <strong>Design experiential learning activities</strong> that meet adult learning principles and competency requirements
+3. <strong>Implement facilitation strategies</strong> to maximize learner engagement in QI activities
+4. <strong>Develop assessment tools</strong> to evaluate experiential learning outcomes
+5. <strong>Integrate experiential QI learning</strong> into residency program structures
+6. <strong>Create evaluation frameworks</strong> to measure program effectiveness
+7. <strong>Adapt learning models</strong> to Saudi healthcare institutional context
+8. <strong>Establish mentorship systems</strong> for supporting resident QI projects
+
+<h3 class="section-title">مخرجات التعلم بالعربية</h3>
+
+عند إتمام هذه الدورة بنجاح، سيتمكن المتعلمون من:
+
+1. <strong>مقارنة ثلاثة نماذج</strong> للتعلم التجريبي في تحسين جودة الرعاية الصحية
+2. <strong>تصميم أنشطة التعلم التجريبية</strong> التي تلبي مبادئ تعلم البالغين ومتطلبات الكفاءة
+3. <strong>تنفيذ استراتيجيات التيسير</strong> لزيادة مشاركة المتعلمين في أنشطة QI
+4. <strong>تطوير أدوات تقييم</strong> لتقييم مخرجات التعلم التجريبية
+5. <strong>دمج تعلم QI التجريبي</strong> في هياكل برامج الإقامة
+6. <strong>إنشاء أطر تقييم</strong> لقياس فعالية البرنامج
+7. <strong>تكييف نماذج التعلم</strong> لل سياق المؤسسي الصحي السعودي
+8. <strong>إنشاء أنظمة إرشاد</strong> لدعم مشاريع QI للمقيمين
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          ---
+
+<h3 class="section-title">Lesson 1: Models for Experiential Learning | الدرس الأول: نماذج التعلم التجريبي</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>1.1 Experiential Learning Theory Foundation</strong>
+
+Experiential learning, pioneered by John Dewey and developed by David Kolb, forms the theoretical foundation for effective adult learning in healthcare. The cyclical nature of experiential learning ensures continuous development through the integration of experience, reflection, conceptualization, and application.
+
+<strong>Kolb's Experiential Learning Cycle</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    KOLB'S EXPERIENTIAL LEARNING CYCLE                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                      ┌────────────────────────┐                           │
+│                      │  CONCRETE EXPERIENCE    │                           │
+│                      │  (Active Engagement)    │                           │
+│                      │                         │                           │
+│                      │  • Hands-on practice   │◀──────┐                  │
+│                      │  • Direct involvement   │       │                  │
+│                      │  • Sensory learning    │       │                  │
+│                      └───────────┬────────────┘       │                  │
+│                                  │                    │                  │
+│                                  │ Reflective         │ Active           │
+│                                  │ Observation         │ Experimentation  │
+│                                  │                    │                  │
+│                                  ▼                    │                  │
+│                      ┌────────────────────────┐       │                  │
+│                      │   REFLECTIVE          │       │                  │
+│                      │   OBSERVATION         │───────┘                  │
+│                      │   (Reflection)         │                           │
+│                      │                         │                           │
+│                      │  • Self-assessment     │                           │
+│                      │  • Peer discussion     │                           │
+│                      │  • Journaling          │                           │
+│                      └───────────┬────────────┘                           │
+│                                  │                    ┌────────────────┐   │
+│                                  │ Abstract           │ ACTIVE         │   │
+│                                  │ Conceptualization  │ EXPERIMENT-    │   │
+│                                  │                    │ ATION          │   │
+│                                  ▼                    │ (Application)  │   │
+│                      ┌────────────────────────┐       │                │   │
+│                      │  ABSTRACT             │──────▶│ • Testing      │   │
+│                      │  CONCEPTUALIZATION    │       │ • Problem-     │   │
+│                      │  (Theory Building)    │       │   solving      │   │
+│                      │                       │       │ • Innovation   │   │
+│                      │ • Theory integration  │       └───────┬────────┘   │
+│                      │ • Evidence synthesis │              │           │
+│                      │ • Pattern recognition│             │           │
+│                      └────────────────────────┘             │           │
+│                                                            ▼           │
+│                        CONTINUOUS CYCLE OF LEARNING ◀─────┘           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>1.2 Three Models for Experiential Learning in QI</strong>
+
+<strong>Model 1: Project-Based Learning (PBL)</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Feature</td><td>Description</td><td>Best Use</td></tr>
+|---------|-------------|----------|
+<tr><td><strong>Structure</strong></td><td>Extended, substantial projects</td><td>Major curriculum requirements</td></tr>
+<tr><td><strong>Duration</strong></td><td>6-12 months</td><td>Resident research/thesis</td></tr>
+<tr><td><strong>Ownership</strong></td><td>High resident ownership</td><td>QI leadership development</td></tr>
+<tr><td><strong>Faculty Role</strong></td><td>Mentor and advisor</td><td>Guiding rather than directing</td></tr>
+<tr><td><strong>Assessment</strong></td><td>Milestone-based, portfolio</td><td>Demonstrated competence</td></tr>
+
+<strong>Model 2: Community of Practice</strong>
+
+<tr><td>Feature</td><td>Description</td><td>Best Use</td></tr>
+|---------|-------------|----------|
+<tr><td><strong>Structure</strong></td><td>Collaborative learning groups</td><td>Ongoing professional development</td></tr>
+<tr><td><strong>Duration</strong></td><td>Continuous, variable</td><td>Culture of improvement</td></tr>
+<tr><td><strong>Ownership</strong></td><td>Shared ownership</td><td>Organizational learning</td></tr>
+<tr><td><strong>Faculty Role</strong></td><td>Facilitator</td><td>Enabling discussion</td></tr>
+<tr><td><strong>Assessment</strong></td><td>Participation, reflection</td><td>Engagement quality</td></tr>
+
+<strong>Model 3: Intensive Workshop Model</strong>
+
+<tr><td>Feature</td><td>Description</td><td>Best Use</td></tr>
+|---------|-------------|----------|
+<tr><td><strong>Structure</strong></td><td>Concentrated, time-limited</td><td>Skills acquisition</td></tr>
+<tr><td><strong>Duration</strong></td><td>1-5 days</td><td>Technique training</td></tr>
+<tr><td><strong>Ownership</strong></td><td>Moderate ownership</td><td>Foundational skills</td></tr>
+<tr><td><strong>Faculty Role</strong></td><td>Instructor</td><td>Direct teaching</td></tr>
+<tr><td><strong>Assessment</strong></td><td>Skills demonstration</td><td>Competent performance</td></tr>
+
+<strong>1.3 Comparison of Models</strong>
+
+<tr><td>Criteria</td><td>Project-Based</td><td>Community of Practice</td><td>Intensive Workshop</td></tr>
+|----------|--------------|----------------------|-------------------|
+<tr><td><strong>Depth of Learning</strong></td><td>Deep</td><td>Moderate to Deep</td><td>Surface to Moderate</td></tr>
+<tr><td><strong>Time Requirements</strong></td><td>High</td><td>Moderate</td><td>Low to Moderate</td></tr>
+<tr><td><strong>Scalability</strong></td><td>Low</td><td>High</td><td>High</td></tr>
+<tr><td><strong>Resource Intensity</strong></td><td>High</td><td>Moderate</td><td>Low to Moderate</td></tr>
+<tr><td><strong>Transfer to Practice</strong></td><td>Strong</td><td>Variable</td><td>Moderate</td></tr>
+<tr><td><strong>Sustainability</strong></td><td>Depends on support</td><td>Strong</td><td>Variable</td></tr>
+<tr><td><strong>Saudi Adaptation Score</strong></td><td>7/10</td><td>9/10</td><td>6/10</td></tr>
+
+<strong>1.4 Selecting the Appropriate Model</strong>
+
+<strong>Decision Framework</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    MODEL SELECTION DECISION TREE                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                         START                                              │
+│                           │                                               │
+│                           ▼                                               │
+│              ┌────────────────────────┐                                   │
+│              │ What is the learning   │                                   │
+│              │ objective?             │                                   │
+│              └───────────┬────────────┘                                   │
+│                          │                                               │
+│         ┌────────────────┼────────────────┐                             │
+│         ▼                ▼                ▼                             │
+│    ┌─────────┐     ┌──────────┐     ┌───────────┐                         │
+│    │ Skills │     │ Complex  │     │Culture   │                         │
+│    │ Acquisi│     │Problem   │     │Change    │                         │
+│    │tion    │     │Solving   │     │          │                         │
+│    └───┬───┘     └────┬─────┘     └─────┬─────┘                         │
+│        │              │                  │                               │
+│        ▼              ▼                  ▼                               │
+│  ┌───────────┐  ┌───────────┐    ┌─────────────┐                         │
+│  │ Intensive │  │ Project   │    │Community   │                         │
+│  │ Workshop  │  │ Based     │    │of Practice  │                         │
+│  └───────────┘  └───────────┘    └─────────────┘                         │
+│                                                                             │
+│  Additional Considerations:                                               │
+│  • Available resources and faculty expertise                             │
+│  • Organizational culture and readiness                                 │
+│  • Timeline and scheduling constraints                                   │
+│  • Assessment requirements and methods                                   │
+│  • Resident level and prior experience                                   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>١.١ الأساس النظري للتعلم التجريبي</strong>
+
+يشكل التعلم التجريبي، الذي أسسه جون ديوي وطوره ديفيد كولب، الأساس النظري للتعلم الفعال للبالغين في مجال الرعاية الصحية. تضمن الطبيعة الدورية للتعلم التجريبي التطور المستمر من خلال دمج الخبرة والتأمل وال концеبة والتطبيق.
+
+<strong>١.٢ النماذج الثلاثة للتعلم التجريبي في QI</strong>
+
+<strong>النموذج الأول: التعلم القائم على المشروع (PBL)</strong>
+
+<tr><td>الميزة</td><td>الوصف</td><td>الاستخدام الأمثل</td></tr>
+|--------|------|------------------|
+<tr><td><strong>الهيكل</strong></td><td>مشاريع ممتدة وجوهرية</td><td>متطلبات المنهج الرئيسية</td></tr>
+<tr><td><strong>المدة</strong></td><td>٦-١٢ شهراً</td><td>بحث/أطروحة المقيم</td></tr>
+<tr><td><strong>الملكية</strong></td><td>ملكية عالية للمقيم</td><td>تطوير قيادة QI</td></tr>
+<tr><td><strong>دور أعضاء هيئة التدريس</strong></td><td>موجه ومستشار</td><td>التوجيه وليس الإدارة</td></tr>
+
+<strong>النموذج الثاني: مجتمع الممارسة</strong>
+
+<tr><td>الميزة</td><td>الوصف</td><td>الاستخدام الأمثل</td></tr>
+|--------|------|------------------|
+<tr><td><strong>الهيكل</strong></td><td>مجموعات تعلم تعاونية</td><td>التطوير المهني المستمر</td></tr>
+<tr><td><strong>المدة</strong></td><td>مستمر ومتغير</td><td>ثقافة التحسين</td></tr>
+<tr><td><strong>الملكية</strong></td><td>ملكية مشتركة</td><td>التعلم التنظيمي</td></tr>
+<tr><td><strong>دور أعضاء هيئة التدريس</strong></td><td>ميسر</td><td>تمكين المناقشة</td></tr>
+
+<strong>النموذج الثالث: نموذج الورشة المكثفة</strong>
+
+<tr><td>الميزة</td><td>الوصف</td><td>الاستخدام الأمثل</td></tr>
+|--------|------|------------------|
+<tr><td><strong>الهيكل</strong></td><td>مركّز ومحدود الوقت</td><td>اكتساب المهارات</td></tr>
+<tr><td><strong>المدة</strong></td><td>١-٥ أيام</td><td>تدريب المهارات</td></tr>
+<tr><td><strong>الملكية</strong></td><td>ملكية معتدلة</td><td>المهارات الأساسية</td></tr>
+<tr><td><strong>دور أعضاء هيئة التدريس</strong></td><td>مدرب</td><td>التدريس المباشر</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 2: Implementing Project-Based QI Learning | الدرس الثاني: تنفيذ التعلم القائم على مشروع QI</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>2.1 Project-Based QI Learning Framework</strong>
+
+<strong>Resident QI Project Lifecycle</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    RESIDENT QI PROJECT LIFECYCLE                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ PHASE 1: DISCOVERY (Weeks 1-4)                                       │  │
+│  │                                                                       │  │
+│  │  • Identify clinical problem or opportunity                        │  │
+│  │  • Review literature and best practices                             │  │
+│  │  • Conduct needs assessment                                        │  │
+│  │  • Define project scope and stakeholders                           │  │
+│  │  • Develop preliminary aim statement                                │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+│                                    │                                      │
+│                                    ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ PHASE 2: DESIGN (Weeks 5-8)                                        │  │
+│  │                                                                       │  │
+│  │  • Create driver diagram                                           │  │
+│  │  • Design measurement strategy                                     │  │
+│  │  • Develop intervention plan                                       │  │
+│  │  • Identify resources and support needed                           │  │
+│  │  • Submit project proposal for approval                           │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+│                                    │                                      │
+│                                    ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ PHASE 3: PDSA CYCLES (Weeks 9-20)                                  │  │
+│  │                                                                       │  │
+│  │  Cycle 1: Pilot test (Weeks 9-12)                                 │  │
+│  │  Cycle 2: Refinement (Weeks 13-16)                                │  │
+│  │  Cycle 3: Implementation (Weeks 17-20)                             │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+│                                    │                                      │
+│                                    ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ PHASE 4: SPREAD & SUSTAINABILITY (Weeks 21-24)                     │  │
+│  │                                                                       │  │
+│  │  • Develop spread plan                                             │  │
+│  │  • Create sustainability strategy                                 │  │
+│  │  • Document standard work                                         │  │
+│  │  • Transition to operational ownership                            │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+│                                    │                                      │
+│                                    ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ PHASE 5: DISSEMINATION (Weeks 25-26)                              │  │
+│  │                                                                       │  │
+│  │  • Prepare final report                                           │  │
+│  │  • Create presentation                                            │  │
+│  │  • Submit manuscript if applicable                                │  │
+│  │  • Present findings to stakeholders                               │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>2.2 Faculty Mentorship Structure</strong>
+
+<strong>Mentorship Roles and Responsibilities</strong>
+
+<tr><td>Role</td><td>Responsibilities</td><td>Time Commitment</td><td>Qualifications</td></tr>
+|------|-------------------|-----------------|----------------|
+<tr><td><strong>Primary Mentor</strong></td><td>Daily guidance, project oversight</td><td>2-4 hrs/week</td><td>QI expertise, clinical knowledge</td></tr>
+<tr><td><strong>Faculty Advisor</strong></td><td>Strategic guidance, resources</td><td>1-2 hrs/week</td><td>Senior faculty, program support</td></tr>
+<tr><td><strong>QI Coach</strong></td><td>Methodology support</td><td>As needed</td><td>Quality department expertise</td></tr>
+<tr><td><strong>Statistician</strong></td><td>Data analysis support</td><td>2-4 hrs/project</td><td>Research methods background</td></tr>
+
+<strong>2.3 Saudi Implementation Case Study</strong>
+
+<strong>King Faisal Specialist Hospital QI Project Framework</strong>
+
+<strong>Program Structure</strong>:
+- 3 PGY-3 residents per cohort
+- 6-month project duration
+- Weekly 2-hour protected QI time
+- Monthly mentorship meetings
+- Quarterly progress presentations
+
+<strong>Outcomes</strong>:
+- 100% resident participation rate
+- 15 published QI projects in 3 years
+- 3 national quality award winners
+- Institutional QI culture transformation
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>٢.١ إطار التعلم القائم على مشروع QI</strong>
+
+<strong>دورة حياة مشروع QI للمقيم</strong>
+
+<tr><td>الدور</td><td>المسؤوليات</td><td>التزام الوقت</td><td>المؤهلات</td></tr>
+|-------|-----------|-------------|---------|
+<tr><td><strong>الموجه الرئيسي</strong></td><td>التوجيه اليومي، إشراف المشروع</td><td>٢-٤ ساعات/أسبوع</td><td>خبرة في QI، المعرفة السريرية</td></tr>
+<tr><td><strong>المستشار الأكاديمي</strong></td><td>التوجيه الاستراتيجي، الموارد</td><td>١-٢ ساعة/أسبوع</td><td>أعضاء هيئة التدريس العليا، دعم البرنامج</td></tr>
+<tr><td><strong>مدرب QI</strong></td><td>دعم المنهجية</td><td>حسب الحاجة</td><td>خبرة قسم الجودة</td></tr>
+<tr><td><strong>الإحصائي</strong></td><td>دعم تحليل البيانات</td><td>٢-٤ ساعات/مشروع</td><td>خلفية طرق البحث</td></tr>
+
+<strong>٢.٢ حالة تطبيق سعودية</strong>
+
+<strong>هيكل برنامج مشروع QI بمستشفى الملك فيصل التخصصي</strong>
+
+<tr><td>العنصر</td><td>التفاصيل</td></tr>
+|--------|---------|
+<tr><td><strong>هيكل البرنامج</strong></td><td>٣ مقيمين PGY-3 لكل مجموعة</td></tr>
+<tr><td><strong>مدة المشروع</strong></td><td>٦ أشهر</td></tr>
+<tr><td><strong>وقت QI المحمي</strong></td><td>ساعتان أسبوعياً</td></tr>
+<tr><td><strong>اجتماعات الإرشاد</strong></td><td>شهرياً</td></tr>
+<tr><td><strong>عروض التقدم</strong></td><td>ربع سنوي</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 3: Community of Practice Implementation | الدرس الثالث: تنفيذ مجتمع الممارسة</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>3.1 Community of Practice Framework</strong>
+
+<strong>Wenger's Community of Practice Model</strong>
+
+<tr><td>Element</td><td>Definition</td><td>Application to QI Learning</td></tr>
+|---------|------------|---------------------------|
+<tr><td><strong>Domain</strong></td><td>Shared area of interest</td><td>Quality improvement in healthcare</td></tr>
+<tr><td><strong>Community</strong></td><td>Members who interact</td><td>Residents, faculty, QI professionals</td></tr>
+<tr><td><strong>Practice</strong></td><td>Shared resources and experiences</td><td>QI methodology, tools, projects</td></tr>
+<tr><td><strong>Joint Enterprise</strong></td><td>Collective learning goals</td><td>Improved patient outcomes</td></tr>
+<tr><td><strong>Mutual Accountability</strong></td><td>Shared responsibility</td><td>QI culture development</td></tr>
+
+<strong>3.2 Building a QI Community of Practice</strong>
+
+<strong>Implementation Steps</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│           COMMUNITY OF PRACTICE IMPLEMENTATION STEPS                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Step 1: DEFINE PURPOSE                                                     │
+│  ├─ Identify shared domain: QI in GME                                    │
+│  ├─ Articulate learning goals                                             │
+│  └─ Define community boundaries                                          │
+│                                                                             │
+│  Step 2: IDENTIFY MEMBERS                                                 │
+│  ├─ Recruit core members: faculty, residents, QI specialists              │
+│  ├─ Identify community champions                                        │
+│  └─ Establish diverse membership                                         │
+│                                                                             │
+│  Step 3: DESIGN STRUCTURE                                                 │
+│  ├─ Determine meeting frequency and format                               │
+│  ├─ Create communication channels                                         │
+│  └─ Develop shared resources                                             │
+│                                                                             │
+│  Step 4: IMPLEMENT ACTIVITIES                                             │
+│  ├─ Launch regular meetings                                              │
+│  ├─ Facilitate knowledge sharing                                         │
+│  └─ Support member projects                                               │
+│                                                                             │
+│  Step 5: EVALUATE AND SUSTAIN                                              │
+│  ├─ Assess community health and engagement                              │
+│  ├─ Adapt structure based on feedback                                   │
+│  └─ Plan for leadership succession                                      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>3.3 Community Activities</strong>
+
+<strong>Meeting Structure Template</strong>
+
+<tr><td>Activity</td><td>Duration</td><td>Purpose</td><td>Facilitation</td></tr>
+|----------|-----------|---------|--------------|
+<tr><td><strong>Opening Round</strong></td><td>5 min</td><td>Engagement, sharing</td><td>Structured prompt</td></tr>
+<tr><td><strong>Case Discussion</strong></td><td>20 min</td><td>Problem-solving</td><td>Case presenter</td></tr>
+<tr><td><strong>QI Workshop</strong></td><td>30 min</td><td>Skill building</td><td>Expert facilitator</td></tr>
+<tr><td><strong>Project Updates</strong></td><td>15 min</td><td>Progress sharing</td><td>Project teams</td></tr>
+<tr><td><strong>Closing Reflection</strong></td><td>5 min</td><td>Learning synthesis</td><td>Facilitator prompt</td></tr>
+<tr><td><strong>Refreshments</strong></td><td>10 min</td><td>Informal networking</td><td>Social connection</td></tr>
+
+<strong>3.4 Technology-Enabled Community</strong>
+
+<strong>Platform Requirements</strong>
+
+<tr><td>Function</td><td>Platform Options</td><td>Implementation</td></tr>
+|----------|-----------------|-----------------|
+<tr><td><strong>Communication</strong></td><td>Microsoft Teams, Slack</td><td>Create dedicated QI channel</td></tr>
+<tr><td><strong>Document Sharing</strong></td><td>SharePoint, Google Drive</td><td>Central repository structure</td></tr>
+<tr><td><strong>Project Tracking</strong></td><td>Microsoft Planner, Asana</td><td>Project management tools</td></tr>
+<tr><td><strong>Discussion Forum</strong></td><td>Padlet, Nearpod</td><td>Async knowledge exchange</td></tr>
+<tr><td><strong>Video Conferencing</strong></td><td>Zoom, Teams Meetings</td><td>Virtual meeting capability</td></tr>
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>٣.١ إطار مجتمع الممارسة</strong>
+
+<strong>نموذج مجتمع الممارسة لـ Wenger</strong>
+
+<tr><td>العنصر</td><td>التعريف</td><td>تطبيق على تعلم QI</td></tr>
+|--------|---------|-------------------|
+<tr><td><strong>المجال</strong></td><td>منطقة اهتمام مشتركة</td><td>تحسين الجودة في التعليم الطبي العالي</td></tr>
+<tr><td><strong>المجتمع</strong></td><td>الأعضاء الذين يتفاعلون</td><td>المقيمين، وأعضاء هيئة التدريس، ومتخصصي QI</td></tr>
+<tr><td><strong>الممارسة</strong></td><td>الموارد والخبرات المشتركة</td><td>منهجية QI، والأدوات، والمشاريع</td></tr>
+<tr><td><strong>المشروع المشترك</strong></td><td>أهداف التعلم الجماعية</td><td>تحسين نتائج المرضى</td></tr>
+<tr><td><strong>المساءلة المتبادلة</strong></td><td>المسؤولية المشتركة</td><td>تطوير ثقافة QI</td></tr>
+
+<strong>٣.٢ بناء مجتمع ممارسات QI</strong>
+
+<tr><td>النشاط</td><td>المدة</td><td>الغرض</td><td>التيسير</td></tr>
+|--------|-------|-------|---------|
+<tr><td><strong>الجولة الافتتاحية</strong></td><td>٥ دقائق</td><td>الانخراط، المشاركة</td><td>مطالبة منظمة</td></tr>
+<tr><td><strong>مناقشة الحالة</strong></td><td>٢٠ دقيقة</td><td>حل المشكلات</td><td>مقدم الحالة</td></tr>
+<tr><td><strong>ورشة QI</strong></td><td>٣٠ دقيقة</td><td>بناء المهارات</td><td>ميسر خبير</td></tr>
+<tr><td><strong>تحديثات المشروع</strong></td><td>١٥ دقيقة</td><td>مشاركة التقدم</td><td>فرق المشروع</td></tr>
+<tr><td><strong>التأمل الختامي</strong></td><td>٥ دقائق</td><td>تركيب التعلم</td><td>مطالبة الميسر</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 4: Intensive Workshop Model | الدرس الرابع: نموذج الورشة المكثفة</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>4.1 Workshop Design Framework</strong>
+
+<strong>Backwards Design for QI Workshops</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    BACKWARDS DESIGN PROCESS                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Step 1: IDENTIFY DESIRED RESULTS                                         │
+│  ├─ What should participants know, do, or value?                          │
+│  ├─ How does this connect to competencies?                                │
+│  └─ What is the transfer to practice?                                     │
+│                                                                             │
+│  Step 2: DETERMINE ACCEPTABLE EVIDENCE                                    │
+│  ├─ How will you know participants achieved goals?                        │
+│  ├─ What performance assessment is needed?                               │
+│  └─ What evidence demonstrates learning?                                 │
+│                                                                             │
+│  Step 3: PLAN LEARNING EXPERIENCES                                        │
+│  ├─ What activities will build toward performance?                        │
+│  ├─ How will you sequence instruction?                                   │
+│  └─ What materials and resources are needed?                             │
+│                                                                             │
+│  Key Principle: Start with the end in mind!                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>4.2 QI Workshop Curriculum</strong>
+
+<strong>One-Day Intensive Workshop Agenda</strong>
+
+<tr><td>Time</td><td>Module</td><td>Learning Objectives</td><td>Activities</td></tr>
+|------|--------|-------------------|------------|
+<tr><td>08:00-08:30</td><td>Registration & Introduction</td><td>Set stage, introduce participants</td><td>Ice breaker, norms</td></tr>
+<tr><td>08:30-09:30</td><td>Foundation: QI Principles</td><td>Understand QI fundamentals</td><td>Lecture, discussion</td></tr>
+<tr><td>09:30-10:30</td><td>The Model for Improvement</td><td>Apply IHI methodology</td><td>Interactive exercises</td></tr>
+<tr><td>10:30-10:45</td><td>Break</td><td>Recovery</td><td>Refreshments</td></tr>
+<tr><td>10:45-12:00</td><td>PDSA Cycle Workshop</td><td>Design and conduct PDSA cycles</td><td>Small group work</td></tr>
+<tr><td>12:00-13:00</td><td>Lunch</td><td>Networking</td><td>Social time</td></tr>
+<tr><td>13:00-14:30</td><td>Measurement for Improvement</td><td>Select and track measures</td><td>Hands-on practice</td></tr>
+<tr><td>14:30-15:30</td><td>Patient Safety Integration</td><td>Connect QI to safety</td><td>Case studies</td></tr>
+<tr><td>15:30-15:45</td><td>Break</td><td>Recovery</td><td>Refreshments</td></tr>
+<tr><td>15:45-17:00</td><td>Team Project Work</td><td>Apply learning to real project</td><td>Group consultation</td></tr>
+<tr><td>17:00-17:30</td><td>Closing & Action Planning</td><td>Commit to next steps</td><td>Reflection, Q&A</td></tr>
+
+<strong>4.3 Skills Stations</strong>
+
+<strong>Hands-On Skill Stations Design</strong>
+
+<tr><td>Station</td><td>Skills Practiced</td><td>Duration</td><td>Materials</td></tr>
+|---------|-----------------|-----------|------------|
+<tr><td><strong>Station 1: Process Mapping</strong></td><td>Flowchart creation, waste identification</td><td>45 min</td><td>Paper, markers, templates</td></tr>
+<tr><td><strong>Station 2: Data Visualization</strong></td><td>Run charts, control charts</td><td>45 min</td><td>Excel templates, sample data</td></tr>
+<tr><td><strong>Station 3: Root Cause Analysis</strong></td><td>Fishbone, 5 Whys</td><td>45 min</td><td>Case study materials</td></tr>
+<tr><td><strong>Station 4: Simulation</strong></td><td>Team-based QI scenario</td><td>45 min</td><td>Simulation case, roles</td></tr>
+<tr><td><strong>Station 5: Presentation</strong></td><td>QI story creation</td><td>45 min</td><td>Template, examples</td></tr>
+
+<strong>4.4 Saudi Context Adaptation</strong>
+
+<strong>Cultural Considerations for Workshop Facilitation</strong>
+
+<tr><td>Challenge</td><td>Strategy</td><td>Example</td></tr>
+|-----------|----------|---------|
+<tr><td><strong>Hierarchy sensitivity</strong></td><td>Create psychological safety</td><td>Ground rules for respect</td></tr>
+<tr><td><strong>Time constraints</strong></td><td>Prioritize core content</td><td>Essential elements first</td></tr>
+<tr><td><strong>Language barriers</strong></td><td>Bilingual materials</td><td>Arabic and English resources</td></tr>
+<tr><td><strong>Documentation concerns</strong></td><td>Anonymous feedback options</td><td>Optional name disclosure</td></tr>
+<tr><td><strong>Authority questioning</strong></td><td>Safe questioning environment</td><td>"There are no bad questions"</td></tr>
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>٤.١ إطار تصميم الورشة</strong>
+
+<strong>التصميم العكسي لورش عمل QI</strong>
+
+<tr><td>الوقت</td><td>الوحدة</td><td>أهداف التعلم</td><td>الأنشطة</td></tr>
+|-------|--------|-------------|---------|
+<tr><td>08:00-08:30</td><td>التسجيل والمقدمة</td><td>تحديد المرحلة، تعريف المشاركين</td><td>كسر الجمود، المعايير</td></tr>
+<tr><td>08:30-09:30</td><td>الأساسيات: مبادئ QI</td><td>فهم أساسيات QI</td><td>محاضرة، مناقشة</td></tr>
+<tr><td>09:30-10:30</td><td>نموذج التحسين</td><td>تطبيق منهجية IHI</td><td>تمارين تفاعلية</td></tr>
+<tr><td>10:30-10:45</td><td>استراحة</td><td>استعادة النشاط</td><td>مرطبات</td></tr>
+<tr><td>10:45-12:00</td><td>ورشة عمل دورة PDSA</td><td>تصميم وإجراء دورات PDSA</td><td>عمل جماعي صغير</td></tr>
+<tr><td>12:00-13:00</td><td>غداء</td><td>التواصل</td><td>وقت اجتماعي</td></tr>
+<tr><td>13:00-14:30</td><td>القياس للتحسين</td><td>اختيار وتتبع المقاييس</td><td>ممارسة عملية</td></tr>
+<tr><td>14:30-15:30</td><td>دمج سلامة المرضى</td><td>ربط QI بالسلامة</td><td>دراسات الحالة</td></tr>
+<tr><td>15:30-15:45</td><td>استراحة</td><td>استعادة النشاط</td><td>مرطبات</td></tr>
+<tr><td>15:45-17:00</td><td>عمل مشروع الفريق</td><td>تطبيق التعلم على مشروع حقيقي</td><td>استشارة جماعية</td></tr>
+<tr><td>17:00-17:30</td><td>الإغلاق وتخطيط العمل</td><td>الالتزام بالخطوات التالية</td><td>تأمل، س问答</td></tr>
+
+<strong>٤.٢ اعتبارات التكيف للسياق السعودي</strong>
+
+<tr><td>التحدي</td><td>الاستراتيجية</td><td>المثال</td></tr>
+|--------|-------------|--------|
+<tr><td><strong>حساسية التسلسل الهرمي</strong></td><td>خلق بيئة آمنة نفسياً</td><td>قواعد أساسية للاحترام</td></tr>
+<tr><td><strong>قيود الوقت</strong></td><td>إعطاء الأولوية للمحتوى الأساسي</td><td>العناصر الأساسية أولاً</td></tr>
+<tr><td><strong>حواجز اللغة</strong></td><td>مواد ثنائية اللغة</td><td>موارد عربية وإنجليزية</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 5: Assessment of Experiential Learning | الدرس الخامس: تقييم التعلم التجريبي</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>5.1 Assessment Framework for QI Learning</strong>
+
+<strong>Competency Assessment Matrix</strong>
+
+<tr><td>Competency Domain</td><td>Observable Behaviors</td><td>Assessment Method</td><td>Evaluator</td></tr>
+|-----------------|---------------------|------------------|----------|
+<tr><td><strong>QI Methodology</strong></td><td>Applies PDSA correctly</td><td>Project evaluation</td><td>Faculty mentor</td></tr>
+<tr><td><strong>Data Analysis</strong></td><td>Creates and interprets run charts</td><td>Data analysis exercise</td><td>Statistician</td></tr>
+<tr><td><strong>Team Leadership</strong></td><td>Effectively leads improvement team</td><td>360-degree feedback</td><td>Team members</td></tr>
+<tr><td><strong>Communication</strong></td><td>Presents QI work clearly</td><td>Project presentation</td><td>Faculty panel</td></tr>
+<tr><td><strong>Systems Thinking</strong></td><td>Identifies system factors</td><td>Reflection notes</td><td>Program director</td></tr>
+<tr><td><strong>Patient Impact</strong></td><td>Links QI to patient outcomes</td><td>Outcome documentation</td><td>Quality dept</td></tr>
+
+<strong>5.2 Assessment Instruments</strong>
+
+<strong>QI Project Evaluation Rubric</strong>
+
+<tr><td>Criterion</td><td>Exemplary (4)</td><td>Proficient (3)</td><td>Developing (2)</td><td>Beginning (1)</td></tr>
+|-----------|--------------|----------------|----------------|---------------|
+<tr><td><strong>Problem Statement</strong></td><td>Clear, specific, significant</td><td>Clear, somewhat specific</td><td>Vague or incomplete</td><td>Unclear or trivial</td></tr>
+<tr><td><strong>Aim Statement</strong></td><td>SMART, ambitious, achievable</td><td>SMART but could be stronger</td><td>Partially SMART</td><td>Not SMART</td></tr>
+<tr><td><strong>Data Analysis</strong></td><td>Sophisticated, accurate</td><td>Accurate, appropriate</td><td>Basic, some errors</td><td>Inaccurate or absent</td></tr>
+<tr><td><strong>PDSA Cycles</strong></td><td>Multiple, rigorous cycles</td><td>Appropriate cycles</td><td>Limited cycles</td><td>Minimal or missing</td></tr>
+<tr><td><strong>Change Concept</strong></td><td>Innovative, evidence-based</td><td>Standard approaches</td><td>Basic approaches</td><td>Unclear concept</td></tr>
+<tr><td><strong>Results</strong></td><td>Significant, sustainable</td><td>Measurable improvement</td><td>Some improvement</td><td>No improvement</td></tr>
+<tr><td><strong>Spread Plan</strong></td><td>Comprehensive, feasible</td><td>Reasonable plan</td><td>Limited planning</td><td>No plan</td></tr>
+<tr><td><strong>Presentation</strong></td><td>Engaging, professional</td><td>Clear, adequate</td><td>Somewhat unclear</td><td>Unclear or unprofessional</td></tr>
+
+<strong>5.3 Portfolio Assessment</strong>
+
+<strong>QI Portfolio Components</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    QI PORTFOLIO CONTENTS                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Required Components:                                                      │
+│  ├─ Personal Learning Goals (initial and updated)                        │
+│  ├─ Project Proposal (problem, aim, measures)                           │
+│  ├─ Driver Diagram (initial and refined)                                │
+│  ├─ PDSA Cycle Documentation                                            │
+│  ├─ Data Visualizations (run charts, control charts)                   │
+│  ├─ Root Cause Analysis Documentation                                   │
+│  ├─ Project Results Summary                                             │
+│  ├─ Presentation Materials                                              │
+│  ├─ Reflection Notes (multiple)                                          │
+│  └─ Faculty Feedback (multiple)                                          │
+│                                                                             │
+│  Optional Components:                                                      │
+│  ├─ Publications or Posters                                             │
+│  ├─ Teaching Materials Developed                                         │
+│  ├─ Peer Mentorship Documentation                                       │
+│  └─ Conference Participation                                           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>5.4 Competency-Based Assessment</strong>
+
+<strong>Entrustable Professional Activities for QI</strong>
+
+<tr><td>EPA</td><td>Description</td><td>Entrustment Criteria</td></tr>
+|-----|-------------|---------------------|
+<tr><td><strong>EPA-QI-1</strong></td><td>Lead a PDSA cycle</td><td>Demonstrates methodology, receives feedback appropriately</td></tr>
+<tr><td><strong>EPA-QI-2</strong></td><td>Create a run chart</td><td>Accurately represents data, identifies signals</td></tr>
+<tr><td><strong>EPA-QI-3</strong></td><td>Conduct root cause analysis</td><td>Uses systematic approach, involves stakeholders</td></tr>
+<tr><td><strong>EPA-QI-4</strong></td><td>Present QI results</td><td>Communicates clearly, answers questions effectively</td></tr>
+<tr><td><strong>EPA-QI-5</strong></td><td>Mentor junior QI project</td><td>Provides constructive feedback, role models best practices</td></tr>
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>٥.١ إطار التقييم لتعلم QI</strong>
+
+<strong>مصفوفة تقييم الكفاءة</strong>
+
+<tr><td>مجال الكفاءة</td><td>السلوكيات القابلة للملاحظة</td><td>طريقة التقييم</td><td>المقيم</td></tr>
+|--------------|--------------------------|--------------|--------|
+<tr><td><strong>منهجية QI</strong></td><td>يطبق PDSA بشكل صحيح</td><td>تقييم المشروع</td><td>موجه أعضاء هيئة التدريس</td></tr>
+<tr><td><strong>تحليل البيانات</strong></td><td>ينشئ ويفسر جداول التشغيل</td><td>تمرين تحليل البيانات</td><td>إحصائي</td></tr>
+<tr><td><strong>قيادة الفريق</strong></td><td>يقود فريق التحسين بفعالية</td><td>تقييم ٣٦٠ درجة</td><td>أعضاء الفريق</td></tr>
+<tr><td><strong>التواصل</strong></td><td>يقدم عمل QI بوضوح</td><td>عرض المشروع</td><td>لجنة أعضاء هيئة التدريس</td></tr>
+<tr><td><strong>التفكير المنظومي</strong></td><td>يحدد عوامل النظام</td><td>ملاحظات التأمل</td><td>مدير البرنامج</td></tr>
+<tr><td><strong>تأثير المريض</strong></td><td>يربط QI بنتائج المرضى</td><td>توثيق النتائج</td><td>قسم الجودة</td></tr>
+
+<strong>٥.٢ مكونات ملف QI الشخصي</strong>
+
+<tr><td>المكون</td><td>الوصف</td></tr>
+|--------|------|
+<tr><td><strong>أهداف التعلم الشخصية</strong></td><td>الأهداف الأولية والمحدثة</td></tr>
+<tr><td><strong>اقتراح المشروع</strong></td><td>المشكلة، الهدف، المقاييس</td></tr>
+<tr><td><strong>مخطط المحركات</strong></td><td>_initial والمُحسَّن</td></tr>
+<tr><td><strong>توثيق دورة PDSA</strong></td><td>دورات متعددة</td></tr>
+<tr><td><strong>تصورات البيانات</strong></td><td>جداول التشغيل، خرائط التحكم</td></tr>
+<tr><td><strong>توثيق تحليل السبب الجذري</strong></td><td>منهجية منهجية</td></tr>
+<tr><td><strong>ملخص نتائج المشروع</strong></td><td>التحسينات المحققة</td></tr>
+<tr><td><strong>مواد العرض التقديمي</strong></td><td>شريحة، ملخص</td></tr>
+<tr><td><strong>ملاحظات التأمل</strong></td><td>تأملات متعددة</td></tr>
+<tr><td><strong>تغذية راجعة أعضاء هيئة التدريس</strong></td><td>ملاحظات متعددة</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 6: Program Evaluation and Continuous Improvement | الدرس السادس: تقييم البرنامج والتحسين المستمر</h3>
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>6.1 Program Evaluation Framework</strong>
+
+<strong>Kirkpatrick Evaluation Model Applied to QI Education</strong>
+
+<tr><td>Level</td><td>Focus</td><td>Questions Answered</td><td>Methods</td></tr>
+|-------|-------|-------------------|---------|
+<tr><td><strong>Level 1: Reaction</strong></td><td>Participant satisfaction</td><td>Did they enjoy it?</td><td>Surveys, feedback</td></tr>
+<tr><td><strong>Level 2: Learning</strong></td><td>Knowledge and skill acquisition</td><td>Did they learn?</td><td>Pre/post tests, assessments</td></tr>
+<tr><td><strong>Level 3: Behavior</strong></td><td>Application of learning</td><td>Did they use it?</td><td>Observation, portfolio review</td></tr>
+<tr><td><strong>Level 4: Results</strong></td><td>Organizational impact</td><td>Did it matter?</td><td>Quality outcomes, costs</td></tr>
+
+<strong>6.2 Evaluation Tools</strong>
+
+<strong>End-of-Workshop Evaluation Form</strong>
+
+<tr><td>Question</td><td>Rating Scale</td><td>Open Comments</td></tr>
+|----------|--------------|---------------|
+<tr><td>Overall workshop quality</td><td>1-5</td></tr>
+<tr><td>Content relevance to practice</td><td>1-5</td></tr>
+<tr><td>Instructor effectiveness</td><td>1-5</td></tr>
+<tr><td>Materials quality</td><td>1-5</td></tr>
+<tr><td>Practical application</td><td>1-5</td></tr>
+<tr><td>Time management</td><td>1-5</td></tr>
+<tr><td>Would recommend to colleagues</td><td>Yes/No</td><td>Comments</td></tr>
+<tr><td>Greatest strength</td><td>Open</td></tr>
+<tr><td>Areas for improvement</td><td>Open</td></tr>
+
+<strong>6.3 Continuous Improvement Cycle</strong>
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│              PROGRAM CONTINUOUS IMPROVEMENT CYCLE                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                           ┌──────────────┐                                 │
+│                           │   PLAN       │                                 │
+│                           │ Define goals │                                 │
+│                           └──────┬───────┘                                 │
+│                                  │                                         │
+│                                  ▼                                         │
+│                           ┌──────────────┐                                 │
+│                           │     DO      │                                 │
+│                           │ Implement   │                                 │
+│                           └──────┬───────┘                                 │
+│                                  │                                         │
+│                                  ▼                                         │
+│                           ┌──────────────┐                                 │
+│                           │    STUDY     │                                 │
+│                           │ Evaluate    │◀───────────────┐                 │
+│                           └──────┬───────┘               │                 │
+│                                  │                      │                 │
+│                                  ▼                      │                 │
+│                           ┌──────────────┐               │                 │
+│                           │     ACT      │───────────────┘                 │
+│                           │ Standardize  │                                 │
+│                           │ or Improve   │                                 │
+│                           └──────────────┘                                 │
+│                                                                             │
+│              Repeat cycle for continuous improvement!                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+<strong>6.4 Saudi Program Evaluation Framework</strong>
+
+<strong>SCFHS Program Evaluation Requirements</strong>
+
+<tr><td>Requirement</td><td>Evidence Needed</td><td>Frequency</td><td>Responsible Party</td></tr>
+|-------------|-----------------|-----------|------------------|
+<tr><td><strong>Learning Environment</strong></td><td>Site evaluation</td><td>Annual</td><td>Program director</td></tr>
+<tr><td><strong>Faculty Qualifications</strong></td><td>CV and credentials</td><td>At appointment</td><td>Department head</td></tr>
+<tr><td><strong>Curriculum Documentation</strong></td><td>Curriculum guide</td><td>Annual review</td><td>Curriculum committee</td></tr>
+<tr><td><strong>Assessment System</strong></td><td>Assessment procedures</td><td>Semi-annual</td><td>CCC</td></tr>
+<tr><td><strong>Resident Outcomes</strong></td><td>Board pass rates, achievements</td><td>Annual</td><td>Program director</td></tr>
+<tr><td><strong>Program Improvement</strong></td><td>Action plans, tracking</td><td>Quarterly</td><td>Program evaluation committee</td></tr>
+
+<h4 class="section-sub">Arabic Content | المحتوى العربي</h4>
+
+<strong>٦.١ إطار تقييم البرنامج</strong>
+
+<strong>نموذج تقييم Kirkpatrick المطبق على تعليم QI</strong>
+
+<tr><td>المستوى</td><td>التركيز</td><td>الأسئلة المجاب عنها</td><td>الطرق</td></tr>
+|---------|---------|-------------------|-------|
+<tr><td><strong>المستوى ١: رد الفعل</strong></td><td>رضا المشارك</td><td>هل استمتعوا به؟</td><td>الاستبيانات، التغذية الراجعة</td></tr>
+<tr><td><strong>المستوى ٢: التعلم</strong></td><td>اكتساب المعرفة والمهارات</td><td>هل تعلموا؟</td><td>الاختبارات السابقة/اللاحقة، التقييمات</td></tr>
+<tr><td><strong>المستوى ٣: السلوك</strong></td><td>تطبيق التعلم</td><td>هل استخدموه؟</td><td>الملاحظة، مراجعة الملف</td></tr>
+<tr><td><strong>المستوى ٤: النتائج</strong></td><td>التأثير التنظيمي</td><td>هل كان mattered؟</td><td>نتائج الجودة، التكاليف</td></tr>
+
+<strong>٦.٢ متطلبات تقييم برنامج SCFHS</strong>
+
+<tr><td>المتطلب</td><td>الدليل المطلوب</td><td>التكرار</td><td>الطرف المسؤول</td></tr>
+|---------|---------------|--------|--------------|
+<tr><td><strong>بيئة التعلم</strong></td><td>تقييم الموقع</td><td>سنوياً</td><td>مدير البرنامج</td></tr>
+<tr><td><strong>مؤهلات أعضاء هيئة التدريس</strong></td><td>السيرة الذاتية والوثائق</td><td>عند التعيين</td><td>رئيس القسم</td></tr>
+<tr><td><strong>توثيق المنهج</strong></td><td>دليل المنهج</td><td>مراجعة سنوية</td><td>لجنة المنهج</td></tr>
+<tr><td><strong>نظام التقييم</strong></td><td>إجراءات التقييم</td><td>نصف سنوي</td><td>CCC</td></tr>
+<tr><td><strong>نتائج المقيمين</strong></td><td>معدلات النجاح في الامتحان، الإنجازات</td><td>سنوياً</td><td>مدير البرنامج</td></tr>
+<tr><td><strong>تحسين البرنامج</strong></td><td>خطط العمل، التتبع</td><td>ربع سنوي</td><td>لجنة تقييم البرنامج</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Exercises | التمارين العملية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Exercise 1: Design an Experiential Learning Activity</h3>
+
+<strong>Instructions</strong>: Design an experiential learning activity for teaching PDSA methodology to residents.
+
+<strong>Required Elements</strong>:
+1. Learning objectives (aligned with milestones)
+2. Activity description with clear steps
+3. Materials needed
+4. Time allocation
+5. Assessment method
+6. Adaptation for Saudi context
+
+<h3 class="section-title">Exercise 2: Create a Community of Practice Launch Plan</h3>
+
+<strong>Instructions</strong>: Develop a plan for launching a QI Community of Practice in your institution.
+
+<strong>Template</strong>:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│       COMMUNITY OF PRACTICE LAUNCH PLAN                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Community Name: ____________________________________________   │
+│  Mission Statement: ________________________________________   │
+│  Target Members: ____________________________________________   │
+│  Launch Date: _______________                                 │
+│                                                                 │
+│  STRUCTURE                                                     │
+│  Meeting Frequency: _______________                           │
+│  Meeting Format: _______________                             │
+│  Communication Platform: _______________                     │
+│                                                                 │
+│  ACTIVITIES                                                   │
+│  Initial Agenda Items:                                       │
+│  1. _______________________________________________________    │
+│  2. _______________________________________________________    │
+│  3. _______________________________________________________    │
+│                                                                 │
+│  BUDGET                                                       │
+│  Refreshments: _______________                               │
+│  Materials: _______________                                  │
+│  Technology: _______________                                 │
+│                                                                 │
+│  PROMOTION PLAN                                               │
+│  Marketing Channels: _______________________________________   │
+│  Launch Event: ____________________________________________   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study: Transitioning from Traditional Teaching to Experiential Learning</h3>
+
+<strong>Setting</strong>: Saudi Teaching Hospital, Jeddah
+<strong>Challenge</strong>: Replace lecture-based QI teaching with experiential learning
+
+<strong>Situation</strong>:
+Dr. Abdullah Al-Hakami, Program Director of Internal Medicine, recognizes that traditional QI teaching through lectures has not resulted in resident QI competency. Residents can recite PDSA steps but cannot apply them to real clinical problems.
+
+<strong>Your Task</strong>:
+1. Diagnose the current state of QI education
+2. Design transition plan to experiential learning
+3. Address faculty development needs
+4. Create assessment system to demonstrate competency
+5. Plan evaluation of the new approach
+
+<strong>Key Questions to Address</strong>:
+- What resistance might faculty encounter?
+- How will you maintain curriculum coverage?
+- What resources are needed for experiential learning?
+- How will you measure success?
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Interactive Checklists | قوائم التفاعل</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Checklist: Implementing Experiential QI Learning</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>Conduct needs assessment</div>
+<div class="checklist-item"><span class="checkbox"></span>Select appropriate experiential model</div>
+<div class="checklist-item"><span class="checkbox"></span>Design curriculum integration</div>
+<div class="checklist-item"><span class="checkbox"></span>Prepare faculty mentors</div>
+<div class="checklist-item"><span class="checkbox"></span>Develop assessment tools</div>
+<div class="checklist-item"><span class="checkbox"></span>Create supporting materials</div>
+<div class="checklist-item"><span class="checkbox"></span>Implement pilot program</div>
+<div class="checklist-item"><span class="checkbox"></span>Evaluate and refine</div>
+<div class="checklist-item"><span class="checkbox"></span>Scale across program</div>
+<div class="checklist-item"><span class="checkbox"></span>Sustain and improve</div>
+
+<h3 class="section-title">Checklist: Facilitating Effective Reflection</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>Create safe environment for sharing</div>
+<div class="checklist-item"><span class="checkbox"></span>Use structured reflection prompts</div>
+<div class="checklist-item"><span class="checkbox"></span>Encourage deep questioning</div>
+<div class="checklist-item"><span class="checkbox"></span>Connect experiences to theory</div>
+<div class="checklist-item"><span class="checkbox"></span>Guide learning transfer</div>
+<div class="checklist-item"><span class="checkbox"></span>Document reflections</div>
+<div class="checklist-item"><span class="checkbox"></span>Follow up on insights</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Quizzes | الاختبارات</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Quiz 1: Experiential Learning Models</h3>
+
+<strong>Q1</strong>: Which model involves extended, substantial projects with high resident ownership?
+- A) Community of Practice
+- B) Project-Based Learning
+- C) Intensive Workshop
+- D) Traditional Lecture
+
+<strong>Q2</strong>: Kolb's concrete experience stage is characterized by:
+- A) Theory building
+- B) Abstract conceptualization
+- C) Active engagement in tasks
+- D) Reflective observation
+
+<strong>Q3</strong>: The Community of Practice model is best suited for:
+- A) Skills acquisition
+- B) Culture change
+- C) Research projects
+- D) Board exam preparation
+
+<h3 class="section-title">Quiz 2: Implementation</h3>
+
+<strong>Q1</strong>: Backwards design begins with:
+- A) Content selection
+- B) Activity planning
+- C) Desired results
+- D) Assessment creation
+
+<strong>Q2</strong>: Effective mentorship requires what time commitment for primary mentor?
+- A) 1 hour/month
+- B) 1-2 hours/week
+- C) 2-4 hours/week
+- D) 10 hours/week
+
+<strong>Q3</strong>: Which platform is recommended for QI community communication in Saudi hospitals?
+- A) Facebook Groups
+- B) WhatsApp
+- C) Microsoft Teams
+- D) Snapchat
+
+<h3 class="section-title">Quiz 3: Assessment</h3>
+
+<strong>Q1</strong>: Kirkpatrick Level 3 evaluates:
+- A) Satisfaction
+- B) Knowledge gain
+- C) Behavioral change
+- D) Organizational results
+
+<strong>Q2</strong>: A QI portfolio should include:
+- A) Only project results
+- B) Complete learning journey documentation
+- C) Only faculty feedback
+- D) Board exam scores
+
+<strong>Q3</strong>: EPAs for QI competency focus on:
+- A) Theoretical knowledge
+- B) Demonstrated performance in practice
+- C) Written examinations
+- D) Peer popularity
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Reflection Questions | أسئلة للتأمل</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">For Medical Educators | للمربين الطبيين</h3>
+
+1. Which experiential learning model best fits your program's resources and culture?
+2. What barriers do you anticipate in implementing experiential QI learning?
+3. How will you balance service demands with educational needs?
+4. What faculty development is needed to support experiential learning?
+
+<h3 class="section-title">For Program Directors | لمديري البرامج</h3>
+
+1. How will you evaluate the effectiveness of experiential learning compared to traditional approaches?
+2. What metrics will demonstrate QI competency development in residents?
+3. How do you plan to sustain momentum when faced with competing priorities?
+4. What changes would you make to current QI education based on this course?
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | المعجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>Arabic Term</td><td>Definition</td></tr>
+|--------------|------------|------------|
+<tr><td>Experiential Learning</td><td>التعلم التجريبي</td><td>Learning through reflection on experience</td></tr>
+<tr><td>Project-Based Learning</td><td>التعلم القائم على المشروع</td><td>Extended projects as learning vehicles</td></tr>
+<tr><td>Community of Practice</td><td>مجتمع الممارسة</td><td>Groups with shared learning goals</td></tr>
+<tr><td>Intensive Workshop</td><td>ورشة عمل مكثفة</td><td>Concentrated skill-building sessions</td></tr>
+<tr><td>Kolb's Learning Cycle</td><td>دورة التعلم لـ كولب</td><td>Four-stage experiential learning model</td></tr>
+<tr><td>Backwards Design</td><td>التصميم العكسي</td><td>Planning from desired outcomes</td></tr>
+<tr><td>Mentorship</td><td>الإرشاد</td><td>Supportive relationship for development</td></tr>
+<tr><td>Reflection</td><td>التأمل</td><td>Structured consideration of experience</td></tr>
+<tr><td>PDSA Cycle</td><td>دورة PDSA</td><td>Plan-Do-Study-Act improvement cycle</td></tr>
+<tr><td>EPA</td><td>النشاط المهني القابل للتصنيف</td><td>Tasks physicians can perform independently</td></tr>
+<tr><td>Portfolio</td><td>الملف الشخصي</td><td>Collection of learning evidence</td></tr>
+<tr><td>Kirkpatrick Model</td><td>نموذج كيركباتريك</td><td>Four-level evaluation framework</td></tr>
+<tr><td>Driver Diagram</td><td>مخطط المحركات</td><td>Visual improvement planning tool</td></tr>
+<tr><td>Run Chart</td><td>جدول التشغيل</td><td>Data visualization for improvement</td></tr>
+<tr><td>Root Cause Analysis</td><td>تحليل السبب الجذري</td><td>Systematic problem investigation</td></tr>
+<tr><td>Psychological Safety</td><td>السلامة النفسية</td><td>Comfort expressing ideas without fear</td></tr>
+<tr><td>Facilitator</td><td>الميسر</td><td>Guide for group learning</td></tr>
+<tr><td>Ground Rules</td><td>القواعد الأساسية</td><td>Norms for group interaction</td></tr>
+<tr><td>Learning Objectives</td><td>أهداف التعلم</td><td>Measurable educational outcomes</td></tr>
+<tr><td>Competency Assessment</td><td>تقييم الكفاءة</td><td>Evaluation of demonstrated ability</td></tr>
+<tr><td>Continuous Improvement</td><td>التحسين المستمر</td><td>Ongoing enhancement of processes</td></tr>
+<tr><td>QI Methodology</td><td>منهجية تحسين الجودة</td><td>Systematic improvement methods</td></tr>
+<tr><td>Evidence-Based</td><td>قائم على الأدلة</td><td>Grounded in research evidence</td></tr>
+<tr><td>Cultural Adaptation</td><td>التكيف الثقافي</td><td>Modifying for local context</td></tr>
+<tr><td>Stakeholder</td><td>صاحب المصلحة</td><td>Person with interest in outcomes</td></tr>
+<tr><td>Sustainability</td><td>الاستدامة</td><td>Maintaining improvements over time</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References and Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Primary References</h3>
+
+1. Institute for Healthcare Improvement. (2024). IHI Open School GME Curriculum. https://www.ihi.org/learn/courses/open-school/catalog/gme-203
+
+2. Kolb, D. A. (2014). Experiential learning: Experience as the source of learning and development (2nd ed.). Pearson.
+
+3. Wenger, E. (1998). Communities of practice: Learning, meaning, and identity. Cambridge University Press.
+
+4. ACGME. (2023). Common Program Requirements. https://www.acgme.org/what-we-do/accreditation/common-program-requirements/
+
+5. SCFHS. (2024). GME Program Requirements. https://www.scfhs.org.sa
+
+<h3 class="section-title">Secondary References</h3>
+
+6. Yardley, S., et al. (2012). Understanding medical education: Evidence, theory and practice. Wiley-Blackwell.
+
+7. Kirkpatrick, J. D., & Kirkpatrick, W. K. (2016). Kirkpatrick's four levels of training evaluation. ATD Press.
+
+8. Sockalingam, S., et al. (2015). Developing a taxonomy for faculty development in competency-based residency programs. Academic Medicine, 90(6), 761-767.
+
+9. Holmboe, E. S., et al. (2010). Faculty development in graduate medical education: New targets for the 21st century. Academic Medicine, 85(4), 569-571.
+
+10. Reed, J., et al. (2015). Experiential learning: A survey of current practices in the UK veterinary profession. Veterinary Record, 176(15), 387-390.
+
+<h3 class="section-title">Teaching Resources</h3>
+
+11. IHI Quality Improvement Resources: https://www.ihi.org/resources
+12. ACGME Faculty Development: https://www.acgme.org/residents-and-fellows/faculty-portal/
+13. Stanford Faculty Development: https://med.stanford.edu
+
+<h3 class="section-title">Saudi Resources</h3>
+
+14. SCFHS E-Services: https://eservices.scfhs.org.sa
+15. CBAHI Standards: https://www.cbahi.gov.sa
+16. Saudi Quality Academy: https://www.spsc.gov.sa
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Completion | إتمام الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Next Steps | الخطوات التالية</h3>
+
+1. Select experiential learning model for your program
+2. Develop implementation plan with timeline
+3. Prepare faculty mentorship structure
+4. Create assessment tools aligned with competencies
+5. Implement pilot and evaluate
+6. Enroll in GME-204: Organizational Alignment
+
+<h3 class="section-title">Apply in Your Institution | التطبيق في مؤسستك</h3>
+
+<strong>Implementation Checklist | قائمة التنفيذ</strong>
+<div class="checklist-item"><span class="checkbox"></span>Assess current QI education approach</div>
+<div class="checklist-item"><span class="checkbox"></span>Select model based on resources</div>
+<div class="checklist-item"><span class="checkbox"></span>Develop faculty capacity</div>
+<div class="checklist-item"><span class="checkbox"></span>Create learner-centered activities</div>
+<div class="checklist-item"><span class="checkbox"></span>Implement robust assessment</div>
+<div class="checklist-item"><span class="checkbox"></span>Evaluate and improve continuously</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Field</td><td>English</td><td>العربية</td></tr>
+|-------|---------|---------|
+<tr><td><strong>Code</strong></td><td>GME 203</td><td>GME 203</td></tr>
+<tr><td><strong>Title</strong></td><td>A Roadmap for Facilitating Experiential Learning in QI</td><td>خارطة طريق لتسهيل التعلم التجريبي في تحسين الجودة</td></tr>
+<tr><td><strong>Provider</strong></td><td>IHI Open School</td><td>مدرسة IHI المفتوحة</td></tr>
+<tr><td><strong>Format</strong></td><td>Online, On-Demand</td><td>عبر الإنترنت، حسب الطلب</td></tr>
+<tr><td><strong>Duration</strong></td><td>120 minutes</td><td>١٢٠ دقيقة</td></tr>
+<tr><td><strong>Credits</strong></td><td>1.25 CE</td><td>١.٢٥ ساعة معتمدة</td></tr>
+<tr><td><strong>Source</strong></td><td><a href="https://www.ihi.org/learn/courses/open-school/catalog/gme-203" target="_blank" rel="noopener">IHI Education Platform</a></td><td><a href="https://www.ihi.org/learn/courses/open-school/catalog/gme-203" target="_blank" rel="noopener">منصة IHI التعليمية</a></td></tr>
+</tbody></table></div>
+---
+
+<em>This course is part of the Brainsait Healthcare Academy's IHI Open School curriculum, adapted for Saudi Arabia's healthcare educational context.</em>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/gme-201.html" class="related-card">
+            <h4>Introduction to Graduate Medical Education (GME)</h4>
+            <p class="rtl">مقدمة في التعليم الطبي العالي</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/gme-202.html" class="related-card">
+            <h4>Designing Educational Experiences in Health Care Improvement</h4>
+            <p class="rtl">تصميم التجارب التعليمية في تحسين الرعاية الصحية</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-gme-203') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-gme-203', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('gme-203')) enrolled.push('gme-203');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'gme-203');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-gme-203') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-gme-203', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-gme-203', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-gme-203', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-gme-203', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-gme-203') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'A Roadmap for Facilitating Experiential Learning in Quality Improvement',
+        slug: 'gme-203',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-gme-203') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-gme-203.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

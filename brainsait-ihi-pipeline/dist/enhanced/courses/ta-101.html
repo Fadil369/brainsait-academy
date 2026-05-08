@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triple Aim for Populations | BrainSAIT Academy</title>
+  <meta name="description" content="Triple Aim for Populations - Full bilingual course on Triple Aim">
+  <meta name="keywords" content="Triple Aim, IHI, Open School, Health Care, Population Health, TA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Triple Aim for Populations</h3>
+        <p>TA-101 • 180 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">TA 101: الهدف الثلاثي للسكان</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 1: Foundations of the Triple...</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 2: Population Health Foundat...</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 3: Patient Experience Excell...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 4: Cost Management and Value...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 5: Triple Aim Implementation...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 6: Equity Integration | الدر...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application Framew...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References and Resources | المراجع ...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Continuing Education Credits | ساعا...</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Triple Aim</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Triple Aim for Populations</h1>
+        <p class="course-title-ar rtl">TA 101: الهدف الثلاثي للسكان</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">180</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">13</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">TA 101: الهدف الثلاثي للسكان</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Course Overview | نظرة عامة على الدورة</h3>
+
+This foundational course equips healthcare professionals with comprehensive understanding of the IHI Triple Aim framework—a strategic approach to optimizing health system performance by simultaneously improving population health, enhancing patient experience, and reducing per capita costs. The course provides deep theoretical foundations, practical frameworks, and Saudi-specific applications aligned with Vision 2030, CBAHI accreditation standards, and NPHIES transformation initiatives.
+
+تُزوّد هذه الدورة التأسيسية المهنيين الصحيين بفهم شامل لإطارعمل الهدف الثلاثي من معهد تحسين الرعاية الصحية—وهو نهج استراتيجي لتحسين أداء النظام الصحي من خلال تحسين صحة السكان في آنٍ واحد، وتعزيز تجربة المريض، وخفض التكلفة للفرد. توفر الدورة أسساً نظرية عميقة وأُطراً عملية وتطبيقات محددة للسعودية تتسق مع رؤية 2030 ومعايير اعتماد هيئة الصحة وإجراءات نظام التأمين الصحي.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          Upon successful completion of this course, participants will be able to:
+
+<h3 class="section-title">English Objectives</h3>
+- Describe the three interdependent components of the IHI Triple Aim framework and their synergistic relationships
+- Analyze population health metrics and identify actionable improvement opportunities within Saudi healthcare settings
+- Evaluate patient experience dimensions using validated frameworks and implement evidence-based enhancement strategies
+- Calculate and interpret per capita cost indicators with reference to Saudi healthcare economics
+- Design and propose Triple Aim implementation projects aligned with MOH operational priorities and CBAHI standards
+- Apply health equity lenses to all Triple Aim interventions addressing disparities in Saudi population health outcomes
+
+<h3 class="section-title">Arabic Objetivos</h3>
+- وصف المكونات الثلاث المترابطة لإطار الهدف الثلاثي وعلاقاتها التآزرية
+- تحليل مقاييس صحة السكان وتحديد فرص تحسين قابلة للتنفيذ في بيئات الرعاية الصحية السعودية
+- تقييم أبعاد تجربة المريض باستخدام الأُطر المُحققة وتنفيذ استراتيجيات تعزيز قائمة على الأدلة
+- حساب وتفسير مؤشرات التكلفة للفرد مع الإشارة إلى اقتصاديات الرعاية الصحية السعودية
+- تصميم واقتراح مشاريع تنفيذ الهدف الثلاثي المتسقة مع أولويات وزارة الصحة ومعايير اعتماد الهيئة
+- تطبيق عدسات الإنصاف الصحي على جميع تدخلات الهدف الثلاثي لمعالجة التفاوتات في نتائج صحة السكان السعودية
+
+<strong>Estimated Completion Time | الوقت المتوقع للإكمال:</strong> 3-4 hours
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 1: Foundations of the Triple Aim Framework | الدرس الأول: أسس إطار الهدف الثلاثي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Define the Triple Aim framework and trace its historical development
+- Identify the three dimensions and their measurable indicators
+- Recognize the interdependencies between dimensions
+- Connect Triple Aim to global health system transformation movements
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">1.1 Historical Context and Development | السياق التاريخي والتطوير</h4>
+
+The Triple Aim framework was developed by the Institute for Healthcare Improvement (IHI) in 2007, led by Dr. Donald Berwick and colleagues, as a response to the growing crisis in healthcare systems worldwide. The framework emerged from IHI's extensive work with health organizations across the globe, synthesizing lessons from high-performing systems that achieved simultaneously better health outcomes, improved patient experience, and lower costs.
+
+طوّر معهد تحسين الرعاية الصحية إطار الهدف الثلاثي عام 2007، تحت قيادة الدكتور دونالد بيريوك وزملائه، استجابة للأزمة المتصاعدة في أنظمتها الصحية حول العالم. خرج الإطار من العمل الواسع الذي قام به المعهد مع المنظمات الصحية في جميع أنحاء العالم، وتوليف الدروس من الأنظمة عالية الأداء التي حققت نتائج صحية أفضل وتجربة أفضل للمريض بتكلفة أقل.
+
+The conceptual foundation builds upon Donabedian's structure-process-outcome model, adding a population health perspective that extends beyond individual patient encounters to community-level health status. The framework explicitly acknowledges that achieving excellence in all three dimensions simultaneously is essential for sustainable health system transformation—improving one dimension at the expense of others creates unintended consequences and system instability.
+
+بنى المفهوم على نموذج دونابيديان للهيكل-العملية-النتيجة، مع إضافة منظور صحة السكان الذي يتجاوز اللقاءات الفردية مع المريض إلى الحالة الصحية على مستوى المجتمع. يعترف الإطار صراحة بأن تحقيق التميز في الأبعاد الثلاثة في آنٍ واحد أمر ضروري للتحول الصحي المستدام—تحسين بُعد على حساب الآخرين يخلق عواقب غير مقصودة عدم استقرار النظام.
+
+<strong>Key Milestone | محطة رئيسية:</strong>
+- 2006: IHI launches "Transforming Health Care" initiative
+- 2007: Triple Aim formally articulated in IHI publications
+- 2014: IHI launches Breakthrough Series Collaborative on Population Health
+- 2019: Triple Aim integrated into IHI's Whole System Value framework
+- 2023: Global adoption by healthcare systems in 50+ countries
+
+<h4 class="section-sub">1.2 The Three Dimensions | الأبعاد الثلاثة</h4>
+
+<strong>Dimension 1: Improving Population Health | تحسين صحة السكان</strong>
+
+This dimension focuses on improving the health outcomes of a defined population while reducing health disparities. Key indicators include:
+
+- Life expectancy and healthy life expectancy
+- Mortality rates (infant, maternal, disease-specific)
+- Disease prevalence and incidence
+- Functional status and quality of life measures
+- Health-related quality of life (HRQoL)
+- Disparity reduction metrics
+
+<strong>Population Health vs. Public Health | صحة السكان مقابل الصحة العامة</strong>
+
+While public health focuses on population-level interventions and government health programs, population health takes a broader perspective, including the health outcomes of individuals within defined populations and the distribution of those outcomes. The Triple Aim's population health dimension explicitly addresses equity—ensuring improvements benefit all segments of the population, particularly those experiencing disadvantage.
+
+بينما تركز الصحة العامة على التدخلات على مستوى السكان والبرامج الصحية الحكومية، تأخذ صحة السكان منظوراً أوسع، يشمل نتائج صحة الأفراد ضمن مجتمعات محددة وتوزيع تلك النتائج. يعالج بُعد صحة السكان في الهدف الثلاثي صراحة العدالة—ضمان أن التحسينات تفيد جميع شرائح المجتمع، خاصة أولئك الذين يواجهون الحرمان.
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Indicator</td><td>المؤشر</td><td>Saudi Target 2030</td><td>الهدف السعودي 2030</td></tr>
+|-----------|--------|-------------------|------------------|
+<tr><td>Life expectancy</td><td>متوسط الأمل المتوقع</td><td>80 years</td><td>80 سنة</td></tr>
+<tr><td>Infant mortality</td><td>وفيات الرضع</td><td><10 per 1000</td><td><10 لكل 1000</td></tr>
+<tr><td>Maternal mortality ratio</td><td>معدل وفيات الأمهات</td><td><50 per 100,000</td><td><50 لكل 100,000</td></tr>
+<tr><td>NCD mortality</td><td>وفيات الأمراض المزمنة</td><td>30% reduction</td><td>снижение 30%</td></tr>
+<tr><td>Diabetes prevalence</td><td>انتشار السكر</td><td>15%</td><td>15%</td></tr>
+
+<strong>Dimension 2: Improving the Patient Experience | تحسين تجربة المريض</strong>
+
+This dimension encompasses quality, safety, and patient-centered care across the continuum. Key indicators include:
+
+- Clinical outcomes from the patient's perspective
+- Patient satisfaction and engagement
+- Access to care and timeliness
+- Care coordination and integration
+- Communication and shared decision-making
+- Patient-reported outcome measures (PROMs)
+
+The patient experience dimension recognizes that healthcare occurs within a relationship context—the quality of interactions between healthcare providers and patients, families, and communities fundamentally shapes outcomes. Patient-centered care is not merely hospitality; it is a core quality dimension that influences clinical outcomes, safety, and resource utilization.
+
+يعترف بُعد تجربة المريض بأن الرعاية الصحية تحدث في سياق العلاقة—جودة التفاعلات بين مقدمي الرعاية الصحية والمرضى والعائلات والمجتمعات تشكّل النتائج بشكل جوهري. الرعاية المتمحورة حول المريض ليست مجرد ضيافة؛ إنها بُعد نوعية أساسي يؤثر على النتائج السريرية والسلامة واستخدام الموارد.
+
+<strong>Dimensions of Patient Experience | أبعاد تجربة المريض</strong>
+
+<tr><td>Domain</td><td>النطاق</td><td>Key Measures</td><td>المقاييس الأساسية</td></tr>
+|-------|--------|-------------|-----------------|
+<tr><td>Access</td><td>الوصول</td><td>Wait times, availability, convenience</td><td>أوقات الانتظار، التوافر، الملاءمة</td></tr>
+<tr><td>Communication</td><td>التواصل</td><td>Provider communication skills, listening</td><td>مهارات تواصل الطبيب، الاستماع</td></tr>
+<tr><td>Coordination</td><td>التنسيق</td><td>Care transitions, information flow</td><td>انتقالات الرعاية، تدفق المعلومات</td></tr>
+<tr><td>Comfort</td><td>الراحة</td><td>Pain management, environment</td><td>إدارة الألم، البيئة</td></tr>
+<tr><td>Engagement</td><td>المشاركة</td><td>Shared decision-making, education</td><td>القرار المشترك، التثقيف</td></tr>
+
+<strong>Dimension 3: Reducing Per Capita Costs | خفض التكلفة للفرد</strong>
+
+This dimension focuses on reducing the cost of healthcare per person while improving quality. Key concepts include:
+
+- Total cost of care accounting
+- Waste reduction (unnecessary services, administrative complexity, care variation)
+- Prevention and chronic disease management
+- Care delivery efficiency
+- Appropriate utilization
+
+Cost reduction in the Triple Aim is not about rationing or denying care—it is about eliminating waste, improving efficiency, and redirecting resources to high-value interventions. The goal is to achieve better outcomes at lower cost by eliminating the estimated 30-40% of healthcare spending that represents waste, variation, and unnecessary care.
+
+ليس ت��ليل التكلفة في الهدف الثلاثي يتعلق بتقييد الرعاية أو رفضها—إنما يتعلق بالقضاء على الفوضى وتحسين الكفاءة وإعادة توجيه الموارد إلى تدخلات عالية القيمة. الهدف هو تحقيق نتائج أفضل بتكلفة أقل من خلال القضاء على ما يقدر بـ 30-40% من الإنفاق الصحي الذي يمثل فوضى وتبايناً ورعاية غير ضرورية.
+
+<strong>Categories of Healthcare Waste | فئات الهدر في الرعاية الصحية</strong>
+
+<tr><td>Category</td><td>الفئة</td><td>Estimated %</td><td>النسبة المئوية</td></tr>
+|----------|-------|-------------|----------------|
+<tr><td>Unnecessary services</td><td>خدمات غير ضرورية</td><td>15%</td><td>15%</td></tr>
+<tr><td>Care coordination failures</td><td>إخفاقات تنسيق الرعاية</td><td>15%</td><td>15%</td></tr>
+<tr><td>Overtreatment</td><td>المبالغة في العلاج</td><td>10%</td><td>10%</td></tr>
+<tr><td>Administrative complexity</td><td>تعقيد إداري</td><td>8%</td><td>8%</td></tr>
+<tr><td>Pricing failures</td><td>إخفاقات التسعير</td><td>5%</td><td>5%</td></tr>
+<tr><td>Fraud and abuse</td><td>الاحتيال والإساءة</td><td>2%</td><td>2%</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">1.3 Interdependencies | الترابطات</h4>
+
+The three dimensions are deeply interdependent—improvements in one dimension can positively or negatively affect others. Understanding these interdependencies is essential for successful Triple Aim implementation.
+
+ترتبط الأبعاد الثلاثة ترابطاً عميقاً—يمكن للتحسينات في بُعد أن تؤثر إيجاباً أو سلباً على الآخرين. فهم هذه الترابطات ضروري لنجاح تنفيذ الهدف الثلاثي.
+
+<strong>Synergistic Relationships | العلاقات التآزرية</strong>
+
+1. <strong>Prevention ↔ Cost Reduction | الوقاية ↔ تقليل التكلفة</strong>
+   - Investing in preventive care reduces costly acute episodes
+   - Chronic disease management prevents expensive complications
+   - Primary care investment reduces emergency department utilization
+   - يستثمار الرعاية الوقائيةreduces costly acute episodes
+   - إدارة الأمراض المزمنة يمنع المضاعفات المكلفة
+   - استثمار الرعاية الأولية reduces استخدام أقسام الطوارئ
+
+2. <strong>Patient Experience ↔ Population Health | تجربة المريض ↔ صحة السكان</strong>
+   - Engaged patients achieve better clinical outcomes
+   -信任 improves adherence and follow-up
+   - Patient education improves self-management
+   - المرضى المشاركين يحققون نتائج سريرية أفضل
+   - الثقة يحسن الالتزام والمتابعة
+   - تثقيف patient improves الإدارة الذاتية
+
+3. <strong>Care Coordination ↔ All Dimensions | تنسيق الرعاية ↔ جميع الأبعاد</strong>
+   - Effective transitions reduce readmissions (cost, experience)
+   - Care coordination improves chronic disease outcomes
+   - Integration reduces redundant testing (cost, experience)
+   - الانتقالات الفعالة reduce rehospitalizations (التكلفة، التجربة)
+   - تحسين تنسيق الرعاية نتائج الأمراض المزمنة
+   - التكامل reduces الاختبارات المتكررة (التكلفة، التجربة)
+
+<h3 class="section-title">Saudi Application | التطبيق السعودي</h3>
+
+<h4 class="section-sub">Vision 2030 Alignment | تسقية رؤية 2030</h4>
+
+The Saudi Vision 2030 recognizes healthcare transformation as central to national development. Key alignments with Triple Aim include:
+
+- <strong>Health Sector Transformation Program</strong>: Targets world-class healthcare delivery
+- <strong>National Health Insurance (NPHIES)</strong>: Population coverage with integrated care
+- <strong>Quality of Life Program</strong>: Enhanced patient experience
+- <strong>Preventive Health</strong>: Population health improvement
+- <strong>Healthcare Efficiency</strong>: Cost optimization
+
+ت reconocen التحول الصحي كركيزة أساسية للت development الوطني. المحاذاة الرئيسية مع الهدف الثلاثي تشمل:
+- <strong> برنامج التحول الصحي</strong>: يهدف إلى رعاية صحية عالمية المستوى
+- <strong>التأمين الصحي الوطني</strong>: تغطية السكان مع الرعاية المتكاملة
+- <strong>برنامج جودة الحياة</strong>: تعزيز تجربة المريض
+- <strong>الصحة الوقائية</strong>: تحسين صحة السكان
+- <strong>كفاءة الرعاية</strong>: تحسين التكلفة
+
+<h4 class="section-sub">CBAHI Standards Integration | دمج معايير الهيئة</h4>
+
+The CBAHI National Hospital Accreditation Standards explicitly address Triple Aim components:
+
+- <strong>Patient-Centered Standards</strong>: Experience, communication, involvement
+- <strong>Quality and Safety Standards</strong>: Outcome improvement focus
+- <strong>Effective Care Standards</strong>: Efficiency, appropriateness
+- <strong>Population Health Elements</strong>: Community health, prevention
+
+معايير اعتماد الهيئة الوطنية للمستشفيات تعالج مكونات الهدف الثلاثي صراحة:
+- <strong>معايير المتمحورة حول المريض</strong>: التجربة، التواصل، المشاركة
+- <strong>معايير الجودة والسلامة</strong>: تركيز تحسين النتائج
+- <strong>معايير الرعاية الفعالة</strong>: الكفاءة، الملاءمة
+- <strong>Elements صحة السكان</strong>: الصحة المجتمعية، الوقاية
+
+<h3 class="section-title">Case Study: King Abdullah Medical Complex | دراسة حالة: المجمع الطبي الملكي</h3>
+
+<strong>Setting | الإعداد</strong>
+King Abdullah Medical Complex in Jeddah serves a population of 3.5 million with diverse socioeconomic backgrounds, including expatriate workers, Saudi citizens, and pilgrims during Hajj seasons.
+
+يخدم مجمع الملك الطبي في جدة سكاناً يبلغ عددهم 3.5 مليون مع خلفيات socio экономиية متنوعة، بما في ذلك العمال الوافدون والمواطنون السعوديون والحجاج خلال مواسم الحج.
+
+<strong>Triple Aim Application | تطبيق الهدف الثلاثي</strong>
+
+1. <strong>Population Health | صحة السكان</strong>
+   - Identified high diabetes prevalence (28% screening positive)
+   - Implemented community screening program in surrounding neighborhoods
+   - Created diabetic registry with risk stratification
+   - Developed targeted intervention for high-risk patients
+   - حدد انتشار high السكر (28% إيجابي للفحص)
+   - أنجز برنامج فحص مجتمعي في الأحياء المحيطة
+   - أنشأ سجل مرضى السكري مع تصنيف المخاطر
+   - طور تدخل مستهدف للمرضى ذوي high الخطورة
+
+2. <strong>Patient Experience | تجربة المريض</strong>
+   - Implemented real-time feedback system in outpatient clinics
+   - Created patient navigation program for specialty referrals
+   - Developed Arabic-language educational materials
+   - Established care coordinator roles for chronic disease patients
+   - أنشأ نظام ملاحظات في الوقت الحقيقي في العيادات الخارجية
+   - أنشأ برنامج توجيه المرضى للإحالات التخصصية
+   - طور مواد تعليمية باللغة العربية
+   - أسس أدوار منسق الرعاية للمرضى ذوي الأمراض المزمنة
+
+3. <strong>Cost Reduction | تقليل التكلفة</strong>
+   - Implemented clinical pathway standardization for common conditions
+   - Reduced unnecessary laboratory testing through guidelines
+   - Established drug formulary with therapeutic substitution
+   - Created chronic disease management program with primary care emphasis
+   - تنفيذ توحيد المسارات السريرية للحالات الشائعة
+   - reduce اختبارات المختبر غير الضرورية من خلال المبادئ التوجيهية
+   - أنشأ قائمة أدوية مع استبدالعلاجي
+   - أنشأ برنامج إدارة الأمراض المزمنة مع التركيز على الرعاية الأولية
+
+<strong>Results | النتائج</strong>
+- 15% reduction in diabetes-related hospitalizations
+- 22% improvement in patient satisfaction scores
+- 12% reduction in per-patient costs for diabetic patients
+- 35% increase in preventive screening rates
+- 15% انخفاض في hospitalizations المتعلقة بالسكري
+- 22% تحسن في درجات رضا المرضى
+- 12% انخفاض في التكلفة لكل مريض لمرضى السكري
+- 35% ارتفاع في معدلات الفحص الوقائي
+
+<h3 class="section-title">Reflection Questions | أسئلة التأمل</h3>
+
+1. How does the Triple Aim framework address the challenge of improving quality while reducing costs?
+   - كيف يعالج إطار الهدف الثلاثي تحدي تحسين الجودة مع تقليل التكاليف؟
+
+2. In your current role, which Triple Aim dimension do you have the greatest ability to influence?
+   - في دورك الحالي، أي بُعد من أبعاد الهدف الثلاثي لديك greatest قدرة على التأثير؟
+
+3. What population health disparities exist in your patient population that could be addressed through Triple Aim interventions?
+   - ما الفروق في صحة السكان موجودة في مجتمع مرضاك يمكن معالجتها من خلال تدخلات الهدف الثلاثي؟
+
+4. How could your organization better integrate the three dimensions rather than working on them in silos?
+   - كيف يمكن لمؤسستك دمج الأبعاد الثلاثة بشكل أفضل بدلاً من العمل عليها بشكل منعزل؟
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 2: Population Health Foundations | الدرس الثاني: أسس صحة السكان</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Define population health and differentiate from public health
+- Identify key determinants of health
+- Apply population health assessment frameworks
+- Design targeted interventions for health improvement
+- Measure and monitor population health outcomes
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">2.1 Defining Population Health | تحديد صحة السكان</h4>
+
+Population health is defined as "the health outcomes of a group of individuals, including the distribution of such outcomes within the group." This definition, articulated by Dr. David Kindig and Dr. Paul Stange, emphasizes two critical components:
+
+1. <strong>Health Outcomes</strong>: The health status of the population
+2. <strong>Distribution</strong>: How health outcomes are distributed across different subgroups
+
+تُعرف صحة السكان بأنها "نتا��ج صحة مجموعة من الأفراد، بما في ذلك توزيع هذه النتائج داخل المجموعة." هذا التعريف، الذي صاغه الدكتور ديفيد كينديج والدكتور بول ستانج، يؤكد على مكونين أساسيين:
+
+1. <strong>نتائج الصحة</strong>: الحالة الصحية للسكان
+2. <strong>التوزيع</strong>: كيفية توزيع النتائج الصحية عبر المجموعات الفرعية المختلفة
+
+<strong>Population Health Framework | إطار صحة السكان</strong>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    POPULATION HEALTH                         │
+│                      صحة السكان                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    │
+│   │  Health    │    │  Health    │    │   Health   │    │
+│   │ Outcomes  │ ←←← ←←←←←←←→ │ Determinants│ →→→→→→→ →  │   Disparities│    │
+│   │  النتائج  │    │   المحددات │    │  التفاوتات │    │
+│   └─────────────┘    └─────────────┘    └─────────────┘    │
+│        ▲                   ▲                                  │
+│        │                   │                                  │
+│   ┌─────────────┐    ┌─────────────┐                       │
+│   │   Health   │    │ Healthcare│                       │
+│   │  Policies │    │ System   │                       │
+│   │  والسياسات │   │   النظام │                       │
+│   └─────────────┘    └─────────────┘                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">2.2 Determinants of Health | المحددات الصحية</h4>
+
+Health outcomes are influenced by multiple determinants, often categorized using the Dahlgren-Whitehead model:
+
+تأثر النتائج الصحية بمحددات متعددة، غالباً ما تصنف باستخدام نموذج Dahlgren-Whitehead:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Level</td><td>المستوى</td><td>Determinants</td><td>المحددات</td><td>Saudi Context</td><td>السياق السعودي</td></tr>
+|-------|---------|------------|----------|-------------|---------------|
+<tr><td>Individual</td><td>الفردي</td><td>Age, sex, genetics</td><td>العمر، الجين، الوراثة</td><td>Demographic transition</td><td>التحول الديموغرافي</td></tr>
+<tr><td>Behavioral</td><td>السلوكي</td><td>Lifestyle, smoking, diet</td><td>نمط الحياة، التدخين، النظام الغذائي</td><td>Rising NCDs</td><td>ارتفاع الأمراض المزمنة</td></tr>
+<tr><td>Social</td><td>الاجتماعي</td><td>Community, culture</td><td>المجتمع، الثقافة</td><td>Family structures</td><td>هياكل الأسرة</td></tr>
+<tr><td>Economic</td><td>الاقتصادي</td><td>Income, education</td><td>الدخل، التعليم</td><td>Youth unemployment</td><td>بطالة الشباب</td></tr>
+<tr><td>Environmental</td><td>البيئي</td><td>Housing, work</td><td>السكن، العمل</td><td>Urbanization</td><td>التحضر</td></tr>
+<tr><td>Healthcare</td><td>الرعاية الصحية</td><td>Access, quality</td><td>الوصول، الجودة</td><td>Access disparities</td><td>تفاوتات ��لوصول</td></tr>
+</tbody></table></div>
+<strong>The 10 Leading Health Determinants in Saudi Arabia | أهم 10 محددات صحية في السعودية</strong>
+
+1. Lifestyle and physical inactivity (الس lifestyle والخمول البدني)
+2. Dietary patterns (أنماط التغذية)
+3. Tobacco use (تعاطي التبغ)
+4. Hypertension (ارتفاع ضغط الدم)
+5. Diabetes mellitus (السكري)
+6. Obesity (السمنة)
+7. Air quality and environmental factors (جودة الهواء والعوامل البيئية)
+8. Healthcare access and utilization (الوصول للرعاية واستخدامها)
+9. Health literacy and education (التثقيف الصحي والتعليم)
+10. Socioeconomic factors (العوامل الاجتماعية والاقتصادية)
+
+<h4 class="section-sub">2.3 Population Health Assessment | تقييم صحة السكان</h4>
+
+Effective population health management requires systematic assessment. The IHI recommends a structured approach:
+
+يتطلب إدارة صحة السكان الفعالة تقييماً منهجياً. يوصي المعهد بنهج منظم:
+
+<strong>Step 1: Define the Population | الخطوة 1: تحديد السكان</strong>
+
+- Identify the population to be assessed
+- Consider geographic, demographic, clinical, or employer-based definitions
+- Consider sub-populations based on risk, conditions, or demographics
+- تحديد السكان المراد تقييمهم
+- النظر في التعريفات الجغرافية أو الديموغرافية أو السريرية أوEmployer-based
+- النظر في المجموعات الفرعية بناءً على المخاطر أو الحالات أو الديموغرافيا
+
+<strong>Step 2: Assess Health Status | الخطوة 2: تقييم الحالة الصحية</strong>
+
+- Collect and analyze health status data
+- Include clinical outcomes, functional status, quality of life
+- Consider patient-reported outcomes
+- جمع وتحليل بيانات الحالة الصحية
+- تشمل النتائج السريرية والوظائف ونوعية الحياة
+- النظر في النتائج التي reportedها المريض
+
+<strong>Step 3: Identify Disparities | الخطوة 3: تحديد التفاوتات</strong>
+
+- Analyze distribution of health outcomes
+- Identify subgroups with worse outcomes
+- Investigate causes of disparity
+- تحليل توزيع النتائج الصحية
+- تحديد المجموعات الفرعية ذات الأسوأ
+- investigate أسباب التفاوت
+
+<strong>Step 4: Identify Determinants | الخطوة 4: تحديد المحددات</strong>
+
+- Link outcomes to determinants
+- Consider modifiable vs. non-modifiable factors
+- Identify high-impact intervention points
+- ربط النتائج بالمحددات
+- النظر في العوامل القابلة للتعديل vs. غير القابلة للتعديل
+- نقاط التدخل عالية التأثير
+
+<strong>Step 5: Design Interventions | الخطوة 5: تصميم التدخلات</strong>
+
+- Develop targeted interventions addressing identified gaps
+- Consider evidence-based practices
+- Ensure equity focus
+- تطوير تدخلات مستهدفة لمعالجة الفجوات المحددة
+- النظر في الممارسات القائمة على الأدلة
+- ضمان التركيز على العدالة
+
+<h4 class="section-sub">2.4 Risk Stratification | تصنيف المخاطر</h4>
+
+Risk stratification is a critical population health management tool that segments populations based on health risk and resource needs. This enables targeted interventions and efficient resource allocation.
+
+تصنيف المخاطر هو أداة أساسية لإدارة صحة السكان segment شعبيها استناداً إلى المخاطر الصحية واحتياجات الموارد. هذا enables تدخلات مستهدفة وتخصيص الموارد الكفؤ.
+
+```
+┌─────────────────────────────────────────��─��─────────────────┐
+│            RISK STRATIFICATION PYRAMID                       │
+│              هرم تصنيف المخاطر                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│                      ▲ High Cost ▲                         │
+│                    ╱    5%     ╲                          │
+│                   ╱  High Risk ╲                          │
+│                  ╱  ───────── ╲                          │
+│                 ╱    15%      ╲                         │
+│                ╱  Moderate Risk╲                         │
+│               ╱   ─────────── ╲                         │
+│              ╱     20%         ╲                        │
+│             ╱   Low-Moderate    ╲                        │
+│            ╱    Risk           ╲                       │
+│           ╱   ─────────────    ╲                      │
+│          ╱     60%             ╲                       │
+│         ╱   Low Risk            ╲                       │
+│        ╱   (Healthy)            ╲                      │
+│       ───────────────────────────                        │
+│                                                             │
+│  Intervention Focus:                                  │
+│  تركيز التدخل:                                      │
+│  • High: Care management, intensive monitoring    │
+│  • High: إدارة الرعاية، المراقبة المكثفة            │
+│  • Moderate: Disease management, chronic care      │
+│  • Moderate: إدارة الحالات، الرعاية المزمنة         │
+│  • Low-Moderate: Prevention, health promotion     │
+│  • Low-Moderate: الوقاية، تعزيز الصحة                │
+│  • Low: Health education, wellness programs     │
+│  • Low: التثقيف الصحي، برامجالعافية            │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<strong>Saudi Application: PHC Cluster Population Segmentation | التطبيق السعودي: تجزئة مجتمع الرعاية الأولية</strong>
+
+In Saudi Arabia's PHC cluster model, population health management requires segmenting the defined population by:
+
+في نموذج تجمع الرعاية الأولية السعودي، يتطلب إدارة صحة السكان تجزئة السكان المحددین بـ:
+
+- <strong>Nationality and Residency Status</strong>: National (Saudi), Expatriate, Visitor
+- <strong>Age Groups</strong>: Pediatric, Adult, Geriatric
+- <strong>Clinical Conditions</strong>: Healthy, At-risk, Chronic disease, Complex
+- <strong>Geographic Areas</strong>: Urban, Rural, Remote
+- <strong>Socioeconomic Status</strong>: Premium, Standard, Subsidized
+
+- <strong>الجنسية وحالة الإقامة</strong>: وطني (سعودي)، وافد، زائر
+- <strong>الفئات العمرية</strong>: أطفال، بالغون، كبار السن
+- <strong>الحالات السريرية</strong>: صحة، عرضة، مرض مزمن، معقد
+- <strong>المناطق الجغرافية</strong>: حضر، rural، نائي
+- <strong>الحالة الاجتماعية والاقتصادية</strong>: متميز، قياسي، مدعوم
+
+<h3 class="section-title">Activities | الأنشطة</h3>
+
+<h4 class="section-sub">Activity 2.1: Population Health Assessment | النشاط 2.1: تقييم صحة السكان</h4>
+
+<strong>Instructions | التعليمات:</strong>
+
+1. Select a patient population within your practice setting
+2. Define the population using clear inclusion criteria
+3. Collect available health status data
+4. Identify top 5 health conditions
+5. Analyze disparities in outcomes
+6. Identify 3 potential intervention points
+
+<strong>التعليمات:</strong>
+
+1. اختر مجتمع مرضى في بيئة ممارستك
+2. حدد السكان باستخدام معايير inclusions واضحة
+3. جمّع البيانات الصحية المتاحة
+4. حدد أهم 5 حالات صحية
+5. حلل التفاوتات في النتائج
+6. حدد 3 نقاط تدخل محتملة
+
+<strong>Deliverable | المخرج:</strong>
+Completed population health assessment template
+
+نموذج تقييم صحة السكان المكتمل
+
+<h4 class="section-sub">Activity 2.2: Risk Stratification Exercise | النشاط 2.2: تمرين تصنيف المخاطر</h4>
+
+<strong>Instructions | التعليمات:</strong>
+
+1. Create a risk stratification model for diabetic patients in your population
+2. Define criteria for each risk level
+3. Estimate percentage in each category
+4. Propose intervention intensity for each level
+5. Calculate resource requirements
+
+<strong>التعليمات:</strong>
+
+1. أنشئ نموذج تصنيف المخاطر لمرضى السكري في مجتمعك
+2. حدد معايير كل مستوى من الخطورة
+3. قدر النسبة المئوية في كل فئة
+4. اقترح شدة التدخل لكل مستوى
+5. احسب متطلبات الموارد
+
+<strong>Deliverable | المخرج:</strong>
+Risk stratification matrix with intervention recommendations
+
+Matrix تصنيف المخاطر مع توصيات التدخل
+
+<h3 class="section-title">Assessment | التقييم</h3>
+
+<h4 class="section-sub">Knowledge Check | проверка المعرفة</h4>
+
+1. What is the difference between public health and population health?
+   - ما هو الفرق بين الصحة العامة وصحة السكان؟
+
+2. List five determinants of health and explain their impact in the Saudi context.
+   - اذكر خمسة محددات الصحية واشرح تأثيرها في السياق السعودي
+
+3. How does risk stratification improve population health management?
+   - كيف يحسن تصنيف المخاطر إدارة صحة السكان؟
+
+4. What are the most significant health disparities in your patient population?
+   - ما أهم التفاوتات الصحية في مجتمع مرضاك؟
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 3: Patient Experience Excellence | الدرس الثالث: تميز تجربة المريض</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Define patient experience and its components
+- Apply validated patient experience measurement frameworks
+- Identify evidence-based strategies for improving patient experience
+- Design patient experience improvement initiatives
+- Integrate patient experience into quality improvement programs
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">3.1 Defining Patient Experience | تحديد تجربة المريض</h4>
+
+Patient experience encompasses the range of interactions that patients have with the healthcare system, including their care from health plans, doctors, nurses, and staff in hospitals, physician practices, and other healthcare facilities. The key distinction is that patient experience is different from patient satisfaction—experience is about what actually happens during care delivery, while satisfaction is about whether expectations were met.
+
+تتجاوز تجربة المريض نطاق التفاعلات التي يقوم بها المرضى مع النظام الصحي، بما في ذلك رعايتهم من الخطط الصحية والأطباء والممرضات والموظفين في hospitals والممارسات الطبية والمرافق الصحية الأخرى. التمييز الأساسي هو أن تجربة المريض تختلف عن رضا المريض—تتعلق التجربة بما يحدث فعلياً أثناء تقديم الرعاية، بينما ت��عل�� satisfaction بما إذا كانت التوقعات قد تم تلبيتها.
+
+<strong>Components of Patient Experience | مكونات تجربة المريض</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Domain</td><td>النطاق</td><td>Description</td><td>الوصف</td></tr>
+|-------|--------|------------|--------|
+<tr><td>Access</td><td>الوصول</td><td>Getting timely appointments, care, and information</td><td>الحصول على مواعيد ورعاية ومعلومات في الوقت المناسب</td></tr>
+<tr><td>Communication</td><td>التواصل</td><td>Providers listen, explain clearly, respect</td><td>يستمع الأطباء، يشرحون بوضوح، يحترمون</td></tr>
+<tr><td>Coordination</td><td>التنسيق</td><td>Organized, smooth care transitions</td><td>انتقالات رعاية منظمة وسلسة</td></tr>
+<tr><td>Comfort</td><td>الراحة</td><td>Pain management, physical environment</td><td>إدارة الألم والبيئة المادية</td></tr>
+<tr><td>Decision-Making</td><td>اتخاذ القرار</td><td>Involved in decisions, preferences respected</td><td>المشاركة في القرارات، احترام التفضيلات</td></tr>
+<tr><td>Emotional Support</td><td>الدعم العاطفي</td><td>Reassurance, reduced anxiety</td><td>الطمأنينة وتقليل القلق</td></tr>
+
+<h4 class="section-sub">3.2 Measuring Patient Experience | قياس تجربة المريض</h4>
+
+<strong>Validated Instruments | الأدوات المُحققة</strong>
+
+1. <strong>HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems)</strong>
+   - Standardized national survey for hospital patient experience
+   - Used for public reporting and payment
+   - 29 core questions across 7 domains
+   - مسح موحد للخبرة الصحية للمستشفى
+   - يُستخدم للإبلاغ العام والدفع
+   - 29 سؤال أساسي عبر 7 مجالات
+
+2. <strong>CG-CAHPS (Clinician & Group Consumer Assessment)</strong>
+   - Outpatient and ambulatory care settings
+   - Used for physician practice assessment
+   - بيئات العيادات الخارجية والمتنقلة
+   - لتقييم ممارسة الطبيب
+
+3. <strong>PEI (Patient Experience Index)</strong>
+   - Comprehensive patient experience measure
+   - Includes access, communication, coordination, and respect
+   - مقياس شامل لتجربة المريض
+   - يشمل الوصول والتواصل والتنسيق والاحترام
+
+<strong>Primary Care Assessment | تقييم الرعاية الأولية</strong>
+
+In Saudi Arabia, the Primary Care Assessment Survey (PCAS) adapted for Arabic contexts provides standardized measurement of primary care experience:
+
+في المملكة العربية السعودية، يوفر استبيان تقييم الرعاية الأولية (PCAS) المُكيّف للسياقات العربية قياسات موحدة لتجربة الرعاية الأولية:
+
+<tr><td>Domain</td><td>النطاق</td><td>Saudi Relevance</td><td>الصلة بالسعودية</td></tr>
+|--------|--------|----------------|---------------|
+<tr><td>First-Contact Access</td><td>الاتصال الأولي</td><td>PHC availability, appointment systems</td><td>توفر الرعاية الأولية وأنظمة المواعيد</td></tr>
+<tr><td>Longitudinality</td><td>الاستمرارية</td><td>Ongoing relationship, provider continuity</td><td>العلاقة الجارية واستمرارية الطبيب</td></tr>
+<tr><td>Comprehensiveness</td><td>الشمولية</td><td>Range of services available</td><td>نطاق الخدمات المتاحة</td></tr>
+<tr><td>Coordination</td><td>التنسيق</td><td>Referral processes, information flow</td><td>عمليات الإحالة وتدفق المعلومات</td></tr>
+<tr><td>Family-Centered</td><td>المتمحور حول العائلة</td><td>Family involvement, cultural factors</td><td>مشاركة العائلة والعوامل الثقافية</td></tr>
+<tr><td>Community Orientation</td><td>التوجه المجتمعي</td><td>Community health, prevention</td><td>الصحة المجتمعية والوقاية</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">3.3 Evidence-Based Improvement Strategies | استراتيجيات تحسين قائمة على الأدلة</h4>
+
+<strong>Strategy 1: Effective Communication | الاستراتيجية 1: التواصل الفعال</strong>
+
+- Teach-back method for confirming understanding
+- Plain language explanations
+- Written instructions with visual aids
+- Interpreter services for non-Arabic speakers
+- طريقة التأكيد للتحقق من الفهم
+- شروحات بلغة بسيطة
+- تعليمات مكتوبة مع مرئيات
+- خدمات الترجمة لغير الناطقين بالعربية
+
+<strong>Strategy 2: Patient Engagement | الاستراتيجية 2: إشراك المريض</strong>
+
+- Shared decision-making tools
+- Goal-setting with patients
+- Self-management support
+- Patient portals and digital communication
+- أدوات القرار المشترك
+- تحديد الأهداف مع المرضى
+- دعم الإدارة الذاتية
+- بوابات المريض والتواصل الرقمي
+
+<strong>Strategy 3: Care Coordination | الاستراتيجية 3: تنسيق الرعاية</strong>
+
+- Care coordinator roles for high-risk patients
+- Standardized transition processes
+- Electronic handoff communications
+- Follow-up protocols
+- أدوار منسق الرعاية للمرضى ذوي الخطورة العالية
+- عمليات انتقالية موحدة
+- اتصالات التسليم الإلكترونية
+- بروتوكولات المتابعة
+
+<strong>Strategy 4: Access Improvement | الاستراتيجية 4: تحسين الوصول</strong>
+
+- Advanced access scheduling
+- Telehealth options
+- Extended hours and weekend availability
+- E-consultation for specialist input
+- جدولة الوصول المتقدم
+- خيارات الرعاية الصحية عن بُعد
+- ساعات ممتدة وتوفر نهاية الأسبوع
+- استشارة إلكترونية لإدخال المتخصص
+
+<h3 class="section-title">Saudi Application | التطبيق السعودي</h3>
+
+<h4 class="section-sub">Cultural Considerations | الاعتبارات الثقافية</h4>
+
+Patient experience in Saudi Arabia must account for:
+
+تجربة المريض في المملكة العربية السعودية يجب أن تأخذ بعين الاعتبار:
+
+- <strong>Family Involvement | مشاركة العائلة</strong>: Extended families often participate in care decisions; systems must accommodate family presence and input
+- <strong>Gender Considerations | اعتبارات الجنس</strong>: Some patients prefer same-gender providers; accommodation improves experience
+- <strong>Religious Practices | الممارسات الدينية</strong>: Prayer times, Ramadan, Hajj should be accommodated in scheduling
+- <strong>Language | اللغة</strong>: Arabic language materials and interpretation essential; English-speaking patients also need Arabic options
+- <strong>Culturally Competent Care | الرعاية الثقافية المناسبة</strong>: Cultural awareness training for staff improves experience
+
+- <strong>مشاركة العائلة</strong>: غالباً ما تشارك العائلات الممتدة في قرارات الرعاية؛ يجب أن تستوعب الأنظمة حضور العائلة وإدخالها
+- <strong>اعتبارات الجنس</strong>: بعض المرضى يفضلون مقدمي الخدمة من نفس الجنس؛ الاستيعاب يحسن التجربة
+- <strong>الممارسات الدينية</strong>: يجب مراعاة أوقات الصلاة ورمضان والحج في الجدولة
+- <strong>اللغة</strong>: مواد اللغة العربية والتفسير ضروريان؛ المرضى الناطقون بالإنجليزية يحتاجون أيضاً خيارات عربية
+- <strong>الوعي الثقافي للموظفين</strong>: تدريب الموظفين يحسن التجربة
+
+<h4 class="section-sub">Implementation Example: NGHA | مثال التطبيق: مجموعة صحةbeans</h4>
+
+The NGHA (National Guard Health Affairs) system implemented comprehensive patient experience improvement:
+
+نظام شؤون الحرس الوطني (NGHA)实施了 تحسين تجربة المريض الشامل:
+
+<strong>Initiatives | المبادرات:</strong>
+
+1. <strong>AIDET Communication Training | تدريب التواصل AIDET</strong>
+   - All clinical staff trained in AIDET framework
+   - Standardized greeting and communication scripts
+   - جميع الموظفين السريريين مدربين على إطار AIDET
+   - عبارات تحية وتواصل موحدة
+
+2. <strong>Real-Time Feedback | ملاحظات في الوقت الحقيقي</strong>
+   - Tablet-based surveys in waiting areas
+   - SMS-based post-visit surveys
+   - استبيانات قائمة على الأجهزة اللوحية في مناطق الانتظار
+   - استبيانات ما بعد الزيارة عبر الرسائل النصية
+
+3. <strong>Patient Navigator Program | برنامج مرشد المريض</strong>
+   - Designated navigators for complex patients
+   -Assist with appointment coordination and follow-up
+   - مُرشدون محددون للمرضى المعقدين
+   - المساعدة في تنسيق المواعيد والمتابعة
+
+4. <strong>Language Services | خدمات اللغة</strong>
+   - Professional interpretation services
+   - Arabic patient materials development
+   - Translation services for clinical documents
+   - خدمات الترجمة الاحترافية
+   - تطوير مواد المريض العربية
+   - خدمات الترجمة للوثائق السريرية
+
+<strong>Results | النتائج:</strong>
+- 18% improvement in overall satisfaction scores
+- 25% improvement in communication domain
+- 32% increase in response rates
+- 15% reduction in complaints
+- 18% تحسن في درجات الرضا الشامل
+- 25% تحسن في مجال التواصل
+- 32% ارتفاع في معدلات الاستجابة
+- 15% انخفاض في الشكاوى
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 4: Cost Management and Value | الدرس الرابع: إدارة التكلفة والقيمة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Define healthcare costs and distinguish from charges and payments
+- Identify categories of healthcare waste
+- Apply cost measurement approaches in clinical settings
+- Design cost reduction strategies with quality improvement
+- Balance cost reduction with access and quality
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">4.1 Understanding Healthcare Costs | فهم تكاليف الرعاية الصحية</h4>
+
+<strong>Cost Categories | فئات التكلفة</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Category</td><td>الفئة</td><td>Definition</td><td>التعريف</td><td>Examples</td><td>الأمثلة</td></tr>
+|----------|-------|------------|----------|----------|----------|
+<tr><td>Direct Medical</td><td>الطبي المباشر</td><td>Services directly tied to patient care</td><td>الخدمات مرتبطة مباشرة برعاية المريض</td><td>Tests, procedures, meds</td><td>الفحوصات والإجراءات والأدوية</td></tr>
+<tr><td>Indirect</td><td>غير المباشر</td><td>Support services</td><td>الخدمات الداعمة</td><td>Administration, facilities</td><td>الإدارة والمرافق</td></tr>
+<tr><td>Fixed</td><td>الثابت</td><td>Costs that don't vary with volume</td><td>التكاليف لا تتغير مع الحجم</td><td>Salaries, rent</td><td>الرواتب والإيجار</td></tr>
+<tr><td>Variable</td><td>المتغير</td><td>Costs that change with volume</td><td>التكاليف التي تتغير مع الحجم</td><td>Supplies, medications</td><td>اللوازم والأدوية</td></tr>
+<tr><td>Marginal</td><td>الهامشي</td><td>Cost of additional unit</td><td>تكلفة الوحدة الإضافية</td><td>Extra test, visit</td><td>فحص إضافي وزيارة</td></tr>
+<tr><td>Total</td><td>الإجمالي</td><td>All costs combined</td><td>جميع التكاليف مجتمعة</td><td>Episode of care</td><td>pisode من الرعاية</td></tr>
+
+<h4 class="section-sub">4.2 Waste in Healthcare | الهدر في الرعاية الصحية</h4>
+
+The National Academy of Medicine estimates that 30% of healthcare spending represents waste.Categories include:
+
+قدرت الأكاديمية الوطنية للطب أن 30% من الإنفاق الصحي يمثل هدراً.الفئات تشمل:
+
+<strong>Category 1: Failure of Care Delivery | الفئة 1: إخفاق تقديم الرعاية</strong>
+- Preventable adverse events
+- Hospital-acquired infections
+- Care coordination failures
+- الأحداث السلبية التي يمكنPreventionها
+- العدوى المكتسبة في المستشفيات
+- إخفاقات تنسيق الرعاية
+
+<strong>Category 2: Overtreatment | الفئة 2: المبالغة في العلاج</strong>
+- Unnecessary tests and procedures
+- Low-value care interventions
+- Defensive medicine practices
+- الفحوصات والإجراءات غير الضرورية
+- تدخلات الرعاية منخفضة القيمة
+- ممارسات الطب الدفاعي
+
+<strong>Category 3: Administrative Complexity | الفئة 3: التعقيد الإداري</strong>
+- Excessive billing and documentation
+- Insurer-provider administrative burden
+- Inefficient revenue cycle
+- الفوترة والتوثيق المفرطان
+- عبء إداري مفرط بين شركة التأمين والمقدم
+- دورة الإيرادات غير الكفؤة
+
+<strong>Category 4: Pricing Failures | الفئة 4: إخفاقات التسعير</strong>
+- Price variation without outcome variation
+- Facility fees above competitive rates
+- Drug pricing inefficiencies
+- تباين الأسعار دون تباين النتائج
+- رسوم المرافق فوق معدلات المنافسة
+- أوجه القصور في تسعير الأدوية
+
+<h4 class="section-sub">4.3 Cost Measurement Approaches | أساليب قياس التكلفة</h4>
+
+<strong>Activity-Based Costing | التكلفة القائمة على النشاط</strong>
+
+Activity-based costing (ABC) assigns costs to specific activities:
+
+تخصص التكلفة القائمة على النشاط (ABC) تكاليف لأنشطة محددة:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│          ACTIVITY-BASED COSTING MODEL                      │
+│            نموذج التكلفة القائمة علىActivity               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Resources → Activities → Cost Objects                     │
+│  الموارد ← الأنشطة ← موضوعات التكلفة                     │
+│                                                             │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────┐  │
+│  │   Staff     │     │  Patient    │     │  Visit   │  │
+│  │   Time     │────→│  Encounter  │────→│  Cost    │  │
+│  │   الوقت    │     │   اللقاء   │     │  التكلفة│  │
+│  └──────────────┘     └──────────────┘     └──────────┘  │
+│        │                      │                              │
+│  ┌──────────────┐     ┌──────────────┐                   │
+│  │ Equipment   │     │   Lab Test   │                    │
+│  │   المعدات   │────→│    فحص     │                    │
+│  └──────────────┘     └──────────────┘                   │
+│        │                                                     │
+│  ┌──────────────┐                                          │
+│  │  Supplies   │                                           │
+│  │   اللوازم   │                                           │
+│  └──────────────┘                                          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<strong>Total Cost of Care | التكلفة الإجمالية للرعاية</strong>
+
+Total cost of care considers the full cost of managing a patient's condition over time:
+
+تكلفة الرعاية الإجمالية Considered التكلفة الكاملة لإدارة حالة المريض مع مرور الوقت:
+
+- Diagnosis and treatment costs
+- On-going management costs
+- Complications and adverse event costs
+- Indirect costs (productivity loss, family burden)
+- تكاليف التشخيص والعلاج
+- تكاليف الإدارة الجارية
+- تكاليف المضاعفات والحدث adversarial
+- التكاليف غير المباشرة (فقدان الإنتاجية، عبء العائلة)
+
+<h4 class="section-sub">4.4 Cost Reduction Strategies | استراتيجيات تقليل التكلفة</h4>
+
+<strong>Strategy 1: Clinical Variation Reduction | الاستراتيجية 1: تقليل التباين السريري</strong>
+
+Clinical variation represents differences in care delivery that don't reflect patient needs or evidence. Reducing variation improves quality and reduces costs:
+
+يمثل التباين السريري الاختلافات في تقديم الرعاية التي لا تعكس احتياجات المريض أو الأدلة. يقلل Reducing التباين من التكلفة ويحسن الجودة:
+
+- Clinical pathway standardization
+- Evidence-based guideline adherence
+- Peer comparison and feedback
+- Decision support tools
+- توحيد المسار السريري
+- الالتزام بالمبادئ التوجيهية القائمة على الأدلة
+- المقارنة والتعليقات بين الأقران
+- أدوات دعم القرار
+
+<strong>Strategy 2: Preventive Care Investment | الاستراتيجية 2: استثمار الرعاية الوقائية</strong>
+
+Investing in prevention reduces expensive acute care episodes:
+
+الاستثمار في الوقاية reduce episodes الرعاية الحادة المكلفة:
+
+- Chronic disease prevention programs
+- Screening and early detection
+- Immunization programs
+- Wellness initiatives
+- برامج الوقاية من الأمراض المزمنة
+- الفحص والكشف المبكر
+- برامج التمنيع
+- مبادرات العافية
+
+<strong>Strategy 3: Care Coordination | الاستراتيجية 3: تنسيق الرعاية</strong>
+
+Effective care coordination reduces redundant services and prevents complications:
+
+reduce التنسيق الفعال الخدمات الزائدة ويمنع المضاعفات:
+
+- Care manager roles for high-risk patients
+- Care transition protocols
+- Information sharing systems
+- أدوار مدير الرعاية للمرضى ذوي الخطورة العالية
+- بروتوكولات انتقال الرعاية
+- أنظمة مشاركة المعلومات
+
+<strong>Strategy 4: Appropriate Utilization | الاستراتيجية 4: الاستخدام الملائم</strong>
+
+Ensuring appropriate utilization prevents low-value care:
+
+ضمان الاستخدام الملائم prevents الرعاية منخفضة القيمة:
+
+- Evidence-based test ordering
+- Prior authorization processes
+- Clinical decision support
+- Feedback on ordering patterns
+- طلب الفحص القائم على الأدلة
+- عمليات الإذن المسبق
+- دعم القرار السريري
+- ملاحظات حول أنماط الطلب
+
+<h4 class="section-sub">4.5 Saudi Cost Context | سياق التكلفة السعودي</h4>
+
+<strong>Healthcare Spending in Saudi Arabia | الإنفاق الصحي في المملكة العربية السعودية</strong>
+
+<tr><td>Metric</td><td>المقياس</td><td>Value</td><td>القيمة</td></tr>
+|--------|---------|-------|----------|
+<tr><td>Total health expenditure % GDP</td><td>إجمالي الإنفاق الصحي كنسبة GDP</td><td>4.6%</td><td>4.6%</td></tr>
+<tr><td>Government health spending per capita</td><td>الإنفاق الصحي الحكومي للفرد</td><td>$1,450</td><td>1,450 دولار</td></tr>
+<tr><td>Private health spending % total</td><td>الإنفاق الصحي الخاص كنسبة الإجمالي</td><td>25%</td><td>25%</td></tr>
+<tr><td>Health insurance coverage</td><td>تغطية التأمين الصحي</td><td>70%</td><td>70%</td></tr>
+</tbody></table></div>
+<strong>Cost Optimization Opportunities | فرص تحسين التكلفة</strong>
+
+In Saudi Arabia, key opportunities include:
+
+في المملكة العربية السعودية، الفرص الرئيسية تشمل:
+
+1. <strong>Pharmaceutical Costs | تكاليف الأدوية</strong>
+   - Generic substitution rates
+   - Formulary management
+   - Therapeutic class competition
+   - معدلات الاستبدال_GENERIC
+   - إدارة القائمة العلاجية
+   - منافسة الفئة العلاجية
+
+2. <strong>Laboratory and Imaging | المختبر والتصوير</strong>
+   - Reference lab pricing
+   - Utilization management
+   - Appropriateness criteria
+   - تسعير المختبر المرجعي
+   - إدارة الاستخدام
+   - معايير الملاءمة
+
+3. <strong>Hospital Costs | تكاليف المستشفى</strong>
+   - Length of stay optimization
+   - Readmission reduction
+   - Care pathway standardization
+   - تحسين الإقامة
+   - تقليل إعادة القبول
+   - توحيد المسار السريري
+
+4. <strong>Primary Care Development | تطوير الرعاية الأولية</strong>
+   - Shift from specialist to primary care
+   - Prevention investment
+   - Chronic disease management
+   - التحول من الرعاية التخصصية إلى الرعاية الأولية
+   - استثمار الوقاية
+   - إدارة الأمراض المزمنة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 5: Triple Aim Implementation | الدرس الخامس: تنفيذ الهدف الثلاثي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Apply Triple Aim implementation frameworks
+- Design population-based improvement projects
+- Build measurement systems for all three dimensions
+- Engage stakeholders in Triple Aim initiatives
+- Create sustainable change strategies
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">5.1 Implementation Framework | إطار التنفيذ</h4>
+
+The IHI Triple Aim implementation framework provides a structured approach:
+
+يوفر إطار تنفيذ الهدف الثلاثي من المعهد نهجاً منظماً:
+
+<strong>Phase 1: Foundation Building | المرحلة 1: بناء الأساس</strong>
+
+1. <strong>Form the Triple Aim Coordinating Council | تشكيل مجلس تنسيق الهدف الثلاثي</strong>
+   - Executive sponsor
+   - Clinical leadership
+   - Quality improvement expertise
+   - Population health expertise
+   - Finance representation
+   - راعي تنفيذي
+   - leadership السريرية
+   - خبرة تحسين الجودة
+   - خبرة صحة السكان
+   - ممثل المالية
+
+2. <strong>Establish Baseline Measurements | إنشاء قياسات خط الأساس</strong>
+   - Population health status
+   - Patient experience metrics
+   - Cost and utilization data
+   - الحالة الصحية للسكان
+   - مقاييس تجربة المريض
+   - بيانات التكلفة والاستخدام
+
+3. <strong>Define Population | تحديد السكان</strong>
+   - Geographic definition
+   - Attribution methodology
+   - Data systems development
+   - التعريف الجغرافي
+   - منهجية السمات
+   - تطوير أنظمة البيانات
+
+<strong>Phase 2: Intervention Design | المرحلة 2: تصميم التدخل</strong>
+
+1. <strong>Identify Priority Gaps | تحديد الفجوات ذات الأولوية</strong>
+   - Data analysis
+   - Stakeholder input
+   - Evidence review
+   - تحليل البيانات
+   - مدخلات أصحابصلحة
+   - مراجعة الأدلة
+
+2. <strong>Design Interventions | تصميم التدخلات</strong>
+   - Evidence-based interventions
+   - Targeted to population segments
+   - Multidimensional approach
+   - تدخلات قائمة على الأدلة
+   - مستهدفة لشرائح السكان
+   - نهج متعدد الأبعاد
+
+3. <strong>Build Business Case | بن��ء الحجة الأعمال</strong>
+   - Return on investment analysis
+   - Resource requirements
+   - Risk assessment
+   - تحليل العائد على الاستثمار
+   - متطلبات الموارد
+   - تقييم المخاطر
+
+<strong>Phase 3: Implementation | المرحلة 3: التنفيذ</strong>
+
+1. <strong>Pilot Testing | اختبار التجريب</strong>
+   - Small-scale test
+   - Rapid cycle improvement
+   - Iteration and refinement
+   - اختبار صغير النطاق
+   - تحسين الدورة السريعة
+   - التكرار والتحسين
+
+2. <strong>Spread Planning | تخطيط النشر</strong>
+   - Identification of spread targets
+   - Adaptation guidelines
+   - Training resources
+   - تحديد أهداف النشر
+   - إرشادات التكيف
+   - موارد التدريب
+
+3. <strong>Sustainability | الاستدامة</strong>
+   - Process integration
+   - Ongoing measurement
+   - Culture development
+   - التكامل في العملية
+   - القياس المستمر
+   - تطوير الثقافة
+
+<h4 class="section-sub">5.2 Quality Improvement Methods | أساليب تحسين الجودة</h4>
+
+<strong>PDSA Cycles for Triple Aim | دورات PDSA للهدف الثلاثي</strong>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│              PDSA CYCLE FOR TRIPLE AIM                    │
+│              دورة PDSA للهدف الثلاثي                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│    ┌─────────────────────────────────────────┐             │
+│    │           PLAN (_week 1)               │             │
+│    │    حددProblem، التدخل، الف hypothesis│            │
+│    │   تحديد المشكلة واختبار الفرضية     │             │
+│    └──────────────────┬──────────────────────┘             │
+│                       │                                     │
+│    ┌──────────────────▼──────────────────────┐             │
+│    │              DO (weeks 2-3)            │             │
+│    │         تنفيذ التدخل وcollect البيانات   │             │
+│    │        تنفيذ التدخل وجمع البيانات    │             │
+│    └──────────────────┬──────────────────────┘             │
+│                       │                                     │
+│    ┌──────────────────▼──────────────────────┐             │
+│    │          STUDY (week 4)                │             │
+│    │      تحليل البيانات والمقارنة      │             │
+│    └──────────────────┬──────────────────────┘             │
+│                       │                                     │
+│    ┌──────────────────▼──────────────────────┐             │
+│    │           ACT (week 5)                  │             │
+│    │    توسعة، تعديل، أو تبني التغيير    │             │
+│    │      توسيع أو تعديل أو اعتماد       │             │
+│    ���─���───────────────────────────────────────┘             │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">5.3 Measurement Systems | أنظمة القياس</h4>
+
+<strong>Triple Aim Scorecard | بطاقةTriple Aim</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Dimension</td><td>البُعد</td><td>Measures</td><td>المقاييس</td><td>Targets</td><td>الأهداف</td></tr>
+|-----------|-------|----------|----------|---------|----------|
+<tr><td>Population Health</td><td>صحة السكان</td><td>NCD outcomes</td><td>نتائج الأمراض المزمنة</td><td>-20% complications</td><td>-20% مضاعفات</td></tr>
+<tr><td>Preventive screening</td><td>الفحص الوقائي</td><td>80% screening</td><td>80% فحص</td></tr>
+<tr><td>Health disparities</td><td>التفاوتات الصحية</td><td>-30% disparity</td><td>-30% تفاوت</td></tr>
+<tr><td>Patient Experience</td><td>تجربة المريض</td><td>Overall satisfaction</td><td>الرضا الشامل</td><td>90% satisfaction</td><td>90% رضا</td></tr>
+<tr><td>Communication</td><td>التواصل</td><td>92% good rating</td><td>92% تصنيف جيد</td></tr>
+<tr><td>Access</td><td>الوصول</td><td><15 min wait</td><td><15 دقيقة انتظار</td></tr>
+<tr><td>Per Capita Cost</td><td>التكلفة للفرد</td><td>Total cost</td><td>التكلفة الإجمالية</td><td>-10% cost</td><td>-10% تكلفة</td></tr>
+<tr><td>Inappropriate utiliz.</td><td>الاستخدام غير الملائم</td><td>-25% unnecessary</td><td>-25% غير ضروري</td></tr>
+<tr><td>Chronic disease cost</td><td>تكلفة الأمراض المزمنة</td><td>-15% cost</td><td>-15% تكلفة</td></tr>
+
+<h4 class="section-sub">5.4 Stakeholder Engagement | إشراك أصحابصلحة</h4>
+
+<strong>Stakeholder Mapping | رسم خريطة أصحابصلحة</strong>
+
+<tr><td>Stakeholder</td><td>أصحاب مصلحة</td><td>Interest</td><td>الاهتمام</td><td>Influence</td><td>التأثير</td><td>Strategy</td><td>الاستراتيجية</td></tr>
+|------------|-------------|----------|----------|-----------|----------|----------|-----------|
+<tr><td>Executive Leadership</td><td>قيادة المؤسسة</td><td>System performance</td><td>أداء النظام</td><td>High</td><td>Sponsor</td><td>راعي</td></tr>
+<tr><td>Department Chiefs</td><td>رؤساء الأقسام</td><td>Clinical outcomes</td><td>النتائج السريرية</td><td>High</td><td>Lead</td><td>lead</td></tr>
+<tr><td>Physicians</td><td>الأطباء</td><td>Patient outcomes</td><td>نتائج المريض</td><td>High</td><td>Partner</td><td>partner</td></tr>
+<tr><td>Nurses</td><td>الممرضات</td><td>Patient experience</td><td>تجربة المريض</td><td>High</td><td>Partner</td><td>partner</td></tr>
+<tr><td>Patients</td><td>المرضى</td><td>Quality of care</td><td>جودة الرعاية</td><td>High</td><td>Customer</td><td>عميل</td></tr>
+<tr><td>Payers</td><td>payers</td><td>Cost management</td><td>إدارة التكلفة</td><td>Medium</td><td>Supporter</td><td>داعم</td></tr>
+<tr><td>Regulators</td><td>الجهات التنظيمية</td><td>Compliance</td><td>الامتثال</td><td>High</td><td>Regulator</td><td>منظم</td></tr>
+
+<h3 class="section-title">Case Study Implementation: MOH PHC Cluster Implementation | دراسة حالة التطبيق: تطبيق تجمع الرعاية الأولية بوزارة الصحة</h3>
+
+<strong>Setting | الإعداد</strong>
+A cluster of 15 primary health centers serving a population of 250,000 in the Eastern Province.
+
+تجمع من 15 مركز رعاية أولية يخدم سكاناً يبلغ عددهم 250,000 في المنطقة الشرقية.
+
+<strong>Implementation Phased Approach | نهج التنفيذ المرحلي</strong>
+
+<tr><td>Phase</td><td>المرحلة</td><td>Timeline</td><td>الجدول الزمني</td><td>Focus</td><td>التركيز</td></tr>
+|-------|----------|----------|---------------|-------|----------|
+<tr><td>1</td><td>1</td><td>Months 1-3</td><td>الأشهر 1-3</td><td>Foundation</td><td>الأساس</td></tr>
+<tr><td>- Team formation</td><td>- تشكيل الفريق</td></tr>
+<tr><td>- Baseline measurement</td><td>- قياس خط الأساس</td></tr>
+<tr><td>- Population definition</td><td>- تعريف السكان</td></tr>
+<tr><td>2</td><td>2</td><td>Months 4-9</td><td>الأشهر 4-9</td><td>Diabetes focus</td><td>التركيز على السكري</td></tr>
+<tr><td>- Registry development</td><td>- تطوير السجل</td></tr>
+<tr><td>- Care coordinator hiring</td><td>- توظيف منسق الرعاية</td></tr>
+<tr><td>- Pathway development</td><td>- تطوير المسار</td></tr>
+<tr><td>3</td><td>3</td><td>Months 10-15</td><td>الأشهر 10-15</td><td>HTN and Lipids</td><td>ضغط الدم والدهون</td></tr>
+<tr><td>4</td><td>4</td><td>Months 16-18</td><td>الأشهر 16-18</td><td>Spread and sustain</td><td>النشر والاستدامة</td></tr>
+</tbody></table></div>
+<strong>Results | النتائج</strong>
+- 28% improvement in diabetes control (HbA1c <8%)
+- 22% improvement in hypertension control
+- 18% improvement in patient satisfaction
+- 12% reduction in ER visits for diabetic patients
+- 15% reduction in per-patient costs
+- 28% تحسن في السيطرة على السكري (HbA1c <8%)
+- 22% تحسن في السيطرة على ضغط الدم
+- 18% تحسن في رضا المريض
+- 12% انخفاض في زياراتوارئ لمرضى السكري
+- 15% انخفاض في التكلفة لكل مريض
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 6: Equity Integration | الدرس السادس: دمج العدالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Learning Objectives | أهداف التعلم</h3>
+
+- Define health equity and distinguish from equality
+- Identify health disparities in Saudi populations
+- Apply equity frameworks to Triple Aim initiatives
+- Design equity-focused interventions
+- Measure and monitor equity outcomes
+
+<h3 class="section-title">Content | المحتوى</h3>
+
+<h4 class="section-sub">6.1 Defining Health Equity | تحديد العدالة الصحية</h4>
+
+Health equity is the principle that everyone should have a fair opportunity to attain their full health potential. The key distinction is between equity and equality:
+
+مبدأ العدالة الصحية هو أن每个人都有 فرصة عادلة لتحقيق إمكاناتهم الصحية الكاملة. الفرق الأساسي بين العدالة والمساواة:
+
+- <strong>Equality | المساواة</strong>: Providing the same resources/services to all
+- <strong>Equity | العدالة</strong>: Providing resources/services proportional to needs so that all can achieve similar outcomes
+
+- <strong>المساواة</strong>: توفير نفس الموارد/الخدمات للجميع
+- <strong>العدالة</strong>: توفير الموارد/الخدمات بما يتناسب مع الاحتياجات بحيث يمكن للجميع تحقيق نتائج مماثلة
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│          EQUITY VS. EQUALITY                                │
+│             العدالة مقابل المساواة                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   EQUALITY: Same treatment = same outcome                  │
+│   المساواة: نفس العلاج = نفس النتيجة                     │
+│                                                             │
+│        ┌─────────┐                                         │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        │ ▓▓▓▓▓▓ │  ▓▓▓▓▓▓                                   │
+│        ─────────────────────────────────────────────────── │
+│                                                             │
+│   EQUITY: Proportional resources = achievable outcomes    │
+│   العدالة: موارد متناسبة = نتائج قابلة للتحقيق         │
+│                                                             │
+│        ┌─────────┐                                         │
+│        │ ░░░░░░░ │  ▓▓▓▓▓▓                                   │
+│        │ ░░░░░░░ │  ▓▓▓▓▓▓  (More resources for those        │
+│        │ ███████ │  ▓▓▓▓▓   with greater needs)              │
+│        │ ███████ │  ▓▓▓▓▓  (موارد أكثر لأولئك              │
+│        │ ███████ │  ▓▓▓▓▓   الذين يحتاجون أكثر)            │
+│        │ ███████ │  ▒▒▒▒▒▒                                   │
+│        │ ███████ │  ▒▒▒▒▒▒                                   │
+│        ─────────────────────────────────────────────────── │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<h4 class="section-sub">6.2 Saudi Health Disparities | التفاوتات الصحية في المملكة</h4>
+
+Key disparities in Saudi Arabia include:
+
+التفاوتات الرئيسية في المملكة العربية السعودية تشمل:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Disparity</td><td>التفاوت</td><td>Affected Population</td><td>السكان المتأثرون</td><td>Impact</td><td>التأثير</td></tr>
+|-----------|---------|---------------------|-----------------|--------|---------|
+<tr><td>Rural access</td><td>الوصول rural</td><td>Rural populations</td><td>سكان الريف</td><td>Limited specialist access</td><td>وصول محدود للمتخصصين</td></tr>
+<tr><td>Expatriate access</td><td>الوصول للوافدين</td><td>Expatriate workers</td><td>العمال الوافدون</td><td>Insurance limitations</td><td>قيود التأمين</td></tr>
+<tr><td>Chronic disease outcomes</td><td>نتائج الأمراض المزمنة</td><td>Low socioeconomic</td><td>منخفض الدخل</td><td>Higher complication rates</td><td>معدلات مضاعفات أعلى</td></tr>
+<tr><td>Maternal outcomes</td><td>نتائج الأمومة</td><td>High-risk pregnancies</td><td>حالات حمل عالية الخطورة</td><td>Regional variations</td><td>تباين إقليمي</td></tr>
+<tr><td>Mental health</td><td>الصحة النفسية</td><td>Youth, women</td><td>الشباب والنساء</td><td>Access, stigma</td><td>الوصول والوصمة</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">6.3 Equity-Focused Triple Aim Design | تصميم الهدف الثلاثي المركّز على العدالة</h4>
+
+When designing Triple Aim initiatives, equity must be integrated from the start:
+
+عند تصميم مبادرات الهدف الثلاثي، يجب دمج العدالة من البداية:
+
+<strong>Equity Integration Checklist | قائمة دمج العدالة</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>Define equity goals explicitly</div>
+<div class="checklist-item"><span class="checkbox"></span>Disaggregate data by equity stratifiers</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify disparities in baseline data</div>
+<div class="checklist-item"><span class="checkbox"></span>Set equity-specific targets</div>
+<div class="checklist-item"><span class="checkbox"></span>Design targeted interventions</div>
+<div class="checklist-item"><span class="checkbox"></span>Ensure access for disadvantaged populations</div>
+<div class="checklist-item"><span class="checkbox"></span>Remove barriers to care</div>
+<div class="checklist-item"><span class="checkbox"></span>Measure equity outcomes separately</div>
+
+<div class="checklist-item"><span class="checkbox"></span>تحديد أهداف العدالة صراحة</div>
+<div class="checklist-item"><span class="checkbox"></span>تجزئة البيانات حسب طبقات العدالة</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد التفاوتات في بيانات خط الأساس</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد أهداف خاصة بالعدالة</div>
+<div class="checklist-item"><span class="checkbox"></span>تصميم تدخلات مستهدفة</div>
+<div class="checklist-item"><span class="checkbox"></span>ضمان الوصول للسكان المحرومين</div>
+<div class="checklist-item"><span class="checkbox"></span>إزالة الحواجز أمام الرعاية</div>
+<div class="checklist-item"><span class="checkbox"></span>قياس نتائج العدالة بشكل منفصل</div>
+
+<h3 class="section-title">Final Course Assessment | التقييم النهائي للدورة</h3>
+
+<h4 class="section-sub">Comprehensive Assessment Tasks | مهام التقييم الشامل</h4>
+
+<strong>Task 1: Triple Aim Analysis | المهمة 1: ��حل��ل الهدف الثلاثي</strong>
+
+Analyze a patient population you serve using Triple Aim framework:
+
+تحليل مجتمع المرضى الذي تخدمه باستخدام إطار الهدف الثلاثي:
+
+1. Describe the population (50-100 words)
+2. Identify priority health needs (3-5)
+3. Analyze patient experience gaps (2-3)
+4. Identify cost drivers (2-3)
+5. Propose integrated Triple Aim intervention
+
+<strong>Task 2: Implementation Plan | المهمة 2: خطة التنفيذ</strong>
+
+Create a brief implementation plan for a Triple Aim intervention:
+
+إنشاء خطة تنفيذ موجزة لتدخل الهدف الثلاثي:
+
+1. Define population and objectives
+2. Design intervention for all three dimensions
+3. Create measurement plan
+4. Identify resource requirements
+5. Develop stakeholder engagement strategy
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application Framework | إطار التطبيق السعودي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">MOH Integration | دمج وزارة الصحة</h3>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>MOH Initiative</td><td>المبادرة</td><td>Triple Aim Alignment</td><td>محاذاة الهدف الثلاثي</td></tr>
+|-----------------|----------|---------------------|---------------------|
+<tr><td>NPHIES</td><td>نظام التأمين الصحي</td><td>Population attribution</td><td>سمح السكان</td></tr>
+<tr><td>CBAHI</td><td>اعتماد الهيئة</td><td>Quality standards</td><td>معايير الجودة</td></tr>
+<tr><td>PHC Clusters</td><td>تجمعات الرعاية الأولية</td><td>Care coordination</td><td>تنسيق الرعاية</td></tr>
+<tr><td>Quality Program</td><td>برنامج الجودة</td><td>Measurement</td><td>القياس</td></tr>
+<tr><td>Chronic Disease Program</td><td>برنامج الأمراض المزمنة</td><td>Population health</td><td>صحة السكان</td></tr>
+
+<h3 class="section-title">Key Performance Indicators | مؤشرات الأداء الرئيسية</h3>
+
+<tr><td>KPI</td><td>المؤشر</td><td>Current Baseline</td><td>خط الأساس الحالي</td><td>2030 Target</td><td>هدف 2030</td></tr>
+|----|-------|-----------------|------------------|-----------------|-------------|
+<tr><td>Life expectancy</td><td>متوسط الأمل المتوقع</td><td>75</td><td>75</td><td>80</td><td>80</td></tr>
+<tr><td>Diabetes control</td><td>السيطرة على السكري</td><td>35%</td><td>35%</td><td>55%</td><td>55%</td></tr>
+<tr><td>Patient satisfaction</td><td>رضا المريض</td><td>75%</td><td>75%</td><td>90%</td><td>90%</td></tr>
+<tr><td>Cost per capita</td><td>التكلفة للفرد</td><td>Baseline</td><td>خط الأساس</td><td>-15%</td><td>-15%</td></tr>
+<tr><td>Health disparities</td><td>التفاوتات الصحية</td><td>Baseline</td><td>خط الأساس</td><td>-30%</td><td>-30%</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English</td><td>العربية</td><td>Definition</td><td>التعريف</td></tr>
+|---------|----------|------------|----------|
+<tr><td>Triple Aim</td><td>الهدف الثلاثي</td><td>Framework for simultaneous improvement in population health, patient experience, and per capita cost</td><td>إطار للتحسين المتزامن لصحة السكان وتجربة المريض وتكلفة الفرد</td></tr>
+<tr><td>Population Health</td><td>صحة السكان</td><td>Health outcomes and distribution in a defined group</td><td>النتائج الصحية وتوزيعها في مجموعة محددة</td></tr>
+<tr><td>Patient Experience</td><td>تجربة المريض</td><td>Range of patient interactions with healthcare system</td><td>نطاق تفاعلات المرضى مع النظام الصحي</td></tr>
+<tr><td>Per Capita Cost</td><td>التكلفة للفرد</td><td>Total healthcare cost divided by population</td><td>إجمالي التكلفة الصحية مقسوماً على عدد السكان</td></tr>
+<tr><td>Health Equity</td><td>العدالة الصحية</td><td>Fair opportunity to achieve health potential</td><td>فرصة عادلة لتحقيق الإمكانات الصحية</td></tr>
+<tr><td>Social Determinants</td><td>المحددات الاجتماعية</td><td>Non-medical factors affecting health</td><td>العوامل غير الطبية المؤثرة على الصحة</td></tr>
+<tr><td>Health Disparities</td><td>التفاوتات الصحية</td><td>Avoidable differences in health outcomes</td><td>الفروق التي يمكن تجنبها في النتائج الصحية</td></tr>
+<tr><td>Value-Based Care</td><td>الرعاية القائمة على القيمة</td><td>Healthcare prioritizing outcomes over volume</td><td>الرعاية التي تعطي الأولوية للنتائج ب��لا�� من الحجم</td></tr>
+<tr><td>Clinical Pathway</td><td>المسار السريري</td><td>Standardized care process for a condition</td><td>عملية رعاية موحدة لحالة معينة</td></tr>
+<tr><td>Risk Stratification</td><td>تصنيف المخاطر</td><td>Segmenting population by health risk</td><td>تجزئة السكان حسب الخطر الصحي</td></tr>
+<tr><td>Care Coordination</td><td>تنسيق الرعاية</td><td>Organizing care across providers</td><td>تنظيم الرعاية عبر مقدميها</td></tr>
+<tr><td>Population Attribution</td><td>سمح السكان</td><td>Assigning patients to provider organization</td><td>تعيين المرضى لمؤسسة مزودة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References and Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Required Reading | القراءة المطلوبة</h3>
+
+1. IHI Triple Aim Framework Documentation
+   - https://www.ihi.org/Topics/TripleAim
+
+2. Berwick DM, Nolan TW, Whittington J. "The Triple Aim: Care, Health, and Cost."
+   - Health Affairs, 2008
+
+3. WHO Health Equity Resources
+   - https://www.who.int/health-topics/health-equity
+
+4. Saudi Vision 2030 Health Program
+   - https://www.vision2030.gov.sa
+
+<h3 class="section-title">Recommended Reading | القراءة الموصى بها</h3>
+
+1. Kindig DA, Stange K. "Population Health: The Transdisciplinary Paradigm."
+   - American Journal of Preventive Medicine
+
+2. IHI White Paper: Achieving Health Equity
+   - https://www.ihi.org
+
+3. CBAHI National Hospital Standards
+   - https://www.cbahi.gov.sa
+
+4. MOH Statistics and Reports
+   - https://www.moh.gov.sa
+
+<h3 class="section-title">Local Resources | الموارد المحلية</h3>
+
+1. <strong>MOH</strong>: https://www.moh.gov.sa
+2. <strong>CBAHI</strong>: https://www.cbahi.gov.sa
+3. <strong>SFDA</strong>: https://www.sfda.gov.sa
+4. <strong>NPHIES</strong>: https://www.nphies.gov.sa
+5. <strong>SaudiCDC</strong>: https://www.saudicdc.gov.sa
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Continuing Education Credits | ساعات التعليم المستمر</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          Course completion earns:
+- 3.0 CME credits (ACCME)
+- 3.0 CNE credits (ANCC)
+- 2.0 CPPS credits (NAHQ)
+- 3.0 CPHQ credits (NAHQ)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code</strong>: TA 101
+- <strong>Level</strong>: Foundation
+- <strong>Duration</strong>: 180 minutes
+- <strong>Prerequisites</strong>: None
+- <strong>Provider</strong>: IHI Open School / BrainsAIT Academy
+- <strong>Format</strong>: Online, Self-Paced
+- <strong>Language</strong>: Bilingual (Arabic/English)
+
+---
+
+<em>End of Course TA 101</em>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-ta-101') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-ta-101', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('ta-101')) enrolled.push('ta-101');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'ta-101');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-ta-101') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-ta-101', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-ta-101', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-ta-101', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-ta-101', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-ta-101') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Triple Aim for Populations',
+        slug: 'ta-101',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-ta-101') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-ta-101.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

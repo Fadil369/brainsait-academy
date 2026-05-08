@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Climate and Health | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Decarbonization</span>
+        <span class="bg-surface-container-high text-on-surface-variant px-sm py-1 rounded-full font-label-md text-label-md">DC-101</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">Climate and Health</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">DC 101: المناخ والصحة</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">60</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">15 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="0">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          After completing this course, you’ll be able to:
+
+- Summarize the relationship between climate and health
+- Describe the distribution of greenhouse gas emissions in health care
+- Identify the six domains of decarbonization action
+- Explain the structural enablers and systematic shifts needed in clinical practice to support decarbonizing care delivery
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="1">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Lessons</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Lesson 1: Understanding Climate Change and Human Health</strong>
+You’ll learn the relationship between climate change and human health and review the critical drivers of climate change, the health risks and vulnerabilities it poses, and the concepts of climate mitigation and adaptation.
+
+- <strong class="text-on-surface font-semibold">Lesson 2: Health Care Sector and Climate Change: A Paradox</strong>
+You’ll learn about the healthcare sector’s contribution to climate change, the six key domains of action to decarbonize hospitals, and suggested measures and interventions to reduce greenhouse gas emissions along these domains.
+
+- <strong class="text-on-surface font-semibold">Lesson 3: Being the Change: How Health Care Can Combat the Climate Crisis</strong>
+You’ll learn the structural enablers needed to bolster health care systems efforts to accelerate climate action and explore how the role of institutional policies, leadership, and healthcare professionals in mobilizing decarbonization across the health care sector. 
+<strong class="text-on-surface font-semibold">Estimated Time of Completion:</strong> 1 hour 50 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="2">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">English Overview</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course equips health professionals to strengthen climate-health linkage, low-carbon clinical pathways, and sustainable operations while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">نظرة عامة بالعربية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في الترابط بين المناخ والصحة، والمسارات السريرية منخفضة الانبعاثات، والتشغيل المستدام مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="4">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Learning Outcomes | مخرجات التعلم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- Summarize the relationship between climate and health
+- Describe the distribution of greenhouse gas emissions in health care
+- Identify the six domains of decarbonization action
+- Explain the structural enablers and systematic shifts needed in clinical practice to support decarbonizing care delivery
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- فهم العلاقة بين المناخ والصحة وتأثيرها على التشغيل السريري.
+- تطبيق ممارسات تقلل الهدر والانبعاثات دون التأثير على سلامة الرعاية.
+- دمج الاستدامة ضمن قرارات الجودة وتحسين المسارات العلاجية.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: Understanding Climate Change and Human Health</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You’ll learn the relationship between climate change and human health and review the critical drivers of climate change, the health risks and vulnerabilities it poses, and the concepts of climate mitigation and adaptation. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 1: فهم تغيُّر المناخ وصحة الإنسان</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2: Health Care Sector and Climate Change: A Paradox</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You’ll learn about the healthcare sector’s contribution to climate change, the six key domains of action to decarbonize hospitals, and suggested measures and interventions to reduce greenhouse gas emissions along these domains. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 2: قطاع الرعاية الصحية وتغيُّر المناخ: مفارقة مثيرة</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تنتقل هذه الوحدة من الفهم النظري إلى التحليل التطبيقي: كيف تُقيِّم الوضع الراهن، وتُحدِّد الفجوات، وتختار الأدوات المناسبة لبيئة عملك. تُقدِّم أمثلة على التحديات الشائعة في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية، وتُمكِّن الممارس من ترجمة المشكلة إلى فرصة تحسين محددة.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> صمِّم قائمة تحقق مكوَّنة من خمسة بنود لمشكلة تشغيلية محددة في وحدتك، وحدِّد مؤشرًا للقياس القبلي ومؤشرًا للقياس البعدي قبل تنفيذ أي تدخل.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3: Being the Change: How Health Care Can Combat the Climate Crisis</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You’ll learn the structural enablers needed to bolster health care systems efforts to accelerate climate action and explore how the role of institutional policies, leadership, and healthcare professionals in mobilizing decarbonization across the health care sector. <strong class="text-on-surface font-semibold">Estimated Time of Completion:</strong> 1 hour 50 minutes ## Continuing Education Credits Course completion typically earns 1.75 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a> Image <em class="text-on-surface">In support of improving patient care, the Institute for Healthcare Improvement is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC), to provide continuing education for the healthcare team.</em> See full detailsThis program is approved to provide 1.75 credits for physicians, nurses, and Certified Professional in Patient Safety (CPPS) recertification. The Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1.75 <em class="text-on-surface">AMA PRA Category 1 Credits™.</em> Physicians should claim only the credit commensurate with the extent of their participation in the activity. This activity may also be applicable for other professions that accept <em class="text-on-surface">AMA PRA Category 1 Credits™.</em> <strong class="text-on-surface font-semibold">As a result of this program, attendees will be able to:</strong> - Describe the relationship between the climate crisis and human health, and the contribution of the health care sector to a changing climate. - Assess the environmental impacts of anesthetic gases, inhalers, and medical supplies and devices. - Describe measures and actions to track and reduce emissions stemming from clinical practice. - Use QI tools and methods to implement environmental sustainability projects at your own institutions. <strong class="text-on-surface font-semibold">Planning Committee</strong> - Bhargavi Chekuri, MD, Co-director, Diploma in Climate Medicine and Co-director, Climate & Health Science Policy Fellowship, University of Colorado School of Medicine - Katharine Weber, MD, Attending Physician, Rochester Regional Health - Johannah Bjorgaard, DNPc, RN, PHN, CSSBB, Director, Energy Audit, University of Minnesota, M Health Fairview - Bhargavi Sampath, MPH, Director, Innovation, IHI - Kate Feske-Kirby, MA, Research Associate, IHI - Kara Andrew, Co-Lead, Education Content Design and Development, IHI - Melissa Smart, Instructional Designer, IHI Disclosure: <em class="text-on-surface">None of the planners, presenters, or staff for this educational activity have relevant financial relationship(s) to disclose with ineligible companies whose primary business is producing, marketing, selling, re-selling, or distributing healthcare products used by or on patients.</em> ## Course Details - <strong class="text-on-surface font-semibold">Code:</strong> DC 101 - <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand - <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School - <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dc-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a> - <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes ## تفاصيل الدورة - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب - <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School - <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dc-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a> - <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 3: كن أنت التغيير: كيف يمكن للرعاية الصحية مكافحة أزمة المناخ</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُركِّز هذه الوحدة على التطبيق الميداني: تصميم التدخل، وبناء الفريق متعدد التخصصات، وتحديد مؤشرات المتابعة. تُعدِّل المقاربات التدخلية لتناسب الموارد والكوادر المتاحة في بيئات الرعاية السعودية، وتُخرِّج الممارس بخطة عمل قابلة للتنفيذ الفوري.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> نفِّذ دورة PDSA واحدة (سبعة أيام): طبِّق تغييرًا صغيرًا واحدًا، وقِس أثره على المؤشر المحدد، وأعدَّ ورقة نتائج تُشارك بها الفريق في الاجتماع الأسبوعي القادم.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- <strong class="text-on-surface font-semibold">Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong class="text-on-surface font-semibold">Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong class="text-on-surface font-semibold">Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong class="text-on-surface font-semibold">Local scenario:</strong> Use this course to reduce unnecessary resource use while preserving patient outcomes and safety.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- <strong class="text-on-surface font-semibold">بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong class="text-on-surface font-semibold">الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong class="text-on-surface font-semibold">الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong class="text-on-surface font-semibold">سيناريو محلي:</strong> تُستخدم الدورة من أجل تقليل الاستخدام غير الضروري للموارد مع الحفاظ على النتائج السريرية وسلامة المرضى.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+1. <strong class="text-on-surface font-semibold">Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong class="text-on-surface font-semibold">Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong class="text-on-surface font-semibold">Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong class="text-on-surface font-semibold">Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+1. <strong class="text-on-surface font-semibold">استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong class="text-on-surface font-semibold">اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong class="text-on-surface font-semibold">مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong class="text-on-surface font-semibold">نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td></tr>
+|<hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Decarbonization</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خفض الانبعاثات الكربونية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستدامة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Resource stewardship</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ترشيد الموارد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical pathway</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مسار سريري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Co-benefit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منفعة مشتركة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Waste reduction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تقليل الهدر</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Carbon footprint</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البصمة الكربونية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Net zero</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحياد الكربوني</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Green surgery</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الجراحة الخضراء</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Energy efficiency</td><td class="px-sm py-xs text-body-md text-on-surface-variant">كفاءة الطاقة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Supply chain sustainability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استدامة سلسلة التوريد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Unnecessary intervention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التدخل الطبي غير الضروري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Climate resilience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المرونة المناخية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Reprocessing equipment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إعادة معالجة المعدات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Low-carbon pathway</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المسار السريري منخفض الكربون</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Waste segregation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فرز النفايات الطبية</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/dc-101
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- WHO Climate Change & Health fact sheet: https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health
+- NHS Greener NHS Programme: https://www.england.nhs.uk/greenernhs/
+- MOH Saudi Environmental Health Initiatives: https://www.moh.gov.sa
+- Lancet Countdown on Health & Climate: https://www.lancetcountdown.org
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="10">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Select one department and one measurable problem.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Form a multidisciplinary micro-team.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Define baseline, target, and data collection frequency.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Run at least one improvement test and document findings.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Report outcomes to quality governance and plan next-cycle spread.</span></div>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Present your course implementation findings at a team meeting within 30 days.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Share one lesson learned with a peer and document the exchange.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Link your improvement work to your facility's quality governance and reporting cycle.</span></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">اختيار قسم واحد ومشكلة قابلة للقياس.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تشكيل فريق مصغر متعدد التخصصات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تحديد خط الأساس والهدف وتواتر جمع البيانات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] عرض نتائج تطبيق الدورة في اجتماع الفريق خلال 30 يومًا.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">مشاركة درس مستفاد واحد مع زميل وتوثيق التبادل.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">ربط عمل التحسين بدورة حوكمة الجودة والإبلاغ في منشأتك.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="11">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Continuing Education Credits</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          Course completion typically earns 1.75 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a>
+
+Image
+
+<em class="text-on-surface">In support of improving patient care, the Institute for Healthcare Improvement is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC), to provide continuing education for the healthcare team.</em>
+
+See full detailsThis program is approved to provide 1.75 credits for physicians, nurses, and Certified Professional in Patient Safety (CPPS) recertification.
+
+The Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1.75 <em class="text-on-surface">AMA PRA Category 1 Credits™.</em> Physicians should claim only the credit commensurate with the extent of their participation in the activity. This activity may also be applicable for other professions that accept <em class="text-on-surface">AMA PRA Category 1 Credits™.</em>
+
+<strong class="text-on-surface font-semibold">As a result of this program, attendees will be able to:</strong>
+
+- Describe the relationship between the climate crisis and human health, and the contribution of the health care sector to a changing climate.
+- Assess the environmental impacts of anesthetic gases, inhalers, and medical supplies and devices.
+- Describe measures and actions to track and reduce emissions stemming from clinical practice.
+- Use QI tools and methods to implement environmental sustainability projects at your own institutions.
+<strong class="text-on-surface font-semibold">Planning Committee</strong>
+
+- Bhargavi Chekuri, MD, Co-director, Diploma in Climate Medicine and Co-director, Climate & Health Science Policy Fellowship, University of Colorado School of Medicine
+- Katharine Weber, MD, Attending Physician, Rochester Regional Health
+- Johannah Bjorgaard, DNPc, RN, PHN, CSSBB, Director, Energy Audit, University of Minnesota, M Health Fairview
+- Bhargavi Sampath, MPH, Director, Innovation, IHI
+- Kate Feske-Kirby, MA, Research Associate, IHI
+- Kara Andrew, Co-Lead, Education Content Design and Development, IHI
+- Melissa Smart, Instructional Designer, IHI
+Disclosure: <em class="text-on-surface">None of the planners, presenters, or staff for this educational activity have relevant financial relationship(s) to disclose with ineligible companies whose primary business is producing, marketing, selling, re-selling, or distributing healthcare products used by or on patients.</em>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="12">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1 Deep Dive: Understanding Climate Change and Human Health | الدرس الأول approfondi: فهم تغيُّر المناخ وصحة الإنسان</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.1: Climate Science Fundamentals | أساسيات علم المناخ</h4>
+
+The Earth's climate system is a complex interplay of atmospheric, oceanic, and terrestrial processes that have maintained relatively stable conditions for millennia. However, since the Industrial Revolution, human activities have dramatically altered this balance, leading to what scientists now recognize as anthropogenic climate change. The primary driver of this change is the emission of greenhouse gases (GHGs), particularly carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O), which trap heat in the Earth's atmosphere and create a "greenhouse effect" that warms the planet.
+
+نظام المناخ الأرضي هو تفاعل معقد بين العمليات الجوية والمحيطية والبرية التي حافظت على ظروف مستقرة نسبيًا لآلاف السنين. ومع ذلك، منذ الثورة الصناعية، غيرت الأنشطة البشرية هذا التوازن بشكل جذري، مما أدى إلى ما يسميه العلماء الآن بتغير المناخ البشري. المحرك الأساسي لهذا التغيير هو انبعاث غازات الاحتباس الحراري، particularly ثاني أكسيد الكربون (CO2), الميثان (CH4), وأكسيد النيتروز (N2O), التي تحبس الحرارة في غلاف الأرض الجوي وتخلق "تأثير الاحتباس الحراري" الذي يسخن الكوكب.
+
+The concentration of CO2 in the atmosphere has increased from approximately 280 parts per million (ppm) in pre-industrial times to over 420 ppm today, representing a more than 50% increase. This change has far-reaching implications for human health, as climate change affects everything from air quality to disease patterns to food security.
+
+زادت تركيز CO2 في الغلاف الجوي من حوالي 280 جزءًا في المليون (ppm) في العصر ما قبل الصناعي إلى أكثر من 420 ppm اليوم، مما يمثل زيادة تزيد عن 50%. هذا التغيير له آثار بعيدة المدى على صحة الإنسان، حيث يؤثر تغير المناخ على كل شيء من جودة الهواء إلى أنماط الأمراض إلى الأمن الغذائي.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.2: Health Impacts of Climate Change | تأثيرات气候变化 على الصحة</h4>
+
+Climate change affects human health through multiple pathways, which can be categorized as direct, indirect, and systemic. Understanding these pathways is essential for healthcare professionals who must prepare for the health challenges of a warming world.
+
+يؤثر تغير المناخ على صحة الإنسان من خلال مسارات متعددة يمكن تصنيفها إلى مباشرة وغير مباشرة ومنهجية. فهم هذه المسارات ضروري للمهنيين الصحيين الذين يجب أن يستعدوا للتحديات الصحية لعالم متغير.
+
+<strong class="text-on-surface font-semibold">Direct Health Impacts | التأثيرات الصحية المباشرة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Heat-Related Illnesses | الأمراض المرتبطة بالحرارة</strong>: As global temperatures rise, heat-related illnesses such as heat stroke, heat exhaustion, and dehydration are becoming more common. These conditions are particularly dangerous for vulnerable populations including the elderly, children, and those with chronic medical conditions. In Saudi Arabia, where summer temperatures regularly exceed 45°C in many regions, heat-related illness is a significant public health concern. The MOH has established heat illness protocols and public awareness campaigns during the summer months.
+
+مع ارتفاع درجات الحرارة العالمية، أصبحت الأمراض المرتبطة بالحرارة مثل ضربة الشمس والإرهاق الحراري والجفاف أكثر شيوعًا. هذه الحالات خطيرة بشكل خاص على الفئات الضعيفة بما في ذلك كبار السن والأطفال وأولئك الذين يعانون من حالات طبية مزمنة. في المملكة العربية السعودية، حيث تتجاوز درجات الحرارة الصيفية 45 درجة مئوية في كثير من المناطق، تعد الأمراض المرتبطة بالحرارة مصدر قلق صحي مهم. أنشأت وزارة الصحة بروتوكولات الأمراض المرتبطة بالحرارة وحملات التوعية العامة خلال أشهر الصيف.
+
+2. <strong class="text-on-surface font-semibold">Extreme Weather Events | الظواهر المناخية المتطرفة</strong>: Climate change is increasing the frequency and intensity of extreme weather events including hurricanes, floods, droughts, and wildfires. These events cause direct injuries and deaths, as well as indirect health impacts through displacement, loss of healthcare infrastructure, and disruption of essential services. Saudi Arabia has experienced devastating floods in recent years, particularly in the western region, highlighting the need for emergency preparedness and climate resilience in healthcare facilities.
+
+يزيد تغير المناخ من تكرار وشدة الظواهر المناخية المتطرفة بما في ذلك الأعاصير والفيضانات والجفاف وحرائق الغابات. تسبب هذه الأحداث إصابات ووفيات مباشرة، وكذلك تأثيرات صحية غير مباشرة من خلال النزوح وفقدان البنية التحتية للرعاية الصحية وتعطيل الخدمات الأساسية. شهدت المملكة العربية سيول مدمرة في السنوات الأخيرة، particularly في المنطقة الغربية، مما يؤكد على الحاجة إلى الاستعداد للطوارئ والمرونة المناخية في المرافق الصحية.
+
+<strong class="text-on-surface font-semibold">Indirect Health Impacts | التأثيرات الصحية غير المباشرة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Air Quality and Respiratory Disease | جودة الهواء وأمراض الجهاز التنفسي</strong>: Climate change affects air quality through multiple mechanisms, including increased ground-level ozone formation, longer pollen seasons, and more frequent dust storms. These changes exacerbate asthma, COPD, and other respiratory conditions. In the Middle East, dust storms are a major concern, with particles capable of penetrating deep into the lungs. Saudi Arabia's air quality monitoring network is expanding to address these challenges, and healthcare providers are being trained to recognize and treat climate-related respiratory conditions.
+
+يؤثر تغير المناخ على جودة الهواء من خلال آليات متعددة، بما في ذلك تكوين الأوزون على مستوى الأرض الموسمي، ومواسم حبوب اللقاح الأطول، وعواصف الغبار المتكررة. هذه التغييرات تفاقم الربو ومرض الانسداد الرئة المزمن وحالات الجهاز التنفسي الأخرى. في الشرق الأوسط، تعد عواصف الغبار مصدر قلق رئيسي، حيث能达到 الجسيمات قادرة على اختراق أعماق الرئة. تتوسع شبكة مراقبة جودة الهواء في المملكة العربية السعودية لمعالجة هذه التحديات، ويتم تدريب مقدمي الرعاية الصحية على التعرف على حالات الجهاز التنفسي المرتبطة بالمناخ وعلاجها.
+
+2. <strong class="text-on-surface font-semibold">Vector-Borne Diseases | الأمراض المنقولة بالنواقل</strong>: Changing climate patterns are expanding the geographic range of disease-carrying insects and other vectors. Diseases such as dengue fever, malaria, and West Nile virus are appearing in regions previously too cold for their vectors. Saudi Arabia has active malaria surveillance programs in the southern regions, and healthcare workers are being trained to recognize emerging vector-borne diseases that may spread northward as temperatures rise.
+
+تؤدي أنماط المناخ المتغيرة إلى توسيع النطاق الجغرافي للحشرات الناقلة للأمراض pathogens والأدوات الأخرى. تظهر أمراض مثل حمى الضنك والملاريا وفيروس غرب النيل في مناطق كانت باردة جدًا لناقلاتها. لدى المملكة العربية السعودية برامج مراقبة نشطة للملاريا في المناطق الجنوبية، ويتم تدريب العاملين الصحيين على التعرف على الأمراض المنقولة بالنواقل الناشئة التي قد تنتشر شمالًا مع ارتفاع درجات الحرارة.
+
+3. <strong class="text-on-surface font-semibold">Food Security and Nutrition | الأمن الغذائي والتغذية</strong>: Climate change threatens agricultural productivity through increased droughts, floods, and extreme temperatures. These changes affect food availability, prices, and nutritional quality. In Saudi Arabia, where food security is a national priority under Vision 2030, climate-smart agriculture initiatives are being developed to ensure sustainable food production. Healthcare professionals are increasingly called upon to address malnutrition and diet-related diseases that may be exacerbated by climate-driven food system changes.
+
+يهدد تغير المناخ الإنتاجية الزراعية من خلال زيادة الجفاف والفيضانات ودرجات الحرارة المتطرفة. تؤثر هذه التغييرات على توافر الغذاء والأسعار والجودة الغذائية. في المملكة العربية السعودية، حيث يعد الأمن الغذائي أولوية وطنية ضمن رؤية 2030، يتم تطوير مبادرات الزراعة الذكية مناخيًا لضمان الإنتاج الغذائي المستدام. يُطلب من المهنيين الصحيين بشكل متزايد لمعالجة سوء التغذية والأمراض المرتبطة بالنظام الغذائي التي قد تفاقمها التغييرات في نظام الغذاء الناجمة عن تغير المناخ.
+
+4. <strong class="text-on-surface font-semibold">Mental Health | الصحة النفسية</strong>: Climate change has significant mental health implications, including increased anxiety about environmental degradation, grief over loss of familiar landscapes and species, and post-traumatic stress following extreme weather events. Climate anxiety is particularly pronounced among young people, and Saudi Arabia is developing mental health resources to address these emerging concerns.
+
+للتغير المناخي آثار نفسية كبيرة، بما في ذلك القلق المتزايد بشأن التدهور البيئي والحزن على فقدان المناظر الطبيعية والأنواع المألوفة واضطراب ما بعد الصدمة بعد الظواهر المناخية المتطرفة. القلق المناخي واضح بشكل خاص بين الشباب، وتقوم المملكة العربية السعودية بتطوير موارد الصحة النفسية لمعالجة هذه المخاوف الناشئة.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.3: Climate Mitigation and Adaptation | التخفيف من تغير المناخ والتكيف معه</h4>
+
+Climate mitigation refers to efforts to reduce greenhouse gas emissions or enhance carbon sinks to limit the magnitude of warming. Adaptation involves adjusting to current or expected climate change effects to minimize harm or seize beneficial opportunities. Both approaches are essential for protecting health, and healthcare professionals have roles to play in each.
+
+يشير التخفيف من تغير المناخ إلى الجهود المبذولة لتقليل انبعاثات غازات الاحتباس الحراري أو تحسين أحواض الكربون للحد من حجم الاحترار. يتضمن التكيف تعديلًا لتأثيرات تغير المناخ الحالية أو المتوقعة لتقليل الضرر أو seize الفرص المفيدة. كلا الن approached ضروريان لحماية الصحة، وللمهنيين الصحيين أدوار في كل منهما.
+
+<strong class="text-on-surface font-semibold">Healthcare Sector Mitigation | تخفيف قطاع الرعاية الصحية:</strong>
+
+The healthcare sector itself is a significant contributor to greenhouse gas emissions, accounting for approximately 4-5% of global emissions. In Saudi Arabia, healthcare facilities are beginning to measure and report their carbon footprints, with the National Environmental Health Program supporting emissions reduction initiatives. The MOH has committed to greening healthcare operations as part of Vision 2030 sustainability goals.
+
+يعد قطاع الرعاية الصحية نفسه مساهمًا كبيرًا في انبعاثات غازات الاحتباس الحراري، حيث يمثل حوالي 4-5٪ من الانبعاثات العالمية. في المملكة العربية السعودية، بدأت المرافق الصحية في قياس تقارير أقدامها الكربونية، حيث يدعم البرنامج الوطني للصحة البيئية مبادرات تقليل الانبعاثات. التزمت وزارة الصحة بتخضير عمليات الرعاية الصحية كجزء من أهداف الاستدامة في رؤية 2030.
+
+Key mitigation strategies for healthcare facilities include:
+
+استراتيجيات التخفيف الأساسية للمرافق الصحية تشمل:
+
+1. <strong class="text-on-surface font-semibold">Energy Efficiency | كفاءة الطاقة</strong>: Upgrading to LED lighting, optimizing HVAC systems, and implementing smart building technologies can significantly reduce energy consumption and associated emissions.
+
+ترقية إلى إضاءة LED، وتحسين أنظمة التدفئة والتهوية وتكييف الهواء، وتنفيذ تقنيات المباني الذكية يمكن أن يقلل بشكل كبير من استهلاك الطاقة والانبعاثات المرتبطة بها.
+
+2. <strong class="text-on-surface font-semibold">Renewable Energy | الطاقة المتجددة</strong>: Installing solar panels and other renewable energy sources can offset grid electricity emissions. Several MOH hospitals have already implemented solar installations, with plans for expansion.
+
+تثبيت ألواح شمسية ومصادر الطاقة المتجددة الأخرى يمكن أن يعوض انبعاثات الشبكة الكهربائية.Several have already implemented several MOH hospitals have already implemented several, with plans for expansion.
+
+3. <strong class="text-on-surface font-semibold">Supply Chain Optimization | تحسين سلسلة التوريد</strong>: Reducing unnecessary procurement, selecting sustainable products, and improving logistics can lower the carbon footprint of healthcare operations.
+
+تقليل المشتريات غير الضرورية، واختيار المنتجات المستدامة، وتحسين الخدمات اللوجستية يمكن أن يقلل من البصمة الكربونية لعمليات الرعاية الصحية.
+
+4. <strong class="text-on-surface font-semibold">Waste Reduction | تقليل النفايات</strong>: Implementing recycling programs, reducing single-use plastics, and properly managing medical waste can significantly lower emissions from waste handling.
+
+تنفيذ برامج إعادة التدوير، وتقليل البلاستيك一次性، وإدارة النفايات الطبية بشكل صحيح يمكن أن يقلل بشكل كبير من الانبعاثات من معالجة النفايات.
+
+<strong class="text-on-surface font-semibold">Healthcare Sector Adaptation | تكيف قطاع الرعاية الصحية:</strong>
+
+Healthcare facilities must also adapt to climate change impacts, including extreme weather events, changing disease patterns, and increased demand for climate-related care. Adaptation measures include:
+
+يجب أن تتكيف المرافق الصحية أيضًا مع تأثيرات تغير المناخ، بما في ذلك الظواهر المناخية المتطرفة وأنماط الأمراض المتغيرة والطلب المتزايد على الرعاية المتعلقة بالمناخ. تشمل تدابير التكيف:
+
+1. <strong class="text-on-surface font-semibold">Infrastructure Resilience | مرونة البنية التحتية</strong>: Designing and retrofitting facilities to withstand extreme weather, ensuring backup power and water supplies, and protecting critical equipment.
+
+تصميم وتحديث المرافق لتحمل الطقس المتطرف، وضمان إمدادات الطاقة والمياه الاحتياطية، وحماية المعدات الحرجة.
+
+2. <strong class="text-on-surface font-semibold">Climate-Sensitive Surveillance | المراقبة الحساسة للمناخ</strong>: Strengthening disease surveillance systems to detect climate-related disease outbreaks early, including vector-borne and waterborne diseases.
+
+تعزيز أنظمة مراقبة الأمراض للكشف المبكر عن تفشي الأمراض المرتبطة بالمناخ، بما في ذلك الأمراض المنقولة بالنواقل والمياه.
+
+3. <strong class="text-on-surface font-semibold">Workforce Development | تطوير القوى العاملة</strong>: Training healthcare workers to recognize and treat climate-related conditions, including heat illness, respiratory diseases from poor air quality, and mental health impacts.
+
+تدريب العاملين الصحيين على التعرف على الحالات المتعلقة بالمناخ وعلاجها، بما في ذلك الأمراض المرتبطة بالحرارة وأمراض الجهاز التنفسي من جودة الهواء الرديئة والأثر النفسي.
+
+4. <strong class="text-on-surface font-semibold">Emergency Preparedness | الاستعداد للطوارئ</strong>: Developing and regularly testing emergency response plans for climate-related disasters, including mass casualty incidents and population displacement.
+
+تطوير واختبار بانتظام خطط الاستجابة للطوارئ للكوارث المتعلقة بالمناخ، بما في ذلك الحوادث الجماعية والنزوح السكاني.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2 Deep Dive: Health Care Sector and Climate Change | الدرس الثاني approfondi: قطاع الرعاية الصحية وتغيُّر المناخ</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.1: The Healthcare Carbon Footprint | بصمة الرعاية الصحية الكربونية</h4>
+
+Healthcare's contribution to climate change represents a fundamental paradox: the sector dedicated to protecting and restoring health is simultaneously contributing to the environmental conditions that undermine population health. Understanding this footprint is the first step toward meaningful decarbonization.
+
+يمثل مساهمة الرعاية الصحية في تغير المناخ مفارقة أساسية: القطاع المخصص لحماية واستعادة الصحة يساهم في الوقت نفسه في الظروف البيئية التي تقلل من صحة السكان. فهم هذه البصمة هو第一步 نحو تخفيض الكربون الهادف.
+
+<strong class="text-on-surface font-semibold">Global Healthcare Emissions | انبعاثات الرعاية الصحية العالمية:</strong>
+
+Globally, the healthcare sector is responsible for approximately 4.4% of global greenhouse gas emissions, equivalent to 514 megatonnes of CO2 equivalent annually. This is comparable to the entire carbon footprint of a major industrial nation. The largest contributors to healthcare emissions are:
+
+على مستوى العالم، يتحمل قطاع الرعاية الصحية مسؤولية حوالي 4.4٪ من انبعاثات غازات الاحتباس الحراري العالمية، وهو ما يعادل 514 ميغاطن من ثاني أكسيد الكربون equivalent سنويًا. هذا قابل للمقارنة مع البصمة الكربونية الكاملة لأمة صناعية رئيسية. أكبر المساهمين في انبعاثات الرعاية الصحية هم:
+
+1. <strong class="text-on-surface font-semibold">Supply Chain | سلسلة التوريد</strong> (approximately 70%): The production, transportation, and disposal of medical supplies, pharmaceuticals, and equipment accounts for the majority of healthcare emissions. This includes everything from single-use gloves and syringes to complex imaging equipment and pharmaceutical products.
+
+إنتاج ونقل والتخلص من المستلزمات والأدوية والمعدات الطبية يمثل غالبية انبعاثات الرعاية الصحية. يشمل ذلك كل شيء من القفازات والحقن一次性 إلى المعدات التصويرية المعقدة والمنتجات الصيدلانية.
+
+2. <strong class="text-on-surface font-semibold">Energy Use | استخدام الطاقة</strong> (approximately 20%): Healthcare facilities are energy-intensive operations, requiring 24/7 electricity for patient care, sterilization, climate control, and equipment operation. In many countries, grid electricity is still largely generated from fossil fuels.
+
+المرافق الصحية هي عمليات كثيفة الطاقة، تتطلب كهرباء على مدار الساعة لرعاية المرضى والتعقيم والتحكم في المناخ وتشغيل المعدات. في كثير من البلدان، لا تزال شبكة الكهرباء تُولد بشكل كبير من الوقود الأحفوري.
+
+3. <strong class="text-on-surface font-semibold">Direct Activities | الأنشطة المباشرة</strong> (approximately 10%): This includes emissions from on-site fuel use, anesthesia gases, and employee commuting.
+
+يشمل ذلك الانبعاثات من استخدام الوقود في الموقع وغازات التخدير وتنقل الموظفين.
+
+<strong class="text-on-surface font-semibold">Saudi Healthcare Context | السياق الصحي السعودي:</strong>
+
+In Saudi Arabia, healthcare emissions are growing rapidly due to rapid population growth, expansion of healthcare infrastructure, and increasing healthcare utilization. The MOH operates over 2,000 healthcare facilities, with additional facilities operated by other government entities and the private sector. As part of Vision 2030's environmental sustainability goals, Saudi Arabia has committed to greening its healthcare sector.
+
+في المملكة العربية السعودية، تنمو الانبعاثات الصحية بسرعة بسبب النمو السكاني السريع وتوسيع البنية التحتية للرعاية الصحية وزيادة استخدام الرعاية الصحية. تدير وزارة الصحة أكثر من 2,000 مرفق صحي، مع مرافق إضافية تديرها الكيانات الحكومية الأخرى والقطاع الخاص. كجزء من أهداف الاستدامة البيئية في رؤية 2030، التزمت المملكة العربية السعودية بتخضير قطاعها الصحي.
+
+The Saudi Green Initiative, launched in 2021, includes commitments to reduce emissions across all sectors, including healthcare. The National Center for Environmental Compliance is working with healthcare facilities to implement emissions monitoring and reduction strategies. CBAHI accreditation standards increasingly include environmental sustainability requirements, creating incentives for facilities to decarbonize their operations.
+
+تشمل المبادرة الخضراء السعودية، launched in 2021، التزامات لتقليل الانبعاثات عبر جميع القطاعات، بما في ذلك الرعاية الصحية. يعمل المركز الوطني للامتثال البيئي مع المرافق الصحية لتنفيذ استراتيجيات مراقبة وتقليل الانبعاثات. تشمل معايير اعتماد CBAHI بشكل متزايد متطلبات الاستدامة البيئية، مما يخلق حوافز للمرافق لتخفيض الكربون في عملياتها.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.2: Six Domains of Healthcare Decarbonization | ستة مجالات تخفيض الكربون في الرعاية الصحية</h4>
+
+The NHS Greener NHS program has identified six key domains for decarbonizing healthcare operations. These domains provide a comprehensive framework for healthcare organizations to systematically reduce their carbon footprints while maintaining or improving patient care quality.
+
+حدد برنامج NHS Greener NHS six مجالات رئيسية لتخفيض الكربون في عمليات الرعاية الصحية. توفر هذه المجالات إطارًا شاملاً لمؤسسات الرعاية الصحية لتقليل بصماتها الكربونية بشكل منهجي مع الحفاظ على أو تحسين جودة رعاية المرضى.
+
+<strong class="text-on-surface font-semibold">Domain 1: Travel and Transport | المجال الأول: السفر والنقل</strong>
+
+Healthcare travel and transport includes patient and visitor travel to facilities, employee commuting, patient transfers between facilities, and logistics for medical supplies and equipment. This domain accounts for approximately 10% of healthcare carbon emissions.
+
+يشمل سفر ونقل الرعاية الصحية سفر المرضى والزوار إلى المرافق وتنقل الموظفين بين المرافق والخدمات اللوجستية للإمدادات والمعدات الطبية. يمثل هذا المجال حوالي 10٪ من انبعاثات الكربون للرعاية الصحية.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Telehealth Expansion | توسيع الرعاية الصحية عن بُعد</strong>: Expanding telehealth services reduces unnecessary travel for patients and can maintain care quality for many conditions. Saudi Arabia's Seha virtual hospital platform has expanded dramatically, particularly during and after the COVID-19 pandemic.
+
+توسيع خدمات الرعاية الصحية عن بُعد يقلل السفر غير الضروري للمرضى ويمكن أن يحافظ على جودة الرعاية للعديد من الحالات. وسعت المملكة العربية السعودية منصة المستشفى الافتراضي بشكل كبير، particularly خلال وبعد جائحة كوفيد-19.
+
+2. <strong class="text-on-surface font-semibold">Active Transport Support | دعم النقل النشط</strong>: Encouraging walking, cycling, and public transit use for employees and visitors can significantly reduce emissions. Some Saudi hospitals have implemented bike-sharing programs and improved pedestrian access.
+
+تشجيع المشي وركوب الدراجات واستخدام النقل العام للموظفين والزوار يمكن أن يقلل الانبعاثات بشكل كبير. Some have implemented some Saudi hospitals have implemented bike-sharing programs and improved pedestrian access.
+
+3. <strong class="text-on-surface font-semibold">Fleet Electrification | كهربة الأسطول</strong>: Transitioning to electric vehicles for facility vehicles, patient transport, and logistics can reduce transport emissions dramatically.
+
+التحول إلى المركبات الكهربائية لمركبات المرافق ونقل المرضى والخدمات اللوجستية يمكن أن يقلل انبعاثات النقل بشكل كبير.
+
+4. <strong class="text-on-surface font-semibold">Virtual Meetings | الاجتماعات الافتراضية</strong>: Reducing business travel through virtual meetings saves emissions while maintaining collaboration.
+
+تقليل السفر للأعمال من خلال الاجتماعات الافتراضية يوفر الانبعاثات مع الحفاظ على التعاون.
+
+<strong class="text-on-surface font-semibold">Domain 2: Supply Chain and Procurement | المجال الثاني: سلسلة التوريد والمشتريات</strong>
+
+The supply chain is the largest source of healthcare emissions, making procurement decisions a critical lever for decarbonization. Healthcare organizations can influence supplier behavior through their purchasing power and contract requirements.
+
+سلسلة التوريد هي أكبر مصدر لانبعاثات الرعاية الصحية، مما يجعل قرارات المشتريات رافعة critical لتخفيض الكربون. يمكن لمؤسسات الرعاية الصحية التأثير على سلوك الموردين من خلال قوة الشراء ومتطلبات العقود.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Sustainable Procurement Policies | سياسات المشتريات المستدامة</strong>: Requiring suppliers to meet environmental standards, preferring products with lower environmental impacts, and considering lifecycle costs rather than just purchase prices.
+
+تتطلب من الموردين تلبية المعايير البيئية، وتفضيل المنتجات ذات التأثير البيئي المنخفض، والنظر في تكاليف دورة الحياة وليس فقط أسعار الشراء.
+
+2. <strong class="text-on-surface font-semibold">Local Sourcing | التوريد المحلي</strong>: Reducing transportation emissions by sourcing products locally when possible reduces the carbon footprint of supplies.
+
+تقليل انبعاثات النقل من خلال التوريد المحلي للمنتجات عندما يكون ذلك ممكنًا يقلل البصمة الكربونية للإمدادات.
+
+3. <strong class="text-on-surface font-semibold">Circular Economy Practices | ممارسات الاقتصاد الدائري</strong>: Reducing waste through product reuse, medical device reprocessing, and packaging reduction helps minimize supply chain emissions.
+
+تقليل النفايات من خلال إعادة استخدام المنتجات وإعادة معالجة الأجهزة الطبية وتقليل التعبئة يساعد في تقليل انبعاثات سلسلة التوريد.
+
+4. <strong class="text-on-surface font-semibold">Pharmaceutical Stewardship | إدارة المستحضرات الصيدلانية</strong>: Properly managing pharmaceutical waste prevents environmental contamination and reduces emissions from manufacturing of unused medications.
+
+إدارة النفايات الصيدلانية بشكل صحيح يمنع التلوث البيئي ويقلل الانبعاثات من تصنيع الأدوية غير المستخدمة.
+
+<strong class="text-on-surface font-semibold">Domain 3: Energy and Infrastructure | المجال الثالث: الطاقة والبنية التحتية</strong>
+
+Healthcare facilities require reliable, high-quality energy to maintain safe patient care. However, energy use is a major source of emissions and a significant operating cost. Decarbonizing healthcare energy requires transitioning to renewable sources while maintaining reliability.
+
+تتطلب المرافق الصحية طاقة موثوقة وعالية الجودة للحفاظ على رعاية المرضى الآمنة. ومع ذلك، فإن استخدام الطاقة مصدر رئيسي للانبعاثات وتكلفة تشغيلية كبيرة. يتطلب تخفيض الكربون في الطاقة الصحية التحول إلى مصادر متجددة مع الحفاظ على الموثوقية.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Energy Efficiency Improvements | تحسينات كفاءة الطاقة</strong>: LED lighting upgrades, smart HVAC controls, building insulation improvements, and energy-efficient medical equipment can significantly reduce energy consumption.
+
+ترقية إضاءة LED، والتحكم الذكي في التدفئة والتهوية وتكييف الهواء، وتحسين عزل المباني، والمعدات الطبية الموفرة للطاقة يمكن أن تقلل استهلاك الطاقة بشكل كبير.
+
+2. <strong class="text-on-surface font-semibold">Renewable Energy Adoption | تبني الطاقة المتجددة</strong>: Installing solar panels, wind turbines, or purchasing renewable energy through power purchase agreements can offset grid electricity emissions.
+
+تثبيت ألواح شمسية أو turbines wind أو شراء الطاقة المتجددة من خلال اتفاقيات شراء الطاقة يمكن أن يعوض انبعاثات الشبكة الكهربائية.
+
+3. <strong class="text-on-surface font-semibold">On-Site Generation | التوليد في الموقع</strong>: Combined heat and power (CHP) systems can provide reliable, efficient power while reducing grid dependence.
+
+يمكن أن توفر أنظمة الحرارة والطاقة المشتركة (CHP) طاقة موثوقة وفعالة مع تقليل الاعتماد على الشبكة.
+
+4. <strong class="text-on-surface font-semibold">Energy Management Systems | أنظمة إدارة الطاقة</strong>: Implementing comprehensive energy monitoring and management helps identify optimization opportunities.
+
+تنفيذ المراقبة والإدارة الشاملة للطاقة يساعد في تحديد فرص التحسين.
+
+<strong class="text-on-surface font-semibold">Domain 4: Food and Nutrition | المجال الرابع: التغذية والغذاء</strong>
+
+Food systems are significant contributors to both climate change and healthcare emissions. Hospital food services can reduce their carbon footprints while also promoting healthier, more sustainable diets for patients, staff, and visitors.
+
+تساهم أنظمة الغذاء بشكل كبير في تغير المناخ وانبعاثات الرعاية الصحية. يمكن لخدمات الغذاء في المستشفيات تقليل بصماتها الكربونية مع تعزيز أنظمة غذائية صحية ومستدامة للمرضى والموظفين والزوار.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Plant-Based Options | خيارات نباتية</strong>: Increasing the availability of plant-based meals reduces emissions associated with meat and dairy production.
+
+زيادة توفر الوجبات النباتية يقلل الانبعاثات المرتبطة بإنتاج اللحوم ومنتجات الألبان.
+
+2. <strong class="text-on-surface font-semibold">Local and Seasonal Sourcing | التوريد المحلي والموسمي</strong>: Sourcing food locally and seasonally reduces transportation emissions and supports local agriculture.
+
+توريد الغذاء محليًا وموسميًا يقلل انبعاثات النقل ويدعم الزراعة المحلية.
+
+3. <strong class="text-on-surface font-semibold">Waste Reduction | تقليل النفايات</strong>: Implementing food waste reduction programs, including portion optimization, composting, and donation of surplus food.
+
+تنفيذ برامج تقليل نفايات الغذاء، بما في ذلك تحسين حجم الحصة والتسميد والتبرع الفائض من الغذاء.
+
+4. <strong class="text-on-surface font-semibold">Sustainable Procurement | المشتريات المستدامة</strong>: Selecting sustainably produced food items, including sustainably sourced fish and responsibly produced meat and dairy.
+
+اختيار المنتجات الغذائية المنتجة بشكل مستدام، بما في ذلك الأسماك المستدامة واللحوم ومنتجات الألبان المنتجة بشكل مسؤول.
+
+<strong class="text-on-surface font-semibold">Domain 5: Pharmaceuticals and Chemicals | المجال الخامس: المستحضرات الصيدلانية والكيميائيات</strong>
+
+Healthcare relies on numerous chemical substances, from pharmaceuticals to anesthetic gases to cleaning products. Many of these substances have significant environmental impacts, either in their production, use, or disposal.
+
+تعتمد الرعاية الصحية على العديد من المواد الكيميائية، من المستحضرات الصيدلانية إلى غازات التخدير ومنتجات التنظيف. many من هذه المواد لها تأثيرات بيئية كبيرة، سواء في إنتاجها أو استخدامها أو التخلص منها.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Anesthetic Gas Management | إدارة غازات التخدير</strong>: Some anesthetic gases have extremely high global warming potentials. Switching to lower-impact alternatives and improving capture and destruction systems can significantly reduce emissions.
+
+ل некоторых غازات التخدير إمكانات الاحتباس الحراري العالمية عالية للغاية. التحول إلى بدائل ذات تأثير أقل وتحسين أنظمة الالتقاط يمكن أن يقلل الانبعاثات بشكل كبير.
+
+2. <strong class="text-on-surface font-semibold">Inhaler Optimization | تحسين أجهزة الاستنشاق</strong>: Switching from metered-dose inhalers with propellants to dry powder inhalers can reduce the carbon footprint of respiratory medications by over 90%.
+
+التحول من أجهزة الاستنشاق ذات الجرعات مع مواد دافعة إلى أجهزة الاستنشاق بمسحوق جاف يمكن أن يقلل البصمة الكربونية لأدوية الجهاز التنفسي بنسبة تزيد عن 90٪.
+
+3. <strong class="text-on-surface font-semibold">Pharmaceutical Waste Management | إدارة نفايات المستحضرات الصيدلانية</strong>: Proper disposal of unused medications prevents environmental contamination and reduces the need for new production.
+
+التخلص الصحيح من الأدوية غير المستخدمة يمنع التلوث البيئي ويقلل الحاجة إلى إنتاج جديد.
+
+4. <strong class="text-on-surface font-semibold">Green Cleaning Products | منتجات التنظيف الصديقة للبيئة</strong>: Using environmentally preferable cleaning products reduces chemical impacts while maintaining hygiene standards.
+
+استخدام منتجات التنظيف الصديقة للبيئة يقلل التأثيرات الكيميائية مع الحفاظ على معايير النظافة.
+
+<strong class="text-on-surface font-semibold">Domain 6: Digital Transformation | المجال السادس: التحول الرقمي</strong>
+
+Digital health technologies offer significant opportunities for reducing healthcare's carbon footprint while improving care quality and accessibility. However, digital technologies also have environmental impacts that must be considered.
+
+تقدم تقنيات الصحة الرقمية فرصًا كبيرة لتقليل بصمة الكربون للرعاية الصحية مع تحسين جودة الرعاية وإمكانية الوصول. ومع ذلك، فإن التقنيات الرقمية لها أيضًا تأثيرات بيئية يجب مراعاتها.
+
+<strong class="text-on-surface font-semibold">Strategies for reduction | استراتيجيات التخفيض:</strong>
+
+1. <strong class="text-on-surface font-semibold">Electronic Health Records | السجلات الصحية الإلكترونية</strong>: Reducing paper-based processes and improving care coordination through EHR systems can significantly reduce resource consumption.
+
+تقليل العمليات القائمة على الورق وتحسين تنسيق الرعاية من خلال أنظمة السجلات الصحية الإلكترونية يمكن أن يقلل استهلاك الموارد بشكل كبير.
+
+2. <strong class="text-on-surface font-semibold">Telehealth Expansion | توسيع الرعاية الصحية عن بُعد</strong>: As discussed earlier, telehealth reduces travel-related emissions while maintaining care quality.
+
+كما ناقشنا سابقًا، تقلل الرعاية الصحية عن بُعد الانبعاثات المرتبطة بالسفر مع الحفاظ على جودة الرعاية.
+
+3. <strong class="text-on-surface font-semibold">Data Center Efficiency | كفاءة مركز البيانات</strong>: Using energy-efficient servers, virtualization, and cloud computing can reduce the carbon footprint of digital health infrastructure.
+
+استخدام الخوادم الفعالة من حيث الطاقة والحوسبة السحابية الافتراضية يمكن أن يقلل البصمة الكربونية للبنية التحتية الصحية الرقمية.
+
+4. <strong class="text-on-surface font-semibold">Digital Declutter | التنظيم الرقمي</strong>: Reducing unnecessary data storage and digital waste helps minimize the environmental impact of healthcare's digital footprint.
+
+تقليل التخزين الرقمي غير الضروري والنفايات الرقمية يساعد في تقليل التأثير البيئي للبصمة الرقمية للرعاية الصحية.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3 Deep Dive: Being the Change | الدرس الثالث approfondi: كن أنت التغيير</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.1: Structural Enablers for Healthcare Decarbonization | المحركات الهيكلية لتخفيض الكربون في الرعاية الصحية</h4>
+
+Achieving meaningful decarbonization in healthcare requires more than individual actions; it requires systemic changes that create enabling conditions for sustainable practices. Understanding these structural enablers is essential for healthcare leaders and professionals who want to drive change within their organizations.
+
+يتطلب تحقيق تخفيض الكربون الهادف في الرعاية الصحية أكثر من الإجراءات الفردية؛ يتطلب تغييرات منهجية تخلق ظروفًا مواتية للممارسات المستدامة. فهم هذه المحركات الهيكلية ضروري لقادة المهنيين الصحيين الذين يريدون دفع التغيير داخل مؤسساتهم.
+
+<strong class="text-on-surface font-semibold">Leadership and Governance | القيادة والحوكمة:</strong>
+
+Effective decarbonization requires visible leadership commitment, clear accountability structures, and adequate resources. Healthcare organizations should establish clear governance for sustainability, including board-level oversight, executive accountability, and dedicated sustainability staff.
+
+يتطلب التخفيض الكربوني الفعال التزامًا قياديًا واضحًا، وهياكل مساءلة كافية، وموارد كافية. يجب أن المؤسسات الصحية إنشاء حوكمة واضحة للاستدامة، بما في ذلك الإشراف على مستوى المجلس، والمسؤولية التنفيذية، والموظفين المخصصين للاستدامة.
+
+In Saudi Arabia, CBAHI accreditation standards increasingly include environmental sustainability requirements, creating a regulatory driver for decarbonization. The MOH has established sustainability committees in major hospitals, and private hospital groups are developing sustainability strategies to maintain competitive positioning.
+
+في المملكة العربية السعودية، تشمل معايير اعتماد CBAHI بشكل متزايد متطلبات الاستدامة البيئية، مما يخلق محركًا تنظيميًا للتخفيض الكربوني. أنشأت وزارة الصحة لجان الاستدامة في المستشفيات الكبرى، ومجموعات المستشفيات الخاصة تطور استراتيجيات الاستدامة للحفاظ على_POSITION التنافسي.
+
+<strong class="text-on-surface font-semibold">Financial Mechanisms | الآليات المالية:</strong>
+
+Sustainable healthcare requires appropriate financial incentives and mechanisms. This includes:
+
+تتطلب الرعاية الصحية المستدامة حوافز مالية وآليات مناسبة. يشمل ذلك:
+
+1. <strong class="text-on-surface font-semibold">Green Budgets | الموازنات الخضراء</strong>: Allocating dedicated funding for sustainability projects and staff positions.
+
+تخصيص تمويل مخصص لمشاريع ومواقع وظائف الاستدامة.
+
+2. <strong class="text-on-surface font-semibold">Operating Expenditure Optimization | تحسين نفقات التشغيل</strong>: Recognizing that sustainability investments often reduce operating costs over time, reducing perceived conflict between environmental and financial goals.
+
+إدراك أن استثمارات الاستدامة غالبًا تقلل التكاليف التشغيلية بمرور الوقت، مما يقلل المفترض الصراع بين الأهداف البيئية والمالية.
+
+3. <strong class="text-on-surface font-semibold">Value-Based Payment Alignment | محاذاة الدفع القائم على القيمة</strong>: Aligning financial incentives with sustainability outcomes as value-based payment models expand.
+
+محاذاة الحوافز المالية مع نتائج الاستدامة مع توسيع نماذج الدفع القائمة على القيمة.
+
+4. <strong class="text-on-surface font-semibold">Green Procurement Incentives | حوافز المشتريات الخضراء</strong>: Creating procurement policies that incentivize sustainable product selection.
+
+إنشاء سياسات مشتريات تحفز اختيار المنتجات المستدامة.
+
+<strong class="text-on-surface font-semibold">Workforce Development | تطوير القوى العاملة:</strong>
+
+A sustainable healthcare system requires a workforce equipped with the knowledge and skills to deliver low-carbon care. This includes:
+
+يتطلب نظام رعاية صحية مستدامة قوة عاملة مجهزة بالمعرفة والمهارات لتقديم رعاية منخفضة الكربون. يشمل ذلك:
+
+1. <strong class="text-on-surface font-semibold">Sustainability Education | تعليم الاستدامة</strong>: Integrating sustainability concepts into healthcare professional training and continuing education.
+
+دمج مفاهيم الاستدامة في تدريب المهنيين الصحيين والتعليم المستمر.
+
+2. <strong class="text-on-surface font-semibold">Green Skills Development | تطوير المهارات الخضراء</strong>: Training staff in sustainability practices specific to their roles and departments.
+
+تدريب الموظفين على ممارسات الاستدامة المحددة لأدوارهم وأقسامهم.
+
+3. <strong class="text-on-surface font-semibold">Sustainability Champions | أبطال الاستدامة</strong>: Identifying and empowering sustainability champions across departments to drive change.
+
+تحديد وتمكين أبطال الاستدامة عبر الأقسام لدفع التغيير.
+
+4. <strong class="text-on-surface font-semibold">Behavioral Change Support | دعم تغيير السلوك</strong>: Using behavior change techniques to encourage sustainable practices among staff.
+
+استخدام تقنيات تغيير السلوك لتشجيع الممارسات المستدامة بين الموظفين.
+
+<strong class="text-on-surface font-semibold">Information and Data Systems | أنظمة المعلومات والبيانات:</strong>
+
+Data-driven sustainability management requires robust systems for measuring, monitoring, and reporting environmental performance. This includes:
+
+تتطلب الإدارة القائمة على بيانات الاستدامة أنظمة قوية لقياس ومراقبة والإبلاغ عن الأداء البيئي. يشمل ذلك:
+
+1. <strong class="text-on-surface font-semibold">Carbon Accounting Systems | أنظمة محاسبة الكربون</strong>: Implementing systems to track organizational carbon footprints.
+
+تنفيذ أنظمة لتتبع بصمة الكربون المؤسسية.
+
+2. <strong class="text-on-surface font-semibold">Sustainability Dashboards | لوحات معلومات الاستدامة</strong>: Creating visual displays of sustainability performance for staff and leadership.
+
+إنشاء شاشات عرض مرئية لأداء الاستدامة للموظفين والقيادة.
+
+3. <strong class="text-on-surface font-semibold">Benchmarking Platforms | منصات المعايرة</strong>: Comparing performance against peer institutions and best practices.
+
+مقارنة الأداء مع المؤسسات الزميل وأفضل الممارسات.
+
+4. <strong class="text-on-surface font-semibold">Target-Setting Tools | أدوات تحديد الأهداف</strong>: Using data to set meaningful, science-based reduction targets.
+
+استخدام البيانات لتعيين أهداف reductions ذات جدوى وعلمية.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.2: Implementing Decarbonization Projects | تنفيذ مشاريع التخفيض الكربوني</h4>
+
+Translating decarbonization concepts into action requires systematic project implementation using established quality improvement methodologies. The IHI Model for Improvement provides a framework for testing and scaling changes.
+
+يتطلب ترجمة مفاهيم التخفيض الكربوني إلى إجراء تنفيذي منهجي للمشروع باستخدام منهجيات تحسين الجودة المثبتة. يوفر نموذج تحسين IHI إطارًا لاختبار وتوسيع التغييرات.
+
+<strong class="text-on-surface font-semibold">Project Planning | تخطيط المشروع:</strong>
+
+Effective decarbonization projects begin with thorough planning:
+
+تبدأ مشاريع التخفيض الكربوني الفعال بتخطيط شامل:
+
+1. <strong class="text-on-surface font-semibold">Baseline Measurement | قياس خط الأساس</strong>: Quantify current emissions using established carbon accounting methodologies.
+
+قياس الانبعاثات الحالية باستخدام منهجيات محاسبة الكربون المثبتة.
+
+2. <strong class="text-on-surface font-semibold">Opportunity Identification | تحديد الفرص</strong>: Identify high-impact opportunities for emission reductions using data analysis and staff input.
+
+تحديد فرص عالية التأثير لتقليل الانبعاثات باستخدام تحليل البيانات ومدخلات الموظفين.
+
+3. <strong class="text-on-surface font-semibold">Stakeholder Alignment | محاذاة أصحاب مصلحة</strong>: Engage key stakeholders including clinical staff, operations, finance, and leadership in project planning.
+
+إشراك أصحاب المصلحة الرئيسيين بما في ذلك الموظفين السريريين والعمليات والتمويل والقيادة في تخطيط المشروع.
+
+4. <strong class="text-on-surface font-semibold">Resource Planning | تخطيط الموارد</strong>: Secure necessary funding, staff time, and technical expertise for project implementation.
+
+تأمين التمويل اللازم ووقت الموظفين والخبرة التقنية لتنفيذ المشروع.
+
+5. <strong class="text-on-surface font-semibold">Timeline Development | تطوير الجدول الزمني</strong>: Create realistic timelines with clear milestones and accountability.
+
+إنشاء جداول زمنية واقعية مع معالم ومسؤوليات واضحة.
+
+<strong class="text-on-surface font-semibold">PDSA Implementation | تنفيذ PDSA:</strong>
+
+Using the Plan-Do-Study-Act cycle allows teams to test changes on a small scale before broader implementation:
+
+يتيح استخدام دورة Plan-Do-Study-Act للفرق اختبار التغييرات على نطاق صغير قبل التنفيذ الأوسع:
+
+1. <strong class="text-on-surface font-semibold">Plan | الخطة</strong>: Design the specific change to be tested, including what will be done, who will do it, and how results will be measured.
+
+تصميم التغيير المحدد المراد اختباره، بما في ذلك ما سيتم فعله ومن سيفعله وكيف ستقاس النتائج.
+
+2. <strong class="text-on-surface font-semibold">Do | التنفيذ</strong>: Implement the change on a small scale, documenting what happens and any unexpected issues.
+
+تنفيذ التغيير على نطاق صغير، وتوثيق ما يحدث وأي مشاكل غير متوقعة.
+
+3. <strong class="text-on-surface font-semibold">Study | الدراسة</strong>: Analyze the results compared to expectations, including what worked well and what did not.
+
+تحليل النتائج مقارنة بالتوقعات، بما في ذلك ما نجح وما لم ينجح.
+
+4. <strong class="text-on-surface font-semibold">Act | الإجراء</strong>: Decide whether to adopt, adapt, or abandon the change based on results.
+
+تحديد ما إذا كان يجب تبنّي التغيير أو تكييفه أو التخلي عنه بناءً على النتائج.
+
+<strong class="text-on-surface font-semibold">Scaling Success | توسيع النجاح:</strong>
+
+When testing demonstrates improvement, systematic scaling processes help spread successful changes across the organization:
+
+عندما يُظهر الاختبار تحسنًا، تساعد عمليات التوسيع المنهجية في نشر التغييرات الناجحة عبر المؤسسة:
+
+1. <strong class="text-on-surface font-semibold">Standardization | التوحيد</strong>: Develop standard work processes that embed the change into routine operations.
+
+تطوير عمليات عمل قياسية تدمج التغيير في العمليات الروتينية.
+
+2. <strong class="text-on-surface font-semibold">Training | التدريب</strong>: Train all relevant staff on the new processes.
+
+تدريب جميع الموظفين المعنيين على العمليات الجديدة.
+
+3. <strong class="text-on-surface font-semibold">Monitoring | المراقبة</strong>: Continue measuring to ensure the change is maintained and looking for further improvement opportunities.
+
+الاستمرار في القياس للتأكد من الحفاظ على التغيير والبحث عن فرص تحسين إضافية.
+
+4. <strong class="text-on-surface font-semibold">Spreading | النشر</strong>: Document and share lessons learned to facilitate adoption in other departments or facilities.
+
+توثيق ومشاركة الدروس المستفادة لتسهيل التبني في أقسام أو مرافق أخرى.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi-Specific Case Studies | دراسات الحالة الخاصة بالسعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 1: King Abdullah Medical City Decarbonization Journey | دراسة حالة 1: رحلة تخفيض الكربون في مدينة الملك عبدالله الطبية</h4>
+
+<strong class="text-on-surface font-semibold">Background | الخلفية:</strong>
+
+King Abdullah Medical City in Riyadh implemented a comprehensive decarbonization program as part of Saudi Arabia's sustainability commitments under Vision 2030. The facility serves over 1 million patients annually and had a significant carbon footprint.
+
+نفذت مدينة الملك عبدالله الطبية في الرياض برنامجًا شاملاً للتخفيض الكربوني كجزء من التزامات الاستدامة في المملكة العربية السعودية ضمن رؤية 2030. تخدم المنشأة أكثر من مليون مريض سنويًا وكان لها بصمة كربونية كبيرة.
+
+<strong class="text-on-surface font-semibold">Interventions | التدخلات:</strong>
+
+1. <strong class="text-on-surface font-semibold">Solar Installation | تركيب الألواح الشمسية</strong>: Installed 5MW solar panel system on facility rooftops and parking structures, offsetting approximately 30% of grid electricity consumption.
+
+ تركيب نظام ألواح شمسية بقدرة 5 ميغاواط على أسطح المرافق ومواقف السيارات، مما يعوض حوالي 30٪ من استهلاك الشبكة الكهربائية.
+
+2. <strong class="text-on-surface font-semibold">LED Lighting Retrofit | ترقية إضاءة LED</strong>: Replaced all fluorescent and incandescent lighting with LED fixtures, reducing lighting energy consumption by 60%.
+
+استبدال جميع الإضاءة الفلورية والمتوهجة بتركيبات LED، مما يقلل استهلاك طاقة الإضاءة بنسبة 60٪.
+
+3. <strong class="text-on-surface font-semibold">Chiller Optimization | تحسين التبريد</strong>: Implemented smart chiller management system reducing HVAC energy consumption by 25%.
+
+تنفيذ نظام إدارة التبريد الذكي مما يقلل استهلاك طاقة التدفئة والتهوية وتكييف الهواء بنسبة 25٪.
+
+4. <strong class="text-on-surface font-semibold">Supply Chain Initiative | مبادرة سلسلة التوريد</strong>: Implemented sustainable procurement policies, reducing supply chain emissions by 15% through local sourcing and sustainable product selection.
+
+تنفيذ سياسات المشتريات المستدامة، مما يقلل انبعاثات سلسلة التوريد بنسبة 15٪ من خلال التوريد المحلي واختيار المنتجات المستدامة.
+
+5. <strong class="text-on-surface font-semibold">Waste Management Program | برنامج إدارة النفايات</strong>: Implemented comprehensive waste segregation and recycling program, diverting 40% of waste from landfill.
+
+تنفيذ برنامج شامل لفرز النفايات وإعادة التدوير، مما يحول 40٪ من النفايات عن المكب.
+
+<strong class="text-on-surface font-semibold">Results | النتائج:</strong>
+
+- 35% reduction in total carbon emissions within 3 years
+- Energy cost savings of SAR 12 million annually
+- Recognition as a model facility for sustainability in Saudi healthcare
+- 35٪ reduction in total carbon emissions within 3 years
+- وفورات في تكاليف الطاقة بقيمة 12 مليون ريال سنويًا
+- الاعتراف كنموذج للاستدامة في الرعاية الصحية السعودية
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 2: PHC Cluster Green Initiative | دراسة حالة 2: مبادرة التجمع الصحي الأخضر للرعاية الأولية</h4>
+
+<strong class="text-on-surface font-semibold">Background | الخلفية:</strong>
+
+A primary healthcare cluster in the Eastern Province implemented a green initiative focusing on travel reduction, digital transformation, and operational efficiency. The cluster operates 15 PHC centers serving a population of 350,000.
+
+نفذ تجمع رعاية صحية أولي في المنطقة الشرقية مبادرة خضراء تركز على تقليل السفر والتحول الرقمي وكفاءة التشغيل. يدير التجمع 15 مركز رعاية أولية يخدمون سكان 350,000.
+
+<strong class="text-on-surface font-semibold">Interventions | التدخلات:</strong>
+
+1. <strong class="text-on-surface font-semibold">Telehealth Expansion | توسيع الرعاية الصحية عن بُعد</strong>: Implemented telehealth services for chronic disease follow-up, specialist consultations, and mental health services. 40% of appropriate visits now conducted virtually.
+
+تنفيذ خدمات الرعاية الصحية عن بُعد لمتابعة الأمراض المزمنة والاستشارات المتخصصة وخدمات الصحة النفسية. يُجرى الآن 40٪ من الزيارات المناسبة افتراضيًا.
+
+2. <strong class="text-on-surface font-semibold">Remote Patient Monitoring | مراقبة المرضى عن بُعد</strong>: Implemented remote monitoring for diabetic and hypertensive patients, reducing unnecessary facility visits.
+
+تنفيذ المراقبة عن بُعد لمرضى السكري وارتفاع ضغط الدم، مما يقلل الزيارات غير الضرورية للمرافق.
+
+3. <strong class="text-on-surface font-semibold">Green Building Certification |_certification المبنى الأخضر</strong>: Renovated facilities to achieve LEED certification standards, including improved insulation, solar water heating, and water-efficient fixtures.
+
+تجديد المرافق لتحقيق معايير شهادة LEED، بما في ذلك تحسين العزل والتدفئة الشمسية والتركيبات الموفرة للمياه.
+
+4. <strong class="text-on-surface font-semibold">Active Transport Program | برنامج النقل النشط</strong>: Implemented bike-sharing program and improved walking access to facilities, particularly important given the extreme summer heat requiring shaded pathways and cooling stations during cooler months.
+
+تنفيذ برنامج مشاركة الدراجات وتحسين الوصول المشي للمرافق، خاصة نظرًا لحرارة الصيف الشديدة التي تتطلب مسارات مظللة ومحطات تبريد خلال الأشهر الأكثر برودة.
+
+<strong class="text-on-surface font-semibold">Results | النتائج:</strong>
+
+- 28% reduction in patient and staff travel emissions
+- 50% reduction in unnecessary PHC visits through remote monitoring
+- 20% energy cost reduction across the cluster
+- 28٪ reduction in patient and staff travel emissions
+- 50٪ reduction in unnecessary PHC visits through remote monitoring
+- 20٪ reduction in energy costs across the cluster
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Resources and Tools | موارد وأدوات إضافية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Checklist for Healthcare Facility Decarbonization | قائمة التحقق من تخفيض الكربون لمرافق الرعاية الصحية</h4>
+
+<strong class="text-on-surface font-semibold">Leadership and Governance | القيادة والحوكمة</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Board-level sustainability committee established | إنشاء لجنة استدامة على مستوى مجلس الإدارة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Executive sponsor identified for sustainability initiatives | تحديد الراعي التنفيذي لمبادرات الاستدامة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainability staff position created and filled | إنشاء وتعبئة وظيفة موظف الاستدامة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Annual sustainability budget allocated | تخصيص ميزانية استدامة سنوية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainability goals integrated into organizational strategic plan | دمج أهداف الاستدامة في الخطة الاستراتيجية المؤسسية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainability performance included in leadership performance evaluation | تضمين أداء الاستدامة في تقييم أداء القيادة</span></div>
+
+<strong class="text-on-surface font-semibold">Energy and Infrastructure | الطاقة والبنية التحتية</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Comprehensive energy audit completed | إجراء تدقيق طاقة شامل</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Energy efficiency improvements implemented in top 3 energy-consuming systems | تنفيذ تحسينات كفاءة الطاقة في أعلى 3 أنظمة مستهلكة للطاقة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Renewable energy assessment completed | إجراء تقييم الطاقة المتجددة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Solar potential assessed for all available roof and parking areas | تقييم الإمكانات الشمسية لجميع أسطح ومواقف السيارات المتاحة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Energy management system implemented | تنفيذ نظام إدارة الطاقة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Staff trained on energy-efficient practices | تدريب الموظفين على الممارسات الموفرة للطاقة</span></div>
+
+<strong class="text-on-surface font-semibold">Supply Chain and Procurement | سلسلة التوريد والمشتريات</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainable procurement policy developed and approved | تطوير واعتماد سياسة المشتريات المستدامة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Supplier environmental criteria established | إنشاء معايير بيئية للموردين</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Top 20 suppliers assessed for environmental performance | تقييم الأداء البيئي لأفضل 20 موردًا</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Local sourcing opportunities identified | تحديد فرص التوريد المحلي</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Product lifecycle considerations integrated into procurement decisions | دمج اعتبارات دورة الحياة في قرارات المشتريات</span></div>
+
+<strong class="text-on-surface font-semibold">Travel and Transport | السفر والنقل</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Travel needs assessment completed | تقييم احتياجات السفر</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Telehealth services expanded for appropriate visit types | توسيع خدمات الرعاية الصحية عن بُعد لأنواع الزيارات المناسبة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Electric vehicle charging infrastructure assessed | تقييم بنية التحتية لشحن المركبات الكهربائية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Active transport options improved for staff and patients | تحسين خيارات النقل النشط للموظفين والمرضى</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Logistics optimization completed for supplies and services | تحسين الخدمات اللوجستية للإمدادات والخدمات</span></div>
+
+<strong class="text-on-surface font-semibold">Food and Nutrition | التغذية والغذاء</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Food service carbon footprint measured | قياس البصمة الكربونية لخدمة الغذاء</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Plant-based meal options increased by 20% | زيادة خيارات الوجبات النباتية بنسبة 20٪</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Local and seasonal sourcing targets established | تحديد أهداف التوريد المحلي والموسمي</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Food waste measurement and reduction program implemented | تنفيذ برنامج قياس وتقليل نفايات الغذاء</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainable food procurement criteria developed | تطوير معايير المشتريات الغذائية المستدامة</span></div>
+
+<strong class="text-on-surface font-semibold">Pharmaceuticals and Chemicals | المستحضرات الصيدلانية والكيميائيات</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Anesthetic gas usage reviewed and lower-impact alternatives considered | مراجعة استخدام غازات التخدير والنظر في بدائل ذات تأثير أقل</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Inhaler carbon footprint assessed and optimization opportunities identified | تقييم البصمة الكربونية لأجهزة الاستنشاق وتحديد فرص التحسين</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Pharmaceutical waste management program strengthened | تعزيز برنامج إدارة النفايات الصيدلانية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Green cleaning product alternatives evaluated | تقييم بدائل منتجات التنظيف الصديقة للبيئة</span></div>
+
+<strong class="text-on-surface font-semibold">Digital and Data | الرقمي والبيانات</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Digital infrastructure energy consumption assessed | تقييم استهلاك الطاقة للبنية التحتية الرقمية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Data center efficiency improvements implemented | تنفيذ تحسينات كفاءة مركز البيانات</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Digital waste reduction initiatives launched | إطلاق مبادرات تقليل النفايات الرقمية</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Sustainability data collection and reporting system implemented | تنفيذ نظام جمع البيانات والإبلاغ عن الاستدامة</span></div>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Glossary | معجم موسع</h3>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Anthropogenic emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات البشرية المنشأ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Emissions caused by human activities</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Carbon footprint</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البصمة الكربونية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Total greenhouse gas emissions caused by an individual, organization, or product</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Carbon neutral</td><td class="px-sm py-xs text-body-md text-on-surface-variant">محايد الكربون</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Achieving net-zero carbon emissions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Decarbonization</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخفيض الكربون</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Reducing carbon intensity of activities</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Climate resilience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المرونة المناخية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability to anticipate and respond to climate impacts</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 1 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الأول</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Direct emissions from owned or controlled sources</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 2 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثاني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Indirect emissions from purchased electricity, steam, heating, and cooling</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 3 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثالث</td><td class="px-sm py-xs text-body-md text-on-surface-variant">All other indirect emissions in the value chain</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Global warming potential</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إمكانات الاحتباس الحراري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure of how much energy 1 ton of a gas absorbs relative to CO2</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Net zero</td><td class="px-sm py-xs text-body-md text-on-surface-variant">صافي الصفر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Balancing emissions produced and emissions removed</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 1 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الأول</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Direct emissions from owned or controlled sources</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 2 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثاني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Indirect emissions from purchased electricity, steam, heating, and cooling</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 3 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثالث</td><td class="px-sm py-xs text-body-md text-on-surface-variant">All other indirect emissions in the value chain</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Just transition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحول العادل</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ensuring climate action is fair and inclusive</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Climate adaptation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التكيف المناخي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Adjusting to current or expected climate change effects</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Climate mitigation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التخفيف المناخي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Reducing or preventing greenhouse gas emissions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Green healthcare</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية الصحية الخضراء</td><td class="px-sm py-xs text-body-md text-on-surface-variant">environmentally sustainable healthcare practices</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Circular economy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاقتصاد الدوار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Economic system aimed at eliminating waste and持续 resource use</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 1 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الأول</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Direct emissions from owned or controlled sources</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 2 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثاني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Indirect emissions from purchased electricity, steam, heating, and cooling</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 3 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثالث</td><td class="px-sm py-xs text-body-md text-on-surface-variant">All other indirect emissions in the value chain</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Life cycle assessment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تقييم دورة الحياة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Method for assessing environmental impacts of a product or process</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Science-based targets</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأهداف القائمة على العلوم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Emission reduction targets aligned with climate science</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 1 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الأول</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Direct emissions from owned or controlled sources</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 2 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثاني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Indirect emissions from purchased electricity, steam, heating, and cooling</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scope 3 emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات النطاق الثالث</td><td class="px-sm py-xs text-body-md text-on-surface-variant">All other indirect emissions in the value chain</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.3: Implementing Change Management for Decarbonization | تنفيذ إدارة التغيير لتخفيض الكربون</h3>
+
+Successful decarbonization requires effective change management that addresses both the technical and human dimensions of transformation. Healthcare organizations must navigate multiple challenges including staff resistance, resource constraints, and competing priorities.
+
+يتطلب تخفيض الكربون الناجح إدارة تغيير فعالة تعالج الأبعاد التقنية والبشرية للتحول. يجب على المؤسسات الصحية مواجهة تحديات متعددة بما في ذلك مقاومة الموظفين وقيود الموارد والأولويات المتنافسة.
+
+<strong class="text-on-surface font-semibold">Change Management Framework for Sustainability | إطار إدارة التغيير للاستدامة:</strong>
+
+The ADKAR model provides a useful framework for understanding the human side of change in decarbonization initiatives:
+
+يوفر نموذج ADKAR إطارًا مفيدًا لفهم الجانب البشري من التغيير في مبادرات تخفيض الكربون:
+
+<strong class="text-on-surface font-semibold">A - Awareness (الوعي)</strong>: Building understanding of why decarbonization is necessary and urgent
+- Communicate the climate crisis and healthcare's role
+- Share the environmental impact of healthcare operations
+- Connect sustainability to organizational mission and values
+
+<strong class="text-on-surface font-semibold">D - Desire (الرغبة)</strong>: Creating motivation and buy-in among staff
+- Emphasize co-benefits (health, cost savings, professional development)
+- Involve staff in planning and implementation
+- Address concerns and perceived barriers
+
+<strong class="text-on-surface font-semibold">K - Knowledge (المعرفة)</strong>: Providing skills and information needed to act
+- Training on sustainability practices
+- Education on low-carbon care pathways
+- Sharing best practices and success stories
+
+<strong class="text-on-surface font-semibold">A - Ability (القدرة)</strong>: Enabling implementation through resources and support
+- Providing tools and equipment
+- Removing practical barriers
+- Ensuring time and support for new practices
+
+<strong class="text-on-surface font-semibold">R - Reinforcement (التعزيز)</strong>: Sustaining change through incentives and recognition
+- Recognizing sustainability achievements
+- Celebrating progress and milestones
+- Embedding sustainability in performance management
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Leading Through Change | القيادة خلال التغيير</h4>
+
+Healthcare leaders play a critical role in driving decarbonization. Their responsibilities include:
+
+يلعب القادة الصحيون دورًا حاسمًا في دفع تخفيض الكربون. تشمل مسؤولياتهم:
+
+1. <strong class="text-on-surface font-semibold">Articulating the Vision | صياغة الرؤية</strong>: Clearly communicating the sustainability vision and its connection to organizational mission and patient care priorities
+
+2. <strong class="text-on-surface font-semibold">Modeling the Way | نمذجة الطريق</strong>: Demonstrating personal commitment to sustainable practices, making visible changes in their own behaviors and decision-making
+
+3. <strong class="text-on-surface font-semibold">Empowering Others | تمكين الآخرين</strong>: Creating conditions that enable staff to contribute, providing resources, authority, and recognition for sustainability initiatives
+
+4. <strong class="text-on-surface font-semibold">Building Coalitions | بناء coalitions</strong>: Engaging internal and external stakeholders, building support across the organization and with partners
+
+5. <strong class="text-on-surface font-semibold">Persevering Through Challenges | المثابرة خلال التحديات</strong>: Maintaining commitment through obstacles and setbacks, celebrating progress while acknowledging difficulties
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.4: Measurement and Continuous Improvement | القياس والتحسين المستمر</h3>
+
+Decarbonization requires robust measurement systems to track progress, identify improvement opportunities, and demonstrate results. Measurement supports accountability, enables learning, and maintains momentum.
+
+يتطلب تخفيض الكربون أنظمة قياس قوية لتتبع التقدم وتحديد فرص التحسين وإظهار النتائج. يدعم القياس المساءلة ويتيح التعلم ويحافظ على الزخم.
+
+<strong class="text-on-surface font-semibold">Key Metrics for Healthcare Decarbonization | المقاييس الرئيسية لتخفيض الكربون في الرعاية الصحية:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Metric Category</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الفئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Specific Measures</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المقاييس المحددة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Target Setting</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد الهدف</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانبعاثات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Total GHG emissions (tCO2e)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انبعاثات غازات الاحتباس الحراري الإجمالية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Science-based targets</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أهداف قائمة على العلوم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Energy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الطاقة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Energy intensity (kWh/m²)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">شدة الطاقة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Year-over-year reduction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التخفيض سنة بعد سنة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Waste</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النفايات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Waste diversion rate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معدل تحويل النفايات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">75% diversion</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحويل 75%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Water</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المياه</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Water intensity (L/patient day)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">شدة المياه</td><td class="px-sm py-xs text-body-md text-on-surface-variant">20% reduction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخفيض 20%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Supply chain</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سلسلة التوريد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainable procurement %</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المشتريات المستدامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">50% sustainable</td><td class="px-sm py-xs text-body-md text-on-surface-variant">50% مستدام</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Travel</td><td class="px-sm py-xs text-body-md text-on-surface-variant">السفر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient travel emissions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انبعاثات سفر المرضى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">30% reduction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخفيض 30%</td></tr>
+
+<strong class="text-on-surface font-semibold">Data Collection and Reporting Systems | أنظمة جمع البيانات والإبلاغ:</strong>
+
+Effective measurement requires systematic data collection and reporting processes:
+
+يتطلب القياس الفعال عمليات منهجية لجمع البيانات والإبلاغ:
+
+1. <strong class="text-on-surface font-semibold">Establish data collection protocols | إنشاء بروتوكولات جمع البيانات</strong>: Define what data to collect, how, and how often
+
+2. <strong class="text-on-surface font-semibold">Build data infrastructure | بناء البنية التحتية للبيانات</strong>: Implement systems for capturing and storing sustainability data
+
+3. <strong class="text-on-surface font-semibold">Standardize calculation methods | توحيد طرق الحساب</strong>: Use established methodologies (Greenhouse Gas Protocol) for consistent measurement
+
+4. <strong class="text-on-surface font-semibold">Report regularly | الإبلاغ بانتظام</strong>: Establish regular reporting cycles (monthly, quarterly, annually) to track progress
+
+5. <strong class="text-on-surface font-semibold">Use data for improvement | استخدام البيانات للتحسين</strong>: Translate data into actionable insights for operational improvements
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.5: Maintaining Momentum and Addressing Setbacks | الحفاظ على الزخم ومعالجة الانتكاسات</h3>
+
+Decarbonization is a long-term journey that will encounter obstacles and setbacks. Maintaining momentum requires anticipating challenges and developing strategies to address them.
+
+تخفيض الكربون رحلة طويلة المدى ستواجه عقبات وانتكاسات. الحفاظ على الزخم يتطلب توقع التحديات وتطوير استراتيجيات لمعالجتها.
+
+<strong class="text-on-surface font-semibold">Common Challenges and Solutions | التحديات الشائعة والحلول:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Challenge</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحدي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Solution</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحل</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Competing priorities</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأولويات المتنافسة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Embed sustainability in strategic plan and regular review</td><td class="px-sm py-xs text-body-md text-on-surface-variant">دمج الاستدامة في الخطة الاستراتيجية والمراجعة المنتظمة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Resource constraints</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قيود الموارد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Identify quick wins with minimal cost and build business case for larger investments</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد الانتصارات السريعة بتكلفة منخفضة وبناء جدوى للاستثمارات الأكبر</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff resistance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مقاومة الموظفين</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Engage staff early, address concerns, and demonstrate benefits for them</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إشراك الموظفين مبكرًا ومعالجة المخاوف وإظهار الفوائد لهم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Lack of expertise</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نقص الخبرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Build internal capacity through training and external support</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بناء القدرات الداخلية من خلال التدريب والدعم الخارجي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Technology limitations</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قيود التكنولوجيا</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Focus on low-tech solutions and advocate for system upgrades</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التركيز على الحلول منخفضة التكنولوجيا والدفاع عن ترقيات النظام</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Leadership changes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تغييرات القيادة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Document progress and build institutional support</td><td class="px-sm py-xs text-body-md text-on-surface-variant">توثيق التقدم وبناء الدعم المؤسسي</td></tr>
+</table></div>
+<strong class="text-on-surface font-semibold">Sustaining Commitment | الحفاظ على الالتزام:</strong>
+
+Long-term sustainability requires ongoing commitment and reinforcement:
+
+يتطلب الاستدامة طويلة المدى التزامًا مستمرًا وتعزيزًا:
+
+1. <strong class="text-on-surface font-semibold">Regular communication | التواصل المنتظم</strong>: Keep sustainability visible through newsletters, meetings, and communications
+
+2. <strong class="text-on-surface font-semibold">Progress celebration | الاحتفال بالإنجاز</strong>: Recognize and celebrate milestones and achievements
+
+3. <strong class="text-on-surface font-semibold">Learning from setbacks | التعلم من الانتكاسات</strong>: Treat setbacks as learning opportunities, not failures
+
+4. <strong class="text-on-surface font-semibold">Continuous improvement | التحسين المستمر</strong>: Maintain focus on ongoing improvement, not just end goals
+
+5. <strong class="text-on-surface font-semibold">Building institutional culture | بناء الثقافة المؤسسية</strong>: Integrate sustainability into organizational culture and identity
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.6: Advanced Topics in Healthcare Decarbonization | موضوعات متقدمة في تخفيض الكربون في الرعاية الصحية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Climate Resilience and Adaptation | المرونة والتكيف المناخي</h4>
+
+As climate change accelerates, healthcare facilities must prepare for increasing climate-related risks. This includes both physical resilience (protecting facilities from extreme weather) and operational resilience (maintaining care delivery during climate events).
+
+مع تسارع تغير المناخ، يجب على المرافق الصحية الاستعداد لمخاطر المناخ المتزايدة. يشمل ذلك المرونة المادية (حماية المرافق من الطقس المتطرف) والمرونة التشغيلية (الحفاظ على تقديم الرعاية خلال الأحداث المناخية).
+
+<strong class="text-on-surface font-semibold">Climate Resilience Assessment | تقييم المرونة المناخية:</strong>
+
+Healthcare organizations should assess climate risks and develop resilience plans that include:
+
+يجب على المؤسسات الصحية تقييم مخاطر المناخ وتطوير خطط مرونة تشمل:
+
+- Vulnerability assessment of facilities
+- Backup power and water systems
+- Emergency preparedness for climate events
+- Supply chain resilience
+- Staff safety protocols
+- Patient care continuity plans
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Digital Health and Sustainability | الصحة الرقمية والاستدامة</h4>
+
+Digital health technologies offer both opportunities and challenges for sustainability. While digitalization can reduce some environmental impacts (less travel, paperless records), it also increases energy consumption through data centers and devices.
+
+تقدم التقنيات الرقمية الصحية فرصًا وتحديات للاستدامة. بينما يمكن للرقمنة تقليل بعض التأثيرات البيئية (Less travel, السجلات الرقمية)، إلا أنها تزيد أيضًا من استهلاك الطاقة من خلال مراكز البيانات والأجهزة.
+
+<strong class="text-on-surface font-semibold">Sustainable Digital Health | الصحة الرقمية المستدامة:</strong>
+
+Strategies for sustainable digital health include:
+- Energy-efficient data centers
+- Device lifecycle management
+- Telehealth optimization
+- Digital waste reduction
+- Green software development
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Climate Justice and Health Equity | العدالة المناخية والمساواة الصحية</h4>
+
+Climate change disproportionately affects vulnerable populations, raising important equity considerations for healthcare organizations. Addressing climate justice requires:
+
+يؤثر تغير المناخ بشكل غير متناسب على الفئات الضعيفة، مما يثير اعتبارات مساواة مهمة للمؤسسات الصحية. معالجة العدالة المناخية تتطلب:
+
+- Understanding climate health vulnerabilities in patient populations
+- Prioritizing decarbonization in facilities serving disadvantaged communities
+- Engaging community voices in climate planning
+- Addressing equity in climate adaptation
+- Building climate-resilient services for all patients
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.7: Saudi Arabia-Specific Sustainability Initiatives | مبادرات الاستدامة المحددة للمملكة العربية السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Vision 2030 Environmental Goals | الأهداف البيئية لرؤية 2030</h4>
+
+Vision 2030 includes ambitious environmental sustainability goals that provide context and momentum for healthcare decarbonization:
+
+تشمل رؤية 2030 أهداف استدامة بيئية طموحة توفر سياقًا ودافعًا لتخفيض الكربون في الرعاية الصحية:
+
+- Saudi Green Initiative: Increased vegetation and reduced pollution
+- Carbon neutrality goals: Net-zero emissions by 2060
+- Renewable energy: 50% electricity from renewables by 2030
+- Water conservation: Significant reduction in water use
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">MOH Sustainability Programs | برامج الاستدامة بوزارة الصحة</h4>
+
+The Ministry of Health has launched several sustainability initiatives:
+
+أطلقت وزارة الصحة several مبادرات استدامة:
+
+- Green hospital certification program
+- Energy efficiency requirements for new facilities
+- Sustainable procurement policies
+- Medical waste management improvements
+- Water conservation initiatives
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Private Sector Initiatives | مبادرات القطاع الخاص</h4>
+
+Private healthcare providers are also advancing sustainability:
+
+المقدمين الصحيون الخاصون أيضًا يطورون الاستدامة:
+
+- Leading hospital groups establishing sustainability targets
+- Investment in renewable energy
+- Sustainable building certifications
+- Green supply chain practices
+- Patient engagement in sustainability
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.8: Course Summary and Key Takeaways | ملخص الدورة والنقاط الرئيسية</h3>
+
+This comprehensive course on Climate and Health has provided healthcare professionals with the knowledge and tools to understand and address the climate crisis within healthcare settings. The following key takeaways summarize the essential learning:
+
+قدمت هذه الدورة الشاملة حول المناخ والصحة للمهنيين الصحيين المعرفة والأدوات لفهم ومعالجة أزمة المناخ في إعدادات الرعاية الصحية. تلخص النقاط الرئيسية التالية التعلم الضروري:
+
+<strong class="text-on-surface font-semibold">Key Learning Points | النقاط التعليمية الرئيسية:</strong>
+
+1. Climate change is a significant and growing threat to human health that requires immediate action from healthcare professionals and organizations.
+
+2. Healthcare itself contributes substantially to climate change through its carbon footprint, creating both a responsibility and an opportunity for the sector.
+
+3. The six domains of healthcare decarbonization—travel, supply chain, energy, food, pharmaceuticals, and digital—provide a comprehensive framework for action.
+
+4. Structural enablers including leadership, finance, workforce, and data systems are essential for successful implementation.
+
+5. The Model for Improvement provides a practical methodology for testing and scaling decarbonization interventions.
+
+6. Saudi Arabia's Vision 2030 and related initiatives create both mandate and opportunity for healthcare sustainability.
+
+7. Continuous measurement, learning, and improvement are essential for achieving and sustaining decarbonization goals.
+
+<strong class="text-on-surface font-semibold">Next Steps for Participants | الخطوات التالية للمشاركين:</strong>
+
+As you complete this course, consider the following actions to advance your organization's sustainability journey:
+
+أثناء إكمال هذه الدورة، فكر في الإجراءات التالية لتعزيز رحلة الاستدامة في مؤسستك:
+
+1. Conduct a baseline assessment of your facility's carbon footprint
+2. Identify one high-impact decarbonization project to initiate
+3. Engage colleagues and leadership in sustainability planning
+4. Connect with resources and support networks for healthcare sustainability
+5. Share learning and progress with your organization and peers
+6. Commit to ongoing learning and improvement in sustainable healthcare
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.9: Additional Resources and References | الموارد والمراجع الإضافية</h3>
+
+<strong class="text-on-surface font-semibold">Recommended Reading | القراءة الموصى بها:</strong>
+
+1. "Healthcare Without Harm" - Global Green and Healthy Hospitals Network resources
+2. "Lancet Countdown" annual reports on health and climate
+3. "Greener NHS" implementation guides and case studies
+4. WHO Health and Climate Change reports
+5. IHI sustainability improvement resources
+
+<strong class="text-on-surface font-semibold">Online Resources | الموارد عبر الإنترنت:</strong>
+
+- Global Green and Healthy Hospitals: www.greenhospitals.net
+- Healthcare Climate Challenge: www.healthcareclimatechallenge.org
+- NHS Greener NHS: www.england.nhs.uk/greenernhs
+- WHO Climate and Health: www.who.int/climatechange
+- IHI Sustainability Resources: www.ihi.org/sustainability
+
+<strong class="text-on-surface font-semibold">Local Resources in Saudi Arabia | الموارد المحلية في المملكة العربية السعودية:</strong>
+
+- MOH Environmental Health Department
+- Saudi Green Initiative Portal
+- CBAHI Sustainability Standards
+- Regional Environmental Agencies
+- Saudi Arabian Society for Environmental Health
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3.10: Self-Assessment and Reflection | التقييم الذاتي والتأمل</h3>
+
+<strong class="text-on-surface font-semibold">Reflection Questions | أسئلة التأمل:</strong>
+
+1. How does climate change affect your current role and patient population?
+2. What sustainability practices are already in place in your organization?
+3. What barriers do you anticipate in implementing decarbonization initiatives?
+4. How can you engage colleagues and leadership in sustainability efforts?
+5. What is one specific action you can take in the next 30 days?
+
+<strong class="text-on-surface font-semibold">Application Exercise | تمرين التطبيق:</strong>
+
+Develop a preliminary decarbonization plan for your department or facility that includes:
+- Current carbon footprint estimate (using available data or estimation)
+- Three potential improvement projects
+- Initial stakeholder engagement plan
+- Measurement approach
+- Timeline and resource needs
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Section: Climate and Health in Saudi Arabia</h3>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Context: Saudi Arabia's Climate and Health Challenges</h3>
+
+Saudi Arabia faces unique climate-related health challenges given its geographic location, climate, and population characteristics. Understanding these challenges is essential for developing appropriate responses.
+
+The Arabian Peninsula experiences extremely high summer temperatures, often exceeding 45°C in many regions. This creates significant heat-related health risks, particularly for outdoor workers, the elderly, and those with chronic conditions. Heat-related illness and mortality are significant concerns during summer months.
+
+The region also faces water scarcity challenges, with limited freshwater resources and high dependence on desalination. Water-related health impacts and the energy requirements for desalination have climate implications.
+
+Air quality challenges include dust storms, industrial emissions, and vehicle pollution. These contribute to respiratory diseases and other health impacts. Climate change may worsen some air quality challenges.
+
+The Saudi population is concentrated in urban areas, which face specific climate-related vulnerabilities including heat island effects, air pollution, and infrastructure strain.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Initiatives and Responses</h3>
+
+The Saudi government has launched several initiatives to address climate and health challenges. Understanding these initiatives helps practitioners engage effectively.
+
+The Saudi Green Initiative includes commitments to increase vegetation, reduce pollution, and protect biodiversity. Health sector involvement in this initiative is being developed.
+
+The National Center for Environmental Compliance works on environmental health issues. This includes monitoring, regulation, and capacity building.
+
+MOH has established heat illness protocols and public awareness campaigns. These include guidance for healthcare facilities and the public.
+
+Healthcare facilities are developing climate resilience plans. This includes infrastructure upgrades, emergency preparedness, and sustainable operations.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Best Practices for Healthcare Climate Action</h3>
+
+Healthcare organizations in Saudi Arabia can implement several best practices to address climate and health.
+
+First, measure your carbon footprint. Understanding your emissions is the first step to reduction. Use established methodologies and tools.
+
+Second, set targets and develop plans. Define emission reduction targets and develop implementation plans. Align with national and international goals.
+
+Third, implement energy efficiency. Audit energy use, identify efficiency opportunities, and implement improvements. Focus on high-impact areas.
+
+Fourth, engage staff. Educate and engage staff on climate action. Empower them to contribute to sustainability efforts.
+
+Fifth, engage patients and communities. Communicate about climate and health, and involve patients in sustainability initiatives.
+
+Sixth, monitor and report. Track progress and report on achievements. Use data to drive continuous improvement.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Career Development in Climate and Health</h3>
+
+Healthcare professionals interested in climate and health can pursue various development paths.
+
+Education and training in climate health is available through various programs. This includes formal degrees, certificates, and continuing education.
+
+Professional networks provide opportunities for learning and connection. This includes IHI, Global Green and Healthy Hospitals, and other organizations.
+
+Specialist roles in climate health are emerging in healthcare organizations. These roles lead sustainability and climate resilience initiatives.
+
+Research opportunities exist in climate health. This includes clinical research, implementation science, and policy research.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Final Course Summary</h3>
+
+This comprehensive course on Climate and Health has provided healthcare professionals with the knowledge and tools to understand and address the climate crisis in healthcare settings. The course covered the science of climate change, health impacts, healthcare's contribution to emissions, and strategies for decarbonization.
+
+Key learning points include the importance of understanding the climate-health nexus, the significant carbon footprint of healthcare, the six domains of healthcare decarbonization, and the structural enablers for success. The course provided practical tools for improvement including the Model for Improvement and measurement approaches.
+
+The course has addressed the specific Saudi context, including Vision 2030, MOH initiatives, CBAHI standards, and NPHIES requirements. This provides practical knowledge for Saudi healthcare settings.
+
+Implementation of climate action requires commitment, resources, and ongoing effort. The frameworks and tools provided should guide implementation.
+
+As climate change accelerates, the need for healthcare climate action becomes more urgent. Healthcare professionals have both a responsibility and an opportunity to lead in addressing this global challenge.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="13">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Code:</strong> DC 101
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dc-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="14">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dc-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/15</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-dc-101') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-dc-101', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('dc-101')) list.push('dc-101');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-dc-101') === 'true';
+    localStorage.setItem('saved-dc-101', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-dc-101') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-dc-101') === 'true';
+    localStorage.setItem('complete-dc-101', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-dc-101') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-dc-101', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'Climate and Health', slug: 'dc-101', enrolled: localStorage.getItem('enrolled-dc-101') === 'true', complete: localStorage.getItem('complete-dc-101') === 'true', quizPassed: localStorage.getItem('quiz-pass-dc-101') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-dc-101.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

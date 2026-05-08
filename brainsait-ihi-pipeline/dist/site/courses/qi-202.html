@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Addressing Small Problems to Build Safer, More Reliable Systems | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Quality Improvement</span>
+        <span class="bg-primary/10 text-primary px-sm py-1 rounded-full font-label-md text-label-md">QI-202</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">Addressing Small Problems to Build Safer, More Reliable Systems</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">QI 202: معالجة المشكلات الصغيرة لبناء أنظمة أكثر أمانًا وموثوقية</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">60</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">17 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="0">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          After completing this course, you will be able to:
+
+- Explain why system complexity requires us to take a methodical approach to system design, operation, and improvement.
+- Explain how the absence of this methodical approach will cause complex systems to fail predictably.
+- Propose specific applications of this methodical approach to the design, operation, and improvement of health care.
+<strong class="text-on-surface font-semibold">Estimated Time of Completion</strong>: 1 hour
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="1">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">English Overview</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course equips health professionals to strengthen measurement, PDSA execution, reliability, and spread of improvements while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="2">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">نظرة عامة بالعربية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في القياس، وتنفيذ دورات التحسين PDSA، والموثوقية، ونشر التحسينات مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Learning Outcomes | مخرجات التعلم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- Explain why system complexity requires us to take a methodical approach to system design, operation, and improvement.
+- Explain how the absence of this methodical approach will cause complex systems to fail predictably.
+- Propose specific applications of this methodical approach to the design, operation, and improvement of health care.
+- 1 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+- American Board of Anesthesiology (ABA)
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)
+- American Board of Plastic Surgery (ABPS)
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+- American Board of Family Medicine (ABFM) (15pts)*
+- American Board of Pediatrics (ABPed) (20pts)*
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+- <strong class="text-on-surface font-semibold">Code:</strong> QI 202
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+- <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- فهم مبادئ تحسين الجودة وتحديد فرص التحسين ذات الأولوية في بيئة العمل.
+- استخدام أدوات القياس والتحليل لمتابعة الأداء قبل وبعد التدخلات.
+- تطبيق دورات PDSA بشكل عملي مع توثيق النتائج والدروس المستفادة.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="4">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: Core Concepts</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> This lesson introduces core concepts of Addressing Small Problems to Build Safer, More Reliable Systems and how to operationalize them. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 1: المفاهيم الجوهرية</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- <strong class="text-on-surface font-semibold">Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong class="text-on-surface font-semibold">Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong class="text-on-surface font-semibold">Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong class="text-on-surface font-semibold">Local scenario:</strong> Use this course to reduce outpatient no-show impact and improve appointment access in a large urban PHC network.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- <strong class="text-on-surface font-semibold">بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong class="text-on-surface font-semibold">الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong class="text-on-surface font-semibold">الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong class="text-on-surface font-semibold">سيناريو محلي:</strong> تُستخدم الدورة من أجل تقليل أثر عدم الحضور للعيادات وتحسين إتاحة المواعيد في شبكة رعاية أولية حضرية كبيرة.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+1. <strong class="text-on-surface font-semibold">Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong class="text-on-surface font-semibold">Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong class="text-on-surface font-semibold">Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong class="text-on-surface font-semibold">Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+1. <strong class="text-on-surface font-semibold">استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong class="text-on-surface font-semibold">اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong class="text-on-surface font-semibold">مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong class="text-on-surface font-semibold">نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td></tr>
+|<hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط زمني تشغيلي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">PDSA cycle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">دورة خطط-نفّذ-ادرس-صحّح</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Process measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر قياس العملية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Balancing measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر موازنة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Reliability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموثوقية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scale-up</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التوسّع التشغيلي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Model for Improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نموذج التحسين</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">SMART goal</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الهدف الذكي SMART</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Driver diagram</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط المحركات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Outcome measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر النتائج</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Aim statement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بيان الهدف</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Change idea</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فكرة التغيير</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Spread plan</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خطة نشر التحسين</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainability plan</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خطة الاستدامة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Theory of change</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظرية التغيير</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistical process control</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الضبط الإحصائي للعمليات</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/qi-202
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- CBAHI QI Standards: https://www.cbahi.gov.sa/english/CBAHI-Standards
+- IHI QI Essentials Toolkit: https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+- MOH Saudi Health KPIs Dashboard: https://www.moh.gov.sa
+- Vision 2030 Health Transformation Program: https://www.vision2030.gov.sa/v2030/vrps/hst/
+- IHI Improvement Map: https://www.ihi.org/ImprovementMap
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Select one department and one measurable problem.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Form a multidisciplinary micro-team.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Define baseline, target, and data collection frequency.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Run at least one improvement test and document findings.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Report outcomes to quality governance and plan next-cycle spread.</span></div>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Present your improvement project charter to your department head within 30 days.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Schedule monthly data reviews with your improvement team and document decisions.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Submit a spread plan to your quality committee within 90 days of project launch.</span></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">اختيار قسم واحد ومشكلة قابلة للقياس.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تشكيل فريق مصغر متعدد التخصصات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تحديد خط الأساس والهدف وتواتر جمع البيانات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] تقديم ميثاق مشروع التحسين لرئيس القسم خلال 30 يومًا.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">جدولة مراجعات بيانات شهرية مع فريق التحسين وتوثيق القرارات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تقديم خطة نشر للجنة الجودة خلال 90 يومًا من انطلاق المشروع.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="10">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Continuing Education Credits</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          Course completion typically earns 1 Continuing Education credit. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a>
+
+See full detailsThe Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1 <em class="text-on-surface">AMA PRA Category 1 Credit(s)™</em>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+This activity is approved to award 1 credit(s) toward Certified Professional in Patient Safety (CPPS) recertification.
+
+This activity/program is approved by NAHQ® for 1 CPHQ CE credit.
+
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to:
+
+- 1 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the learner to satisfy the Lifelong Learning requirements for the American Board of Ophthalmology's Maintenance of Certification program.
+
+Successful completion of this activity, which includes participation in the evaluation component, offers Lifelong Learning (MOC Part 2 CME) point(s) for the following boards:
+
+- American Board of Anesthesiology (ABA)
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)
+- American Board of Plastic Surgery (ABPS)
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+Successful completion of this activity, which includes participation in the evaluation component, offers Self-Assessment (MOC Part 2 SA) point(s) for the following boards:
+
+- American Board of Family Medicine (ABFM) (15pts)*
+- American Board of Pediatrics (ABPed) (20pts)*
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+<em class="text-on-surface">*ABPed and ABFM diplomates are required to complete all the selected courses within an activity to collect MOC activity points.</em>
+
+It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+
+As a Jointly Accredited Organization, the Institute for Healthcare Improvement is approved to offer social work continuing education by the Association of Social Work Boards (ASWB) Approved Continuing Education (ACE) program. Organizations, not individual courses, are approved under this program. Regulatory boards are the final authority on courses accepted for continuing education credit. Social workers completing this course receive 1 general continuing education credits. 
+
+By attending QI 202 offered by the Institute for Healthcare Improvement participants may earn up to 1 ACHE Qualifying Education Hours toward initial certification or recertification of the Fellow of the American College of Healthcare Executives (FACHE) designation.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="11">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1 Deep Dive: System Complexity and Reliability | الدرس الأول approfondi: تعقيد النظام والموثوقية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.1: Understanding Healthcare Systems | فهم أنظمة الرعاية الصحية</h4>
+
+Healthcare delivery is inherently complex, involving numerous interconnected processes, multiple providers, sophisticated technology, and patients with unique needs and circumstances. This complexity creates both opportunities for error and challenges for improvement.
+
+التسليم الرعاية الصحية معقد بشكل جوهري، ويتضمن عمليات مترابطة numerous, ومقدمي خدمات متعددين، وتكنولوجيا متطورة، ومرضى avec احتياجات وظروف فريدة. يخلق هذا التعقيد فرصًا للخطأ وتحديات للتحسين.
+
+The systems view of healthcare is essential for understanding why problems persist despite good intentions and individual effort. When things go wrong, the instinct is often to blame individuals—the nurse who made an error, the doctor who missed a diagnosis, the pharmacist who dispensed the wrong medication. However, a systems perspective recognizes that errors are often the result of system failures rather than individual failures.
+
+منظور أنظمة الرعاية الصحية ضروري لفهم why تستمر المشاكل على الرغم من النوايا الجهد الفردي. عندما تسوء الأمور، غالبًا ما يكون الغريزة إلقاء اللوم على individuals—الممرض الذي ارتكب خطأ، والطبيب الذي missed التشخيص، والصيدلي الذي صرف الدواء الخطأ. ومع ذلك، recognizes منظور الأنظمة أن الأخطاء often تكون نتيجة إخفاقات النظام وليس إخفاقات فردية.
+
+<strong class="text-on-surface font-semibold">Key Systems Concepts | مفاهيم الأنظمة الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Complex adaptive systems | الأنظمة التكيفية المعقدة</strong>: Healthcare organizations are complex adaptive systems where multiple components interact in non-linear ways. These systems exhibit emergent properties that cannot be predicted from individual components alone.
+
+المؤسسات الصحية هي أنظمة تكيفية معقدة حيث تتفاعل مكونات متعددة بطرق غير خطية. display هذه الأنظمة خصائص ناشئة لا يمكن التنبؤ بها من المكونات الفردية وحدها.
+
+2. <strong class="text-on-surface font-semibold">Variation | التباين</strong>: All processes vary naturally (common cause variation), but some variation comes from special causes that need investigation. Understanding the type of variation is essential for determining appropriate responses.
+
+جميع العمليات تتباين بشكل طبيعي (تباين السبب المشترك)، لكن بعض التباين يأتي من أسباب خاصة تحتاج إلى تحقيق. فهم نوع التباين ضروري لتحديد الاستجابات المناسبة.
+
+3. <strong class="text-on-surface font-semibold">Complexity of interactions | تعقيد التفاعلات</strong>: Small changes in one part of the system can have large, unpredictable effects elsewhere. This makes it difficult to predict outcomes and easy to create unintended consequences.
+
+التغييرات الصغيرة في جزء من النظام يمكن أن يكون لها تأثيرات كبيرة وغير متوقعة في مكان آخر. هذا يجعل من الصعب التنبؤ بالنتائج ويسهل خلق عواقب غير مقصودة.
+
+4. <strong class="text-on-surface font-semibold">Buffering and redundancy | التخزين المؤقت والتكرار</strong>: Systems often have buffers and redundancies that can mask problems, making them appear stable when they are actually fragile.
+
+غالبًا لدى الأنظمة مخازن مؤقتة وتكرارات يمكن أن تحجب المشكلات، مما يجعلها تبدو مستقرة عندما تكون في الواقع هشة.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.2: The Reliability Framework | إطار الموثوقية</h4>
+
+Reliability science provides a framework for understanding and improving system performance. Reliable systems are those that consistently perform as intended, producing expected outcomes most of the time.
+
+提供 reliability science إطارًا لفهم وتحسين أداء النظام. الأنظمة الموثوقة هي those التي выполняются consistently كما هو مقصود، لإنتاج النتائج المتوقعة most of the time.
+
+<strong class="text-on-surface font-semibold">Three Levels of System Reliability | ثلاثة مستويات من موثوقية النظام:</strong>
+
+1. <strong class="text-on-surface font-semibold">Level 1 - Reliability through intention | الموثوقية من خلال النية</strong>: Processes are designed to reduce reliance on human memory and attention. Examples include protocols, checklists, and standard work.
+
+تصميم العمليات لتقليل الاعتماد على الذاكرة والاهتمام البشري. تشمل الأمثلة البروتوكولات وقوائم التحقق والعمل المعياري.
+
+2. <strong class="text-on-surface font-semibold">Level 2 - Reliability through design | الموثوقية من خلال التصميم</strong>: Processes are designed to prevent errors or make them impossible. Examples include physical constraints, forcing functions, and automation.
+
+تصميم العمليات لمنع الأخطاء أو جعلها مستحيلة. تشمل الأمثلة القيود المادية ووظائف الإلغاء والأتمتة.
+
+3. <strong class="text-on-surface font-semibold">Level 3 - Reliability through redundancy | الموثوقية من خلال التكرار</strong>: Processes include verification steps that catch errors before they reach the patient. Examples include double-checks, peer review, and redundant documentation.
+
+تتضمن عمليات خطوات التحقق catch الأخطاء قبل reach المريض. تشمل الأمثلة عمليات التحقق المزدوجة ومراجعة الأقران والتوثيق المتكرر.
+
+<strong class="text-on-surface font-semibold">Applying Reliability Concepts in Healthcare | تطبيق مفاهيم الموثوقية في الرعاية الصحية:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Application</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التطبيق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Level</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المستوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المثال</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Medication administration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إعطاء الدواء</td><td class="px-sm py-xs text-body-md text-on-surface-variant">1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Verification before administration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحقق قبل الإعطاء</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Blood transfusion</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نقل الدم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Two-person verification requirement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">متطلب التحقق من شخصين</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Falls prevention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منع السقوط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">3</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Risk assessment and hourly rounding</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تقييم المخاطر والجولات كل ساعة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Specimen labeling</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وضع العلامات على العينات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Barcode scanning verification</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحقق من مسح الرمز الشريطي</td></tr>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.3: Building More Reliable Systems | بناء أنظمة أكثر موثوقية</h4>
+
+Improving system reliability requires systematic attention to multiple dimensions of the care delivery system. This includes designing reliable processes, creating a culture that supports reliability, and building learning systems that continuously improve.
+
+يتطلب تحسين موثوقية النظام اهتمامًا منهجيًا بأبعاد متعددة من نظام تقديم الرعاية. يشمل ذلك تصميم عمليات موثوقة وخلق ثقافة تدعم الموثوقية وبناء أنظمة التعلم التي تتحسن باستمرار.
+
+<strong class="text-on-surface font-semibold">Design Principles for Reliable Systems | مبادئ التصميم للأنظمة الموثوقة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Standardize where possible | توحيد حيثما أمكن</strong>: Reduce unnecessary variation by creating standard processes for common tasks.
+
+تقليل التباين غير الضروري من خلال إنشاء عمليات معيارية للمهام الشائعة.
+
+2. <strong class="text-on-surface font-semibold">Simplify | التبسيط</strong>: Make processes as simple as possible to reduce errors.
+
+جعل العمليات بسيطة قدر الإمكان reduce الأخطاء.
+
+3. <strong class="text-on-surface font-semibold">Use constraints | استخدام القيود</strong>: Design processes that make errors impossible or very difficult.
+
+تصميم العمليات التي تجعل الأخطاء مستحيلة أو صعبة جدًا.
+
+4. <strong class="text-on-surface font-semibold">Create redundancy | إنشاء التكرار</strong>: Build in checks that catch errors before they cause harm.
+
+بناء في عمليات التحقق catch الأخطاء قبل أن تسبب ضررًا.
+
+5. <strong class="text-on-surface font-semibold">Learn from failures | التعلم من الإخفاقات</strong>: Create systems for detecting and analyzing near-misses and failures.
+
+إنشاء أنظمة للكشف عن near-misses والإخفاقات وتحليلها.
+
+6. <strong class="text-on-surface font-semibold">Design for humans | التصميم للبشر</strong>: Account for human capabilities and limitations in process design.
+
+مراعاة القدرات والقيود البشرية في تصميم العمليات.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Healthcare Reliability Case Studies | دراسات حالة الموثوقية في الرعاية الصحية السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 1: Improving Medication Safety at King Fahad Hospital | دراسة حالة 1: تحسين سلامة الأدوية في مستشفى الملك Fahad</h4>
+
+<strong class="text-on-surface font-semibold">Background | الخلفية</strong>: A 600-bed tertiary hospital in Jeddah identified medication errors as a significant patient safety concern. Analysis revealed that errors occurred at multiple points in the medication use process.
+
+<strong class="text-on-surface font-semibold">Improvement Approach | نهج التحسين:</strong>
+
+1. <strong class="text-on-surface font-semibold">Process mapping | رسم خريطة العملية</strong>: Mapped the entire medication use process from prescribing to administration, identifying 47 distinct steps and 12 potential error points.
+
+2. <strong class="text-on-surface font-semibold">Reliability design | تصميم الموثوقية</strong>: Implemented multiple reliability interventions:
+   - Computerized physician order entry (CPOE) with clinical decision support
+   - Barcode medication administration
+   - Standardized medication reconciliation process
+   - Double-check system for high-alert medications
+
+3. <strong class="text-on-surface font-semibold">Safety culture development | تطوير ثقافة السلامة</strong>: Implemented a non-punitive error reporting system and regular safety briefings.
+
+4. <strong class="text-on-surface font-semibold">Measurement and learning | القياس والتعلم</strong>: Established comprehensive measurement system including error tracking, root cause analysis, and regular safety reviews.
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Medication errors reduced by 67%
+- Near-miss reporting increased significantly, indicating improved safety culture
+- Adverse drug events reduced by 45%
+- The approach was spread to 4 other MOH hospitals
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 2: Reducing Central Line Infections in ICU | دراسة حالة 2: تقليل العدوى في القساطر المركزية بوحدة العناية المركزة</h4>
+
+<strong class="text-on-surface font-semibold">Background | الخلفية</strong>: ICU at a major hospital in Riyadh had central line-associated bloodstream infection (CLABSI) rates significantly above national benchmarks.
+
+<strong class="text-on-surface font-semibold">Improvement Approach | نهج التحسين:</strong>
+
+1. <strong class="text-on-surface font-semibold">Evidence review | مراجعة الأدلة</strong>: Implemented evidence-based practices including:
+   - Maximal barrier precautions
+   - Chlorhexidine skin antisepsis
+   - Optimal catheter site selection
+   - Daily line necessity review
+
+2. <strong class="text-on-surface font-semibold">Standardization | التوحيد</strong>: Created standardized insertion checklist and maintenance protocol.
+
+3. <strong class="text-on-surface font-semibold">Reliability engineering | هندسة الموثوقية</strong>: Implemented real-time reminders and visual cues to support compliance.
+
+4. <strong class="text-on-surface font-semibold">Empowerment | التمكين</strong>: Empowered nurses to stop procedures if breaches in technique observed.
+
+5. <strong class="text-on-surface font-semibold">Continuous monitoring | المراقبة المستمرة</strong>: Daily surveillance and weekly review of all central lines.
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- CLABSI rate reduced from 8.2 per 1,000 catheter days to 1.4
+- Zero infections achieved for 8 consecutive months
+- Estimated 12 lives saved and 4 million SAR in costs avoided annually
+- Practice adopted as standard in MOH ICU protocols
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Reliability Assessment Tool | أداة تقييم الموثوقية</h3>
+
+<strong class="text-on-surface font-semibold">Process Reliability Assessment | تقييم موثوقية العملية</strong>
+
+For each key process in your healthcare setting, assess the current reliability level and identify improvement opportunities:
+
+ لكل عملية رئيسية في إعداد الرعاية الصحية الخاص بك، قم بتقييم مستوى الموثوقية الحالية وتحديد فرص التحسين:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Process</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العملية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Current Reliability Level</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مستوى الموثوقية الحالي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Primary Concerns</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخاوف الرئيسية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement Strategies</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استراتيجيات التحسين</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient identification</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Medication administration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إعطاء الدواء</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Specimen collection</td><td class="px-sm py-xs text-body-md text-on-surface-variant">جمع العينات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Handoff communication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التواصل عند التسليم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient identification</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Fall prevention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منع السقوط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+
+<strong class="text-on-surface font-semibold">Reliability Level Definitions | تعريفات مستوى الموثوقية:</strong>
+- Level 1: Relies on human memory and attention
+- Level 2: Designed to prevent errors (constraints, forcing functions)
+- Level 3: Includes verification steps to catch errors
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">System</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النظام</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Set of interacting components that produce results</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Complexity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعقيد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Property of systems with many interconnected parts</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Reliability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموثوقية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability of a system to perform consistently as intended</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Error</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخطأ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Deviation from intended process or outcome</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Near-miss</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اقتراب من الحادث</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Event that could have caused harm but was caught</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Adverse event</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حدث ضار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Injury caused by medical care rather than disease</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Root cause analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل السبب الجذري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Method for identifying underlying causes of problems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Human factors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العوامل البشرية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Study of human capabilities and limitations in design</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Design for reliability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التصميم للموثوقية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Creating processes that minimize error</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard work</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العمل المعياري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Documented best practice for specific process</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Checklists</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قوائم التحقق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Tools to ensure all steps are completed</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Forcing function</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وظيفة الإلغاء</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Design feature that prevents certain actions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Redundancy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التكرار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Duplicate elements that provide backup</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Defensive barrier</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حاجز دفاعي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Safeguard that prevents harm</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Safety culture</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ثقافة السلامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Organizational values about safety importance</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Just culture</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الثقافة العادلة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Culture that distinguishes human error from reckless behavior</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">High reliability organization</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منظمة عالية الموثوقية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Organization that consistently prevents serious harm</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Swiss cheese model</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نموذج الجبن Swiss</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Model showing how failures align to cause harm</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Complexity theory</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظرية التعقيد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Study of complex adaptive systems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Emergent properties</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخصائص الناشئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Properties that arise from system interactions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Common cause variation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين السبب المشترك</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Natural variation inherent in processes</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Special cause variation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين السبب الخاص</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Variation due to specific identifiable causes</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Process capability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قدرة العملية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability of a process to meet specifications</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Process control</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ضبط العملية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Methods for keeping processes within acceptable limits</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistical process control</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الضبط الإحصائي للعمليات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control charts and methods for monitoring variation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط التحكم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Graph showing process performance over time</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard deviation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانحراف المعياري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure of variation in a process</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Six Sigma</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سيجما ستة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Methodology for achieving very low defect rates</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Lean</td><td class="px-sm py-xs text-body-md text-on-surface-variant">لين</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Methodology for eliminating waste</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Continuous improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحسين المستمر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ongoing effort to improve</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Plan-Do-Study-Act</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخطة-نفّذ-ادرس-صحّح</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Iterative improvement cycle</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Driver diagram</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط المحركات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual display of change logic</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Theory of change</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظرية التغيير</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Explanation of how change leads to improvement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Failure mode and effects analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل وضع الفشل وآثاره</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Proactive method for identifying potential failures</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Hazard analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل المخاطر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Method for identifying and assessing risks</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Systems thinking</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تفكير الأنظمة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Approach that considers whole system interactions</td></tr>
+</table></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 2: Systems Thinking and Healthcare Quality | تفكير الأنظمة وجودة الرعاية الصحية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">2.1 The Need for Systems Thinking in Healthcare | الحاجة للتفكير الأنظمة في الرعاية الصحية</h4>
+
+Healthcare is a complex adaptive system where multiple components interact in non-linear ways. Understanding and improving healthcare requires systems thinking that considers how parts of the system interact and influence each other.
+
+الرعاية الصحية هي نظام تكيفي معقد حيث تتفاعل مكونات متعددة بطرق غير خطية. فهم وتحسين الرعاية الصحية يتطلب تفكيرًا أنظاريًا considers كيفية تفاعل أجزاء النظام والتأثير على بعضها البعض.
+
+<strong class="text-on-surface font-semibold">Characteristics of Complex Healthcare Systems | خصائص أنظمة الرعاية الصحية المعقدة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Multi-component | متعددة المكونات</strong>: Multiple stakeholders, processes, technologies, and patients
+2. <strong class="text-on-surface font-semibold">Dynamic | ديناميكي</strong>: Constantly changing and evolving
+3. <strong class="text-on-surface font-semibold">Interconnected | مترابطة</strong>: Parts affect each other in complex ways
+4. <strong class="text-on-surface font-semibold">Emergent | ناشئ</strong>: Properties arise from interactions that cannot be predicted from parts alone
+5. <strong class="text-on-surface font-semibold">Adaptive | متكيّف</strong>: System and individuals adapt to changes and pressures
+6. <strong class="text-on-surface font-semibold">Non-linear | غير خطي</strong>: Small changes can have large effects and vice versa
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">2.2 Understanding System Behavior | فهم سلوك النظام</h4>
+
+Systems behave in predictable ways that can be understood through careful observation and analysis. Key system behaviors include:
+
+تصرف الأنظمة بطرق يمكن فهمها من خلال الملاحظة والتحليل الدقيق. include سلوكيات النظام الرئيسية:
+
+- Feedback loops (reinforcing and balancing)
+- Delays between action and effect
+- Accumulation and depletion of resources
+- Trade-offs between system goals
+- Emergence of unintended consequences
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">2.3 The Importance of Addressing System Factors | أهمية معالجة عوامل النظام</h4>
+
+Many healthcare problems persist not because of individual failures but because of system design flaws. Addressing these system factors is essential for achieving lasting improvement:
+
+تستمر many مشاكل الرعاية الصحية ليس بسبب إخفاقات فردية ولكن بسبب تصميم النظام. معالجة هذه عوامل النظام ضرورية لتحقيق تحسين دائم:
+
+- Variation in care processes and outcomes
+- Fragmented care delivery
+- Misaligned incentives
+- Inadequate information systems
+- Poorly designed work environments
+- Ineffective team communication
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 3: Process Analysis and Improvement | تحليل العملية والتحسين</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">3.1 Process Mapping and Analysis | رسم خريطة العملية وتحليلها</h4>
+
+Understanding current processes is essential for identifying improvement opportunities. Process mapping creates visual representations of work flows that reveal bottlenecks, waste, and improvement opportunities.
+
+فهم العمليات الحالية ضروري لتحديد فرص التحسين. يخلق رسم خريطة العملية تمثيلات مرئية لسير العمل reveal الاختناقات ونفايات وفرص التحسين.
+
+<strong class="text-on-surface font-semibold">Process Mapping Tools | أدوات رسم خريطة العملية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Flow Charts | مخططات التدفق</strong>: Show sequence of steps in process
+2. <strong class="text-on-surface font-semibold">Value Stream Maps | خرائط تدفق القيمة</strong>: Show flow of information, materials, and steps
+3. <strong class="text-on-surface font-semibold">Spaghetti Diagrams | مخططات السباغي</strong>: Show physical movement and distances
+4. <strong class="text-on-surface font-semibold">Swimlane Diagrams | مخططات الحارات</strong>: Show handoffs between functions
+
+<strong class="text-on-surface font-semibold">Process Analysis Questions | أسئلة تحليل العملية:</strong>
+- What steps add value for the patient?
+- What steps are waste (no value added)?
+- Where are handoffs that cause delays or errors?
+- What variation exists in how the process is performed?
+- What are the root causes of problems in the process?
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">3.2 Reducing Unnecessary Variation | تقليل التباين غير الضروري</h4>
+
+Variation in healthcare processes contributes to poor outcomes and inefficiency. While some variation is natural and acceptable, unnecessary variation should be reduced.
+
+التباين في عمليات الرعاية الصحية يساهم في نتائج Poor وعدم الكفاءة. على الرغم من أن بعض التباين طبيعي ومقبول، يجب تقليل التباين غير الضروري.
+
+<strong class="text-on-surface font-semibold">Sources of Variation | مصادر التباين:</strong>
+- Different clinician preferences and habits
+- Inconsistent protocols and guidelines
+- Variable training and experience
+- Different resources and equipment
+- Patient factors (severity, preferences)
+- System factors (policies, processes)
+
+<strong class="text-on-surface font-semibold">Strategies for Reducing Variation | استراتيجيات تقليل التباين:</strong>
+- Standardize where possible (equipment, protocols)
+- Provide decision support (guidelines, reminders)
+- Enhance training and competence
+- Improve information access
+- Use data to identify and address variation
+- Engage clinicians in improvement
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 4: High-Reliability Organizations | المنظمات عالية الموثوقية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">4.1 Characteristics of High-Reliability Organizations | خصائص المنظمات عالية الموثوقية</h4>
+
+High-reliability organizations (HROs) are those that operate in high-risk environments but consistently prevent adverse events. Healthcare organizations can learn from HRO principles to improve safety and reliability.
+
+هي organizations التي تعمل في بيئات عالية المخاطر but consistently تمنع الأحداث السلبية. يمكن لمنظمات الرعاية الصحية تعلم من مبادئ HRO لتحسين السلامة والموثوقية.
+
+<strong class="text-on-surface font-semibold">HRO Principles | مبادئ HRO:</strong>
+
+1. <strong class="text-on-surface font-semibold">Preoccupation with Failure | الانشغال بالفشل</strong>: Pay attention to near-misses and failures as opportunities to learn
+2. <strong class="text-on-surface font-semibold">Reluctance to Simplify | التردد في التبسيط</strong>: Recognize complexity and avoid oversimplification
+3. <strong class="text-on-surface font-semibold">Sensitivity to Operations | الحساسية للتشغيل</strong>: Maintain awareness of changing conditions
+4. <strong class="text-on-surface font-semibold">Commitment to Resilience | الالتزام بالمرونة</strong>: Build capacity to recover from problems
+5. <strong class="text-on-surface font-semibold">Deference to Expertise | الاحترام للخبرة</strong>: Listen to those with relevant expertise
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">4.2 Building High Reliability in Healthcare | بناء موثوقية عالية في الرعاية الصحية</h4>
+
+Healthcare organizations can develop high-reliability characteristics through systematic improvement:
+
+يمكن لمنظمات الرعاية الصحية تطوير خصائص عالية الموثوقية من خلال التحسين المنهجي:
+
+- Implement robust safety culture
+- Use standardized processes where appropriate
+- Build in redundancy for critical processes
+- Create systems for detecting and responding to problems
+- Learn from errors and near-misses
+- Engage leadership in safety
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 5: Creating and Maintaining Improvement | إنشاء والحفاظ على التحسين</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">5.1 Sustainability of Improvements | استدامة التحسينات</h4>
+
+Many healthcare improvements are not sustained over time, returning to baseline or even worsening. Ensuring sustainability requires deliberate attention and action:
+
+many لا تستمر تحسينات الرعاية الصحية بمرور الوقت، returning إلى baseline أو even worse. ضمان الاستدامة requires انتباه وإجراء مقصود:
+
+<strong class="text-on-surface font-semibold">Sustainability Factors | عوامل الاستدامة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Process embedding | دمج العملية</strong>: Changes become part of standard work
+2. <strong class="text-on-surface font-semibold">Monitoring and response | المراقبة والاستجابة</strong>: Ongoing measurement triggers action when needed
+3. <strong class="text-on-surface font-semibold">Leadership support | دعم القيادة</strong>: Continued focus and resources
+4. <strong class="text-on-surface font-semibold">Culture | الثقافة</strong>: Values and norms support maintenance
+5. <strong class="text-on-surface font-semibold">Staff engagement | إشراك الموظفين</strong>: Staff own and maintain changes
+6. <strong class="text-on-surface font-semibold">Adaptation | التكيف</strong>: Changes evolve as conditions change
+
+<strong class="text-on-surface font-semibold">Sustainability Planning | تخطيط الاستدامة:</strong>
+- Plan for sustainability from beginning of improvement
+- Identify what must continue for improvement to be maintained
+- Build sustainability into implementation approach
+- Monitor key indicators for sustainability
+- Address early signs of regression
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">5.2 Managing Performance Over Time | إدارة الأداء بمرور الوقت</h4>
+
+Sustained improvement requires ongoing performance management. This includes:
+
+يتطلب التحسين المستمر إدارة أداء مستمرة. يشمل ذلك:
+
+- Regular measurement and review
+- Setting performance targets
+- Identifying and addressing performance gaps
+- Recognizing and reinforcing high performance
+- Continuous improvement culture
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 6: Leadership for Quality | القيادة للجودة</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">6.1 Leadership Behaviors for Quality | سلوكيات القيادة للجودة</h4>
+
+Effective quality improvement requires visible, engaged leadership. Leaders set the tone, allocate resources, and model expected behaviors.
+
+يتطلب تحسين الجودة الفعال قيادة visible ومنخرطة. leaders يحددون النبرة وتخصيص الموارد ونمذجة السلوكيات المتوقعة.
+
+<strong class="text-on-surface font-semibold">Key Leadership Behaviors | سلوكيات القيادة الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Sets clear direction | تحديد اتجاه واضح</strong>: Establish quality goals and priorities
+2. <strong class="text-on-surface font-semibold">Allocates resources | تخصيص الموارد</strong>: Provide time, people, and money for improvement
+3. <strong class="text-on-surface font-semibold">Models behavior | نمذجة السلوك</strong>: Demonstrate quality-focused behaviors personally
+4. <strong class="text-on-surface font-semibold">Engages workforce | إشراك القوى العاملة</strong>: Involve staff in quality initiatives
+5. <strong class="text-on-surface font-semibold">Holds accountable | المساءلة</strong>: Expect and require quality performance
+6. <strong class="text-on-surface font-semibold">Recognizes success | الاعتراف بالنجاح</strong>: Celebrate quality achievements
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">6.2 Building Quality Culture | بناء ثقافة الجودة</h4>
+
+Organizational culture shapes behavior and determines whether quality improvement efforts succeed or fail. Leaders play a critical role in building quality-supportive culture:
+
+تشكل الثقافة التنظيمية السلوك وتحدد ما إذا كانت جهود تحسين الجودة تنجح أو تفشل. leaders يلعب دورًا حاسمًا في بناء ثقافة تدعم الجودة:
+
+- Visible commitment to quality
+- Psychological safety for reporting and learning
+- Accountability for quality at all levels
+- Continuous learning and improvement
+- Patient-centeredness
+- Transparency about performance
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 7: Advanced Improvement Topics | موضوعات التحسين المتقدمة</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">7.1 Large-Scale System Change | تغيير النظام على نطاق واسع</h4>
+
+Changing entire systems requires different approaches than single-unit improvements. Key considerations include:
+
+يتطلب تغيير الأنظمة بأكملها نهجًا مختلفًا عن تحسينات الوحدة الفردية. تشمل الاعتبارات الرئيسية:
+
+- System-wide perspective and coordination
+- Multiple change initiatives simultaneously
+- Managing interdependencies
+- Building consensus among stakeholders
+- Phased implementation approach
+- Sustaining alignment over time
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">7.2 Improvement in Complex Adaptive Systems | التحسين في الأنظمة التكيفية المعقدة</h4>
+
+Healthcare is a complex adaptive system where traditional linear improvement approaches may be insufficient. New approaches are needed that:
+
+الرعاية الصحية هي نظام تكيفي معقد حيث قد تكون نهجيات التحسين الخطية التقليدية غير كافية. new are needed that:
+
+- Acknowledge complexity and emergence
+- Enable local adaptation
+- Support emergence of solutions
+- Build networks and relationships
+- Embrace experimentation and learning
+- Accept uncertainty and iteration
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 8: Application and Implementation | التطبيق والتنفيذ</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">8.1 Applying Course Concepts in Your Setting | تطبيق مفاهيم الدورة في إعداداتك</h4>
+
+This course has provided concepts and tools for improving healthcare reliability. To apply this learning:
+
+قدمت هذه الدورة مفاهيم وأدوات لتحسين موثوقية الرعاية الصحية. لتطبيق هذا التعلم:
+
+1. Identify a process or system in your organization with quality or safety concerns
+2. Use process mapping to understand current state
+3. Identify system factors contributing to the problem
+4. Design improvements that address system factors
+5. Implement using PDSA methodology
+6. Measure results and adjust as needed
+7. Plan for sustainability from the beginning
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">8.2 Building Personal Capability | بناء القدرات الشخصية</h4>
+
+Developing expertise in quality improvement requires ongoing learning and practice. Consider:
+
+يتطلب تطوير الخبرة في تحسين الجودة التعلم والممارسة المستمرة. Think:
+
+- Seek additional training and education
+- Practice improvement methods on real projects
+- Learn from others' experiences
+- Stay current with improvement literature
+- Share learning with colleagues
+- Contribute to the improvement community
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Section: Building High-Reliability Healthcare Systems</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="12">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Advanced Concepts in Healthcare Reliability</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 1: The Science of Safety</h3>
+
+The field of safety science has developed rapidly in recent decades, providing new insights into why errors occur and how to prevent them. Understanding this science is essential for healthcare professionals working to improve safety.
+
+Swiss Cheese Model developed by James Reason explains how failures align to cause harm. In complex systems, multiple defenses exist to prevent accidents, but when the holes in these defenses line up, accidents occur. The model illustrates the importance of multiple layers of defense and the need to strengthen all layers.
+
+The concept of defensive layers includes physical barriers, procedural controls, supervision, training, and organizational culture. Each layer provides protection, and when one layer fails, others can prevent harm. Healthcare organizations should assess and strengthen all layers.
+
+Human factors engineering applies knowledge about human capabilities and limitations to system design. This includes understanding how humans process information, make decisions, and perform tasks. Designing systems that account for human factors reduces errors.
+
+Cognitive load theory explains how information overload can lead to errors. Systems should present information in ways that match human cognitive capabilities. This includes prioritizing information, providing clear communication, and reducing unnecessary complexity.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 2: Safety Culture Assessment and Development</h3>
+
+Safety culture is the shared values, attitudes, and behaviors that prioritize safety in an organization. Measuring and developing safety culture is essential for sustainable safety improvement.
+
+Culture is shaped by leadership behavior, organizational policies and procedures, reporting systems, and how errors and near-misses are handled. Positive safety culture encourages reporting and learning from errors without blame.
+
+Assessing safety culture involves surveys, interviews, observations, and analysis of safety events. Several validated instruments exist for measuring safety culture in healthcare, including the Hospital Survey on Patient Safety Culture (HSOPSC).
+
+Developing safety culture requires sustained leadership commitment and action. Leaders must model safety behaviors, establish clear expectations, provide resources for safety, and recognize and reward safety performance.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 3: Reliability Science in Practice</h3>
+
+Translating reliability science into practice requires systematic approaches to designing and improving healthcare processes. Several key principles guide this work.
+
+Standardization reduces variation and makes processes more predictable. Where variation does not add value, standard work should be established and followed. Standardization also makes it easier to identify when something goes wrong.
+
+Simplification reduces complexity that can lead to errors. Complex processes are harder to follow correctly and easier to make mistakes in. Removing unnecessary complexity improves reliability.
+
+Forcing functions design processes so that errors are either prevented or detected before reaching the patient. Examples include physical constraints, computer prompts, and mandatory checks that must be completed before proceeding.
+
+Redundancy adds backup systems that can catch errors before they cause harm. While redundancy can sometimes introduce new problems, carefully designed redundancy improves reliability.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 4: Learning from Safety Events</h3>
+
+Learning from safety events is essential for improving reliability. This requires systematic approaches to analysis and improvement.
+
+Root cause analysis is a structured method for identifying the underlying causes of safety events. The goal is to identify system factors that can be addressed to prevent similar events in the future.
+
+Human factors analysis examines how human performance contributed to safety events. This includes looking at task factors, environmental factors, individual factors, and organizational factors.
+
+After action reviews examine what happened, why, and what can be learned. These reviews involve those directly involved and focus on learning rather than blame.
+
+The key to learning is translating findings into action. Recommendations should be specific, actionable, and measurable. Implementation should be tracked and effectiveness evaluated.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 5: Building Sustainable Safety Improvement</h3>
+
+Achieving and maintaining safety improvement requires ongoing effort. Sustainable improvement requires attention to multiple dimensions.
+
+Training and competence development ensure that staff have the knowledge and skills needed to perform safely. Initial training is not sufficient; ongoing competency maintenance is essential.
+
+Measurement and monitoring provide feedback on safety performance and early warning of problems. Leading indicators can predict future performance, while lagging indicators confirm whether improvements have been achieved.
+
+Continuous improvement treats safety as an ongoing journey rather than a destination. Even when good performance is achieved, there is always room for further improvement. This requires maintaining a learning orientation and avoiding complacency.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="13">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Summary and Application</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course has provided healthcare professionals with a comprehensive understanding of how to build safer, more reliable healthcare systems. Key learning points include understanding the systems nature of healthcare, the importance of safety culture, the application of reliability science, learning from safety events, and building sustainable improvement.
+
+As you complete this course, consider how you can apply these concepts in your own setting. Identify areas where reliability can be improved, engage colleagues in safety improvement, and contribute to building a culture of safety.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Learning Content</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="14">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Advanced Systems Thinking for Healthcare Quality</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Understanding System Interactions and Emergence</h3>
+
+Healthcare systems exhibit complex behaviors that emerge from the interactions of their components. Understanding these interactions is fundamental to improving reliability and quality.
+
+Feedback loops create dynamic behaviors in systems. Reinforcing loops amplify changes, while balancing loops resist changes. Understanding these dynamics helps in predicting how systems will respond to interventions.
+
+Delays between actions and effects can create unexpected behaviors. Systems may appear stable for extended periods then suddenly change dramatically. This creates challenges for improvement.
+
+Non-linear relationships mean that small changes can have large effects and vice versa. This makes it difficult to predict the impact of interventions and requires careful monitoring.
+
+Trade-offs occur between competing system goals. Improving one aspect may harm another. Understanding trade-offs helps in making difficult choices about priorities.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">System Dynamics and Quality Improvement</h3>
+
+System dynamics provides tools for understanding and improving complex systems. Several concepts are particularly relevant.
+
+Bottlenecks constrain system performance and represent opportunities for improvement. Identifying and addressing bottlenecks can have significant impact.
+
+Accumulations and depletions create dynamics that affect system behavior. Understanding these helps in predicting long-term impacts of changes.
+
+Behavior over time patterns reveal system dynamics. Recognizing patterns helps in understanding underlying system behavior.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Building System Thinking Capability</h3>
+
+Developing system thinking requires practice and conscious effort. Several approaches help build this capability.
+
+Process mapping helps visualize system interactions and identify improvement opportunities. Mapping reveals interconnections that might otherwise be missed.
+
+Root cause analysis using system thinking goes beyond immediate causes to understand underlying system factors. This leads to more effective solutions.
+
+Simulation and modeling can help understand system behavior and test interventions. These tools enable experimentation without risk.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Systems Approach to Patient Safety</h3>
+
+A systems approach to patient safety focuses on creating conditions that prevent errors rather than focusing on individual errors. This approach is more effective than blame-based approaches.
+
+Designing for safety incorporates safety considerations into system design. This includes simplifying, standardizing, and building in safeguards.
+
+Learning systems capture and act on safety information. This includes reporting systems, analysis, and improvement.
+
+Safety culture values safety as an organizational priority. This includes leadership commitment and staff engagement.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Conclusion and Application</h3>
+
+This comprehensive course on Addressing Small Problems to Build Safer, More Reliable Systems has provided healthcare professionals with the knowledge and tools to understand and improve system reliability. The course has covered system thinking principles, reliability science, and practical approaches for improvement.
+
+Key learning points include understanding the complex nature of healthcare systems, applying reliability principles, building high reliability organizations, learning from safety events, and building sustainable safety improvement. The course has addressed the Saudi healthcare context including CBAHI standards and MOH initiatives.
+
+Applying this learning requires seeing problems as system issues rather than individual failures. It requires designing systems that prevent errors and make it easy to do the right thing. It requires building cultures that value safety and learn from errors.
+
+As you complete this course, apply these concepts in your work. Look for system factors in problems, apply reliability principles, build safety culture, and contribute to continuous improvement.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="15">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Code:</strong> QI 202
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="16">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+    <section>
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Related Courses</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+        
+        <a href="/courses/qi-101.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Introduction to Health Care Improvement</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+        <a href="/courses/qi-102.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">How to Improve with the Model for Improvement</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 102: كيفية التحسين باستخدام نموذج التحسين</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+        <a href="/courses/qi-103.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Testing and Measuring Changes with PDSA Cycles</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/17</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-qi-202') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-qi-202', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('qi-202')) list.push('qi-202');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-qi-202') === 'true';
+    localStorage.setItem('saved-qi-202', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-qi-202') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-qi-202') === 'true';
+    localStorage.setItem('complete-qi-202', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-qi-202') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-qi-202', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'Addressing Small Problems to Build Safer, More Reliable Systems', slug: 'qi-202', enrolled: localStorage.getItem('enrolled-qi-202') === 'true', complete: localStorage.getItem('complete-qi-202') === 'true', quizPassed: localStorage.getItem('quiz-pass-qi-202') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-qi-202.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

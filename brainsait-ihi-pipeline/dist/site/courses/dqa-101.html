@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Improving Dental Care with the Model for Improvement | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Dental Care</span>
+        <span class="bg-surface-container-high text-on-surface-variant px-sm py-1 rounded-full font-label-md text-label-md">DQA-101</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">Improving Dental Care with the Model for Improvement</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">DQA 101: تحسين الرعاية الصحية للاستخدام النموذج للتحسين</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">60</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">17 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="0">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          After completing this course, you will be able to:
+
+- List the three questions you must ask to apply the Model for Improvement.
+- Identify the key elements of an effective aim statement.
+- Identify three kinds of measures: process measures, outcome measures, and balancing measures.
+- Use change concepts and critical thinking tools to come up with good ideas for changes to test.
+- Test changes on a small scale using the Plan-Do-Study-Act (PDSA) cycle.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="1">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Lessons</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Lesson 1: An Overview of the Model for Improvement</strong>
+You'll learn how to use the Model for Improvement (MFI) to improve oral care in hospitals.
+
+- <strong class="text-on-surface font-semibold">Lesson 2: Setting an Aim</strong>
+You'll learn how to craft a measurable aim statement to help reduce patient wait times and increase oral care services.
+
+- <strong class="text-on-surface font-semibold">Lesson 3: Choosing Measures</strong>
+You'll learn the importance of building measurable systems by using the Model for Improvement (MFI) to improve outcomes and processes.
+
+- <strong class="text-on-surface font-semibold">Lesson 4: Developing Changes</strong>
+You'll identify change concepts using the Associates in Process Improvement (API) and Cause and Effects diagrams to improve dental care within hospital settings.
+
+- <strong class="text-on-surface font-semibold">Lesson 5: Testing Changes</strong>
+You'll examine the testing phase within the Model of Improvement to help minimize risks and foster change within complex healthcare systems.
+
+<strong class="text-on-surface font-semibold">Estimated Time of Completion</strong>: Time
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="2">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">English Overview</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course equips health professionals to strengthen dental quality improvement, preventive care workflows, and outcome measurement while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">نظرة عامة بالعربية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في تحسين جودة طب الأسنان، وسير عمل الرعاية الوقائية، وقياس النتائج مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="4">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Learning Outcomes | مخرجات التعلم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- List the three questions you must ask to apply the Model for Improvement.
+- Identify the key elements of an effective aim statement.
+- Identify three kinds of measures: process measures, outcome measures, and balancing measures.
+- Use change concepts and critical thinking tools to come up with good ideas for changes to test.
+- Test changes on a small scale using the Plan-Do-Study-Act (PDSA) cycle.
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- تطوير مسارات جودة فعالة في خدمات طب الأسنان الوقائية والعلاجية.
+- قياس نتائج الخدمة وتحسين الالتزام والمتابعة للمستفيدين.
+- تنفيذ تدخلات عملية تقلل التأخير وتحسن تجربة المراجع.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: An Overview of the Model for Improvement</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll learn how to use the Model for Improvement (MFI) to improve oral care in hospitals. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 1: نموذج التحسين</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2: Setting an Aim</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll learn how to craft a measurable aim statement to help reduce patient wait times and increase oral care services. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 2: تحديد الهدف</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تنتقل هذه الوحدة من الفهم النظري إلى التحليل التطبيقي: كيف تُقيِّم الوضع الراهن، وتُحدِّد الفجوات، وتختار الأدوات المناسبة لبيئة عملك. تُقدِّم أمثلة على التحديات الشائعة في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية، وتُمكِّن الممارس من ترجمة المشكلة إلى فرصة تحسين محددة.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> صمِّم قائمة تحقق مكوَّنة من خمسة بنود لمشكلة تشغيلية محددة في وحدتك، وحدِّد مؤشرًا للقياس القبلي ومؤشرًا للقياس البعدي قبل تنفيذ أي تدخل.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3: Choosing Measures</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll learn the importance of building measurable systems by using the Model for Improvement (MFI) to improve outcomes and processes. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 3: اختيار مؤشرات القياس</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُركِّز هذه الوحدة على التطبيق الميداني: تصميم التدخل، وبناء الفريق متعدد التخصصات، وتحديد مؤشرات المتابعة. تُعدِّل المقاربات التدخلية لتناسب الموارد والكوادر المتاحة في بيئات الرعاية السعودية، وتُخرِّج الممارس بخطة عمل قابلة للتنفيذ الفوري.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> نفِّذ دورة PDSA واحدة (سبعة أيام): طبِّق تغييرًا صغيرًا واحدًا، وقِس أثره على المؤشر المحدد، وأعدَّ ورقة نتائج تُشارك بها الفريق في الاجتماع الأسبوعي القادم.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 4: Developing Changes</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll identify change concepts using the Associates in Process Improvement (API) and Cause and Effects diagrams to improve dental care within hospital settings. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 4: تطوير التغييرات</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُعمِّق هذه الوحدة المعرفة بمراجعة حالات تطبيقية وتحديات متقدمة. تُعالج إشكاليات النشر والتوسع، وتُقدِّم استراتيجيات للحفاظ على المكتسبات وإشراك القيادة في ترسيخ الثقافة المؤسسية للتحسين المستمر.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> أعرض مشروع التحسين أمام المسؤولين المعنيين في لجنة الجودة أو الاجتماع الإداري، وضمِّن العرض: المشكلة، والهدف، والبيانات، والخطوات التالية.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 5: Testing Changes</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll examine the testing phase within the Model of Improvement to help minimize risks and foster change within complex healthcare systems. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 5: اختبار التغييرات</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُلخِّص هذه الوحدة مسار التعلم وتُرسِّخ الجاهزية للنقل المعرفي. تُقدِّم أدوات لقياس أثر التطبيق على مدى 90 يومًا، وتُرشد الممارس إلى آليات الإبلاغ لجهات الحوكمة وإدارة الجودة في منشأته.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> ضع خطة نشر ثلاثية المراحل (30/60/90 يومًا) تشمل: المسؤولين، وآليات المتابعة، والمؤشرات، وجهة الإبلاغ الحوكمية في منشأتك.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- <strong class="text-on-surface font-semibold">Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong class="text-on-surface font-semibold">Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong class="text-on-surface font-semibold">Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong class="text-on-surface font-semibold">Local scenario:</strong> Use this course to improve preventive oral health follow-up and reduce treatment delays in dental clinics.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- <strong class="text-on-surface font-semibold">بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong class="text-on-surface font-semibold">الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong class="text-on-surface font-semibold">الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong class="text-on-surface font-semibold">سيناريو محلي:</strong> تُستخدم الدورة من أجل تحسين متابعة صحة الفم الوقائية وتقليل تأخر العلاج في عيادات الأسنان.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+1. <strong class="text-on-surface font-semibold">Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong class="text-on-surface font-semibold">Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong class="text-on-surface font-semibold">Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong class="text-on-surface font-semibold">Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+1. <strong class="text-on-surface font-semibold">استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong class="text-on-surface font-semibold">اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong class="text-on-surface font-semibold">مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong class="text-on-surface font-semibold">نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td></tr>
+|<hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Preventive care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية الوقائية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Recall system</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظام الاستدعاء</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Oral health outcome</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نتيجة صحة الفم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care bundle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حزمة رعاية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard work</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العمل المعياري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient adherence</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الالتزام العلاجي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Caries prevention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوقاية من تسوس الأسنان</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Periodontal disease</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مرض اللثة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Fluoride therapy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">علاج الفلوريد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dental radiograph safety</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سلامة التصوير الشعاعي لطب الأسنان</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Infection control in dentistry</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مكافحة العدوى في طب الأسنان</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dental wait time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وقت انتظار طب الأسنان</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient recall system</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظام استدعاء المريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Oral health literacy</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الثقافة الصحية الفموية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Treatment planning</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التخطيط للعلاج</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dental outcome measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر نتائج طب الأسنان</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/dqa-101
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- Saudi Dental Society: https://www.saudidental.com
+- MOH Oral Health Program Saudi Arabia: https://www.moh.gov.sa
+- CBAHI Dental Quality Standards: https://www.cbahi.gov.sa
+- FDI World Dental Federation: https://www.fdiworlddental.org
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="10">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Select one department and one measurable problem.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Form a multidisciplinary micro-team.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Define baseline, target, and data collection frequency.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Run at least one improvement test and document findings.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Report outcomes to quality governance and plan next-cycle spread.</span></div>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Present your course implementation findings at a team meeting within 30 days.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Share one lesson learned with a peer and document the exchange.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Link your improvement work to your facility's quality governance and reporting cycle.</span></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">اختيار قسم واحد ومشكلة قابلة للقياس.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تشكيل فريق مصغر متعدد التخصصات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تحديد خط الأساس والهدف وتواتر جمع البيانات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] عرض نتائج تطبيق الدورة في اجتماع الفريق خلال 30 يومًا.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">مشاركة درس مستفاد واحد مع زميل وتوثيق التبادل.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">ربط عمل التحسين بدورة حوكمة الجودة والإبلاغ في منشأتك.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="11">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Continuing Education Credits</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          Course completion typically earns 2.5 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/education/ihi-open-school/continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a>
+
+See full detailsThis course is approved by the American Dental Association for 2.5 continuing education credits. The ADA is an ADA Continuing Education Recognition Program (CERP) recognized provider.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="12">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1 Deep Dive: Overview of the Model for Improvement | الدرس الأول approfondi: نظرة عامة على نموذج التحسين</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.1: Foundations of Quality Improvement in Dental Care | أسس تحسين الجودة في الرعاية الصحية لطب الأسنان</h4>
+
+Quality improvement in dental care represents a systematic approach to enhancing the delivery of oral health services. At its core, QA involves identifying problems, analyzing root causes, implementing changes, and measuring outcomes. Unlike traditional quality assurance which often focuses on compliance and inspection, modern QI emphasizes continuous improvement and the engagement of all team members in the improvement process.
+
+يمثل تحسين الجودة في الرعاية الصحية لطب النفس نهجًا منهجيًا لتعزيز تقديم خدمات صحة الفم. في جوهره، QA يتضمن تحديد المشكلات وتحليل الأسباب الجذرية وتنفيذ التغييرات وقياس النتائج. على عكس ضمان الجودة التقليدي الذي يركز غالبًا على الامتثال والفحص، يشدد QI الحديث على التحسين المستمر وإشراك جميع أعضاء الفريق في عملية التحسين.
+
+The Model for Improvement (MFI), developed by Associates in Process Improvement (API) and popularized by the Institute for Healthcare Improvement (IHI), provides a simple yet powerful framework for driving improvement. The model asks three fundamental questions:
+
+يوفر نموذج التحسين (MFI)، الذي طورته Associates in Process Improvement (API) وشاعه معهد تحسين الرعاية الصحية (IHI)، إطارًا بسيطًا Powerful لدفع التحسين. يسأل النموذج ثلاثة أسئلة أساسية:
+
+1. <strong class="text-on-surface font-semibold">What are we trying to accomplish?</strong> | ما الذي نسعى لتحقيقه؟**
+   This question requires teams to develop a clear, specific aim statement that defines what they are trying to achieve, by how much, and by when. A good aim statement is time-specific, measurable, and focuses on a specific population and setting.
+
+تتطلب هذه السؤال من الفرق تطوير هدف واضح ومحدد يحدد ما يسعون لتحقيقه وبكم وبمتى. الهدف الجيد محدد بوقت وقابل للقياس ويركز على مجموعة وإعداد محددين.
+
+2. <strong class="text-on-surface font-semibold">How will we know that a change is an improvement?</strong> | كيف سنعرف أن التغيير هو تحسن؟**
+   This question focuses on measurement. Teams must identify measures that will help them determine whether their changes are leading to improvement. These measures should be clearly defined, practical to collect, and meaningful to the improvement effort.
+
+تركز هذه السؤال على القياس. يجب على الفرق تحديد مقاييس ستساعدهم في تحديد ما إذا كانت تغييراتهم تؤدي إلى تحسين. يجب أن تكون هذه المقاييس محددة بوضوح عملية للجمع وذابلة смысла لجهود التحسين.
+
+3. <strong class="text-on-surface font-semibold">What changes can we make that will result in improvement?</strong> | ما التغييرات التي يمكننا إجراؤها والتي ستؤدي إلى تحسن؟**
+   This question encourages teams to generate and test ideas for change. Rather than implementing large-scale changes immediately, the MFI encourages testing changes on a small scale using Plan-Do-Study-Act (PDSA) cycles.
+
+هذا السؤال يشجع الفرق على توليد واختبار أفكار للتغيير. بدلًا من تنفيذ تغييرات واسعة النطاق على الفور، يشجع MFI على اختبار التغييرات على نطاق صغير باستخدام دورات PDSA.
+
+<strong class="text-on-surface font-semibold">Application to Dental Care | التطبيق على رعاية طب الأسنان:</strong>
+
+In the dental care context, these questions translate into specific improvement efforts. For example:
+
+في سياق رعاية طب义词، تترجم هذه الأسئلة إلى جهود تحسين محددة. على سبيل المثال:
+
+- <strong class="text-on-surface font-semibold">Aim</strong>: Reduce mean wait time for routine dental appointments from 21 days to 7 days within 6 months in the PHC dental clinic.
+- <strong class="text-on-surface font-semibold">Measures</strong>: Average appointment wait time, patient satisfaction scores, percentage of same-day appointments available.
+- <strong class="text-on-surface font-semibold">Changes</strong>: Implement online scheduling, adjust staff allocation, add additional hygiene appointment slots.
+
+- <strong class="text-on-surface font-semibold">Objective</strong>: Reduce average wait time for routine dental appointments from 21 days to 7 days within 6 months in the PHC dental clinic.
+- <strong class="text-on-surface font-semibold">Measures</strong>: Average wait time for appointments, patient satisfaction scores, percentage of same-day appointments available.
+- <strong class="text-on-surface font-semibold">Changes</strong>: Implement online scheduling, adjust staff allocation, add additional hygiene appointment slots.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.2: Understanding Variation in Dental Processes | فهم التباين في العمليات السنية</h4>
+
+A key concept in quality improvement is understanding variation. All processes have variation—some variation is inherent (common cause), while some results from special circumstances (special cause). Understanding the type of variation is essential for determining whether improvement is needed and whether changes are effective.
+
+مفهوم رئيسي في تحسين الجودة هو فهم التباين. جميع العمليات لها تباين—بعض التباين متأصل (السبب المشترك)، بينما ينتج البعض الآخر عن ظروف خاصة (السبب الخاص). فهم نوع التباين ضروري لتحديد ما إذا كان التحسن مطلوبًا وما إذا كانت التغييرات فعالة.
+
+In dental care, common sources of variation include:
+
+في رعاية طب义词، تشمل مصادر التباين الشائعة:
+
+- <strong class="text-on-surface font-semibold">Appointment scheduling | جدولة المواعيد</strong>: Variation in how appointments are scheduled, allocated, and managed leads to different wait times and utilization patterns.
+
+- <strong class="text-on-surface font-semibold">Treatment time | وقت العلاج</strong>: Variation in procedure times based on operator experience, patient complexity, and equipment availability.
+
+- <strong class="text-on-surface font-semibold">Material usage | استخدام المواد</strong>: Variation in supplies and materials used for similar procedures.
+
+- <strong class="text-on-surface font-semibold">Documentation | التوثيق</strong>: Variation in how clinical notes are recorded and maintained.
+
+<strong class="text-on-surface font-semibold">Using Run Charts to Understand Variation | استخدام مخططات التشغيل لفهم التباين:</strong>
+
+Run charts are simple but powerful tools for understanding variation over time. They plot data points in time order, allowing teams to see patterns, trends, and unusual observations.
+
+مخططات التشغيل هي أدوات بسيطة Powerful لفهم التباين بمرور الوقت. ترسم نقاط البيانات بترتيب زمني، مما يتيح للفرق رؤية الأنماط والاتجاهات والملاحظات غير المعتادة.
+
+Key patterns to look for include:
+
+الأنماط الرئيسية التي يجب البحث عنها تشمل:
+
+- <strong class="text-on-surface font-semibold">Shifts | التحولات</strong>: Six or more consecutive points above or below the median indicate a process change.
+
+- <strong class="text-on-surface font-semibold">Trends | الاتجاهات</strong>: Seven or more consecutive points increasing or decreasing indicate a trend.
+
+- <strong class="text-on-surface font-semibold">Runs | التشغيل</strong>: A run is a sequence of points on one side of the median; too few or too many runs indicate non-random patterns.
+
+- <strong class="text-on-surface font-semibold">Oscillations | التذبذبات</strong>: Regular up-and-down patterns may indicate systematic influences.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 1.3: Building the Improvement Team | بناء فريق التحسين</h4>
+
+Successful quality improvement requires a well-functioning team with clear roles, effective communication, and shared commitment to the improvement goal. In dental care settings, team composition should reflect the scope of the improvement effort.
+
+يتطلب تحسين الجودة الناجح فريقًا يعمل بشكل جيد بأدوار واضحة وتواصل فعال والتزام مشترك بهدف التحسين. في إعدادات رعاية طب义词، يجب أن يعكس تكوين الفريق نطاق جهد التحسين.
+
+<strong class="text-on-surface font-semibold">Team Composition for Dental QI | تكوين الفريق لتحسين الجودة في طب الأسنان:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Role</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الدور</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Responsibilities</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المسؤوليات</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Team Lead</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قائد الفريق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Coordinate activities, facilitate meetings</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تنسيق الأنشطة، تسهيل الاجتماعات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dentist</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طبيب أسنان</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical expertise, protocol development</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخبرة السريرية، تطوير البروتوكول</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dental Hygienist</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أخصائي صحة الفم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Preventive care, patient education</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الرعاية الوقائية، تثقيف المريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Dental Assistant</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مساعد طبيب أسنان</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical support, data collection</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الدعم السريري، جمع البيانات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Front Desk Staff</td><td class="px-sm py-xs text-body-md text-on-surface-variant">موظف الاستقبال</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Scheduling, patient communication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">جدولة الاتصال بالمريض</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Quality Coordinator</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منسق الجودة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Data analysis, measurement support</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل البيانات، دعم القياس</td></tr>
+
+<strong class="text-on-surface font-semibold">Effective Team Meetings | اجتماعات الفريق الفعالة:</strong>
+
+Team meetings should be regular, focused, and action-oriented. Key elements include:
+
+يجب أن تكون اجتماعات الفريق منتظمة ومركزة وموجهة نحو الإجراء. تشمل العناصر الرئيسية:
+
+1. <strong class="text-on-surface font-semibold">Clear agenda | جدول أعمال واضح</strong>: Each meeting should have specific topics and time allocations.
+
+2. <strong class="text-on-surface font-semibold">Role rotation | دور الدور</strong>: Rotate different team members to lead different aspects of meetings.
+
+3. <strong class="text-on-surface font-semibold">Action tracking | تتبع الإجراء</strong>: Document actions, owners, and due dates; review at each meeting.
+
+4. <strong class="text-on-surface font-semibold">Data review | مراجعة البيانات</strong>: Regularly review measurement data to understand progress.
+
+5. <strong class="text-on-surface font-semibold">Celebration | الاحتفال</strong>: Acknowledge successes and progress to maintain motivation.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2 Deep Dive: Setting an Aim | الدرس الثاني approfondi: تحديد الهدف</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.1: Developing Effective Aim Statements | تطوير أهداف فعالة</h4>
+
+An effective aim statement is the foundation of any improvement effort. It provides focus and direction, enabling team members to align their efforts toward a common goal. A well-crafted aim statement is specific, measurable, time-bound, and achievable.
+
+الهدف الفعال هو أساس أي جهد تحسين. يوفر تركيزًا واتجاهًا، مما يتيح لأعضاء الفريق محاذاة جهودهم نحو هدف مشترك. الهدف المصاغ جيدًا محدد وقابل للقياس ومحدد بوقت وقابل للتحقيق.
+
+<strong class="text-on-surface font-semibold">Characteristics of Effective Aim Statements | خصائص الأهداف الفعالة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Specific | محدد</strong>: Clearly defines what will be improved and for whom.
+   - Instead of: "Improve dental care"
+   - Use: "Reduce wait times for routine dental appointments"
+
+   - Instead of: "تحسين رعاية طب للأسنان"
+   - Use: "تقليل أوقات الانتظار لمواعيد طب الأسنان الروتينية"
+
+2. <strong class="text-on-surface font-semibold">Measurable | قابل للقياس</strong>: Includes a numeric target.
+   - "Reduce from 21 days to 7 days"
+
+3. <strong class="text-on-surface font-semibold">Time-bound | محدد بوقت</strong>: Specifies when the goal will be achieved.
+   - "Within 6 months"
+
+4. <strong class="text-on-surface font-semibold">Aligned | محاذي</strong>: Supports broader organizational goals and patient needs.
+
+5. <strong class="text-on-surface font-semibold">Achievable | قابل للتحقيق</strong>: Based on realistic assessment of current state and capacity.
+
+<strong class="text-on-surface font-semibold">Examples of Dental Care Aim Statements | أمثلة على أهداف الرعاية الصحية لطب الأسنان:</strong>
+
+1. <strong class="text-on-surface font-semibold">Patient Access | وصول المريض</strong>:
+   - Reduce new patient dental appointment wait time from 30 days to 14 days within 12 months.
+   - Increase percentage of patients receiving same-day emergency appointments from 40% to 80% within 6 months.
+
+2. <strong class="text-on-surface font-semibold">Clinical Quality | الجودة السريرية</strong>:
+   - Increase percentage of diabetic patients receiving annual diabetic eye exams from 45% to 75% within 9 months.
+   - Reduce rate of unplanned returns for post-operative complications from 8% to 4% within 12 months.
+
+3. <strong class="text-on-surface font-semibold">Prevention | الوقاية</strong>:
+   - Increase percentage of children receiving dental sealants from 25% to 50% within 12 months.
+   - Increase percentage of adult patients receiving oral cancer screening from 60% to 90% within 9 months.
+
+4. <strong class="text-on-surface font-semibold">Patient Experience | تجربة المريض</strong>:
+   - Improve patient satisfaction scores for dental visit from 75% to 90% within 12 months.
+   - Reduce patient-reported pain and discomfort during dental procedures by 30% within 9 months.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.2: Setting Boundaries and Scope | تحديد الحدود والنطاق</h4>
+
+Defining boundaries helps clarify what is included and excluded from the improvement effort. This includes:
+
+تساعد تحديد الحدود في توضيح ماIncluded وما excluded من جهد التحسين. يشمل ذلك:
+
+- <strong class="text-on-surface font-semibold">Patient population | مجتمع المرضى</strong>: Which patients are included (age, condition, geography)?
+
+- <strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: Which facilities or departments are included?
+
+- <strong class="text-on-surface font-semibold">Timeframe | الإطار الزمني</strong>: What time period is being considered?
+
+- <strong class="text-on-surface font-semibold">Process boundaries | حدود العملية</strong>: Where does the process start and end?
+
+<strong class="text-on-surface font-semibold">Example for Dental Recall System | مثال لنظام استدعاء طب义词:</strong>
+
+- <strong class="text-on-surface font-semibold">Population</strong>: All patients aged 18 and older with documented periodontal disease who have completed active treatment.
+- <strong class="text-on-surface font-semibold">Setting</strong>: All dental clinics within the PHC cluster.
+- <strong class="text-on-surface font-semibold">Timeframe</strong>: January 2026 through December 2026.
+- <strong class="text-on-surface font-semibold">Process start</strong>: Patient completion of active periodontal therapy.
+- <strong class="text-on-surface font-semibold">Process end</strong>: Patient scheduled for next maintenance appointment.
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 2.3: Testing the Aim Statement | اختبار الهدف</h4>
+
+Before committing to an aim statement, teams should test it through discussion with stakeholders and preliminary data review. This helps identify potential issues and refine the aim.
+
+قبل الالتزام بهدف، يجب على الفرق اختباره من خلال مناقشة أصحاب المصلحة ومراجعة البيانات الأولية. يساعد هذا في تحديد المشكلات المحتملة وصقل الهدف.
+
+<strong class="text-on-surface font-semibold">Questions to Ask | الأسئلة التي يجب طرحها:</strong>
+
+1. Is this aim important to our patients and organization?
+2. Do we have data to measure progress?
+3. Is this aim achievable with our current resources?
+4. Does this aim align with our organizational priorities?
+5. Can we achieve meaningful improvement within the timeframe?
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3 Deep Dive: Choosing Measures | الدرس الثالث approfondi: اختيار المقاييس</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.1: Types of Measures | أنواع المقاييس</h4>
+
+Effective measurement requires balancing different types of measures. The IHI framework identifies three types of measures essential for improvement:
+
+يتطلب القياس الفعال الموازنة بين أنواع مختلفة من المقاييس. يحدد إطار IHI ثلاثة أنواع من المقاييس ضرورية للتحسين:
+
+<strong class="text-on-surface font-semibold">Outcome Measures | مقاييس النتائج:</strong>
+
+Outcome measures reflect the ultimate goal of the improvement effort—the impact on patients, populations, or organizations. These measures answer: "Did we achieve what we were trying to accomplish?"
+
+تعكس مقاييس النتائج الهدف النهائي لجهود التحسين—التأثير على المرضى أو السكان أو المنظمات. تجيب هذه المقاييس: "هل حققنا ما كنا نسعى لتحقيقه؟"
+
+Examples for dental care:
+- Patient satisfaction with dental services (measured via survey)
+- Rate of dental caries in pediatric population
+- Rate of tooth loss due to periodontal disease
+- Number of oral cancer cases detected at early stage
+
+<strong class="text-on-surface font-semibold">Process Measures | مقاييس العملية:</strong>
+
+Process measures track the activities that lead to outcomes. These measures answer: "Are we doing the right things to achieve our aim?" They help teams understand if their changes are being implemented as intended.
+
+تتبع مقاييس العملية الأنشطة التي تؤدي إلى النتائج. تجيب هذه المقاييس: "هل نفعل الأشياء الصحيحة لتحقيق هدفنا؟" تساعد الفرق على فهم ما إذا كانت تغييراتهم تُنفذ كما هو مقصود.
+
+Examples for dental care:
+- Percentage of patients receiving dental screening at each visit
+- Percentage of patients receiving preventive care instructions
+- Time from dental emergency presentation to treatment initiation
+- Percentage of dental instruments properly sterilized
+
+<strong class="text-on-surface font-semibold">Balancing Measures | مقاييس الموازنة:</strong>
+
+Balancing measures help ensure that improvements in one area do not cause problems in other areas. These measures answer: "What might we have broken while trying to improve?"
+
+تساعد مقاييس الموازنة على ضمان أن التحسينات في منطقة واحدة لا تسبب مشكلات في مناطق أخرى. تجيب هذه المقاييس: "ماذا قد يكون لدينا المكسور أثناء محاولة التحسين؟"
+
+Examples for dental care:
+- Staff satisfaction and workload (to ensure improvement doesn't create burnout)
+- Cost per patient (to ensure improvements are financially sustainable)
+- Wait times in other areas (to ensure improvements don't create new bottlenecks)
+- Patient safety indicators (to ensure quality improvements don't compromise safety)
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.2: Operational Definitions | التعريفات التشغيلية</h4>
+
+A measure is only useful if everyone understands and applies the same definition. Operational definitions specify exactly how a measure will be calculated and what data will be included.
+
+المقياس مفيد فقط إذا فهم الجميع وطبقوا نفس التعريف. تحدد التعريفات التشغيلية بدقة كيف سيتم حساب المقياس وما البيانات التي سيتم تضمينها.
+
+<strong class="text-on-surface font-semibold">Components of Operational Definitions | مكونات التعريفات التشغيلية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Numerator | البسط</strong>: What is being counted in the top part of the calculation?
+   - Example: Number of patients receiving oral cancer screening
+
+2. <strong class="text-on-surface font-semibold">Denominator | المقام</strong>: What is the total population in the bottom part of the calculation?
+   - Example: Total number of patients aged 18 and older seen in the dental clinic
+
+3. <strong class="text-on-surface font-semibold">Data source | مصدر البيانات</strong>: Where will the data be collected from?
+   - Example: Electronic health record, patient surveys
+
+4. <strong class="text-on-surface font-semibold">Time period | الفترة الزمنية</strong>: What time period does the measure cover?
+   - Example: Calendar year, rolling 12 months
+
+5. <strong class="text-on-surface font-semibold">Inclusion/exclusion criteria | معايير التضمين والاستبعاد</strong>: What cases are included or excluded?
+   - Example: Include all adults aged 18+; exclude patients seen only for emergency visits
+
+<strong class="text-on-surface font-semibold">Example: Complete Operational Definition | مثال: تعريف تشغيلي كامل</strong>
+
+<strong class="text-on-surface font-semibold">Measure</strong>: Percentage of adult dental patients receiving oral cancer screening
+
+- <strong class="text-on-surface font-semibold">Definition</strong>: Oral cancer screening is defined as visual and tactile examination of the oral cavity and surrounding tissues, documented in the patient's record using the designated screening code.
+
+- <strong class="text-on-surface font-semibold">Numerator</strong>: Number of adult dental patients receiving oral cancer screening during the measurement period
+
+- <strong class="text-on-surface font-semibold">Denominator</strong>: Total number of adult dental patients (age 18+) with at least one dental visit during the measurement period
+
+- <strong class="text-on-surface font-semibold">Data source</strong>: Electronic health record (EHR) data extraction
+
+- <strong class="text-on-surface font-semibold">Time period</strong>: Rolling 12 months, updated monthly
+
+- <strong class="text-on-surface font-semibold">Exclusions</strong>: Patients with no natural teeth (edentulous)
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 3.2: Data Collection Planning | تخطيط جمع البيانات</h4>
+
+Effective measurement requires planning for data collection. This includes determining data sources, collection methods, frequency, and responsibilities.
+
+يتطلب القياس الفعال التخطيط لجمع البيانات. يشمل ذلك تحديد مصادر البيانات وطرق الجمع والتكرار والمسؤوليات.
+
+<strong class="text-on-surface font-semibold">Data Collection Plan Template | قالب خطة جمع البيانات:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المقياس</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Data Source</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مصدر البيانات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Collection Method</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طريقة الجمع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Frequency</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التكرار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Responsible</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المسؤول</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Appointment wait time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وقت انتظار الموعد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">EMR</td><td class="px-sm py-xs text-body-md text-on-surface-variant">السجل الطبي الإلكتروني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Auto-extraction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استخراج تلقائي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Weekly</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أسبوعيًا</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Quality team</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فريق الجودة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient satisfaction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">رضا المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Survey</td><td class="px-sm py-xs text-body-md text-on-surface-variant">استبيان</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Paper/online</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ورقي/عبر الإنترنت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Monthly</td><td class="px-sm py-xs text-body-md text-on-surface-variant">شهريًا</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Front desk</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستقبال</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Treatment completion</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إكمال العلاج</td><td class="px-sm py-xs text-body-md text-on-surface-variant">EMR</td><td class="px-sm py-xs text-body-md text-on-surface-variant">السجل الطبي الإلكتروني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Manual review</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراجعة يدوية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Monthly</td><td class="px-sm py-xs text-body-md text-on-surface-variant">شهريًا</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Dentist lead</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طبيب الأسنان lider</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 4 Deep Dive: Developing Changes | الدرس الرابع approfondi: تطوير التغييرات</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 4.1: Generating Ideas for Change | توليد أفكار للتغيير</h4>
+
+Change ideas come from many sources: scientific evidence, best practices from other organizations, staff suggestions, patient feedback, and observation of current processes. The key is generating a rich set of ideas that can be tested.
+
+تأتي أفكار التغيير من مصادر many: الأدلة العلمية وأفضل الممارسات من المنظمات الأخرى واقتراحات الموظفين وملاحظات المرضى وملاحظة العمليات الحالية. المفتاح هو توليد مجموعة غنية من الأفكار التي يمكن اختبارها.
+
+<strong class="text-on-surface font-semibold">Change Concepts for Dental Care | مفاهيم التغيير لرعاية طب义词:</strong>
+
+A change concept is a general idea that has been found to be useful in improving performance. Some change concepts relevant to dental care include:
+
+مفهوم التغيير هو فكرة عامة وجد أنها مفيدة في تحسين الأداء. تشمل بعض مفاهيم التغيير ذات الصلة برعاية طب义词:
+
+1. <strong class="text-on-surface font-semibold">Reduce wait times | تقليل أوقات الانتظار</strong>
+   - Change concept: Eliminate delays between process steps
+   - Examples: Streamline check-in process, reduce handoff delays
+
+2. <strong class="text-on-surface font-semibold">Increase patient engagement | زيادة إشراك المريض</strong>
+   - Change concept: Increase patient participation in care decisions
+   - Examples: Shared decision-making, patient education materials
+
+3. <strong class="text-on-surface font-semibold">Standardize processes | توحيد العمليات</strong>
+   - Change concept: Reduce variation by standardizing work processes
+   - Examples: Standardized treatment protocols, consistent documentation
+
+4. <strong class="text-on-surface font-semibold">Improve workflow | تحسين سير العمل</strong>
+   - Change concept: Optimize space and staff utilization
+   - Examples: Layout changes, role redesign, scheduling optimization
+
+5. <strong class="text-on-surface font-semibold">Enhance prevention | تعزيز الوقاية</strong>
+   - Change concept: Shift focus from treatment to prevention
+   - Examples: Risk-based recall systems, preventive care protocols
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 4.2: Using the Cause and Effect Diagram | استخدام مخطط السبب والنتيجة</h4>
+
+The cause and effect diagram (also called Ishikawa or fishbone diagram) is a tool for systematically identifying potential causes of a problem. It helps teams move beyond surface-level symptoms to understand underlying factors.
+
+مخطط السبب والنتيجة (المعروف أيضًا Ishikawa أو fishbone) هو أداة لتحديد بشكل منهجي الأسباب المحتملة لمشكلة. يساعد الفرق على الانتقال إلى ما وراء الأعراض السطحية لفهم العوامل الكامنة.
+
+<strong class="text-on-surface font-semibold">Steps for Creating a Cause and Effect Diagram | خطوات إنشاء مخطط السبب والنتيجة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Identify the problem | تحديد المشكلة</strong>: Define clearly what you are trying to solve.
+   - Example: Long wait times for dental appointments
+
+2. <strong class="text-on-surface font-semibold">Select categories | اختيار الفئات</strong>: Use standard categories or customize for your situation
+   - Common categories: People, Process, Equipment, Materials, Environment, Management
+
+3. <strong class="text-on-surface font-semibold">Brainstorm causes | العصف الذهني للأسباب</strong>: Generate as many potential causes as possible within each category
+
+4. <strong class="text-on-surface font-semibold">Analyze and prioritize | التحليل وتحديد الأولويات</strong>: Identify the most likely root causes for testing
+
+<strong class="text-on-surface font-semibold">Example: Cause and Effect Diagram for Dental Wait Times | مثال: مخطط السبب والنتيجة لأوقات انتظار طب义词</strong>
+
+<strong class="text-on-surface font-semibold">Effect</strong>: Long wait times for dental appointments
+
+- <strong class="text-on-surface font-semibold">People | الأشخاص</strong>
+  - Insufficient dentist coverage
+  - Staff training gaps
+  - Inadequate scheduling skills
+
+- <strong class="text-on-surface font-semibold">Process | العملية</strong>
+  - Complex booking process
+  - Inefficient patient flow
+  - Multiple handoffs
+  - Inadequate follow-up
+
+- <strong class="text-on-surface font-semibold">Equipment | المعدات</strong>
+  - Limited operatories
+  - Equipment breakdowns
+  - Outdated technology
+
+- <strong class="text-on-surface font-semibold">Materials | المواد</strong>
+  - Supply shortages
+  - Material ordering delays
+
+- <strong class="text-on-surface font-semibold">Environment | البيئة</strong>
+  - Facility layout
+  - Limited parking
+  - Inadequate waiting space
+
+- <strong class="text-on-surface font-semibold">Management | الإدارة</strong>
+  - Scheduling policies
+  - Staffing decisions
+  - Communication gaps
+  - Resource allocation
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 5 Deep Dive: Testing Changes | الدرس الخامس approfondi: اختبار التغييرات</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 5.1: The PDSA Cycle | دورة PDSA</h4>
+
+The Plan-Do-Study-Act (PDSA) cycle is the core methodology for testing changes in improvement work. It provides a structured approach for trying new ideas on a small scale, learning from the results, and deciding whether to adopt, adapt, or abandon the change.
+
+دورة Plan-Do-Study-Act (PDSA) هي المنهجية الأساسية لاختبار التغييرات في عمل التحسين. يوفر نهجًا منظمًا لتجربة أفكار جديدة على نطاق صغير، والتعلم من النتائج، وتحديد ما إذا كان يجب تبنّي التغيير أو تكييفه أو التخلي عنه.
+
+<strong class="text-on-surface font-semibold">Plan | الخطة:</strong>
+- What change will we test?
+- What prediction do we have?
+- Who will do what, when, and where?
+- What data will we collect?
+
+- ما التغيير الذي سنختبره؟
+- ما تنبؤنا؟
+- من سيفعل ماذا ومتى وأين؟
+- ما البيانات التي سنجمعها؟
+
+<strong class="text-on-surface font-semibold">Do | التنفيذ:</strong>
+- Implement the change on a small scale
+- Document what happens, including any unexpected problems
+- Collect data as planned
+
+- تنفيذ التغيير على نطاق صغير
+- توثيق ما يحدث، بما في ذلك أي مشاكل غير متوقعة
+- جمع البيانات كما هو مخطط
+
+<strong class="text-on-surface font-semibold">Study | الدراسة:</strong>
+- Compare results to predictions
+- Analyze what worked and what didn't
+- Identify lessons learned
+
+- مقارنة النتائج بالتنبؤات
+- تحليل ما نجح وما لم ينجح
+- تحديد الدروس المستفادة
+
+<strong class="text-on-surface font-semibold">Act | الإجراء:</strong>
+- Based on results, decide: adopt, adapt, or abandon
+- Plan next test cycle
+
+- بناءً على النتائج، تحديد: تبنّي أو تكييف أو تخلي
+- تخطيط دورة الاختبار التالية
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Section 5.2: Testing on a Small Scale | الاختبار على نطاق صغير</h4>
+
+Testing on a small scale before full implementation is crucial because:
+- It reduces risk if the change doesn't work
+- It allows learning and refinement
+- It builds evidence for the change
+- It builds staff buy-in and confidence
+
+الاختبار على نطاق صغير قبل التنفيذ الكامل أمر crucial لأن:
+- يقلل المخاطر إذا لم ينجح التغيير
+- يسمح بالتعلم والتحسين
+- يبني دليلًا للتغيير
+- يبني موافقة员工 وثقتها
+
+<strong class="text-on-surface font-semibold">Example PDSA for Dental Appointment Scheduling | مثال PDSA لجدولة مواعيد طب义词:</strong>
+
+<strong class="text-on-surface font-semibold">First Cycle (1 week):</strong>
+- Plan: Test online appointment booking with 20 patients in one clinic. Predict 80% will complete booking successfully.
+- Do: Implement with 22 patients; 18 complete successfully.
+- Study: 82% success rate; main barrier is patient unfamiliarity with system.
+- Act: Modify approach to include in-person registration assistance; plan second test.
+
+<strong class="text-on-surface font-semibold">Second Cycle (2 weeks):</strong>
+- Plan: Test online booking with 50 patients in two clinics, with registration assistance available.
+- Do: Implement with 48 patients; 44 complete successfully.
+- Study: 92% success rate; improved from first cycle.
+- Act: Expand to all clinics; continue to monitor.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Dental Quality Case Studies | دراسات حالة الجودة السنية السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 1: Reducing Dental Wait Times in Riyadh PHC | دراسة حالة 1: تقليل أوقات انتظار طب الأسنان في الرعاية الأولية بالرياض</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: Urban PHC dental clinic serving 45,000 registered patients
+<strong class="text-on-surface font-semibold">Problem | المشكلة</strong>: Average wait time for routine appointments was 28 days
+<strong class="text-on-surface font-semibold">Aim | الهدف</strong>: Reduce to 10 days within 6 months
+
+<strong class="text-on-surface font-semibold">Key Changes Tested | التغييرات الرئيسية المختبرة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Online scheduling system | نظام الجدولة الإلكترونية</strong>
+   - PDSA 1: Pilot with 50 patients → 85% success
+   - PDSA 2: Expand to all patients → 92% success
+   
+2. <strong class="text-on-surface font-semibold">Adjusted staffing model | نموذج توظيف معدل</strong>
+   - Added additional hygiene hours during peak times
+   - Implemented direct scheduling for hygiene follow-up
+
+3. <strong class="text-on-surface font-semibold">Process improvements | تحسين العمليات</strong>
+   - Reduced check-in time from 15 minutes to 5 minutes
+   - Implemented automated reminders to reduce no-shows
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Wait time reduced from 28 days to 8 days (71% improvement)
+- Patient satisfaction increased from 72% to 89%
+- No-show rate reduced from 18% to 9%
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 2: Improving Pediatric Dental Sealant Rates | دراسة حالة 2: تحسين معدلات سدادات طب الأسنان للأطفال</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: School-based dental program serving 15 elementary schools
+<strong class="text-on-surface font-semibold">Problem | المشكلة</strong>: Only 22% of eligible children receiving dental sealants
+<strong class="text-on-surface font-semibold">Aim | الهدف</strong>: Increase to 50% within school year
+
+<strong class="text-on-surface font-semibold">Key Changes Tested | التغييرات الرئيسية المختبرة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Enhanced screening process | عملية فحص محسنة</strong>
+   - Implemented universal screening at annual check-ups
+   - Created standardized documentation template
+
+2. <strong class="text-on-surface font-semibold">Parental engagement strategy | استراتيجية إشراك أولياء الأمور</strong>
+   - Developed Arabic-language informational materials
+   - Implemented same-day consent processing
+
+3. <strong class="text-on-surface font-semibold">Workflow optimization | تحسين سير العمل</strong>
+   - Dedicated sealant days with expanded capacity
+   - Mobile dental unit for hard-to-reach schools
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Sealant rate increased from 22% to 58%
+- Program expanded to additional 8 schools
+- Parent satisfaction score: 94%
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Quality Improvement Tools for Dental Practice | أدوات تحسين الجودة لممارسة طب الأسنان</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Dental QI Project Charter Template | قالب ميثاق مشروع تحسين الجودة لطب الأسنان</h4>
+
+<strong class="text-on-surface font-semibold">Project Information | معلومات المشروع:</strong>
+- Project name: _____________________
+- Lead: _____________________
+- Team members: _____________________
+- Start date: _____________________
+- Target completion: _____________________
+
+<strong class="text-on-surface font-semibold">Aim Statement | بيان الهدف:</strong>
+[Insert aim statement with specific, measurable target and timeframe]
+
+<strong class="text-on-surface font-semibold">Background | الخلفية:</strong>
+[Describe the problem, its impact, and why improvement is important]
+
+<strong class="text-on-surface font-semibold">Stakeholders | أصحاب المصلحة:</strong>
+- Patients: _____________________
+- Staff: _____________________
+- Organization: _____________________
+
+<strong class="text-on-surface font-semibold">Measures | المقاييس:</strong>
+- Primary outcome measure: _____________________
+- Process measures: _____________________
+- Balancing measures: _____________________
+
+<strong class="text-on-surface font-semibold">Changes Being Tested | التغييرات المختبرة:</strong>
+1. _____________________
+2. _____________________
+3. _____________________
+
+<strong class="text-on-surface font-semibold">Timeline | الجدول الزمني:</strong>
+- PDSA cycle 1: [dates]
+- PDSA cycle 2: [dates]
+- PDSA cycle 3: [dates]
+- Evaluation: [date]
+
+<strong class="text-on-surface font-semibold">Resources Required | الموارد المطلوبة:</strong>
+- Staff time: _____________________
+- Equipment/supplies: _____________________
+- Budget: _____________________
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Model for Improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نموذج التحسين</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Framework for improvement using three questions and PDSA cycles</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Aim statement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بيان الهدف</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clear, specific description of what the team is trying to accomplish</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">PDSA cycle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">دورة PDSA</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Plan-Do-Study-Act cycle for testing changes</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط زمني تشغيلي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Graph showing data over time to understand variation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Outcome measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر النتائج</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure reflecting the ultimate goal of the improvement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Process measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر العملية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure tracking activities that lead to outcomes</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Balancing measure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشر الموازنة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measure ensuring changes don't cause problems elsewhere</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Change concept</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مفهوم التغيير</td><td class="px-sm py-xs text-body-md text-on-surface-variant">General idea useful for improving performance</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cause and effect diagram</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط السبب والنتيجة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Tool for identifying root causes of problems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Root cause analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل السبب الجذري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Method for identifying underlying causes of problems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Baseline data</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بيانات خط الأساس</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Data collected before improvements begin</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistical process control</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الضبط الإحصائي للعمليات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Methods for understanding and reducing variation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shewhart chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط شيوارت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart for monitoring process stability</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Stakeholder</td><td class="px-sm py-xs text-body-md text-on-surface-variant">صاحب المصلحة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Person or group affected by or having interest in the project</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Driver diagram</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط المحركات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual display of primary and secondary drivers</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Theory of change</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نظرية التغيير</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description of how and why change is expected to occur</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستدامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Maintaining improvements over time</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Spread</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانتشار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Extending improvements beyond initial implementation site</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Benchmarking</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المعايرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Comparing performance to external standards or peers</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Evidence-based practice</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الممارسة القائمة على الأدلة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Using best available research in clinical decisions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical pathway</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المسار السريري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Standardized approach to patient care for specific conditions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Care bundle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حزمة الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Set of interventions that together improve outcomes</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard work</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العمل المعياري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Documented best practice for specific process</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Lean methodology</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منهجية ليين</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System for eliminating waste and improving flow</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Six Sigma</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سيجما ستة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Methodology for reducing process variation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Quality dashboard</td><td class="px-sm py-xs text-body-md text-on-surface-variant">لوحة الجودة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual display of key performance indicators</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Root cause analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل السبب الجذري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Method for identifying underlying causes of problems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Plan-Do-Study-Act</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخطة-نفّذ-ادرس-صحّح</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Iterative improvement cycle</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 6: Advanced Quality Improvement Applications in Dental Care | تطبيقات تحسين الجودة المتقدمة في رعاية طب الأسنان</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">6.1 Lean Six Sigma in Dental Practice | لين سيجما ستة في ممارسة طب الأسنان</h4>
+
+Lean Six Sigma combines the waste elimination principles of Lean with the process improvement tools of Six Sigma to create a powerful methodology for dental quality improvement. This approach is particularly valuable for addressing efficiency and quality simultaneously in dental care settings.
+
+يجمع لين سيجما ستة بين مبادئ إزالة الهدر في لين وأدوات تحسين العمليات في سيجما ستة لمنهجية قوية لتحسين الجودة في طب الأسنان. هذا النهج valuable بشكل خاص لمعالجة الكفاءة والجودة في آن واحد في إعدادات الرعاية السنية.
+
+<strong class="text-on-surface font-semibold">Lean Principles in Dental Care | مبادئ لين في رعاية طب义词:</strong>
+
+1. <strong class="text-on-surface font-semibold">Identify Value | تحديد القيمة</strong>: Understand what the patient values and prioritize those activities
+2. <strong class="text-on-surface font-semibold">Map the Value Stream | رسم خريطة تدفق القيمة</strong>: Document all steps in the care process
+3. <strong class="text-on-surface font-semibold">Create Flow | خلق التدفق</strong>: Eliminate barriers to smooth patient flow
+4. <strong class="text-on-surface font-semibold">Establish Pull | إنشاء السحب</strong>: Respond to patient demand rather than pushing work
+5. <strong class="text-on-surface font-semibold">Seek Perfection | السعي للكمال</strong>: Continuously improve toward the ideal state
+
+<strong class="text-on-surface font-semibold">Six Sigma Tools for Dental QI | أدوات سيجما ستة لتحسين الجودة في طب义词:</strong>
+
+- DMAIC (Define, Measure, Analyze, Improve, Control) methodology
+- Statistical process control charts
+- Root cause analysis with fishbone diagrams
+- Failure mode and effects analysis
+- Design of experiments for optimizing processes
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">6.2 Patient Safety in Dental Settings | سلامة المريض في إعدادات طب义词</h4>
+
+Patient safety is a critical dimension of dental quality. While dental procedures are generally safe, adverse events can occur and must be prevented through systematic approaches.
+
+سلامة المريض هي بُعد حاسم لجودة طب义词. على الرغم من أن الإجراءات السنية Generally آمنة، يمكن أن تحدث أحداث سلبية ويجب منعها من خلال منهجيات منهجية.
+
+<strong class="text-on-surface font-semibold">Common Safety Concerns in Dental Care | مخاوف السلامة الشائعة في الرعاية السنية:</strong>
+
+- Medication errors (wrong drug, wrong dose)
+- Infection control breaches
+- Wrong tooth/procedure documentation errors
+- Instrument retention
+- Anesthetic complications
+- Patient identification errors
+- Fall prevention in dental chair
+
+<strong class="text-on-surface font-semibold">Safety Improvement Strategies | استراتيجيات تحسين السلامة:</strong>
+
+1. <strong class="text-on-surface font-semibold">Standardization | التوحيد</strong>: Create standardized protocols for high-risk processes
+2. <strong class="text-on-surface font-semibold">Forcing functions | وظائف الإلغاء</strong>: Design processes that make errors impossible
+3. <strong class="text-on-surface font-semibold">Checklists | قوائم التحقق</strong>: Implement procedure-specific checklists
+4. <strong class="text-on-surface font-semibold">Team training | تدريب الفريق</strong>: Use crew resource management techniques
+5. <strong class="text-on-surface font-semibold">Safety culture | ثقافة السلامة</strong>: Foster non-punitive error reporting and learning
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">6.3 Quality Metrics for Dental Practice | مقاييس الجودة لممارسة طب义词</h4>
+
+Effective quality management requires meaningful metrics that capture both clinical outcomes and patient experience. Dental practices should develop comprehensive measurement systems that support continuous improvement.
+
+يتطلب إدارة الجودة الفعالة مقاييس ذات معنى تلتقط النتائج السريرية وتجربة المريض. يجب على عيادات طب义词 تطوير أنظمة قياس شاملة تدعم التحسين المستمر.
+
+<strong class="text-on-surface font-semibold">Key Dental Quality Metrics | مقاييس الجودة السنية الرئيسية:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Metric Category</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الفئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Specific Measures</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المقاييس المحددة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Target</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الهدف</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical outcomes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النتائج السريرية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Caries recurrence rate, periodontal status</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معدل تكرار التسوس، حالة اللثة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Based on evidence</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بناءً على الأدلة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Prevention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوقاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sealant rate, fluoride application rate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معدل السدادات، معدل تطبيق الفلوريد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Increasing trend</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتجاه تصاعدي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient safety</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سلامة المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Adverse event rate, infection rate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معدل الأحداث السلبية، معدل العدوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Zero harm</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ضرر صفري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient experience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تجربة المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Satisfaction score, wait time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">درجة الرضا، وقت الانتظار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">High satisfaction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">رضا عالي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Access</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوصول</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Appointment availability, wait time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">توفر المواعيد، وقت الانتظار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Target levels</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مستويات مستهدفة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Efficiency</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الكفاءة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Treatment time, productivity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وقت العلاج، الإنتاجية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Balanced targets</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أهداف متوازنة</td></tr>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 7: Dental Quality Improvement Case Studies | دراسات حالة لتحسين الجودة السنية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 3: Reducing Dental Caries in Pediatric Population | دراسة حالة 3: تقليل تسوس الأسنان في فئة الأطفال</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: School-based dental program in Eastern Province serving 50,000 students
+
+<strong class="text-on-surface font-semibold">Problem | المشكلة</strong>: High caries prevalence (42%) among elementary school students
+
+<strong class="text-on-surface font-semibold">Improvement Approach | نهج التحسين:</strong>
+
+1. <strong class="text-on-surface font-semibold">Baseline measurement</strong>: Established caries prevalence and identified contributing factors
+
+2. <strong class="text-on-surface font-semibold">Intervention bundle</strong>: 
+   - Enhanced screening and sealant application
+   - Oral health education program (students, parents, teachers)
+   - Fluoride varnish application (semi-annual)
+   - Sugar reduction initiatives in school canteens
+
+3. <strong class="text-on-surface font-semibold">Implementation</strong>: Phase-in approach across schools over 2 years
+
+4. <strong class="text-on-surface font-semibold">Measurement</strong>: Annual prevalence surveys, process measures
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Caries prevalence reduced from 42% to 28% (33% improvement)
+- Sealant application rate increased from 25% to 78%
+- Cost savings from reduced treatment needs estimated at SAR 2.4 million
+- Program recognized as national best practice
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 4: Improving Dental Implant Success Rates | دراسة حالة 4: تحسين معدلات نجاح زراعة الأسنان</h4>
+
+<strong class="text-on-surface font-semibold">Setting | الإعداد</strong>: Specialty dental center with implantology services
+
+<strong class="text-on-surface font-semibold">Problem | المشكلة</strong>: Higher than expected implant failure rate (8%)
+
+<strong class="text-on-surface font-semibold">Improvement Approach | نهج التحسين:</strong>
+
+1. <strong class="text-on-surface font-semibold">Root cause analysis</strong>: Identified contributing factors through systematic analysis
+
+2. <strong class="text-on-surface font-semibold">Process improvements</strong>:
+   - Enhanced pre-operative assessment protocol
+   - Improved sterilization procedures
+   - Standardized surgical technique
+   - Post-operative care standardization
+   - Patient selection criteria refinement
+
+3. <strong class="text-on-surface font-semibold">Measurement</strong>: Tracked outcomes and process adherence
+
+4. <strong class="text-on-surface font-semibold">Continuous refinement</strong>: Ongoing analysis and improvement
+
+<strong class="text-on-surface font-semibold">Results | النتائج</strong>:
+- Implant failure rate reduced to 2.5% (69% improvement)
+- Patient satisfaction increased significantly
+- Cost savings from reduced complications
+- Published as benchmark in specialty literature
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 8: Advanced Topics in Dental Quality | موضوعات متقدمة في الجودة السنية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">8.1 Evidence-Based Dentistry | طب الأسنان المستند إلى الأدلة</h4>
+
+Evidence-based dentistry integrates clinical expertise, patient values, and best available research to inform clinical decision-making. Implementing EBD in dental practice requires:
+
+طب义词 المستند إلى الأدلة يدمج الخبرة السريرية وقيم المريض وأفضل البحوث المتاحة لإعلام اتخاذ القرار السريري. تنفيذ EBD في ممارسة طب义词 يتطلب:
+
+- Access to evidence databases and resources
+- Skills in evidence appraisal
+- Systems for incorporating evidence into practice
+- Patient communication about evidence-based options
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">8.2 Technology and Quality | التكنولوجيا والجودة</h4>
+
+Advances in dental technology offer opportunities for quality improvement:
+
+التقدم في تقنية طب义词 يقدم فرصًا لتحسين الجودة:
+
+- Digital imaging for improved diagnosis
+- CAD/CAM for precise restorations
+- 3D printing for custom appliances
+- AI-assisted diagnosis
+- Electronic health records for coordination
+- Tele-dentistry for access
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">8.3 Dental Quality in Value-Based Care | الجودة السنية في الرعاية القائمة على القيمة</h4>
+
+As dental care moves toward value-based payment models, dental practices must develop capabilities for measuring and demonstrating value:
+
+مع تحرك رعاية طب义词 نحو نماذج الدفع القائمة على القيمة، يجب على عيادات طب义词 تطوير قدرات قياس وإظهار القيمة:
+
+- Outcome measurement systems
+- Cost accounting and management
+- Care coordination infrastructure
+- Population health management
+- Patient engagement capabilities
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 9: Resources and Implementation Tools | الموارد وأدوات التنفيذ</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Quality Improvement Project Selection Criteria | معايير اختيار مشروع تحسين الجودة</h4>
+
+When selecting a QI project in dental care, consider:
+
+عند اختيار مشروع تحسين الجودة في رعاية طب义词، think:
+
+- Impact on patient outcomes and experience
+- Feasibility of implementation
+- Available resources and expertise
+- Alignment with organizational priorities
+- Potential for measurable improvement
+- Likelihood of sustainability
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Dental QI Project Prioritization Matrix | مصفوفة تحديد أولويات مشروع تحسين الجودة السنية</h4>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Criterion</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المعيار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Weight</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوزن</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Score (1-5)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الدرجة</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient impact</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تأثير المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">25%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Feasibility</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الجدوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">20%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Alignment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المحاذاة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">15%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">القياس</td><td class="px-sm py-xs text-body-md text-on-surface-variant">15%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Resources</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموارد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">15%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستدامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">10%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Total</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الإجمالي</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">100%</strong></td></tr>
+</table></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Section 10: Summary and Next Steps | الملخص والخطوات التالية</h3>
+
+This comprehensive course has equipped dental professionals with the knowledge and tools to implement effective quality improvement in dental care settings. The key takeaways include:
+
+زودت هذه الدورة الشاملة المهنيين السنيين بالمعرفة والأدوات لتنفيذ تحسين الجودة الفعال في إعدادات رعاية طب义词. تشمل النقاط الرئيسية:
+
+<strong class="text-on-surface font-semibold">Key Learning Summary | ملخص التعلم الأساسي:</strong>
+
+1. The Model for Improvement provides a practical framework for dental QI work
+2. Effective aim statements must be specific, measurable, time-bound, and aligned with patient needs
+3. Measurement using process, outcome, and balancing measures is essential for tracking improvement
+4. Change concepts and PDSA cycles enable systematic testing and refinement of improvements
+5. Spread planning is critical for achieving large-scale impact beyond initial pilots
+6. Sustainability requires embedding changes in standard work and organizational culture
+7. Saudi healthcare context (CBAHI, MOH, Vision 2030) provides both requirements and opportunities for dental QI
+
+<strong class="text-on-surface font-semibold">Next Steps for Participants | الخطوات التالية للمشاركين:</strong>
+
+As you complete this course, apply your learning by:
+
+أثناء إكمال هذه الدورة، طبق ما تعلمته من خلال:
+
+1. Identifying one quality opportunity in your dental practice setting
+2. Developing a preliminary aim statement using SMART criteria
+3. Mapping current processes and identifying improvement opportunities
+4. Designing a first PDSA cycle to test a change concept
+5. Engaging colleagues in quality improvement efforts
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Content: Advanced Dental Quality Improvement</h3>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 1: Advanced Quality Improvement Methods</h3>
+
+Beyond the basics, dental quality improvement can benefit from advanced methods that enable deeper understanding and more effective interventions.
+
+Lean methodology provides powerful tools for eliminating waste and improving flow in dental practice. Key tools include value stream mapping, 5S, and continuous flow.
+
+Value stream mapping identifies steps in the patient journey and distinguishes value-added from non-value-added activities. This enables targeted improvement.
+
+5S (Sort, Set in Order, Shine, Standardize, Sustain) organizes the workspace for efficiency and safety. This is particularly valuable in dental operatories.
+
+Continuous flow creates smooth patient progression through appointments, reducing wait times and improving efficiency.
+
+Six Sigma provides statistical methods for reducing variation and defects. DMAIC (Define, Measure, Analyze, Improve, Control) provides a structured improvement approach.
+
+Statistical process control uses control charts to understand process variation and identify improvement opportunities. This enables data-driven decision making.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 2: Quality Improvement in Different Dental Settings</h3>
+
+Quality improvement approaches vary by dental setting. Understanding specific considerations helps in effective application.
+
+In private practice, QI focuses on patient satisfaction, efficiency, and clinical outcomes. Practice size and resources affect what is feasible.
+
+In public health dental programs, QI addresses access, equity, and population health outcomes. Programs serving underserved populations face specific challenges.
+
+In dental education, QI includes educational outcomes, clinical training quality, and research. Academic mission requires specific approaches.
+
+In dental specialties, QI addresses procedure-specific outcomes and quality. Different specialties have different quality considerations.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 3: Quality Improvement Leadership</h3>
+
+Effective dental quality improvement requires leadership at various levels. Understanding leadership roles helps in driving improvement.
+
+Clinical leadership involves dentists leading improvement efforts. This requires clinical credibility and improvement skills.
+
+Management leadership involves practice and organizational leaders supporting improvement. This requires resources, prioritization, and accountability.
+
+Team leadership involves dental teams working collaboratively on improvement. This requires communication, coordination, and shared purpose.
+
+Professional leadership involves professional associations and organizations supporting improvement. This requires standards, guidelines, and professional development.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 4: Sustaining Quality Improvement</h3>
+
+Sustaining improvement over time requires ongoing attention. Several factors are critical.
+
+Embedding in standard work integrates improvements into routine operations. This requires documenting work and training staff.
+
+Ongoing measurement tracks performance and triggers action when needed. This requires data systems and review processes.
+
+Continuous improvement creates a culture of ongoing enhancement. This requires learning orientation and improvement skills.
+
+Leadership attention maintains focus and resources. This requires visible commitment and accountability.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Chapter 5: Quality Improvement in the Saudi Context</h3>
+
+Quality improvement in Saudi dental settings benefits from understanding the specific context.
+
+CBAHI accreditation provides quality standards for healthcare facilities, including dental services. Meeting and exceeding these standards is important.
+
+MOH quality initiatives provide frameworks and expectations for quality improvement. Alignment with these initiatives supports success.
+
+Vision 2030 creates a context of transformation and improvement. Quality improvement aligns with national goals.
+
+Professional development opportunities support quality improvement capability. Continuing education and training are available.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="13">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Final Course Summary</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This comprehensive course on Improving Dental Care with the Model for Improvement has provided dental professionals with the knowledge and tools to implement effective quality improvement in dental care settings.
+
+The course covered the Model for Improvement framework, aim setting, measurement, change concepts, and testing. These provide a foundation for effective improvement.
+
+Practical applications demonstrated how these methods can be applied to improve dental care quality, access, and efficiency. Examples from Saudi settings showed local applicability.
+
+The course addressed the specific Saudi context including CBAHI standards, MOH initiatives, and Vision 2030. This provides practical knowledge for Saudi dental settings.
+
+Implementation of quality improvement requires commitment, resources, and ongoing effort. The frameworks and tools provided should guide implementation.
+
+As dental care continues to evolve, quality improvement will become increasingly important. The skills and knowledge from this course will support continuous improvement in dental care.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Final Course Content Section</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="14">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Summary and Course Completion</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Course Learning Review</h3>
+
+This comprehensive course on Improving Dental Care has provided dental professionals with the Model for Improvement framework and related tools for enhancing quality in dental practice settings. The course covered the three questions of the Model for Improvement: What are we trying to accomplish? How will we know that a change is an improvement? What changes can we make that will result in improvement?
+
+The course included detailed guidance on setting effective aims, developing appropriate measures, identifying change concepts, and testing changes using PDSA cycles. These fundamental skills are essential for any dental quality improvement initiative.
+
+The course addressed the importance of three types of measures: outcome measures that reflect the ultimate goals of improvement, process measures that track the activities leading to outcomes, and balancing measures that ensure improvements in one area do not cause problems elsewhere.
+
+Understanding change concepts and using creative brainstorming to generate ideas for improvement were covered. Change concepts provide starting points for generating specific change ideas.
+
+The course included guidance on testing changes on a small scale before full implementation. PDSA cycles provide a structured approach for testing, learning, and refining improvements.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Application in Practice</h3>
+
+Applying this learning to your practice requires identifying a specific quality issue, developing an aim statement, selecting measures, generating change ideas, and testing changes using PDSA cycles. The tools and templates provided can guide this work.
+
+Quality improvement is iterative and ongoing. Each cycle provides learning that informs subsequent cycles. Continuous improvement is a journey, not a destination.
+
+Collaboration with team members enhances improvement efforts. Engaging dental team members in improvement creates shared ownership and leverages diverse perspectives.
+
+Measurement provides evidence of improvement. Collecting and analyzing data systematically helps track progress and identify areas for further work.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Saudi Healthcare Context</h3>
+
+The course addressed the Saudi healthcare context and specific applications. CBAHI accreditation standards provide quality requirements that dental practices should meet. MOH quality initiatives guide improvement priorities. Vision 2030 creates a transformation context that supports quality improvement.
+
+Dental quality improvement in Saudi Arabia benefits from alignment with these frameworks and initiatives. Connecting improvement work to these larger goals enhances impact.
+
+Professional development and continuing education in quality improvement build capability. Investing in quality improvement skills benefits individuals and organizations.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Congratulations and Next Steps</h3>
+
+Congratulations on completing this course. You have gained knowledge and tools that can significantly enhance your ability to improve dental care quality.
+
+As next steps, apply your learning by identifying a specific quality improvement opportunity in your practice. Use the Model for Improvement framework to guide your work. Engage your team in improvement efforts. Measure your results and iterate.
+
+Share your learning with colleagues and contribute to the dental quality improvement community. Collaboration and knowledge sharing accelerate progress.
+
+Continue learning and developing your quality improvement capabilities. Quality improvement is a journey, and ongoing development enhances your effectiveness.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="15">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Code:</strong> DQA 101
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dqa-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="16">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/dqa-101" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/17</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-dqa-101') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-dqa-101', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('dqa-101')) list.push('dqa-101');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-dqa-101') === 'true';
+    localStorage.setItem('saved-dqa-101', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-dqa-101') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-dqa-101') === 'true';
+    localStorage.setItem('complete-dqa-101', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-dqa-101') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-dqa-101', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'Improving Dental Care with the Model for Improvement', slug: 'dqa-101', enrolled: localStorage.getItem('enrolled-dqa-101') === 'true', complete: localStorage.getItem('complete-dqa-101') === 'true', quizPassed: localStorage.getItem('quiz-pass-dqa-101') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-dqa-101.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

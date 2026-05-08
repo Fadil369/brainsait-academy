@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning for Spread: From Local Improvements to System-Wide Change | BrainSAIT Academy</title>
+  <meta name="description" content="Planning for Spread: From Local Improvements to System-Wide Change - Full bilingual course on Quality Improvement">
+  <meta name="keywords" content="Quality Improvement, IHI, Open School, Health Care, QI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Planning for Spread: From Local Improvements to System-Wide Change</h3>
+        <p>QI-201 • 60 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Objectives</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Lessons</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">English Overview</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">نظرة عامة بالعربية</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Expanded Lesson Summaries | الملخصا...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Activities & Assessment |...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Apply in Your Hospital/Clinic | الت...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Continuing Education Credits</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Detailed Lesson Content | محتوى الد...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Expanded Framework for Healthcare I...</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Comprehensive Guide to Healthcare I...</span>
+          </li>
+          <li class="section-item " data-section="15" onclick="scrollToSection(15)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Details</span>
+          </li>
+          <li class="section-item " data-section="16" onclick="scrollToSection(16)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Quality Improvement</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Planning for Spread: From Local Improvements to System-Wide Change</h1>
+        <p class="course-title-ar rtl">QI 201: التخطيط للانتشار: من التحسينات المحلية إلى التغيير على مستوى النظام</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">60</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">17</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Objectives</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          After completing this course, you will be able to:
+
+- Describe how change spreads according to Kurt Lewin and Everett Rogers.
+- Assess the likelihood that a new idea will spread.
+- Apply IHI’s Framework for Spread to spread an innovation across an organization.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Lessons</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          - <strong>Lesson 1: How Change Spreads</strong>
+You’ll learn how new ideas typically spread through a population, according to the work of psychologist Kurt Lewin and sociologist Everett Rogers. With their research in mind, you’ll learn what you can do to help motivate the more change-resistant individuals in your population to embrace a new idea, to allow your innovation to spread as far as possible.
+
+- <strong>Lesson 2: Tactics for Spreading Change</strong>
+You’ll learn about how to help a new idea spread across a population, both by motivating the people within the population to adopt the change and by developing new ideas that are inherently more likely to spread. Based on the five traits of innovations that spread, we’ll provide you with a tool, the New Idea Scorecard, to assess your idea for a change. Finally, we’ll provide you with a roadmap for spreading a change, which we call IHI’s Framework for Spread.
+
+- <strong>Lesson 3: Case Study in Spreading Innovations: Transforming Care at the Bedside </strong>
+You’ll follow a detailed case study about how a hospital network in Central Texas used the concepts from the first two lessons to spread a major improvement initiative — widely improving care across a vast system.
+
+<strong>Estimated Time of Completion</strong>: 1 hour 15 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">English Overview</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          This course equips health professionals to strengthen measurement, PDSA execution, reliability, and spread of improvements while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">نظرة عامة بالعربية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في القياس، وتنفيذ دورات التحسين PDSA، والموثوقية، ونشر التحسينات مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- Describe how change spreads according to Kurt Lewin and Everett Rogers.
+- Assess the likelihood that a new idea will spread.
+- Apply IHI’s Framework for Spread to spread an innovation across an organization.
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="section-title">العربية</h3>
+- فهم مبادئ تحسين الجودة وتحديد فرص التحسين ذات الأولوية في بيئة العمل.
+- استخدام أدوات القياس والتحليل لمتابعة الأداء قبل وبعد التدخلات.
+- تطبيق دورات PDSA بشكل عملي مع توثيق النتائج والدروس المستفادة.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: How Change Spreads</h3>
+- <strong>Expanded Summary:</strong> You’ll learn how new ideas typically spread through a population, according to the work of psychologist Kurt Lewin and sociologist Everett Rogers. With their research in mind, you’ll learn what you can do to help motivate the more change-resistant individuals in your population to embrace a new idea, to allow your innovation to spread as far as possible. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 1: كيف ينتشر التغيير</h3>
+- <strong>الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 2: Tactics for Spreading Change</h3>
+- <strong>Expanded Summary:</strong> You’ll learn about how to help a new idea spread across a population, both by motivating the people within the population to adopt the change and by developing new ideas that are inherently more likely to spread. Based on the five traits of innovations that spread, we’ll provide you with a tool, the New Idea Scorecard, to assess your idea for a change. Finally, we’ll provide you with a roadmap for spreading a change, which we call IHI’s Framework for Spread. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 2: تكتيكات نشر التغيير</h3>
+- <strong>الملخص الموسّع:</strong> تنتقل هذه الوحدة من الفهم النظري إلى التحليل التطبيقي: كيف تُقيِّم الوضع الراهن، وتُحدِّد الفجوات، وتختار الأدوات المناسبة لبيئة عملك. تُقدِّم أمثلة على التحديات الشائعة في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية، وتُمكِّن الممارس من ترجمة المشكلة إلى فرصة تحسين محددة.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> صمِّم قائمة تحقق مكوَّنة من خمسة بنود لمشكلة تشغيلية محددة في وحدتك، وحدِّد مؤشرًا للقياس القبلي ومؤشرًا للقياس البعدي قبل تنفيذ أي تدخل.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="section-title">Lesson 3: Case Study in Spreading Innovations: Transforming Care at the Bedside</h3>
+- <strong>Expanded Summary:</strong> You’ll follow a detailed case study about how a hospital network in Central Texas used the concepts from the first two lessons to spread a major improvement initiative — widely improving care across a vast system. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 3: دراسة حالة في نشر الابتكارات: تحويل الرعاية عند السرير</h3>
+- <strong>الملخص الموسّع:</strong> تُركِّز هذه الوحدة على التطبيق الميداني: تصميم التدخل، وبناء الفريق متعدد التخصصات، وتحديد مؤشرات المتابعة. تُعدِّل المقاربات التدخلية لتناسب الموارد والكوادر المتاحة في بيئات الرعاية السعودية، وتُخرِّج الممارس بخطة عمل قابلة للتنفيذ الفوري.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> نفِّذ دورة PDSA واحدة (سبعة أيام): طبِّق تغييرًا صغيرًا واحدًا، وقِس أثره على المؤشر المحدد، وأعدَّ ورقة نتائج تُشارك بها الفريق في الاجتماع الأسبوعي القادم.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- <strong>Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong>Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong>Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong>Local scenario:</strong> Use this course to reduce outpatient no-show impact and improve appointment access in a large urban PHC network.
+
+<h3 class="section-title">العربية</h3>
+- <strong>بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong>الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong>الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong>سيناريو محلي:</strong> تُستخدم الدورة من أجل تقليل أثر عدم الحضور للعيادات وتحسين إتاحة المواعيد في شبكة رعاية أولية حضرية كبيرة.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+1. <strong>Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong>Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong>Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong>Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="section-title">العربية</h3>
+1. <strong>استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong>اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong>مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong>نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td></tr>
+|---|---|
+<tr><td>Run chart</td><td>مخطط زمني تشغيلي</td></tr>
+<tr><td>PDSA cycle</td><td>دورة خطط-نفّذ-ادرس-صحّح</td></tr>
+<tr><td>Process measure</td><td>مؤشر قياس العملية</td></tr>
+<tr><td>Balancing measure</td><td>مؤشر موازنة</td></tr>
+<tr><td>Reliability</td><td>الموثوقية</td></tr>
+<tr><td>Scale-up</td><td>التوسّع التشغيلي</td></tr>
+<tr><td>Model for Improvement</td><td>نموذج التحسين</td></tr>
+<tr><td>SMART goal</td><td>الهدف الذكي SMART</td></tr>
+<tr><td>Driver diagram</td><td>مخطط المحركات</td></tr>
+<tr><td>Outcome measure</td><td>مؤشر النتائج</td></tr>
+<tr><td>Aim statement</td><td>بيان الهدف</td></tr>
+<tr><td>Change idea</td><td>فكرة التغيير</td></tr>
+<tr><td>Spread plan</td><td>خطة نشر التحسين</td></tr>
+<tr><td>Sustainability plan</td><td>خطة الاستدامة</td></tr>
+<tr><td>Theory of change</td><td>نظرية التغيير</td></tr>
+<tr><td>Statistical process control</td><td>الضبط الإحصائي للعمليات</td></tr></tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/qi-201
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- CBAHI QI Standards: https://www.cbahi.gov.sa/english/CBAHI-Standards
+- IHI QI Essentials Toolkit: https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+- MOH Saudi Health KPIs Dashboard: https://www.moh.gov.sa
+- Vision 2030 Health Transformation Program: https://www.vision2030.gov.sa/v2030/vrps/hst/
+- IHI Improvement Map: https://www.ihi.org/ImprovementMap
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+<div class="checklist-item"><span class="checkbox"></span>Select one department and one measurable problem.</div>
+<div class="checklist-item"><span class="checkbox"></span>Form a multidisciplinary micro-team.</div>
+<div class="checklist-item"><span class="checkbox"></span>Define baseline, target, and data collection frequency.</div>
+<div class="checklist-item"><span class="checkbox"></span>Run at least one improvement test and document findings.</div>
+<div class="checklist-item"><span class="checkbox"></span>Report outcomes to quality governance and plan next-cycle spread.</div>
+
+<div class="checklist-item"><span class="checkbox"></span>Present your improvement project charter to your department head within 30 days.</div>
+<div class="checklist-item"><span class="checkbox"></span>Schedule monthly data reviews with your improvement team and document decisions.</div>
+<div class="checklist-item"><span class="checkbox"></span>Submit a spread plan to your quality committee within 90 days of project launch.</div>
+<h3 class="section-title">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item"><span class="checkbox"></span>اختيار قسم واحد ومشكلة قابلة للقياس.</div>
+<div class="checklist-item"><span class="checkbox"></span>تشكيل فريق مصغر متعدد التخصصات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد خط الأساس والهدف وتواتر جمع البيانات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</div>
+<div class="checklist-item"><span class="checkbox"></span>رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] تقديم ميثاق مشروع التحسين لرئيس القسم خلال 30 يومًا.</div>
+<div class="checklist-item"><span class="checkbox"></span>جدولة مراجعات بيانات شهرية مع فريق التحسين وتوثيق القرارات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تقديم خطة نشر للجنة الجودة خلال 90 يومًا من انطلاق المشروع.</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Continuing Education Credits</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          Course completion typically earns 1.25 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener">Learn more about Continuing Education credits</a>
+
+See full detailsThe Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1.25 <em>AMA PRA Category 1 Credit(s)™</em>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+This activity is approved to award 1.25 credit(s) toward Certified Professional in Patient Safety (CPPS) recertification.
+
+This activity/program is approved by NAHQ® for 1.25 CPHQ CE credits.
+
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to:
+
+- 1.25 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1.25 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1.25 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1.25 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the learner to satisfy the Lifelong Learning requirements for the American Board of Ophthalmology's Maintenance of Certification program.
+
+Successful completion of this activity, which includes participation in the evaluation component, offers Lifelong Learning (MOC Part 2 CME) point(s) for the following boards:
+
+- American Board of Anesthesiology (ABA)
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)
+- American Board of Plastic Surgery (ABPS)
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+Successful completion of this activity, which includes participation in the evaluation component, offers Self-Assessment (MOC Part 2 SA) point(s) for the following boards:
+
+- American Board of Family Medicine (ABFM) (15pts)*
+- American Board of Pediatrics (ABPed) (20pts)*
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+<em>*ABPed and ABFM diplomates are required to complete all the selected courses within an activity to collect MOC activity points.</em>
+
+It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+
+As a Jointly Accredited Organization, the Institute for Healthcare Improvement is approved to offer social work continuing education by the Association of Social Work Boards (ASWB) Approved Continuing Education (ACE) program. Organizations, not individual courses, are approved under this program. Regulatory boards are the final authority on courses accepted for continuing education credit. Social workers completing this course receive 1.25 general continuing education credits. 
+
+By attending QI 201 offered by the Institute for Healthcare Improvement participants may earn up to 1.25 ACHE Qualifying Education Hours toward initial certification or recertification of the Fellow of the American College of Healthcare Executives (FACHE) designation.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1 Deep Dive: How Change Spreads | الدرس الأول approfondi: كيف ينتشر التغيير</h3>
+
+<h4 class="section-sub">Section 1.1: Understanding Change Theories | فهم نظريات التغيير</h4>
+
+The spread of innovations and improvements follows recognizable patterns that have been studied extensively in social science literature. Understanding these patterns helps QI practitioners design more effective spread strategies.
+
+يتبع انتشار الابتكارات والتحسينات أنماطًا معترفًا عليها درست على نطاق واسع في الأدبيات الاجتماعية. فهم هذه الأنماط يساعد ممارسي QI في تصميم استراتيجيات انتشار أكثر فعالية.
+
+<strong>Kurt Lewin's Change Theory | نظرية تغيير كورت لوين:</strong>
+
+Kurt Lewin, a pioneering social psychologist, developed a foundational model for understanding how change occurs in groups and organizations. His three-stage model remains highly influential in the field of organizational change.
+
+طور كورت لوين، عالم الاجتماع الرائد، نموذجًا أساسيًا لفهم كيفية حدوث التغيير في المجموعات والمؤسسات. يظل نموجه المكون من ثلاث مراحل مؤثرًا للغاية في مجال التغيير التنظيمي.
+
+Lewin proposed that behavior is the result of a balance between driving forces that push for change and restraining forces that resist change. Understanding these forces is essential for anyone seeking to spread an improvement.
+
+اقترح لوين أن السلوك هو نتيجة التوازن بين القوى الدافعة التي تدفع للتغيير والقوى المقاوِمة التي تقاوم التغيير. فهم هذه القوى ضروري لأي شخص يسعى لنشر تحسين.
+
+<strong>The Three-Stage Model | النموذج ثلاثي المراحل:</strong>
+
+1. <strong>Unfreezing | إعادة التشكيل</strong>: This stage involves preparing the organization for change by creating awareness of the need for change and breaking down the existing mindset or status quo. In the context of QI spread, this means helping potential adopters understand why the improvement is needed and valuable.
+
+تتضمن هذه المرحلة تحضير المؤسسة للتغيير من خلال خلق الوعي بالحاجة إلى التغيير وتكسير العقلية الحالية أو الوضع الراهن. في سياق انتشار QI، يعني هذا مساعدة المتبنين المحتملين على فهم لماذا التحسين مطلوب وقيّم.
+
+2. <strong>Changing | التغيير</strong>: This stage involves implementing the change itself—the actual adoption of new behaviors, processes, or practices. In spread work, this is when the improvement is implemented in new settings.
+
+تتضمن هذه المرحلة تنفيذ التغيير نفسه—التبني الفعلي للسلوكيات أو العمليات أو الممارسات الجديدة. في عمل الانتشار، هذا هو عندما يتم تنفيذ التحسين في إعدادات جديدة.
+
+3. <strong>Refreezing | إعادة التجميد</strong>: This stage involves solidifying the new patterns so they become the new norm. Without refreezing, improvements may not be sustained. In spread, this means ensuring that the change becomes embedded in routine operations.
+
+تتضمن هذه المرحلة تثبيت الأنماط الجديدة حتى تصبح المعيار الجديد. بدون إعادة التجميد، قد لا تستمر التحسينات. في الانتشار، هذا يعني ضمان أن التغيير يصبح مدمجًا في العمليات الروتينية.
+
+<strong>Everett Rogers' Diffusion of Innovations | انتشار الابتكارات لإيفيريت روجرز:</strong>
+
+Everett Rogers, a communication scholar, developed the most comprehensive theory of how innovations spread through social systems. His work, "Diffusion of Innovations," has been applied extensively in healthcare quality improvement.
+
+طور إيفيريت روجرز، عالم الاتصال، النظرية الأكثر شمولاً لكيفية انتشار الابتكارات عبر الأنظمة الاجتماعية. تم تطبيق عمله، "انتشار الابتكارات"، على نطاق واسع في تحسين جودة الرعاية الصحية.
+
+Rogers identified five stages in the diffusion process:
+
+حدد روجرز خمس مراحل في عملية الانتشار:
+
+1. <strong>Knowledge | المعرفة</strong>: The individual becomes aware of the innovation and has some understanding of how it works.
+
+2. <strong>Persuasion | الإقناع</strong>: The individual forms a favorable or unfavorable attitude toward the innovation.
+
+3. <strong>Decision | القرار</strong>: The individual engages in activities that lead to a choice to adopt or reject the innovation.
+
+4. <strong>Implementation | التنفيذ</strong>: The individual puts the innovation to use.
+
+5. <strong>Confirmation | التأكيد</strong>: The individual seeks to reinforce the decision and may reverse if exposed to conflicting messages.
+
+<strong> adopter Categories | فئات المتبنين:</strong>
+
+Rogers categorized adopters based on when they adopt an innovation:
+
+صنف روجرز المتبنين بناءً على متى يتبنون ابتكارًا:
+
+- <strong>Innovators | المبتكرون (2.5%)</strong>: Venturesome, first to adopt, willing to take risks
+- <strong>Early Adopters | المستكشفون Early (13.5%)</strong>: Respected, opinion leaders, adopt earlier but carefully
+- <strong>Early Majority | Majority Early (34%)</strong>: Deliberate, adopt before average, seldom lead
+- <strong>Late Majority | Majority Late (34%)</strong>: Skeptical, adopt after majority, need peer pressure
+- <strong>Laggards |المتأخرون (16%)</strong>: Traditional, last to adopt, resistant to change
+
+Understanding these categories helps QI teams target their spread efforts appropriately. Early adopters can help persuade others, while laggards may require additional support or time.
+
+فهم هذه الفئات يساعد فرق QI في استهداف جهود الانتشار بشكل مناسب. يمكن للمستكشفين Early المساعدة في إقناع الآخرين، بينما قد يحتاج المتأخرون إلى دعم إضافي أو وقت.
+
+<h4 class="section-sub">Section 1.2: Factors Affecting Spread | العوامل المؤثرة على الانتشار</h4>
+
+Not all innovations spread equally. Rogers identified five characteristics of innovations that influence their adoption rate:
+
+لا تنتشر جميع الابتكارات بشكل متساوٍ. حدد روجرز خمس خصائص للابتكارات التي تؤثر على معدل تبنيها:
+
+1. <strong>Relative Advantage | الميزة النسبية</strong>: The degree to which an innovation is perceived as better than the idea it supersedes. Improvements with clear, measurable advantages spread faster.
+
+درجة كون الابتكار يُدرك على أنه أفضل من الفكرة التي يحل محلها. التحسينات ذات المميزات الواضحة والقابلة للقياس تنتشر بشكل أسرع.
+
+2. <strong>Compatibility | التوافق</strong>: The degree to which an innovation is perceived as consistent with existing values, past experiences, and needs. Innovations that fit with current practice spread more easily.
+
+درجة كون الابتكار يُدرك على أنه متسق مع القيم الحالية والخبرات السابقة والاحتياجات. الابتكارات التي تتاسب مع الممارسة الحالية تنتشر بسهولة أكبر.
+
+3. <strong>Complexity | التعقيد</strong>: The degree to which an innovation is perceived as relatively difficult to understand and use. Simpler innovations spread faster.
+
+درجة كون الابتكار يُدرك على أنه صعب نسبيًا في الفهم والاستخدام. الابتكارات البسيطة تنتشر بشكل أسرع.
+
+4. <strong>Trialability | القابلية للاختبار</strong>: The degree to which an innovation may be experimented with on a limited basis. Innovations that can be tested on a small scale spread faster.
+
+درجة إمكانية تجربة الابتكار على أساس محدود. الابتكارات التي يمكن اختبارها على نطاق صغير تنتشر بشكل أسرع.
+
+5. <strong>Observability | الملاحظة</strong>: The degree to which the results of an innovation are visible to others. Innovations with visible results spread faster.
+
+درجة ظهور نتائج الابتكار للآخرين. الابتكارات ذات النتائج المرئية تنتشر بشكل أسرع.
+
+<strong>Application to Healthcare QI | التطبيق على تحسين جودة الرعاية الصحية:</strong>
+
+These characteristics have direct implications for QI project design and spread:
+
+لهذه الخصائص تأثيرات مباشرة على تصميم مشروع QI والانتشار:
+
+- <strong>Relative advantage</strong>: Ensure clear evidence of improvement, quantify benefits where possible
+- <strong>Compatibility</strong>: Adapt changes to fit existing workflows and culture
+- <strong>Complexity</strong>: Simplify implementation, provide training and support
+- <strong>Trialability</strong>: Use PDSA cycles to allow small-scale testing
+- <strong>Observability</strong>: Make results visible, share success stories and data
+
+<h4 class="section-sub">Section 1.3: Overcoming Resistance | التغلب على المقاومة</h4>
+
+Resistance to change is natural and can come from many sources. Understanding the sources of resistance helps QI practitioners develop strategies to address them.
+
+المقاومة للتغيير طبيعية ويمكن أن تأتي من مصادر كثيرة. فهم مصادر المقاومة يساعد ممارسي QI في تطوير استراتيجيات لمعالجتها.
+
+<strong>Sources of Resistance | مصادر المقاومة:</strong>
+
+1. <strong>Fear of unknown | الخوف من المجهول</strong>: People may resist because they don't understand what the change will bring.
+
+2. <strong>Loss of competence | فقدان الكفاءة</strong>: Change may make existing skills less valuable.
+
+3. <strong>Peer pressure | ضغط الأقران</strong>: Resistance from colleagues can influence individuals.
+
+4. <strong>Threat to status | تهديد المكانة</strong>: Change may affect power or influence.
+
+5. <strong>Lack of resources | نقص الموارد</strong>: Change requires resources people may not have.
+
+6. <strong>Poor timing | التوقيت السيئ</strong>: Change at a bad time triggers resistance.
+
+<strong>Strategies for Addressing Resistance | استراتيجيات معالجة المقاومة:</strong>
+
+1. <strong>Involve people in planning | إشراك الناس في التخطيط</strong>: Those involved in implementation are more likely to support it.
+
+2. <strong>Communicate effectively | التواصل الفعال</strong>: Clear, honest communication addresses fear of the unknown.
+
+3. <strong>Provide training and support | توفير التدريب والدعم</strong>: Address competence concerns through education.
+
+4. <strong>Start small and demonstrate success | البدء صغيرًا وإظهار النجاح</strong>: Show results to build confidence.
+
+5. <strong>Address legitimate concerns | معالجة المخاوف المشروعة</strong>: Listen to and address valid objections.
+
+6. <strong>Use social proof | استخدام الدليل الاجتماعي</strong>: Use respected early adopters to influence others.
+
+<h3 class="section-title">Lesson 2 Deep Dive: Tactics for Spreading Change | الدرس الثاني approfondi: تكتيكات نشر التغيير</h3>
+
+<h4 class="section-sub">Section 2.1: IHI Framework for Spread | إطار IHI للانتشار</h4>
+
+The Institute for Healthcare Improvement developed a comprehensive Framework for Spread that provides a structure for planning and implementing spread activities. The framework emphasizes three key elements:
+
+طور معهد تحسين الرعاية الصحية إطارًا شاملاً للانتشار يوفر هيكلًا لتخطيط وتنفيذ أنشطة الانتشار. يؤكد الإطار على ثلاثة عناصر رئيسية:
+
+1. <strong>Setting | الإعداد</strong>: The system, organization, or region where spread will occur
+
+2. <strong>Planning for Spread | التخطيط للانتشار</strong>: The systematic approach to planning spread activities
+
+3. <strong>Methods and Tools | الأساليب والأدوات</strong>: The specific tactics used to achieve spread
+
+<strong>Key Principles of the IHI Spread Framework | المبادئ الرئيسية لإطار انتشار IHI:</strong>
+
+1. <strong>Spread is a learned skill | الانتشار مهارة مكتسبة</strong>: Organizations can develop capacity for spread through systematic effort.
+
+2. <strong>Focus on small tests of change | التركيز على اختبارات صغيرة للتغيير</strong>: Small-scale tests build evidence and confidence.
+
+3. <strong>Identify and work through good Spreaders | تحديد والعمل من خلال الناشرون الجيدون</strong>: Some people are more effective at spreading ideas.
+
+4. <strong>Make use of the social system | استخدام النظام الاجتماعي</strong>: Leverage existing relationships and networks.
+
+5. <strong>Measure and track spread | قياس وتتبع الانتشار</strong>: Monitor progress to identify what is working.
+
+6. <strong>Adapt while maintaining fidelity | التكيف مع الحفاظ على الأمانة</strong>: Adapt innovations to new settings while maintaining core elements.
+
+<h4 class="section-sub">Section 2.2: The New Idea Scorecard | بطاقة تقييم الفكرة الجديدة</h4>
+
+The New Idea Scorecard is a tool for evaluating how likely a new idea or improvement is to spread. It helps teams identify potential barriers and opportunities for spread.
+
+بطاقة تقييم الفكرة الجديدة هي أداة لتقييم احتمالية انتشار فكرة أو تحسين جديد.，帮助 الفرق على تحديد العوائق المحتملة وفرص الانتشار.
+
+<strong>Scoring Criteria | معايير التقييم:</strong>
+
+Rate each characteristic on a scale of 1-5:
+
+قم بتقييم كل خاصية على مقياس 1-5:
+
+1. <strong>Relative advantage</strong>: How much better is this than current practice?
+2. <strong>Compatibility</strong>: How well does this fit with current workflows?
+3. <strong>Trialability</strong>: Can this be tried on a small scale first?
+4. <strong>Observability</strong>: Are the results visible to others?
+5. <strong>Simplicity</strong>: How easy is this to understand and implement?
+
+<strong>Scoring Guide | دليل التقييم:</strong>
+
+- 5 = Excellent
+- 4 = Good
+- 3 = Adequate
+- 2 = Needs improvement
+- 1 = Poor
+
+Scores above 20 suggest the idea has strong spread potential. Scores below 15 indicate significant barriers that need to be addressed.
+
+الدرجات فوق 20 تشير إلى أن الفكرة لديها انتشار قوي. الدرجات أقل من 15 تشير إلى عوائق كبيرة تحتاج إلى معالجتها.
+
+<h4 class="section-sub">Section 2.3: Spread Planning | تخطيط الانتشار</h4>
+
+Effective spread requires systematic planning that considers the unique characteristics of each target setting.
+
+يتطلب الانتشار الفعال تخطيطًا منهجيًا يأخذ في الاعتبار الخصائص الفريدة لكل إعداد مستهدف.
+
+<strong>Spread Plan Template | قالب خطة الانتشار:</strong>
+
+<strong>Current State | الحالة الحالية:</strong>
+- What improvement has been successfully implemented?
+- What evidence exists that it works?
+- Where is it currently being used?
+
+<strong>Target State | الحالة المستهدفة:</strong>
+- Where do we want to spread this improvement?
+- What is our timeline?
+- What resources are available?
+
+<strong>Spread Strategy | استراتيجية الانتشار:</strong>
+- Which sites or settings are priority targets?
+- Who are the key stakeholders in each setting?
+- What adaptation will be needed?
+- What support will be needed for adoption?
+
+<strong>Measurement | القياس:</strong>
+- How will we track spread progress?
+- What indicators will show successful adoption?
+- How will we know if the improvement is being sustained?
+
+<strong>Communication | التواصل:</strong>
+- How will we share results and learning?
+- Who needs to receive updates?
+- What channels will we use?
+
+<h3 class="section-title">Lesson 3 Deep Dive: Case Study - Transforming Care at the Bedside | الدرس الثالث approfondi: دراسة حالة - تحويل الرعاية عند السرير</h3>
+
+<h4 class="section-sub">Section 3.1: TCAB Case Study Overview | نظرة عامة على دراسة حالة TCAB</h4>
+
+The Transforming Care at the Bedside (TCAB) initiative, developed by the Institute for Healthcare Improvement and the Robert Wood Johnson Foundation, provides an excellent example of successful spread in healthcare. The initiative aimed to improve the quality and safety of patient care on hospital medical-surgical units, with a particular focus on creating better care environments for nurses and improving patient-centered care.
+
+توفر مبادرة تحويل الرعاية عند السرير (TCAB)، التي طورها معهد تحسين الرعاية الصحية ومؤسسة روبرت وود جونسون، مثالًا ممتازًا على الانتشار الناجح في الرعاية الصحية. هدفت المبادرة إلى تحسين جودة وسلامة رعاية المرضى في وحدات المستشفى الطبية والجراحية، مع التركيز particular على خلق أفضل بيئات الرعاية للممرضات وتحسين الرعاية المتمحورة حول المريض.
+
+<strong>TCAB's Spread Journey | رحلة انتشار TCAB:</strong>
+
+TCAB began as a pilot in 10 hospitals in 2003 and spread to over 400 hospitals by 2009. The spread was achieved through a combination of factors:
+
+بدأت TCAB كمشروع تجريبي في 10 مستشفيات في 2003 وانتشرت إلى أكثر من 400 مستشفى بحلول 2009. تحقق الانتشار من خلال مجموعة من العوامل:
+
+1. <strong>Strong evidence base | قاعدة أدلة قوية</strong>: Early results showed measurable improvements in patient safety and nurse satisfaction.
+
+2. <strong>Clear, adaptable framework | إطار واضح وقابل للتكيف</strong>: The TCAB toolkit provided structure while allowing adaptation to local contexts.
+
+3. <strong>Multiple spread channels | قنوات انتشار متعددة</strong>: Conferences, publications, peer networks, and IHI collaboratives all contributed to spread.
+
+4. <strong>Senior nursing leadership | قيادات تمريضية عليا</strong>: Engaged chief nursing officers who championed the work in their organizations.
+
+5. <strong>Measurement and sharing | القياس والمشاركة</strong>: Regular data collection and sharing of results maintained momentum.
+
+<h4 class="section-sub">Section 3.2: TCAB Core Changes | التغييرات الأساسية في TCAB</h4>
+
+TCAB focused on four key areas that together represented a comprehensive approach to improving care:
+
+ركزت TCAB على أربع مناطق رئيسية يمثل معًا نهجًا شاملاً لتحسين الرعاية:
+
+1. <strong>Patient-centered care | الرعاية المتمحورة حول المريض</strong>
+   - Involving patients and families in care decisions
+   - Improving communication between nurses and patients
+   - Enhancing the care environment
+
+2. <strong>Safe care | رعاية آمنة</strong>
+   - Reducing medication errors
+   - Improving falls prevention
+   - Enhancing rapid response systems
+
+3. <strong>Teamwork and communication | العمل الجماعي والتواصل</strong>
+   - Improving shift handoffs
+   - Enhancing team communication
+   - Creating collaborative relationships
+
+4. <strong>Staff recruitment and retention | توظيف واحتفاظ الموظفين</strong>
+   - Improving the work environment
+   - Enhancing professional development
+   - Creating leadership opportunities
+
+Each of these areas included specific changes that could be tested and implemented in hospitals of different sizes, types, and resources.
+
+تتضمن كل من هذه المناطق تغييرات محددة يمكن اختبارها وتنفيذها في مستشفيات بأحجام وأنواع وموارد مختلفة.
+
+<h4 class="section-sub">Section 3.3: TCAB Spread Lessons | دروس انتشار TCAB</h4>
+
+The TCAB experience provides important lessons for anyone seeking to spread improvements in healthcare:
+
+توفر تجربة TCAB دروسًا مهمة لأي شخص يسعى لنشر التحسينات في الرعاية الصحية:
+
+1. <strong>Start with high-impact, visible changes | البدء بتغييرات عالية التأثير ومرئية</strong>: Changes that showed clear results built momentum for further adoption.
+
+2. <strong>Create tools and resources | إنشاء أدوات وموارد</strong>: The TCAB toolkit made it easier for new sites to get started.
+
+3. <strong>Build a social movement | بناء حركة اجتماعية</strong>: Bringing hospitals together in collaboratives created energy and peer support.
+
+4. <strong>Celebrate and share success | الاحتفال بنجاح ومشاركته</strong>: Recognizing and spreading success stories maintained motivation.
+
+5. <strong>Adapt while maintaining core elements | التكيف مع الحفاظ على العناصر الأساسية</strong>: Different hospitals adapted TCAB to their contexts while maintaining the core approach.
+
+6. <strong>Invest in spread infrastructure | الاستثمار في بنية التحتية للانتشار</strong>: IHI's investment in spread support was critical to the initiative's success.
+
+<h3 class="section-title">Saudi Healthcare Spread Case Studies | دراسات حالة الانتشار في الرعاية الصحية السعودية</h3>
+
+<h4 class="section-sub">Case Study 1: Hand Hygiene Improvement Spread in Riyadh Hospitals | دراسة حالة 1: انتشار تحسين نظافة اليدين في مستشفيات الرياض</h4>
+
+<strong>Background | الخلفية</strong>: A large private hospital group in Riyadh achieved significant improvements in hand hygiene compliance through a comprehensive QI program. They then sought to spread these improvements to their other facilities.
+
+<strong>Spread Approach | نهج الانتشار:</strong>
+
+1. <strong>Documentation and tools | التوثيق والأدوات</strong>: Created detailed implementation guide based on the original project.
+
+2. <strong>Champion network | شبكة الأبطال</strong>: Identified infection control champions in each facility to lead local implementation.
+
+3. <strong>Training cascade | تدريب متتالي</strong>: Trained champions who then trained local staff.
+
+4. <strong>Regular sharing | المشاركة المنتظمة</strong>: Monthly calls across facilities to share progress and solve problems.
+
+5. <strong>Measurement alignment | محاذاة القياس</strong>: Standardized measurement approach across all sites.
+
+<strong>Results | النتائج</strong>:
+- Hand hygiene compliance improved from 62% to 89% across the group
+- Healthcare-associated infections reduced by 35%
+- Spread completed to 8 facilities within 18 months
+
+<h4 class="section-sub">Case Study 2: Patient Flow Improvement Spread Across PHC Clusters | دراسة حالة 2: انتشار تحسين تدفق المرضى عبر تجمعات الرعاية الأولية</h4>
+
+<strong>Background | الخلفية</strong>: A PHC cluster in the Eastern Province developed a successful model for improving patient flow and reducing wait times. The success was recognized by the MOH for potential spread to other clusters.
+
+<strong>Spread Approach | نهج الانتشار:</strong>
+
+1. <strong>MOH endorsement | تأييد وزارة الصحة</strong>: MOH endorsed the approach, creating legitimacy for adoption.
+
+2. <strong>Site visits | زيارات المواقع</strong>: Organized visits for other clusters to see the model in action.
+
+3. <strong>Peer learning network | شبكة التعلم بين الأقران</strong>: Created a community of practice for PHC quality improvement leads.
+
+4. <strong>Adapted toolkit | مجموعة أدوات مطابقة</strong>: Developed Arabic-language toolkit with adaptations for different contexts.
+
+5. <strong>Regional expansion | توسيع إقليمي</strong>: Began with one region, expanded to additional regions with MOH support.
+
+<strong>Results | النتائج</strong>:
+- Reduced average wait times by 40% in participating clusters
+- Patient satisfaction improved significantly
+- Spread to 12 PHC clusters across 3 regions within 2 years
+
+<h3 class="section-title">Spread Planning Checklist | قائمة التحقق من تخطيط الانتشار</h3>
+
+<strong>Preparation | التحضير</strong>
+<div class="checklist-item"><span class="checkbox"></span>Document the improvement with clear evidence of effectiveness</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify core elements that must be maintained</div>
+<div class="checklist-item"><span class="checkbox"></span>Determine what can be adapted for local contexts</div>
+<div class="checklist-item"><span class="checkbox"></span>Develop implementation tools and resources</div>
+<div class="checklist-item"><span class="checkbox"></span>Create measurement approach for tracking spread</div>
+
+<strong>Target Selection | اختيار الأهداف</strong>
+<div class="checklist-item"><span class="checkbox"></span>Identify priority sites for spread</div>
+<div class="checklist-item"><span class="checkbox"></span>Assess readiness and capacity at target sites</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify potential barriers to adoption</div>
+<div class="checklist-item"><span class="checkbox"></span>Develop site-specific adaptation plans</div>
+
+<strong>Implementation | التنفيذ</strong>
+<div class="checklist-item"><span class="checkbox"></span>Identify change champions at each site</div>
+<div class="checklist-item"><span class="checkbox"></span>Provide training on the improvement</div>
+<div class="checklist-item"><span class="checkbox"></span>Ensure adequate support during implementation</div>
+<div class="checklist-item"><span class="checkbox"></span>Monitor implementation fidelity</div>
+<div class="checklist-item"><span class="checkbox"></span>Address problems quickly</div>
+
+<strong>Sustainability | الاستدامة</strong>
+<div class="checklist-item"><span class="checkbox"></span>Embed changes in standard operating procedures</div>
+<div class="checklist-item"><span class="checkbox"></span>Integrate measures into ongoing monitoring</div>
+<div class="checklist-item"><span class="checkbox"></span>Build support into regular organizational functions</div>
+<div class="checklist-item"><span class="checkbox"></span>Create mechanisms for ongoing learning</div>
+
+<h3 class="section-title">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Definition</td></tr>
+|--------------|----------------|------------|
+<tr><td>Spread</td><td>الانتشار</td><td>Process of extending improvements beyond initial implementation site</td></tr>
+<tr><td>Diffusion</td><td>الانتشار</td><td>The process by which an innovation spreads through a social system</td></tr>
+<tr><td>Adoption</td><td>التبني</td><td>The decision to implement an innovation</td></tr>
+<tr><td>Innovation</td><td>ابتكار</td><td>New idea, method, or device</td></tr>
+<tr><td>Change agent</td><td>عامل التغيير</td><td>Person who facilitates change within an organization</td></tr>
+<tr><td>Champion</td><td>بطل</td><td>Person who actively promotes and supports a change</td></tr>
+<tr><td>Early adopter</td><td>early</td><td>Person who adopts an innovation relatively early</td></tr>
+<tr><td>Critical mass</td><td>الكتلة الحرجة</td><td>Point at which enough people have adopted that further adoption becomes self-sustaining</td></tr>
+<tr><td>Social network</td><td>الشبكة الاجتماعية</td><td>Network of relationships through which information flows</td></tr>
+<tr><td>Peer influence</td><td>تأثير الأقران</td><td>Influence from others of similar status</td></tr>
+<tr><td>Scale-up</td><td>التوسع</td><td>Expanding the scope of an intervention</td></tr>
+<tr><td>Sustainability</td><td>الاستدامة</td><td>Maintaining improvements over time</td></tr>
+<tr><td>Adaptation</td><td>التكيف</td><td>Modifying an innovation for new contexts</td></tr>
+<tr><td>Fidelity</td><td>الأمانة</td><td>Maintaining core elements of an intervention</td></tr>
+<tr><td>Evidence-based</td><td>القائم على الأدلة</td><td>Based on scientific evidence</td></tr>
+<tr><td>Best practice</td><td>أفضل الممارسة</td><td>Practice that has been shown to be effective</td></tr>
+<tr><td>Implementation science</td><td>علم التنفيذ</td><td>Study of methods to integrate evidence into practice</td></tr>
+<tr><td>Knowledge translation</td><td>ترجمة المعرفة</td><td>Moving knowledge into action</td></tr>
+<tr><td>Learning organization</td><td>منظمة التعلم</td><td>Organization that continuously improves through learning</td></tr>
+<tr><td>Continuous improvement</td><td>التحسين المستمر</td><td>Ongoing effort to improve products, services, or processes</td></tr>
+<tr><td>Quality improvement</td><td>تحسين الجودة</td><td>Systematic, data-driven approach to improving care</td></tr>
+<tr><td>Model for improvement</td><td>نموذج التحسين</td><td>Framework using aim statement, measures, and PDSA</td></tr>
+<tr><td>PDSA cycle</td><td>دورة PDSA</td><td>Plan-Do-Study-Act iterative testing cycle</td></tr>
+<tr><td>Driver diagram</td><td>مخطط المحركات</td><td>Visual display of primary and secondary drivers</td></tr>
+<tr><td>Theory of improvement</td><td>نظرية التحسين</td><td>Explanation of how and why change leads to improvement</td></tr>
+<tr><td>Stakeholder engagement</td><td>إشراك أصحاب المصلحة</td><td>Involving relevant parties in improvement work</td></tr>
+<tr><td>Barrier</td><td>عائق</td><td>Factor that impedes progress</td></tr>
+<tr><td>Facilitator</td><td>fasilitasi</td><td>Factor that enables or speeds progress</td></tr>
+<tr><td>Learning network</td><td>شبكة التعلم</td><td>Network for sharing knowledge and experience</td></tr>
+<tr><td>Community of practice</td><td>مجتمع الممارسة</td><td>Group of people who share a concern and learn together</td></tr>
+
+<h3 class="section-title">Section 4: Advanced Spread Strategies | استراتيجيات الانتشار المتقدمة</h3>
+
+<h4 class="section-sub">4.1 Social Marketing for Healthcare Spread | التسويق الاجتماعي لانتشار الرعاية الصحية</h4>
+
+Social marketing applies commercial marketing techniques to promote behavior change for social good. In healthcare spread, this approach can effectively influence adoption of improvements across target audiences.
+
+يطبق التسويق الاجتماعي تقنيات التسويق التجاري لتعزيز تغيير السلوك من أجل الخير الاجتماعي. في انتشار الرعاية الصحية، يمكن لهذا النهج التأثير بشكل فعال على تبني التحسينات عبر الجماهير المستهدفة.
+
+<strong>Key Social Marketing Principles | مبادئ التسويق الاجتماعي الرئيسية:</strong>
+
+1. <strong>Audience Segmentation | تجزئة الجمهور</strong>: Divide target audience into segments based on characteristics, needs, and motivations
+
+2. <strong>Exchange Analysis | تحليل التبادل</strong>: Understand what people will give up (time, effort, change) and what they will receive (benefits, rewards)
+
+3. <strong>Competition Analysis | تحليل المنافسة</strong>: Identify what competes with the desired behavior and how to overcome barriers
+
+4. <strong>Positioning | التموضع</strong>: Create compelling message that differentiates the improvement from current practice
+
+5. <strong>Channels | القنوات</strong>: Select communication channels that reach target audiences effectively
+
+6. <strong>Monitoring | المراقبة</strong>: Track implementation and adjust strategies based on results
+
+<h4 class="section-sub">4.2 Peer Influence Networks | شبكات تأثير الأقران</h4>
+
+Peer networks are powerful channels for spread. Understanding and leveraging these networks can significantly accelerate adoption of improvements.
+
+شبكات الأقران هي قنوات قوية للانتشار. فهم واستخدام هذه Networks يمكن أن يسرع بشكل كبير تبني التحسينات.
+
+<strong>Identifying and Engaging Spread Leaders | تحديد وإشراك قادة الانتشار:</strong>
+
+- Map formal and informal communication networks
+- Identify respected individuals who influence others' behavior
+- Engage early adopters and opinion leaders
+- Provide them with information and resources to share
+- Recognize and reward their spread efforts
+
+<h4 class="section-sub">4.3 Organizational Readiness Assessment | تقييم الجاهزية التنظيمية</h4>
+
+Not all settings are ready to adopt improvements. Assessing readiness helps identify potential barriers and develop strategies to address them.
+
+ليست جميع الإعدادات جاهزة لتبني التحسينات. تقييم الجاهزية helps تحديد العوائق المحتملة وتطوير استراتيجيات لمعالجتها.
+
+<strong>Readiness Dimensions | أبعاد الجاهزية:</strong>
+
+<tr><td>Dimension</td><td>البُعد</td><td>Assessment Questions</td><td>أسئلة التقييم</td></tr>
+|-----------|--------|---------------------|---------------|
+<tr><td>Leadership</td><td>القيادة</td><td>Is leadership committed and visible?</td><td>هل القيادة ملتزمة ومرئية؟</td></tr>
+<tr><td>Culture</td><td>الثقافة</td><td>Is there a culture of improvement?</td><td>هل توجد ثقافة تحسين؟</td></tr>
+<tr><td>Resources</td><td>الموارد</td><td>Are adequate resources available?</td><td>هل الموارد كافية متاحة؟</td></tr>
+<tr><td>Capacity</td><td>القدرة</td><td>Do staff have skills and time?</td><td>هل لدى الموظفين المهارات والوقت؟</td></tr>
+<tr><td>History</td><td>التاريخ</td><td>Are there positive past experiences with change?</td><td>هل توجد تجارب إيجابية سابقة مع التغيير؟</td></tr>
+<tr><td>Urgency</td><td>الإلحاح</td><td>Do staff understand the need for change?</td><td>هل يفهم الموظفون الحاجة للتغيير؟</td></tr>
+
+<h3 class="section-title">Section 5: Implementation Challenges and Solutions | تحديات التنفيذ والحلول</h3>
+
+<h4 class="section-sub">5.1 Common Spread Barriers and Mitigation Strategies | عوائق الانتشار الشائعة واستراتيجيات التخفيف</h4>
+
+Healthcare improvement spread faces predictable challenges that can be addressed through proactive planning:
+
+يواجه انتشار تحسين الرعاية الصحية تحديات يمكن معالجتها من خلال التخطيط الاستباقي:
+
+<tr><td>Barrier</td><td>العائق</td><td>Mitigation Strategy</td><td>استراتيجية التخفيف</td></tr>
+|---------|--------|---------------------|-------------------|
+<tr><td>Staff resistance</td><td>مقاومة الموظفين</td><td>Early engagement, address concerns, show benefits</td><td>إشراك مبكر، معالجة المخاوف، إظهار الفوائد</td></tr>
+<tr><td>Resource constraints</td><td>قيود الموارد</td><td>Focus on low-cost improvements, build business case</td><td>التركيز على التحسينات منخفضة التكلفة، بناء الجدوى</td></tr>
+<tr><td>Leadership turnover</td><td>دوران القيادة</td><td>Document progress, build institutional commitment</td><td>توثيق التقدم، بناء الالتزام المؤسسي</td></tr>
+<tr><td>Competing priorities</td><td>الأولويات المتنافسة</td><td>Align with organizational goals, show impact</td><td>المحاذاة مع الأهداف المؤسسية، إظهار الأثر</td></tr>
+<tr><td>Measurement difficulties</td><td>صعوبات القياس</td><td>Start with available data, build measurement capacity</td><td>البدء بالبيانات المتاحة، بناء قدرات القياس</td></tr>
+<tr><td>Cultural barriers</td><td>العوائق الثقافية</td><td>Adapt to local context, engage community leaders</td><td>التكيف مع السياق المحلي، إشراك قادة المجتمع</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">5.2 Managing Scale and Complexity | إدارة الحجم والتعقيد</h4>
+
+Scaling improvements across large organizations or health systems requires systematic approaches:
+
+تتطلب توسيع التحسينات عبر مؤسسات أو أنظمة صحية كبيرة منهجيات منهجية:
+
+<strong>Phase-Growth Model | نموذج النمو المرحلي:</strong>
+
+1. <strong>Pilot Phase | المرحلة التجريبية</strong>: Test and refine improvement in single setting
+2. <strong>Expansion Phase | مرحلة التوسيع</strong>: Spread to similar settings
+3. <strong>Integration Phase | مرحلة الدمج</strong>: Embed in standard operations and systems
+4. <strong>Sustainability Phase | مرحلة الاستدامة</strong>: Maintain and continuously improve
+
+<h3 class="section-title">Section 6: Measurement for Spread | القياس للانتشار</h3>
+
+<h4 class="section-sub">6.1 Spread Metrics | مقاييس الانتشار</h4>
+
+Measuring spread requires metrics beyond the original improvement measures:
+
+يتطلب قياس الانتشار مقاييس تتجاوز مقاييس التحسين الأصلية:
+
+- Number of settings/people adopting the improvement
+- Time to adoption across settings
+- Fidelity of implementation in new settings
+- Maintenance of improvement over time
+- Variation in adoption across settings
+- Cost of spread per setting
+
+<h4 class="section-sub">6.2 Spread Dashboards | لوحات معلومات الانتشار</h4>
+
+Visual dashboards help track spread progress and identify issues:
+
+help لوحات المعلومات المرئية تتبع تقدم الانتشار وتحديد المشكلات:
+
+- Implementation timeline
+- Adoption rates across settings
+- Process measure trends
+- Barrier identification
+- Resource utilization
+
+<h3 class="section-title">Section 7: Advanced Spread Case Studies | دراسات حالة انتشار متقدمة</h3>
+
+<h4 class="section-sub">Case Study 3: Rapid Spread of Sepsis Protocol | دراسة حالة 3: انتشار سريع لبروتوكول تعفن الدم</h4>
+
+<strong>Background</strong>: A large hospital system developed and tested a successful early sepsis identification and treatment protocol that significantly reduced mortality.
+
+<strong>Spread Approach</strong>:
+- Created comprehensive toolkit including protocol, training materials, EHR tools
+- Trained "super-user" nurses in each department
+- Implemented monthly learning sessions across sites
+- Created friendly competition between departments
+- Executive champion maintained visibility and accountability
+
+<strong>Results</strong>:
+- Full spread to all 12 hospitals within 18 months
+- Sepsis mortality reduced by 40% across system
+- Protocol adherence maintained at 90%
+- Cost savings of SAR 18 million annually
+
+<h4 class="section-sub">Case Study 4: Primary Care Chronic Disease Management Spread | دراسة حالة 4: انتشار إدارة الأمراض المزمنة في الرعاية الأولية</h4>
+
+<strong>Background</strong>: A PHC cluster developed a successful diabetes management program with improved outcomes.
+
+<strong>Spread Approach</strong>:
+- Standardized program with adaptations for different contexts
+- Used existing monthly quality meetings as spread channels
+- Developed Arabic-language materials and training
+- Created peer mentorship program between clusters
+- Linked spread to MOH quality targets
+
+<strong>Results</strong>:
+- Spread to all 15 PHC clusters within 24 months
+- Diabetes control rates improved system-wide by 35%
+- Shared learning resulted in additional improvements
+- Program became MOH recommended approach
+
+<h3 class="section-title">Section 8: Spread Planning Tools | أدوات تخطيط الانتشار</h3>
+
+<h4 class="section-sub">Spread Charter Template | قالب ميثاق الانتشار</h4>
+
+<strong>Current State | الحالة الحالية:</strong>
+- Improvement: _____________________
+- Evidence of effectiveness: _____________________
+- Current reach: _____________________
+
+<strong>Spread Goals | أهداف الانتشار:</strong>
+- Target reach: _____________________
+- Timeline: _____________________
+- Resources: _____________________
+
+<strong>Strategy | الاستراتيجية:</strong>
+- Priority settings: _____________________
+- Spread channels: _____________________
+- Adaptation approach: _____________________
+
+<strong>Measurement | القياس:</strong>
+- Spread metrics: _____________________
+- Data collection plan: _____________________
+
+<strong>Communication | التواصل:</strong>
+- Key messages: _____________________
+- Channels: _____________________
+- Stakeholder engagement: _____________________
+
+<h3 class="section-title">Section 9: Summary and Application | الملء والتطبيق</h3>
+
+This course has provided comprehensive knowledge about how change spreads and practical strategies for achieving system-wide improvement. Key learning points include:
+
+قدمت هذه الدورة معرفة شاملة حول كيفية انتشار التغيير واستراتيجيات عملية لتحقيق تحسين على مستوى النظام. تشمل نقاط التعلم الرئيسية:
+
+<strong>Key Takeaways | النقاط الرئيسية:</strong>
+
+1. Understanding how change spreads through established theories (Lewin, Rogers) provides foundation for spread planning
+
+2. The IHI Framework for Spread offers systematic approach to planning and implementing spread activities
+
+3. The New Idea Scorecard helps assess spread potential and identify improvement opportunities
+
+4. Multiple spread channels and strategies should be used in combination
+
+5. Measurement is essential for tracking progress and demonstrating impact
+
+6. Spread requires ongoing effort, resources, and leadership attention
+
+<strong>Application | التطبيق:</strong>
+
+As you complete this course, apply your learning by:
+1. Assessing your improvement's spread potential using the New Idea Scorecard
+2. Developing a spread plan using the framework and tools provided
+3. Engaging key stakeholders in spread planning
+4. Establishing spread metrics and monitoring approach
+5. Beginning with priority target settings
+
+<h3 class="section-title">Additional Content Section</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Expanded Framework for Healthcare Improvement Spread</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          <h3 class="section-title">Chapter 1: Theoretical Foundations of Change Diffusion</h3>
+
+The diffusion of innovations theory, developed by Everett Rogers in 1962, remains highly relevant for healthcare improvement. Understanding the diffusion process helps QI practitioners design more effective spread strategies.
+
+The theory identifies five adopter categories based on how early individuals adopt an innovation relative to others in a social system. Innovators (2.5%) are the first to adopt, followed by early adopters (13.5%), early majority (34%), late majority (34%), and laggards (16%). Each category has different characteristics and requires different strategies to engage.
+
+Early adopters are particularly important in healthcare spread because they serve as opinion leaders and can influence others to adopt the improvement. Identifying and engaging early adopters is a key spread strategy.
+
+The diffusion process follows an S-curve pattern, with slow adoption initially, followed by rapid adoption as the innovation gains momentum, then slowing as the market becomes saturated. Understanding this pattern helps in planning resource allocation and timing of spread activities.
+
+The characteristics of innovations that affect diffusion include relative advantage, compatibility, complexity, trialability, and observability. Improvements with higher scores on these characteristics spread more easily. When designing improvements, considering these factors can enhance spread potential.
+
+In healthcare, additional factors affect diffusion including clinical evidence strength, regulatory requirements, professional guidelines, and organizational culture. These factors can either accelerate or hinder spread.
+
+<h3 class="section-title">Chapter 2: Organizational Readiness Assessment for Spread</h3>
+
+Assessing organizational readiness before beginning spread activities is essential for success. Several dimensions of readiness should be evaluated.
+
+Leadership readiness includes executive commitment, visible support, resource allocation, and accountability for spread. Without strong leadership support, spread efforts often fail.
+
+Cultural readiness includes improvement culture, openness to change, tolerance for variation, and collaboration across departments. Organizations with strong improvement cultures are better positioned for successful spread.
+
+Resource readiness includes adequate staffing, time, funding, and technology. Spread requires resources that may not be available in resource-constrained settings.
+
+Capability readiness includes skills, knowledge, and tools for improvement and spread. Building capability before spread improves success.
+
+Assessment methods include surveys, interviews, focus groups, and observation. The assessment should involve multiple stakeholders and perspectives.
+
+<h3 class="section-title">Chapter 3: Spread Strategy Development</h3>
+
+Effective spread requires a clear strategy that addresses what will be spread, to whom, how, when, and by whom. The strategy should be documented in a spread plan.
+
+The spread plan should include the following elements: description of the improvement being spread, evidence of effectiveness, rationale for targeting specific settings, description of spread approach and methods, timeline and milestones, resource requirements, roles and responsibilities, measurement approach, communication plan, and risk mitigation strategy.
+
+Selecting target settings for spread should consider factors including readiness, size, complexity, strategic importance, and potential for demonstrating impact. Beginning with receptive settings builds success and demonstrates proof of concept.
+
+Adapting improvements for new settings requires balancing fidelity to core elements with adaptation for local context. The key is identifying which elements must be maintained for effectiveness and which can be adapted.
+
+<h3 class="section-title">Chapter 4: Implementation and Sustainability</h3>
+
+Successful spread requires effective implementation in new settings and sustainability over time. Implementation science provides frameworks for understanding and improving implementation.
+
+Implementation outcomes include adoption, fidelity, penetration, and sustainability. Each outcome can be measured and improved.
+
+Sustainability factors include integration into routine operations, ongoing measurement, leadership support, and staff engagement. Sustainability planning should begin early and continue throughout spread.
+
+Continuous improvement during spread involves learning from both successes and failures, adapting approaches based on evidence, and maintaining focus on the goal of improved patient outcomes.
+
+<h3 class="section-title">Chapter 5: Advanced Topics</h3>
+
+Complex spread across large systems requires additional considerations. Multi-level spread involves coordinating spread across different organizational levels and units.
+
+System-wide spread involves integrating spread into strategic plans, governance structures, and performance management systems.
+
+Learning networks connect organizations working on similar improvements, enabling shared learning and accelerating spread. These networks can be particularly effective in healthcare.
+
+Technology-enabled spread uses digital platforms and tools to support spread activities, including communication, training, and monitoring.
+
+<h3 class="section-title">Summary and Key Takeaways</h3>
+
+This comprehensive course on spread has provided healthcare professionals with the knowledge and tools to effectively spread improvements across organizations and systems. Key learning points include:
+
+Understanding how change spreads through established theories provides the foundation for effective spread planning. The IHI Framework for Spread offers a systematic approach to planning and implementing spread activities across healthcare settings. Multiple strategies and channels should be used in combination to maximize spread effectiveness.
+
+Measurement is essential for tracking progress and demonstrating impact throughout the spread process. Adaptation to local contexts while maintaining fidelity to core improvement elements is critical for successful implementation in new settings. Sustainability requires ongoing attention and investment.
+
+Spread requires leadership commitment, adequate resources, skilled implementation teams, and continuous learning and improvement. Building capacity for spread is an important investment for healthcare organizations seeking to achieve large-scale impact from their improvement work.
+
+The course has equipped participants with the foundation to design and implement successful spread initiatives in their organizations. The tools and frameworks provided can be adapted for various healthcare settings and improvement priorities.
+
+As you complete this course, apply your learning by identifying a current improvement initiative and developing a spread plan. Engage key stakeholders and begin implementing spread activities. Measure your progress and learn from both successes and challenges. Share your experience and contribute to the broader improvement community.
+
+<h3 class="section-title">Extensive Additional Content</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Comprehensive Guide to Healthcare Improvement Spread</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          <h3 class="section-title">Understanding Organizational Change Dynamics</h3>
+
+Change in healthcare organizations is complex and multi-dimensional. Successful spread requires understanding organizational change dynamics and applying this understanding to improvement efforts.
+
+Organizations consist of multiple interconnected parts that influence each other. Changes in one area affect other areas, sometimes in unexpected ways. Understanding these interconnections is important for planning and implementing spread.
+
+Organizational culture shapes how changes are received and implemented. Culture includes shared values, beliefs, and behaviors. Cultural assessment helps in understanding how changes will be received and what strategies may be effective.
+
+Organizational structure affects how information flows and decisions are made. Structure can facilitate or hinder spread. Understanding structural factors helps in designing effective spread strategies.
+
+Power and politics influence change acceptance and implementation. Identifying key stakeholders and understanding their interests and influence helps in developing effective engagement strategies.
+
+<h3 class="section-title">Building Spread Infrastructure</h3>
+
+Effective spread requires infrastructure to support planning, implementation, and monitoring. Several elements are important.
+
+A spread team provides dedicated resources for spread activities. This team should include individuals with skills in improvement, communication, and stakeholder engagement.
+
+A communication system enables regular communication about spread progress. This includes updates, success stories, and challenges.
+
+A measurement system tracks spread progress and effectiveness. This includes metrics for adoption, implementation, and outcomes.
+
+A learning system captures and shares lessons from spread activities. This enables continuous improvement in spread approaches.
+
+<h3 class="section-title">Advanced Spread Strategies</h3>
+
+Advanced strategies may be needed for complex spread scenarios. These strategies build on basic approaches.
+
+Sequential spreading involves spreading to progressively more challenging settings. Each success builds capability for the next challenge.
+
+Simultaneous spreading involves spreading to multiple settings at once. This requires more resources but can accelerate impact.
+
+Network-based spreading uses professional networks to accelerate spread. This leverages peer influence and shared learning.
+
+Technology-enabled spreading uses digital tools to support spread. This includes virtual learning communities, online training, and digital resources.
+
+<h3 class="section-title">Managing Spread Challenges</h3>
+
+Spread efforts often encounter challenges that require proactive management. Anticipating challenges helps in developing mitigation strategies.
+
+Resistance to change is common and can take many forms. Understanding sources of resistance and developing targeted responses is important.
+
+Resource constraints may limit spread scope and pace. Prioritizing and phasing can help manage constraints while making progress.
+
+Competing priorities can divert attention from spread. Aligning spread with strategic priorities helps maintain focus.
+
+Implementation challenges may arise in new settings. Providing support and troubleshooting helps overcome challenges.
+
+<h3 class="section-title">Evaluation and Learning from Spread</h3>
+
+Evaluating spread effectiveness provides information for improvement. Several dimensions should be evaluated.
+
+Reach assesses how many settings and people have adopted the improvement. Tracking reach provides information on spread progress.
+
+Fidelity assesses how well the improvement is implemented in new settings. High fidelity is important for achieving expected outcomes.
+
+Effectiveness assesses whether the improvement achieves expected outcomes in new settings. Effectiveness may vary across settings.
+
+Sustainability assesses whether improvements are maintained over time. Sustainability is essential for lasting impact.
+
+<h3 class="section-title">Conclusion and Moving Forward</h3>
+
+This comprehensive course on Planning for Spread has provided healthcare professionals with the knowledge and tools to effectively spread improvements across organizations and systems. The course has covered theoretical foundations, practical strategies, and advanced approaches.
+
+Key learning points include understanding how change spreads, developing spread strategies, implementing and monitoring spread, and evaluating and learning from spread activities. The course has addressed the Saudi healthcare context including CBAHI standards and MOH initiatives.
+
+Applying this learning requires identifying improvement opportunities, developing spread plans, engaging stakeholders, and implementing spread activities. The tools and frameworks provided can guide this work.
+
+Spreading improvements is essential for achieving large-scale impact from quality improvement efforts. Building spread capability is an important investment for healthcare organizations.
+
+As you complete this course, apply your learning by developing spread plans for improvement initiatives in your organization. Engage key stakeholders, implement spread activities, and measure your progress. Share your experience and contribute to the improvement community.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-15">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Details</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> QI 201
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-201" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-16">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-201" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/qi-101.html" class="related-card">
+            <h4>Introduction to Health Care Improvement</h4>
+            <p class="rtl">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-102.html" class="related-card">
+            <h4>How to Improve with the Model for Improvement</h4>
+            <p class="rtl">QI 102: كيفية التحسين باستخدام نموذج التحسين</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-103.html" class="related-card">
+            <h4>Testing and Measuring Changes with PDSA Cycles</h4>
+            <p class="rtl">QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-104.html" class="related-card">
+            <h4>Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools</h4>
+            <p class="rtl">QI 104: تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</p>
+            <span class="related-card-duration">⏱ 150 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-qi-201') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-qi-201', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('qi-201')) enrolled.push('qi-201');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'qi-201');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-qi-201') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-qi-201', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-qi-201', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-qi-201', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-qi-201', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-qi-201') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Planning for Spread: From Local Improvements to System-Wide Change',
+        slug: 'qi-201',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-qi-201') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-qi-201.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

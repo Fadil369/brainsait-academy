@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addressing Small Problems to Build Safer, More Reliable Systems | BrainSAIT Academy</title>
+  <meta name="description" content="Addressing Small Problems to Build Safer, More Reliable Systems - Full bilingual course on Quality Improvement">
+  <meta name="keywords" content="Quality Improvement, IHI, Open School, Health Care, QI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Addressing Small Problems to Build Safer, More Reliable Systems</h3>
+        <p>QI-202 • 60 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Objectives</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">English Overview</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">نظرة عامة بالعربية</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Expanded Lesson Summaries | الملخصا...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Activities & Assessment |...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Apply in Your Hospital/Clinic | الت...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Continuing Education Credits</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Detailed Lesson Content | محتوى الد...</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Advanced Concepts in Healthcare Rel...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Summary and Application</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Advanced Systems Thinking for Healt...</span>
+          </li>
+          <li class="section-item " data-section="15" onclick="scrollToSection(15)">
+            <span class="section-icon">📗</span>
+            <span class="section-title">Course Details</span>
+          </li>
+          <li class="section-item " data-section="16" onclick="scrollToSection(16)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Quality Improvement</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Addressing Small Problems to Build Safer, More Reliable Systems</h1>
+        <p class="course-title-ar rtl">QI 202: معالجة المشكلات الصغيرة لبناء أنظمة أكثر أمانًا وموثوقية</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">60</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">17</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Objectives</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          After completing this course, you will be able to:
+
+- Explain why system complexity requires us to take a methodical approach to system design, operation, and improvement.
+- Explain how the absence of this methodical approach will cause complex systems to fail predictably.
+- Propose specific applications of this methodical approach to the design, operation, and improvement of health care.
+<strong>Estimated Time of Completion</strong>: 1 hour
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">English Overview</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          This course equips health professionals to strengthen measurement, PDSA execution, reliability, and spread of improvements while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">نظرة عامة بالعربية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في القياس، وتنفيذ دورات التحسين PDSA، والموثوقية، ونشر التحسينات مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- Explain why system complexity requires us to take a methodical approach to system design, operation, and improvement.
+- Explain how the absence of this methodical approach will cause complex systems to fail predictably.
+- Propose specific applications of this methodical approach to the design, operation, and improvement of health care.
+- 1 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+- American Board of Anesthesiology (ABA)
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)
+- American Board of Plastic Surgery (ABPS)
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+- American Board of Family Medicine (ABFM) (15pts)*
+- American Board of Pediatrics (ABPed) (20pts)*
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+- <strong>Code:</strong> QI 202
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 60 minutes
+- <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 60 دقيقة
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="section-title">العربية</h3>
+- فهم مبادئ تحسين الجودة وتحديد فرص التحسين ذات الأولوية في بيئة العمل.
+- استخدام أدوات القياس والتحليل لمتابعة الأداء قبل وبعد التدخلات.
+- تطبيق دورات PDSA بشكل عملي مع توثيق النتائج والدروس المستفادة.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: Core Concepts</h3>
+- <strong>Expanded Summary:</strong> This lesson introduces core concepts of Addressing Small Problems to Build Safer, More Reliable Systems and how to operationalize them. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong>Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong>Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong>Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="section-title">الدرس 1: المفاهيم الجوهرية</h3>
+- <strong>الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong>التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong>نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong>نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+- <strong>Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong>Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong>Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong>Local scenario:</strong> Use this course to reduce outpatient no-show impact and improve appointment access in a large urban PHC network.
+
+<h3 class="section-title">العربية</h3>
+- <strong>بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong>الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong>الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong>سيناريو محلي:</strong> تُستخدم الدورة من أجل تقليل أثر عدم الحضور للعيادات وتحسين إتاحة المواعيد في شبكة رعاية أولية حضرية كبيرة.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+1. <strong>Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong>Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong>Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong>Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="section-title">العربية</h3>
+1. <strong>استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong>اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong>مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong>نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td></tr>
+|---|---|
+<tr><td>Run chart</td><td>مخطط زمني تشغيلي</td></tr>
+<tr><td>PDSA cycle</td><td>دورة خطط-نفّذ-ادرس-صحّح</td></tr>
+<tr><td>Process measure</td><td>مؤشر قياس العملية</td></tr>
+<tr><td>Balancing measure</td><td>مؤشر موازنة</td></tr>
+<tr><td>Reliability</td><td>الموثوقية</td></tr>
+<tr><td>Scale-up</td><td>التوسّع التشغيلي</td></tr>
+<tr><td>Model for Improvement</td><td>نموذج التحسين</td></tr>
+<tr><td>SMART goal</td><td>الهدف الذكي SMART</td></tr>
+<tr><td>Driver diagram</td><td>مخطط المحركات</td></tr>
+<tr><td>Outcome measure</td><td>مؤشر النتائج</td></tr>
+<tr><td>Aim statement</td><td>بيان الهدف</td></tr>
+<tr><td>Change idea</td><td>فكرة التغيير</td></tr>
+<tr><td>Spread plan</td><td>خطة نشر التحسين</td></tr>
+<tr><td>Sustainability plan</td><td>خطة الاستدامة</td></tr>
+<tr><td>Theory of change</td><td>نظرية التغيير</td></tr>
+<tr><td>Statistical process control</td><td>الضبط الإحصائي للعمليات</td></tr></tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/qi-202
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- CBAHI QI Standards: https://www.cbahi.gov.sa/english/CBAHI-Standards
+- IHI QI Essentials Toolkit: https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+- MOH Saudi Health KPIs Dashboard: https://www.moh.gov.sa
+- Vision 2030 Health Transformation Program: https://www.vision2030.gov.sa/v2030/vrps/hst/
+- IHI Improvement Map: https://www.ihi.org/ImprovementMap
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+<div class="checklist-item"><span class="checkbox"></span>Select one department and one measurable problem.</div>
+<div class="checklist-item"><span class="checkbox"></span>Form a multidisciplinary micro-team.</div>
+<div class="checklist-item"><span class="checkbox"></span>Define baseline, target, and data collection frequency.</div>
+<div class="checklist-item"><span class="checkbox"></span>Run at least one improvement test and document findings.</div>
+<div class="checklist-item"><span class="checkbox"></span>Report outcomes to quality governance and plan next-cycle spread.</div>
+
+<div class="checklist-item"><span class="checkbox"></span>Present your improvement project charter to your department head within 30 days.</div>
+<div class="checklist-item"><span class="checkbox"></span>Schedule monthly data reviews with your improvement team and document decisions.</div>
+<div class="checklist-item"><span class="checkbox"></span>Submit a spread plan to your quality committee within 90 days of project launch.</div>
+<h3 class="section-title">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item"><span class="checkbox"></span>اختيار قسم واحد ومشكلة قابلة للقياس.</div>
+<div class="checklist-item"><span class="checkbox"></span>تشكيل فريق مصغر متعدد التخصصات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد خط الأساس والهدف وتواتر جمع البيانات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</div>
+<div class="checklist-item"><span class="checkbox"></span>رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] تقديم ميثاق مشروع التحسين لرئيس القسم خلال 30 يومًا.</div>
+<div class="checklist-item"><span class="checkbox"></span>جدولة مراجعات بيانات شهرية مع فريق التحسين وتوثيق القرارات.</div>
+<div class="checklist-item"><span class="checkbox"></span>تقديم خطة نشر للجنة الجودة خلال 90 يومًا من انطلاق المشروع.</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Continuing Education Credits</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          Course completion typically earns 1 Continuing Education credit. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener">Learn more about Continuing Education credits</a>
+
+See full detailsThe Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1 <em>AMA PRA Category 1 Credit(s)™</em>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+This activity is approved to award 1 credit(s) toward Certified Professional in Patient Safety (CPPS) recertification.
+
+This activity/program is approved by NAHQ® for 1 CPHQ CE credit.
+
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to:
+
+- 1 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the learner to satisfy the Lifelong Learning requirements for the American Board of Ophthalmology's Maintenance of Certification program.
+
+Successful completion of this activity, which includes participation in the evaluation component, offers Lifelong Learning (MOC Part 2 CME) point(s) for the following boards:
+
+- American Board of Anesthesiology (ABA)
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)
+- American Board of Plastic Surgery (ABPS)
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+Successful completion of this activity, which includes participation in the evaluation component, offers Self-Assessment (MOC Part 2 SA) point(s) for the following boards:
+
+- American Board of Family Medicine (ABFM) (15pts)*
+- American Board of Pediatrics (ABPed) (20pts)*
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+<em>*ABPed and ABFM diplomates are required to complete all the selected courses within an activity to collect MOC activity points.</em>
+
+It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+
+As a Jointly Accredited Organization, the Institute for Healthcare Improvement is approved to offer social work continuing education by the Association of Social Work Boards (ASWB) Approved Continuing Education (ACE) program. Organizations, not individual courses, are approved under this program. Regulatory boards are the final authority on courses accepted for continuing education credit. Social workers completing this course receive 1 general continuing education credits. 
+
+By attending QI 202 offered by the Institute for Healthcare Improvement participants may earn up to 1 ACHE Qualifying Education Hours toward initial certification or recertification of the Fellow of the American College of Healthcare Executives (FACHE) designation.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Detailed Lesson Content | محتوى الدروس التفصيلي</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1 Deep Dive: System Complexity and Reliability | الدرس الأول approfondi: تعقيد النظام والموثوقية</h3>
+
+<h4 class="section-sub">Section 1.1: Understanding Healthcare Systems | فهم أنظمة الرعاية الصحية</h4>
+
+Healthcare delivery is inherently complex, involving numerous interconnected processes, multiple providers, sophisticated technology, and patients with unique needs and circumstances. This complexity creates both opportunities for error and challenges for improvement.
+
+التسليم الرعاية الصحية معقد بشكل جوهري، ويتضمن عمليات مترابطة numerous, ومقدمي خدمات متعددين، وتكنولوجيا متطورة، ومرضى avec احتياجات وظروف فريدة. يخلق هذا التعقيد فرصًا للخطأ وتحديات للتحسين.
+
+The systems view of healthcare is essential for understanding why problems persist despite good intentions and individual effort. When things go wrong, the instinct is often to blame individuals—the nurse who made an error, the doctor who missed a diagnosis, the pharmacist who dispensed the wrong medication. However, a systems perspective recognizes that errors are often the result of system failures rather than individual failures.
+
+منظور أنظمة الرعاية الصحية ضروري لفهم why تستمر المشاكل على الرغم من النوايا الجهد الفردي. عندما تسوء الأمور، غالبًا ما يكون الغريزة إلقاء اللوم على individuals—الممرض الذي ارتكب خطأ، والطبيب الذي missed التشخيص، والصيدلي الذي صرف الدواء الخطأ. ومع ذلك، recognizes منظور الأنظمة أن الأخطاء often تكون نتيجة إخفاقات النظام وليس إخفاقات فردية.
+
+<strong>Key Systems Concepts | مفاهيم الأنظمة الرئيسية:</strong>
+
+1. <strong>Complex adaptive systems | الأنظمة التكيفية المعقدة</strong>: Healthcare organizations are complex adaptive systems where multiple components interact in non-linear ways. These systems exhibit emergent properties that cannot be predicted from individual components alone.
+
+المؤسسات الصحية هي أنظمة تكيفية معقدة حيث تتفاعل مكونات متعددة بطرق غير خطية. display هذه الأنظمة خصائص ناشئة لا يمكن التنبؤ بها من المكونات الفردية وحدها.
+
+2. <strong>Variation | التباين</strong>: All processes vary naturally (common cause variation), but some variation comes from special causes that need investigation. Understanding the type of variation is essential for determining appropriate responses.
+
+جميع العمليات تتباين بشكل طبيعي (تباين السبب المشترك)، لكن بعض التباين يأتي من أسباب خاصة تحتاج إلى تحقيق. فهم نوع التباين ضروري لتحديد الاستجابات المناسبة.
+
+3. <strong>Complexity of interactions | تعقيد التفاعلات</strong>: Small changes in one part of the system can have large, unpredictable effects elsewhere. This makes it difficult to predict outcomes and easy to create unintended consequences.
+
+التغييرات الصغيرة في جزء من النظام يمكن أن يكون لها تأثيرات كبيرة وغير متوقعة في مكان آخر. هذا يجعل من الصعب التنبؤ بالنتائج ويسهل خلق عواقب غير مقصودة.
+
+4. <strong>Buffering and redundancy | التخزين المؤقت والتكرار</strong>: Systems often have buffers and redundancies that can mask problems, making them appear stable when they are actually fragile.
+
+غالبًا لدى الأنظمة مخازن مؤقتة وتكرارات يمكن أن تحجب المشكلات، مما يجعلها تبدو مستقرة عندما تكون في الواقع هشة.
+
+<h4 class="section-sub">Section 1.2: The Reliability Framework | إطار الموثوقية</h4>
+
+Reliability science provides a framework for understanding and improving system performance. Reliable systems are those that consistently perform as intended, producing expected outcomes most of the time.
+
+提供 reliability science إطارًا لفهم وتحسين أداء النظام. الأنظمة الموثوقة هي those التي выполняются consistently كما هو مقصود، لإنتاج النتائج المتوقعة most of the time.
+
+<strong>Three Levels of System Reliability | ثلاثة مستويات من موثوقية النظام:</strong>
+
+1. <strong>Level 1 - Reliability through intention | الموثوقية من خلال النية</strong>: Processes are designed to reduce reliance on human memory and attention. Examples include protocols, checklists, and standard work.
+
+تصميم العمليات لتقليل الاعتماد على الذاكرة والاهتمام البشري. تشمل الأمثلة البروتوكولات وقوائم التحقق والعمل المعياري.
+
+2. <strong>Level 2 - Reliability through design | الموثوقية من خلال التصميم</strong>: Processes are designed to prevent errors or make them impossible. Examples include physical constraints, forcing functions, and automation.
+
+تصميم العمليات لمنع الأخطاء أو جعلها مستحيلة. تشمل الأمثلة القيود المادية ووظائف الإلغاء والأتمتة.
+
+3. <strong>Level 3 - Reliability through redundancy | الموثوقية من خلال التكرار</strong>: Processes include verification steps that catch errors before they reach the patient. Examples include double-checks, peer review, and redundant documentation.
+
+تتضمن عمليات خطوات التحقق catch الأخطاء قبل reach المريض. تشمل الأمثلة عمليات التحقق المزدوجة ومراجعة الأقران والتوثيق المتكرر.
+
+<strong>Applying Reliability Concepts in Healthcare | تطبيق مفاهيم الموثوقية في الرعاية الصحية:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Application</td><td>التطبيق</td><td>Level</td><td>المستوى</td><td>Example</td><td>المثال</td></tr>
+|-------------|--------|-------|----------|---------|--------|
+<tr><td>Medication administration</td><td>إعطاء الدواء</td><td>1</td><td>Verification before administration</td><td>التحقق قبل الإعطاء</td></tr>
+<tr><td>Blood transfusion</td><td>نقل الدم</td><td>2</td><td>Two-person verification requirement</td><td>متطلب التحقق من شخصين</td></tr>
+<tr><td>Falls prevention</td><td>منع السقوط</td><td>3</td><td>Risk assessment and hourly rounding</td><td>تقييم المخاطر والجولات كل ساعة</td></tr>
+<tr><td>Specimen labeling</td><td>وضع العلامات على العينات</td><td>2</td><td>Barcode scanning verification</td><td>التحقق من مسح الرمز الشريطي</td></tr>
+
+<h4 class="section-sub">Section 1.3: Building More Reliable Systems | بناء أنظمة أكثر موثوقية</h4>
+
+Improving system reliability requires systematic attention to multiple dimensions of the care delivery system. This includes designing reliable processes, creating a culture that supports reliability, and building learning systems that continuously improve.
+
+يتطلب تحسين موثوقية النظام اهتمامًا منهجيًا بأبعاد متعددة من نظام تقديم الرعاية. يشمل ذلك تصميم عمليات موثوقة وخلق ثقافة تدعم الموثوقية وبناء أنظمة التعلم التي تتحسن باستمرار.
+
+<strong>Design Principles for Reliable Systems | مبادئ التصميم للأنظمة الموثوقة:</strong>
+
+1. <strong>Standardize where possible | توحيد حيثما أمكن</strong>: Reduce unnecessary variation by creating standard processes for common tasks.
+
+تقليل التباين غير الضروري من خلال إنشاء عمليات معيارية للمهام الشائعة.
+
+2. <strong>Simplify | التبسيط</strong>: Make processes as simple as possible to reduce errors.
+
+جعل العمليات بسيطة قدر الإمكان reduce الأخطاء.
+
+3. <strong>Use constraints | استخدام القيود</strong>: Design processes that make errors impossible or very difficult.
+
+تصميم العمليات التي تجعل الأخطاء مستحيلة أو صعبة جدًا.
+
+4. <strong>Create redundancy | إنشاء التكرار</strong>: Build in checks that catch errors before they cause harm.
+
+بناء في عمليات التحقق catch الأخطاء قبل أن تسبب ضررًا.
+
+5. <strong>Learn from failures | التعلم من الإخفاقات</strong>: Create systems for detecting and analyzing near-misses and failures.
+
+إنشاء أنظمة للكشف عن near-misses والإخفاقات وتحليلها.
+
+6. <strong>Design for humans | التصميم للبشر</strong>: Account for human capabilities and limitations in process design.
+
+مراعاة القدرات والقيود البشرية في تصميم العمليات.
+
+<h3 class="section-title">Saudi Healthcare Reliability Case Studies | دراسات حالة الموثوقية في الرعاية الصحية السعودية</h3>
+
+<h4 class="section-sub">Case Study 1: Improving Medication Safety at King Fahad Hospital | دراسة حالة 1: تحسين سلامة الأدوية في مستشفى الملك Fahad</h4>
+
+<strong>Background | الخلفية</strong>: A 600-bed tertiary hospital in Jeddah identified medication errors as a significant patient safety concern. Analysis revealed that errors occurred at multiple points in the medication use process.
+
+<strong>Improvement Approach | نهج التحسين:</strong>
+
+1. <strong>Process mapping | رسم خريطة العملية</strong>: Mapped the entire medication use process from prescribing to administration, identifying 47 distinct steps and 12 potential error points.
+
+2. <strong>Reliability design | تصميم الموثوقية</strong>: Implemented multiple reliability interventions:
+   - Computerized physician order entry (CPOE) with clinical decision support
+   - Barcode medication administration
+   - Standardized medication reconciliation process
+   - Double-check system for high-alert medications
+
+3. <strong>Safety culture development | تطوير ثقافة السلامة</strong>: Implemented a non-punitive error reporting system and regular safety briefings.
+
+4. <strong>Measurement and learning | القياس والتعلم</strong>: Established comprehensive measurement system including error tracking, root cause analysis, and regular safety reviews.
+
+<strong>Results | النتائج</strong>:
+- Medication errors reduced by 67%
+- Near-miss reporting increased significantly, indicating improved safety culture
+- Adverse drug events reduced by 45%
+- The approach was spread to 4 other MOH hospitals
+
+<h4 class="section-sub">Case Study 2: Reducing Central Line Infections in ICU | دراسة حالة 2: تقليل العدوى في القساطر المركزية بوحدة العناية المركزة</h4>
+
+<strong>Background | الخلفية</strong>: ICU at a major hospital in Riyadh had central line-associated bloodstream infection (CLABSI) rates significantly above national benchmarks.
+
+<strong>Improvement Approach | نهج التحسين:</strong>
+
+1. <strong>Evidence review | مراجعة الأدلة</strong>: Implemented evidence-based practices including:
+   - Maximal barrier precautions
+   - Chlorhexidine skin antisepsis
+   - Optimal catheter site selection
+   - Daily line necessity review
+
+2. <strong>Standardization | التوحيد</strong>: Created standardized insertion checklist and maintenance protocol.
+
+3. <strong>Reliability engineering | هندسة الموثوقية</strong>: Implemented real-time reminders and visual cues to support compliance.
+
+4. <strong>Empowerment | التمكين</strong>: Empowered nurses to stop procedures if breaches in technique observed.
+
+5. <strong>Continuous monitoring | المراقبة المستمرة</strong>: Daily surveillance and weekly review of all central lines.
+
+<strong>Results | النتائج</strong>:
+- CLABSI rate reduced from 8.2 per 1,000 catheter days to 1.4
+- Zero infections achieved for 8 consecutive months
+- Estimated 12 lives saved and 4 million SAR in costs avoided annually
+- Practice adopted as standard in MOH ICU protocols
+
+<h3 class="section-title">Reliability Assessment Tool | أداة تقييم الموثوقية</h3>
+
+<strong>Process Reliability Assessment | تقييم موثوقية العملية</strong>
+
+For each key process in your healthcare setting, assess the current reliability level and identify improvement opportunities:
+
+ لكل عملية رئيسية في إعداد الرعاية الصحية الخاص بك، قم بتقييم مستوى الموثوقية الحالية وتحديد فرص التحسين:
+
+<tr><td>Process</td><td>العملية</td><td>Current Reliability Level</td><td>مستوى الموثوقية الحالي</td><td>Primary Concerns</td><td>المخاوف الرئيسية</td><td>Improvement Strategies</td><td>استراتيجيات التحسين</td></tr>
+|---------|--------|--------------------------|------------------------|------------------|------------------|------------------------|--------------------|
+<tr><td>Patient identification</td><td>تحديد المريض</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr><td>Medication administration</td><td>إعطاء الدواء</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr><td>Specimen collection</td><td>جمع العينات</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr><td>Handoff communication</td><td>التواصل عند التسليم</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr><td>Patient identification</td><td>تحديد المريض</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+<tr><td>Fall prevention</td><td>منع السقوط</td><td>☐ Level 1 ☐ Level 2 ☐ Level 3</td></tr>
+
+<strong>Reliability Level Definitions | تعريفات مستوى الموثوقية:</strong>
+- Level 1: Relies on human memory and attention
+- Level 2: Designed to prevent errors (constraints, forcing functions)
+- Level 3: Includes verification steps to catch errors
+
+<h3 class="section-title">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Definition</td></tr>
+|--------------|----------------|------------|
+<tr><td>System</td><td>النظام</td><td>Set of interacting components that produce results</td></tr>
+<tr><td>Complexity</td><td>التعقيد</td><td>Property of systems with many interconnected parts</td></tr>
+<tr><td>Reliability</td><td>الموثوقية</td><td>Ability of a system to perform consistently as intended</td></tr>
+<tr><td>Error</td><td>الخطأ</td><td>Deviation from intended process or outcome</td></tr>
+<tr><td>Near-miss</td><td>اقتراب من الحادث</td><td>Event that could have caused harm but was caught</td></tr>
+<tr><td>Adverse event</td><td>حدث ضار</td><td>Injury caused by medical care rather than disease</td></tr>
+<tr><td>Root cause analysis</td><td>تحليل السبب الجذري</td><td>Method for identifying underlying causes of problems</td></tr>
+<tr><td>Human factors</td><td>العوامل البشرية</td><td>Study of human capabilities and limitations in design</td></tr>
+<tr><td>Design for reliability</td><td>التصميم للموثوقية</td><td>Creating processes that minimize error</td></tr>
+<tr><td>Standard work</td><td>العمل المعياري</td><td>Documented best practice for specific process</td></tr>
+<tr><td>Checklists</td><td>قوائم التحقق</td><td>Tools to ensure all steps are completed</td></tr>
+<tr><td>Forcing function</td><td>وظيفة الإلغاء</td><td>Design feature that prevents certain actions</td></tr>
+<tr><td>Redundancy</td><td>التكرار</td><td>Duplicate elements that provide backup</td></tr>
+<tr><td>Defensive barrier</td><td>حاجز دفاعي</td><td>Safeguard that prevents harm</td></tr>
+<tr><td>Safety culture</td><td>ثقافة السلامة</td><td>Organizational values about safety importance</td></tr>
+<tr><td>Just culture</td><td>الثقافة العادلة</td><td>Culture that distinguishes human error from reckless behavior</td></tr>
+<tr><td>High reliability organization</td><td>منظمة عالية الموثوقية</td><td>Organization that consistently prevents serious harm</td></tr>
+<tr><td>Swiss cheese model</td><td>نموذج الجبن Swiss</td><td>Model showing how failures align to cause harm</td></tr>
+<tr><td>Complexity theory</td><td>نظرية التعقيد</td><td>Study of complex adaptive systems</td></tr>
+<tr><td>Emergent properties</td><td>الخصائص الناشئة</td><td>Properties that arise from system interactions</td></tr>
+<tr><td>Common cause variation</td><td>تباين السبب المشترك</td><td>Natural variation inherent in processes</td></tr>
+<tr><td>Special cause variation</td><td>تباين السبب الخاص</td><td>Variation due to specific identifiable causes</td></tr>
+<tr><td>Process capability</td><td>قدرة العملية</td><td>Ability of a process to meet specifications</td></tr>
+<tr><td>Process control</td><td>ضبط العملية</td><td>Methods for keeping processes within acceptable limits</td></tr>
+<tr><td>Statistical process control</td><td>الضبط الإحصائي للعمليات</td><td>Control charts and methods for monitoring variation</td></tr>
+<tr><td>Control chart</td><td>مخطط التحكم</td><td>Graph showing process performance over time</td></tr>
+<tr><td>Standard deviation</td><td>الانحراف المعياري</td><td>Measure of variation in a process</td></tr>
+<tr><td>Six Sigma</td><td>سيجما ستة</td><td>Methodology for achieving very low defect rates</td></tr>
+<tr><td>Lean</td><td>لين</td><td>Methodology for eliminating waste</td></tr>
+<tr><td>Continuous improvement</td><td>التحسين المستمر</td><td>Ongoing effort to improve</td></tr>
+<tr><td>Plan-Do-Study-Act</td><td>الخطة-نفّذ-ادرس-صحّح</td><td>Iterative improvement cycle</td></tr>
+<tr><td>Driver diagram</td><td>مخطط المحركات</td><td>Visual display of change logic</td></tr>
+<tr><td>Theory of change</td><td>نظرية التغيير</td><td>Explanation of how change leads to improvement</td></tr>
+<tr><td>Failure mode and effects analysis</td><td>تحليل وضع الفشل وآثاره</td><td>Proactive method for identifying potential failures</td></tr>
+<tr><td>Hazard analysis</td><td>تحليل المخاطر</td><td>Method for identifying and assessing risks</td></tr>
+<tr><td>Systems thinking</td><td>تفكير الأنظمة</td><td>Approach that considers whole system interactions</td></tr>
+</tbody></table></div>
+<h3 class="section-title">Section 2: Systems Thinking and Healthcare Quality | تفكير الأنظمة وجودة الرعاية الصحية</h3>
+
+<h4 class="section-sub">2.1 The Need for Systems Thinking in Healthcare | الحاجة للتفكير الأنظمة في الرعاية الصحية</h4>
+
+Healthcare is a complex adaptive system where multiple components interact in non-linear ways. Understanding and improving healthcare requires systems thinking that considers how parts of the system interact and influence each other.
+
+الرعاية الصحية هي نظام تكيفي معقد حيث تتفاعل مكونات متعددة بطرق غير خطية. فهم وتحسين الرعاية الصحية يتطلب تفكيرًا أنظاريًا considers كيفية تفاعل أجزاء النظام والتأثير على بعضها البعض.
+
+<strong>Characteristics of Complex Healthcare Systems | خصائص أنظمة الرعاية الصحية المعقدة:</strong>
+
+1. <strong>Multi-component | متعددة المكونات</strong>: Multiple stakeholders, processes, technologies, and patients
+2. <strong>Dynamic | ديناميكي</strong>: Constantly changing and evolving
+3. <strong>Interconnected | مترابطة</strong>: Parts affect each other in complex ways
+4. <strong>Emergent | ناشئ</strong>: Properties arise from interactions that cannot be predicted from parts alone
+5. <strong>Adaptive | متكيّف</strong>: System and individuals adapt to changes and pressures
+6. <strong>Non-linear | غير خطي</strong>: Small changes can have large effects and vice versa
+
+<h4 class="section-sub">2.2 Understanding System Behavior | فهم سلوك النظام</h4>
+
+Systems behave in predictable ways that can be understood through careful observation and analysis. Key system behaviors include:
+
+تصرف الأنظمة بطرق يمكن فهمها من خلال الملاحظة والتحليل الدقيق. include سلوكيات النظام الرئيسية:
+
+- Feedback loops (reinforcing and balancing)
+- Delays between action and effect
+- Accumulation and depletion of resources
+- Trade-offs between system goals
+- Emergence of unintended consequences
+
+<h4 class="section-sub">2.3 The Importance of Addressing System Factors | أهمية معالجة عوامل النظام</h4>
+
+Many healthcare problems persist not because of individual failures but because of system design flaws. Addressing these system factors is essential for achieving lasting improvement:
+
+تستمر many مشاكل الرعاية الصحية ليس بسبب إخفاقات فردية ولكن بسبب تصميم النظام. معالجة هذه عوامل النظام ضرورية لتحقيق تحسين دائم:
+
+- Variation in care processes and outcomes
+- Fragmented care delivery
+- Misaligned incentives
+- Inadequate information systems
+- Poorly designed work environments
+- Ineffective team communication
+
+<h3 class="section-title">Section 3: Process Analysis and Improvement | تحليل العملية والتحسين</h3>
+
+<h4 class="section-sub">3.1 Process Mapping and Analysis | رسم خريطة العملية وتحليلها</h4>
+
+Understanding current processes is essential for identifying improvement opportunities. Process mapping creates visual representations of work flows that reveal bottlenecks, waste, and improvement opportunities.
+
+فهم العمليات الحالية ضروري لتحديد فرص التحسين. يخلق رسم خريطة العملية تمثيلات مرئية لسير العمل reveal الاختناقات ونفايات وفرص التحسين.
+
+<strong>Process Mapping Tools | أدوات رسم خريطة العملية:</strong>
+
+1. <strong>Flow Charts | مخططات التدفق</strong>: Show sequence of steps in process
+2. <strong>Value Stream Maps | خرائط تدفق القيمة</strong>: Show flow of information, materials, and steps
+3. <strong>Spaghetti Diagrams | مخططات السباغي</strong>: Show physical movement and distances
+4. <strong>Swimlane Diagrams | مخططات الحارات</strong>: Show handoffs between functions
+
+<strong>Process Analysis Questions | أسئلة تحليل العملية:</strong>
+- What steps add value for the patient?
+- What steps are waste (no value added)?
+- Where are handoffs that cause delays or errors?
+- What variation exists in how the process is performed?
+- What are the root causes of problems in the process?
+
+<h4 class="section-sub">3.2 Reducing Unnecessary Variation | تقليل التباين غير الضروري</h4>
+
+Variation in healthcare processes contributes to poor outcomes and inefficiency. While some variation is natural and acceptable, unnecessary variation should be reduced.
+
+التباين في عمليات الرعاية الصحية يساهم في نتائج Poor وعدم الكفاءة. على الرغم من أن بعض التباين طبيعي ومقبول، يجب تقليل التباين غير الضروري.
+
+<strong>Sources of Variation | مصادر التباين:</strong>
+- Different clinician preferences and habits
+- Inconsistent protocols and guidelines
+- Variable training and experience
+- Different resources and equipment
+- Patient factors (severity, preferences)
+- System factors (policies, processes)
+
+<strong>Strategies for Reducing Variation | استراتيجيات تقليل التباين:</strong>
+- Standardize where possible (equipment, protocols)
+- Provide decision support (guidelines, reminders)
+- Enhance training and competence
+- Improve information access
+- Use data to identify and address variation
+- Engage clinicians in improvement
+
+<h3 class="section-title">Section 4: High-Reliability Organizations | المنظمات عالية الموثوقية</h3>
+
+<h4 class="section-sub">4.1 Characteristics of High-Reliability Organizations | خصائص المنظمات عالية الموثوقية</h4>
+
+High-reliability organizations (HROs) are those that operate in high-risk environments but consistently prevent adverse events. Healthcare organizations can learn from HRO principles to improve safety and reliability.
+
+هي organizations التي تعمل في بيئات عالية المخاطر but consistently تمنع الأحداث السلبية. يمكن لمنظمات الرعاية الصحية تعلم من مبادئ HRO لتحسين السلامة والموثوقية.
+
+<strong>HRO Principles | مبادئ HRO:</strong>
+
+1. <strong>Preoccupation with Failure | الانشغال بالفشل</strong>: Pay attention to near-misses and failures as opportunities to learn
+2. <strong>Reluctance to Simplify | التردد في التبسيط</strong>: Recognize complexity and avoid oversimplification
+3. <strong>Sensitivity to Operations | الحساسية للتشغيل</strong>: Maintain awareness of changing conditions
+4. <strong>Commitment to Resilience | الالتزام بالمرونة</strong>: Build capacity to recover from problems
+5. <strong>Deference to Expertise | الاحترام للخبرة</strong>: Listen to those with relevant expertise
+
+<h4 class="section-sub">4.2 Building High Reliability in Healthcare | بناء موثوقية عالية في الرعاية الصحية</h4>
+
+Healthcare organizations can develop high-reliability characteristics through systematic improvement:
+
+يمكن لمنظمات الرعاية الصحية تطوير خصائص عالية الموثوقية من خلال التحسين المنهجي:
+
+- Implement robust safety culture
+- Use standardized processes where appropriate
+- Build in redundancy for critical processes
+- Create systems for detecting and responding to problems
+- Learn from errors and near-misses
+- Engage leadership in safety
+
+<h3 class="section-title">Section 5: Creating and Maintaining Improvement | إنشاء والحفاظ على التحسين</h3>
+
+<h4 class="section-sub">5.1 Sustainability of Improvements | استدامة التحسينات</h4>
+
+Many healthcare improvements are not sustained over time, returning to baseline or even worsening. Ensuring sustainability requires deliberate attention and action:
+
+many لا تستمر تحسينات الرعاية الصحية بمرور الوقت، returning إلى baseline أو even worse. ضمان الاستدامة requires انتباه وإجراء مقصود:
+
+<strong>Sustainability Factors | عوامل الاستدامة:</strong>
+
+1. <strong>Process embedding | دمج العملية</strong>: Changes become part of standard work
+2. <strong>Monitoring and response | المراقبة والاستجابة</strong>: Ongoing measurement triggers action when needed
+3. <strong>Leadership support | دعم القيادة</strong>: Continued focus and resources
+4. <strong>Culture | الثقافة</strong>: Values and norms support maintenance
+5. <strong>Staff engagement | إشراك الموظفين</strong>: Staff own and maintain changes
+6. <strong>Adaptation | التكيف</strong>: Changes evolve as conditions change
+
+<strong>Sustainability Planning | تخطيط الاستدامة:</strong>
+- Plan for sustainability from beginning of improvement
+- Identify what must continue for improvement to be maintained
+- Build sustainability into implementation approach
+- Monitor key indicators for sustainability
+- Address early signs of regression
+
+<h4 class="section-sub">5.2 Managing Performance Over Time | إدارة الأداء بمرور الوقت</h4>
+
+Sustained improvement requires ongoing performance management. This includes:
+
+يتطلب التحسين المستمر إدارة أداء مستمرة. يشمل ذلك:
+
+- Regular measurement and review
+- Setting performance targets
+- Identifying and addressing performance gaps
+- Recognizing and reinforcing high performance
+- Continuous improvement culture
+
+<h3 class="section-title">Section 6: Leadership for Quality | القيادة للجودة</h3>
+
+<h4 class="section-sub">6.1 Leadership Behaviors for Quality | سلوكيات القيادة للجودة</h4>
+
+Effective quality improvement requires visible, engaged leadership. Leaders set the tone, allocate resources, and model expected behaviors.
+
+يتطلب تحسين الجودة الفعال قيادة visible ومنخرطة. leaders يحددون النبرة وتخصيص الموارد ونمذجة السلوكيات المتوقعة.
+
+<strong>Key Leadership Behaviors | سلوكيات القيادة الرئيسية:</strong>
+
+1. <strong>Sets clear direction | تحديد اتجاه واضح</strong>: Establish quality goals and priorities
+2. <strong>Allocates resources | تخصيص الموارد</strong>: Provide time, people, and money for improvement
+3. <strong>Models behavior | نمذجة السلوك</strong>: Demonstrate quality-focused behaviors personally
+4. <strong>Engages workforce | إشراك القوى العاملة</strong>: Involve staff in quality initiatives
+5. <strong>Holds accountable | المساءلة</strong>: Expect and require quality performance
+6. <strong>Recognizes success | الاعتراف بالنجاح</strong>: Celebrate quality achievements
+
+<h4 class="section-sub">6.2 Building Quality Culture | بناء ثقافة الجودة</h4>
+
+Organizational culture shapes behavior and determines whether quality improvement efforts succeed or fail. Leaders play a critical role in building quality-supportive culture:
+
+تشكل الثقافة التنظيمية السلوك وتحدد ما إذا كانت جهود تحسين الجودة تنجح أو تفشل. leaders يلعب دورًا حاسمًا في بناء ثقافة تدعم الجودة:
+
+- Visible commitment to quality
+- Psychological safety for reporting and learning
+- Accountability for quality at all levels
+- Continuous learning and improvement
+- Patient-centeredness
+- Transparency about performance
+
+<h3 class="section-title">Section 7: Advanced Improvement Topics | موضوعات التحسين المتقدمة</h3>
+
+<h4 class="section-sub">7.1 Large-Scale System Change | تغيير النظام على نطاق واسع</h4>
+
+Changing entire systems requires different approaches than single-unit improvements. Key considerations include:
+
+يتطلب تغيير الأنظمة بأكملها نهجًا مختلفًا عن تحسينات الوحدة الفردية. تشمل الاعتبارات الرئيسية:
+
+- System-wide perspective and coordination
+- Multiple change initiatives simultaneously
+- Managing interdependencies
+- Building consensus among stakeholders
+- Phased implementation approach
+- Sustaining alignment over time
+
+<h4 class="section-sub">7.2 Improvement in Complex Adaptive Systems | التحسين في الأنظمة التكيفية المعقدة</h4>
+
+Healthcare is a complex adaptive system where traditional linear improvement approaches may be insufficient. New approaches are needed that:
+
+الرعاية الصحية هي نظام تكيفي معقد حيث قد تكون نهجيات التحسين الخطية التقليدية غير كافية. new are needed that:
+
+- Acknowledge complexity and emergence
+- Enable local adaptation
+- Support emergence of solutions
+- Build networks and relationships
+- Embrace experimentation and learning
+- Accept uncertainty and iteration
+
+<h3 class="section-title">Section 8: Application and Implementation | التطبيق والتنفيذ</h3>
+
+<h4 class="section-sub">8.1 Applying Course Concepts in Your Setting | تطبيق مفاهيم الدورة في إعداداتك</h4>
+
+This course has provided concepts and tools for improving healthcare reliability. To apply this learning:
+
+قدمت هذه الدورة مفاهيم وأدوات لتحسين موثوقية الرعاية الصحية. لتطبيق هذا التعلم:
+
+1. Identify a process or system in your organization with quality or safety concerns
+2. Use process mapping to understand current state
+3. Identify system factors contributing to the problem
+4. Design improvements that address system factors
+5. Implement using PDSA methodology
+6. Measure results and adjust as needed
+7. Plan for sustainability from the beginning
+
+<h4 class="section-sub">8.2 Building Personal Capability | بناء القدرات الشخصية</h4>
+
+Developing expertise in quality improvement requires ongoing learning and practice. Consider:
+
+يتطلب تطوير الخبرة في تحسين الجودة التعلم والممارسة المستمرة. Think:
+
+- Seek additional training and education
+- Practice improvement methods on real projects
+- Learn from others' experiences
+- Stay current with improvement literature
+- Share learning with colleagues
+- Contribute to the improvement community
+
+<h3 class="section-title">Additional Section: Building High-Reliability Healthcare Systems</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Advanced Concepts in Healthcare Reliability</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          <h3 class="section-title">Chapter 1: The Science of Safety</h3>
+
+The field of safety science has developed rapidly in recent decades, providing new insights into why errors occur and how to prevent them. Understanding this science is essential for healthcare professionals working to improve safety.
+
+Swiss Cheese Model developed by James Reason explains how failures align to cause harm. In complex systems, multiple defenses exist to prevent accidents, but when the holes in these defenses line up, accidents occur. The model illustrates the importance of multiple layers of defense and the need to strengthen all layers.
+
+The concept of defensive layers includes physical barriers, procedural controls, supervision, training, and organizational culture. Each layer provides protection, and when one layer fails, others can prevent harm. Healthcare organizations should assess and strengthen all layers.
+
+Human factors engineering applies knowledge about human capabilities and limitations to system design. This includes understanding how humans process information, make decisions, and perform tasks. Designing systems that account for human factors reduces errors.
+
+Cognitive load theory explains how information overload can lead to errors. Systems should present information in ways that match human cognitive capabilities. This includes prioritizing information, providing clear communication, and reducing unnecessary complexity.
+
+<h3 class="section-title">Chapter 2: Safety Culture Assessment and Development</h3>
+
+Safety culture is the shared values, attitudes, and behaviors that prioritize safety in an organization. Measuring and developing safety culture is essential for sustainable safety improvement.
+
+Culture is shaped by leadership behavior, organizational policies and procedures, reporting systems, and how errors and near-misses are handled. Positive safety culture encourages reporting and learning from errors without blame.
+
+Assessing safety culture involves surveys, interviews, observations, and analysis of safety events. Several validated instruments exist for measuring safety culture in healthcare, including the Hospital Survey on Patient Safety Culture (HSOPSC).
+
+Developing safety culture requires sustained leadership commitment and action. Leaders must model safety behaviors, establish clear expectations, provide resources for safety, and recognize and reward safety performance.
+
+<h3 class="section-title">Chapter 3: Reliability Science in Practice</h3>
+
+Translating reliability science into practice requires systematic approaches to designing and improving healthcare processes. Several key principles guide this work.
+
+Standardization reduces variation and makes processes more predictable. Where variation does not add value, standard work should be established and followed. Standardization also makes it easier to identify when something goes wrong.
+
+Simplification reduces complexity that can lead to errors. Complex processes are harder to follow correctly and easier to make mistakes in. Removing unnecessary complexity improves reliability.
+
+Forcing functions design processes so that errors are either prevented or detected before reaching the patient. Examples include physical constraints, computer prompts, and mandatory checks that must be completed before proceeding.
+
+Redundancy adds backup systems that can catch errors before they cause harm. While redundancy can sometimes introduce new problems, carefully designed redundancy improves reliability.
+
+<h3 class="section-title">Chapter 4: Learning from Safety Events</h3>
+
+Learning from safety events is essential for improving reliability. This requires systematic approaches to analysis and improvement.
+
+Root cause analysis is a structured method for identifying the underlying causes of safety events. The goal is to identify system factors that can be addressed to prevent similar events in the future.
+
+Human factors analysis examines how human performance contributed to safety events. This includes looking at task factors, environmental factors, individual factors, and organizational factors.
+
+After action reviews examine what happened, why, and what can be learned. These reviews involve those directly involved and focus on learning rather than blame.
+
+The key to learning is translating findings into action. Recommendations should be specific, actionable, and measurable. Implementation should be tracked and effectiveness evaluated.
+
+<h3 class="section-title">Chapter 5: Building Sustainable Safety Improvement</h3>
+
+Achieving and maintaining safety improvement requires ongoing effort. Sustainable improvement requires attention to multiple dimensions.
+
+Training and competence development ensure that staff have the knowledge and skills needed to perform safely. Initial training is not sufficient; ongoing competency maintenance is essential.
+
+Measurement and monitoring provide feedback on safety performance and early warning of problems. Leading indicators can predict future performance, while lagging indicators confirm whether improvements have been achieved.
+
+Continuous improvement treats safety as an ongoing journey rather than a destination. Even when good performance is achieved, there is always room for further improvement. This requires maintaining a learning orientation and avoiding complacency.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Summary and Application</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          This course has provided healthcare professionals with a comprehensive understanding of how to build safer, more reliable healthcare systems. Key learning points include understanding the systems nature of healthcare, the importance of safety culture, the application of reliability science, learning from safety events, and building sustainable improvement.
+
+As you complete this course, consider how you can apply these concepts in your own setting. Identify areas where reliability can be improved, engage colleagues in safety improvement, and contribute to building a culture of safety.
+
+<h3 class="section-title">Extended Learning Content</h3>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Advanced Systems Thinking for Healthcare Quality</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          <h3 class="section-title">Understanding System Interactions and Emergence</h3>
+
+Healthcare systems exhibit complex behaviors that emerge from the interactions of their components. Understanding these interactions is fundamental to improving reliability and quality.
+
+Feedback loops create dynamic behaviors in systems. Reinforcing loops amplify changes, while balancing loops resist changes. Understanding these dynamics helps in predicting how systems will respond to interventions.
+
+Delays between actions and effects can create unexpected behaviors. Systems may appear stable for extended periods then suddenly change dramatically. This creates challenges for improvement.
+
+Non-linear relationships mean that small changes can have large effects and vice versa. This makes it difficult to predict the impact of interventions and requires careful monitoring.
+
+Trade-offs occur between competing system goals. Improving one aspect may harm another. Understanding trade-offs helps in making difficult choices about priorities.
+
+<h3 class="section-title">System Dynamics and Quality Improvement</h3>
+
+System dynamics provides tools for understanding and improving complex systems. Several concepts are particularly relevant.
+
+Bottlenecks constrain system performance and represent opportunities for improvement. Identifying and addressing bottlenecks can have significant impact.
+
+Accumulations and depletions create dynamics that affect system behavior. Understanding these helps in predicting long-term impacts of changes.
+
+Behavior over time patterns reveal system dynamics. Recognizing patterns helps in understanding underlying system behavior.
+
+<h3 class="section-title">Building System Thinking Capability</h3>
+
+Developing system thinking requires practice and conscious effort. Several approaches help build this capability.
+
+Process mapping helps visualize system interactions and identify improvement opportunities. Mapping reveals interconnections that might otherwise be missed.
+
+Root cause analysis using system thinking goes beyond immediate causes to understand underlying system factors. This leads to more effective solutions.
+
+Simulation and modeling can help understand system behavior and test interventions. These tools enable experimentation without risk.
+
+<h3 class="section-title">Systems Approach to Patient Safety</h3>
+
+A systems approach to patient safety focuses on creating conditions that prevent errors rather than focusing on individual errors. This approach is more effective than blame-based approaches.
+
+Designing for safety incorporates safety considerations into system design. This includes simplifying, standardizing, and building in safeguards.
+
+Learning systems capture and act on safety information. This includes reporting systems, analysis, and improvement.
+
+Safety culture values safety as an organizational priority. This includes leadership commitment and staff engagement.
+
+<h3 class="section-title">Conclusion and Application</h3>
+
+This comprehensive course on Addressing Small Problems to Build Safer, More Reliable Systems has provided healthcare professionals with the knowledge and tools to understand and improve system reliability. The course has covered system thinking principles, reliability science, and practical approaches for improvement.
+
+Key learning points include understanding the complex nature of healthcare systems, applying reliability principles, building high reliability organizations, learning from safety events, and building sustainable safety improvement. The course has addressed the Saudi healthcare context including CBAHI standards and MOH initiatives.
+
+Applying this learning requires seeing problems as system issues rather than individual failures. It requires designing systems that prevent errors and make it easy to do the right thing. It requires building cultures that value safety and learn from errors.
+
+As you complete this course, apply these concepts in your work. Look for system factors in problems, apply reliability principles, build safety culture, and contribute to continuous improvement.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header " onclick="toggleAccordion(this)" data-section="section-15">
+        <span class="accordion-icon">📗</span>
+        <span class="accordion-title">Course Details</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content ">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> QI 202
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-16">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/qi-202" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/qi-101.html" class="related-card">
+            <h4>Introduction to Health Care Improvement</h4>
+            <p class="rtl">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-102.html" class="related-card">
+            <h4>How to Improve with the Model for Improvement</h4>
+            <p class="rtl">QI 102: كيفية التحسين باستخدام نموذج التحسين</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-103.html" class="related-card">
+            <h4>Testing and Measuring Changes with PDSA Cycles</h4>
+            <p class="rtl">QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-104.html" class="related-card">
+            <h4>Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools</h4>
+            <p class="rtl">QI 104: تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</p>
+            <span class="related-card-duration">⏱ 150 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-qi-202') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-qi-202', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('qi-202')) enrolled.push('qi-202');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'qi-202');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-qi-202') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-qi-202', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-qi-202', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-qi-202', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-qi-202', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-qi-202') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Addressing Small Problems to Build Safer, More Reliable Systems',
+        slug: 'qi-202',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-qi-202') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-qi-202.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

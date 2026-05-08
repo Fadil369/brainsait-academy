@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Health Care Improvement | BrainSAIT Academy</title>
+  <meta name="description" content="Introduction to Health Care Improvement - Full bilingual course on Quality Improvement">
+  <meta name="keywords" content="Quality Improvement, IHI, Open School, Health Care, QI, Saudi Arabia, CBAHI, MOH">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Introduction to Health Care Improvement</h3>
+        <p>QI-101 • 120 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">مقدمة في تحسين الرعاية الصحية</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Overview | نظرة عامة على الد...</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lessons | الدروس</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Interactive Quizzes | اختبارات تفاع...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Reflection Questions | أسئلة التأمل</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Action Items | خطة العمل</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Continuing Education Credits | السا...</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Special Saudi Arabia Supplement | م...</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Quality Improvement</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Introduction to Health Care Improvement</h1>
+        <p class="course-title-ar rtl">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">120</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">14</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">مقدمة في تحسين الرعاية الصحية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <strong>QI 101: مقدمة في تحسين الرعاية الصحية</strong>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Overview | نظرة عامة على الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+This foundational course equips healthcare professionals with the essential knowledge and tools to lead quality improvement initiatives in their organizations. You will learn about the science of improvement, the Model for Improvement, and how to apply PDSA cycles to test and implement changes.
+
+The course is specifically adapted for Saudi Arabia's healthcare environment, addressing the unique challenges and opportunities in MOH facilities, private hospital groups, and Primary Health Care (PHC) clusters. You will explore how to align quality improvement initiatives with CBAHI accreditation standards and Saudi Vision 2030 health transformation goals.
+
+<strong>Key Frameworks Covered:</strong>
+- Institute of Medicine's Six Aims for Quality
+- Model for Improvement (PDSA cycles)
+- Deming's System of Profound Knowledge
+- Reliability science
+- Spread and sustainability
+- Saudi healthcare regulatory framework (CBAHI, NPHIES, Vision 2030)
+
+<h3 class="section-title">العربية</h3>
+
+تزود هذه الدورة التمهيدية المهنيين الصحيين بالمعرفة والأدوات الأساسية لقيادة مبادرات تحسين الجودة في مؤسساتهم. ستتعلم عن علم التحسين، ونموذج التحسين، وكيفية تطبيق دورات PDSA لاختبار وتنفيذ التغييرات.
+
+تم تكييف الدورة خصيصاً لبيئة الرعاية الصحية في المملكة العربية السعودية، مع معالجة التحديات والفرص الفريدة في مرافق وزارة الصحة ومجموعات المستشفيات الخاصة وتجمعات الرعاية الصحية الأولية (PHC). ستستكشف كيفية مواءمة مبادرات تحسين الجودة مع معايير الاعتماد الخاصة بهيئة CBAHI وأهداف التحول الصحي لرؤية السعودية 2030.
+
+<strong>الأُطر الرئيسية المشمولة:</strong>
+- الأهداف الستة لمعهد الطب للجودة
+- نموذج التحسين (دورات PDSA)
+- معرفة ديمينغ العميقة للنظام
+- علم الموثوقية
+- النشر والاستدامة
+- إطار العمل التنظيمي السعودي للرعاية الصحية (CBAHI، NPHIES، رؤية 2030)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Learning Outcomes</h3>
+After completing this course, you will be able to:
+
+- <strong>Analyze</strong> common challenges facing healthcare systems worldwide and in Saudi Arabia
+- <strong>Identify</strong> the six dimensions of healthcare quality outlined by the Institute of Medicine
+- <strong>Apply</strong> the Model for Improvement framework to quality projects
+- <strong>Execute</strong> PDSA cycles to test changes on a small scale
+- <strong>Measure</strong> improvement using run charts and statistical process control
+- <strong>Design</strong> reliability strategies for critical processes
+- <strong>Plan</strong> spread strategies to implement successful changes organization-wide
+- <strong>Sustain</strong> improvements over time through governance and monitoring
+- <strong>Translate</strong> course concepts into measurable improvement plans for Saudi facilities
+- <strong>Align</strong> improvement work with CBAHI standards and Vision 2030 health targets
+- <strong>Integrate</strong> NPHIES data sources into improvement measurement frameworks
+
+<h3 class="section-title">مخرجات التعلم بالعربية</h3>
+بنهاية هذه الدورة، ستكون قادراً على:
+
+- <strong>تحليل</strong> التحديات الشائعة التي تواجه أنظمة الرعاية الصحية في العالم وفي السعودية
+- <strong>تحديد</strong> الأبعاد الستة لجودة الرعاية الصحية حسب معهد الطب
+- <strong>تطبيق</strong> إطار نموذج التحسين على مشاريع الجودة
+- <strong>تنفيذ</strong> دورات PDSA لاختبار التغييرات على نطاق صغير
+- <strong>قياس</strong> التحسن باستخدام المخططات الزمنية والضبط الإحصائي للعمليات
+- <strong>تصميم</strong> استراتيجيات الموثوقية للعمليات الحرجة
+- <strong>تخطيط</strong> استراتيجيات النشر لتنفيذ التغييرات الناجحة في جميع أنحاء المؤسسة
+- <strong>الحفاظ</strong> على التحسينات بمرور الوقت من خلال الحوكمة والرصد
+- <strong>ترجمة</strong> مفاهيم الدورة إلى خطط تحسين قابلة للقياس للمنشآت السعودية
+- <strong>مواءمة</strong> عمل التحسين مع معايير CBAHI وأهداف رؤية 2030 الصحية
+- <strong>دمج</strong> مصادر بيانات NPHIES في أُطر قياس التحسين
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lessons | الدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: Health and Health Care Today | الدرس الأول: الصحة والرعاية الصحية اليوم</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Foundation | <strong>المستوى:</strong> تمهيدي
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The State of Healthcare Quality | حالة جودة الرعاية الصحية</strong>
+
+Healthcare systems around the world face similar challenges that demand systematic quality improvement approaches. Understanding these universal challenges is essential before implementing any improvement initiative in Saudi Arabian healthcare facilities.
+
+<strong>Universal Healthcare Challenges:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Challenge</td><td>Description</td><td>Impact</td><td>Saudi Context</td></tr>
+|-----------|-------------|--------|---------------|
+<tr><td><strong>Variation in Care</strong></td><td>Inconsistent delivery of evidence-based practices</td><td>Unequal outcomes across patient populations</td><td>Regional variation between urban centers and rural PHC facilities</td></tr>
+<tr><td><strong>Overuse</strong></td><td>Unnecessary tests, procedures, and treatments</td><td>Increased costs, patient risk</td><td>High antibiotic prescribing rates in some facilities</td></tr>
+<tr><td><strong>Underuse</strong></td><td>Failure to provide beneficial services</td><td>Missed opportunities for prevention</td><td>Screening rates below Vision 2030 targets</td></tr>
+<tr><td><strong>Misuse</strong></td><td>Avoidable complications from care delivery</td><td>Preventable patient harm</td><td>Medication errors requiring systematic solutions</td></tr>
+<tr><td><strong>Safety Failures</strong></td><td>Preventable harm to patients</td><td>Morbidity, mortality, liability</td><td>Targeted in CBAHI National Patient Safety Goals</td></tr>
+
+<strong>Global Perspectives on Healthcare Quality:</strong>
+
+The World Health Organization estimates that in high-income countries, 1 in 10 patients experiences harm while hospitalized. In low- and middle-income countries, the burden is even greater. These statistics underscore the urgent need for quality improvement investment globally.
+
+The OECD Healthcare Quality Indicators (HCQI) project highlights that even wealthy nations struggle with:
+- Thirty-day mortality after hospital admission for acute myocardial infarction
+- Thirty-day mortality after hospital admission for stroke
+- In-hospital deaths for hip fracture and knee replacement
+- Healthcare-associated infections
+- Patient experience measures
+
+<strong>The Saudi Healthcare Quality Landscape:</strong>
+
+Saudi Arabia's healthcare system has made significant investments in quality infrastructure:
+
+<strong>1. CBAHI (Saudi Central Board for Accreditation of Healthcare Institutions)</strong>
+
+The CBAHI was established to set and maintain national standards for healthcare quality and patient safety. All licensed healthcare facilities must undergo regular accreditation surveys.
+
+<strong>CBAHI National Patient Safety Goals (NPSGs):</strong>
+- Identify patients correctly
+- Improve staff communication
+- Use medicines safely
+- Prevent infection
+- Identify patient safety risks
+- Prevent mistakes in surgery
+
+<strong>2. Ministry of Health Quality Indicators:</strong>
+
+The MOH publishes quality dashboards through the National Health Performance Center, tracking:
+- Access to care metrics
+- Clinical effectiveness indicators
+- Patient safety measures
+- Patient experience scores
+- Resource utilization efficiency
+
+<strong>3. Vision 2030 Health Transformation:</strong>
+
+The Health Sector Transformation Program aims to:
+- Enhance healthcare quality to world-class standards
+- Improve preventive care coverage
+- Strengthen primary healthcare services
+- Enable digital health integration (NPHIES)
+- Achieve universal health coverage
+
+<strong>4. NPHIES (National Health Information Exchange):</strong>
+
+The National Platform for Healthcare Information Exchange enables:
+- Seamless patient data sharing across providers
+- Integrated care continuity
+- Population health analytics
+- Quality outcome measurement
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>حالة جودة الرعاية الصحية</strong>
+
+تواجه أنظمة الرعاية الصحية حول العالم تحديات متشابهة تستوجب مقاربات منهجية منهجية للتحسين. إن فهم هذه التحديات الشاملة أمر ضروري قبل تنفيذ أي مبادرة تحسين في المرافق الصحية السعودية.
+
+<strong>التحديات العالمية للرعاية الصحية:</strong>
+
+<tr><td>التحدي</td><td>الوصف</td><td>الأثر</td><td>السياق السعودي</td></tr>
+|--------|-------|-------|----------------|
+<tr><td><strong>تباين في الرعاية</strong></td><td>تقديم غير متسق للممارسات المبنية على الأدلة</td><td>نتائج غير متكافئة عبر فئات المرضى</td><td>التباين الإقليمي بين المراكز الحضرية ومرافق الرعاية الأولية الريفية</td></tr>
+<tr><td><strong>الإفراط في الاستخدام</strong></td><td>الاختبارات والإجراءات والعلاجات غير الضرورية</td><td>زيادة التكاليف ومخاطر المرضى</td><td>ارتفاع معدلات وصف المضادات الحيوية في بعض المرافق</td></tr>
+<tr><td><strong>عدم كفاية الاستخدام</strong></td><td>الفشل في تقديم الخدمات المفيدة</td><td>فرص ضائعة للوقاية</td><td>معدلات الفحص دون أهداف رؤية 2030</td></tr>
+<tr><td><strong>سوء الاستخدام</strong></td><td>المضاعفات التي يمكن تجنبها من تقديم الرعاية</td><td>ضرر قابل للوقاية للمرضى</td><td>أخطاء الأدوية التي تتطلب حلولاً منهجية</td></tr>
+<tr><td><strong>فشل السلامة</strong></td><td>الضرر الذي يمكن الوقاية منه للمرضى</td><td>المراضة والوفيات والمسؤولية</td><td>مستهدف في أهداف سلامة المرضى الوطنية لـ CBAHI</td></tr>
+
+<strong>المنظورات العالمية على جودة الرعاية الصحية:</strong>
+
+قدرت منظمة الصحة العالمية أنه في البلدان ذات الدخل المرتفع، يختبر 1 من كل 10 مرضى ضرراً أثناء الإقامة في المستشفى. في البلدان منخفضة ومتوسطة الدخل، العبء أكبر. تسلط هذه الإحصائيات الضوء على الحاجة الملحة للاستثمار في تحسين الجودة عالمياً.
+
+يبرز مشروع مؤشرات جودة الرعاية الصحية لمنظمة التعاون الاقتصادي والتنمية (HCQI) أن حتى الدول الغنية تعاني من:
+- وفيات خلال 30 يوماً بعد الدخول المستشفى لذبحة عضلية حادة
+- وفيات خلال 30 يوماً بعد الدخول المستشفى للسكتة الدماغية
+- وفيات في المستشفى لكسور الفخذ واستبدال الركبة
+- العدوى المكتسبة من الرعاية الصحية
+- مقاييس تجربة المريض
+
+<strong>مشهد جودة الرعاية الصحية السعودي:</strong>
+
+استثمرت المملكة العربية السعودية بشكل كبير في البنية التحتية للجودة:
+
+<strong>1. CBAHI (المجلس المركزي السعودي لاعتماد المؤسسات الصحية)</strong>
+
+تأسس CBAHI لوضع والحفاظ على المعايير الوطنية للجودة وسلامة المرضى. يجب أن تخضع جميع المرافق الصحية المرخصة لعمليات تقييم الاعتماد المنتظمة.
+
+<strong>أهداف CBAHI الوطنية لسلامة المرضى (NPSGs):</strong>
+- تحديد هوية المرضى بشكل صحيح
+- تحسين التواصل بين الموظفين
+- استخدام الأدوية بشكل آمن
+- منع العدوى
+- تحديد مخاطر سلامة المرضى
+- منع الأخطاء في الجراحة
+
+<strong>2. مؤشرات جودة وزارة الصحة:</strong>
+
+تنشر وزارة الصحة لوحات معلومات الجودة من خلال المركز الوطني لأداء الصحة، تتبع:
+- مقاييس الوصول للرعاية
+- مؤشرات الفعالية السريرية
+- مقاييس سلامة المرضى
+- درجات تجربة المريض
+- كفاءة استخدام الموارد
+
+<strong>3. التحول الصحي لرؤية 2030:</strong>
+
+يهدف برنامج التحول الصحي إلى:
+- تعزيز جودة الرعاية الصحية إلى معايير عالمية المستوى
+- تحسين تغطية الرعاية الوقائية
+- تعزيز خدمات الرعاية الصحية الأولية
+- تمكين التكامل الرقمي الصحي (NPHIES)
+- تحقيق التغطية الصحية الشاملة
+
+<strong>4. NPHIES (التبادل الوطني للمعلومات الصحية):</strong>
+
+تيح منصة التبادل الوطنية للمعلومات الصحية:
+- مشاركة سلسة لبيانات المرضى عبر مقدمين الخدمات
+- استمرارية الرعاية المتكاملة
+- التحليلات الصحية للسكان
+- قياس نتائج الجودة
+
+---
+
+<h4 class="section-sub">The Six Dimensions of Quality | الأبعاد الستة للجودة</h4>
+
+According to the Institute of Medicine's landmark report "Crossing the Quality Chasm" (2001), healthcare quality should be assessed across six dimensions:
+
+<tr><td>Dimension</td><td>English Definition</td><td>Definition Arabe</td><td>Saudi Application</td></tr>
+|-----------|-------------------|-----------------|-------------------|
+<tr><td><strong>Safe</strong></td><td>Avoiding harm to patients from care</td><td>تجنب إيذاء المرضى من الرعاية</td><td>CBAHI NPSGs, medication safety, infection control</td></tr>
+<tr><td><strong>Effective</strong></td><td>Providing services based on scientific knowledge</td><td>تقديم الخدمات بناءً على المعرفة العلمية</td><td>Evidence-based protocols, clinical guidelines alignment</td></tr>
+<tr><td><strong>Patient-Centered</strong></td><td>Respecting patient preferences and needs</td><td>احترام تفضيلات واحتياجات المريض</td><td>Experience surveys, shared decision-making</td></tr>
+<tr><td><strong>Timely</strong></td><td>Reducing wait times and harmful delays</td><td>تقليل أوقات الانتظار والتأخيرات الضارة</td><td>Appointment access, ER wait times</td></tr>
+<tr><td><strong>Efficient</strong></td><td>Avoiding waste of resources</td><td>تجنب هدر الموارد</td><td>Resource utilization, cost per case</td></tr>
+<tr><td><strong>Equitable</strong></td><td>Providing care regardless of patient characteristics</td><td>تقديم الرعاية بغض النظر عن خصائص المريض</td><td>Equal access indicators, health disparities reduction</td></tr>
+
+---
+
+<h4 class="section-sub">Practical Activity | النشاط العملي</h4>
+
+<strong>Quality Assessment Exercise | تمرين تقييم الجودة</strong>
+
+Conduct a quality assessment of your unit:
+
+1. <strong>Select one patient pathway</strong> (e.g., admission to discharge)
+2. <strong>Map the current process steps</strong> - Document each touchpoint
+3. <strong>Identify delays, rework, and waste</strong> - Use the table below to categorize
+4. <strong>Classify issues by the Six Dimensions of Quality</strong> - Link each issue to a dimension
+5. <strong>Prioritize improvement opportunities</strong> - Use the prioritization matrix
+
+<strong>Process Assessment Template | قالب تقييم العملية:</strong>
+
+<tr><td>Process Step</td><td>Duration</td><td>Waste Type</td><td>Quality Dimension</td><td>Improvement Priority</td></tr>
+|--------------|----------|------------|-------------------|---------------------|
+<tr><td>Example: Patient Registration</td><td>15 min</td><td>Waiting</td><td>Timely</td><td>High</td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+<strong>نشاط عملي:</strong>
+
+قم بتقييم جودة وحدتك:
+
+1. اختر مسار مريض واحد (مثل القبول إلى الخروج)
+2. ارسم خطوات العملية الحالية - وثّق كل نقطة لمس
+3. حدد التأخيرات وإعادة العمل والهدر - استخدم الجدول أدناه للتصنيف
+4. صنف المشكلات حسب الأبعاد الستة للجودة - اربط كل مشكلة بُعد
+5. حدد أولويات فرص التحسين - استخدم مصفوفة تحديد الأولويات
+
+---
+
+<h4 class="section-sub">Reflection Questions | أسئلة التأمل</h4>
+
+1. Which quality dimension is most challenging in your current practice setting?
+2. How does NPHIES data availability affect your ability to measure quality?
+3. What CBAHI standards have been most impactful in your facility's improvement journey?
+4. How can Vision 2030 goals be translated into measurable improvement targets for your unit?
+
+---
+
+<h3 class="section-title">Lesson 2: The Institute of Medicine's Aims for Improvement | الدرس الثاني: أهداف معهد الطب للتحسين</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Intermediate | <strong>المستوى:</strong> متوسط
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Why Improvement Science Matters | لماذا يهم علم التحسين</strong>
+
+Traditional approaches to quality assumed that more resources, better training, or stricter rules would naturally lead to better outcomes. Improvement science recognizes that complex systems behave in predictable ways, and that understanding system behavior is key to sustainable improvement.
+
+<strong>The Evolution of Quality Science | تطور علم الجودة:</strong>
+
+<tr><td>Era</td><td>Approach</td><td>Saudi Context</td></tr>
+|-----|----------|--------------|
+<tr><td><strong>1900s</strong></td><td>Inspection-based quality</td><td>Hospital licensing inspections</td></tr>
+<tr><td><strong>1950s</strong></td><td>Quality control (Deming, Juran)</td><td>Industrial standards adaptation</td></tr>
+<tr><td><strong>1980s</strong></td><td>Total Quality Management</td><td>Early CBAHI establishment</td></tr>
+<tr><td><strong>2000s</strong></td><td>Six Sigma, Lean</td><td>Process optimization initiatives</td></tr>
+<tr><td><strong>2010s</strong></td><td>Reliability science</td><td>CBAHI advanced standards</td></tr>
+<tr><td><strong>2020s</strong></td><td>System-wide transformation</td><td>Vision 2030 health transformation</td></tr>
+
+<strong>The Model for Improvement | نموذج التحسين</strong>
+
+Developed by the Associates in Process Improvement, this model provides a structured approach to testing and implementing changes:
+
+<strong>Three Foundational Questions:</strong>
+
+1. <strong>Aim Statement:</strong> What are we trying to accomplish?
+   - Specific, measurable, time-bound goals
+   - Addresses: Who? What? By how much? By when?
+
+2. <strong>Measures:</strong> How will we know if a change is an improvement?
+   - Outcome measures (Are we achieving desired results?)
+   - Process measures (Are the key steps working?)
+   - Balancing measures (Are we causing new problems?)
+
+3. <strong>Changes:</strong> What changes can we make that will result in improvement?
+   - Evidence-based change concepts
+   - Creative idea generation
+   - Local adaptation and innovation
+
+<strong>The PDSA Cycle | دورة PDSA:</strong>
+
+The Plan-Do-Study-Act cycle is the engine of improvement:
+
+<tr><td>Phase</td><td>Description</td><td>Key Activities</td><td>Saudi Hospital Example</td></tr>
+|-------|-------------|----------------|----------------------|
+<tr><td><strong>Plan</strong></td><td>Plan the test or observation</td><td>Define the change, predict outcomes, prepare data collection</td><td>Plan medication reconciliation for new admissions - define流程, assign responsibility</td></tr>
+<tr><td><strong>Do</strong></td><td>Carry out the test or observation</td><td>Implement on small scale, collect data, observe</td><td>Test process on 5 patients in Medical Unit 3 for one week</td></tr>
+<tr><td><strong>Study</strong></td><td>Analyze the results</td><td>Compare data to predictions, analyze variation</td><td>Compare medication errors pre/post; calculate 30-day readmission rates</td></tr>
+<tr><td><strong>Act</strong></td><td>Refine the change based on learning</td><td>Adopt, adapt, or abandon</td><td>Expand to all units if successful; modify and re-test if needed</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>لماذا يهم علم التحسين</strong>
+
+افترضت المقاربات التقليدية للجودة أن المزيد من الموارد أو التدريب الأفضل أو القواعد الأكثر صرامة ستؤدي بشكل طبيعي إلى نتائج أفضل. يدرك علم التحسين أن الأنظمة المعقدة تتصرف بطرق يمكن التنبؤ بها، وأن فهم سلوك النظام هو المفتاح للتحسين المستدام.
+
+<strong>تطور علم الجودة:</strong>
+
+<tr><td>الحقبة</td><td>المقاربة</td><td>السياق السعودي</td></tr>
+|--------|----------|----------------|
+<tr><td><strong>1900s</strong></td><td>الجودة القائمة على التفتيش</td><td>تفتيش ترخيص المستشفيات</td></tr>
+<tr><td><strong>1950s</strong></td><td>ضبط الجودة (ديمينغ، جوران)</td><td>تكييف المعايير الصناعية</td></tr>
+<tr><td><strong>1980s</strong></td><td>إدارة الجودة الشاملة</td><td>التأسيس المبكر لـ CBAHI</td></tr>
+<tr><td><strong>2000s</strong></td><td>سيجما ست، لين</td><td>مبادرات تحسين العمليات</td></tr>
+<tr><td><strong>2010s</strong></td><td>علم الموثوقية</td><td>معايير CBAHI المتقدمة</td></tr>
+<tr><td><strong>2020s</strong></td><td>التحول المنظومي</td><td>تحول الصحة لرؤية 2030</td></tr>
+
+<strong>نموذج التحسين</strong>
+
+طوّره Associates in Process Improvement، يوفر هذا النموذج نهجاً منظماً لاختبار وتنفيذ التغييرات:
+
+<strong>ثلاثة أسئلة أساسية:</strong>
+
+1. <strong>بيان الهدف:</strong> ما الذي نحاول تحقيقه؟
+   - أهداف محددة وقابلة للقياس ومحددة الوقت
+   - تعالج: من؟ ماذا؟ بكم؟ متى؟
+
+2. <strong>المقاييس:</strong> كيف سنعرف إذا كان التغيير تحسناً؟
+   - مؤشرات النتائج (هل نتحقق من النتائج المرجوة؟)
+   - مؤشرات العمليات (هل تعمل الخطوات الرئيسية؟)
+   - مؤشرات الموازنة (هل نسبب مشاكل جديدة؟)
+
+3. <strong>التغييرات:</strong> ما التغييرات التي يمكننا إجراؤها والتي ستؤدي إلى تحسين؟
+   - مفاهيم التغيير المبنية على الأدلة
+   - توليد الأفكار الإبداعية
+   - التكييف المحلي والابتكار
+
+<strong>دورة PDSA:</strong>
+
+تعد دورة خطط-نفّذ-ادرس-طبّق محرك التحسين:
+
+<tr><td>المرحلة</td><td>الوصف</td><td>الأنشطة الرئيسية</td><td>مثال مستشفى سعودي</td></tr>
+|---------|-------|-----------------|-------------------|
+<tr><td><strong>خطط</strong></td><td>خطط للاختبار أو الملاحظة</td><td>تحديد التغيير، التنبؤ بالنتائج، إعداد جمع البيانات</td><td>خطط لمراجعة الأدوية لحالات الدخول - تحديد العملية، تعيين المسؤولية</td></tr>
+<tr><td><strong>نفّذ</strong></td><td>نفّذ الاختبار أو الملاحظة</td><td>التنفيذ على نطاق صغير، جمع البيانات، الملاحظة</td><td>اختبر العملية على 5 مرضى في الوحدة الطبية 3 لمدة أسبوع واحد</td></tr>
+<tr><td><strong>ادرس</strong></td><td>حلل النتائج</td><td>مقارنة البيانات بالتنبؤات، تحليل التباين</td><td>قارن أخطاء الأدوية قبل/بعد؛ احسب معدلات إعادة الدخول في 30 يوماً</td></tr>
+<tr><td><strong>طبّق</strong></td><td>صقل التغيير بناءً على التعلم</td><td>تبنّي، تكييف، أو تخلي</td><td>وسّع إلى جميع الوحدات إذا نجح؛ عدّل وأعد الاختبار إذا لزم</td></tr>
+
+---
+
+<h4 class="section-sub">Statistical Thinking for Healthcare | التفكير الإحصائي للرعاية الصحية</h4>
+
+Variation is inherent in all processes. Understanding the difference between common cause and special cause variation is essential for knowing when to act:
+
+<strong>Common Cause Variation | تباين السبب المشترك:</strong>
+- Natural, predictable variation in a stable system
+- Results from the normal functioning of the system
+- Represents "background noise"
+- No specific intervention needed - work on the system
+
+<strong>Special Cause Variation | تباين السبب الخاص:</strong>
+- Unexpected variation indicating a change in the system
+- Results from specific assignable factors
+- Represents signals that deserve investigation
+- Requires root cause analysis and targeted action
+
+<strong>Saudi Application | التطبيق السعودي:</strong>
+
+In Saudi facilities, distinguishing between common and special cause variation is critical for:
+
+- CBAHI quality indicator interpretation
+- Identifying genuine improvement vs. random fluctuation
+- Determining when process changes are needed
+- Avoiding over-reaction to normal variation
+- Preventing unnecessary resource expenditure
+
+---
+
+<h4 class="section-sub">Run Charts and Control Charts | المخططات الزمنية ومخططات المراقبة</h4>
+
+<strong>Run Charts | المخططات الزمنية:</strong>
+
+- Display data over time with a median line
+- Show trends, shifts, and patterns
+- Simple to create and interpret
+- Essential for improvement tracking
+
+<strong>Elements of an Effective Run Chart:</strong>
+1. Clear title with measure and timeframe
+2. Y-axis with scale showing zero where appropriate
+3. X-axis with time intervals (days, weeks, months)
+4. Data points connected chronologically
+5. Baseline median (centerline)
+6. Goal line (target performance)
+7. Annotations for significant events (PDSA tests, policy changes)
+
+<strong>Control Charts | مخططات المراقبة:</strong>
+
+- Add statistical boundaries (control limits)
+- Based on probability theory
+- More sensitive to special cause detection
+- Used for critical safety and quality metrics
+
+<strong>Control Limit Calculation:</strong>
+- Upper Control Limit (UCL) = Mean + 3σ
+- Lower Control Limit (LCL) = Mean - 3σ
+- Data points outside limits indicate special cause
+
+---
+
+<h4 class="section-sub">Practical Activity | النشاط العملي</h4>
+
+<strong>Create a Simple Improvement Test | أنشئ اختبار تحسين بسيط</strong>
+
+1. <strong>Choose a small change</strong> in your daily workflow
+   - Example: Modified patient handoff communication
+
+2. <strong>Write a clear aim statement</strong> with measurable goal
+   - "Reduce incomplete patient handoffs from 40% to 10% within 8 weeks"
+
+3. <strong>Collect baseline data</strong> for 5 days
+   - Record current performance before any change
+
+4. <strong>Implement change</strong> and collect data for 5 days
+   - Apply the modification systematically
+
+5. <strong>Compare results</strong> and draw conclusions
+   - Calculate median before and after
+   - Determine if improvement achieved
+   - Document lessons learned
+
+<strong>PDSA Documentation Template:</strong>
+
+```
+IMPROVEMENT PROJECT: _________________________
+PDSA CYCLE #: ____    DATE: ________________
+
+PLANNING PHASE
+- Change being tested: _____________________
+- Prediction: ________________________________
+- Plan for collecting data: __________________
+- Who will do what: __________________________
+
+DOING PHASE
+- Date of test: _____________________________
+- Actual observations: _______________________
+- Unexpected issues: ________________________
+
+STUDY PHASE
+- Results (complete table):
+  | Day | Measurement | Notes |
+  |-----|-------------|-------|
+  |  1  |             |       |
+  |  2  |             |       |
+  |  3  |             |       |
+  |  4  |             |       |
+  |  5  |             |       |
+
+- Median before: _____    Median after: _____
+- Comparison to prediction: __________________
+
+ACT PHASE
+- Decision: [ ] Adopt  [ ] Adapt  [ ] Abandon
+- Next steps: ______________________________
+- Modifications for next cycle: _____________
+```
+
+---
+
+<h4 class="section-sub">Saudi Case Study | دراسة حالة سعودية</h4>
+
+<strong>King Faisal Specialist Hospital - Reducing Central Line Infections | مستشفى الملك فيصل التخصصي - تقليل عدوى الخط المركزي</strong>
+
+<strong>Background | الخلفية:</strong>
+A tertiary care center identified higher-than-benchmark central line-associated bloodstream infection (CLABSI) rates in the ICU.
+
+<strong>Improvement Approach | مقاربة التحسين:</strong>
+
+<tr><td>PDSA Cycle</td><td>Focus</td><td>Intervention</td><td>Result</td></tr>
+|------------|-------|---------------|--------|
+<tr><td>Cycle 1</td><td>Education</td><td>Staff training on insertion checklist</td><td>Marginal improvement</td></tr>
+<tr><td>Cycle 2</td><td>Standardization</td><td>Implement mandatory checklist</td><td>20% reduction</td></tr>
+<tr><td>Cycle 3</td><td>Culture change</td><td>Daily audit and feedback</td><td>40% reduction</td></tr>
+<tr><td>Cycle 4</td><td>Sustainability</td><td>Integration into nursing workflow</td><td>Sustained at >50% reduction</td></tr>
+
+<strong>Key Learning | الدروس المستفادة:</strong>
+- Combining multiple interventions (bundles) accelerates improvement
+- Continuous feedback maintains momentum
+- Integration into daily workflow ensures sustainability
+- Leadership support critical for resource allocation
+
+---
+
+<h3 class="section-title">Lesson 3: The Model for Improvement in Depth | الدرس الثالث: نموذج التحسين بالتفصيل</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Developing Effective Aim Statements | تطوير بيانات الهدف الفعّالة</strong>
+
+An effective aim statement is the foundation of successful improvement. It provides direction, alignment, and measurement criteria for the entire project.
+
+<strong>SMART Aim Framework:</strong>
+
+<tr><td>Element</td><td>Definition</td><td>Example</td></tr>
+|---------|-------------|---------|
+<tr><td><strong>S</strong>pecific</td><td>Who is involved? What will change?</td><td>Emergency department patients</td></tr>
+<tr><td><strong>M</strong>easurable</td><td>How will we know success?</td><td>Door-to-doctor time</td></tr>
+<tr><td><strong>A</strong>chievable</td><td>Is the goal realistic given constraints?</td><td>Reduce from 60 to 30 minutes</td></tr>
+<tr><td><strong>R</strong>elevant</td><td>Why does this matter?</td><td>Patient satisfaction, safety</td></tr>
+<tr><td><strong>T</strong>ime-bound</td><td>When will we achieve it?</td><td>Within 6 months</td></tr>
+
+<strong>Strong Aim Statement Characteristics:</strong>
+
+1. Addresses a gap in quality, safety, or efficiency
+2. States what will be achieved (not the solution)
+3. Includes numerical targets with timeframes
+4. Aligns with organizational priorities
+5. Is meaningful to frontline staff
+6. Can be communicated in one sentence
+
+<strong>Saudi Hospital Aim Statement Examples:</strong>
+
+<tr><td>Poor Aim</td><td>Strong Aim</td></tr>
+|----------|-----------|
+<tr><td>"Improve patient flow"</td><td>"Reduce average length of stay for pneumonia patients from 5.2 to 4.0 days within 90 days"</td></tr>
+<tr><td>"Decrease infections"</td><td>"Achieve zero healthcare-associated CLABSI in Medical ICU by December 2026"</td></tr>
+<tr><td>"Better communication"</td><td>"Increase proportion of completed medication reconciliation forms from 45% to 90% for all admissions within 60 days"</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>تطوير بيانات الهدف الفعّالة</strong>
+
+بيان الهدف الفعّال هو أساس التحسين الناجح. يوفر الاتجاه والمحاذاة ومعايير القياس للمشروع بأكمله.
+
+<strong>إطار العمل للهدف الذكي SMART:</strong>
+
+<tr><td>العنصر</td><td>التعريف</td><td>مثال</td></tr>
+|--------|---------|------|
+<tr><td><strong>S</strong> محدد</td><td>من المعني؟ ماذا سيتغير؟</td><td>مرضى قسم الطوارئ</td></tr>
+<tr><td><strong>M</strong> قابل للقياس</td><td>كيف سنعرف النجاح؟</td><td>وقت الباب إلى الطبيب</td></tr>
+<tr><td><strong>A</strong> قابل للتحقيق</td><td>هل الهدف واقعي مع القيود؟</td><td>تقليل من 60 إلى 30 دقيقة</td></tr>
+<tr><td><strong>R</strong> ذي صلة</td><td>لماذا يهم هذا؟</td><td>رضا المريض، السلامة</td></tr>
+<tr><td><strong>T</strong> محدد بالوقت</td><td>متى سنحققه؟</td><td>خلال 6 أشهر</td></tr>
+
+<strong>خصائص بيان الهدف القوي:</strong>
+
+1. يعالج فجوة في الجودة أو السلامة أو الكفاءة
+2. يحدد ما سيتم تحقيقه (وليس الحل)
+3. يتضمن أهدافاً عددية مع أطر زمنية
+4. يتوافق مع أولويات المؤسسة
+5. له معنى للعاملين في الخطوط الأمامية
+6. يمكن إيصاله في جملة واحدة
+
+<strong>أمثلة على بيانات الهدف في المستشفيات السعودية:</strong>
+
+<tr><td>هدف ضعيف</td><td>هدف قوي</td></tr>
+|----------|--------|
+<tr><td>"تحسين تدفق المرضى"</td><td>"تقليل متوسط فترة إقامة مرضى الالتهاب الرئوي من 5.2 إلى 4.0 أيام خلال 90 يوماً"</td></tr>
+<tr><td>"تقليل العدوى"</td><td>"تحقيق صفر عدوى مكتسبة مرتبطة بالخط المركزي في العناية المركزة الطبية بحلول ديسمبر 2026"</td></tr>
+<tr><td>"تحسين التواصل"</td><td>"زيادة نسبة نماذج مراجعة الأدوية المكتملة من 45% إلى 90% لجميع حالات الدخول خلال 60 يوماً"</td></tr>
+
+---
+
+<h4 class="section-sub">Selecting Measures | اختيار المقاييس</h4>
+
+<strong>The Three Types of Measures:</strong>
+
+<strong>1. Outcome Measures | مؤشرات النتائج</strong>
+- Reflect the ultimate goal of the improvement
+- Answer: "Did we achieve what we set out to achieve?"
+- Examples: Mortality, readmission rates, patient satisfaction scores
+
+<strong>2. Process Measures | مؤشرات العمليات</strong>
+- Reflect the key steps that drive outcomes
+- Answer: "Are we doing the right things to achieve our goal?"
+- Examples: Hand hygiene compliance, medication reconciliation completion
+
+<strong>3. Balancing Measures | مؤشرات الموازنة</strong>
+- Monitor for unintended consequences
+- Answer: "Are our changes causing new problems?"
+- Examples: Staff workload, patient wait times, costs
+
+<strong>Measure Selection Framework:</strong>
+
+<tr><td>Question</td><td>Response</td><td>Measure Type</td></tr>
+|----------|----------|--------------|
+<tr><td>What outcome matters most to patients?</td><td>Mortality, quality of life</td><td>Outcome</td></tr>
+<tr><td>What processes most directly affect this outcome?</td><td>Timely treatment, correct diagnosis</td><td>Process</td></tr>
+<tr><td>What might get worse if we focus here?</td><td>Staff satisfaction, costs</td><td>Balancing</td></tr>
+
+---
+
+<h4 class="section-sub">Developing Changes | تطوير التغييرات</h4>
+
+<strong>Change Concepts | مفاهيم التغيير</strong>
+
+Change concepts are broad categories of ideas for improvement that have proven effective across settings:
+
+1. <strong>Eliminate Waste</strong> - Remove activities that add cost without value
+2. <strong>Improve Workflow</strong> - Rearrange sequence for efficiency
+3. <strong>Enhance Variation Control</strong> - Reduce harmful variation
+4. <strong>Modify the Environment</strong> - Change physical or organizational layout
+5. <strong>Alter Staff Behavior</strong> - Incentives, training, reminders
+6. <strong>Facilitate Communication</strong> - Improve information flow
+7. <strong>Modify the Process</strong> - Simplify, standardize, automate
+
+<strong>Idea Generation Tools:</strong>
+
+<tr><td>Tool</td><td>Purpose</td><td>When to Use</td></tr>
+|------|---------|-------------|
+<tr><td>Brainstorming</td><td>Generate many ideas quickly</td><td>Beginning of project</td></tr>
+<tr><td>Nominal Group</td><td>Structured idea generation</td><td>Need specific decisions</td></tr>
+<tr><td>Affinity Mapping</td><td>Group related ideas</td><td>Many ideas generated</td></tr>
+<tr><td>Force Field Analysis</td><td>Evaluate pros and cons</td><td>Decision between options</td></tr>
+<tr><td>Failure Mode Effects Analysis (FMEA)</td><td>Identify failure risks</td><td>Process redesign</td></tr>
+
+<strong>Saudi Healthcare Change Idea Examples:</strong>
+
+<tr><td>Quality Issue</td><td>Change Concept</td><td>Specific Intervention</td></tr>
+|---------------|----------------|----------------------|
+<tr><td>Long ED wait times</td><td>Improve workflow</td><td>Triage protocol redesign with nurseinitiated orders</td></tr>
+<tr><td>High medication errors</td><td>Eliminate waste</td><td>Bar-coded medication administration</td></tr>
+<tr><td>Low hand hygiene compliance</td><td>Alter staff behavior</td><td>Real-time electronic monitoring with feedback</td></tr>
+<tr><td>Missed preventive care</td><td>Enhance communication</td><td>Automated screening reminders in EMR</td></tr>
+<tr><td>Delayed discharge</td><td>Modify process</td><td>Discharge planning checklist initiated at admission</td></tr>
+
+---
+
+<h4 class="section-sub">Practical Activity | النشاط العملي</h4>
+
+<strong>Develop Your Improvement Charter | طوّر ميثاق التحسين الخاص بك</strong>
+
+Complete this charter for your improvement project:
+
+```
+IMPROVEMENT PROJECT CHARTER
+============================
+
+PROJECT TITLE: ___________________________
+
+PROBLEM STATEMENT:
+_________________________________________
+_________________________________________
+
+AIM STATEMENT:
+By [when], we will [what] from [baseline] 
+to [target] measured by [metric].
+
+BASELINE DATA:
+- Current performance: _____________
+- Data source: ___________________
+- Measurement frequency: _________
+
+MEASURES:
+Outcome: _________________________
+Process: _________________________
+Balancing: ______________________
+
+TEAM MEMBERS:
+- Project Lead: _________________
+- Physician Champion: ___________
+- Nursing Champion: _____________
+- Quality Advisor: _______________
+- Data Analyst: _________________
+
+TIMELINE:
+- Start Date: ___________________
+- Target Completion: ____________
+- Major Milestones: _____________
+
+STAKEHOLDERS:
+- Executive Sponsor: ____________
+- Department Heads: ____________
+- Frontline Staff: ______________
+- Patients/Families: ____________
+
+RESOURCES NEEDED:
+- ______________________________
+- ______________________________
+
+POTENTIAL BARRIERS:
+- ______________________________
+- ______________________________
+
+MITIGATION STRATEGIES:
+- ______________________________
+```
+
+---
+
+<h3 class="section-title">Lesson 4: W. Edwards Deming's System of Profound Knowledge | الدرس الرابع: معرفة ديمينغ العميقة للنظام</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Deming's Framework | إطار ديمينغ</strong>
+
+W. Edwards Deming's System of Profound Knowledge provides a comprehensive understanding of systems thinking essential for healthcare improvement leaders.
+
+<strong>The Four Pillars of Profound Knowledge:</strong>
+
+<strong>1. Appreciation of a System | تقدير النظام</strong>
+- Understanding how components interact
+- Recognizing that systems determine performance
+- Identifying leverage points for improvement
+- Healthcare example: Patient journey through multiple departments and providers
+
+<strong>2. Knowledge of Variation | معرفة التباين</strong>
+- Understanding common and special cause variation
+- Using data to distinguish signal from noise
+- Making decisions based on evidence, not anecdote
+- Healthcare example: Distinguishing normal readmission variation from infection outbreak
+
+<strong>3. Theory of Knowledge | نظرية المعرفة</strong>
+- Understanding prediction and learning
+- Forming theories based on data
+- Testing assumptions systematically
+- Healthcare example: Predicting that checklist use will reduce infections
+
+<strong>4. Psychology | علم النفس</strong>
+- Understanding human behavior and motivation
+- Recognizing different individual motivations
+- Creating environments for intrinsic motivation
+- Healthcare example: Understanding physician resistance to protocol standardization
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>إطار ديمينغ</strong>
+
+توفر معرفة ديمينغ العميقة للنظام فهماً شاملاً للتفكير المنظومي الضروري لقادة تحسين الرعاية الصحية.
+
+<strong>الأركان الأربعة للمعرفة العميقة:</strong>
+
+<strong>1. تقدير النظام</strong>
+- فهم كيف تتفاعل المكونات
+- إدراك أن الأنظمة تحدد الأداء
+- تحديد نقاط التأثير للتحسين
+- مثال صحي: رحلة المريض عبر أقسام ومقدمين متعددين
+
+<strong>2. معرفة التباين</strong>
+- فهم التباين في السبب المشترك والخاص
+- استخدام البيانات للتمييز بين الإشارة والضوضاء
+- اتخاذ القرارات بناءً على الأدلة وليس الحكايات
+- مثال صحي: التمييز بين التباين الطبيعي لإعادة الدخول وتفشي العدوى
+
+<strong>3. نظرية المعرفة</strong>
+- فهم التنبؤ والتعلم
+- تكوين النظريات بناءً على البيانات
+- اختبار الافتراضات بشكل منهجي
+- مثال صحي: التنبؤ بأن استخدام القائمة المرجعية سيقلل العدوى
+
+<strong>4. علم النفس</strong>
+- فهم السلوك البشري والدافع
+- إدراك الدوافع الفردية المختلفة
+- خلق بيئات للدافع الذاتي
+- مثال صحي: فهم مقاومة الطبيب لتوحيد البروتوكولات
+
+---
+
+<h4 class="section-sub">Applying Deming in Healthcare | تطبيق ديمينغ في الرعاية الصحية</h4>
+
+<strong>Systems Thinking in Saudi Facilities:</strong>
+
+<tr><td>System Element</td><td>Healthcare Application</td><td>Saudi Context Example</td></tr>
+|---------------|----------------------|----------------------|
+<tr><td><strong>Components</strong></td><td>Departments, providers, processes</td><td>Emergency, ICU, Pharmacy, Laboratory</td></tr>
+<tr><td><strong>Interactions</strong></td><td>Referrals, handoffs, information flow</td><td>NPHIES data exchange between facilities</td></tr>
+<tr><td><strong>Boundaries</strong></td><td>Unit, facility, regional health system</td><td>PHC cluster to tertiary hospital</td></tr>
+<tr><td><strong>Purpose</strong></td><td>Patient outcomes, population health</td><td>Vision 2030 health targets alignment</td></tr>
+<tr><td><strong>Emergent Properties</strong></td><td>System performance, safety culture</td><td>CBAHI accreditation outcomes</td></tr>
+
+<strong>Variation Management Strategies:</strong>
+
+<tr><td>Strategy</td><td>Application</td><td>Saudi Example</td></tr>
+|----------|-------------|---------------|
+<tr><td><strong>Reduce Unnecessary Variation</strong></td><td>Standardize evidence-based practices</td><td>CBAHI protocol requirements</td></tr>
+<tr><td><strong>Maintain Beneficial Flexibility</strong></td><td>Allow adaptation to patient needs</td><td>Individualized care plans</td></tr>
+<tr><td><strong>Predictable Systems</strong></td><td>Design reliable processes</td><td>Central line insertion bundles</td></tr>
+<tr><td><strong>Continuous Monitoring</strong></td><td>Track and respond to signals</td><td>MOH quality dashboard reports</td></tr>
+
+---
+
+<h4 class="section-sub">The Psychology of Change | سيكولوجية التغيير</h4>
+
+Understanding human behavior is essential for successful improvement:
+
+<strong>Individual Responses to Change:</strong>
+
+<tr><td>Response</td><td>Characteristics</td><td>Improvement Leader Response</td></tr>
+|----------|-----------------|---------------------------|
+<tr><td><strong>Early Adopters</strong></td><td>Enthusiastic, innovative, trusted by peers</td><td>Engage as champions, seek input</td></tr>
+<tr><td><strong>Early Majority</strong></td><td>Thoughtful, need evidence of success</td><td>Provide data, address concerns</td></tr>
+<tr><td><strong>Late Majority</strong></td><td>Skeptical, need peer pressure</td><td>Involve respected colleagues, demonstrate adoption by others</td></tr>
+<tr><td><strong>Laggards</strong></td><td>Resistant, traditional</td><td>Give time, use policy requirements (CBAHI)</td></tr>
+
+<strong>Creating the Right Environment:</strong>
+
+- Enable staff to take pride in their work
+- Remove barriers that prevent good performance
+- Provide clear expectations and resources
+- Recognize and celebrate improvement successes
+- Maintain psychological safety for raising concerns
+
+---
+
+<h3 class="section-title">Lesson 5: Reliability Science | الدرس الخامس: علم الموثوقية</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>High-Reliability Organizations | المنظمات عالية الموثوقية</strong>
+
+High-reliability organizations (HROs) achieve near-perfect performance by designing systems that prevent errors. Healthcare organizations seeking to eliminate preventable harm must embrace reliability science.
+
+<strong>Levels of Reliability | مستويات الموثوقية:</strong>
+
+<tr><td>Level</td><td>Reliability</td><td>Description</td><td>Healthcare Example</td></tr>
+|-------|-------------|-------------|-------------------|
+<tr><td><strong>1</strong></td><td>50%</td><td>Basic awareness</td><td>Hand hygiene reminders, posters</td></tr>
+<tr><td><strong>2</strong></td><td>80%</td><td>Procedural standardization</td><td>Checklist completion requirement</td></tr>
+<tr><td><strong>3</strong></td><td>95%</td><td>Redundancy and forcing functions</td><td>Two-patient identifiers, barcode scanning</td></tr>
+<tr><td><strong>4</strong></td><td>99.9%</td><td>System redesign</td><td>Fail-safe defaults, physical constraints</td></tr>
+
+<strong>The Four Levels of Interventions | المستويات الأربعة للتدخلات:</strong>
+
+<tr><td>Level</td><td>Strength</td><td>Type</td><td>Examples</td></tr>
+|-------|----------|------|----------|
+<tr><td><strong>1</strong></td><td>Strongest</td><td>Physical/technological - forcing functions</td><td>Removing Concentrated Potassium from patient care units</td></tr>
+<tr><td><strong>2</strong></td><td>Strong</td><td>Physical/technological - standardization</td><td>Standard medication labels, default doses in CPOE</td></tr>
+<tr><td><strong>3</strong></td><td>Moderate</td><td>Organizational - communication/training</td><td>Education on new protocols, team training</td></tr>
+<tr><td><strong>4</strong></td><td>Weakest</td><td>Human resource - rules/policies</td><td>Policy mandates, disciplinary consequences</td></tr>
+
+<strong>Design Principles for High Reliability:</strong>
+
+1. <strong>Standardize</strong> - Reduce unnecessary variation in processes
+2. <strong>Redundancy</strong> - Add backup systems for critical steps
+3. <strong>Forcing Functions</strong> - Make errors impossible or highly unlikely
+4. <strong>Feedback</strong> - Provide real-time information on performance
+5. <strong>Focus on Process</strong> - Recognize that individuals work within systems
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>المنظمات عالية الموثوقية</strong>
+
+تحقق المنظمات عالية الموثوقية (HROs) أداءً شبه مثالي من خلال تصميم أنظمة تمنع الأخطاء. يجب على المنظمات الصحية التي تسعى للقضاء على الضرر الذي يمكن الوقاية منه تبني علم الموثوقية.
+
+<strong>مستويات الموثوقية:</strong>
+
+<tr><td>المستوى</td><td>الموثوقية</td><td>الوصف</td><td>مثال صحي</td></tr>
+|---------|-----------|------|----------|
+<tr><td><strong>1</strong></td><td>50%</td><td>الوعي الأساسي</td><td>تذكيرات غسل اليدين، الملصقات</td></tr>
+<tr><td><strong>2</strong></td><td>80%</td><td>توحيد الإجراءات</td><td>متطلب إكمال قائمة الفحص</td></tr>
+<tr><td><strong>3</strong></td><td>95%</td><td>التكرار والوظائف الإجبارية</td><td>معرف المرضى مزدوج، مسح الباركود</td></tr>
+<tr><td><strong>4</strong></td><td>99.9%</td><td>إعادة تصميم النظام</td><td>الافتراضات الآمنة، القيود المادية</td></tr>
+
+<strong>المستويات الأربعة للتدخلات:</strong>
+
+<tr><td>المستوى</td><td>القوة</td><td>النوع</td><td>الأمثلة</td></tr>
+|--------|-------|------|----------|
+<tr><td><strong>1</strong></td><td>الأقوى</td><td>فيزيائي/تكنولوجي - وظائف إجبارية</td><td>إزالة البوتاسيوم المركز من وحدات رعاية المرضى</td></tr>
+<tr><td><strong>2</strong></td><td>قوي</td><td>فيزيائي/تكنولوجي - توحيد</td><td>تسميات الأدوية الموحدة، الجرعات الافتراضية في CPOE</td></tr>
+<tr><td><strong>3</strong></td><td>معتدل</td><td>تنظيمي - التواصل/التدريب</td><td>التعليم على البروتوكولات الجديدة، تدريب الفريق</td></tr>
+<tr><td><strong>4</strong></td><td>الأضعف</td><td>الموارد البشرية - القواعد/السياسات</td><td>متطلبات السياسات، العواقب التأديبية</td></tr>
+
+---
+
+<h4 class="section-sub">Saudi Healthcare Reliability Examples | أمثلة الموثوقية في الرعاية الصحية السعودية</h4>
+
+<strong>CBAHI-Mandated Reliability Features:</strong>
+
+<tr><td>Standard</td><td>Reliability Level</td><td>Intervention Type</td></tr>
+|----------|-------------------|-------------------|
+<tr><td>Two patient identifiers</td><td>Level 3</td><td>Redundancy</td></tr>
+<tr><td>Time-out before procedures</td><td>Level 3</td><td>Forcing function</td></tr>
+<tr><td>Medication reconciliation</td><td>Level 2</td><td>Standardization</td></tr>
+<tr><td>Surgical site marking</td><td>Level 3</td><td>Forcing function</td></tr>
+<tr><td>Bar-coded medication administration</td><td>Level 4</td><td>System redesign</td></tr>
+
+<strong>Example: Improving Hand Hygiene Compliance | مثال: تحسين الامتثال لغسل اليدين</strong>
+
+<tr><td>Intervention Level</td><td>Strategy</td><td>Expected Reliability</td></tr>
+|-------------------|----------|---------------------|
+<tr><td>Weakest (Level 4)</td><td>Policy mandate with disciplinary action</td><td>60%</td></tr>
+<tr><td>Moderate (Level 3)</td><td>Training and competency verification</td><td>75%</td></tr>
+<tr><td>Strong (Level 2)</td><td>Standardized reminder posters, convenient locations</td><td>85%</td></tr>
+<tr><td>Strongest (Level 1)</td><td>Automated electronic monitoring with immediate feedback</td><td>95%</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 6: Spread and Sustainability | الدرس السادس: النشر والاستدامة</h3>
+
+<strong>Duration:</strong> 20 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Challenge of Spread | تحدي النشر</strong>
+
+Making changes in one unit is relatively easy. Achieving lasting change across an organization requires deliberate strategies, dedicated resources, and sustained leadership commitment.
+
+<strong>Framework for Spread | إطار العمل للنشر:</strong>
+
+<tr><td>Component</td><td>Description</td><td>Saudi Application</td></tr>
+|-----------|-------------|-------------------|
+<tr><td><strong>Set</strong></td><td>Create urgency and shared vision</td><td>Vision 2030 alignment, executive presentations</td></tr>
+<tr><td><strong>Lead</strong></td><td>Engage leadership at all levels</td><td>Department heads as improvement champions</td></tr>
+<tr><td><strong>Do</strong></td><td>Adapt changes for local context</td><td>Customize protocols for cultural fit</td></tr>
+<tr><td><strong>Track</strong></td><td>Monitor adoption and outcomes</td><td>Weekly dashboard updates</td></tr>
+<tr><td><strong>Engage</strong></td><td>Involve early adopters and opinion leaders</td><td>Medical staff committee involvement</td></tr>
+
+<strong>IHI Framework for Spread Elements:</strong>
+
+1. <strong>Prepare for Spread</strong>
+   - Establish urgency for change
+   - Secure resources and infrastructure
+   - Identify change package and adaptation needs
+
+2. <strong>Integrate into Systems</strong>
+   - Incorporate into existing workflows
+   - Update policies and procedures
+   - Include in training and orientation
+
+3. <strong>Establish Infrastructure for Spread</strong>
+   - Create communication mechanisms
+   - Develop learning systems
+   - Identify and support change agents
+
+4. <strong>Execute and Sustain</strong>
+   - Implement monitoring systems
+   - Address barriers in real time
+   - Recognize and celebrate successes
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>تحدي النشر</strong>
+
+إن إجراء التغييرات في وحدة واحدة أمر سهل نسبياً. تحقيق تغيير دائم عبر مؤسسة يتطلب استراتيجيات مقصودة وموارد مخصصة والتزام قيادة مستدام.
+
+<strong>إطار العمل للنشر:</strong>
+
+<tr><td>المكون</td><td>الوصف</td><td>التطبيق السعودي</td></tr>
+|--------|-------|----------------|
+<tr><td><strong>حدد</strong></td><td>خلق الإلحاح والرؤية المشتركة</td><td>محاذاة رؤية 2030، عروض الإدارة التنفيذية</td></tr>
+<tr><td><strong>قيّد</strong></td><td>شرك القيادة على جميع المستويات</td><td>رؤساء الأقسام كcampeños للتحسين</td></tr>
+<tr><td><strong>نفّذ</strong></td><td>عدّل التغييرات للسياق المحلي</td><td>تخصيص البروتوكولات للملاءمة الثقافية</td></tr>
+<tr><td><strong>تتبع</strong></td><td>راقب التبني والنتائج</td><td>تحديثات لوحة المعلومات الأسبوعية</td></tr>
+<tr><td><strong>شرك</strong></td><td>شارك المتبنون الأوائل والقادة ذوي التأثير</td><td>إشراك لجنة الموظفين الطبيين</td></tr>
+
+---
+
+<h4 class="section-sub">Sustainability Checklist | قائمة التحقق للاستدامة</h4>
+
+<tr><td>Element</td><td>Questions to Ask</td><td>Check</td></tr>
+|---------|-----------------|-------|
+<tr><td><strong>Results Visibility</strong></td><td>Are results visible to all staff? Shared in huddles?</td><td>☐</td></tr>
+<tr><td><strong>Process Documentation</strong></td><td>Is the new process standardized and documented?</td><td>☐</td></tr>
+<tr><td><strong>Training Integration</strong></td><td>Is training built into onboarding for new staff?</td><td>☐</td></tr>
+<tr><td><strong>Metrics Monitoring</strong></td><td>Are metrics monitored regularly with defined owners?</td><td>☐</td></tr>
+<tr><td><strong>Governance Oversight</strong></td><td>Is there leadership oversight of sustained metrics?</td><td>☐</td></tr>
+<tr><td><strong>Continuous Feedback</strong></td><td>Is there a mechanism for staff to suggest improvements?</td><td>☐</td></tr>
+<tr><td><strong>System Integration</strong></td><td>Is the change embedded in EMR, order sets, or protocols?</td><td>☐</td></tr>
+</tbody></table></div>
+---
+
+<h4 class="section-sub">Practical Activity | النشاط العملي</h4>
+
+<strong>Design a Spread Strategy | صمم استراتيجية نشر</strong>
+
+For your improvement project, complete the following:
+
+1. <strong>Identify early adopters</strong> in your unit
+   - Names: ________________________
+
+2. <strong>Create a communication plan</strong>
+   - Key messages: ____________________
+   - Communication channels: __________
+   - Frequency: _____________________
+
+3. <strong>Document the new process</strong>
+   - Include visual aids
+   - Create quick reference guides
+
+4. <strong>Develop training plan</strong>
+   - Training checklist prepared
+   - Competency assessment defined
+
+5. <strong>Present to leadership</strong>
+   - Request resources for organization-wide implementation
+   - Propose timeline and milestones
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في الرعاية الصحية السعودية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Application</h3>
+
+<strong>Care Settings:</strong>
+- MOH hospitals (government facilities)
+- Private hospital groups (e.g., Saudi German Hospitals, Dr. Sulaiman Al-Habib)
+- PHC clusters (primary healthcare networks)
+- Academic medical centers
+
+<strong>CBAHI Alignment:</strong>
+- Quality management standards
+- Data quality requirements
+- Governance and reporting structures
+- Patient safety goals
+
+<strong>MOH Quality Indicators:</strong>
+- Access metrics (appointment availability, wait times)
+- Clinical effectiveness (mortality, readmission, complications)
+- Patient safety (infection rates, adverse events)
+- Patient experience (surveys, complaints)
+
+<strong>Vision 2030 Integration:</strong>
+- Health sector transformation milestones
+- Digital health enablement (NPHIES)
+- Quality targets by 2030
+- Population health improvement goals
+
+<strong>Role-Based Application:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Role</td><td>Primary Applications</td><td>Key Resources</td></tr>
+|------|---------------------|---------------|
+<tr><td><strong>Physicians</strong></td><td>Leading improvement projects, using evidence-based guidelines</td><td>Clinical decision support, protocol libraries</td></tr>
+<tr><td><strong>Nurses</strong></td><td>Process improvement, patient satisfaction, hand hygiene compliance</td><td>Workflow tools, audit feedback</td></tr>
+<tr><td><strong>Pharmacists</strong></td><td>Medication use, antibiotic stewardship, Formulary management</td><td>Medication reconciliation checklists, stewardship reports</td></tr>
+<tr><td><strong>Quality Teams</strong></td><td>Data analysis, RCA facilitation, governance reporting</td><td>Dashboard tools, statistical software</td></tr>
+<tr><td><strong>Executives</strong></td><td>Strategic alignment, resource allocation, culture building</td><td>Benchmarking data, business cases</td></tr>
+</tbody></table></div>
+---
+
+<h3 class="section-title">التطبيق بالعربية</h3>
+
+<strong>بيئات الرعاية:</strong>
+- مستشفيات وزارة الصحة (المرافق الحكومية)
+- مجموعات المستشفيات الخاصة (مثل مستشفيات السعودي الألماني، د. سليمان الحبيب)
+- تجمعات الرعاية الأولية (شبكات الرعاية الصحية الأولية)
+- المراكز الطبية الأكاديمية
+
+<strong>محاذاة CBAHI:</strong>
+- معايير إدارة الجودة
+- متطلبات جودة البيانات
+- هياكل الحوكمة والتقارير
+- أهداف سلامة المرضى
+
+<strong>مؤشرات جودة وزارة الصحة:</strong>
+- مقاييس الوصول (توفر المواعيد، أوقات الانتظار)
+- الفعالية السريرية (الوفيات، إعادة الدخول، المضاعفات)
+- سلامة المرضى (معدلات العدوى، الأحداث السلبية)
+- تجربة المريض (استبيانات، شكاوى)
+
+<strong>دمج رؤية 2030:</strong>
+- معالم برنامج التحول الصحي
+- تمكين الصحة الرقمية (NPHIES)
+- أهداف الجودة بحلول 2030
+- أهداف تحسين صحة السكان
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Category</td></tr>
+|--------------|---------------|----------|
+<tr><td>Quality Improvement</td><td>تحسين الجودة</td><td>Core Concept</td></tr>
+<tr><td>PDSA Cycle</td><td>دورة خطط-نفّذ-ادرس-طبّق</td><td>Methodology</td></tr>
+<tr><td>Model for Improvement</td><td>نموذج التحسين</td><td>Framework</td></tr>
+<tr><td>Run Chart</td><td>مخطط زمني تشغيلي</td><td>Measurement</td></tr>
+<tr><td>Control Chart</td><td>مخطط المراقبة</td><td>Measurement</td></tr>
+<tr><td>Common Cause Variation</td><td>تباين السبب المشترك</td><td>Statistics</td></tr>
+<tr><td>Special Cause Variation</td><td>تباين السبب الخاص</td><td>Statistics</td></tr>
+<tr><td>Aim Statement</td><td>بيان الهدف</td><td>Planning</td></tr>
+<tr><td>Change Concept</td><td>مفهوم التغيير</td><td>Improvement</td></tr>
+<tr><td>Driver Diagram</td><td>مخطط المحركات</td><td>Planning</td></tr>
+<tr><td>Reliability</td><td>الموثوقية</td><td>Concept</td></tr>
+<tr><td>Spread</td><td>نشر التحسين</td><td>Implementation</td></tr>
+<tr><td>Sustainability</td><td>الاستدامة</td><td>Implementation</td></tr>
+<tr><td>Baseline Data</td><td>بيانات خط الأساس</td><td>Measurement</td></tr>
+<tr><td>Median</td><td>الوسيط</td><td>Statistics</td></tr>
+<tr><td>Control Limits</td><td>حدود المراقبة</td><td>Statistics</td></tr>
+<tr><td>System of Profound Knowledge</td><td>معرفة عميقة بالنظام</td><td>Framework</td></tr>
+<tr><td>Human Factors</td><td>العوامل البشرية</td><td>Science</td></tr>
+<tr><td>Forcing Function</td><td>وظيفة إجبارية</td><td>Design</td></tr>
+<tr><td>Process Map</td><td>خريطة العملية</td><td>Planning</td></tr>
+<tr><td>CBAHI</td><td>المجلس المركزي السعودي لاعتماد المؤسسات الصحية</td><td>Regulatory</td></tr>
+<tr><td>NPHIES</td><td>التبادل الوطني للمعلومات الصحية</td><td>Health IT</td></tr>
+<tr><td>Vision 2030</td><td>رؤية 2030</td><td>National Strategy</td></tr>
+<tr><td>Outcome Measure</td><td>مؤشر النتائج</td><td>Measurement</td></tr>
+<tr><td>Process Measure</td><td>مؤشر العملية</td><td>Measurement</td></tr>
+<tr><td>Balancing Measure</td><td>مؤشر الموازنة</td><td>Measurement</td></tr>
+<tr><td>SMART Goal</td><td>الهدف الذكي</td><td>Planning</td></tr>
+<tr><td>Shewhart Chart</td><td>مخطط شيوارت</td><td>Measurement</td></tr>
+<tr><td>Histogram</td><td>مدرج تكراري</td><td>Measurement</td></tr>
+<tr><td>Pareto Chart</td><td>مخطط باريتو</td><td>Measurement</td></tr>
+<tr><td>Root Cause Analysis</td><td>تحليل السبب الجذري</td><td>Investigation</td></tr>
+<tr><td>Failure Mode Effects Analysis</td><td>تحليل تأثير وضع الفشل</td><td>Risk Assessment</td></tr>
+<tr><td>High-Reliability Organization</td><td>منظمة عالية الموثوقية</td><td>Organization</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study 1: Reducing Readmissions | الحالة الأولى: تقليل إعادة الدخول</h3>
+
+<strong>English:</strong>
+A MOH hospital aimed to reduce 30-day heart failure readmissions from 25% to 15%.
+
+<strong>Approach:</strong>
+1. <strong>Aim:</strong> Specific, measurable, time-bound aim statement
+2. <strong>Data:</strong> Tracked readmissions weekly
+3. <strong>Analysis:</strong> Identified medication reconciliation gaps
+4. <strong>PDSA Cycles:</strong> Tested pharmacist-led reconciliation
+5. <strong>Spread:</strong> Expanded to all medical units
+6. <strong>Results:</strong> Reduced readmissions to 12%
+
+<strong>العربية:</strong>
+استهدفت مستشفى بوزارة الصحة تقليل إعادة دخول مرضى القلب بنسبة 30 يوماً من 25% إلى 15%.
+
+<strong>المقاربة:</strong>
+1. <strong>الهدف:</strong> بيان هدف محدد وقابل للقياس ومحدد الوقت
+2. <strong>البيانات:</strong> تتبع إعادة الدخول أسبوعياً
+3. <strong>التحليل:</strong> حدد فجوات مراجعة الأدوية
+4. <strong>دورات PDSA:</strong> اختبر المراجعة بقيادة الصيدلي
+5. <strong>النشر:</strong> وسّع إلى جميع الوحدات الطبية
+6. <strong>النتائج:</strong> قلّل إعادة الدخول إلى 12%
+
+---
+
+<h3 class="section-title">Case Study 2: Zero CLABSI Initiative | الحالة الثانية: مبادرة صفر عدوى الخط المركزي</h3>
+
+<strong>Facility | المنشأة:</strong> King Abdullah Medical Complex, Jeddah
+<strong>Period | الفترة:</strong> 2024-2026
+
+<strong>Background | الخلفية:</strong>
+The ICU experienced CLABSI rates 3x the national benchmark, driven by inconsistent insertion practices and maintenance care.
+
+<strong>Improvement Bundle:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Component</td><td>Intervention</td><td>Responsible</td></tr>
+|-----------|--------------|--------------|
+<tr><td>Maximal barrier precautions</td><td>Full-body sterile draping</td><td>Physician</td></tr>
+<tr><td>Chlorhexidine skin antisepsis</td><td>2% CHG wipes</td><td>Nurse</td></tr>
+<tr><td>Femoral site avoidance</td><td>Policy update + education</td><td>Quality Team</td></tr>
+<tr><td>Daily Chlorhexidine bathing</td><td>Automated reminder in EMR</td><td>Nursing</td></tr>
+<tr><td>Line necessity assessment</td><td>Daily checklist review</td><td>ICU Physician</td></tr>
+<tr><td>Maintenance bundle</td><td>Scrub-the-hub, dressing changes</td><td>Nurse</td></tr>
+</tbody></table></div>
+<strong>Results:</strong>
+- Pre-intervention: 5.2 infections per 1000 catheter days
+- Post-intervention: 0.4 infections per 1000 catheter days
+- Sustained for 18 months
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Interactive Quizzes | اختبارات تفاعلية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Quiz 1: Quality Dimensions</h3>
+
+<strong>Question 1:</strong> Which of the following is NOT one of the six dimensions of healthcare quality as defined by the Institute of Medicine?
+
+A) Safe
+B) Effective
+C) Profitable
+D) Patient-Centered
+
+<strong>Correct Answer:</strong> C) Profitable
+
+---
+
+<strong>Question 2:</strong> A hospital discovers that its medication error rate varies between 3-7% monthly with no identifiable external cause. This is an example of:
+
+A) Special cause variation
+B) Common cause variation
+C) Measurement error
+D) Data integrity issue
+
+<strong>Correct Answer:</strong> B) Common cause variation
+
+---
+
+<h3 class="section-title">Quiz 2: PDSA Cycles</h3>
+
+<strong>Question 1:</strong> In which PDSA phase would you compare your data to predictions and analyze whether the change worked?
+
+A) Plan
+B) Do
+C) Study
+D) Act
+
+<strong>Correct Answer:</strong> C) Study
+
+---
+
+<strong>Question 2:</strong> Which element is MOST important in an effective aim statement?
+
+A) A description of the problem
+B) A detailed analysis of causes
+C) A specific, measurable target with timeframe
+D) A list of potential solutions
+
+<strong>Correct Answer:</strong> C) A specific, measurable target with timeframe
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Reflection Questions | أسئلة التأمل</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          1. Reflect on a quality problem you have observed in your facility. How would you classify it according to the six dimensions of quality?
+
+2. Consider a successful change you have implemented or observed. What level of reliability did it achieve, and why?
+
+3. Think about the change agents in your organization. Who are the early adopters who could help spread improvement initiatives?
+
+4. How does your facility's current quality governance structure support or hinder sustainable improvement?
+
+5. What opportunities exist to leverage NPHIES data for quality measurement and improvement in your setting?
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Action Items | خطة العمل</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+
+Complete these actions within 30 days of course completion:
+
+<div class="checklist-item"><span class="checkbox"></span>Identify one quality improvement opportunity in your unit</div>
+<div class="checklist-item"><span class="checkbox"></span>Write a SMART aim statement with measurable goal</div>
+<div class="checklist-item"><span class="checkbox"></span>Collect 10 baseline data points for your metric</div>
+<div class="checklist-item"><span class="checkbox"></span>Run your first PDSA cycle this week</div>
+<div class="checklist-item"><span class="checkbox"></span>Create a run chart to visualize your data</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify two early adopters for your improvement</div>
+<div class="checklist-item"><span class="checkbox"></span>Share your results with your quality committee</div>
+<div class="checklist-item"><span class="checkbox"></span>Draft a spread plan for next quarter</div>
+<div class="checklist-item"><span class="checkbox"></span>Align your project with CBAHI standards relevant to your improvement</div>
+<div class="checklist-item"><span class="checkbox"></span>Consider how NPHIES data could support your measurement</div>
+
+<h3 class="section-title">قائمة الإجراءات بالعربية</h3>
+
+أكمل هذه الإجراءات خلال 30 يوماً من إكمال الدورة:
+
+<div class="checklist-item"><span class="checkbox"></span>حدد فرصة تحسين جودة واحدة في وحدتك</div>
+<div class="checklist-item"><span class="checkbox"></span>اكتب بيان هدف SMART مع هدف قابل للقياس</div>
+<div class="checklist-item"><span class="checkbox"></span>اجمع 10 نقاط بيانات خط الأساس لمقياسك</div>
+<div class="checklist-item"><span class="checkbox"></span>نفّذ أول دورة PDSA هذا الأسبوع</div>
+<div class="checklist-item"><span class="checkbox"></span>أنشئ مخطط زمني لتصور بياناتك</div>
+<div class="checklist-item"><span class="checkbox"></span>حدد متبنين اثنين أوائل لتحسينك</div>
+<div class="checklist-item"><span class="checkbox"></span>شارك نتائجك مع لجنة الجودة لديك</div>
+<div class="checklist-item"><span class="checkbox"></span>صوغ خطة نشر للربع القادم</div>
+<div class="checklist-item"><span class="checkbox"></span>وحّد مشروعك مع معايير CBAHI ذات الصلة بتحسينك</div>
+<div class="checklist-item"><span class="checkbox"></span>فكر في كيفية دعم بيانات NPHIES لقياسك</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Resources</h3>
+
+1. <strong>IHI Improvement Model</strong>
+   https://www.ihi.org/resources/Pages/HowtoImprove/default.aspx
+
+2. <strong>IHI QI Essential Toolkit</strong>
+   https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+
+3. <strong>IHI Improvement Map</strong>
+   https://www.ihi.org/ImprovementMap
+
+4. <strong>Institute of Medicine Reports</strong>
+   https://www.nationalacademies.org/hmd/Reports/2001/Crossing-the-Quality-Chasm
+
+5. <strong>CBAHI Standards</strong>
+   https://www.cbahi.gov.sa/
+
+6. <strong>MOH Quality Indicators</strong>
+   https://www.moh.gov.sa/
+
+7. <strong>Vision 2030 Health Transformation</strong>
+   https://www.vision2030.gov.sa/
+
+8. <strong>NPHIES Information</strong>
+   https://www.ihi.org.sa/nphies
+
+9. <strong>Langley, G.L., et al. (2009).</strong> The Improvement Guide: A Practical Approach to Enhancing Organizational Performance (2nd ed.). Jossey-Bass.
+
+10. <strong>Deming, W.E. (1982).</strong> Out of the Crisis. MIT Press.
+
+<h3 class="section-title">مصادر عربية</h3>
+
+1. <strong>إرشادات وزارة الصحة للجودة</strong>
+   https://www.moh.gov.sa/
+
+2. <strong>معايير اعتماد CBAHI</strong>
+   https://www.cbahi.gov.sa/
+
+3. <strong>مركز إتقان للتحسين</strong>
+   https://www.moh.gov.sa/
+
+4. <strong>رؤية 2030 - التحول الصحي</strong>
+   https://www.vision2030.gov.sa/
+
+5. <strong>تقرير المعهد الطبي - عبور فجوة الجودة</strong>
+   (متوفر باللغة العربية عبر منظمة الصحة العالمية)
+
+6. <strong>دليل التحسين العملي - الترجمة العربية</strong>
+   (متوفر عبر مكتبة الملك Abdulaziz)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Continuing Education Credits | الساعات المعتمدة للتعليم المستمر</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Credit Type</td><td>Hours</td><td>Awarding Body</td></tr>
+|-------------|-------|---------------|
+<tr><td>AMA PRA Category 1 Credit™</td><td>2.0</td><td>IHI</td></tr>
+<tr><td>CPPS Recertification</td><td>2.0</td><td>NAHQ</td></tr>
+<tr><td>ANCC Nursing Contact Hours</td><td>2.0</td><td>ANCC</td></tr>
+<tr><td>ACHE Qualified Education Hours</td><td>2.0</td><td>ACHE</td></tr>
+</tbody></table></div>
+<em>قد تختلف الساعات المعتمدة حسب مجلس الاعتماد. يرجى التحقق من متطلبات الترخيص الخاصة بمجلس المهنة.</em>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Property</td><td>English</td><td>العربية</td></tr>
+|----------|---------|---------|
+<tr><td><strong>Code</strong></td><td>QI 101</td><td>الكود</td></tr>
+<tr><td><strong>Title</strong></td><td>Introduction to Health Care Improvement</td><td>مقدمة في تحسين الرعاية الصحية</td></tr>
+<tr><td><strong>Format</strong></td><td>Online, On-Demand</td><td>عبر الإنترنت، حسب الطلب</td></tr>
+<tr><td><strong>Duration</strong></td><td>120 minutes (2 hours)</td><td>120 دقيقة (ساعتان)</td></tr>
+<tr><td><strong>CE Credits</strong></td><td>2.0 Credits</td><td>2.0 ساعة معتمدة</td></tr>
+<tr><td><strong>Level</strong></td><td>Foundation</td><td>مستوى تمهيدي</td></tr>
+<tr><td><strong>Language</strong></td><td>Bilingual AR/EN</td><td>ثنائي اللغة</td></tr>
+<tr><td><strong>Provider</strong></td><td>IHI Open School / BrainSAIT</td><td>مزود الدورة</td></tr>
+<tr><td><strong>Adaptation</strong></td><td>Saudi Healthcare Context</td><td>السياق الصحي السعودي</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Special Saudi Arabia Supplement | ملحق خاص للمملكة العربية السعودية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Regulatory Framework | الإطار التنظيمي</h3>
+
+<strong>Key Organizations:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Organization</td><td>Acronym</td><td>Role</td></tr>
+|-------------|---------|------|
+<tr><td>Saudi Central Board for Accreditation of Healthcare Institutions</td><td>CBAHI</td><td>National accreditation standards</td></tr>
+<tr><td>Ministry of Health</td><td>MOH</td><td>Health policy and regulation</td></tr>
+<tr><td>Saudi Health Council</td><td>SHC</td><td>Strategic health planning</td></tr>
+<tr><td>National Health Information Center</td><td>NHIC</td><td>Digital health strategy (NPHIES)</td></tr>
+<tr><td>Saudi Food and Drug Authority</td><td>SFDA</td><td>Medical products safety</td></tr>
+<tr><td>Saudi Commission for Health Specialties</td><td>SCFHS</td><td>Healthcare workforce regulation</td></tr>
+
+<h3 class="section-title">Quality Infrastructure | البنية التحتية للجودة</h3>
+
+<strong>National Quality Strategy Elements:</strong>
+
+1. <strong>National Quality Policy</strong> - Vision 2030 alignment
+2. <strong>Quality Standards</strong> - CBAHI accreditation requirements
+3. <strong>Quality Metrics</strong> - National indicators dashboard
+4. <strong>Quality Governance</strong> - Quality committees at all levels
+5. <strong>Quality Reporting</strong> - Regular performance reports
+
+<h3 class="section-title">Vision 2030 Health Targets | أهداف رؤية 2030 الصحية</h3>
+
+<tr><td>Target Area</td><td>2030 Goal</td></tr>
+|-------------|----------|
+<tr><td>Healthcare quality</td><td>World-class standards</td></tr>
+<tr><td>Life expectancy</td><td>Above 80 years</td></tr>
+<tr><td>Healthcare coverage</td><td>Universal</td></tr>
+<tr><td>Primary care utilization</td><td>50% of all encounters</td></tr>
+<tr><td>Digital health adoption</td><td>Fully integrated NPHIES</td></tr>
+<tr><td>Patient satisfaction</td><td>Top quartile globally</td></tr>
+<tr><td>Healthcare-associated infections</td><td>Below international benchmarks</td></tr>
+</tbody></table></div>
+---
+
+<strong>© 2026 BrainSAIT Academy | Powered by IHI Open School</strong>
+<strong>© 2026 أكاديمية BrainSAIT | مدعوم من IHI Open School</strong>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-qi-101') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-qi-101', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('qi-101')) enrolled.push('qi-101');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'qi-101');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-qi-101') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-qi-101', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-qi-101', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-qi-101', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-qi-101', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-qi-101') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Introduction to Health Care Improvement',
+        slug: 'qi-101',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-qi-101') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-qi-101.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

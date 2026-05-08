@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reflect &amp; Retain - BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=Noto+Naskh+Arabic:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#92002a",
+                        "surface": "#f9f9ff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#111c2d",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#001f26",
+                        "outline-variant": "#c7c4d7",
+                        "tertiary": "#b90538",
+                        "primary": "#4648d4",
+                        "secondary": "#00687a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#494bd6",
+                        "inverse-primary": "#c0c1ff",
+                        "on-background": "#111c2d",
+                        "on-primary-container": "#fffbff",
+                        "outline": "#767586",
+                        "on-secondary-container": "#006172",
+                        "on-tertiary-fixed": "#40000d",
+                        "surface-dim": "#cfdaf2",
+                        "primary-container": "#6063ee",
+                        "surface-container": "#e7eeff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "tertiary-fixed": "#ffdadb",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-container": "#57dffe",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary-fixed-dim": "#ffb2b7",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-surface-variant": "#464554",
+                        "surface-container-low": "#f0f3ff",
+                        "tertiary-container": "#dc2c4f",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#263143",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-fixed": "#acedff",
+                        "surface-container-high": "#dee8ff",
+                        "primary-fixed": "#e1e0ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d8e3fb",
+                        "background": "#f9f9ff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "20px",
+                        "gutter": "16px",
+                        "lg": "32px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "xl": "48px",
+                        "sm": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "arabic-body": ["Noto Naskh Arabic"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "arabic-body": ["17px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for horizontal lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl sticky top-0 z-50 w-full shadow-sm bg-white/70 border-b border-outline-variant/30 flex justify-between items-center px-container-padding h-16 w-full">
+<div class="flex items-center gap-xs">
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIHSd0vB6qVq-zY-OFIsk-d7A4PjkZ3t2EHuL_nn2Ia3rik-YEeKdh6zewqfNmOTSkB4-BPPPBKVQ_9TQfmfi4MIjZ83qLxpIKshEoPjYMPnlzouwtm47sHGEMeGuupuwsYuKxQm8PSqk6DzbzzUGM6-zhjESpPcvmx72-z6Cisk_1OWpPTfkzY3c0ZOb9oiYtCAQZs0t0xW6AwWgo-f2zE5kiRrK5UTL2kDaz3v4C529_orAEV_GDkKGensWh_B4ov8xDxwMIJfgI"/>
+</div>
+<div class="font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed">
+            BrainsAIT Academy
+        </div>
+<button class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim hover:bg-primary/5 transition-colors p-xs rounded-lg scale-95 active:opacity-80 transition-all flex items-center gap-base">
+            AR/EN
+            <span class="material-symbols-outlined text-sm">translate</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto flex">
+<!-- Web Side Navigation (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-80 rounded-r-xl overflow-hidden shadow-xl sticky top-16 bg-surface dark:bg-surface-container divide-y divide-outline-variant/10 py-8 shrink-0">
+<div class="px-md pb-md">
+<div class="flex items-center gap-sm">
+<img alt="Learner Avatar" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_4wRoEW8kL3F6Ynbw8hLEchIeOAN3dUXHczlAMpgsphvQPyA19R3u_TkQX96ClxQDM5xhY0RVgztW6YlzpAv6qbgiSLbmHG-PPb_EMGDT6x-rOAKcEnjPc1MIlq-blb6mu1GVrxF58jxm94YB0tD6EsQQqiyDBsJwWriSx8PJoG6T1nL9B6sHQY6mbXt8I6FznXkLhIFWYFJFuDoKXqITyd7epdl9FMk9qqdn-AYNWSWikCcaa1yjpvnrGXXX9VaFPzZblzqI5OOh"/>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Dr. Sarah Ahmed</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Level 14 Senior Resident</p>
+</div>
+</div>
+<div class="mt-sm bg-surface-container-low p-xs rounded-lg flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">1,250 Brain Power Points</span>
+<span class="material-symbols-outlined text-secondary fill-icon">auto_awesome</span>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto p-sm space-y-base">
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 flex items-center gap-sm p-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 flex items-center gap-sm p-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Workspace</span>
+</a>
+<a class="bg-primary-container text-on-primary-container font-bold rounded-lg m-2 flex items-center gap-sm p-sm translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined fill-icon">rebase_edit</span>
+<span class="font-label-md text-label-md">Follow-up</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 flex items-center gap-sm p-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Community</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 flex items-center gap-sm p-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Account</span>
+</a>
+</nav>
+<div class="p-sm mt-auto">
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 flex items-center gap-sm p-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Page Content -->
+<div class="flex-1 p-container-padding space-y-xl min-w-0">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-sm">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-base">Reflect &amp; Retain <span class="font-arabic-body text-primary mr-2" dir="rtl">تأمل واحتفظ</span></h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Daily review session to solidify key clinical concepts. Spaced repetition enhances long-term memory.</p>
+</div>
+<div class="bg-surface-container-low px-sm py-xs rounded-full border border-outline-variant/30 flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">local_fire_department</span>
+<span class="font-label-md text-label-md text-on-surface">14 Day Streak</span>
+</div>
+</section>
+<!-- Retention Dashboard (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Main Score Card -->
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-surface-tint rounded-xl p-md shadow-[0_10px_30px_rgba(70,72,212,0.15)] relative overflow-hidden text-on-primary">
+<div class="absolute -right-10 -top-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex-1">
+<h2 class="font-headline-md text-headline-md mb-xs">Retention Score</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim opacity-90 mb-md">Excellent progress in Patient Safety modules.</p>
+<!-- Custom Chart Visualization -->
+<div class="flex items-end gap-2 h-24 mt-sm">
+<div class="w-1/6 bg-white/30 rounded-t-sm h-[40%] hover:bg-white/50 transition-all cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Mon</div>
+</div>
+<div class="w-1/6 bg-white/30 rounded-t-sm h-[60%] hover:bg-white/50 transition-all cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Tue</div>
+</div>
+<div class="w-1/6 bg-white/40 rounded-t-sm h-[50%] hover:bg-white/60 transition-all cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Wed</div>
+</div>
+<div class="w-1/6 bg-white/60 rounded-t-sm h-[80%] hover:bg-white/80 transition-all cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Thu</div>
+</div>
+<div class="w-1/6 bg-secondary-container rounded-t-sm h-[95%] shadow-[0_0_15px_rgba(87,223,254,0.4)] relative group cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Today (95%)</div>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-sm min-w-[120px]">
+<span class="block font-headline-xl text-headline-xl text-secondary-container">92%</span>
+<span class="font-label-md text-label-md text-primary-fixed-dim">Overall Mastery</span>
+</div>
+</div>
+</div>
+<!-- Up Next Card -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">Daily Goal</h3>
+<span class="material-symbols-outlined text-outline">target</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Review 20 key concepts.</p>
+</div>
+<div class="mt-lg">
+<div class="flex justify-between font-label-md text-label-md mb-xs">
+<span class="text-primary">12 / 20</span>
+<span class="text-on-surface-variant">60%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+<button class="w-full mt-md bg-secondary text-on-secondary font-label-md text-label-md py-sm rounded-lg hover:bg-secondary/90 transition-colors shadow-sm">
+                            Continue Review
+                        </button>
+</div>
+</div>
+</section>
+<!-- Quick-Fire Cards Section -->
+<section class="space-y-md">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Quick-Fire Review</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-base">Concepts from "Introduction to Health Care Leadership"</p>
+</div>
+<div class="hidden md:flex gap-xs">
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Glassmorphic Card Container -->
+<div class="relative h-[400px] w-full max-w-2xl mx-auto mt-lg perspective-1000">
+<!-- Active Card -->
+<div class="absolute inset-0 bg-surface/80 backdrop-blur-2xl border border-white/40 dark:border-outline-variant/20 rounded-xl p-lg shadow-[0_20px_40px_rgba(0,0,0,0.08)] flex flex-col justify-between z-20 transform transition-transform duration-500 hover:-translate-y-1 cursor-pointer">
+<!-- Top Metadata -->
+<div class="flex justify-between items-start">
+<div class="bg-tertiary-container/10 text-tertiary font-label-md text-label-md px-3 py-1 rounded-full border border-tertiary/20">
+                                High Priority
+                            </div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<!-- Card Content (Front) -->
+<div class="text-center py-md">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-md">Psychological Safety</h3>
+<p class="font-arabic-body text-on-surface-variant text-lg" dir="rtl">
+                                ما هو التعريف الأساسي للسلامة النفسية في بيئة الرعاية الصحية؟
+                            </p>
+<p class="font-body-md text-on-surface-variant mt-sm text-sm italic">
+                                Tap card to reveal answer
+                            </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-sm border-t border-outline-variant/20 pt-md">
+<button class="flex-1 py-sm px-md rounded-lg border-2 border-error text-error font-label-md text-label-md hover:bg-error/5 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined">refresh</span>
+                                Review Again
+                            </button>
+<button class="flex-1 py-sm px-md rounded-lg bg-gradient-to-r from-secondary to-[#008ba3] text-on-secondary font-label-md text-label-md hover:shadow-lg transition-all flex items-center justify-center gap-xs relative overflow-hidden">
+<div class="absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined fill-icon">check_circle</span>
+                                Mastered
+                            </button>
+</div>
+</div>
+<!-- Stacked Cards Behind (Visual Effect) -->
+<div class="absolute inset-0 bg-surface border border-outline-variant/30 rounded-xl shadow-sm z-10 transform scale-[0.95] translate-y-4 opacity-70"></div>
+<div class="absolute inset-0 bg-surface border border-outline-variant/30 rounded-xl shadow-sm z-0 transform scale-[0.90] translate-y-8 opacity-40"></div>
+</div>
+<div class="text-center mt-md">
+<span class="font-label-md text-label-md text-on-surface-variant">Card 1 of 8</span>
+</div>
+</section>
+<!-- Upcoming Reviews List -->
+<section class="mt-xl">
+<h2 class="font-headline-md text-headline-md text-on-background mb-md">Upcoming Modules to Review</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="bg-surface border border-outline-variant/30 rounded-lg p-sm flex items-center justify-between hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Patient Safety Fundamentals</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Due tomorrow • 15 cards</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="bg-surface border border-outline-variant/30 rounded-lg p-sm flex items-center justify-between hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">medication</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Conservative Prescribing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Due in 2 days • 8 cards</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md text-xs mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md text-xs mt-1">Workspace</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined fill-icon">rebase_edit</span>
+<span class="font-label-md text-label-md text-xs mt-1 font-bold">Follow-up</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md text-xs mt-1">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md text-xs mt-1">Account</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline/20 w-full py-xl flex flex-col items-center justify-center space-y-md text-center px-container-padding mt-xl md:mt-0 mb-20 md:mb-0">
+<div class="font-headline-lg text-headline-lg text-surface">
+            BrainsAIT Academy
+        </div>
+<div class="flex gap-md font-body-md text-body-md">
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Help Center</a>
+</div>
+<p class="font-body-md text-body-md text-surface-variant text-sm mt-md opacity-60">
+            © 2024 BrainSAIT Academy. All rights reserved.
+        </p>
+</footer>
+</body></html>

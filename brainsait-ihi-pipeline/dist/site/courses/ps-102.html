@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>From Error to Harm | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Patient Safety</span>
+        <span class="bg-secondary/10 text-secondary px-sm py-1 rounded-full font-label-md text-label-md">PS-102</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 60 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">From Error to Harm</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">PS 102: من الخطأ إلى الأذى</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">60</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">16 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="0">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Overview | نظرة عامة على الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+This course explores the fundamental understanding of how errors occur in healthcare systems and how they lead to patient harm. Drawing on the seminal work of psychologist James Reason and the Swiss Cheese Model, you will learn to think differently about safety—shifting from a focus on individual blame to understanding system vulnerabilities.
+
+The course provides deep insights into active failures and latent conditions, and equips you with the framework to analyze why serious adverse events occur and how to prevent them. Special attention is given to Saudi Arabia's healthcare context, including CBAHI requirements and the national patient safety initiatives under Vision 2030.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+تستكشف هذه الدورة الفهم الأساسي لكيفية حدوث الأخطاء في أنظمة الرعاية الصحية وكيف تؤدي إلى إيذاء المرضى. مستوحاة من العمل الرائد لعالم النفس جيمس ريزن ونموذج الجبن السويسري، ستتعلم التفكير بشكل مختلف حول السلامة—التحول من التركيز على لوم الفرد إلى فهم نقاط الضعف في النظام.
+
+توفر الدورة رؤى عميقة حول الإخفاقات النشطة والحالات الكامنة، وتزودك بالأُطر لتحليل أسباب الأحداث الضارة الخطيرة وكيفية الوقاية منها. يتم إيلاء اهتمام خاص للسياق الصحي السعودي، بما في ذلك متطلبات CBAHI ومبادرات سلامة المرضى الوطنية ضمن رؤية 2030.
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="1">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives | أهداف الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          After completing this course, you will be able to:
+
+- Explain the Swiss cheese model of error and its application to healthcare
+- Define active failures (errors at the sharp end) and latent error (system weaknesses)
+- Classify unsafe acts using James Reason's taxonomy: slips, lapses, mistakes, and violations
+- Analyze adverse events to identify both immediate causes and underlying system factors
+- Apply harm reduction strategies that focus on system redesign rather than individual blame
+- Translate course concepts into practical applications for Saudi healthcare settings
+- Participate effectively in root cause analysis and system improvement initiatives
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+
+بنهاية هذه الدورة، ستتمكن من:
+
+- شرح نموذج الجبن瑞士ري للخطأ وتطبيقه على الرعاية الصحية
+- تعريف الإخفاقات النشطة (الأخطاء عند نقطة الاتصال) والخطأ الكامن (ضعف النظام)
+- تصنيف التصرفات غير الآمنة باستخدام تصنيف جيمس ريزن: الانزلاقات، النسيان، الأخطاء، والخروقات
+- تحليل الأحداث الضارة لتحديد الأسباب المباشرة وعوامل النظام الأساسية
+- تطبيق استراتيجيات تقليل الضرر التي تركز على إعادة تصميم النظام بدلاً من لوم الفرد
+- ترجمة مفاهيم الدورة إلى تطبيقات عملية لإعدادات الرعاية الصحية السعودية
+- المشاركة بفعالية في تحليل السبب الجذري ومبادرات تحسين النظام
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="2">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Lessons | الدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: The Swiss Cheese Model of Error Prevention</h3>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس الأول: نموذج الجبن瑞士ري لمنع الأخطاء</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 30 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Foundation
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Understanding Accident Causation | فهم أسباب الحوادث</strong>
+
+The Swiss Cheese Model, developed by Professor James Reason in 1990, provides a powerful framework for understanding how serious adverse events occur in complex systems. The model depicts defenses against accidents as a series of layers, each with holes that occasionally align to allow hazards to reach patients.
+
+<strong class="text-on-surface font-semibold">The Four Layers of Defense in Healthcare | طبقات الدفاع الأربع في الرعاية الصحية:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Layer</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Healthcare Example</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Defense Function</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">1. Organizational</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Safety policies, resources, training</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Creates environment for safe care</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">2. Supervision</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Staffing, monitoring, checking</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Oversees daily operations</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">3. Preconditions</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff competence, equipment function</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Enables safe performance</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">4. Specific</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Procedures, checklists, protocols</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Direct protection against error</td></tr>
+
+<strong class="text-on-surface font-semibold">How Holes Align to Cause Harm | كيف تتوافق الثقوب للتسبب في الضرر:</strong>
+
+When defensive layers fail simultaneously, hazards can pass through to cause patient harm. In healthcare, these "holes" can be:
+- Physical (missing barrier, broken equipment)
+- Human (mistake, lapse, violation)
+- Organizational (inadequate training, understaffing)
+
+<strong class="text-on-surface font-semibold">Real-World Example from Saudi Arabia | مثال واقعي من المملكة العربية السعودية:</strong>
+
+In a major Riyadh hospital, a patient received a blood transfusion with the wrong blood type, resulting in a severe hemolytic reaction. Analysis using the Swiss Cheese Model revealed:
+
+- <strong class="text-on-surface font-semibold">Layer 1 (Organizational):</strong> Blood bank staffing had been reduced during Ramadan
+- <strong class="text-on-surface font-semibold">Layer 2 (Supervision):</strong> No independent verification of blood products
+- <strong class="text-on-surface font-semibold">Layer 3 (Preconditions):</strong> New staff member not fully trained on verification
+- <strong class="text-on-surface font-semibold">Layer 4 (Specific):</strong> Patient identification band was obscured
+
+No single failure caused this event—all four "holes" aligned.
+
+<strong class="text-on-surface font-semibold">Defense Mechanisms and Restoration | آليات الدفاع والاستعادة:</strong>
+
+The key to preventing harm is to:
+1. Strengthen each defensive layer
+2. Make layers more difficult to penetrate
+3. Ensure that holes in one layer rarely align with holes in another
+4. Create redundant systems where mistakes can be caught
+
+<strong class="text-on-surface font-semibold">Key Principles | المبادئ الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Defense in Depth:</strong> Multiple independent barriers to error
+2. <strong class="text-on-surface font-semibold">Redundancy:</strong> Multiple checks that catch errors before reaching the patient
+3. <strong class="text-on-surface font-semibold">Resilience:</strong> Systems that can absorb failures and continue safely
+4. <strong class="text-on-surface font-semibold">Recovery:</strong> Ability to detect and intercept errors before harm occurs
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">فهم أسباب الحوادث</strong>
+
+يوفر نموذج الجبن瑞士ري، الذي طوره البروفيسور جيمس ريزن في عام 1990، إطاراً قوياً لفهم كيفية حدوث الأحداث الضارة الخطيرة في الأنظمة المعقدة. يصور النموذج الدفاعات ضد الحوادث كسلسلة من الطبقات، لكل منها ثقوب occasionally تسمح للمخاطر بالوصول إلى المرضى.
+
+<strong class="text-on-surface font-semibold">طبقات الدفاع الأربع في الرعاية الصحية:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الطبقة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مثال الرعاية الصحية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وظيفة الدفاع</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">1. التنظيمية</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">سياسات السلامة، الموارد، التدريب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">يخلق بيئة الرعاية الآمنة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">2. الإشرافية</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">التوظيف، المراقبة، التحقق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">يشرف على العمليات اليومية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">3. المتطلبات المسبقة</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">كفاءة الموظفين، وظيفة المعدات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">يمكّن الأداء الآمن</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">4. المحدد</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">الإجراءات، قوائم الفحص، البروتوكولات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حماية مباشرة ضد الخطأ</td></tr>
+
+<strong class="text-on-surface font-semibold">كيف تتوافق الثقوب للتسبب في الضرر:</strong>
+
+عندما تفشل الطبقات الدفاعية في نفس الوقت، يمكن أن تمر المخاطر للتسبب في ضرر للمريض. في الرعاية الصحية، يمكن أن تكون هذه "الثقوب":
+- مادية (حاجز مفقود، معدات معطلة)
+- بشرية (خطأ، نسيان، خرق)
+- تنظيمية (تدريب غير كافٍ، نقص في الموظفين)
+
+<strong class="text-on-surface font-semibold">مثال واقعي من المملكة العربية السعودية:</strong>
+
+في مستشفى كبير في الرياض، تلقى مريض نقل دم مع مجموعة الدم الخاطئة، مما أدى إلى رد فعل انحلالي شديد. باستخدام نموذج الجبن瑞士ري:
+
+- <strong class="text-on-surface font-semibold">الطبقة 1 (التنظيمية):</strong> تم تخفيض عدد موظفي بنك الدم خلال رمضان
+- <strong class="text-on-surface font-semibold">الطبقة 2 (الإشرافية):</strong> لا يوجد تحقق مستقل من منتجات الدم
+- <strong class="text-on-surface font-semibold">الطبقة 3 (المتطلبات المسبقة):</strong> موظف جديد لم يتم تدريبه بالكامل على التحقق
+- <strong class="text-on-surface font-semibold">الطبقة 4 (المحدد):</strong> كان سوار تحديد هوية المريض غير مرئي
+
+لم يتسبب فشل واحد في هذا الحدث—تتابقت "الثقوب" الأربع.
+
+<strong class="text-on-surface font-semibold">Key Principles | المبادئ الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">الدفاع المتدرج:</strong> حواجز متعددة ومستقلة ضد الخطأ
+2. <strong class="text-on-surface font-semibold">الازدواجية:</strong> فحوصات متعددة تلتقط الأخطاء قبل وصولها للمريض
+3. <strong class="text-on-surface font-semibold">المرونة:</strong> أنظمة يمكنها استيعاب الفشل والاستمرار بأمان
+4. <strong class="text-on-surface font-semibold">الاستعادة:</strong> القدرة على اكتشاف الأخطاء واعتراضها قبل حدوث الضرر
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2: Understanding Unsafe Acts - The Human Contribution to Error</h3>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس الثاني: فهم التصرفات غير الآمنة - المساهمة البشرية في الخطأ</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 35 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Intermediate
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">The Psychology of Error | سيكولوجية الخطأ</strong>
+
+Human beings are fallible. We make mistakes due to limitations in our cognitive abilities, attention, memory, and perception. Understanding these limitations is the first step in designing systems that account for human limitations rather than expecting perfect human performance.
+
+<strong class="text-on-surface font-semibold">James Reason's Classification of Unsafe Acts | تصنيف جيمس ريزن للتصرفات غير الآمنة:</strong>
+
+James Reason identified four categories of unsafe acts that people commit:
+
+<strong class="text-on-surface font-semibold">1. Slips and Lapses | الانزلاقات والنسيان:</strong>
+
+- <strong class="text-on-surface font-semibold">Slip:</strong> A failure in the execution of a correct action (doing the wrong thing)
+- <strong class="text-on-surface font-semibold">Lapse:</strong> A failure in the planning of an action (forgetting to do something)
+- These are attention/memory failures, not skill-based errors
+- Examples: Pressing the wrong button, forgetting to check patient ID
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Characteristic</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Slip</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Lapse</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Execution error</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Planning error</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Intent</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intended the action</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intended to remember</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cause</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Attention failure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Memory failure</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Pick up wrong medication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Forget to document</td></tr>
+
+<strong class="text-on-surface font-semibold">2. Mistakes | الأخطاء:</strong>
+
+A mistake occurs when someone does the "wrong thing" but believes it is correct. Mistakes are knowledge-based or rule-based errors:
+
+- <strong class="text-on-surface font-semibold">Knowledge-based mistakes:</strong> When facing novel situations without established rules
+- <strong class="text-on-surface font-semibold">Rule-based mistakes:</strong> When applying the wrong rule or misinterpreting a situation
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Knowledge-based</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Novel situation, no rule available</td><td class="px-sm py-xs text-body-md text-on-surface-variant">New disease presentation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Rule-based</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Wrong rule applied</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Applying outdated protocol</td></tr>
+
+<strong class="text-on-surface font-semibold">3. Violations | الخروقات:</strong>
+
+Violations are intentional deviations from safe operating procedures, rules, or standards:
+
+- <strong class="text-on-surface font-semibold">Routine violations:</strong> Shortcuts that become habitual (e.g., skipping steps in a checklist)
+- <strong class="text-on-surface font-semibold">Exceptional violations:</strong> Deviations under special circumstances (e.g., skipping verification in emergency)
+- <strong class="text-on-surface font-semibold">Sabotage:</strong> Intentional wrongdoing (extremely rare)
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Motivation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Routine</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Convenience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Skip hand hygiene when busy</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Situational</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Perceived necessity</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Skip verification in emergency</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sabotage</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Malicious intent</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Deliberate harm</td></tr>
+
+<strong class="text-on-surface font-semibold">Why Violations Occur | لماذا تحدث الخروقات:</strong>
+
+Violations are not simply about "bad" people—they often occur because:
+- Rules are seen as impractical or inefficient
+- Time pressure makes shortcuts seem necessary
+- Procedures are unclear or unrealistic
+- The culture accepts certain shortcuts as "normal"
+- Management modeling suggests violations are acceptable
+
+<strong class="text-on-surface font-semibold">The Error-Prone Conditions | الظروف المهيئة للخطأ:</strong>
+
+Certain conditions increase the likelihood of unsafe acts:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Condition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Healthcare Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">High workload</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Understaffed units, multiple patients</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Time pressure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Emergency situations, busy shifts</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Fatigue</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Long shifts, night work</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Distractions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interruptions during medication prep</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Inadequate training</td><td class="px-sm py-xs text-body-md text-on-surface-variant">New staff, unfamiliar procedures</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Poor interface design</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Confusing medical devices</td></tr>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">سيكولوجية الخطأ</strong>
+
+الإنسان معصوم. نرتكب أخطاء بسبب قيود في قدراتنا المعرفية والانتباه والذاكرة والإدراك. فهم هذه القيود هو الخطوة الأولى في تصميم أنظمة تراعي القيود البشرية بدلاً من توقع أداء بشري مثالي.
+
+<strong class="text-on-surface font-semibold">تصنيف جيمس ريزن للتصرفات غير الآمنة:</strong>
+
+حدد جيمس ريزن أربع فئات للتصرفات غير الآمنة:
+
+<strong class="text-on-surface font-semibold">1. الانزلاقات والنسيان | Slips and Lapses:</strong>
+
+- <strong class="text-on-surface font-semibold">الانزلاق:</strong> فشل في تنفيذ إجراء صحيح (فعل الشيء الخاطئ)
+- <strong class="text-on-surface font-semibold">النسيان:</strong> فشل في تخطيط إجراء (نسيان فعل شيء)
+- هذه هي إخفاقات الانتباه/الذاكرة، وليس أخطاء قائمة على المهارات
+- الأمثلة: الضغط على الزر الخطأ، نسيان التحقق من هوية المريض
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الخاصية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانزلاق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النسيان</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النوع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خطأ التنفيذ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خطأ التخطيط</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قصد الفعل</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قصد التذكر</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">السبب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فشل الانتباه</td><td class="px-sm py-xs text-body-md text-on-surface-variant">فشل الذاكرة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">المثال</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اختيار الدواء الخطأ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نسيان التوثيق</td></tr>
+
+<strong class="text-on-surface font-semibold">2. الأخطاء | Mistakes:</strong>
+
+يحدث الخطأ عندما يفعل شخص ما "الشيء الخاطئ" لكنه يعتقد أنه صحيح. الأخطاء هي أخطاء قائمة على المعرفة أو القواعد:
+
+- <strong class="text-on-surface font-semibold">الأخطاء القائمة على المعرفة:</strong> عند مواجهة مواقف جديدة بدون قواعد ثابتة
+- <strong class="text-on-surface font-semibold">الأخطاء القائمة على القواعد:</strong> عند تطبيق القاعدة الخاطئة أو misinterpretation موقف
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النوع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوصف</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المثال</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">قائم على المعرفة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">موقف جديد، لا قاعدة متاحة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">عرض مرض جديد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">قائم على القواعد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تطبيق قاعدة خاطئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تطبيق بروتوكول قديم</td></tr>
+
+<strong class="text-on-surface font-semibold">3. الخروقات | Violations:</strong>
+
+الخروقات هي انحرافات مقصودة عن إجراءات التشغيل الآمنة أو القواعد أو المعايير:
+
+- <strong class="text-on-surface font-semibold">الخروقات الروتينية:</strong> اختصاصات تصبح اعتيادية (مثل تخطي خطوات في قائمة فحص)
+- <strong class="text-on-surface font-semibold">الخروقات الاستثنائية:</strong> انحرافات في ظروف خاصة (مثل تخطي التحقق في الطوارئ)
+- <strong class="text-on-surface font-semibold">التخريب:</strong> سوء intenciones (نادر جداً)
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النوع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الدافع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المثال</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">روتيني</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الراحة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخطي نظافة اليدين عندما تكون مشغولاً</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">موقفية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الضرورة المتصورة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تخطي التحقق في الطوارئ</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">تخريب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سوء النية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ضرر متعمد</td></tr>
+
+<strong class="text-on-surface font-semibold">لماذا تحدث الخروقات | Why Violations Occur:</strong>
+
+الخروقات ليست ببساطة عن "أشخاص سيئين"—غالباً ما تحدث لأن:
+- Rules are seen as impractical or inefficient
+- Time pressure makes shortcuts seem necessary
+- Procedures are unclear or unrealistic
+- The culture accepts certain shortcuts as "normal"
+- Management modeling suggests violations are acceptable
+
+<strong class="text-on-surface font-semibold">الظروف المهيئة للخطأ | The Error-Prone Conditions:</strong>
+
+ Certain conditions increase the likelihood of unsafe acts:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Condition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مثال الرعاية الصحية</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">عبء العمل العالي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">وحدات ذات نقص في الموظفين، مرضى متعددون</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">ضغط الوقت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حالات الطوارئ، ورديات مشغولة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التعب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ورديات طويلة، عمل ليلي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">المشتتات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مقاطعات أثناء تحضير الأدوية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">تدريب غير كافٍ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">موظفون جدد، إجراءات غير مألوفة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">تصميم واجهة poor</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أجهزة طبية مربكة</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3: Active Failures and Latent Conditions - The Sharp End and Blunt End</h3>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس الثالث: الإخفاقات النشطة والحالات الكامنة - طرف الحاد وطرف blunt</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 30 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Intermediate
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Understanding Where Errors Occur | فهم مكان حدوث الأخطاء</strong>
+
+In healthcare, errors occur at different levels of the system. The distinction between "sharp end" and "blunt end" helps us understand where responsibility and improvement efforts should focus.
+
+<strong class="text-on-surface font-semibold">Sharp End vs Blunt End | طرف حاد مقابل طرف blunt:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Aspect</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sharp End</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Blunt End</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Location</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Point of care delivery</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Organizational level</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Actors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinicians (nurses, doctors, pharmacists)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Administrators, policymakers</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Errors visible</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Yes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Often hidden</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Control</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Limited</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Significant</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Focus</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Individual actions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System design</td></tr>
+
+<strong class="text-on-surface font-semibold">Active Failures (Sharp End) | الإخفاقات النشطة (طرف الحاد):</strong>
+
+Active failures are errors that occur at the point of contact between a human and a system—where care is actually delivered. They are:
+- Visible when they occur
+- Often attributed to the person involved
+- The "tip of the iceberg" that gets attention
+
+Examples:
+- Nurse administers wrong medication
+- Surgeon operates on wrong site
+- Pharmacist dispenses incorrect dose
+- Physician misdiagnoses condition
+
+<strong class="text-on-surface font-semibold">Latent Conditions (Blunt End) | الحالات الكامنة (طرف blunt):</strong>
+
+Latent conditions are the system weaknesses that create the environment in which active failures can occur. They are:
+- Often invisible until an event occurs
+- Built into the system over time
+- The underlying foundation that enables errors
+
+Examples:
+- Inadequate staffing levels
+- Poor equipment design
+- Inefficient procedures
+- Insufficient training programs
+- Inadequate policies
+- Communication system failures
+
+<strong class="text-on-surface font-semibold">The Accident Sequence Model | نموذج تسلسل الحادث:</strong>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  ORGANIZATIONAL FACTORS                     │
+│        (Budget, policies, staffing, organizational         │
+│                     culture)                                │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                  LOCAL FACTORS                               │
+│      (Workload, supervision, training, equipment)          │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                PRECONDITIONS FOR ERROR                      │
+│       (Human factors: fatigue, stress, distraction)        │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│              DEFENSIVE LAYERS (Swiss Cheese)                 │
+│        (Policies, procedures, checks, training)            │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                 ADVERSE EVENT / PATIENT HARM                 │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<strong class="text-on-surface font-semibold">Implications for Improvement | الآثار للتحسين:</strong>
+
+This model has profound implications:
+
+1. <strong class="text-on-surface font-semibold">Don't blame the person at the sharp end</strong> — Focus on fixing the system
+2. <strong class="text-on-surface font-semibold">Look for latent conditions</strong> — They are often more important than active failures
+3. <strong class="text-on-surface font-semibold">Strengthen defenses</strong> — Multiple layers provide better protection
+4. <strong class="text-on-surface font-semibold">Design for human limitations</strong> — Don't expect perfect human performance
+5. <strong class="text-on-surface font-semibold">Learn from events</strong> — Use them to identify and fix system weaknesses
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">فهم مكان حدوث الأخطاء</strong>
+
+في الرعاية الصحية، تحدث الأخطاء على مستويات مختلفة من النظام. يساعد التمييز بين "طرف حاد" و"طرف blunt" على فهم أين يجب أن تكون المسؤولية وجهود التحسين.
+
+<strong class="text-on-surface font-semibold">طرف حاد مقابل طرف blunt:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الجانب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طرف حاد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طرف blunt</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الموقع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نقطة تقديم الرعاية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المستوى التنظيمي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الفاعلون</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأطباء (ممرضون، أطباء، صيادلة)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المسؤولون، صانعو السياسات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الأخطاء مرئية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نعم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">غالباً مخفية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التحكم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">محدود</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مهم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التركيز</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إجراءات الأفراد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تصميم النظام</td></tr>
+
+<strong class="text-on-surface font-semibold">الإخفاقات النشطة (طرف الحاد):</strong>
+
+الإخفاقات النشطة هي الأخطاء التي تحدث عند نقطة الاتصال بين الإنسان والنظام—حيث يتم تقديم الرعاية فعلياً. هي:
+- مرئية عند حدوثها
+- Often attributed to the person involved
+- "طرف الجليد" الذي يجذب الانتباه
+
+الأمثلة:
+- ممرض يعطي دواء خاطئ
+- جراح Operates على الموقع الخاطئ
+- صيدلي يصرف جرعة غير صحيحة
+- طبيب misdiagnoses الحالة
+
+<strong class="text-on-surface font-semibold">الحالات الكامنة (طرف blunt):</strong>
+
+الحالات الكامنة هي نقاط ضعف النظام التي تخلق البيئة التي يمكن أن تحدث فيها الإخفاقات النشطة. هي:
+- Often invisible until an event occurs
+- مبنية في النظام بمرور الوقت
+- الأساس underlying الذي يمكّن الأخطاء
+
+الأمثلة:
+- مستويات توظيف غير كافية
+- تصميم معدات poor
+- إجراءات غير فعالة
+- برامج تدريب غير كافية
+- سياسات غير كافية
+- فشل أنظمة التواصل
+
+<strong class="text-on-surface font-semibold">نموذج تسلسل الحادث | The Accident Sequence Model:</strong>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  العوامل التنظيمية                          │
+│        (الميزانية، السياسات، التوظيف، ثقافة               │
+│                     المنظمة)                                │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                  العوامل المحلية                             │
+│      (عبء العمل، الإشراف، التدريب، المعدات)                │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                شروط التهيئة للخطأ                            │
+│       (العوامل البشرية: التعب، الإجهاد، المشتتة)           │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                طبقات الدفاع (جبن سويسري)                    │
+│        (السياسات، الإجراءات، الفحوصات، التدريب)            │
+└────────────────────────┬────────────────────────────────────┘
+<ul class="space-y-xs my-sm">
+<li class="flex items-start gap-xs p-xs bg-surface-container-low rounded-lg">↓</li>
+</ul>
+┌─────────────────────────────────────────────────────────────┐
+│                 حدث ضار / ضرر للمريض                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+<strong class="text-on-surface font-semibold">الآثار للتحسين | Implications for Improvement:</strong>
+
+لهذا النموذج آثار عميقة:
+
+1. <strong class="text-on-surface font-semibold">لا تلوم الشخص عند طرف الحاد</strong> — ركز على إصلاح النظام
+2. <strong class="text-on-surface font-semibold">ابحث عن الحالات الكامنة</strong> — غالباً ما تكون أكثر أهمية من الإخفاقات النشطة
+3. <strong class="text-on-surface font-semibold">قم بتقوية الدفاعات</strong> — توفر طبقات متعددة حماية أفضل
+4. <strong class="text-on-surface font-semibold">صمم للقيود البشرية</strong> — لا تتوقع أداء بشرياً مثالياً
+5. <strong class="text-on-surface font-semibold">تعلم من الأحداث</strong> — Use them to identify and fix system weaknesses
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 4: From Error Reduction to Harm Reduction - A Paradigm Shift</h3>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس الرابع: من تقليل الأخطاء إلى تقليل الضرر - تحول نموذجي</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 25 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Advanced
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">The Focus on Harm, Not Errors | التركيز على الضرر، وليس الأخطاء</strong>
+
+Patient safety experts increasingly emphasize focusing on reducing harm rather than eliminating all errors. This is a crucial paradigm shift because:
+
+1. <strong class="text-on-surface font-semibold">Errors are inevitable</strong> — Human beings will always make mistakes
+2. <strong class="text-on-surface font-semibold">Not all errors cause harm</strong> — Many errors are caught before they reach the patient
+3. <strong class="text-on-surface font-semibold">Focus on harm is more productive</strong> — We can design systems to prevent harm even when errors occur
+4. <strong class="text-on-surface font-semibold">Different approach needed</strong> — Error reduction and harm reduction require different strategies
+
+<strong class="text-on-surface font-semibold">The Hierarchy of Effectiveness | تسلسل الفعالية:</strong>
+
+Different interventions have different levels of effectiveness in preventing harm:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Level</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intervention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Effectiveness</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Highest</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Architectural/Physical</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Isolation of dangerous substances</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Very high</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Technology/Automation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Computerized prescribing</td><td class="px-sm py-xs text-body-md text-on-surface-variant">High</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Protocols/Standardization</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Standardized procedures</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Moderate-High</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Double Check</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Two-person verification</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Moderate</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Training/Competency</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Mandatory training</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Low-Moderate</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Lowest</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Warning/Labeling</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Caution signs</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Low</td></tr>
+
+<strong class="text-on-surface font-semibold">Swiss Hospital Example | مثال من مستشفى سويسري:</strong>
+
+A Swiss hospital implemented a layered approach to medication safety:
+
+1. <strong class="text-on-surface font-semibold">Highest level:</strong> Removed concentrated potassium chloride from floor stocks (architectural)
+2. <strong class="text-on-surface font-semibold">High level:</strong> Implemented barcode medication administration (technology)
+3. <strong class="text-on-surface font-semibold">Moderate-high:</strong> Standardized medication reconciliation process (standardization)
+4. <strong class="text-on-surface font-semibold">Moderate:</strong> Two-nurse verification for high-alert medications (double check)
+5. <strong class="text-on-surface font-semibold">Lower:</strong> Annual training on medication safety (training)
+6. <strong class="text-on-surface font-semibold">Lowest:</strong> Warning labels on high-alert medications (warning)
+
+Result: 85% reduction in medication-related adverse events over 3 years.
+
+<strong class="text-on-surface font-semibold">The Resilient Healthcare Approach | منهجية الرعاية الصحية المرنة:</strong>
+
+Resilience engineering focuses on building systems that can:
+- Anticipate and prepare for things that can go wrong
+- Monitor and detect when things are going wrong
+- Respond and adapt when problems occur
+- Learn and reflect on what went wrong and how to improve
+
+<strong class="text-on-surface font-semibold">Key Resilience Principles | مبادئ المرونة الرئيسية:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Principle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Anticipation</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Think ahead about potential problems</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Scenario planning for emergencies</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Monitoring</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Watch for early warning signs</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Vital sign trending, safety metrics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Response</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Have plans to handle problems</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Escalation protocols, rapid response</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Learning</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Reflect and improve</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Debriefing, RCA, feedback loops</td></tr>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">التركيز على الضرر، وليس الأخطاء</strong>
+
+يؤكد خبراء سلامة المرضى بشكل متزايد على التركيز على تقليل الضرر بدلاً من القضاء على جميع الأخطاء. هذا هو تحول نموذجي حاسم لأن:
+
+1. <strong class="text-on-surface font-semibold">الأخطاء حتمية</strong> — البشر سيرتكبون دائماً أخطاء
+2. <strong class="text-on-surface font-semibold">ليس كل الأخطاء تسبب ضرراً</strong> — Many errors are caught before they reach the patient
+3. <strong class="text-on-surface font-semibold">التركيز على الضرر أكثر إنتاجية</strong> — يمكننا تصميم أنظمة لمنع الضرر حتى عند حدوث الأخطاء
+4. <strong class="text-on-surface font-semibold">مقاربة مختلفة مطلوبة</strong> — تقليل الأخطاء وتقليل الضرر يتطلبان استراتيجيات مختلفة
+
+<strong class="text-on-surface font-semibold">تسلسل الفعالية | The Hierarchy of Effectiveness:</strong>
+
+لدى التدخلات المختلفة مستويات مختلفة من الفعالية في منع الضرر:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">المستوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التدخل</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المثال</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الفعالية</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الأعلى</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">المعماري/الفيزيكي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">عزل المواد الخطرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">جداً عالية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التقنية/الأتمتة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوصف计算机ي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">عالية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">البروتوكولات/التوحيد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إجراءات موحدة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معتدلة-عالية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التحقق المزدوج</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحقق من شخصين</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معتدلة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">التدريب/الكفاءة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تدريب إلزامي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منخفضة-متدنية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الأدنى</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحذير/الملصق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">علامات تحذير</td><td class="px-sm py-xs text-body-md text-on-surface-variant">منخفضة</td></tr>
+
+<strong class="text-on-surface font-semibold">مثال من مستشفى سويسري:</strong>
+
+نفذ مستشفى سويسري مقاربة متعددة الطبقات لسلامة الأدوية:
+
+1. <strong class="text-on-surface font-semibold">المستوى الأعلى:</strong> إزالة كلوريد البوتاسيوم المركز من مخزون المستشفى (معماري)
+2. <strong class="text-on-surface font-semibold">المستوى العالي:</strong> تنفيذ إعطاء الأدوية بالرمز الشريطي (تقنية)
+3. <strong class="text-on-surface font-semibold">المعتدل-العالي:</strong> توحيد عملية المراجعة الدوائية (توحيد)
+4. <strong class="text-on-surface font-semibold">المعتدل:</strong> تحقق ممرضين اثنين للأدوية عالية التنبيه (تحقق مزدوج)
+5. <strong class="text-on-surface font-semibold">المنخفض:</strong> تدريب سنوي على سلامة الأدوية (تدريب)
+6. <strong class="text-on-surface font-semibold">الأدنى:</strong> ملصقات تحذير على الأدوية عالية التنبيه (تحذير)
+
+النتيجة: انخفاض 85% في الأحداث الضارة المتعلقة بالأدوية على مدى 3 سنوات.
+
+<strong class="text-on-surface font-semibold">منهجية الرعاية الصحية المرنة | The Resilient Healthcare Approach:</strong>
+
+تركز هندسة المرونة على بناء أنظمة يمكنها:
+- Anticipate and prepare for things that can go wrong
+- Monitor and detect when things are going wrong
+- Respond and adapt when problems occur
+- Learn and reflect on what went wrong and how to improve
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 5: Your Role in Building Safer, More Reliable Systems</h3>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس الخامس: دورك في بناء أنظمة أكثر أماناً وموثوقية</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 30 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Advanced
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">From Understanding to Action | من الفهم إلى العمل</strong>
+
+Understanding how errors lead to harm is important—but the real value lies in applying this knowledge to create safer systems. This lesson focuses on practical actions you can take.
+
+<strong class="text-on-surface font-semibold">Role-Based Actions | الإجراءات حسب الدور:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Role</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Key Actions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System Improvements</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Physician</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Use structured handoffs (SBAR), verify orders, participate in safety events</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clinical decision support, order sets</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Nurse</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Follow protocols, double-check high-risk medications, report near misses</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Barcode administration, staffing ratios</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Pharmacist</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Review medication orders, provide counseling, monitor for errors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">CPOE integration, alerts</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Technician</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Follow maintenance schedules, report equipment issues</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Preventive maintenance, PM program</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Administrator</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ensure adequate staffing, provide resources, model safety culture</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Policies, budgets, training</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Quality/Safety</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analyze events, implement improvements, monitor metrics</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Reporting systems, dashboards</td></tr>
+
+<strong class="text-on-surface font-semibold">Creating System Defenses | إنشاء دفاعات النظام:</strong>
+
+Steps to strengthen system defenses:
+
+1. <strong class="text-on-surface font-semibold">Map existing defenses</strong> - Identify what's already protecting against errors
+2. <strong class="text-on-surface font-semibold">Identify gaps</strong> - Where are the holes in our Swiss cheese?
+3. <strong class="text-on-surface font-semibold">Prioritize improvements</strong> - Focus on highest-impact changes
+4. <strong class="text-on-surface font-semibold">Implement changes</strong> - Use PDSA or other improvement methods
+5. <strong class="text-on-surface font-semibold">Test effectiveness</strong> - Measure whether changes work
+6. <strong class="text-on-surface font-semibold">Sustain improvements</strong> - Make changes permanent through standardization
+
+<strong class="text-on-surface font-semibold">Building Safer Processes | بناء عمليات أكثر أماناً:</strong>
+
+<strong class="text-on-surface font-semibold">Key Design Principles | مبادئ التصميم الرئيسية:</strong>
+
+1. <strong class="text-on-surface font-semibold">Simplify</strong> — Reduce complexity where possible
+2. <strong class="text-on-surface font-semibold">Standardize</strong> — Create consistent processes
+3. <strong class="text-on-surface font-semibold">Constrain</strong> — Make it hard to do the wrong thing
+4. <strong class="text-on-surface font-semibold">Default</strong> — Make safe choices the easy choices
+5. <strong class="text-on-surface font-semibold">Redundancy</strong> — Add checks without adding burden
+
+<strong class="text-on-surface font-semibold">Examples from Saudi Healthcare | أمثلة من الرعاية الصحية السعودية:</strong>
+
+A Saudi hospital implemented these system improvements:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Problem</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System Intervention</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Result</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Wrong patient ID</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Two-identifier + barcode scanning</td><td class="px-sm py-xs text-body-md text-on-surface-variant">92% reduction</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Medication errors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">CPOE with clinical decision support</td><td class="px-sm py-xs text-body-md text-on-surface-variant">67% reduction</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Surgical site wrong</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Universal protocol + time-out</td><td class="px-sm py-xs text-body-md text-on-surface-variant">89% reduction</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Falls</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Risk assessment + hourly rounding</td><td class="px-sm py-xs text-body-md text-on-surface-variant">45% reduction</td></tr>
+
+<strong class="text-on-surface font-semibold">Your Personal Action Plan | خطة العمل الشخصية:</strong>
+
+Create a personal action plan with three categories:
+
+1. <strong class="text-on-surface font-semibold">What I will do differently</strong> (individual behavior change)
+2. <strong class="text-on-surface font-semibold">What I will advocate for</strong> (system improvements)
+3. <strong class="text-on-surface font-semibold">What I will teach others</strong> (knowledge sharing)
+
+<strong class="text-on-surface font-semibold">Reflection Questions | أسئلة للتأمل:</strong>
+
+1. What system weaknesses have you observed that could lead to patient harm?
+2. What defensive layers exist in your current work area?
+3. What one change could you implement that would have the biggest impact on safety?
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">من الفهم إلى العمل | From Understanding to Action:</strong>
+
+فهم كيفية leading من الأخطاء إلى الضرر مهم—but the real value lies in applying this knowledge to create safer systems. This lesson focuses on practical actions you can take.
+
+<strong class="text-on-surface font-semibold">الإجراءات حسب الدور | Role-Based Actions:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الدور</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الإجراءات الرئيسية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحسينات النظام</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الطبيب</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">استخدام التسليم المنظم (SBAR)، التحقق من الأوامر، المشاركة في أحداث السلامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">دعم القرار السريري، مجموعات الأوامر</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الممرض</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتباع البروتوكولات، التحقق المزدوج من الأدوية عالية المخاطر، الإبلاغ عن الحوادث الوشيكة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">إعطاء بالرمز الشريطي، نسب التوظيف</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الصيدلي</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراجعة أوامر الأدوية، تقديم المشورة، مراقبة الأخطاء</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تكامل CPOE، التنبيهات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الفني</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Following جداول الصيانة، الإبلاغ عن مشاكل المعدات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الصيانة الوقائية، برنامج الصيانة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الإداري</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">ضمان التوظيف الكافي، توفير الموارد، نمذجة ثقافة السلامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">السياسات، الميزانيات، التدريب</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الجودة/السلامة</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل الأحداث، تنفيذ التحسينات، مراقبة المقاييس</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أنظمة الإبلاغ، لوحات المقاييس</td></tr>
+
+<strong class="text-on-surface font-semibold">إنشاء دفاعات النظام | Creating System Defenses:</strong>
+
+خطوات لتعزيز دفاعات النظام:
+
+1. <strong class="text-on-surface font-semibold">رسم الدفاعات الحالية</strong> - تحديد ما يحمي بالفعل من الأخطاء
+2. <strong class="text-on-surface font-semibold">تحديد الفجوات</strong> - أين ثقوب جبننا Swiss؟
+3. <strong class="text-on-surface font-semibold">ترتيب الأولويات للتحسينات</strong> - التركيز على التغييرات ذات التأثير الأعلى
+4. <strong class="text-on-surface font-semibold">تنفيذ التغييرات</strong> - استخدام PDSA أو طرق تحسين أخرى
+5. <strong class="text-on-surface font-semibold">اختبار الفعالية</strong> - قياس ما إذا كانت التغييرات تعمل
+6. <strong class="text-on-surface font-semibold">استمرار التحسينات</strong> - جعل التغييرات دائمة من خلال التوحيد
+
+<strong class="text-on-surface font-semibold">بناء عمليات أكثر أماناً | Building Safer Processes:</strong>
+
+<strong class="text-on-surface font-semibold">مبادئ التصميم الرئيسية | Key Design Principles:</strong>
+
+1. <strong class="text-on-surface font-semibold">تبسيط</strong> — تقليل التعقيد حيثما أمكن
+2. <strong class="text-on-surface font-semibold">توحيد</strong> — إنشاء عمليات متسقة
+3. <strong class="text-on-surface font-semibold">تقييد</strong> — جعل من الصعب فعل الشيء الخاطئ
+4. <strong class="text-on-surface font-semibold">الافتراضي</strong> — جعل الخيارات الآمنة هي الخيارات السهلة
+5. <strong class="text-on-surface font-semibold">الازدواجية</strong> — إضافة فحوصات دون إضافة عبء
+
+<strong class="text-on-surface font-semibold">أمثلة من الرعاية الصحية السعودية | Examples from Saudi Healthcare:</strong>
+
+نفذ مستشفى سعودي هذه التحسينات النظامية:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">المشكلة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التدخل النظامي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النتيجة</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">خطأ هوية المريض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معرفان + مسح الرمز الشريطي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انخفاض 92%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">أخطاء الأدوية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">CPOE مع دعم القرار السريري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انخفاض 67%</td></tr>
+| خطأ موقع الجراحة | البروتوكول العالمي + وقت التوقف | انخفاض 89% | 
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">السقوط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تقييم المخاطر + الجولات كل ساعة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">انخفاض 45%</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Additional Saudi Healthcare Context and Case Studies | سياق إضافي ودراسات حالة للرعاية الصحية السعودية</h3>
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 1: Medication Error Leading to Patient Harm</h4>
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">حالة دراسية 1: خطأ دوائي أدى إلى ضرر بالمريض</h4>
+
+<strong class="text-on-surface font-semibold">English:</strong>
+
+A 58-year-old patient with diabetes and chronic kidney disease was admitted to King Khaled Hospital in Jeddah for routine dialysis access surgery. During the admission process, the following events occurred:
+
+<strong class="text-on-surface font-semibold">Event Sequence:</strong>
+1. Physician wrote admission orders including metformin 500mg BID
+2. Nurse transcribed order to medication chart
+3. Pharmacist reviewed order but noted no contraindication
+4. Patient received metformin that evening
+5. Next morning, patient found unresponsive, glucose 32 mg/dL
+6. Patient transferred to ICU, intubated, treated for severe hypoglycemia
+7. Patient recovered after 3 days but had prolonged hospital stay
+
+<strong class="text-on-surface font-semibold">Swiss Cheese Analysis:</strong>
+- <strong class="text-on-surface font-semibold">Layer 1:</strong> No renal function alert in order entry system
+- <strong class="text-on-surface font-semibold">Layer 2:</strong> Pharmacist not aware of patient's deteriorating renal function
+- <strong class="text-on-surface font-semibold">Layer 3:</strong> Nurse not trained to hold metformin in renal impairment
+- <strong class="text-on-surface font-semibold">Layer 4:</strong> No hard stop for metformin in renal impairment
+
+<strong class="text-on-surface font-semibold">System Improvements Implemented:</strong>
+1. Added creatinine clearance calculator to CPOE with hard stop
+2. Updated pharmacist verification checklist
+3. Added renal function education for nursing staff
+4. Created automated alert for high-risk medications in renal impairment
+
+<strong class="text-on-surface font-semibold">Arabic:</strong>
+
+تم إدخال مريض عمره 58 عاماً مصاب بالسكري ومرض كلوي مزمن إلى مستشفى الملك خالد في جدة لعملية وصول الغسيل الروتينية. خلال عملية الدخول،Occurred the following events:
+
+<strong class="text-on-surface font-semibold">تسلسل الأحداث:</strong>
+1. كتب Physician أوامر الدخول بما في ذلك ميتفورمين 500 ملغ مرتين يومياً
+2. نُسخت الممرضة الأمر إلى جدول الأدوية
+3. Pharmacist راجع الأمر لكن note أن لا موانع
+4. Patient receive metformin ذلك المساء
+5. في الصباح، patient found unresponsive، جلوكوز 32 ملغ/ديسيلتر
+6. Patient transferred to ICU، intubated، treated for severe hypoglycemia
+7. Patient تعافى after 3 days but had prolonged hospital stay
+
+<strong class="text-on-surface font-semibold">تحليل الجبن Swiss:</strong>
+- <strong class="text-on-surface font-semibold">الطبقة 1:</strong> لا يوجد تنبيه لوظيفة الكلى في نظام إدخال الأوامر
+- <strong class="text-on-surface font-semibold">الطبقة 2:</strong> pharmacist not aware of patient's deteriorating renal function
+- <strong class="text-on-surface font-semibold">الطبقة 3:</strong> nurse not trained to hold metformin in renal impairment
+- <strong class="text-on-surface font-semibold">الطبقة 4:</strong> no hard stop for metformin in renal impairment
+
+<strong class="text-on-surface font-semibold">التحسينات النظامية المنفذة:</strong>
+1. إضافة حاسبة تصفية الكرياتينين إلى CPOE مع وقف صعب
+2. تحديث قائمة التحقق من الصيادلة
+3. إضافة تعليمات وظيفة الكلى لموظفي التمريض
+4. إنشاء تنبيه تلقائي للأدوية عالية المخاطر في ضعف الكلى
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Case Study 2: Communication Failure During Patient Handoff</h4>
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">حالة دراسية 2: فشل التواصل أثناء تسليم المريض</h4>
+
+<strong class="text-on-surface font-semibold">English:</strong>
+
+A 72-year-old patient was transferred from the emergency department to the medical ward at a PHC center in Riyadh. The patient had a history of penicillin allergy documented in the ED but this information was not communicated during handoff. The receiving nurse assumed no allergies and administered ampicillin. The patient developed anaphylaxis and required resuscitation.
+
+<strong class="text-on-surface font-semibold">Root Cause Analysis Using Reason's Model:</strong>
+
+<strong class="text-on-surface font-semibold">Active Failures:</strong>
+- ED physician did not document allergy clearly in transfer note
+- Receiving nurse did not verify allergy information
+- Nurse administered medication without checking allergies
+
+<strong class="text-on-surface font-semibold">Latent Conditions:</strong>
+- No standardized handoff process between ED and wards
+- EHR allergy alert not prominent
+- Nursing workload too high to verify all information
+- No allergy verification step in medication administration process
+- Staff training on handoff communication inadequate
+
+<strong class="text-on-surface font-semibold">System Interventions:</strong>
+1. Implemented standardized SBAR handoff process
+2. Added mandatory allergy verification step in eMAR
+3. Redesigned EHR allergy alert to be more prominent
+4. Implemented handoff checklist with verification items
+5. Added allergy verification to medication rights
+
+<strong class="text-on-surface font-semibold">Arabic:</strong>
+
+تم نقل مريض عمره 72 عاماً من قسم الطوارئ إلى القسم الطبي في مركز رعاية صحية أولية في الرياض. كان لدى المريض تاريخ من حساسية البنسلين موثق في الطوارئ لكن هذه المعلومات لم يتم التواصل عليها أثناء التسليم. افترضت الممرضة المستقبلة عدم وجود حساسية وأعطت أمبيسيلين. developed the patient anaphylaxis and required إنعاش.
+
+<strong class="text-on-surface font-semibold">تحليل السبب الجذري باستخدام نموذج Reason:</strong>
+
+<strong class="text-on-surface font-semibold">الإخفاقات النشطة:</strong>
+- طبيب الطوارئ لم يوثق الحساسية بوضوح في ملاحظة النقل
+- الممرضة المستقبلة لم تتحقق من معلومات الحساسية
+- Nurse أعطى medication without checking allergies
+
+<strong class="text-on-surface font-semibold">الحالات الكامنة:</strong>
+- لا يوجد عملية تسليم موحدة بين الطوارئ والأقسام
+- تنبيه حساسية EHR not prominent
+- عبء عمل التمريض مرتفع جداً للتحقق من جميع المعلومات
+- لا توجد خطوة التحقق من الحساسية في عملية إعطاء الأدوية
+- تدريب الموظفين على تواصل التسليم غير كافٍ
+
+<strong class="text-on-surface font-semibold">التدخلات النظامية:</strong>
+1. تنفيذ عملية التسليم SBAR الموحدة
+2. إضافة خطوة التحقق الإلزامية من الحساسية في eMAR
+3. إعادة تصميم تنبيه حساسية EHR ليكون أكثر بروزاً
+4. تنفيذ قائمة تحقق التسليم مع بنود التحقق
+5. إضافة التحقق من الحساسية لحقوق الأدوية
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Extended Glossary | معجم موسع</h3>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العربية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعريف</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Active Failure</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الإخفاق النشط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Error occurring at point of care delivery</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Adverse Event</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحدث الضار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Injury caused by medical care</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Blunt End</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طرف blunt</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Organizational level where policies are made</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Defense Layer</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طبقة الدفاع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Barrier preventing error from reaching patient</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Harm</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الضرر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Negative consequence for patient</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Handoff</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التسليم</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Transfer of care responsibility</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Human Factors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العوامل البشرية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Study of human performance in systems</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Latent Condition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحالة الكامنة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System weakness that enables errors</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Near Miss</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحادث الوشيك</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Event that could have caused harm but didn't</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Reason's Model</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نموذج ريزن</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Framework for understanding accident causation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Sharp End</td><td class="px-sm py-xs text-body-md text-on-surface-variant">طرف حاد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Point where care is delivered</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Slip</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانزلاق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Execution error (doing wrong thing)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Lapse</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النسيان</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Planning error (forgetting to do)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Mistake</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الخطأ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Wrong action believed to be correct</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Violation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخالفة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intentional deviation from rules</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">System</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النظام</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Set of interconnected components</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Reliability</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الموثوقية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ability to perform consistently</td></tr>
+</table></div>
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Comprehensive Self-Assessment | تقييم ذاتي شامل</h3>
+
+<strong class="text-on-surface font-semibold">Part A: Multiple Choice |选择题:</strong>
+
+1. According to the Swiss Cheese Model, patient harm occurs when:
+   a) A single defense layer fails
+   b) Multiple defense layers fail simultaneously
+   c) An active error occurs
+   d) Staff are not properly trained
+
+2. Which of the following is an example of a latent condition?
+   a) Nurse administers wrong dose
+   b) Physician misdiagnoses patient
+   c) Inadequate staffing leading to fatigue
+   d) Patient receives wrong blood type
+
+3. A slip differs from a lapse in that:
+   a) A slip is intentional, a lapse is not
+   b) A slip is execution error, a lapse is planning error
+   c) A slip is more serious than a lapse
+   d) They are the same type of error
+
+4. Which intervention has the highest effectiveness in preventing harm?
+   a) Training programs
+   b) Warning signs
+   c) Physical design changes
+   d) Double checks
+
+5. In a Just Culture framework, at-risk behavior should be addressed by:
+   a) Punishing the individual
+   b) Coaching and removing triggers
+   c) Ignoring the behavior
+   d) Terminating employment
+
+<strong class="text-on-surface font-semibold">Part B: Short Answer | إجابة موجزة:</strong>
+
+6. List three latent conditions in a Saudi hospital that could contribute to medication errors.
+7. Explain why focusing on harm reduction is more effective than error reduction.
+8. Describe two system improvements that could prevent the medication error case study.
+
+<strong class="text-on-surface font-semibold">Part C: Reflection | تأمل:</strong>
+
+9. Think of a near miss or adverse event you have witnessed. What were the active failures and latent conditions? What system improvements could prevent recurrence?
+
+10. What changes will you make in your practice to strengthen system defenses?
+
+<strong class="text-on-surface font-semibold">Answer Key | مفتاح الإجابات:</strong>
+1. b, 2. c, 3. b, 4. c, 5. b
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details | تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Property</td><td class="px-sm py-xs text-body-md text-on-surface-variant">English</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العربية</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Code</td><td class="px-sm py-xs text-body-md text-on-surface-variant">PS 102</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الكود</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Format</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Online, On-Demand</td><td class="px-sm py-xs text-body-md text-on-surface-variant">عبر الإنترنت</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Duration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">75 minutes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">75 دقيقة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">CE Credits</td><td class="px-sm py-xs text-body-md text-on-surface-variant">1.25 Credits</td><td class="px-sm py-xs text-body-md text-on-surface-variant">1.25 ساعة معتمدة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Level</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intermediate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مستوى متوسط</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Language</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Bilingual AR/EN</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ثنائي اللغة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Provider</td><td class="px-sm py-xs text-body-md text-on-surface-variant">IHI Open School</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مقدم الدورة</td></tr>
+</table></div>
+<hr class="border-outline-variant/20 my-md">
+
+<strong class="text-on-surface font-semibold">© 2026 BrainSAIT Academy | Powered by IHI Open School</strong>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="4">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">English Overview</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          This course equips health professionals to strengthen harm reduction, reporting culture, human factors, and system-level learning while maintaining patient-centered, safe, and reliable care delivery. The content is adapted for Saudi Arabia’s service environment across MOH facilities, private providers, and PHC clusters.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">نظرة عامة بالعربية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          تهدف هذه الدورة إلى تطوير قدرات الممارسين الصحيين في خفض الضرر، وثقافة الإبلاغ، والعوامل البشرية، والتعلم على مستوى النظام مع الحفاظ على رعاية آمنة وموثوقة ومتمحورة حول المستفيد. وتم تكييف المحتوى ليتناسب مع بيئة تقديم الخدمات الصحية في السعودية عبر مرافق وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Learning Outcomes | مخرجات التعلم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- Explain the Swiss cheese model of error.
+- Define active failures and latent error and discuss their roles in causing harm.
+- List the main types of unsafe acts utilizing James Reason’s classification system.
+- Explain why patient safety experts recommend focusing less on reducing errors and more on reducing harm.
+- Translate course methods into a measurable implementation plan for a Saudi care setting.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- تعزيز ثقافة السلامة والإبلاغ عن الحوادث والأخطاء الوشيكة دون لوم.
+- تحليل أسباب المخاطر ووضع إجراءات وقائية على مستوى النظام.
+- تحسين التواصل بين الفريق الصحي والمريض/الأسرة لخفض الضرر.
+- تحويل مفاهيم الدورة إلى خطة تنفيذ قابلة للقياس داخل منشأة صحية سعودية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Expanded Lesson Summaries | الملخصات الموسعة للدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: The Swiss Cheese Model</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> This lesson will describe the Swiss cheese model of accident causation, which represents the ways that serious adverse events are almost always the result of multiple failed opportunities to stop a hazard from causing harm. We’ll explore how this model informs thinking about error and harm in health care. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 1: نموذج الجبن السويسري</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُرسي هذه الوحدة الأُسس المفاهيمية للدورة وتربطها بالسياق التشغيلي الفعلي في المنشآت الصحية السعودية. تُعرِّف الممارس بالأطر النظرية الداعمة وتُبيِّن لماذا يُعدّ هذا الموضوع ذا أولوية في ظل متطلبات رؤية 2030 ومعايير اعتماد هيئة CBAHI واحتياجات المستفيد المحلي.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> استعرض مسار رعاية حقيقيًا في قسمك لمدة 20 دقيقة: راقب، ودوِّن ثلاث نقاط تأخير أو فجوات تواصل، ثم ناقش الملاحظات مع مشرفك المباشر.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2: Understanding Unsafe Acts</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> You'll learn how the human brain is wired to make certain kinds of mistakes. You’ll also learn to identify four kinds of unsafe acts, as defined by psychologist James Reason: slips, lapses, mistakes, and violations. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 2: فهم التصرفات غير الآمنة</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تنتقل هذه الوحدة من الفهم النظري إلى التحليل التطبيقي: كيف تُقيِّم الوضع الراهن، وتُحدِّد الفجوات، وتختار الأدوات المناسبة لبيئة عملك. تُقدِّم أمثلة على التحديات الشائعة في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية، وتُمكِّن الممارس من ترجمة المشكلة إلى فرصة تحسين محددة.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> صمِّم قائمة تحقق مكوَّنة من خمسة بنود لمشكلة تشغيلية محددة في وحدتك، وحدِّد مؤشرًا للقياس القبلي ومؤشرًا للقياس البعدي قبل تنفيذ أي تدخل.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3: Your Role in Building Safer, More Reliable Systems</h3>
+- <strong class="text-on-surface font-semibold">Expanded Summary:</strong> This lesson looks at how our understanding of harm in the health care system has changed and expanded over time. This expanded module links the concept to Saudi operational realities, multidisciplinary communication, and measurable service outcomes.
+- <strong class="text-on-surface font-semibold">Saudi Local Application:</strong> Apply this lesson in MOH hospitals, private hospital groups, and PHC clusters using role-specific workflows for physicians, nurses, pharmacists, and quality teams.
+- <strong class="text-on-surface font-semibold">Practical Activity:</strong> Run a 30–45 minute team huddle to map one current-state process, identify one avoidable risk/waste point, and test one improvement action.
+- <strong class="text-on-surface font-semibold">Checkpoint:</strong> Confirm a baseline metric, target value, owner, and a weekly review cadence.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">الدرس 3: دورك في بناء أنظمة أكثر أمانًا وموثوقية</h3>
+- <strong class="text-on-surface font-semibold">الملخص الموسّع:</strong> تُركِّز هذه الوحدة على التطبيق الميداني: تصميم التدخل، وبناء الفريق متعدد التخصصات، وتحديد مؤشرات المتابعة. تُعدِّل المقاربات التدخلية لتناسب الموارد والكوادر المتاحة في بيئات الرعاية السعودية، وتُخرِّج الممارس بخطة عمل قابلة للتنفيذ الفوري.
+- <strong class="text-on-surface font-semibold">التطبيق السعودي:</strong> يُطبَّق الدرس في مستشفيات وزارة الصحة والقطاع الخاص وتجمعات الرعاية الأولية مع تحديد مسؤوليات الأطباء والتمريض والصيدلة وفرق الجودة.
+- <strong class="text-on-surface font-semibold">نشاط عملي:</strong> نفِّذ دورة PDSA واحدة (سبعة أيام): طبِّق تغييرًا صغيرًا واحدًا، وقِس أثره على المؤشر المحدد، وأعدَّ ورقة نتائج تُشارك بها الفريق في الاجتماع الأسبوعي القادم.
+- <strong class="text-on-surface font-semibold">نقطة تحقق:</strong> تثبيت مؤشر خط أساس، وقيمة مستهدفة، ومالك واضح للإجراء، وجدول مراجعة أسبوعي.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في سوق الرعاية الصحية السعودي</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+- <strong class="text-on-surface font-semibold">Care settings:</strong> MOH hospitals, private hospital groups, and PHC clusters.
+- <strong class="text-on-surface font-semibold">Operational priorities:</strong> quality outcomes, patient safety, wait-time reduction, continuity of care, and resource optimization.
+- <strong class="text-on-surface font-semibold">Role-based relevance:</strong>
+  - Physicians: clinical decision consistency and safer care plans.
+  - Nurses: workflow reliability, escalation, and patient/family communication.
+  - Pharmacists: medication safety and reconciliation support.
+  - Quality teams: measurement, governance reporting, and spread planning.
+- <strong class="text-on-surface font-semibold">Local scenario:</strong> Use this course to strengthen medication safety and escalation pathways for near misses in inpatient wards.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+- <strong class="text-on-surface font-semibold">بيئات التطبيق:</strong> مستشفيات وزارة الصحة، ومجموعات المستشفيات الخاصة، وتجمعات الرعاية الصحية الأولية.
+- <strong class="text-on-surface font-semibold">الأولويات التشغيلية:</strong> نتائج الجودة، وسلامة المرضى، وتقليل زمن الانتظار، واستمرارية الرعاية، وترشيد الموارد.
+- <strong class="text-on-surface font-semibold">الملاءمة حسب الدور:</strong>
+  - الأطباء: توحيد القرار السريري وخطط علاج أكثر أمانًا.
+  - التمريض: موثوقية سير العمل والتصعيد والتواصل مع المريض/الأسرة.
+  - الصيدلة: دعم سلامة الدواء والمراجعة الدوائية.
+  - فرق الجودة: القياس، والتقارير الحوكمية، وخطط نشر التحسين.
+- <strong class="text-on-surface font-semibold">سيناريو محلي:</strong> تُستخدم الدورة من أجل تعزيز سلامة الدواء ومسارات التصعيد للحوادث الوشيكة في الأقسام التنويمية.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+1. <strong class="text-on-surface font-semibold">Process Walkthrough:</strong> Observe one real workflow and record delay, defect, and communication gaps.
+2. <strong class="text-on-surface font-semibold">Rapid Improvement Test:</strong> Execute one small test of change and compare before/after indicators.
+3. <strong class="text-on-surface font-semibold">Team Reflection:</strong> Conduct a multidisciplinary debrief with action owners and due dates.
+
+<strong class="text-on-surface font-semibold">Assessment checkpoints:</strong>
+- Baseline and post-test metrics documented.
+- Evidence of stakeholder engagement.
+- Clear escalation path for identified risks.
+- 30/60/90-day follow-up plan.
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+1. <strong class="text-on-surface font-semibold">استعراض العملية:</strong> ملاحظة مسار عمل حقيقي وتوثيق نقاط التأخير والأخطاء وفجوات التواصل.
+2. <strong class="text-on-surface font-semibold">اختبار تحسين سريع:</strong> تنفيذ تجربة تحسين صغيرة ومقارنة المؤشرات قبل/بعد.
+3. <strong class="text-on-surface font-semibold">مراجعة الفريق:</strong> عقد جلسة مراجعة متعددة التخصصات مع تحديد ملاك الإجراءات والمواعيد.
+
+<strong class="text-on-surface font-semibold">نقاط التقييم:</strong>
+- توثيق خط الأساس ومؤشرات ما بعد الاختبار.
+- وجود مشاركة فعّالة من أصحاب العلاقة.
+- مسار تصعيد واضح للمخاطر.
+- خطة متابعة لمدة 30/60/90 يومًا.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="10">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td></tr>
+|<hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Adverse event</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حدث ضار</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Near miss</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حادث وشيك</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Just culture</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ثقافة عادلة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Root cause analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل السبب الجذري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Safety huddle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اجتماع سلامة قصير</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Escalation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التصعيد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Psychological safety</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأمان النفسي</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Human factors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العوامل البشرية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Latent condition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحالة الكامنة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Swiss cheese model</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نموذج الجبن السويسري</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Trigger tool</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أداة الكشف المبكر عن الأحداث</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Safety bundle</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حزمة السلامة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Harm rate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">معدل الضرر</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Event reporting</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الإبلاغ عن الحوادث</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Safety climate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المناخ الأمني</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Critical incident review</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراجعة الحادثة الحرجة</td></tr></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="11">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - IHI Open School course source: https://www.ihi.org/learn/courses/open-school/catalog/ps-102
+- IHI course catalog: https://www.ihi.org/learn/courses/open-school/catalog
+- Suggested local adaptation: align implementation with your facility governance, quality committees, and departmental KPIs.
+- AHRQ Patient Safety Indicators: https://www.ahrq.gov/patient-safety/settings/hospital/psi
+- WHO Patient Safety Curriculum Guide: https://www.who.int/patientsafety/education
+- CBAHI Patient Safety Standards: https://www.cbahi.gov.sa
+- MOH Patient Safety Center Saudi Arabia: https://www.moh.gov.sa
+- IHI Safety Toolkit: https://www.ihi.org/Topics/PatientSafety
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="12">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Select one department and one measurable problem.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Form a multidisciplinary micro-team.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Define baseline, target, and data collection frequency.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Run at least one improvement test and document findings.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Report outcomes to quality governance and plan next-cycle spread.</span></div>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Submit at least one near-miss report per quarter through your facility's event reporting system.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Review your unit's last three incident reports and identify recurring system-level causes.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Implement one safety bundle (CBAHI or WHO-endorsed) in your unit within 60 days.</span></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة إجراءات بالعربية</h3>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">اختيار قسم واحد ومشكلة قابلة للقياس.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تشكيل فريق مصغر متعدد التخصصات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تحديد خط الأساس والهدف وتواتر جمع البيانات.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تنفيذ اختبار تحسين واحد على الأقل وتوثيق النتائج.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">رفع النتائج لهيكل حوكمة الجودة ووضع خطة توسع للدورة التالية.- [ ] تقديم تقرير حادثة وشيكة واحد على الأقل كل ربع سنة عبر نظام الإبلاغ في منشأتك.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">مراجعة آخر ثلاثة تقارير حوادث في وحدتك وتحديد الأسباب المنظومية المتكررة.</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تطبيق حزمة سلامة واحدة معتمدة من CBAHI أو منظمة الصحة العالمية في وحدتك خلال 60 يومًا.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="13">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Continuing Education Credits</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          Course completion typically earns 1.25 Continuing Education credits. Please read the full details to ensure that this course offers your desired credit type. <a href="https://www.ihi.org/ihi-open-school-continuing-education-credits" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">Learn more about Continuing Education credits</a>
+
+See full detailsThe Institute for Healthcare Improvement designates this internet enduring activity for a maximum of 1.25 <em class="text-on-surface">AMA PRA Category 1 Credit(s)™</em>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+This activity is approved to award 1.25 credit(s) toward Certified Professional in Patient Safety (CPPS) recertification.
+
+This activity/program is approved by NAHQ® for 1.25 CPHQ CE credits.
+
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to:
+
+- 1.25 Medical Knowledge MOC point(s) in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program
+- 1.25 MOC point(s) in the American Board of Pediatrics' (ABP) Maintenance of Certification (MOC) program
+- 1.25 point(s) in the CME component of the American Board of Anesthesiology's redesigned Maintenance of Certification in AnesthesiologyTM (MOCA®) program, known as MOCA 2.0®. (Please consult the ABA website, www.theABA.org, for a list of all MOCA 2.0 requirements.)
+- 1.25 point(s) in the American Board of Ophthalmology's Maintenance of Certification program. It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+Successful completion of this CME activity, which includes participation in the evaluation component, enables the learner to satisfy the Lifelong Learning requirements for the American Board of Ophthalmology's Maintenance of Certification program.
+
+Successful completion of this activity, which includes participation in the evaluation component, offers Lifelong Learning (MOC Part 2 CME) point(s) for the following boards:
+
+- American Board of Anesthesiology (ABA)*
+- American Board of Allergy & Immunology (ABAI)
+- American Board of Colon & Rectal Surgery (ABCRS)
+- American Board of Pathology (ABPath)
+- American Board of Psychiatry & Neurology (ABPN)*
+- American Board of Plastic Surgery (ABPS)*
+- American Board of Nuclear Medicine (ABNM)
+- American Board of Thoracic Surgery (ABTS)
+- American Board of Urology (ABU)
+<em class="text-on-surface">*Approved as a Foundational Patient Safety Activity for ABA, ABPN, and ABPS</em>
+
+Successful completion of this activity, which includes participation in the evaluation component, offers Self-Assessment (MOC Part 2 SA) point(s) for the following boards:
+
+- American Board of Family Medicine (ABFM) (15pts)**
+- American Board of Pediatrics (ABPed) (20pts)**
+- American Board of Ophthalmology (ABOP)
+- American Board of Orthopedic Surgery (ABOS)
+- American Board of Radiology (ABR)
+- American Board of Physical Medicine and Rehabilitation (ABPMR)
+<em class="text-on-surface">*</em>ABPed and ABFM diplomates are required to complete all the selected courses within an activity to collect MOC activity points.*
+
+It is the CME activity provider's responsibility to submit learner completion information to ACCME for the purpose of granting MOC credit.
+
+As a Jointly Accredited Organization, the Institute for Healthcare Improvement is approved to offer social work continuing education by the Association of Social Work Boards (ASWB) Approved Continuing Education (ACE) program. Organizations, not individual courses, are approved under this program. Regulatory boards are the final authority on courses accepted for continuing education credit. Social workers completing this course receive 1.25 general continuing education credits.
+
+Members of the <a href="https://www.aafp.org/cme/credit-system/credit-statements/cfpc-agreement.html" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">College of Family Physicians of Canada</a> are eligible to receive Mainpro+ Certified, Certified Assessment, or Non-Certified credits for participation in this activity due to reciprocal agreement with the American Academy of Family Physicians.
+
+The AAFP has reviewed PS 102: From Error to Harm and deemed it acceptable for up to 1.25 Enduring Materials, Self-Study AAFP Elective credit(s). Term of Approval is from 06/20/2024 to 06/20/2025. Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+
+For Hamad Medical Corporation Open School users, a DHP licensed practitioner can claim Category 2—Self- Directed Learning—Clinical Practice—Completing Self-Learning Modules by uploading their certificate to the CPD ePortfolio.
+
+By attending PS 102 offered by the Institute for Healthcare Improvement participants may earn up to 1.25 ACHE Qualifying Education Hours toward initial certification or recertification of the Fellow of the American College of Healthcare Executives (FACHE) designation.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md " data-section="14">
+        <span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-primary">article</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">Code:</strong> PS 102
+- <strong class="text-on-surface font-semibold">Format:</strong> Online, On-Demand
+- <strong class="text-on-surface font-semibold">Provider:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/ps-102" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">IHI Education Platform</a>
+- <strong class="text-on-surface font-semibold">Duration:</strong> 60 minutes
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="15">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          - <strong class="text-on-surface font-semibold">الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong class="text-on-surface font-semibold">المزود:</strong> IHI Open School
+- <strong class="text-on-surface font-semibold">المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/ps-102" target="_blank" rel="noopener" class="text-primary hover:text-primary-fixed-variant underline">منصة IHI التعليمية</a>
+- <strong class="text-on-surface font-semibold">المدة:</strong> 60 دقيقة
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+    <section>
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Related Courses</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+        
+        <a href="/courses/ps-101.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Intro to Patient Safety</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">PS 101: مقدمة في سلامة المرضى</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>75 min</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/16</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-ps-102') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-ps-102', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('ps-102')) list.push('ps-102');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-ps-102') === 'true';
+    localStorage.setItem('saved-ps-102', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-ps-102') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-ps-102') === 'true';
+    localStorage.setItem('complete-ps-102', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-ps-102') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-ps-102', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'From Error to Harm', slug: 'ps-102', enrolled: localStorage.getItem('enrolled-ps-102') === 'true', complete: localStorage.getItem('complete-ps-102') === 'true', quizPassed: localStorage.getItem('quiz-pass-ps-102') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-ps-102.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

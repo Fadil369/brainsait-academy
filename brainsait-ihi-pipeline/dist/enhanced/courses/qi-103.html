@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing and Measuring Changes with PDSA Cycles | BrainSAIT Academy</title>
+  <meta name="description" content="Testing and Measuring Changes with PDSA Cycles - Full bilingual course on Quality Improvement">
+  <meta name="keywords" content="Quality Improvement, IHI, Open School, PDSA, Measurement, Testing, Saudi Arabia, CBAHI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Testing and Measuring Changes with PDSA Cycles</h3>
+        <p>QI-103 • 120 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">اختبار وقياس التغييرات باستخدام دور...</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Overview | نظرة عامة على الد...</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lessons | الدروس</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Exercises | التمارين العم...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Action Items | خطة العمل</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Quality Improvement</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Testing and Measuring Changes with PDSA Cycles</h1>
+        <p class="course-title-ar rtl">QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">120</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">11</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">اختبار وقياس التغييرات باستخدام دورات PDSA</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <strong>QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</strong>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Overview | نظرة عامة على الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+This course builds on the Model for Improvement framework to provide advanced skills in testing changes and measuring their impact. You will master the practical aspects of data collection, analysis, and interpretation during PDSA cycles.
+
+The course focuses on operationalizing improvement measurement in Saudi Arabian healthcare facilities. You will learn to establish reliable data collection systems, analyze data for improvement signals, and use statistical thinking to guide decision-making.
+
+<strong>Key Learning Areas:</strong>
+- Establishing operational definitions for measures
+- Data collection techniques and sampling strategies
+- Displaying and interpreting run charts
+- Using subset analysis for deeper learning
+- Building confidence through evidence accumulation
+- Adapting measurement approaches for Saudi facilities
+
+<h3 class="section-title">العربية</h3>
+
+تبني هذه الدورة على إطار نموذج التحسين لتوفير مهارات متقدمة في اختبار التغييرات وقياس أثرها. ستتقن الجوانب العملية لجمع البيانات وتحليلها وتفسيرها أثناء دورات PDSA.
+
+تركز الدورة على تفعيل قياس التحسين في المرافق الصحية السعودية. ستتعلم إنشاء أنظمة جمع بيانات موثوقة، وتحليل البيانات لإشارات التحسين، واستخدام التفكير الإحصائي لتوجيه اتخاذ القرار.
+
+<strong>مناطق التعلم الرئيسية:</strong>
+- إنشاء تعريفات تشغيلية للمقاييس
+- تقنيات جمع البيانات واستراتيجيات المعاينة
+- عرض وتفسير المخططات الزمنية
+- استخدام تحليل المجموعات الفرعية للتعلم الأعمق
+- بناء الثقة من خلال تراكم الأدلة
+- تكييف مناهج القياس للمنشآت السعودية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Learning Outcomes</h3>
+
+After completing this course, you will be able to:
+
+- <strong>Develop</strong> operational definitions for improvement measures that ensure consistent data collection
+- <strong>Implement</strong> efficient data collection strategies, including appropriate sampling techniques
+- <strong>Construct</strong> run charts with all required elements (median, goal line, annotations)
+- <strong>Interpret</strong> run charts using rules for identifying non-random patterns
+- <strong>Analyze</strong> data subsets to understand variation and generate improvement insights
+- <strong>Apply</strong> statistical thinking principles to distinguish signal from noise
+- <strong>Build</strong> confidence in changes through systematic evidence accumulation
+- <strong>Scale</strong> PDSA cycles appropriately based on learning and readiness
+- <strong>Align</strong> measurement activities with CBAHI requirements and organizational priorities
+
+<h3 class="section-title">مخرجات التعلم بالعربية</h3>
+
+بنهاية هذه الدورة، ستكون قادراً على:
+
+- <strong>تطوير</strong> تعريفات تشغيلية لمقاييس التحسين تضمن جمع بيانات متسق
+- <strong>تنفيذ</strong> استراتيجيات فعالة لجمع البيانات، بما في ذلك تقنيات المعاينة المناسبة
+- <strong>بناء</strong> مخططات زمنية مع جميع العناصر المطلوبة (الوسيط، خط الهدف، التعليقات التوضيحية)
+- <strong>تفسير</strong> المخططات الزمنية باستخدام قواعد تحديد الأنماط غير العشوائية
+- <strong>تحليل</strong> مجموعات فرعية من البيانات لفهم التباين وتوليد رؤى التحسين
+- <strong>تطبيق</strong> مبادئ التفكير الإحصائي للتمييز بين الإشارة والضوضاء
+- <strong>بناء</strong> الثقة في التغييرات من خلال تراكم الأدلة المنهجي
+- <strong>توسع</strong> دورات PDSA بشكل مناسب بناءً على التعلم والاستعداد
+- <strong>محاذاة</strong> أنشطة القياس مع متطلبات CBAHI والأولويات المؤسسية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lessons | الدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: Defining Measures and Collecting Data | الدرس الأول: تحديد المقاييس وجمع البيانات</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Intermediate | <strong>المستوى:</strong> متوسط
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Establishing Operational Definitions | إنشاء التعريفات التشغيلية</strong>
+
+An operational definition is the precise description of what will be measured and how measurement will occur. Without clear operational definitions, data collection will be inconsistent, leading to unreliable results.
+
+<strong>Elements of a Complete Operational Definition:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Element</td><td>Question to Answer</td><td>Example</td></tr>
+|---------|-------------------|---------|
+<tr><td><strong>Metric</strong></td><td>What exactly will be measured?</td><td>"Hand hygiene compliance"</td></tr>
+<tr><td><strong>Numerator</strong></td><td>What is being counted in the numerator?</td><td>"# of hand hygiene episodes performed"</td></tr>
+<tr><td><strong>Denominator</strong></td><td>What population/timeframe defines the total?</td><td>"# of hand hygiene opportunities observed"</td></tr>
+<tr><td><strong>Population</strong></td><td>Who or what is included/excluded?</td><td>"All clinical staff in ICU"</td></tr>
+<tr><td><strong>Timeframe</strong></td><td>What period does measurement cover?</td><td>"Weekly, January through December 2026"</td></tr>
+<tr><td><strong>Data Source</strong></td><td>Where does the data come from?</td><td>"Direct observation forms"</td></tr>
+<tr><td><strong>Collection Method</strong></td><td>How is data gathered?</td><td>"Trained observers using WHO moment checklist"</td></tr>
+<tr><td><strong>Calculation</strong></td><td>How is the measure calculated?</td><td>"(Numerator ÷ Denominator) × 100"</td></tr>
+<tr><td><strong>Responsible Party</strong></td><td>Who collects the data?</td><td>"Infection Control Preventionists"</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>إنشاء التعريفات التشغيلية</strong>
+
+التعريف التشغيلي هو الوصف الدقيق لما سيتم قياسه وكيف سيحدث القياس. بدون تعريفات تشغيلية واضحة، سيكون جمع البيانات غير متسق، مما يؤدي إلى نتائج غير موثوقة.
+
+<strong>عناصر التعريف التشغيلي الكامل:</strong>
+
+<tr><td>العنصر</td><td>السؤال المجاب</td><td>مثال</td></tr>
+|--------|---------------|------|
+<tr><td><strong>المقياس</strong></td><td>ماذا سيتم قياسه بالضبط؟</td><td>"الامتثال لغسل اليدين"</td></tr>
+<tr><td><strong>البسط</strong></td><td>ماذا يُحسب في البسط؟</td><td>"# من حلقات غسل اليدين المنفذة"</td></tr>
+<tr><td><strong>المقام</strong></td><td>ما عدد السكان/الإطار الزمني الذي يحدد المجموع؟</td><td>"# من فرص غسل اليدين المرصودة"</td></tr>
+<tr><td><strong>السكان</strong></td><td>من أو ماذاIncluded/excluded؟</td><td>"جميع الموظفين السريريين في العناية المركزة"</td></tr>
+<tr><td><strong>الإطار الزمني</strong></td><td>أي فترة يغطيها القياس؟</td><td>"أسبوعياً، يناير حتى ديسمبر 2026"</td></tr>
+<tr><td><strong>مصدر البيانات</strong></td><td>من أين تأتي البيانات؟</td><td>"نماذج الملاحظة المباشرة"</td></tr>
+<tr><td><strong>طريقة الجمع</strong></td><td>كيف تُجمع البيانات؟</td><td>"مراقبون مدربون يستخدمون قائمة لحظة WHO"</td></tr>
+<tr><td><strong>الحساب</strong></td><td>كيف يُحسب المقياس؟</td><td>"(البسط ÷ المقام) × 100"</td></tr>
+<tr><td><strong>الجهة المسؤولة</strong></td><td>من يجمع البيانات؟</td><td>"اختصاصيو الوقاية من العدوى"</td></tr>
+
+---
+
+<h4 class="section-sub">Data Collection Techniques | تقنيات جمع البيانات</h4>
+
+<strong>Sampling Strategies | استراتيجيات المعاينة:</strong>
+
+Sampling allows you to collect reliable data without measuring every case. In improvement work, sampling is often appropriate and more practical than 100% sampling.
+
+<tr><td>Technique</td><td>Description</td><td>When to Use</td><td>Example</td></tr>
+|-----------|-------------|-------------|---------|
+<tr><td><strong>Continuous</strong></td><td>Every instance is measured</td><td>Small populations, critical measures</td><td>All central lines in ICU</td></tr>
+<tr><td><strong>Census</strong></td><td>100% of population</td><td>Feasible when population is small</td><td>20-bed unit</td></tr>
+<tr><td><strong>Random Sample</strong></td><td>Equal chance for each case</td><td>Research, formal studies</td><td>Survey of 100 discharged patients</td></tr>
+<tr><td><strong>Systematic Sample</strong></td><td>Every nth case</td><td>Large populations, recurring processes</td><td>Every 10th patient seen</td></tr>
+<tr><td><strong>Convenience Sample</strong></td><td>Available cases</td><td>Initial testing, exploratory work</td><td>First 5 patients each day</td></tr>
+<tr><td><strong>Stratified Sample</strong></td><td>Proportional from groups</td><td>Ensure representation</td><td>Sample from each unit</td></tr>
+
+<strong>Key Sampling Principles:</strong>
+
+1. <strong>Sample Size</strong> - Larger samples provide more precise estimates
+2. <strong>Sampling Frequency</strong> - More frequent data reveals patterns faster
+3. <strong>Randomness</strong> - Random samples reduce bias
+4. <strong>Consistency</strong> - Same method across all data points
+
+<strong>Practical Sampling Guide for Improvement:</strong>
+
+<tr><td>Purpose</td><td>Minimum Sample</td><td>Collection Frequency</td></tr>
+|---------|----------------|---------------------|
+<tr><td>Initial PDSA testing</td><td>5-10 cases</td><td>Daily for 1-2 weeks</td></tr>
+<tr><td>Ongoing monitoring</td><td>10-20 cases</td><td>Weekly</td></tr>
+<tr><td>Sustained tracking</td><td>5-10 cases</td><td>Weekly</td></tr>
+<tr><td>Quarterly reporting</td><td>20-30 cases</td><td>Monthly aggregation</td></tr>
+
+---
+
+<h4 class="section-sub">Data Collection Planning | تخطيط جمع البيانات</h4>
+
+<strong>Data Collection Checklist:</strong>
+
+Before beginning any improvement project, ensure you have:
+
+<div class="checklist-item"><span class="checkbox"></span>Clear operational definitions documented</div>
+<div class="checklist-item"><span class="checkbox"></span>Designated data collectors trained on definitions</div>
+<div class="checklist-item"><span class="checkbox"></span>Data collection tools prepared (forms, templates)</div>
+<div class="checklist-item"><span class="checkbox"></span>Data collection schedule established</div>
+<div class="checklist-item"><span class="checkbox"></span>Baseline data collected (minimum 10 points)</div>
+<div class="checklist-item"><span class="checkbox"></span>Data storage system identified</div>
+<div class="checklist-item"><span class="checkbox"></span>Analysis plan prepared</div>
+<div class="checklist-item"><span class="checkbox"></span>Responsible parties assigned</div>
+
+<strong>Saudi Healthcare Data Sources:</strong>
+
+<tr><td>Data Source</td><td>Type</td><td>Availability</td><td>Notes</td></tr>
+|------------|------|-------------|-------|
+<tr><td><strong>EMR/EHR</strong></td><td>Electronic</td><td>Widely available</td><td>Real-time access, requires data extraction</td></tr>
+<tr><td><strong>NPHIES</strong></td><td>Exchange platform</td><td>Expanding</td><td>Population-level data, regional view</td></tr>
+<tr><td><strong>Infection Control</strong></td><td>Surveillance</td><td>Required by CBAHI</td><td>Automated where available</td></tr>
+<tr><td><strong>Quality Dashboards</strong></td><td>MOH reporting</td><td>Mandatory</td><td>National indicator submission</td></tr>
+<tr><td><strong>Patient Surveys</strong></td><td>Experience data</td><td>Periodic</td><td>Press Ganey, custom surveys</td></tr>
+<tr><td><strong>Direct Observation</strong></td><td>Process measures</td><td>Project-based</td><td>Most reliable for specific processes</td></tr>
+<tr><td><strong>Administrative Systems</strong></td><td>Claims, billing</td><td>Available</td><td>Limited clinical detail</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 2: Using Data for Improvement | الدرس الثاني: استخدام البيانات للتحسين</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Intermediate | <strong>المستوى:</strong> متوسط
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Run Charts: The Essential Improvement Tool | المخططات الزمنية: أداة التحسين الأساسية</strong>
+
+Run charts are the most important and versatile tool for improvement work. They display data over time, enabling you to see trends, shifts, and patterns that are invisible in static data tables.
+
+<strong>Why Run Charts Matter for Improvement:</strong>
+
+<tr><td>Benefit</td><td>Explanation</td><td>Healthcare Example</td></tr>
+|---------|-------------|-------------------|
+<tr><td><strong>See Trends</strong></td><td>Detect gradual improvement or decline</td><td>Hand hygiene compliance slowly improving</td></tr>
+<tr><td><strong>Identify Shifts</strong></td><td>Recognize sudden, sustained changes</td><td>After new protocol, compliance jumps</td></tr>
+<tr><td><strong>Observe Patterns</strong></td><td>Find daily, weekly, or seasonal variation</td><td>Higher errors on Mondays</td></tr>
+<tr><td><strong>Validate Change</strong></td><td>Confirm whether interventions work</td><td>After training, scores increase</td></tr>
+<tr><td><strong>Engage Teams</strong></td><td>Visual displays motivate improvement</td><td>Run chart on unit wall</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>المخططات الزمنية: أداة التحسين الأساسية</strong>
+
+المخططات الزمنية هي أهم وأكثر أدوات التحسين تنوعاً. تعرض البيانات بمرور الوقت، مما يتيح لك رؤية الاتجاهات والتحولات والأنماط غير المرئية في جداول البيانات الثابتة.
+
+<strong>لماذا تهم المخططات الزمنية للتحسين:</strong>
+
+<tr><td>الفائدة</td><td>الشرح</td><td>مثال صحي</td></tr>
+|---------|-------|----------|
+<tr><td><strong>رؤية الاتجاهات</strong></td><td>اكتشاف التحسن أو الانحدار التدريجي</td><td>الامتثال لغسل اليدين يتحسن ببطء</td></tr>
+<tr><td><strong>تحديد التحولات</strong></td><td>التعرف على التغييرات المفاجئة المستدامة</td><td>بعد البروتوكول الجديد، القبول يقفز</td></tr>
+<tr><td><strong>مراقبة الأنماط</strong></td><td>إيجاد تباين يومي أو أسبوعي أو موسمي</td><td>أخطاء أعلى يوم الاثنين</td></tr>
+<tr><td><strong>التحقق من التغيير</strong></td><td>تأكيد ما إذا كانت التدخلات تعمل</td><td>بعد التدريب، الدرجات تزيد</td></tr>
+<tr><td><strong>تحفيز الفرق</strong></td><td>العروض البصرية تحفز التحسين</td><td>المخطط الزمني على جدار الوحدة</td></tr>
+
+---
+
+<h4 class="section-sub">Constructing Effective Run Charts | بناء مخططات زمنية فعّالة</h4>
+
+<strong>Essential Elements:</strong>
+
+1. <strong>Clear Title</strong> - Include measure name and timeframe
+2. <strong>Y-Axis (Vertical)</strong> - The measure being tracked
+3. <strong>X-Axis (Horizontal)</strong> - Time (days, weeks, months)
+4. <strong>Data Points</strong> - Values plotted chronologically
+5. <strong>Baseline Median</strong> - Centerline from baseline data
+6. <strong>Goal Line</strong> - Target performance (if applicable)
+7. <strong>Annotations</strong> - Mark significant events and tests
+
+<strong>Run Chart Construction Checklist:</strong>
+
+```
+RUN CHART CONSTRUCTION
+========================
+
+TITLE: [Measure Name] - [Unit/Department]
+Example: Hand Hygiene Compliance - ICU
+
+TIMEFRAME: [Start Date] to [End Date]
+Example: January 2026 - June 2026
+
+Y-AXIS:
+- Measure: ____________________
+- Scale: 0 to [max value]
+- Units: % / days / count / etc.
+
+X-AXIS:
+- Time unit: Week / Month / Day
+- Interval: Weekly / Daily
+
+DATA POINTS:
+- Number of points: _____
+- Baseline points: _____
+- Post-intervention points: _____
+
+CENTERLINE (MEDIAN):
+- Baseline median: _____
+
+GOAL LINE:
+- Target: _____
+
+ANNOTATIONS:
+[ ] PDSA cycle 1 started (date)
+[ ] Intervention implemented (date)
+[ ] Staff training completed (date)
+[ ] Policy change (date)
+```
+
+---
+
+<h4 class="section-sub">Run Chart Interpretation | تفسير المخططات الزمنية</h4>
+
+<strong>Rules for Detecting Non-Random Patterns:</strong>
+
+Four rules help identify that a change has occurred (special cause variation):
+
+<tr><td>Rule</td><td>Description</td><td>Visual Pattern</td></tr>
+|------|-------------|---------------|
+<tr><td><strong>Rule 1</strong></td><td>A single point outside control limits</td><td>Point above UCL or below LCL</td></tr>
+<tr><td><strong>Rule 2</strong></td><td>A shift of 8 or more consecutive points above or below the median</td><td>8+ points all above OR all below median</td></tr>
+<tr><td><strong>Rule 3</strong></td><td>Six consecutive points increasing or decreasing</td><td>6 points in a row trending up or down</td></tr>
+<tr><td><strong>Rule 4</strong></td><td>Fourteen consecutive points alternating up and down</td><td>Up-down-up-down pattern for 14 points</td></tr>
+
+<strong>What Patterns Tell Us:</strong>
+
+<tr><td>Pattern</td><td>Interpretation</td><td>Action</td></tr>
+|---------|----------------|--------|
+<tr><td>Points randomly distributed around median</td><td>Common cause variation - system stable</td><td>Focus on system changes</td></tr>
+<tr><td>8+ points above median</td><td>Significant improvement</td><td>Investigate what changed</td></tr>
+<tr><td>8+ points below median</td><td>Significant decline</td><td>Investigate what went wrong</td></tr>
+<tr><td>Trend of 6+ points</td><td>Gradual change occurring</td><td>Look for underlying cause</td></tr>
+<tr><td>Point outside limits</td><td>Something special happened</td><td>Identify and learn from it</td></tr>
+<tr><td>Alternating pattern</td><td>Two systems alternating</td><td>Investigate underlying structure</td></tr>
+
+---
+
+####_subset Analysis | تحليل المجموعات الفرعية
+
+Subsetting data means breaking it down by specific variables to understand what is driving patterns and variation.
+
+<strong>Why Subset Analysis Matters:</strong>
+
+<tr><td>Benefit</td><td>Example</td></tr>
+|---------|---------|
+<tr><td><strong>Identify Drivers</strong></td><td>Hand hygiene better on day shift than night</td></tr>
+<tr><td><strong>Find Problems</strong></td><td>Higher readmissions on weekends</td></tr>
+<tr><td><strong>Target Interventions</strong></td><td>Focus education on specific staff group</td></tr>
+<tr><td><strong>Generate Learning</strong></td><td>Understanding why outcomes vary</td></tr>
+<tr><td><strong>Validate Improvement</strong></td><td>Improvement consistent across subsets</td></tr>
+
+<strong>Common Subset Variables:</strong>
+
+<tr><td>Variable</td><td>Examples</td><td>Improvement Insight</td></tr>
+|----------|----------|-------------------|
+<tr><td><strong>Time</strong></td><td>Day vs. night, weekday vs. weekend</td><td>Staffing effects</td></tr>
+<tr><td><strong>Location</strong></td><td>Unit, floor, building</td><td>Environmental factors</td></tr>
+<tr><td><strong>Staff</strong></td><td>By role, experience, shift</td><td>Training needs</td></tr>
+<tr><td><strong>Patient</strong></td><td>Age, diagnosis, complexity</td><td>Risk stratification</td></tr>
+<tr><td><strong>Season</strong></td><td>Summer vs. winter, Ramadan</td><td>Seasonal factors</td></tr>
+<tr><td><strong>Process</strong></td><td>Admission type, procedure</td><td>Process redesign</td></tr>
+
+<strong>Example Subset Analysis:</strong>
+
+```
+SUBSET: Hand Hygiene Compliance by Shift
+
+Week 1 Data:
+<tr><td>Shift</td><td>Observations</td><td>Compliant</td><td>Rate</td></tr>
+|-------|-------------|-----------|------|
+<tr><td>Day (7am-3pm)</td><td>150</td><td>135</td><td>90%</td></tr>
+<tr><td>Evening (3-11pm)</td><td>120</td><td>96</td><td>80%</td></tr>
+<tr><td>Night (11pm-7am)</td><td>80</td><td>48</td><td>60%</td></tr>
+<tr><td>TOTAL</td><td>350</td><td>279</td><td>79.7%</td></tr>
+
+INSIGHT: Night shift compliance significantly lower
+ACTION: Targeted night shift education and reminder systems
+```
+
+---
+
+<h3 class="section-title">Lesson 3: Building Confidence Over Time | الدرس الثالث: بناء الثقة بمرور الوقت</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Evidence Accumulation Framework | إطار تراكم الأدلة</strong>
+
+As you execute multiple PDSA cycles, you accumulate evidence about whether your change is working. Building sufficient confidence to adopt and spread a change requires systematic evidence accumulation.
+
+<strong>Stages of Confidence Building | مراحل بناء الثقة:</strong>
+
+<tr><td>Stage</td><td>Number of Cycles</td><td>Evidence Level</td><td>Typical Duration</td></tr>
+|-------|-----------------|-----------------|-----------------|
+<tr><td><strong>Hypothesis</strong></td><td>1-2 cycles</td><td>Initial signal</td><td>2-4 weeks</td></tr>
+<tr><td><strong>Emerging Evidence</strong></td><td>3-4 cycles</td><td>Consistent with prediction</td><td>1-2 months</td></tr>
+<tr><td><strong>Building Confidence</strong></td><td>5-7 cycles</td><td>Replicated across settings</td><td>2-4 months</td></tr>
+<tr><td><strong>Ready to Adopt</strong></td><td>8+ cycles</td><td>Strong, consistent evidence</td><td>4+ months</td></tr>
+<tr><td><strong>Standard Practice</strong></td><td>Sustained results</td><td>Institutionalized</td><td>Ongoing</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>إطار تراكم الأدلة</strong>
+
+أثناء تنفيذ دورات PDSA متعددة، تتراكم الأدلة حول ما إذا كان تغييرك يعمل. يتطلب بناء ثقة كافية لتبني ونشر تغيير ما تراكم أدلة منهجي.
+
+<strong>مراحل بناء الثقة:</strong>
+
+<tr><td>المرحلة</td><td>عدد الدورات</td><td>مستوى الأدلة</td><td>المدة النموذجية</td></tr>
+|---------|-------------|---------------|----------------|
+<tr><td><strong>الفرضية</strong></td><td>1-2 دورة</td><td>إشارة مبدئية</td><td>2-4 أسابيع</td></tr>
+<tr><td><strong>أدلة ناشئة</strong></td><td>3-4 دورة</td><td>متسقة مع التنبؤ</td><td>1-2 شهر</td></tr>
+<tr><td><strong>بناء الثقة</strong></td><td>5-7 دورة</td><td>مكررة عبر الإعدادات</td><td>2-4 أشهر</td></tr>
+<tr><td><strong>جاهز للتبني</strong></td><td>8+ دورة</td><td>أدلة قوية ومتسقة</td><td>4+ أشهر</td></tr>
+<tr><td><strong>الممارسة القياسية</strong></td><td>نتائج مستدامة</td><td>مؤسسية</td><td>مستمر</td></tr>
+
+---
+
+<h4 class="section-sub">Scaling Up PDSA Cycles | توسع دورات PDSA</h4>
+
+<strong>Progressive Expansion Strategy:</strong>
+
+<tr><td>Cycle</td><td>Scope</td><td>Purpose</td><td>Example</td></tr>
+|-------|-------|---------|---------|
+<tr><td><strong>Cycle 1</strong></td><td>1 patient, 1 day</td><td>Initial test, feasibility</td><td>Checklist for 1 patient</td></tr>
+<tr><td><strong>Cycle 2</strong></td><td>5 patients, 1 week</td><td>Refinement</td><td>Refined checklist, 5 patients</td></tr>
+<tr><td><strong>Cycle 3</strong></td><td>20 patients, multiple shifts</td><td>Environmental variation</td><td>Full unit, all shifts</td></tr>
+<tr><td><strong>Cycle 4</strong></td><td>50 patients, 1 unit, 2 weeks</td><td>Sustainability</td><td>Sustained testing</td></tr>
+<tr><td><strong>Cycle 5</strong></td><td>Multiple units</td><td>Spread</td><td>Expand to second unit</td></tr>
+<tr><td><strong>Cycle 6+</strong></td><td>Organization-wide</td><td>Adoption</td><td>Full implementation</td></tr>
+
+<strong>Scaling Decision Criteria:</strong>
+
+<tr><td>Criteria</td><td>Questions to Consider</td><td>Indicators for Scaling</td></tr>
+|----------|----------------------|------------------------|
+<tr><td><strong>Improvement Magnitude</strong></td><td>Is the change making a meaningful difference?</td><td>Meets or exceeds aim target</td></tr>
+<tr><td><strong>Consistency</strong></td><td>Does it work reliably across cycles?</td><td>Pattern rule met multiple times</td></tr>
+<tr><td><strong>Feasibility</strong></td><td>Can it be implemented at larger scale?</td><td>No major resource barriers identified</td></tr>
+<tr><td><strong>Understanding</strong></td><td>Do we know why it works?</td><td>Mechanism identified</td></tr>
+<tr><td><strong>Adaptability</strong></td><td>Can it work in other settings?</td><td>Adaptation framework identified</td></tr>
+<tr><td><strong>Absence of Harm</strong></td><td>Are balancing measures acceptable?</td><td>No negative unintended effects</td></tr>
+
+---
+
+<h4 class="section-sub">Practical Data Management | إدارة البيانات العملية</h4>
+
+<strong>Data Quality Assurance:</strong>
+
+<tr><td>Check</td><td>Frequency</td><td>Action if Failed</td></tr>
+|-------|-----------|------------------|
+<tr><td><strong>Completeness</strong></td><td>Each data point</td><td>Investigate missing data</td></tr>
+<tr><td><strong>Accuracy</strong></td><td>Weekly</td><td>Verify sampling against source</td></tr>
+<tr><td><strong>Consistency</strong></td><td>Monthly</td><td>Compare collectors' data</td></tr>
+<tr><td><strong>Timeliness</strong></td><td>Each collection</td><td>Address delays promptly</td></tr>
+<tr><td><strong>Validity</strong></td><td>Quarterly</td><td>Validate against gold standard</td></tr>
+
+<strong>Data Collection Troubleshooting:</strong>
+
+<tr><td>Problem</td><td>Likely Cause</td><td>Solution</td></tr>
+|---------|--------------|----------|
+<tr><td>Missing data</td><td>Forgotten collection</td><td>Automated reminders</td></tr>
+<tr><td>Inconsistent collection</td><td>Unclear definitions</td><td>Refine definitions, retrain</td></tr>
+<tr><td>Declining participation</td><td>Burdensome process</td><td>Simplify, integrate into workflow</td></tr>
+<tr><td>Data entry errors</td><td>Manual process</td><td>Automate where possible</td></tr>
+<tr><td>Selection bias</td><td>Convenience sampling</td><td>Randomize or stratified sampling</td></tr>
+<tr><td>Hawthorne effect</td><td>Awareness of observation</td><td>Anonymous observation, remote methods</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 4: Statistical Thinking for Healthcare | الدرس الرابع: التفكير الإحصائي للرعاية الصحية</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Understanding Variation | فهم التباين</strong>
+
+Variation is inherent in all healthcare processes. Understanding and appropriately responding to variation is fundamental to improvement work.
+
+<strong>Common Cause vs. Special Cause Variation:</strong>
+
+<tr><td>Type</td><td>Definition</td><td>Characteristics</td><td>Response</td></tr>
+|------|------------|-----------------|----------|
+<tr><td><strong>Common Cause</strong></td><td>Natural, predictable variation in a stable system</td><td>Always present, moderate range, consistent patterns</td><td>Improve the system itself</td></tr>
+<tr><td><strong>Special Cause</strong></td><td>Unexpected variation from specific assignable causes</td><td>Unpredictable, larger shifts, unusual patterns</td><td>Find and address the cause</td></tr>
+
+<strong>In Arabic | بالعربية:</strong>
+
+<tr><td>النوع</td><td>التعريف</td><td>الخصائص</td><td>الاستجابة</td></tr>
+|------|---------|---------|-----------|
+<tr><td><strong>السبب المشترك</strong></td><td>تباين طبيعي يمكن التنبؤ به في نظام مستقر</td><td>موجود دائماً، نطاق معتدل، أنماط متسقة</td><td>تحسين النظام نفسه</td></tr>
+<tr><td><strong>السبب الخاص</strong></td><td>تباين غير متوقع من أسباب قابلة للتعيين محددة</td><td>غير متوقع، تحولات أكبر، أنماط غير عادية</td><td>البحث عن السبب ومعالجته</td></tr>
+
+---
+
+<h4 class="section-sub">The Danger of Misinterpreting Variation | خطر سوء تفسير التباين</h4>
+
+<strong>Common Mistakes:</strong>
+
+<tr><td>Mistake</td><td>Result</td><td>Correct Approach</td></tr>
+|---------|--------|-----------------|
+<tr><td>Treating common cause as special cause</td><td>Overreaction, waste, demoralization</td><td>Focus on system improvement</td></tr>
+<tr><td>Treating special cause as common cause</td><td>Missing real signals</td><td>Investigate unusual patterns</td></tr>
+<tr><td>Expecting immediate, sustained results</td><td>Impatience, abandonment of good changes</td><td>Allow time for system response</td></tr>
+<tr><td>Ignoring small shifts</td><td>Missing gradual improvement</td><td>Track trends, respond to patterns</td></tr>
+<tr><td>Reacting to single points</td><td>False alarms, confusion</td><td>Use run chart rules</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 5: Practical Applications in Saudi Facilities | الدرس الخامس: التطبيقات العملية في المنشآت السعودية</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Intermediate | <strong>المستوى:</strong> متوسط
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Real-World Measurement Scenarios | سيناريوهات القياس في الواقع العملي</strong>
+
+<strong>Scenario 1: Measuring Hand Hygiene Compliance | قياس الامتثال لغسل اليدين</strong>
+
+<strong>Operational Definition:</strong>
+
+```
+MEASURE: Hand Hygiene Compliance Rate
+
+DEFINITION: Percentage of hand hygiene opportunities 
+where clinical staff performed appropriate hand hygiene 
+per WHO "My 5 Moments for Hand Hygiene"
+
+NUMERATOR: Number of hand hygiene episodes performed 
+by clinical staff during observed opportunities
+
+DENOMINATOR: Total number of hand hygiene opportunities 
+observed (calculated from WHO moment framework)
+
+POPULATION: All clinical staff (physicians, nurses, 
+technicians) working in the identified unit during 
+observation periods
+
+TIMEFRAME: Weekly collection, January 2026 - December 2026
+
+DATA SOURCE: Direct observation by trained observers 
+using standardized WHO observation tool
+
+COLLECTION METHOD: Trained observers conduct 20-minute 
+observation sessions during random times, covering 
+all shifts on rotating basis
+
+CALCULATION: (Numerator ÷ Denominator) × 100, expressed 
+as percentage
+
+RESPONSIBLE PARTY: Infection Control Team
+
+TARGET: 95% compliance
+```
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>سيناريو 1: قياس الامتثال لغسل اليدين</strong>
+
+<strong>التعريف التشغيلي:</strong>
+
+```
+المقياس: معدل الامتثال لغسل اليدين
+
+التعريف: نسبة فرص غسل اليدين التي قام فيها الموظفون 
+السريريون (الأطباء، الممرضون، الفنيون) بغسل اليدين 
+بشكل مناسب حسب إطار "لحظاتي الخمس لغسل اليدين" لمنظمة 
+الصحة العالمية
+
+البسط: عدد حلقات غسل اليدين التي نفذها الموظفون 
+السريريون أثناء الفرص المرصودة
+
+المقام: إجمالي عدد فرص غسل اليدين المرصودة (محسوب 
+من إطار لحظة منظمة الصحة العالمية)
+
+السكان: جميع الموظفين السريريين العاملين في الوحدة 
+المحددة خلال فترات الملاحظة
+
+الإطار الزمني: جمع أسبوعي، يناير 2026 - ديسمبر 2026
+
+مصدر البيانات: ملاحظة مباشرة من قبل مراقبين مدربين 
+باستخدام أداة الملاحظة الموحدة لمنظمة الصحة العالمية
+
+طريقة الجمع: يجري المراقبون المدربون جلسات ملاحظة 
+مدتها 20 دقيقة في أوقات عشوائية، تغطي جميع الورديات 
+بنمط متناوب
+
+الحساب: (البسط ÷ المقام) × 100، معبر عنه كنسبة مئوية
+
+الجهة المسؤولة: فريق مكافحة العدوى
+
+الهدف: 95% امتثال
+```
+
+---
+
+<h4 class="section-sub">Saudi Healthcare Measurement Adaptation | تكييف القياس للرعاية الصحية السعودية</h4>
+
+<strong>Cultural and Operational Considerations:</strong>
+
+<tr><td>Consideration</td><td>Adaptation</td><td>Example</td></tr>
+|---------------|------------|---------|
+<tr><td><strong>Religious Observances</strong></td><td>Schedule data collection around prayer times</td><td>Avoid observation during Jumu'ah prayer</td></tr>
+<tr><td><strong>Staffing Patterns</strong></td><td>Account for shift rotation</td><td>Sample across all shift patterns</td></tr>
+<tr><td><strong>Language</strong></td><td>Bilingual data collection tools</td><td>Arabic and English observation forms</td></tr>
+<tr><td><strong>Documentation</strong></td><td>Consider EMR integration</td><td>Automated extraction where available</td></tr>
+<tr><td><strong>Regional Variation</strong></td><td>Account for facility type</td><td>Adjust for PHC vs. tertiary hospital</td></tr>
+
+<strong>CBAHI-Specific Measurement Requirements:</strong>
+
+<tr><td>CBAHI Standard</td><td>Required Measure</td><td>Collection Frequency</td></tr>
+|---------------|------------------|---------------------|
+<tr><td>NPSG 1</td><td>Patient identification compliance</td><td>Continuous</td></tr>
+<tr><td>NPSG 2</td><td>Communication effectiveness</td><td>Quarterly</td></tr>
+<tr><td>NPSG 3</td><td>Medication safety</td><td>Continuous</td></tr>
+<tr><td>NPSG 4</td><td>Infection control</td><td>Continuous</td></tr>
+<tr><td>NPSG 5</td><td>Fall prevention</td><td>Monthly</td></tr>
+<tr><td>NPSG 6</td><td>Surgery safety</td><td>Per procedure</td></tr>
+
+---
+
+<h3 class="section-title">Lesson 6: Advanced Measurement Techniques | الدرس السادس: تقنيات القياس المتقدمة</h3>
+
+<strong>Duration:</strong> 20 minutes | <strong>Level:</strong> Advanced | <strong>المستوى:</strong> متقدم
+
+---
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>Control Charts | مخططات المراقبة</strong>
+
+Control charts (Shewhart charts) add statistical limits to help detect special cause variation more sensitively than simple run charts.
+
+<strong>Types of Control Charts:</strong>
+
+<tr><td>Chart Type</td><td>Use When</td><td>Key Feature</td></tr>
+|------------|----------|-------------|
+<tr><td><strong>X-bar chart</strong></td><td>Continuous data (means)</td><td>Tracks average of subgroups</td></tr>
+<tr><td><strong>I-MR chart</strong></td><td>Continuous data (individual)</td><td>Tracks single values with moving range</td></tr>
+<tr><td><strong>p-chart</strong></td><td>Proportion data (binary outcomes)</td><td>Tracks percentage with varying denominator</td></tr>
+<tr><td><strong>u-chart</strong></td><td>Count data (rates)</td><td>Tracks count per unit with varying denominator</td></tr>
+<tr><td><strong>c-chart</strong></td><td>Count data</td><td>Tracks count with constant opportunity</td></tr>
+
+<strong>Control Chart Components:</strong>
+
+<tr><td>Element</td><td>Definition</td><td>Purpose</td></tr>
+|---------|------------|---------|
+<tr><td><strong>Centerline</strong></td><td>Process mean</td><td>Reference for comparison</td></tr>
+<tr><td><strong>Upper Control Limit (UCL)</strong></td><td>Mean + 3σ</td><td>Signal boundary above</td></tr>
+<tr><td><strong>Lower Control Limit (LCL)</strong></td><td>Mean - 3σ</td><td>Signal boundary below</td></tr>
+<tr><td><strong>Zone A</strong></td><td>Within 1σ of centerline</td><td>Evaluate patterns</td></tr>
+<tr><td><strong>Zone B</strong></td><td>1-2σ from centerline</td><td>Evaluate patterns</td></tr>
+<tr><td><strong>Zone C</strong></td><td>2-3σ from centerline</td><td>Evaluate patterns</td></tr>
+
+---
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>مخططات المراقبة</strong>
+
+تضيف مخططات المراقبة (مخططات شيوارت) حدوداً إحصائية لمساعدة اكتشاف تباين السبب الخاص بشكل أكثر حساسية من المخططات الزمنية البسيطة.
+
+<strong>أنواع مخططات المراقبة:</strong>
+
+<tr><td>نوع المخطط</td><td>الاستخدام عندما</td><td>السمة الرئيسية</td></tr>
+|------------|----------------|----------------|
+<tr><td><strong>مخطط X-bar</strong></td><td>البيانات المستمرة (المتوسطات)</td><td>تتبع متوسط المجموعات الفرعية</td></tr>
+<tr><td><strong>مخطط I-MR</strong></td><td>البيانات المستمرة ( الفردية)</td><td>تتبع القيم الفردية مع النطاق المتحرك</td></tr>
+<tr><td><strong>مخطط p</strong></td><td>بيانات النسبة (النتائج الثنائية)</td><td>تتبع النسبة مع مقام متغير</td></tr>
+<tr><td><strong>مخطط u</strong></td><td>بيانات العد (المعدلات)</td><td>تتبع العدد لكل وحدة مع مقام متغير</td></tr>
+<tr><td><strong>مخطط c</strong></td><td>بيانات العد</td><td>تتبع العدد مع فرصة ثابتة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في الرعاية الصحية السعودية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Application</h3>
+
+<strong>Data Systems Integration:</strong>
+
+- EMR systems as primary data sources
+- NPHIES for cross-facility data
+- Quality dashboards for performance monitoring
+- Integration with CBAHI reporting requirements
+
+<strong>Common Measurement Challenges:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Challenge</td><td>Solution</td></tr>
+|-----------|----------|
+<tr><td>Data quality issues</td><td>Standardize definitions, train collectors</td></tr>
+<tr><td>Burden on staff</td><td>Integrate with existing workflows</td></tr>
+<tr><td>Limited IT capability</td><td>Use manual methods initially, automate later</td></tr>
+<tr><td>Resistance to transparency</td><td>Frame as learning, not punishment</td></tr>
+<tr><td>Inconsistent collection</td><td>Assign dedicated data collectors</td></tr>
+
+---
+
+<h3 class="section-title">التطبيق بالعربية</h3>
+
+<strong>تكامل أنظمة البيانات:</strong>
+
+- أنظمة السجلات الطبية الإلكترونية كمصادر أساسية للبيانات
+- NPHIES للبيانات عبر المرافق
+- لوحات المعلومات للجودة لمراقبة الأداء
+- التكامل مع متطلبات الإبلاغ لـ CBAHI
+
+<strong>تحديات القياس الشائعة:</strong>
+
+<tr><td>التحدي</td><td>الحل</td></tr>
+|--------|------|
+<tr><td>مشاكل جودة البيانات</td><td>توحيد التعريفات، تدريب جامعي البيانات</td></tr>
+<tr><td>العبء على الموظفين</td><td>التكامل مع سير العمل الحالي</td></tr>
+<tr><td>قدرات تكنولوجيا المعلومات المحدودة</td><td>استخدام الطرق اليدوية أولاً، الأتمتة لاحقاً</td></tr>
+<tr><td>مقاومة الشفافية</td><td>تأطيرها كتعلم وليست عقوبة</td></tr>
+<tr><td>الجمع غير المتسق</td><td>تعيين جامعي بيانات مخصصين</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Category</td></tr>
+|--------------|---------------|----------|
+<tr><td>Operational Definition</td><td>التعريف التشغيلي</td><td>Measurement</td></tr>
+<tr><td>Run Chart</td><td>مخطط زمني تشغيلي</td><td>Measurement</td></tr>
+<tr><td>Control Chart</td><td>مخطط المراقبة</td><td>Measurement</td></tr>
+<tr><td>Data Collection</td><td>جمع البيانات</td><td>Process</td></tr>
+<tr><td>Sampling</td><td>المعاينة</td><td>Methodology</td></tr>
+<tr><td>Baseline Data</td><td>بيانات خط الأساس</td><td>Measurement</td></tr>
+<tr><td>Median</td><td>الوسيط</td><td>Statistics</td></tr>
+<tr><td>Mean</td><td>المتوسط</td><td>Statistics</td></tr>
+<tr><td>Standard Deviation</td><td>الانحراف المعياري</td><td>Statistics</td></tr>
+<tr><td>Control Limits</td><td>حدود المراقبة</td><td>Statistics</td></tr>
+<tr><td>Common Cause Variation</td><td>تباين السبب المشترك</td><td>Statistics</td></tr>
+<tr><td>Special Cause Variation</td><td>تباين السبب الخاص</td><td>Statistics</td></tr>
+<tr><td>Subset Analysis</td><td>تحليل المجموعات الفرعية</td><td>Analysis</td></tr>
+<tr><td>Confidence</td><td>الثقة</td><td>Concept</td></tr>
+<tr><td>Evidence Accumulation</td><td>تراكم الأدلة</td><td>Methodology</td></tr>
+<tr><td>Scale-Up</td><td>التوسع</td><td>Implementation</td></tr>
+<tr><td>Data Quality</td><td>جودة البيانات</td><td>Measurement</td></tr>
+<tr><td>Stratified Sampling</td><td>المعاينة الطبقية</td><td>Methodology</td></tr>
+<tr><td>System Thinking</td><td>التفكير المنظومي</td><td>Science</td></tr>
+<tr><td>CBAHI</td><td>المجلس المركزي السعودي لاعتماد المؤسسات الصحية</td><td>Regulatory</td></tr>
+<tr><td>NPHIES</td><td>التبادل الوطني للمعلومات الصحية</td><td>Health IT</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Exercises | التمارين العملية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Exercise 1: Operational Definition Development</h3>
+
+Create an operational definition for a quality measure in your facility:
+
+```
+OPERATIONAL DEFINITION TEMPLATE
+================================
+
+MEASURE NAME: ____________________________
+
+NUMERATOR: _________________________________
+
+DENOMINATOR: ________________________________
+
+POPULATION:
+- Included: _______________________________
+- Excluded: _______________________________
+
+TIMEFRAME: ________________________________
+
+DATA SOURCE: ______________________________
+
+COLLECTION METHOD: _________________________
+
+CALCULATION: _______________________________
+
+RESPONSIBLE PARTY: _________________________
+
+BASELINE VALUE: _________ TARGET: _________
+```
+
+---
+
+<h3 class="section-title">Exercise 2: Run Chart Construction</h3>
+
+Using the data below, construct a run chart and identify any patterns:
+
+```
+HAND HYGIENE COMPLIANCE DATA - ICU
+====================================
+
+Week | Compliance %
+-----|-------------
+1    | 72
+2    | 68
+3    | 71
+4    | 75
+5    | 74
+6    | 78
+7    | 82   ← Training week
+8    | 85
+9    | 83
+10   | 88
+11   | 86
+12   | 90
+13   | 89
+14   | 92
+15   | 91
+16   | 94
+```
+
+<strong>Questions:</strong>
+1. What is the baseline median?
+2. Is there a shift visible?
+3. What does this suggest about the improvement?
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study: Reducing ED Wait Times | دراسة الحالة: تقليل أوقات انتظار الطوارئ</h3>
+
+<strong>Facility:</strong> Dr. Sulaiman Al-Habib Hospital, Riyadh
+<strong>Challenge:</strong> 45-minute average door-to-provider time
+
+<strong>Measurement Approach:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Phase</td><td>Action</td><td>Data Collected</td></tr>
+|-------|--------|----------------|
+<tr><td><strong>Baseline</strong></td><td>4-week continuous data collection</td><td>Daily averages, shift variation</td></tr>
+<tr><td><strong>PDSA 1</strong></td><td>Triage protocol modification</td><td>Pre/post comparison, subset by acuity</td></tr>
+<tr><td><strong>PDSA 2</strong></td><td>Laboratory protocol changes</td><td>Subset by labs ordered</td></tr>
+<tr><td><strong>PDSA 3</strong></td><td>Staffing optimization</td><td>Subset by shift, day vs. night</td></tr>
+<tr><td><strong>Sustainability</strong></td><td>Ongoing monitoring</td><td>Weekly control chart</td></tr>
+
+<strong>Key Findings from Subset Analysis:</strong>
+
+<tr><td>Subset</td><td>Finding</td><td>Action</td></tr>
+|--------|---------|--------|
+<tr><td>By Acuity Level</td><td>Level 4-5 patients wait longer</td><td>Implement fast-track for lower acuity</td></tr>
+<tr><td>By Shift</td><td>Nights longer than days</td><td>Adjust night staffing</td></tr>
+<tr><td>By Time of Day</td><td>2-6pm surge</td><td>Add peak-period coverage</td></tr>
+<tr><td>By Lab Orders</td><td>With labs = longer wait</td><td>Implement standing orders for common tests</td></tr>
+</tbody></table></div>
+<strong>Results:</strong>
+- Baseline: 45 minutes
+- Post-intervention: 28 minutes
+- Sustained for 12 months
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Action Items | خطة العمل</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>Identify one quality measure in your unit</div>
+<div class="checklist-item"><span class="checkbox"></span>Develop a complete operational definition</div>
+<div class="checklist-item"><span class="checkbox"></span>Train data collectors on definitions</div>
+<div class="checklist-item"><span class="checkbox"></span>Begin baseline data collection (minimum 10 points)</div>
+<div class="checklist-item"><span class="checkbox"></span>Construct your first run chart</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify patterns using run chart rules</div>
+<div class="checklist-item"><span class="checkbox"></span>Conduct subset analysis on your data</div>
+<div class="checklist-item"><span class="checkbox"></span>Plan and execute first PDSA cycle</div>
+<div class="checklist-item"><span class="checkbox"></span>Update run chart with new data</div>
+<div class="checklist-item"><span class="checkbox"></span>Present findings to quality committee</div>
+
+<h3 class="section-title">قائمة الإجراءات بالعربية</h3>
+
+<div class="checklist-item"><span class="checkbox"></span>تحديد مقياس جودة واحد في وحدتك</div>
+<div class="checklist-item"><span class="checkbox"></span>تطوير تعريف تشغيلي كامل</div>
+<div class="checklist-item"><span class="checkbox"></span>تدريب جامعي البيانات على التعريفات</div>
+<div class="checklist-item"><span class="checkbox"></span>بدء جمع بيانات خط الأساس (10 نقاط كحد أدنى)</div>
+<div class="checklist-item"><span class="checkbox"></span>بناء أول مخطط زمني لك</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديد الأنماط باستخدام قواعد المخطط الزمني</div>
+<div class="checklist-item"><span class="checkbox"></span>إجراء تحليل المجموعات الفرعية على بياناتك</div>
+<div class="checklist-item"><span class="checkbox"></span>التخطيط وتنفيذ أول دورة PDSA</div>
+<div class="checklist-item"><span class="checkbox"></span>تحديث المخطط الزمني بالبيانات الجديدة</div>
+<div class="checklist-item"><span class="checkbox"></span>تقديم النتائج للجنة الجودة</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Resources</h3>
+
+1. <strong>IHI Quality Improvement Essentials Toolkit</strong>
+   https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+
+2. <strong>ProQI - Improvement Science Resources</strong>
+   https://www.ihi.org/ImprovementMap
+
+3. <strong>Langley, G.L., et al. (2009).</strong> The Improvement Guide (2nd ed.). Jossey-Bass.
+
+4. <strong>Wheeler, D.J. (2000).</strong> Understanding Variation: The Key to Managing Chaos. SPC Press.
+
+5. <strong>CBAHI Standards for Healthcare Quality</strong>
+   https://www.cbahi.gov.sa/
+
+6. <strong>MOH National Quality Indicators</strong>
+   https://www.moh.gov.sa/
+
+<h3 class="section-title">مصادر عربية</h3>
+
+1. <strong>إرشادات الجودة Ministry of Health</strong>
+   https://www.moh.gov.sa/
+
+2. <strong>معايير CBAHI</strong>
+   https://www.cbahi.gov.sa/
+
+3. <strong>NPHIES Platform</strong>
+   https://www.ihi.org.sa/nphies
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Property</td><td>English</td><td>العربية</td></tr>
+|----------|---------|---------|
+<tr><td><strong>Code</strong></td><td>QI 103</td><td>الكود</td></tr>
+<tr><td><strong>Title</strong></td><td>Testing and Measuring Changes with PDSA Cycles</td><td>اختبار وقياس التغييرات باستخدام دورات PDSA</td></tr>
+<tr><td><strong>Format</strong></td><td>Online, On-Demand</td><td>عبر الإنترنت</td></tr>
+<tr><td><strong>Duration</strong></td><td>120 minutes (2 hours)</td><td>120 دقيقة</td></tr>
+<tr><td><strong>CE Credits</strong></td><td>2.0 Credits</td><td>2.0 ساعة معتمدة</td></tr>
+<tr><td><strong>Level</strong></td><td>Intermediate to Advanced</td><td>متوسط إلى متقدم</td></tr>
+<tr><td><strong>Language</strong></td><td>Bilingual AR/EN</td><td>ثنائي اللغة</td></tr>
+<tr><td><strong>Provider</strong></td><td>IHI Open School / BrainSAIT</td><td>مزود الدورة</td></tr>
+</tbody></table></div>
+---
+
+<strong>© 2026 BrainSAIT Academy | Powered by IHI Open School</strong>
+<strong>© 2026 أكاديمية BrainSAIT | مدعوم من IHI Open School</strong>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/qi-101.html" class="related-card">
+            <h4>Introduction to Health Care Improvement</h4>
+            <p class="rtl">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+          <a href="/courses/qi-102.html" class="related-card">
+            <h4>How to Improve with the Model for Improvement</h4>
+            <p class="rtl">QI 102: كيفية التحسين باستخدام نموذج التحسين</p>
+            <span class="related-card-duration">⏱ 120 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-qi-103') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-qi-103', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('qi-103')) enrolled.push('qi-103');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'qi-103');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-qi-103') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-qi-103', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-qi-103', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-qi-103', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-qi-103', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-qi-103') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Testing and Measuring Changes with PDSA Cycles',
+        slug: 'qi-103',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-qi-103') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-qi-103.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Providing Age-Friendly Care to Older Adults | BrainSAIT Academy</title>
+  <meta name="description" content="Providing Age-Friendly Care to Older Adults - Full bilingual course on Person- and Family-Centered Care">
+  <meta name="keywords" content="Person- and Family-Centered Care, IHI, Open School, Age-Friendly Care, Geriatric Care, PFC">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Providing Age-Friendly Care to Older Adults</h3>
+        <p>PFC-203 • 90 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lessons | الدروس</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">English Overview | نظرة عامة بالإنج...</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Learning Outcomes | مخرجات التعلم</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 1 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 2 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 3 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 4 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lesson 5 Detailed Content | المحتوى...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Interactive Exercises | التمارين ال...</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Assessment | التقييم</span>
+          </li>
+          <li class="section-item " data-section="12" onclick="scrollToSection(12)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="13" onclick="scrollToSection(13)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="14" onclick="scrollToSection(14)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="15" onclick="scrollToSection(15)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="16" onclick="scrollToSection(16)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Additional Resources and Implementa...</span>
+          </li>
+          <li class="section-item " data-section="17" onclick="scrollToSection(17)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="18" onclick="scrollToSection(18)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">تفاصيل الدورة</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Person- and Family-Centered Care</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Providing Age-Friendly Care to Older Adults</h1>
+        <p class="course-title-ar rtl">PFC 203: تقديم رعاية صديقة لكبار السن</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">90</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">19</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          After completing this course, you will be able to:
+
+بعد إكمال هذه الدورة، ستتمكن من:
+
+- Define age-friendly care and explain its importance in modern healthcare.
+- Describe the 4Ms framework (What Matters, Medications, Mentation, Mobility) as the foundation of age-friendly care.
+- Assess current state of 4Ms implementation in your healthcare setting.
+- Identify six steps for integrating 4Ms into standard care.
+- Apply the 4Ms framework in Saudi healthcare settings to improve care for older adults.
+- Develop action plans for age-friendly care improvement aligned with Saudi regulations and Vision 2030.
+
+- تعريف الرعاية الصديقة للشيخوخة وتوضيح أهميتها في الرعاية الصحية الحديثة.
+- وصف إطار الأبعاد الأربعة (ما يهم، والأدوية، والوظائف الإدراكية، والحركة) كأساس الرعاية الصيقة للشيخوخة.
+- تقييم الوضع الحالي لتطبيق الأبعاد الأربعة في setting الرعاية الصحية الخاص بك.
+- تحديد ستة خطوات لدمج الأبعاد الأربعة في الرعاية القياسية.
+- تطبيق إطار الأبعاد الأربعة في بيئات الرعاية الصحية السعودية لتحسين رعاية كبار السن.
+- تطوير خطط عمل لتحسين الرعاية الصديقة للشيخوخة بما يتوافق مع اللوائح السعودية ورؤية 2030.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lessons | الدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: Understanding Age-Friendly Health Systems | فهم الأنظمة الصحية الصديقة للشيخوخة</h3>
+This lesson introduces the concept of age-friendly care, explains why it matters in modern healthcare, and presents the 4Ms framework as the evidence-based model for high-quality care for older adults.
+
+يقدم هذا الدرس مفهوم الرعاية الصديقة للشيخوخة، ويوضح لماذا هي مهمة في الرعاية الصحية الحديثة، ويقدم إطار الأبعاد الأربعة كنموذج قائم على الأدلة للرعاية عالية الجودة لكبار السن.
+
+<strong>Estimated Time:</strong> 20 minutes | الوقت المقدر: 20 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 2: The 4Ms Framework Explained | شرح إطار الأبعاد الأربعة</h3>
+This lesson provides detailed exploration of each of the 4Ms: What Matters, Medications, Mentation, and Mobility. You will learn what each dimension means, why it matters, and how to assess and address it in clinical practice.
+
+يستكشف هذا الدرس بالتفصيل كل من الأبعاد الأربعة: ما يهم، والأدوية، والوظائف الإدراكية، والحركة. ستتعلم ماذا يعني كل بُعد، ولماذا هو مهم، وكيفية تقييمه ومعالجته في الممارسة السريرية.
+
+<strong>Estimated Time:</strong> 30 minutes | الوقت المقدر: 30 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 3: Assessing Current State and Planning | تقييم الوضع الراهن والتخطيط</h3>
+This lesson provides tools and frameworks for assessing the current state of 4Ms implementation in your organization, identifying gaps, and developing improvement plans.
+
+يوفر هذا الدرس أدوات وأطر لتقييم الوضع الحالي لتطبيق الأبعاد الأربعة في مؤسستك، وتحديد الفجوات، وتطوير خطط تحسين.
+
+<strong>Estimated Time:</strong> 25 minutes | الوقت المقدر: 25 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 4: Implementing the 4Ms in Clinical Practice | تطبيق الأبعاد الأربعة في الممارسة السريرية</h3>
+This lesson focuses on practical implementation strategies, including workflow integration, documentation, and team-based approaches to delivering 4Ms-aligned care.
+
+يركز هذا الدرس على استراتيجيات التطبيق العملي، بما في ذلك تكامل سير العمل والتوثيق والنهج القائم على الفريق لتقديم رعاية متوافقة مع الأبعاد الأربعة.
+
+<strong>Estimated Time:</strong> 25 minutes | الوقت المقدر: 25 دقيقة
+
+---
+
+<h3 class="section-title">Lesson 5: Age-Friendly Care in Saudi Healthcare Context | الرعاية الصديقة للشيخوخة في سياق الرعاية الصحية السعودي</h3>
+This lesson addresses the specific considerations for age-friendly care in Saudi Arabia, including regulatory requirements, cultural factors, and integration with existing quality improvement initiatives.
+
+يتناول هذا الدرس الاعتبارات المحددة للرعاية الصديقة للشيخوخة في المملكة العربية السعودية، بما في ذلك المتطلبات التنظيمية والعوامل الثقافية، والتكامل مع مبادرات تحسين الجودة القائمة.
+
+<strong>Estimated Time:</strong> 20 minutes | الوقت المقدر: 20 دقيقة
+
+---
+
+<strong>Estimated Total Time of Completion</strong>: 2 hours
+
+<strong>الوقت الإجمالي المقدر للإكمال</strong>: ساعتان
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">English Overview | نظرة عامة بالإنجليزية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          This course teaches the essential elements of age-friendly care using the 4Ms framework (What Matters, Medications, Mentation, Mobility). Through evidence-based approaches and practical tools, healthcare professionals will learn how to assess, plan, and implement age-friendly care in their clinical settings. The course is adapted for Saudi Arabia's healthcare environment, considering the aging population trends, Vision 2030 initiatives, and CBAHI requirements.
+
+يعلم هذا الدورة العناصر الأساسية للرعاية الصديقة للشيخوخة باستخدام إطار الأبعاد الأربعة (ما يهم، والأدوية، والوظائف الإدراكية، والحركة). من خلال منهجيات قائمة على الأدلة وأدوات عملية، سيتعلم الممارسون الصحيين كيفية تقييم وتخطيط وتنفيذ الرعاية الصيدة للشيخوخة في settings السريرية الخاصة بهم. الدورة مُكيَّفة لبيئة الرعاية الصحية السعودية، مع الأخذ بعين الاعتبار اتجاهات السكان كبار السن ومبادرات رؤية 2030 ومتطلبات هيئة الصحة.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Learning Outcomes | مخرجات التعلم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+Upon successful completion of this course, participants will be able to:
+
+1. <strong>Define</strong> age-friendly healthcare and explain why it is essential for modern healthcare systems.
+
+2. <strong>Describe</strong> the 4Ms framework and explain how each dimension contributes to quality care for older adults.
+
+3. <strong>Assess</strong> the current state of 4Ms implementation in their clinical setting using standardized assessment tools.
+
+4. <strong>Develop</strong> an improvement plan for integrating 4Ms into standard care using PDSA methodology.
+
+5. <strong>Implement</strong> practical strategies for delivering 4Ms-aligned care in daily clinical practice.
+
+6. <strong>Apply</strong> age-friendly care principles in the Saudi healthcare context, considering cultural factors and regulatory requirements.
+
+<h3 class="section-title">العربية</h3>
+
+عند إكمال هذه الدورة بنجاح، سيتمكن المشاركون من:
+
+1. <strong>تعريف</strong> الرعاية الصحية الصديقة للشيخوخة وتوضيح why هي ضرورية لأنظمة الرعاية الصحية الحديثة.
+
+2. <strong>وصف</strong> إطار الأبعاد الأربعة وتوضيح كيف يساهم كل بُعد في الرعاية عالية الجودة لكبار السن.
+
+3. <strong>تقييم</strong> الوضع الحالي لتطبيق الأبعاد الأربعة في setting السريري الخاص بهم باستخدام أدوات تقييم موحدة.
+
+4. <strong>تطوير</strong> خطة تحسين لدمج الأبعاد الأربعة في الرعاية القياسية باستخدام منهجية PDSA.
+
+5. <strong>تنفيذ</strong> استراتيجيات عملية لتقديم رعاية متوافقة مع الأبعاد الأربعة في الممارسة السريرية اليومية.
+
+6. <strong>تطبيق</strong> مبادئ الرعاية الصديقة للشيخوخة في سياق الرعاية الصحية السعودي، مع الأخذ بعين الاعتبار العوامل الثقافية ومتطلبات تنظيمية.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 1 Detailed Content | المحتوى التفصيلي للدرس الأول</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Understanding Age-Friendly Health Systems | فهم الأنظمة الصحية الصديقة للشيخوخة</h3>
+
+<h4 class="section-sub">Why Age-Friendly Care Matters | لماذا الرعاية الصديقة للشيخوخة مهمة</h4>
+
+The world's population is aging rapidly. By 2030, the global population aged 60 and older will reach 1.4 billion. In Saudi Arabia, the percentage of population aged 60 and over is expected to increase significantly, creating urgent need for healthcare systems to adapt.
+
+يتقدم سكان العالم بسرعة. بحلول عام 2030، سيصل عدد السكان الذين تبلغ أعمارهم 60 عامًا أو أكثر إلى 1.4 مليار. في المملكة العربية السعودية، من المتوقع أن يزيد عدد السكان الذين تبلغ أعمارهم 60 عامًا أو أكثر بشكل كبير، مما يخلق حاجة ماسة لأنظمة الرعاية الصحية للتكيف.
+
+<strong>The Challenge | التحدي:</strong>
+
+Older adults often have multiple chronic conditions, take multiple medications, and are at higher risk for adverse events. Traditional healthcare often fails to address their specific needs, leading to:
+
+لدى كبار السن غالبًا حالات مزمنة متعددة ويتناولون أدوية متعددة并且 معرضون لخطر أعلى للحداث السيئة. تفشل الرعاية الصحية التقليدية غالبًا في معالجة احتياجاتهم المحددة، مما يؤدي إلى:
+
+- Unnecessary hospitalizations
+- Medication-related harm
+- Functional decline
+- Poor quality of life
+- Caregiver stress
+
+- hospitalizations غير ضرورية
+- ضرر متعلق بالأدوية
+- تراجع وظيفي
+- جودة حياة رديئة
+-的压力 على مقدمي الرعاية
+
+<h4 class="section-sub">The Solution: Age-Friendly Care | الحل: الرعاية الصديقة للشيخوخة</h4>
+
+Age-friendly care is healthcare that:
+- Is safe
+- Is based on what matters to the older adult
+- Avoids harmful medications
+- Prevents and treats delirium
+- Prevents and treats mobility problems
+
+الرعاية الصديقة للشيخوخة هي رعاية صحية:
+- آمنة
+- مبنية على ما يهم كبار السن
+- تتجنب الأدوية الضارة
+- prevenir وtreat الهذيان
+-prevent وtreat مشاكل الحركة
+
+<strong>The 4Ms Framework | إطار الأبعاد الأربعة:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>4Ms</td><td>English</td><td>العربية</td><td>Focus</td></tr>
+|-----|---------|---------|-------|
+<tr><td><strong>What Matters</strong></td><td>Know and align care with each older adult's specific health goals, values, and preferences</td><td>تعرف على أهداف وقيم وتفضيلات الصحة لكل كبير السن ووافقها</td><td>Person-centered outcomes</td></tr>
+<tr><td><strong>Medications</strong></td><td>If medications are necessary, use age-friendly medications that do not interfere with What Matters, Mobility, or Mentation</td><td>إذا كانت الأدوية ضرورية، استخدم أدوية صديقة للشيخوخة لا تتدخل مع ما يهم أو الحركة أو الوظائف الإدراكية</td><td>Medication safety</td></tr>
+<tr><td><strong>Mentation</strong></td><td>Prevent, identify, treat, and manage depression, dementia, and delirium</td><td>ومنع وidentify وtreat وإدارة الاكتئاب والخرف والهذيان</td><td>Cognitive health</td></tr>
+<tr><td><strong>Mobility</strong></td><td>Ensure safe mobility and function for every older adult</td><td>ضمان حركة وآمنة ووظيفة لكل كبير السن</td><td>Physical function</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 2 Detailed Content | المحتوى التفصيلي للدرس الثاني</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">The 4Ms Framework Explained | شرح إطار الأبعاد الأربعة</h3>
+
+<h4 class="section-sub">M1: What Matters | ما يهم</h4>
+
+<strong>Definition | التعريف:</strong>
+
+"Know and align care with each older adult's specific health goals, values, and preferences."
+
+"تعرف على أهداف وقيم وتفضيلات الصحة لكل كبير السن ووافقها."
+
+<strong>Why it matters | لماذا هو مهم:</strong>
+
+Understanding what matters to the older adult ensures that care is focused on their priorities. This improves satisfaction, reduces unnecessary interventions, and honors the person's dignity and autonomy.
+
+فهم ما يهم كبير السن يضمن أن الرعاية مركزة على أولوياته. هذا يحسن الرضا ويقلل التدخلات غير الضرورية ويكرم كرامة واستقلالية الشخص.
+
+<strong>How to assess | كيفية التقييم:</strong>
+
+- Ask: "What is most important to you?"
+- Ask: "What are you hoping to achieve?"
+- Ask: "What does a good day look like for you?"
+- Ask: "What are you most worried about?"
+
+- اسأل: "ما الأهم بالنسبة لك؟"
+- اسأل: "ما الذي تأمل تحقيقه؟"
+- اسأل: "كيف يبدو يوم جيد من وجهة نظرك؟"
+- اسأل: "ما الذي يقلقك أكثر؟
+
+<strong>In Arabic | بالعربية:</strong>
+
+- "ما هو أهم شيء بالنسبة لك؟"
+- "ما الذي تتمنى تحقيقه؟"
+- "كيف يبدو يوم جيد بالنسبة لك؟"
+- "ما الذي يقلقك أكثر؟"
+
+<h4 class="section-sub">M2: Medications | الأدوية</h4>
+
+<strong>Definition | التعريف:</strong>
+
+"If medications are necessary, use age-friendly medications that do not interfere with What Matters, Mobility, or Mentation."
+
+"إذا كانت الأدوية ضرورية، استخدم أدوية صديقة للشيخوخة لا تتدخل مع ما يهم أو الحركة أو الوظائف الإدراكية."
+
+<strong>Why it matters | لماذا هو مهم:</strong>
+
+Older adults are often on multiple medications, increasing risk of adverse drug events. Many medications that are appropriate for younger adults can cause problems in older adults due to changes in metabolism, increased sensitivity, and altered pharmacodynamics.
+
+غالبًا يكون كبار السن على أدوية متعددة، مما يزيد من خطر أحداث药物 السلبية. العديد من الأدوية المناسبة للبالغين الأصغر يمكن أن تسبب مشاكل لكبار السن بسبب التغيرات في الأيضIncreased الحساسية وpharmacodynamics المعدلة.
+
+<strong>Key principles | المبادئ الرئيسية:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Principle</td><td>English</td><td>العربية</td></tr>
+|-----------|---------|---------|
+<tr><td><strong>Avoid</strong></td><td>Avoid high-risk medications (anticholinergics, sedatives, etc.)</td><td>تجنب الأدوية عالية الخطورة (مضادات الكولين، المهدئات، إلخ)</td></tr>
+<tr><td><strong>Minimize</strong></td><td>Minimize number of medications</td><td>تقليل عدد الأدوية</td></tr>
+<tr><td><strong>Review</strong></td><td>Regularly review medications for continued need</td><td>مراجعة الأدوية بانتظام untuk الحاجة المستمرة</td></tr>
+<tr><td><strong>Adjust</strong></td><td>Adjust doses based on kidney function</td><td>تعديل الجرعات بناءً على وظائف الكلى</td></tr>
+
+<strong>Beers Criteria | معايير بيرز:</strong>
+
+The AGS Beers Criteria lists medications to avoid or use with caution in older adults. Key categories to avoid:
+
+تسرد معايير بيرز منAGSالأدوية التي يجب تجنبها أو استخدامها بحذر في كبار السن. الفئات الرئيسية للتجنب:
+
+- Anticholinergic medications
+- Sedative-hypnotics
+- Non-benzodiazepine hypnotics
+- Muscle relaxants
+- First-generation antihistamines
+
+- الأدوية المضادة للكولين
+- المهدئات-المنومات
+- المنومات غير البنزوديازيبينية
+- مرخيات العضلات
+- مضادات الهيستامين من الجيل الأول
+
+<h4 class="section-sub">M3: Mentation | الوظائف الإدراكية</h4>
+
+<strong>Definition | التعريف:</strong>
+
+"Prevent, identify, treat, and manage depression, dementia, and delirium."
+
+"منع وتحديد وعلاج وإدارة الاكتئاب والخرف والهذيان."
+
+<strong>Why it matters | لماذا هو مهم:</strong>
+
+Cognitive issues are common in older adults and significantly impact their care experience and outcomes. Unrecognized cognitive impairment leads to:
+
+المشاكل المعرفية شائعة في كبار السن وتؤثر بشكل كبير على تجربة الرعاية ونتائجها. عدم التعرف على ضعف Cognition يؤدي إلى:
+
+- Inability to participate in care decisions
+- Higher risk of adverse events
+- Poor medication adherence
+- Functional decline
+
+- عدم القدرة على المشاركة في قرارات الرعاية
+- مخاطر أعلى للحداث السلبية
+- ضعف adherence للأدوية
+- تراجع وظيفي
+
+<strong>Three Key Conditions | ثلاث حالات رئيسية:</strong>
+
+<tr><td>Condition</td><td>Description</td><td>Key Signs</td></tr>
+|-----------|-------------|-----------|
+<tr><td><strong>Dementia</strong></td><td>Progressive cognitive decline</td><td>Memory loss, disorientation, functional decline</td></tr>
+<tr><td><strong>Delirium</strong></td><td>Acute confusional state</td><td>Sudden change, fluctuating course, inattention</td></tr>
+<tr><td><strong>Depression</strong></td><td>Persistent low mood</td><td>Sad mood, loss of interest, functional changes</td></tr>
+
+<tr><td>الحالة</td><td>الوصف</td><td>العلامات الرئيسية</td></tr>
+|--------|------|-------------------|
+<tr><td><strong>الخرف</strong></td><td>تراجع معرفي تدريجي</td><td>فقدان الذاكرة، فقدان التوجيه، تراجع وظيفي</td></tr>
+<tr><td><strong>الهذيان</strong></td><td>حالة ارتباك حادة</td><td>تغيير مفاجئ، course متقلب، lack of attention</td></tr>
+<tr><td><strong>الاكتئاب</strong></td><td>مزاج منخفض مستمر</td><td>مزاج حزن، فقدان الاهتمام، تغييرات وظيفية</td></tr>
+</tbody></table></div>
+<h4 class="section-sub">M4: Mobility | الحركة</h4>
+
+<strong>Definition | التعريف:</strong>
+
+"Ensure safe mobility and function for every older adult."
+
+"ضمان حركة وآمنة ووظيفة لكل كبير السن."
+
+<strong>Why it matters | لماذا هو مهم:</strong>
+
+Maintaining mobility is essential for independence, quality of life, and prevention of complications. Immobility leads to:
+
+الحفاظ على الحركة ضروري للاستقلالية وجودة الحياة والوقاية من المضاعفات.Lack of الحركة يؤدي إلى:
+
+- Pressure injuries
+- Deep vein thrombosis
+- Muscle deconditioning
+- Increased fall risk
+- Depression
+
+- إصابات الضغط
+- تجلط الأوردة العميقة
+- ضعف العضلات
+- Increased خطر السقوط
+- الاكتئاب
+
+<strong>Assessment | التقييم:</strong>
+
+- Ask about ability to walk and balance
+- Observe gait and transfers
+- Assess fall risk
+- Review history of falls
+- Check for pain affecting mobility
+
+- اسأل عن القدرة على المشي والتوازن
+- راقب المشي والانتقالات
+- قيّم خطر السقوط
+- راجع تاريخ السقوط
+- تحقق من الألم الذي يؤثر على الحركة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 3 Detailed Content | المحتوى التفصيلي للدرس الثالث</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Assessing Current State and Planning | تقييم الوضع الراهن والتخطيط</h3>
+
+<h4 class="section-sub">Step 1: Understand Current State | الخطوة 1: فهم الوضع الراهن</h4>
+
+Before improving, you must understand where you are now. Use this assessment framework:
+
+قبل التحسين، يجب أن تفهم أين أنت الآن. استخدم إطار التقييم هذا:
+
+<strong>4Ms Current State Assessment | تقييم الوضع الراهن للأبعاد الأربعة:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>4M</td><td>Assessment Questions</td><td>Finding</td></tr>
+|----|----------------------|---------|
+<tr><td><strong>What Matters</strong></td><td>Do we document goals and preferences? Are they used in care planning?</td></tr>
+<tr><td><strong>Medications</strong></td><td>Do we review medications for high-risk drugs? Do we adjust for age?</td></tr>
+<tr><td><strong>Mentation</strong></td><td>Do we screen for cognitive issues? Are delirium risk factors assessed?</td></tr>
+<tr><td><strong>Mobility</strong></td><td>Do we assess mobility and fall risk? Is mobility promoted in care?</td></tr>
+
+<tr><td>4M</td><td>أسئلة التقييم</td><td>النتيجة</td></tr>
+|----|--------------|--------|
+<tr><td><strong>ما يهم</strong></td><td>هل نوثق الأهداف والتفضيلات؟ هل تُستخدم في تخطيط الرعاية؟</td></tr>
+<tr><td><strong>الأدوية</strong></td><td>هل نراجع الأدوية untuk drugs عالية الخطورة؟ هل نعدّل according للعمر؟</td></tr>
+<tr><td><strong>الوظائف الإدراكية</strong></td><td>هل نفحص للمشاكل المعرفية؟ هل يتم تقييم عوامل خطر الهذيان؟</td></tr>
+<tr><td><strong>الحركة</strong></td><td>هل نقيم الحركة وخطر السقوط؟ هل يتم تعزيز الحركة في الرعاية؟</td></tr>
+
+<h4 class="section-sub">Step 2: Identify Gaps | الخطوة 2: تحديد الفجوات</h4>
+
+After assessment, identify gaps between current practice and ideal practice:
+
+بعد التقييم، حدد الفجوات بين الممارسة الحالية والمثالية:
+
+<strong>Gap Analysis Template | نموذج تحليل الفجوات:</strong>
+
+<tr><td>Gap</td><td>Current Practice</td><td>Ideal Practice</td><td>Priority</td></tr>
+|-----|------------------|----------------|----------|
+<tr><td>Example: No goals documented</td><td>Goals not asked or recorded</td><td>Goals documented and used</td><td>High</td></tr>
+<tr><td>Example: High-risk meds used</td><td>Anticholinergics prescribed</td><td>Safer alternatives used</td><td>High</td></tr>
+
+<tr><td>الفجوة</td><td>الممارسة الحالية</td><td>الممارسة المثالية</td><td>الأولوية</td></tr>
+|--------|-----------------|------------------|----------|
+<tr><td>مثال: لا توجد أهداف موثقة</td><td>لم تُسأل أو تُسجل الأهداف</td><td>الأهداف موثقة ومُستخدمة</td><td>عالية</td></tr>
+<tr><td>مثال: أدوية عالية الخطورة مستخدمة</td><td>مضادات الكولين موصولة</td><td>بدائل أكثر أمانًا مستخدمة</td><td>عالية</td></tr>
+
+<h4 class="section-sub">Step 3: Develop Improvement Plan | الخطوة 3: تطوير خطة التحسين</h4>
+
+Use SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound):
+
+استخدم أهداف SMART (محددة، قابلة للقياس، قابلة للتحقيق، ملائمة، محددة زمنيًا):
+
+<strong>Sample Improvement Goals | أهداف تحسين نموذجية:</strong>
+
+<tr><td>4M</td><td>Goal</td><td>Measure</td><td>Timeline</td></tr>
+|----|------|---------|----------|
+<tr><td>What Matters</td><td>Document goals for 80% of patients 65+</td><td>% with documented goals</td><td>3 months</td></tr>
+<tr><td>Medications</td><td>Reduce anticholinergic prescriptions by 50%</td><td>Number of anticholinergics prescribed</td><td>6 months</td></tr>
+<tr><td>Mentation</td><td>Screen all inpatients for delirium</td><td>% screened</td><td>3 months</td></tr>
+<tr><td>Mobility</td><td>Assess fall risk for all patients 65+</td><td>% assessed</td><td>3 months</td></tr>
+
+<tr><td>البُعد</td><td>الهدف</td><td>المقياس</td><td>الجدول الزمني</td></tr>
+|--------|------|---------|---------------|
+<tr><td>ما يهم</td><td>توثيق الأهداف لـ 80% من المرضى 65+</td><td>% بالأهداف الموثقة</td><td>3 أشهر</td></tr>
+<tr><td>الأدوية</td><td>تقليل الوصف بمضادات الكولين بنسبة 50%</td><td>عدد مضادات الكolone الموصولة</td><td>6 أشهر</td></tr>
+<tr><td>الهذيان</td><td>فحص جميع المرضى الداخليين للهذيان</td><td>% تم فحصهم</td><td>3 أشهر</td></tr>
+<tr><td>الحركة</td><td>تقييم خطر السقوط لجميع المرضى 65+</td><td>% تم تقييمهم</td><td>3 أشهر</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 4 Detailed Content | المحتوى التفصيلي للدرس الرابع</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Implementing the 4Ms in Clinical Practice | تطبيق الأبعاد الأربعة في الممارسة السريرية</h3>
+
+<h4 class="section-sub">Six Steps for Integration | ستة خطوات للدمج</h4>
+
+The Institute for Healthcare Improvement describes six steps for integrating 4Ms into standard care:
+
+يصف معهد تحسين الرعاية الصحية ستة خطوات لدمج الأبعاد الأربعة في الرعاية القياسية:
+
+<strong>Step 1: Understand Your Current State | الخطوة 1: فهم وضعك الراهن</strong>
+
+As discussed in Lesson 3, assess current 4Ms practices in your setting.
+
+كما ناقشنا في الدرس 3، قيّم ممارسات الأبعاد الأربعة الحالية في setting الخاص بك.
+
+<strong>Step 2: Describe Care Consistent with the 4Ms | الخطوة 2: وصف الرعاية المتوافقة مع الأبعاد الأربعة</strong>
+
+Create clear definition of what 4Ms-aligned care looks like in your setting:
+
+إنشاء تعريف واضح لما تبدو عليه الرعاية المتوافقة مع الأبعاد الأربعة في setting الخاص بك:
+
+- What questions will you ask?
+- What assessments will you complete?
+- What documentation is needed?
+- What interventions will you provide?
+
+- ما الأسئلة التي ستطرحها؟
+- ما التقييمات التي ستكملها؟
+- ما التوثيق المطلوب؟
+- ما التدخلات التي ستقدمها؟
+
+<strong>Step 3: Design or Adapt Workflow | الخطوة 3: تصميم أو تكييف سير العمل</strong>
+
+Integrate 4Ms into existing workflows:
+
+دمج الأبعاد الأربعة في سير العمل القائم:
+
+- When will 4Ms assessments happen? (admission, daily, discharge)
+- Who will complete them? (nurses, physicians, others)
+- Where will they be documented? (EHR, paper)
+- How will information be communicated?
+
+- متى ستحدث تقييمات الأبعاد الأربعة؟ (دخول، يومي، خروج)
+- Who سيكملها؟ (ممرضات، أطباء، آخرون)
+- Where ستُوثق؟ (السجل الإلكتروني، ورقي)
+- How سيتم توصيل المعلومات؟
+
+<strong>Step 4: Provide Care | الخطوة 4: تقديم الرعاية</strong>
+
+Implement 4Ms-aligned care:
+
+تنفيذ الرعاية المتوافقة مع الأبعاد الأربعة:
+
+- Use standardized assessment tools
+- Document findings
+- Implement interventions
+- Communicate across team
+
+- استخدام أدوات تقييم موحدة
+- توثيق النتائج
+- تنفيذ التدخلات
+- التواصل عبر الفريق
+
+<strong>Step 5: Study Your Performance | الخطوة 5: دراسة أدائك</strong>
+
+Measure and analyze your 4Ms performance:
+
+قيس وحلل أداء الأبعاد الأربعة:
+
+- Track process measures
+- Track outcome measures
+- Collect feedback from patients and staff
+- Identify what's working and what's not
+
+- تتبع measures العملية
+- تتبع measures النتائج
+- جمع ملاحظات من المرضى والموظفين
+- تحديد ما يعمل وما لا يعمل
+
+<strong>Step 6: Improve and Sustain | الخطوة 6: تحسين واستدامة</strong>
+
+Use PDSA cycles to improve and sustain:
+
+استخدم دورات PDSA للتحسين والاستدامة:
+
+- Test changes
+- Spread successful changes
+- Continuously monitor
+- Adjust as needed
+
+- اختبار التغييرات
+- نشر التغييرات الناجحة
+- المراقبة المستمرة
+-_adjust حسب الحاجة
+
+<h4 class="section-sub">Practical Implementation Tools | أدوات التطبيق العملي</h4>
+
+<strong>4Ms Screening Questions | أسئلة فحص الأبعاد الأربعة:</strong>
+
+<strong>What Matters:</strong>
+- "What are your main health concerns?"
+- "What is most important for us to know about you?"
+
+<strong>Medications:</strong>
+- "What medications are you taking?"
+- "Have you had any side effects?"
+
+<strong>Mentation:</strong>
+- "Have you been feeling confused or having trouble thinking clearly?"
+- "Have you been feeling sad or down?"
+
+<strong>Mobility:</strong>
+- "Have you fallen in the past year?"
+- "Do you have any trouble walking?"
+
+<strong>ما يهم:</strong>
+- "ما هي مخاوفك الصحية الرئيسية؟"
+- "ما الأهم بالنسبة لنا أن نعرفه عنك؟"
+
+<strong>الأدوية:</strong>
+- "ما الأدوية التي تتناولها؟"
+- "هل عانيت من أي آثار جانبية؟"
+
+<strong>الوظائف الإدراكية:</strong>
+- "هل شعرت بالارتباك أو Trouble في التفكير بوضوح؟"
+- "هل شعرت بالحزن أو الاكتئاب؟"
+
+<strong>الحركة:</strong>
+- "هل سقطت في العام الماضي؟"
+- "هل لديك أي trouble في المشي؟"
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lesson 5 Detailed Content | المحتوى التفصيلي للدرس الخامس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Age-Friendly Care in Saudi Healthcare Context | الرعاية الصديقة للشيخوخة في سياق الرعاية الصحية السعودي</h3>
+
+<h4 class="section-sub">Saudi Demographics | الديموغرافيا السعودية</h4>
+
+Saudi Arabia is experiencing rapid aging of its population. Key trends include:
+
+تشهد المملكة العربية السعودية شيخوخة سريعة لسكانها. تشمل الاتجاهات الرئيسية:
+
+- Population aged 60+ expected to increase significantly by 2030
+- Rising prevalence of chronic diseases
+- Increasing demand for geriatric services
+- Need for family-centered approaches
+
+- من المتوقع أن يزيد عدد السكان الذين تبلغ أعمارهم 60+ بشكل كبير بحلول عام 2030
+- تزايد انتشار الأمراض المزمنة
+- تزايد الطلب على خدمات الشيخوخة
+- الحاجة إلى نهج متمحور حول العائلة
+
+<h4 class="section-sub">Regulatory Requirements | المتطلبات التنظيمية</h4>
+
+Age-friendly care aligns with several Saudi regulatory frameworks:
+
+الرعاية الصديقة للشيخوخة تتوافق مع several أطر تنظيمية سعودية:
+
+<strong>CBAHI Standards | معايير هيئة الصحة:</strong>
+
+- Patient-centered care standards
+- Medication safety standards
+- Assessment and care planning requirements
+
+- معايير الرعاية المتمحورة حول المريض
+- معايير سلامة medication
+- متطلبات التقييم وتخطيط الرعاية
+
+<strong>Vision 2030 | رؤية 2030:</strong>
+
+- Healthcare transformation goals
+- Focus on quality and patient experience
+- Aging population priorities
+
+- أهداف تحول الرعاية الصحية
+- التركيز على الجودة وتجربة المريض
+- أولويات السكان كبار السن
+
+<strong>MOH Initiatives | مبادرات وزارة الصحة:</strong>
+
+- Quality improvement programs
+- Patient experience initiatives
+- Geriatric care development
+
+- برامج تحسين الجودة
+- مبادرات تجربة المريض
+- تطوير رعاية الشيخوخة
+
+<h4 class="section-sub">Cultural Considerations | الاعتبارات الثقافية</h4>
+
+Implementing age-friendly care in Saudi Arabia requires attention to cultural factors:
+
+يتطلب تنفيذ الرعاية الصديقة للشيخوخة في المملكة العربية السعودية الانتباه إلى العوامل الثقافية:
+
+<strong>Family Involvement | إشراك العائلة:</strong>
+
+- Families are typically primary caregivers
+- Extended family often participates in care decisions
+- Cultural expectations for family to be present
+- Need to involve family in goals discussions
+
+- العائلات هي عادة مقدمات الرعاية الأساسيات
+- تشارك العائلة الممتدة غالبًا في قرارات الرعاية
+- التوقعات الثقافية لحضور العائلة
+- الحاجة إلى إشراك العائلة في مناقشات الأهداف
+
+<strong>Communication | التواصل:</strong>
+
+- Arabic language is primary
+- May need interpreter for some patients
+- Respect for elders should be demonstrated
+- Clear communication about medication changes
+
+- اللغة العربية هي الأساسية
+- قد تحتاج مترجم لبعض المرضى
+- يجب إظهار الاحترام للكبار
+- تواصل واضح حول تغييرات الأدوية
+
+<strong>Religious Considerations | الاعتبارات الدينية:</strong>
+
+- Ramadan and medication timing
+- Prayer times during hospital stay
+- End-of-life discussions (as covered in PFC 202)
+- Gender considerations in care
+
+- شهر رمضان وتوقيت medication
+- أوقات الصلاة أثناء إقامة المستشفى
+- مناقشات نهاية الحياة (كماغطيت في PFC 202)
+- اعتبارات الجنس في الرعاية
+
+<h4 class="section-sub">Practical Implementation in Saudi Settings | التطبيق العملي في البيئات السعودية</h4>
+
+<strong>Starting Points | نقاط البداية:</strong>
+
+1. <strong>Identify champions</strong> in geriatrics or quality
+2. <strong>Assess current state</strong> using the tools from Lesson 3
+3. <strong>Focus on high-impact, low-effort changes first</strong>
+4. <strong>Engage leadership</strong> early
+5. <strong>Involve patients and families</strong>
+
+1. تحديد الأبطال في الشيخوخة أو الجودة
+2. تقييم الوضع الحالي باستخدام الأدوات من الدرس 3
+3. التركيز على التغييرات ذات التأثير العالي والجهد المنخفض أولاً
+4. إشراك القيادة مبكرًا
+5. إشراك المرضى والعائلات
+
+<strong>Sample Saudi Implementation | نموذج تطبيق سعودي:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Component</td><td>Action</td><td>Responsible</td><td>Timeline</td></tr>
+|-----------|--------|--------------|-----------|
+<tr><td>What Matters</td><td>Add goals documentation to admission</td><td>Nursing</td><td>1 month</td></tr>
+<tr><td>Medications</td><td>Implement Beers criteria review</td><td>Pharmacy</td><td>3 months</td></tr>
+<tr><td>Mentation</td><td>Implement cognitive screening</td><td>Nursing</td><td>2 months</td></tr>
+<tr><td>Mobility</td><td>Add fall risk assessment</td><td>Nursing</td><td>2 months</td></tr>
+
+<tr><td>المكون</td><td>الإجراء</td><td>المسؤول</td><td>الجدول الزمني</td></tr>
+|--------|---------|---------|---------------|
+<tr><td>ما يهم</td><td>إضافة توثيق الأهداف للدخول</td><td>التمريض</td><td>شهر واحد</td></tr>
+<tr><td>الأدوية</td><td>تنفيذ مراجعة معايير بيرز</td><td>الصيدلة</td><td>3 أشهر</td></tr>
+<tr><td>الهذيان</td><td>تنفيذ الفحص المعرفي</td><td>التمريض</td><td>شهرين</td></tr>
+<tr><td>الحركة</td><td>إضافة تقييم خطر السقوط</td><td>التمريض</td><td>شهرين</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study 1: Hospital Implementation | الحالة الأولى: التطبيق في المستشفى</h3>
+
+<strong>Setting | البيئة:</strong>
+
+A MOH hospital with 300 beds wanted to improve care for older adult patients. Initial assessment showed:
+- No standardized cognitive screening
+- Goals not routinely documented
+- High use of potentially inappropriate medications
+- No fall risk assessment
+
+مستشفى تابع لوزارة الصحة بـ 300 سرير أراد تحسين رعاية مرضى كبار السن. أظهر التقييم الأولي:
+- لا يوجد فحص معرفي موحد
+- لا تُوثق الأهداف بانتظام
+- استخدام عالي لأدوية قد تكون غير مناسبة
+- لا يوجد تقييم لخطر السقوط
+
+<strong>Actions | الإجراءات:</strong>
+
+1. <strong>Formed team</strong> including nursing, pharmacy, physician, quality
+2. <strong>Implemented 4Ms screening</strong> as part of admission process
+3. <strong>Pharmacy review</strong> for high-risk medications
+4. <strong>Added fall risk assessment</strong> to nursing workflow
+5. <strong>Documented patient goals</strong> in admission assessment
+
+1. <strong>كون فريقًا</strong> يشمل التمريض والصيدلة والطبيب والجودة
+2. <strong>نفّذ فحص الأبعاد الأربعة</strong> كجزء من عملية الدخول
+3. <strong>مراجعة الصيدلة</strong> للأدوية عالية الخطورة
+4. <strong>أضاف تقييم خطر السقряд</strong> إلى سير عمل التمريض
+5. <strong>وثّق أهداف المريض</strong> في تقييم الدخول
+
+<strong>Results | النتائج:</strong>
+
+- 90% of patients 65+ screened for cognitive issues
+- 75% reduction in anticholinergic prescriptions
+- 40% reduction in fall rates
+- Patient satisfaction improved
+
+- 90% من المرضى 65+ تم فحصهم للمشاكل المعرفية
+- انخفاض 75% في وصف مضادات الكولين
+- انخفاض 40% في معدلات السقوط
+- تحسّن رضا المريض
+
+---
+
+<h3 class="section-title">Case Study 2: Primary Care Implementation | الحالة الثانية: التطبيق في الرعاية الأولية</h3>
+
+<strong>Setting | البيئة:</strong>
+
+A PHC center wanted to improve chronic disease management for older adults through 4Ms approach.
+
+مركز رعاية أولية أراد تحسين إدارة الأمراض المزمنة لكبار السن من خلال نهج الأبعاد الأربعة.
+
+<strong>Actions | الإجراءات:</strong>
+
+1. <strong>Patient-centered goal setting</strong> in chronic disease visits
+2. <strong>Medication review</strong> at each visit for patients 65+
+3. <strong>Cognitive screening</strong> for patients with memory concerns
+4. <strong>Mobility assessment</strong> and home exercise recommendations
+
+1. <strong>تحديد أهداف متمحورة حول المريض</strong> في زيارات الأمراض المزمنة
+2. <strong>مراجعة medication</strong> في كل زيارة للمرضى 65+
+3. <strong>الفحص المعرفي</strong> للمرضى الذين يعانون من مخاوف الذاكرة
+4. <strong>تقييم الحركة</strong> وتوصيات exercises منزلية
+
+<strong>Results | النتائج:</strong>
+
+- Improved patient engagement in self-management
+- Better medication adherence
+- Earlier identification of cognitive issues
+- Improved functional status
+
+- تحسّن إشراك المريض في الإدارة الذاتية
+- أفضل adherence للأدوية
+- تحديد أبكر للمشاكل المعرفية
+- تحسّن الحالة الوظيفية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Interactive Exercises | التمارين التفاعلية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Self-Assessment | التقييم الذاتي</h3>
+
+<strong>Assess your current 4Ms practice | قيّم ممارستك الحالية للأبعاد الأربعة:</strong>
+
+Rate each component from 1-5:
+
+قيّم كل مكون من 1-5:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>4M</td><td>Question</td><td>Score (1-5)</td></tr>
+|----|----------|-------------|
+<tr><td>What Matters</td><td>Do you ask about goals and preferences?</td></tr>
+<tr><td>Medications</td><td>Do you review medications for older adults?</td></tr>
+<tr><td>Mentation</td><td>Do you screen for cognitive issues?</td></tr>
+<tr><td>Mobility</td><td>Do you assess mobility and fall risk?</td></tr>
+
+<tr><td>البُعد</td><td>السؤال</td><td>الدرجة (1-5)</td></tr>
+|--------|--------|-------------|
+<tr><td>ما يهم</td><td>هل تسأل عن الأهداف والتفضيلات؟</td></tr>
+<tr><td>الأ泻剂</td><td>هل تراجع medication لكبار السن؟</td></tr>
+<tr><td>الهذيان</td><td>هل تفحص للمشاكل المعرفية؟</td></tr>
+<tr><td>الحركة</td><td>هل تقيم الحركة وخطر السقود؟</td></tr>
+</tbody></table></div>
+<strong>Interpretation | التفسير:</strong>
+
+- 15-20: Strong practice - maintain and improve
+- 10-14: Good foundation - identify gaps
+- Below 10: Need significant improvement
+
+- 15-20: ممارسة قوية - حافظ وحسّن
+- 10-14: أساس جيد - حدد الفجوات
+- أقل من 10: تحتاج تحسينًا كبيرًا
+
+<h3 class="section-title">Action Planning | تخطيط الإجراءات</h3>
+
+Based on your assessment, identify one improvement for each 4M:
+
+بناءً على تقييمك، حدد تحسنًا واحدًا لكل بُعد:
+
+<strong>My Improvement Plan | خطتي للتحسين:</strong>
+
+- What Matters:
+- Medications:
+- Mentation:
+- Mobility:
+
+- ما يهم:
+- الأدوية:
+- الوظائف الإدراكية:
+- الحركة:
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Assessment | التقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Knowledge Check | فحص المعرفة</h3>
+
+1. The 4Ms framework includes:
+   a) What Matters, Medications, Mental Health, Mobility
+   b) What Matters, Medications, Mentation, Mobility
+   c) Wellness, Medications, Memory, Movement
+   d) Wishes, Medications, Mind, Motor
+
+2. Which medication class should generally be avoided in older adults?
+   a) ACE inhibitors
+   b) Anticholinergics
+   c) ACE inhibitors
+   d) Metformin
+
+3. Delirium is characterized by:
+   a) Gradual onset over months
+   b) Sudden change in mental status
+   c) Stable symptoms
+   d) No relation to medical illness
+
+4. The first step in implementing 4Ms is:
+   a) Implement all changes at once
+   b) Understand current state
+   c) Hire geriatric specialists
+   d) Purchase new equipment
+
+5. In Saudi context, family involvement in older adult care is:
+   a) Discouraged
+   b) Not relevant
+   c) Culturally expected
+   d) Only for end-of-life
+
+1. يشمل إطار الأبعاد الأربعة:
+   أ) ما يهم، والأدوية، والصحة النفسية، والحركة
+   ب) ما يهم، والأدوية، والوظائف الإدراكية، والحركة
+   ج) الصحة، والأدوية، والذاكرة، والحركة
+   د) الأمنيات، والأدوية، والعقل، والمحرك
+
+2. أي فئة من الأدوية يجب تجنبها بشكل عام في كبار السن؟
+   أ) مثبطات ACE
+   ب) مضادات الكولين
+   ج) مثبطات ACE
+   د) ميتفورمين
+
+3. يتميز الهذيان بـ:
+   أ) onset تدريجي على مدى أشهر
+   ب) تغيير مفاجئ في الحالة العقلية
+   ج) symptoms مستقرة
+   د) لا علاقة بالمرض الطبي
+
+4. الخطوة الأولى في تطبيق الأبعاد الأربعة هي:
+   أ) تنفيذ جميع التغييرات دفعة واحدة
+   ب) فهم الوضع الراهن
+   ج) توظيف أخصائيي الشيخوخة
+   د) شراء معدات جديدة
+
+5. في السياق السعودي، إشراك العائلة في رعاية كبار السن هو:
+   أ) غير مشجع
+   ب) غير ذي صلة
+   ج) متوقع ثقافيًا
+   د) فقط لنهاية الحياة
+
+<h3 class="section-title">Answers | الإجابات</h3>
+
+1. b | 2. b | 3. b | 4. b | 5. c
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-12">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>العربية</td></tr>
+|--------------|--------|
+<tr><td>Age-friendly care</td><td>الرعاية الصديقة للشيخوخة</td></tr>
+<tr><td>4Ms framework</td><td>إطار الأبعاد الأربعة</td></tr>
+<tr><td>What Matters</td><td>ما يهم</td></tr>
+<tr><td>Medications</td><td>الأدوية</td></tr>
+<tr><td>Mentation</td><td>الوظائف الإدراكية</td></tr>
+<tr><td>Mobility</td><td>الحركة</td></tr>
+<tr><td>Dementia</td><td>الخرف</td></tr>
+<tr><td>Delirium</td><td>الهذيان</td></tr>
+<tr><td>Depression</td><td>الاكتئاب</td></tr>
+<tr><td>Fall risk</td><td>خطر السقوط</td></tr>
+<tr><td>Polypharmacy</td><td>تعدد الأدوية</td></tr>
+<tr><td>Beers criteria</td><td>معايير بيرز</td></tr>
+<tr><td>Geriatric</td><td>الشيخوخة</td></tr>
+<tr><td>Older adult</td><td>كبير السن</td></tr>
+<tr><td>Functional status</td><td>الحالة الوظيفية</td></tr>
+<tr><td>Cognitive impairment</td><td>ضعف معرفي</td></tr>
+<tr><td>PDSA</td><td>خطة-نفذ-درس-تصرف</td></tr>
+<tr><td>CBAHI</td><td>هيئة الصحة</td></tr>
+<tr><td>Vision 2030</td><td>رؤية 2030</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-13">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+
+1. Institute for Healthcare Improvement. (2024). <em>Age-Friendly Health Systems</em>. https://www.ihi.org/age-friendly
+
+2. American Geriatrics Society. (2024). <em>Beers Criteria for Potentially Inappropriate Medications</em>.
+
+3. Agency for Healthcare Research and Quality. (2024). <em>Hospital Toolkit for Adult Latient Services</em>.
+
+4. World Health Organization. (2024). <em>Global Strategy on Aging and Health</em>.
+
+<h3 class="section-title">الموارد العربية</h3>
+
+1. هيئة الصحة السعودية. (2024). <em>معايير اعتماد المنشآت الصحية</em>. الرياض.
+
+2. وزارة الصحة السعودية. (2024). <em>دليل الرعاية لكبار السن</em>. الرياض.
+
+3. جمعية طب المسنين السعودية. (2024). <em>التوجيهات الوطنية للرعاية الشيخوية</em>. الرياض.
+
+4. رؤية 2030. (2024). <em>برنامج تحول القطاع الصحي</em>. الرياض.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-14">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> PFC 203
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-203" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 120 minutes (enhanced)
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-15">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الرمز:</strong> PFC 203
+- <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-203" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 120 دقيقة (محسّنة)
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-16">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Additional Resources and Implementation Materials | موارد إضافية ومواد التنفيذ</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Appendix A: 4Ms Assessment and Documentation Tools | الملحق أ: أدوات تقييم وتوثيق الأبعاد الأربعة</h3>
+
+<h4 class="section-sub">Comprehensive 4Ms Assessment Form | نموذج التقييم الشامل للأبعاد الأربعة</h4>
+
+<strong>Patient Information | معلومات المريض:</strong>
+- Name: _______ Age: _______ Date: _______
+- Room/Bed: _______ Primary Diagnosis: _______
+- Admitting Physician: _______
+
+<strong>M1: What Matters | ما يهم:</strong>
+
+<strong>Conversation conducted:</strong> Yes / No Date: _______
+
+<strong>Documented goals (list):</strong>
+1. _________________________________
+2. _________________________________
+3. _________________________________
+
+<strong>Patient priorities identified:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Independence</div>
+<div class="checklist-item"><span class="checkbox"></span>Comfort</div>
+<div class="checklist-item"><span class="checkbox"></span>Family presence</div>
+<div class="checklist-item"><span class="checkbox"></span>Function preservation</div>
+<div class="checklist-item"><span class="checkbox"></span>Other: _______</div>
+
+<strong>Advance care planning status:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Goals documented</div>
+<div class="checklist-item"><span class="checkbox"></span>Code status determined</div>
+<div class="checklist-item"><span class="checkbox"></span>Surrogate identified</div>
+<div class="checklist-item"><span class="checkbox"></span>Advance directive present</div>
+
+<strong>M2: Medications | الأدوية:</strong>
+
+<strong>Medication review completed:</strong> Yes / No Date: _______
+
+<strong>Number of medications:</strong> _______
+
+<strong>High-risk medications identified:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Anticholinergics</div>
+<div class="checklist-item"><span class="checkbox"></span>Sedatives/Hypnotics</div>
+<div class="checklist-item"><span class="checkbox"></span>Anticoagulants</div>
+<div class="checklist-item"><span class="checkbox"></span>Opioids</div>
+<div class="checklist-item"><span class="checkbox"></span>Other: _______</div>
+
+<strong>Action taken:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Medication discontinued</div>
+<div class="checklist-item"><span class="checkbox"></span>Dose adjusted</div>
+<div class="checklist-item"><span class="checkbox"></span>Alternative selected</div>
+<div class="checklist-item"><span class="checkbox"></span>Monitoring added</div>
+
+<strong>M3: Mentation | الوظائف الإدراكية:</strong>
+
+<strong>Cognitive screening completed:</strong> Yes / No Date: _______
+
+<strong>Screening tool used:</strong>
+<div class="checklist-item"><span class="checkbox"></span>MMSE</div>
+<div class="checklist-item"><span class="checkbox"></span>MoCA</div>
+<div class="checklist-item"><span class="checkbox"></span>3-Item Recall</div>
+<div class="checklist-item"><span class="checkbox"></span>Other: _______</div>
+
+<strong>Results:</strong> Normal / Abnormal / Unable to assess
+
+<strong>If abnormal, action taken:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Further assessment ordered</div>
+<div class="checklist-item"><span class="checkbox"></span>Neurology consult</div>
+<div class="checklist-item"><span class="checkbox"></span>Care plan modified</div>
+<div class="checklist-item"><span class="checkbox"></span>Family notified</div>
+
+<strong>Depression screening:</strong>
+<div class="checklist-item"><span class="checkbox"></span>PHQ-2: Score _______</div>
+<div class="checklist-item"><span class="checkbox"></span>PHQ-9: Score _______</div>
+<div class="checklist-item"><span class="checkbox"></span>Action: _______</div>
+
+<strong>Delirium risk assessment:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Risk factors present: _______</div>
+<div class="checklist-item"><span class="checkbox"></span>Prevention measures in place</div>
+<div class="checklist-item"><span class="checkbox"></span>Daily monitoring documented</div>
+
+<strong>M4: Mobility | الحركة:</strong>
+
+<strong>Mobility assessment completed:</strong> Yes / No Date: _______
+
+<strong>Gait/Transfer status:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Ambulatory independent</div>
+<div class="checklist-item"><span class="checkbox"></span>Ambulatory with assistance</div>
+<div class="checklist-item"><span class="checkbox"></span>Wheelchair bound</div>
+<div class="checklist-item"><span class="checkbox"></span>Bedbound</div>
+
+<strong>Fall risk assessment completed:</strong> Yes / No Date: _______
+
+<strong>Fall risk score:</strong> _______
+
+<strong>Fall prevention measures:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Bed in low position</div>
+<div class="checklist-item"><span class="checkbox"></span>Call light within reach</div>
+<div class="checklist-item"><span class="checkbox"></span>Non-slip footwear</div>
+<div class="checklist-item"><span class="checkbox"></span>Hourly rounding</div>
+<div class="checklist-item"><span class="checkbox"></span>Other: _______</div>
+
+<strong>Mobility interventions:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Physical therapy ordered</div>
+<div class="checklist-item"><span class="checkbox"></span>Activity encouraged</div>
+<div class="checklist-item"><span class="checkbox"></span>Assistive devices provided</div>
+<div class="checklist-item"><span class="checkbox"></span>Safe mobility plan documented</div>
+
+<h3 class="section-title">Appendix B: Implementation Checklists | الملحق ب: قوائم تنفيذ التحقق</h3>
+
+<h4 class="section-sub">Unit Implementation Checklist | قائمة تنفيذ الوحدة</h4>
+
+<strong>Phase 1: Preparation | المرحلة الأولى: التحضير</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>Leadership support secured</div>
+<div class="checklist-item"><span class="checkbox"></span>Unit champion identified</div>
+<div class="checklist-item"><span class="checkbox"></span>Team formed (nursing, pharmacy, physician, therapy)</div>
+<div class="checklist-item"><span class="checkbox"></span>Baseline metrics collected</div>
+<div class="checklist-item"><span class="checkbox"></span>Current workflows reviewed</div>
+<div class="checklist-item"><span class="checkbox"></span>Education materials prepared</div>
+
+<strong>Phase 2: Training | المرحلة الثانية: التدريب</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>Staff education sessions completed</div>
+<div class="checklist-item"><span class="checkbox"></span>Documentation tools distributed</div>
+<div class="checklist-item"><span class="checkbox"></span>Staff questions addressed</div>
+<div class="checklist-item"><span class="checkbox"></span>Champions trained</div>
+<div class="checklist-item"><span class="checkbox"></span>Resources posted</div>
+
+<strong>Phase 3: Implementation | المرحلة الثالثة: التنفيذ</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>4Ms screening implemented at admission</div>
+<div class="checklist-item"><span class="checkbox"></span>Daily 4Ms review in rounds</div>
+<div class="checklist-item"><span class="checkbox"></span>Documentation completed</div>
+<div class="checklist-item"><span class="checkbox"></span>Issues addressed in real-time</div>
+<div class="checklist-item"><span class="checkbox"></span>Weekly team reviews held</div>
+<div class="checklist-item"><span class="checkbox"></span>Data collection ongoing</div>
+
+<strong>Phase 4: Sustainability | المرحلة الرابعة: الاستدامة</strong>
+
+<div class="checklist-item"><span class="checkbox"></span>Process standardization completed</div>
+<div class="checklist-item"><span class="checkbox"></span>Ongoing monitoring established</div>
+<div class="checklist-item"><span class="checkbox"></span>Staff competency verified</div>
+<div class="checklist-item"><span class="checkbox"></span>Quality metrics tracked</div>
+<div class="checklist-item"><span class="checkbox"></span>Improvement cycles implemented</div>
+
+<h3 class="section-title">Appendix C: Saudi Context Implementation Guide | الملحق ج: دليل التنفيذ في السياق السعودي</h3>
+
+<h4 class="section-sub">Adapting 4Ms for Saudi Healthcare | تكييف الأبعاد الأربعة للرعاية الصحية السعودية</h4>
+
+<strong>Cultural Considerations | الاعتبارات الثقافية:</strong>
+
+<strong>What Matters | ما يهم:</strong>
+- Include family in goals discussions
+- Consider religious values in goal-setting
+- Acknowledge importance of family approval in decisions
+- Respect patient's role in family structure
+
+-Include family in مناقشات الأهداف
+-Consider القيم الدينية في تحديد الأهداف
+-_acknowledge أهمية موافقة العائلة في القرارات
+-Respect دور المريض في هيكل العائلة
+
+<strong>Medications | الأدوية:</strong>
+- Consider Ramadan medication timing
+- Include family in medication decisions
+- Explain medications in culturally appropriate way
+- Address traditional medicine use
+
+- Consider تزامن medication في رمضان
+-Include family في قرارات medication
+- Explain medication بطريقة ملائمة ثقافيًا
+- Address استخدام الطب التقليدي
+
+<strong>Mentation | الوظائف الإدراكية:</strong>
+- Consider stigma around mental health/cognition
+- Involve family in monitoring
+- Provide education in Arabic
+- Use culturally validated screening tools
+
+- Consider وصمة حول الصحة النفسية/الإدراكية
+- _include family في المراقبة
+- Provide تعليم باللغة العربية
+- Use أدوات فحص ذات صلة ثقافيًا
+
+<strong>Mobility | الحركة:</strong>
+- Include family in mobility goals
+- Consider cultural expectations about independence
+- Support family involvement in rehab
+- Adapt exercise recommendations to home environment
+
+- Include family في أهداف الحركة
+- Consider التوقعات الثقافية حول الاستقلالية
+- Support مشاركة العائلة في إعادة التأهيل
+- Adapt توصيات التمرين لبيئة المنزل
+
+<h4 class="section-sub">Saudi Healthcare System Alignment | محاذاة النظام الصحي السعودي</h4>
+
+<strong>Vision 2030 Alignment | محاذاة رؤية 2030:</strong>
+
+The 4Ms support Vision 2030 healthcare goals:
+
+يدعم الأبعاد الأربعة أهداف الرعاية الصحية رؤية 2030:
+
+- Quality and patient experience improvement
+- Efficient resource utilization
+- Integrated care across settings
+- Healthy aging initiatives
+
+- تحسين الجودة وتجربة المريض
+- استخدام الموارد بكفاءة
+- الرعاية المتكاملة عبر البيئات
+- مبادرات الشيخوخة الصحية
+
+<strong>CBAHI Standards Alignment | محاذاة معايير هيئة الصحة:</strong>
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>CBAHI Standard</td><td>4Ms Integration</td></tr>
+|----------------|-----------------|
+<tr><td>Patient Assessment</td><td>4Ms included in admission assessment</td></tr>
+<tr><td>Medication Management</td><td>M2 addresses medication safety</td></tr>
+<tr><td>Care Planning</td><td>Goals (M1) included in care plan</td></tr>
+<tr><td>Patient Rights</td><td>4Ms respects patient values</td></tr>
+<tr><td>Fall Prevention</td><td>M4 addresses mobility/falls</td></tr>
+
+<tr><td>معيار هيئة الصحة</td><td>تكامل الأبعاد الأربعة</td></tr>
+|-----------------|--------------------|
+<tr><td>تقييم المريض</td><td>الأبعاد الأربعة مشمولة في تقييم الدخول</td></tr>
+<tr><td>إدارة medication</td><td>المكدس 2 يعالج سلامة medication</td></tr>
+<tr><td>تخطيط الرعاية</td><td>الأهداف (المكدس 1) مشمولة في خطة الرعاية</td></tr>
+<tr><td>حقوق المريض</td><td>الأبعاد الأربعة تحترم قيم المريض</td></tr>
+<tr><td>الوقاية من السقوط</td><td>المكدس 4 يعالج الحركة/السقوط</td></tr>
+
+<h3 class="section-title">Appendix D: Quality Metrics Dashboard | الملحق د: لوحة مقاييس الجودة</h3>
+
+<h4 class="section-sub">Monthly Tracking Template | نموذج التتبع الشهري</h4>
+
+<strong>Unit: _______ Month: _______</strong>
+
+<tr><td>Metric</td><td>Goal</td><td>Actual</td><td>Trend</td></tr>
+|--------|------|--------|-------|
+<tr><td>% patients 65+ with documented goals</td><td>>80%</td></tr>
+<tr><td>% high-risk meds reviewed</td><td>>90%</td></tr>
+<tr><td>% cognitive screening completed</td><td>>85%</td></tr>
+<tr><td>% fall risk assessment completed</td><td>>95%</td></tr>
+<tr><td>Fall rate per 1000 patient days</td><td><3</td></tr>
+<tr><td>Readmission rate (30-day)</td><td><15%</td></tr>
+<tr><td>Patient satisfaction (communication)</td><td>>85%</td></tr>
+
+<tr><td>المقياس</td><td>الهدف</td><td>الفعلي</td><td>الاتجاه</td></tr>
+|---------|-------|--------|---------|
+<tr><td>% المرضى 65+ مع أهداف موثقة</td><td>>80%</td></tr>
+<tr><td>% medication عالية الخطورة مراجَعة</td><td>>90%</td></tr>
+<tr><td>% الفحص المعرفي مكتمل</td><td>>85%</td></tr>
+<tr><td>% تقييم خطر السقوط مكتمل</td><td>>95%</td></tr>
+<tr><td>معدل السقوط لكل 1000 يوم مريض</td><td><3</td></tr>
+<tr><td>معدل إعادة الدخول (30 يوم)</td><td><15%</td></tr>
+<tr><td>رضا المريض (التواصل)</td><td>>85%</td></tr>
+</tbody></table></div>
+<h3 class="section-title">Appendix E: Staff Training Materials | الملحق ه: مواد تدريب الموظفين</h3>
+
+<h4 class="section-sub">Quick Reference Card for Clinicians | بطاقة مرجع سريع للأطباء</h4>
+
+<strong>4Ms at a Glance | الأبعاد الأربعة في لمحة:</strong>
+
+<strong>M1: What Matters</strong>
+- Ask: "What matters most to you?"
+- Document: Goals, values, preferences
+- Use: In care planning
+
+- اسأل: "ما الأهم بالنسبة لك؟"
+- وثّق: الأهداف، القيم، التفضيلات
+- Use: في تخطيط الرعاية
+
+<strong>M2: Medications</strong>
+- Review: All meds at admission
+- Avoid: Beers criteria medications
+- Optimize: Dose, route, frequency
+
+- راجع: جميع medication عند الدخول
+- Avoid: معاييربيرز medications
+- Optimize: الجرعة، المسار، التكرار
+
+<strong>M3: Mentation</strong>
+- Screen: Cognition and mood daily
+- Prevent: Delirium risk factors
+- Treat: Issues identified
+
+- افحص: الحالة المعرفية والمزاج يوميًا
+- Prevent: عوامل خطر الهذيان
+- Treat: المشكلات المحددة
+
+<strong>M4: Mobility</strong>
+- Assess: Mobility and fall risk
+- Promote: Early mobilization
+- Prevent: Falls
+
+- قيّم: الحركة وخطر السقوط
+- Promote: الحركة المبكرة
+- Prevent: السقوط
+
+<h4 class="section-sub">Nurse Quick Reference | مرجع سريع للممرض</h4>
+
+<strong>Daily 4Ms Checklist | قائمة تحقق الأبعاد الأربعة اليومية:</strong>
+
+<strong>Admission:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Complete 4Ms screening</div>
+<div class="checklist-item"><span class="checkbox"></span>Document goals with patient</div>
+<div class="checklist-item"><span class="checkbox"></span>Review medications with pharmacist</div>
+<div class="checklist-item"><span class="checkbox"></span>Complete cognitive screening</div>
+<div class="checklist-item"><span class="checkbox"></span>Assess mobility and fall risk</div>
+
+<div class="checklist-item"><span class="checkbox"></span>أكمل فحص الأبعاد الأربعة</div>
+<div class="checklist-item"><span class="checkbox"></span>وثّق الأهداف مع المريض</div>
+<div class="checklist-item"><span class="checkbox"></span>راجع medication مع الصيدلي</div>
+<div class="checklist-item"><span class="checkbox"></span>أكمل الفحص المعرفي</div>
+<div class="checklist-item"><span class="checkbox"></span>قيّم الحركة وخطر السقوط</div>
+
+<strong>Daily:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Review 4Ms in rounds</div>
+<div class="checklist-item"><span class="checkbox"></span>Monitor cognitive status</div>
+<div class="checklist-item"><span class="checkbox"></span>Encourage mobility</div>
+<div class="checklist-item"><span class="checkbox"></span>Reinforce fall prevention</div>
+
+<div class="checklist-item"><span class="checkbox"></span>راجع الأبعاد الأربعة في الجولات</div>
+<div class="checklist-item"><span class="checkbox"></span>راقب الحالة المعرفية</div>
+<div class="checklist-item"><span class="checkbox"></span>شجع الحركة</div>
+- [ ]عزز الوقاية من السقوط
+
+<strong>Discharge:</strong>
+<div class="checklist-item"><span class="checkbox"></span>Confirm goals documented</div>
+<div class="checklist-item"><span class="checkbox"></span>Verify medication reconciliation</div>
+<div class="checklist-item"><span class="checkbox"></span>Ensure mobility plan in place</div>
+<div class="checklist-item"><span class="checkbox"></span>Provide patient/family education</div>
+
+<div class="checklist-item"><span class="checkbox"></span>تأكد من توثيق الأهداف</div>
+<div class="checklist-item"><span class="checkbox"></span>تحقق من مصالحة medication</div>
+<div class="checklist-item"><span class="checkbox"></span>تأكد من خطة الحركة في مكانها</div>
+<div class="checklist-item"><span class="checkbox"></span>Provide تعليم المريض/العائلة</div>
+
+<h3 class="section-title">Appendix F: Case Study Implementation Guide | الملحق و: دليل تنفيذ دراسة الحالة</h3>
+
+<h4 class="section-sub">Implementing 4Ms in Different Settings | تنفيذ الأبعاد الأربعة في بيئات مختلفة</h4>
+
+<strong>Acute Care Hospital | المستشفى الحاد:</strong>
+
+Workflow integration:
+- Admission: Complete 4Ms screening in first 24 hours
+- Daily rounds: Brief 4Ms review
+- Transfer/discharge: Ensure 4Ms continuity
+- Documentation: Standardized 4Ms flowsheet
+
+- الدخول: أكمل فحص الأبعاد الأربعة خلال第一个 24 ساعة
+- الجولات اليومية: مراجعة موجزة للأبعاد الأربعة
+- النقل/الخروج: ensure استمرارية الأبعاد الأربعة
+- التوثيق: نموذج الأبعاد الأربعة الموحد
+
+<strong>Primary Care | الرعاية الأولية:</strong>
+
+- Annual wellness visit: 4Ms comprehensive assessment
+- Chronic disease visits: Integrate 4Ms
+- Care coordination: 4Ms communication across settings
+
+- زيارة العافية السنوية: تقييم شامل للأبعاد الأربعة
+- زيارات الأمراض المزمنة: تكامل الأبعاد الأربعة
+- تنسيق الرعاية: تواصل الأبعاد الأربعة عبر البيئات
+
+<strong>Long-Term Care | الرعاية طويلة المدى:</strong>
+
+- Admission: Comprehensive 4Ms assessment
+- Quarterly: Full reassessment
+- Care plan: 4Ms-based goals
+- Family involvement: Regular updates
+
+- الدخول: تقييم شامل للأبعاد الأربعة
+- ربع سنوي: إعادة تقييم كاملة
+- خطة الرعاية: أهداف قائمة على الأبعاد الأربعة
+- إشراك العائلة: تحديثات منتظمة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-17">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>Code:</strong> PFC 203
+- <strong>Format:</strong> Online, On-Demand
+- <strong>Provider:</strong> IHI Open School
+- <strong>Source:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-203" target="_blank" rel="noopener">IHI Education Platform</a>
+- <strong>Duration:</strong> 120 minutes (enhanced)
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-18">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          - <strong>الرمز:</strong> PFC 203
+- <strong>الشكل:</strong> عبر الإنترنت، حسب الطلب
+- <strong>المزود:</strong> IHI Open School
+- <strong>المصدر:</strong> <a href="https://www.ihi.org/learn/courses/open-school/catalog/pfc-203" target="_blank" rel="noopener">منصة IHI التعليمية</a>
+- <strong>المدة:</strong> 120 دقيقة (محسّنة)
+
+---
+
+<em>This course was enhanced for Brainsait Academy with Saudi healthcare context, 4Ms implementation tools, and bilingual content.</em>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="related-section">
+        <h3 class="related-title">🔗 Related Courses | دورات ذات صلة</h3>
+        <div class="related-grid">
+          
+          <a href="/courses/pfc-101.html" class="related-card">
+            <h4>Introduction to Person- and Family-Centered Care</h4>
+            <p class="rtl">PFC 101: مقدمة في الرعاية المتمركزة على الشخص والعائلة</p>
+            <span class="related-card-duration">⏱ 90 min</span>
+          </a>
+          <a href="/courses/pfc-102.html" class="related-card">
+            <h4>Key Dimensions of Patient- and Family-Centered Care</h4>
+            <p class="rtl">PFC 102: الأبعاد الرئيسية للرعاية المتمركزة على المريض والعائلة</p>
+            <span class="related-card-duration">⏱ 90 min</span>
+          </a>
+          <a href="/courses/pfc-103.html" class="related-card">
+            <h4>Incorporating Mindfulness into Clinical Practice</h4>
+            <p class="rtl">PFC 103: دمج اليقظة الذهنية في الممارسة السريرية</p>
+            <span class="related-card-duration">⏱ 90 min</span>
+          </a>
+          <a href="/courses/pfc-104.html" class="related-card">
+            <h4>Confronting the Stigma of Substance Use Disorders</h4>
+            <p class="rtl">PFC 104: مواجهة وصمة اضطرابات تعاطي المخدرات</p>
+            <span class="related-card-duration">⏱ 60 min</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-pfc-203') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-pfc-203', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('pfc-203')) enrolled.push('pfc-203');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'pfc-203');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-pfc-203') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-pfc-203', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-pfc-203', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-pfc-203', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-pfc-203', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-pfc-203') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Providing Age-Friendly Care to Older Adults',
+        slug: 'pfc-203',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-pfc-203') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-pfc-203.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools | BrainsAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;600&family=Noto+Naskh+Arabic:wght@400&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-fixed": "#07006c",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#92002a",
+        "surface": "#f9f9ff",
+        "inverse-on-surface": "#ecf1ff",
+        "on-secondary-fixed-variant": "#004e5c",
+        "error-container": "#ffdad6",
+        "on-surface": "#111c2d",
+        "error": "#ba1a1a",
+        "on-secondary-fixed": "#001f26",
+        "outline-variant": "#c7c4d7",
+        "tertiary": "#b90538",
+        "primary": "#4648d4",
+        "secondary": "#00687a",
+        "surface-container-lowest": "#ffffff",
+        "surface-tint": "#494bd6",
+        "inverse-primary": "#c0c1ff",
+        "on-background": "#111c2d",
+        "on-primary-container": "#fffbff",
+        "outline": "#767586",
+        "on-secondary-container": "#006172",
+        "on-tertiary-fixed": "#40000d",
+        "surface-dim": "#cfdaf2",
+        "primary-container": "#6063ee",
+        "surface-container": "#e7eeff",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "tertiary-fixed": "#ffdadb",
+        "surface-container-highest": "#d8e3fb",
+        "on-error-container": "#93000a",
+        "surface-bright": "#f9f9ff",
+        "secondary-container": "#57dffe",
+        "secondary-fixed-dim": "#4cd7f6",
+        "tertiary-fixed-dim": "#ffb2b7",
+        "primary-fixed-dim": "#c0c1ff",
+        "on-surface-variant": "#464554",
+        "surface-container-low": "#f0f3ff",
+        "tertiary-container": "#dc2c4f",
+        "on-primary": "#ffffff",
+        "inverse-surface": "#263143",
+        "on-tertiary-container": "#fffbff",
+        "secondary-fixed": "#acedff",
+        "surface-container-high": "#dee8ff",
+        "primary-fixed": "#e1e0ff",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#d8e3fb",
+        "background": "#f9f9ff",
+        "on-error": "#ffffff"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "container-padding": "20px", "gutter": "16px", "lg": "32px", "md": "24px", "xs": "8px", "xl": "48px", "sm": "16px", "base": "4px" },
+      fontFamily: {
+        "headline-xl": ["Manrope"],
+        "arabic-body": ["Noto Naskh Arabic"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-md": ["Manrope"],
+        "headline-lg": ["Manrope"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "arabic-body": ["17px", { lineHeight: "30px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};</script>
+<style>
+  body { min-height: 100dvh; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #c7c4d7; border-radius: 2px; }
+  .accordion-item.active .accordion-content { max-height: 5000px !important; }
+  .accordion-item.active .accordion-header { background: var(--tw-bg-surface-container-low, #f0f3ff); }
+  .accordion-item.active .material-symbols-outlined:last-child { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar - Stitch Course Player Style -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+  <div class="flex items-center gap-xs">
+    <a href="/" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+    </a>
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-surface flex items-center justify-center">
+        <span class="material-symbols-outlined text-primary text-[20px]">school</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-extrabold text-primary hidden md:block">BrainsAIT Academy</h1>
+    </div>
+  </div>
+  <div class="flex items-center gap-sm">
+    <button onclick="toggleDarkMode()" class="p-xs text-on-surface-variant hover:bg-primary/5 transition-colors rounded-full">
+      <span class="material-symbols-outlined text-[22px]">dark_mode</span>
+    </button>
+    <button class="font-label-md text-label-md text-primary border border-primary/30 rounded-full px-4 py-1.5 hover:bg-primary/5 transition-colors flex items-center gap-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span> AR/EN
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - Stitch Workspace Layout -->
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-7xl mx-auto py-lg px-container-padding gap-lg pb-32 lg:pb-lg">
+  <!-- Course Content Column -->
+  <div class="flex-grow flex flex-col gap-md lg:w-2/3">
+    <!-- Course Header -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <div class="flex items-center gap-xs flex-wrap mb-sm">
+        <span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-md text-label-md shadow-sm border border-primary/20">Quality Improvement</span>
+        <span class="bg-primary/10 text-primary px-sm py-1 rounded-full font-label-md text-label-md">QI-104</span>
+        <span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">schedule</span> 150 min
+        </span>
+      </div>
+      <h2 class="font-headline-xl text-headline-xl text-on-surface mt-1">Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools</h2>
+      <p class="font-arabic-body text-arabic-body text-on-surface-variant text-right" dir="rtl">QI 104: تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</p>
+      <!-- Action Bar -->
+      <div class="flex items-center gap-sm mt-sm flex-wrap">
+        <button onclick="enrollCourse()" id="enrollBtn" class="flex items-center gap-xs bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all border border-primary/20 shadow-sm group">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;" id="enrollIcon">add</span>
+          <span id="enrollText">Enroll Now</span>
+        </button>
+        <button onclick="bookmarkCourse()" id="bookmarkBtn" class="flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group">
+          <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_add</span>
+          <span id="bookmarkText">Save</span>
+        </button>
+        <button onclick="markComplete()" id="completeBtn" class="flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group">
+          <span class="material-symbols-outlined text-[20px]" id="completeIcon">check_circle</span>
+          <span id="completeText">Mark Complete</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-sm">
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">150</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Minutes</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+        <div class="font-headline-md text-headline-md text-primary mt-xs">Foundation</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">Level</div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl text-center">
+        <span class="material-symbols-outlined text-tertiary text-[24px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+        <div class="font-headline-md text-headline-md text-tertiary mt-xs">1.25</div>
+        <div class="font-label-md text-label-md text-on-surface-variant">CE Credits</div>
+      </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="space-y-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface">Course Sections</h3>
+        <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">11 sections</span>
+      </div>
+      
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm shadow-sm">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="0">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <strong class="text-on-surface font-semibold">QI 104: تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</strong>
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="1">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Overview | نظرة عامة على الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English</h3>
+
+This course provides comprehensive training in data interpretation for healthcare quality improvement. You will master the essential tools for understanding and communicating about variation in healthcare processes.
+
+The course emphasizes practical application in Saudi Arabian healthcare facilities, with detailed guidance on selecting appropriate tools for different improvement contexts and interpreting results in alignment with CBAHI requirements.
+
+<strong class="text-on-surface font-semibold">Key Learning Areas:</strong>
+- Constructing and annotating run charts
+- Applying rules for detecting non-random patterns
+- Using control charts for sensitive detection
+- Selecting appropriate measurement tools
+- Interpreting histograms, Pareto charts, and scatter plots
+- Communicating data findings to diverse audiences
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">العربية</h3>
+
+توفر هذه الدورة تدريباً شاملاً على تفسير البيانات لتحسين جودة الرعاية الصحية. ستتقن الأدوات الأساسية لفهم والتواصل حول التباين في عمليات الرعاية الصحية.
+
+تؤكد الدورة على التطبيق العملي في المرافق الصحية السعودية، مع إرشادات مفصلة حول اختيار الأدوات المناسبة لسياقات التحسين المختلفة وتفسير النتائج بما يتوافق مع متطلبات CBAHI.
+
+<strong class="text-on-surface font-semibold">مناطق التعلم الرئيسية:</strong>
+- بناء وتعليق المخططات الزمنية
+- تطبيق قواعد اكتشاف الأنماط غير العشوائية
+- استخدام مخططات المراقبة للكشف الحساس
+- اختيار أدوات القياس المناسبة
+- تفسير المدرجات التكرارية ومخططات باريتو والمخططات المبعثرة
+- التواصل حول نتائج البيانات لجماهير متنوعة
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="2">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Objectives | أهداف الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Learning Outcomes</h3>
+
+After completing this course, you will be able to:
+
+- <strong class="text-on-surface font-semibold">Construct</strong> run charts with all essential elements including median, goal line, and annotations
+- <strong class="text-on-surface font-semibold">Apply</strong> four rules for identifying non-random patterns in run chart data
+- <strong class="text-on-surface font-semibold">Differentiate</strong> between common cause and special cause variation
+- <strong class="text-on-surface font-semibold">Explain</strong> the purpose and interpretation of Shewhart control charts
+- <strong class="text-on-surface font-semibold">Select</strong> appropriate chart types based on data characteristics and improvement questions
+- <strong class="text-on-surface font-semibold">Create</strong> histograms to understand distribution of continuous data
+- <strong class="text-on-surface font-semibold">Develop</strong> Pareto charts to prioritize improvement opportunities
+- <strong class="text-on-surface font-semibold">Utilize</strong> scatter plots to explore relationships between variables
+- <strong class="text-on-surface font-semibold">Communicate</strong> data findings effectively to clinical and administrative audiences
+- <strong class="text-on-surface font-semibold">Apply</strong> interpretation skills to Saudi healthcare quality improvement contexts
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">مخرجات التعلم بالعربية</h3>
+
+بنهاية هذه الدورة، ستكون قادراً على:
+
+- <strong class="text-on-surface font-semibold">بناء</strong> مخططات زمنية مع جميع العناصر الأساسية بما في ذلك الوسيط وخط الهدف والتعليقات التوضيحية
+- <strong class="text-on-surface font-semibold">تطبيق</strong> أربع قواعد لتحديد الأنماط غير العشوائية في بيانات المخطط الزمني
+- <strong class="text-on-surface font-semibold">التمييز</strong> بين التباين في السبب المشترك والسبب الخاص
+- <strong class="text-on-surface font-semibold">شرح</strong> الغرض وتفسير مخططات المراقبة لشيوارت
+- <strong class="text-on-surface font-semibold">اختيار</strong> أنواع المخططات المناسبة بناءً على خصائص البيانات وأسئلة التحسين
+- <strong class="text-on-surface font-semibold">إنشاء</strong> المدرجات التكرارية لفهم توزيع البيانات المستمرة
+- <strong class="text-on-surface font-semibold">تطوير</strong> مخططات باريتو لتحديد أولويات فرص التحسين
+- <strong class="text-on-surface font-semibold">استخدام</strong> المخططات المبعثرة لاستكشاف العلاقات بين المتغيرات
+- <strong class="text-on-surface font-semibold">التواصل</strong> حول نتائج البيانات بفعالية للجماهير السريرية والإدارية
+- <strong class="text-on-surface font-semibold">تطبيق</strong> مهارات التفسير على سياقات تحسين جودة الرعاية الصحية السعودية
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="3">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Lessons | الدروس</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 1: Displaying Data on Run Charts | الدرس الأول: عرض البيانات على المخططات الزمنية</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 35 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Foundation | <strong class="text-on-surface font-semibold">المستوى:</strong> تمهيدي
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">The Essential Role of Run Charts | الدور الأساسي للمخططات الزمنية</strong>
+
+Run charts are the most important and versatile tool for quality improvement work. Unlike static reports that show a single point in time, run charts display data over time, revealing patterns that are essential for understanding whether improvement is occurring.
+
+<strong class="text-on-surface font-semibold">Why Run Charts Are Essential for Improvement:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Benefit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement Application</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Visualize Trends</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">See gradual improvement or decline over time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Hand hygiene compliance slowly improving</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Identify Shifts</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Detect sudden, sustained changes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">New protocol causes immediate improvement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Reveal Patterns</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Discover predictable cycles or variation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Higher errors on Mondays and after holidays</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Build Momentum</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual display motivates teams</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart on unit wall engages staff</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Track Tests</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Show impact of PDSA cycles</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Annotations show when changes were tested</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Validate Results</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Confirm lasting improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustained performance after intervention</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">الدور الأساسي للمخططات الزمنية</strong>
+
+المخططات الزمنية هي أهم وأكثر أدوات تحسين الجودة تنوعاً. على عكس التقارير الثابتة التي تعرض نقطة واحدة في الوقت، تعرض المخططات الزمنية البيانات بمرور الوقت، مما يكشف عن أنماط ضرورية لفهم ما إذا كان التحسن يحدث.
+
+<strong class="text-on-surface font-semibold">لماذا المخططات الزمنية أساسية للتحسين:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الفائدة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوصف</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تطبيق التحسين</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">تصور الاتجاهات</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">رؤية التحسن أو الانحدار التدريجي بمرور الوقت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الامتثال لغسل اليدين يتحسن ببطء</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">تحديد التحولات</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">اكتشاف التغييرات المفاجئة المستدامة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البروتوكول الجديد يسبب تحسناً فورياً</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الكشف عن الأنماط</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">اكتشاف الدورات أو التباين القابل للتنبؤ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أخطاء أعلى يوم الاثنين وبعد الإجازات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">بناء الزخم</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">العرض البصري يحفز الفرق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخطط الزمني على جدار الوحدة يشارك الموظفين</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">تتبع الاختبارات</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">إظهار تأثير دورات PDSA</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعليقات تظهر متى تم اختبار التغييرات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">التحقق من النتائج</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تأكيد التحسن المستدام</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأداء المستدام بعد التدخل</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Anatomy of a Run Chart | تشريح المخطط الزمني</h4>
+
+<strong class="text-on-surface font-semibold">Essential Elements:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Element</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Title</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Clear identification of measure and timeframe</td><td class="px-sm py-xs text-body-md text-on-surface-variant">"Hand Hygiene Compliance - ICU, Jan-Jun 2026"</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Y-Axis</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">The measure being tracked with appropriate scale</td><td class="px-sm py-xs text-body-md text-on-surface-variant">% compliance (0-100%)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">X-Axis</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Time progression with consistent intervals</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Weeks 1-26</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Data Points</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Individual values plotted chronologically</td><td class="px-sm py-xs text-body-md text-on-surface-variant">26 weekly points</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Median Line</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Centerline calculated from baseline data</td><td class="px-sm py-xs text-body-md text-on-surface-variant">75% (baseline median)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Goal Line</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Target performance (if applicable)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">95% (CBAHI target)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Annotations</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Mark significant events, interventions, PDSA cycles</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Training, policy changes</td></tr>
+
+<strong class="text-on-surface font-semibold">Chart Construction Principles:</strong>
+
+1. <strong class="text-on-surface font-semibold">Start Y-axis at zero</strong> when scale includes zero and doesn't compress detail
+2. <strong class="text-on-surface font-semibold">Use consistent time intervals</strong> - same spacing between points
+3. <strong class="text-on-surface font-semibold">Include sufficient data points</strong> - minimum 10 for pattern detection
+4. <strong class="text-on-surface font-semibold">Calculate median from baseline</strong> - typically first 5-10 points
+5. <strong class="text-on-surface font-semibold">Update regularly</strong> - at least weekly during active improvement
+6. <strong class="text-on-surface font-semibold">Add annotations immediately</strong> - when events occur, not retrospectively
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Building Your First Run Chart | بناء أول مخطط زمني لك</h4>
+
+<strong class="text-on-surface font-semibold">Step-by-Step Construction:</strong>
+
+<strong class="text-on-surface font-semibold">Step 1: Collect and Organize Data</strong>
+
+```
+DATA COLLECTION - MEDICATION RECONCILIATION COMPLETION
+========================================================
+
+Week | Date | Completed | Total | Rate
+<hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">
+1    | 1/5 | 23        | 50    | 46%
+2    | 1/12| 28        | 55    | 51%
+3    | 1/19| 25        | 48    | 52%
+4    | 1/26| 31        | 56    | 55%
+5    | 2/2 | 34        | 58    | 59%
+6    | 2/9 | 38        | 60    | 63%
+7    | 2/16| 42        | 62    | 68%
+8    | 2/23| 45        | 64    | 70%
+9    | 3/2 | 48        | 66    | 73%
+10   | 3/9 | 52        | 70    | 74%
+11   | 3/16| 55        | 72    | 76%
+12   | 3/23| 58        | 74    | 78%
+
+Baseline Median Calculation:
+(46 + 51 + 52 + 55 + 59) / 5 = 52.6%
+Rounded median = 53%
+```
+
+<strong class="text-on-surface font-semibold">Step 2: Determine Chart Parameters</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Parameter</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Value</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Rationale</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Baseline Median</td><td class="px-sm py-xs text-body-md text-on-surface-variant">53%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Average of first 5 points</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Target</td><td class="px-sm py-xs text-body-md text-on-surface-variant">85%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Unit goal aligned with CBAHI</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Data Points</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Meets minimum requirement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Timeframe</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12 weeks</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Adequate for pattern detection</td></tr>
+
+<strong class="text-on-surface font-semibold">Step 3: Plot and Annotate</strong>
+
+Add annotations for:
+- Week 6: Nursing education on medication reconciliation
+- Week 8: Pharmacist involvement initiated
+- Week 10: EMR integration for mandatory reconciliation
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Saudi Healthcare Run Chart Examples | أمثلة على المخططات الزمنية في الرعاية الصحية السعودية</h4>
+
+<strong class="text-on-surface font-semibold">Example 1: CLABSI Reduction in ICU | تقليل عدوى الخط المركزي في العناية المركزة</strong>
+
+```
+TITLE: Central Line-Associated Bloodstream Infection Rate - Medical ICU
+       King Abdulaziz Hospital, Jeddah
+
+Y-AXIS: Infections per 1000 catheter days (0-10)
+X-AXIS: Week 1 through Week 20
+
+ANNOTATIONS:
+- Week 4: CLABSI bundle training completed
+- Week 8: Daily chlorhexidine bathing initiated
+- Week 12: Real-time surveillance feedback implemented
+- Week 16: Policy update - mandatory bundle compliance
+
+DATA:
+Week: 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+Rate: 8  7  8  6  6  5  5  4  3  3  3  2  2  2  1  1  1  1  1  1
+
+INTERPRETATION:
+Baseline median: 7.0 (weeks 1-5)
+Shift: 8 consecutive points below median starting week 6
+Improvement: Sustained reduction to <2 infections/1000 catheter days
+```
+
+<strong class="text-on-surface font-semibold">Example 2: Patient Satisfaction Scores | درجات رضا المرضى</strong>
+
+```
+TITLE: Overall Patient Satisfaction Score - Outpatient Clinics
+       National Guard Health Affairs, Riyadh
+
+Y-AXIS: Satisfaction score (1-5 scale)
+X-AXIS: Month January 2025 - December 2025
+
+ANNOTATIONS:
+- March: New feedback collection system implemented
+- July: Staff communication training completed
+- October: Patient experience committee formed
+
+INTERPRETATION:
+Baseline: 3.4 (Jan-Feb median)
+Shift: Sustained improvement after interventions
+Current: 4.1 (sustained since July)
+```
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 2: Learning from Run Charts and Control Charts | الدرس الثاني: التعلم من المخططات الزمنية ومخططات المراقبة</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 35 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Intermediate | <strong class="text-on-surface font-semibold">المستوى:</strong> متوسط
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Understanding Variation | فهم التباين</strong>
+
+Variation is inherent in all healthcare processes. Every measurement we take reflects both the underlying process and random fluctuation. Understanding this variation is fundamental to knowing when and how to respond.
+
+<strong class="text-on-surface font-semibold">The Two Types of Variation:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Also Called</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Response Required</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Common Cause Variation</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Natural, predictable variation inherent in a stable system</td><td class="px-sm py-xs text-body-md text-on-surface-variant">"Background noise"</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improve the system</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Special Cause Variation</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Unexpected variation from specific assignable causes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">"Signals"</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Find and address the cause</td></tr>
+
+<strong class="text-on-surface font-semibold">In Arabic | بالعربية:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النوع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التعريف</td><td class="px-sm py-xs text-body-md text-on-surface-variant">يسمى أيضاً</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاستجابة المطلوبة</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">التباين في السبب المشترك</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين طبيعي يمكن التنبؤ به متأصل في نظام مستقر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">"الضوضاء الخلفية"</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحسين النظام</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">التباين في السبب الخاص</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين غير متوقع من أسباب قابلة للتعيين محددة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">"الإشارات"</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البحث عن السبب ومعالجته</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">فهم التباين</strong>
+
+التباين متأصل في جميع عمليات الرعاية الصحية. كل قياس نأخذه يعكس كلاً من العملية الأساسية والتذبذب العشوائي. إن فهم هذا التباين أساسي لمعرفة متى وكيف نستجيب.
+
+<strong class="text-on-surface font-semibold">النوعان من التباين:</strong>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Four Rules for Detecting Non-Random Patterns | أربع قواعد لاكتشاف الأنماط غير العشوائية</h4>
+
+Use these rules to identify when special cause variation (a signal) is present:
+
+<strong class="text-on-surface font-semibold">Rule 1: Point Outside Control Limits</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">A single data point outside the upper or lower control limit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Point above UCL or below LCL</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Something special happened - investigate immediately</td></tr>
+
+<strong class="text-on-surface font-semibold">Rule 2: Shift Above or Below Median</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Eight or more consecutive points all above OR all below the median</td><td class="px-sm py-xs text-body-md text-on-surface-variant">8+ points all above OR all below centerline</td><td class="px-sm py-xs text-body-md text-on-surface-variant">A significant change has occurred - identify what changed</td></tr>
+
+<strong class="text-on-surface font-semibold">Rule 3: Trend (Too Many Points in a Row)</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Six or more consecutive points increasing or decreasing</td><td class="px-sm py-xs text-body-md text-on-surface-variant">6+ points trending up or down</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Gradual change is occurring - look for underlying cause</td></tr>
+
+<strong class="text-on-surface font-semibold">Rule 4: Alternating Pattern</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Visual</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Fourteen or more consecutive points alternating up and down</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Alternating pattern for 14+ points</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Two or more systems are alternating - investigate structure</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Control Charts: When and Why | مخططات المراقبة: متى ولماذا</h4>
+
+<strong class="text-on-surface font-semibold">Purpose of Control Charts:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Aspect</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run Chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control Chart</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Primary Use</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement tracking</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process monitoring</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Sensitivity</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Moderate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">High</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Control Limits</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Median only</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Mean ± 3σ (statistical)</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Best For</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement projects</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ongoing monitoring, critical metrics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Skill Required</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Basic</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Intermediate</td></tr>
+
+<strong class="text-on-surface font-semibold">When to Use Control Charts:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Situation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Recommended Chart Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Critical safety metrics</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Infection rates, mortality</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Ongoing process monitoring</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Daily waiting times</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement testing</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">PDSA cycle tracking</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Short-term projects</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12-week improvement initiative</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Regulatory reporting</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">CBAHI-required metrics</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Control Chart Interpretation | تفسير مخططات المراقبة</h4>
+
+<strong class="text-on-surface font-semibold">Elements of a Control Chart:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Element</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Definition</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Calculation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Purpose</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Mean (X̄)</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Average of all data points</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Σx / n</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Centerline reference</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">UCL</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Upper Control Limit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Mean + 3σ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Upper boundary for common cause</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">LCL</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Lower Control Limit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Mean - 3σ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Lower boundary for common cause</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">σ</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard Deviation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">√[Σ(x-x̄)²/(n-1)]</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measures spread</td></tr>
+
+<strong class="text-on-surface font-semibold">Control Chart Rules:</strong>
+
+All four run chart rules apply, plus:
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Rule</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Action</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Rule 5</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">2 of 3 consecutive points in Zone A (outer third)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Investigate potential shift</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Rule 6</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">4 of 5 consecutive points in Zone B or beyond</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Investigate potential shift</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Rule 7</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">15 consecutive points in Zone C (center third)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">May indicate reduced variation - examine</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Rule 8</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">8 consecutive points in Zone C</td><td class="px-sm py-xs text-body-md text-on-surface-variant">May indicate stratification - examine</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 3: Histograms, Pareto Charts, and Scatter Plots | الدرس الثالث: المدرجات التكرارية ومخططات باريتو والمخططات المبعثرة</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 35 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Intermediate | <strong class="text-on-surface font-semibold">المستوى:</strong> متوسط
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Choosing the Right Tool | اختيار الأداة المناسبة</strong>
+
+Different visualization tools serve different purposes. Selecting the right tool depends on your improvement question and data type.
+
+<strong class="text-on-surface font-semibold">Tool Selection Guide:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Tool</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Best For</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Data Type</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Key Question Answered</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Run Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement over time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sequential measurements</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Is performance changing?</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Control Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process monitoring</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sequential with limits</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Is the process stable?</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Histogram</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Distribution understanding</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Continuous data</td><td class="px-sm py-xs text-body-md text-on-surface-variant">What does the data look like overall?</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Pareto Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Prioritization</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Categorical counts</td><td class="px-sm py-xs text-body-md text-on-surface-variant">What should we focus on first?</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Scatter Plot</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Relationship exploration</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Paired continuous data</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Is X related to Y?</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">اختيار الأداة المناسبة</strong>
+
+تخدم أدوات التصور المختلفة أغراضاً مختلفة. يعتمد اختيار الأداة الصحيحة على سؤال التحسين ونوع البيانات.
+
+<strong class="text-on-surface font-semibold">دليل اختيار الأداة:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الأداة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الأفضل لـ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نوع البيانات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">السؤال الرئيسي المجاب</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المخطط الزمني</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">التحسن بمرور الوقت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">قياسات متسلسلة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل يتغير الأداء؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">مخطط المراقبة</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراقبة العمليات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">متسلسل مع حدود</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل العملية مستقرة؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المدرج التكراري</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">فهم التوزيع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بيانات مستمرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">كيف تبدو البيانات بشكل عام؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">مخطط باريتو</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد الأولويات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أعداد فئوية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ماذا يجب أن نركز عليه أولاً؟</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المخطط المبعثر</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">استكشاف العلاقات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أزواج بيانات مستمرة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">هل X مرتبط بـ Y؟</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Histograms | المدرجات التكرارية</h4>
+
+A histogram displays the distribution of continuous data by showing how many values fall into each range (bin).
+
+<strong class="text-on-surface font-semibold">When to Use Histograms:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Purpose</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Healthcare Example</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Understand overall performance range</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Distribution of patient wait times</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Identify unusual clusters</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Most falls occurring in specific timeframe</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Detect bimodal distributions</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Two different patient populations</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Compare to targets/specifications</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Compliance rates against goal</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Communicate performance spread</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Length of stay variation</td></tr>
+
+<strong class="text-on-surface font-semibold">Histogram Construction:</strong>
+
+```
+STEPS:
+1. Determine number of bins (typically 5-10)
+2. Calculate bin width = (max - min) / bins
+3. Count data points in each bin
+4. Draw bars proportional to counts
+5. Add labels and title
+
+EXAMPLE: Distribution of ED Wait Times
+
+Wait Time (minutes) | Count | Bar Width
+<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-
+0-15               | 45    | ████████████████████
+16-30              | 82    | ███████████████████████████████████
+31-45              | 156   | ███████████████████████████████████████████████████████████████
+46-60              | 98    | ████████████████████████████████████████████
+61-75              | 42    | ████████████████████
+76-90              | 18    | ████████
+91-105             | 5     | ██
+105+               | 2     | █
+
+INSIGHT: Most patients seen within 45 minutes, but long tail suggests process issues
+```
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Pareto Charts | مخططات باريتو</h4>
+
+The Pareto chart is a bar chart that ranks categories from largest to smallest and includes a cumulative line. It helps prioritize improvement efforts based on the "80/20 rule" - often 80% of problems come from 20% of causes.
+
+<strong class="text-on-surface font-semibold">Pareto Principle in Healthcare:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Category</td><td class="px-sm py-xs text-body-md text-on-surface-variant">% of Issues</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Cumulative %</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Medication errors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">35%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">35%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Communication gaps</td><td class="px-sm py-xs text-body-md text-on-surface-variant">25%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">60%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Documentation incomplete</td><td class="px-sm py-xs text-body-md text-on-surface-variant">15%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">75%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Delays in treatment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">87%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Equipment issues</td><td class="px-sm py-xs text-body-md text-on-surface-variant">8%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">95%</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Other</td><td class="px-sm py-xs text-body-md text-on-surface-variant">5%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">100%</td></tr>
+
+<strong class="text-on-surface font-semibold">Interpretation:</strong> Focusing on the top 3 categories (medication errors, communication, documentation) addresses 75% of issues.
+
+<strong class="text-on-surface font-semibold">Pareto Chart Construction:</strong>
+
+```
+PRIORITY ANALYSIS: Patient Complaints
+=====================================
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Complaint Category</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Count</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Cumulative %</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Cumulative Line</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Wait time too long</td><td class="px-sm py-xs text-body-md text-on-surface-variant">89</td><td class="px-sm py-xs text-body-md text-on-surface-variant">35%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff attitude</td><td class="px-sm py-xs text-body-md text-on-surface-variant">56</td><td class="px-sm py-xs text-body-md text-on-surface-variant">57%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Billing issues</td><td class="px-sm py-xs text-body-md text-on-surface-variant">38</td><td class="px-sm py-xs text-body-md text-on-surface-variant">72%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────────────</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Communication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">25</td><td class="px-sm py-xs text-body-md text-on-surface-variant">82%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────────────</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Environment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">18</td><td class="px-sm py-xs text-body-md text-on-surface-variant">89%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────────────</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Food quality</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12</td><td class="px-sm py-xs text-body-md text-on-surface-variant">94%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────────────</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Other</td><td class="px-sm py-xs text-body-md text-on-surface-variant">16</td><td class="px-sm py-xs text-body-md text-on-surface-variant">100%</td><td class="px-sm py-xs text-body-md text-on-surface-variant">●─────────────────</td></tr>
+
+80% LINE: Focus on top 3 categories (72% of issues)
+```
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Scatter Plots | المخططات المبعثرة</h4>
+
+Scatter plots display the relationship between two continuous variables, helping identify correlations and patterns that can guide improvement.
+
+<strong class="text-on-surface font-semibold">When to Use Scatter Plots:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Question</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Variables</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Insight</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Does staffing affect wait times?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff:patient ratio vs. wait time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Optimal staffing levels</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Is volume related to errors?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Daily census vs. medication errors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Workload correlation</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Does experience affect outcomes?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Years of experience vs. complication rate</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Training needs</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Is process time related to satisfaction?</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Cycle time vs. satisfaction score</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process targets</td></tr>
+
+<strong class="text-on-surface font-semibold">Scatter Plot Interpretation:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pattern</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Action</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Positive correlation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">As X increases, Y increases</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Investigate why</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Negative correlation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">As X increases, Y decreases</td><td class="px-sm py-xs text-body-md text-on-surface-variant">May indicate opportunity</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">No correlation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">X and Y independent</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Different approaches needed</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Clustered</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Subgroups exist</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Stratify analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Outliers</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Unusual cases</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Investigate individual cases</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 4: Advanced Pattern Recognition | الدرس الرابع: التعرف المتقدم على الأنماط</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 25 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Advanced | <strong class="text-on-surface font-semibold">المستوى:</strong> متقدم
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Beyond Basic Rules: Deep Pattern Analysis | ما وراء القواعد الأساسية: التحليل العميق للأنماط</strong>
+
+While the four basic rules help identify clear signals, experienced improvers develop sensitivity to subtler patterns that can guide improvement work.
+
+<strong class="text-on-surface font-semibold">Subtle Patterns to Watch For:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pattern</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Description</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpretation</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Gradual drift</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Slight, continuous movement in one direction</td><td class="px-sm py-xs text-body-md text-on-surface-variant">System slowly degrading or improving</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Step changes</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sudden jump to new level</td><td class="px-sm py-xs text-body-md text-on-surface-variant">New intervention, policy, or personnel</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Periodic patterns</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Regular cycles (weekly, monthly, seasonal)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Underlying system structure</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Staircase patterns</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement that plateaus then jumps</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Layered interventions, learning curves</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Variance changes</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Spread narrowing or widening</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process standardization or new sources of variation</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">ما وراء القواعد الأساسية: التحليل العميق للأنماط</strong>
+
+في حين أن القواعد الأربع الأساسية تساعد في تحديد الإشارات الواضحة، يطور المتمرسون ذوو الخبرة حساسية للأنماط الأكثر دقة التي يمكن أن توجه عمل التحسين.
+
+<strong class="text-on-surface font-semibold">أنماط دقيقة لمراقبتها:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">النمط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوصف</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التفسير</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الانحراف التدريجي</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">حركة خفيفة ومستمرة في اتجاه واحد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">النظام يتدهور أو يتحسن ببطء</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">تغييرات الخطوة</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">قفزة مفاجئة إلى مستوى جديد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تدخل أو سياسة أو موظفون جدد</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الأنماط الدورية</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">دورات منتظمة (أسبوعية، شهرية، موسمية)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بنية النظام الأساسية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">أنماط الدرج</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحسن يتوقف ثم يقفز</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تدخلات متدرجة، منحنيات التعلم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">تغييرات التباين</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">انتشار يتضيق أو يتوسع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">توحيد العملية أو مصادر جديدة للتباين</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Pattern Interpretation in Saudi Healthcare | تفسير الأنماط في الرعاية الصحية السعودية</h4>
+
+<strong class="text-on-surface font-semibold">Common Patterns in Saudi Facilities:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pattern Observed</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Likely Cause</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Investigation Steps</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Weekly cycles with peaks Monday-Thursday</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Staffing, schedule differences</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Review shift patterns, scheduling policies</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Monthly cycles with end-of-month improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Reporting pressure, data manipulation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Verify data integrity, review collection</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Post-holiday spikes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff returning, catch-up work</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Plan post-holiday support, staffing</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Improvement followed by regression</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Sustainability issues</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Review integration, training, monitoring</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">High variance with no clear center</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process not standardized</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Implement standardization, process mapping</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 5: Communicating Data Findings | الدرس الخامس: التواصل حول نتائج البيانات</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 25 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Intermediate | <strong class="text-on-surface font-semibold">المستوى:</strong> متوسط
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Effective Data Communication | التواصل الفعال للبيانات</strong>
+
+The best analysis is useless if it cannot be communicated effectively. Different audiences require different approaches to data presentation.
+
+<strong class="text-on-surface font-semibold">Audience-Specific Communication:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Audience</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Primary Concerns</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Presentation Approach</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Chart Type</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Clinical Staff</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient care impact</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Quick, actionable</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run charts, annotated</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Department Leaders</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Unit performance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Comparative, trend-focused</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run charts, tables</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Executive Leadership</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Strategic alignment</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Summary, ROI-focused</td><td class="px-sm py-xs text-body-md text-on-surface-variant">High-level run charts, key metrics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">CBAHI Surveyors</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Compliance evidence</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Complete, documented</td><td class="px-sm py-xs text-body-md text-on-surface-variant">All chart types with annotations</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Patients/Families</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Transparent care</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Simple, accessible</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Simplified dashboards</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">التواصل الفعال للبيانات</strong>
+
+أفضل تحليل عديم الفائدة إذا لم يمكن إيصاله بفعالية. تتطلب الجماهير المختلفة مقاربات مختلفة لعرض البيانات.
+
+<strong class="text-on-surface font-semibold">التواصل حسب الجمهور:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الجمهور</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الاهتمامات الرئيسية</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مقاربة العرض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نوع المخطط</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">الموظفون السريريون</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تأثير رعاية المرضى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">سريع، قابل للتنفيذ</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخططات الزمنية، مع التعليقات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">قادة الأقسام</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">أداء الوحدة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مقارن، مركز على الاتجاه</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخططات الزمنية، الجداول</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">القيادة التنفيذية</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">التوافق الاستراتيجي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ملخص، مركز على العائد</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المخططات الزمنية عالية المستوى، المقاييس الرئيسية</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">مفتشو CBAHI</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">أدلة الامتثال</td><td class="px-sm py-xs text-body-md text-on-surface-variant">كامل، موثق</td><td class="px-sm py-xs text-body-md text-on-surface-variant">جميع أنواع المخططات مع التعليقات</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المرضى/العائلات</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">رعاية شفافة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">بسيط، متاح</td><td class="px-sm py-xs text-body-md text-on-surface-variant">لوحات معلومات مبسطة</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">Creating Effective Data Presentations | إنشاء عروض بيانات فعّالة</h4>
+
+<strong class="text-on-surface font-semibold">Presentation Checklist:</strong>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Clear title with measure, population, timeframe</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Data displayed in logical order (chronological for trends)</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Median and goal lines clearly labeled</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Annotations explaining significant events</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Key findings highlighted</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Interpretation and recommendations included</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Data source and collection method noted</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Appropriate scale (not misleading)</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Accessible to target audience</span></div>
+
+<strong class="text-on-surface font-semibold">Common Pitfalls to Avoid:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pitfall</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Why It Matters</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Correction</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Truncated Y-axis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Can exaggerate or minimize changes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Start at zero or clearly mark break</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cherry-picked timeframe</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Can hide problems or magnify success</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Include full relevant period</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Missing baseline</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Cannot assess improvement</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Always include pre-intervention data</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">No context annotations</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Viewers cannot understand changes</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Add labels for interventions</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Overly complex displays</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Confuses rather than informs</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Match complexity to audience</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Lesson 6: Practical Applications and Case Studies | الدرس السادس: التطبيقات العملية ودراسات الحالة</h3>
+
+<strong class="text-on-surface font-semibold">Duration:</strong> 25 minutes | <strong class="text-on-surface font-semibold">Level:</strong> Advanced | <strong class="text-on-surface font-semibold">المستوى:</strong> متقدم
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">English Content</h4>
+
+<strong class="text-on-surface font-semibold">Integrated Measurement System: Saudi Hospital Example | نظام القياس المتكامل: مثال مستشفى سعودي</strong>
+
+<strong class="text-on-surface font-semibold">King Faisal Specialist Hospital - Surgical Site Infection Reduction | مستشفى الملك فيصل التخصصي - تقليل عدوى موقع الجراحة</strong>
+
+<strong class="text-on-surface font-semibold">Problem:</strong> Higher than benchmark SSI rates for colorectal surgery
+
+<strong class="text-on-surface font-semibold">Integrated Measurement Approach:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Tool</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Purpose</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Data</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Run Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Track SSI rate over time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Weekly rates showing improvement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Histogram</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Understand timing of infections</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Distribution of post-op day of detection</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Pareto Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Identify contributing factors</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Causes of deviated bundles</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Scatter Plot</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Explore relationships</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Relationship between case complexity and infection</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Control Chart</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Monitor sustained performance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Ongoing surveillance with limits</td></tr>
+
+<hr class="border-outline-variant/20 my-md">
+
+<h4 class="font-headline-md text-headline-md text-on-surface mt-md mb-xs">المحتوى العربي</h4>
+
+<strong class="text-on-surface font-semibold">نظام القياس المتكامل: مثال مستشفى سعودي</strong>
+
+<strong class="text-on-surface font-semibold">مستشفى الملك فيصل التخصصي - تقليل عدوى موقع الجراحة</strong>
+
+<strong class="text-on-surface font-semibold">المشكلة:</strong> معدلات SSI أعلى من المعيار لجراحة القولون والمستقيم
+
+<strong class="text-on-surface font-semibold">منهج القياس المتكامل:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">الأداة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الغرض</td><td class="px-sm py-xs text-body-md text-on-surface-variant">البيانات</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المخطط الزمني</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تتبع معدل SSI بمرور الوقت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المعدلات الأسبوعية تظهر التحسن</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المدرج التكراري</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">فهم توقيت العدوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">توزيع يوم ما بعد الجراحة للاكتشاف</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">مخطط باريتو</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحديد العوامل المساهمة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أسباب انحراف الحزم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">المخطط المبعثر</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">استكشاف العلاقات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العلاقة بين تعقيد الحالة والعدوى</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">مخطط المراقبة</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراقبة الأداء المستدام</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المراقبة الجارية مع الحدود</td></tr>
+</table></div>
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="4">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Saudi Healthcare Application | التطبيق في الرعاية الصحية السعودية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Application</h3>
+
+<strong class="text-on-surface font-semibold">CBAHI Data Visualization Requirements:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Required Documentation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Chart Type</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 1.1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Quality indicators over time</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 2.3</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Outcome analysis</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart where applicable</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 3.2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Process performance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Run chart, Pareto</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 5.1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Infection surveillance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Control chart</td></tr>
+
+<strong class="text-on-surface font-semibold">Integration with Quality Dashboard:</strong>
+
+The MOH National Quality Dashboard requires:
+- Monthly submission of key indicators
+- Run chart visualization in standardized format
+- Trend analysis with annotations
+- Comparison to national benchmarks
+- Action plans for declining metrics
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">التطبيق بالعربية</h3>
+
+<strong class="text-on-surface font-semibold">متطلبات تصور بيانات CBAHI:</strong>
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">المعيار</td><td class="px-sm py-xs text-body-md text-on-surface-variant">التوثيق المطلوب</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نوع المخطط</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 1.1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مؤشرات الجودة بمرور الوقت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط زمني</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 2.3</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحليل النتائج</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط مراقبة حيث ينطبق</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 3.2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">أداء العمليات</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط زمني، باريتو</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 5.1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مراقبة العدوى</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط المراقبة</td></tr>
+</table></div>
+<strong class="text-on-surface font-semibold">التكامل مع لوحة معلومات الجودة:</strong>
+
+تتطلب لوحة معلومات الجودة الوطنية التابعة لوزارة الصحة:
+- الإرسال الشهري للمؤشرات الرئيسية
+- تصور المخطط الزمني بتنسيق موحد
+- تحليل الاتجاه مع التعليقات
+- المقارنة مع المعايير الوطنية
+- خطط العمل للمقاييس المتراجعة
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="5">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">English Term</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المصطلح العربي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Category</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Run Chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط زمني تشغيلي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Control Chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط المراقبة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shewhart Chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط شيوارت</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Histogram</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مدرج تكراري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pareto Chart</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط باريتو</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Scatter Plot</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مخطط مبعثر</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Median</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الوسيط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Mean</td><td class="px-sm py-xs text-body-md text-on-surface-variant">المتوسط الحسابي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Standard Deviation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الانحراف المعياري</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Control Limits</td><td class="px-sm py-xs text-body-md text-on-surface-variant">حدود المراقبة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Common Cause Variation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين السبب المشترك</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Special Cause Variation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تباين السبب الخاص</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Upper Control Limit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحد الأعلى للمراقبة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Lower Control Limit</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الحد الأدنى للمراقبة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Baseline</td><td class="px-sm py-xs text-body-md text-on-surface-variant">خط الأساس</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Measurement</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Trend</td><td class="px-sm py-xs text-body-md text-on-surface-variant">اتجاه</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Shift</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تحوّل</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Pattern</td><td class="px-sm py-xs text-body-md text-on-surface-variant">نمط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Annotation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تعليق توضيحي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Communication</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Stratification</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تجزئة</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Correlation</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ارتباط</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Distribution</td><td class="px-sm py-xs text-body-md text-on-surface-variant">توزيع</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Statistics</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Cumulative</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تراكمي</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Analysis</td></tr>
+</table></div>
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="6">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Practical Exercises | التمارين العملية</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Exercise 1: Run Chart Analysis</h3>
+
+Analyze the following run chart data for a Saudi hospital's hand hygiene program:
+
+```
+HAND HYGIENE COMPLIANCE - PHC CLUSTER, RIYADH
+===============================================
+
+Month | Compliance %
+<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-
+Jan   | 65
+Feb   | 63
+Mar   | 67
+Apr   | 71  ← Training
+May   | 75
+Jun   | 78
+Jul   | 76
+Aug   | 82  ← Observation feedback
+Sep   | 85
+Oct   | 84
+Nov   | 88
+Dec   | 90
+```
+
+<strong class="text-on-surface font-semibold">Questions:</strong>
+1. What is the baseline median?
+2. Does this chart show a shift? If so, when?
+3. What annotations would you add?
+4. What additional data would help?
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Exercise 2: Pareto Analysis</h3>
+
+Create a Pareto chart from the following patient complaint data:
+
+```
+PATIENT COMPLAINTS - NATIONAL GUARD HOSPITAL, JEDDAH
+=====================================================
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Category</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Monthly Count</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Long wait times</td><td class="px-sm py-xs text-body-md text-on-surface-variant">45</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Staff communication</td><td class="px-sm py-xs text-body-md text-on-surface-variant">32</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Appointment access</td><td class="px-sm py-xs text-body-md text-on-surface-variant">28</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Billing concerns</td><td class="px-sm py-xs text-body-md text-on-surface-variant">18</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Facility cleanliness</td><td class="px-sm py-xs text-body-md text-on-surface-variant">12</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Food quality</td><td class="px-sm py-xs text-body-md text-on-surface-variant">8</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Other</td><td class="px-sm py-xs text-body-md text-on-surface-variant">15</td></tr>
+
+Tasks:
+1. Rank categories from highest to lowest
+2. Calculate cumulative percentages
+3. Identify which categories address 80% of issues
+4. Recommend priority focus areas
+```
+
+<hr class="border-outline-variant/20 my-md">
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Exercise 3: Scatter Plot Analysis</h3>
+
+Examine the relationship between nursing workload and medication errors:
+
+```
+NURSING WORKLOAD vs. MEDICATION ERRORS
+======================================
+
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Day</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Patient:Nurse Ratio</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Errors</td></tr>
+|<hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">4.2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">2</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">5.1</td><td class="px-sm py-xs text-body-md text-on-surface-variant">3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">3</td><td class="px-sm py-xs text-body-md text-on-surface-variant">4.5</td><td class="px-sm py-xs text-body-md text-on-surface-variant">1</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">4</td><td class="px-sm py-xs text-body-md text-on-surface-variant">6.2</td><td class="px-sm py-xs text-body-md text-on-surface-variant">5</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">5</td><td class="px-sm py-xs text-body-md text-on-surface-variant">5.8</td><td class="px-sm py-xs text-body-md text-on-surface-variant">4</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">6</td><td class="px-sm py-xs text-body-md text-on-surface-variant">4.8</td><td class="px-sm py-xs text-body-md text-on-surface-variant">2</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">7</td><td class="px-sm py-xs text-body-md text-on-surface-variant">6.5</td><td class="px-sm py-xs text-body-md text-on-surface-variant">6</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">8</td><td class="px-sm py-xs text-body-md text-on-surface-variant">5.5</td><td class="px-sm py-xs text-body-md text-on-surface-variant">3</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">9</td><td class="px-sm py-xs text-body-md text-on-surface-variant">4.3</td><td class="px-sm py-xs text-body-md text-on-surface-variant">1</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">10</td><td class="px-sm py-xs text-body-md text-on-surface-variant">6.8</td><td class="px-sm py-xs text-body-md text-on-surface-variant">7</td></tr>
+</table></div>
+Tasks:
+1. Create scatter plot
+2. Identify if correlation exists
+3. Calculate correlation coefficient (if possible)
+4. Interpret findings for staffing decisions
+```
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="7">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Case Studies | دراسات الحالة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">Case Study: Quality Dashboard Transformation | دراسة الحالة: تحويل لوحة معلومات الجودة</h3>
+
+<strong class="text-on-surface font-semibold">Organization:</strong> MOH Regional Health Cluster, Eastern Province
+<strong class="text-on-surface font-semibold">Challenge:</strong> Inconsistent data presentation across 15 facilities
+
+<strong class="text-on-surface font-semibold">Intervention:</strong>
+
+<div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Phase</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Action</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Outcome</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">--|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Assessment</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Audited current data practices</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Found 8 different chart formats</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Standardization</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Developed unified template</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Consistent run chart format adopted</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Training</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Trained QI staff on all tools</td><td class="px-sm py-xs text-body-md text-on-surface-variant">45 QI coordinators trained</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Integration</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Connected to NPHIES data feeds</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Real-time data availability</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Sustainability</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Built into quality governance</td><td class="px-sm py-xs text-body-md text-on-surface-variant">Monthly dashboard review</td></tr>
+</table></div>
+<strong class="text-on-surface font-semibold">Key Learnings:</strong>
+- Standardization improves comparability but must allow for local context
+- Training investment pays dividends in data quality
+- Executive engagement critical for resource allocation
+- Integration with NPHIES enables population-level analysis
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="8">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Action Items | خطة العمل</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Action Checklist</h3>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Create a run chart for one quality metric in your unit</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Apply all four run chart rules to identify patterns</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Conduct subset analysis on your data</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Create a Pareto chart for a quality problem</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Use scatter plot to explore one relationship</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Develop annotated run chart for quality committee</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Create simple visualization for staff communication</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Review data presentation with CBAHI lens</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">Standardize one data visualization across your department</span></div>
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">قائمة الإجراءات بالعربية</h3>
+
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">إنشاء مخطط زمني لمقياس جودة واحد في وحدتك</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تطبيق جميع قواعد المخطط الزمني الأربع لتحديد الأنماط</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">إجراء تحليل المجموعات الفرعية على بياناتك</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">إنشاء مخطط باريتو لمشكلة جودة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">استخدام مخطط مبعثر لاستكشاف علاقة واحدة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">تطوير مخطط زمني موثق للجنة الجودة</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">إنشاء تصور بسيط للتواصل مع الموظفين</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">مراجعة عرض البيانات مع عدسة CBAHI</span></div>
+<div class="checklist-item flex items-start gap-xs p-xs bg-surface-container-low rounded-lg mb-xs"><span class="checkbox w-5 h-5 rounded border-2 border-outline flex-shrink-0 mt-0.5 cursor-pointer"></span><span class="text-body-md text-on-surface-variant">توحيد تصور واحد للبيانات عبر قسمك</span></div>
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="9">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">References & Resources | المراجع والموارد</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">English Resources</h3>
+
+1. <strong class="text-on-surface font-semibold">IHI Quality Improvement Essentials Toolkit</strong>
+   https://www.ihi.org/resources/Pages/Tools/Quality-Improvement-Essentials-Toolkit.aspx
+
+2. <strong class="text-on-surface font-semibold">Provost, L.P. & Murray, S.K. (2011).</strong> The Health Data Analytics Handbook. Riley & Associates.
+
+3. <strong class="text-on-surface font-semibold">Wheeler, D.J. (2000).</strong> Understanding Variation: The Key to Managing Chaos. SPC Press.
+
+4. <strong class="text-on-surface font-semibold">Nelson, L.S., et al. (2003).</strong> "Application of Shewhart Control Chart Rules to Detect Signals." Joint Commission Journal on Quality and Safety.
+
+5. <strong class="text-on-surface font-semibold">CBAHI Standards for Healthcare Quality and Patient Safety</strong>
+   https://www.cbahi.gov.sa/
+
+6. <strong class="text-on-surface font-semibold">MOH National Performance Indicators</strong>
+   https://www.moh.gov.sa/
+
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-lg mb-xs">مصادر عربية</h3>
+
+1. <strong class="text-on-surface font-semibold">إرشادات لوحة معلومات الجودة الوطنية</strong>
+   https://www.moh.gov.sa/
+
+2. <strong class="text-on-surface font-semibold">معايير CBAHI للجودة وسلامة المرضى</strong>
+   https://www.cbahi.gov.sa/
+
+3. <strong class="text-on-surface font-semibold">NPHIES - منصة التبادل الوطنية للمعلومات الصحية</strong>
+   https://www.ihi.org.sa/nphies
+
+<hr class="border-outline-variant/20 my-md">
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden mb-sm ">
+      <button onclick="toggleAccordion(this)" class="accordion-header w-full flex items-center gap-sm p-sm text-start bg-surface-container-lowest hover:bg-surface-container-low transition-colors border-none cursor-pointer font-headline-md text-headline-md rtl" data-section="10">
+        <span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">translate</span>
+        </span>
+        <span class="flex-1 text-on-surface">Course Details | تفاصيل الدورة</span>
+        <span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+        <div class="p-sm border-t border-outline-variant/10 space-y-sm">
+          <div class="overflow-x-auto my-md rounded-xl border border-outline-variant/30 bg-surface-container-lowest"><table class="w-full"><tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant">Property</td><td class="px-sm py-xs text-body-md text-on-surface-variant">English</td><td class="px-sm py-xs text-body-md text-on-surface-variant">العربية</td></tr>
+|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">-|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|<hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md"><hr class="border-outline-variant/20 my-md">|
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Code</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">QI 104</td><td class="px-sm py-xs text-body-md text-on-surface-variant">الكود</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Title</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تفسير البيانات: مخططات التشغيل ومخططات التحكم وأدوات القياس الأخرى</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Format</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Online, On-Demand</td><td class="px-sm py-xs text-body-md text-on-surface-variant">عبر الإنترنت</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Duration</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">150 minutes (2.5 hours)</td><td class="px-sm py-xs text-body-md text-on-surface-variant">150 دقيقة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">CE Credits</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">2.5 Credits</td><td class="px-sm py-xs text-body-md text-on-surface-variant">2.5 ساعة معتمدة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Level</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Foundation to Advanced</td><td class="px-sm py-xs text-body-md text-on-surface-variant">تمهيدي إلى متقدم</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Language</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">Bilingual AR/EN</td><td class="px-sm py-xs text-body-md text-on-surface-variant">ثنائي اللغة</td></tr>
+<tr class="border-b border-outline-variant/20" class="border-b border-outline-variant/20"><td class="px-sm py-xs text-body-md text-on-surface-variant"><strong class="text-on-surface font-semibold">Provider</strong></td><td class="px-sm py-xs text-body-md text-on-surface-variant">IHI Open School / BrainSAIT</td><td class="px-sm py-xs text-body-md text-on-surface-variant">مزود الدورة</td></tr>
+</table></div>
+<hr class="border-outline-variant/20 my-md">
+
+<strong class="text-on-surface font-semibold">© 2026 BrainSAIT Academy | Powered by IHI Open School</strong>
+<strong class="text-on-surface font-semibold">© 2026 أكاديمية BrainSAIT | مدعوم من IHI Open School</strong>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Knowledge Quiz (Stitch AI Notes Style) -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center gap-xs mb-md relative z-10">
+        <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+          <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Knowledge Check</h3>
+      </div>
+      <div id="quizContainer" class="relative z-10 space-y-md">
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">1. What is the primary purpose of the Model for Improvement?</p>
+          <div class="space-y-xs">
+            <div onclick="selectQuiz(0, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o0"></div><span class="text-body-md text-on-surface-variant">Replace all existing quality systems</span></div><div onclick="selectQuiz(0, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o1"></div><span class="text-body-md text-on-surface-variant">Provide a structured approach for testing and implementing changes</span></div><div onclick="selectQuiz(0, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o2"></div><span class="text-body-md text-on-surface-variant">Create regulatory compliance documentation</span></div><div onclick="selectQuiz(0, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q0o3"></div><span class="text-body-md text-on-surface-variant">Reduce healthcare costs only</span></div>
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <p class="font-label-md text-label-md text-primary">2. ما هي الخطوة الأولى في دورة PDSA؟</p>
+          <div class="space-y-xs" dir="rtl">
+            <div onclick="selectQuiz(1, 0)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o0"></div><span class="text-body-md text-on-surface-variant">التنفيذ (Do)</span></div><div onclick="selectQuiz(1, 1)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o1"></div><span class="text-body-md text-on-surface-variant">الدراسة (Study)</span></div><div onclick="selectQuiz(1, 2)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o2"></div><span class="text-body-md text-on-surface-variant">التخطيط (Plan)</span></div><div onclick="selectQuiz(1, 3)" class="quiz-opt flex items-center gap-xs p-xs bg-surface-container-low rounded-lg border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-all"><div class="w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold" id="q1o3"></div><span class="text-body-md text-on-surface-variant">التطبيق (Act)</span></div>
+          </div>
+        </div>
+        <button onclick="submitQuiz()" class="bg-primary text-on-primary font-label-md text-label-md py-sm px-lg rounded-lg hover:opacity-90 transition-all flex items-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">checklist</span> Submit Answers
+        </button>
+        <div id="quizResult" class="hidden p-sm rounded-lg font-label-md text-label-md"></div>
+      </div>
+    </div>
+
+    <!-- Related Courses -->
+    
+    <section>
+      <h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Related Courses</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+        
+        <a href="/courses/qi-101.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Introduction to Health Care Improvement</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 101: مقدمة في تحسين الرعاية الصحية</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+        <a href="/courses/qi-102.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">How to Improve with the Model for Improvement</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 102: كيفية التحسين باستخدام نموذج التحسين</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+        <a href="/courses/qi-103.html" class="bg-surface-container-lowest border border-outline-variant/30 p-sm rounded-xl hover:border-primary/30 transition-all group">
+          <h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary">Testing and Measuring Changes with PDSA Cycles</h4>
+          <p class="font-arabic-body text-xs text-on-surface-variant">QI 103: اختبار وقياس التغييرات باستخدام دورات PDSA</p>
+          <span class="text-xs text-on-surface-variant flex items-center gap-1 mt-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>120 min</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sidebar - Stitch AI Notes Style -->
+  <aside class="flex flex-col gap-md lg:w-1/3">
+    <!-- Progress Card -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Your Progress</h3>
+      <div class="flex items-center gap-md">
+        <div class="relative w-20 h-20">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d8e3fb" stroke-width="8"/>
+            <circle id="progressCircle" cx="50" cy="50" r="45" fill="none" stroke="#4648d4" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"/>
+          </svg>
+          <span id="progressText" class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-primary">0%</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-headline-md text-on-surface" id="sectionProgress">0/11</div>
+          <div class="font-label-md text-label-md text-on-surface-variant">Sections Completed</div>
+          <button onclick="exportProgress()" class="mt-xs text-xs text-primary hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">download</span> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Notes - Stitch Style -->
+    <div class="bg-surface/70 backdrop-blur-xl border border-primary/20 p-md rounded-xl shadow-sm relative overflow-hidden flex flex-col min-h-[300px]">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex items-center justify-between mb-md relative z-10 border-b border-outline-variant/20 pb-sm">
+        <div class="flex items-center gap-xs">
+          <div class="p-1 bg-gradient-to-br from-primary to-secondary rounded-md shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">AI Study Notes</h3>
+        </div>
+      </div>
+      <div class="flex-grow overflow-y-auto pr-2 space-y-sm relative z-10 custom-scrollbar" id="aiNotes">
+        <p class="font-label-md text-label-md text-primary mb-1">Key Takeaways:</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Complete each section below to generate personalized AI study notes.</p>
+        <p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">Use the checklist items to track your understanding of each concept.</p>
+        <div class="mt-sm p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs">
+          <span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">lightbulb</span>
+          <p class="text-sm text-on-surface-variant">Tip: Review the Saudi healthcare application section for CBAHI and Vision 2030 alignment.</p>
+        </div>
+      </div>
+      <div class="mt-sm pt-sm border-t border-outline-variant/20 relative z-10">
+        <button onclick="generateNotes()" class="w-full bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-sm rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+          <span class="material-symbols-outlined text-[20px]">psychology</span> Generate Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Up Next -->
+    <div class="bg-surface-container-lowest border border-outline-variant/30 p-md rounded-xl shadow-sm">
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Resources</h3>
+      <div class="space-y-sm">
+        <a href="https://www.cbahi.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">verified</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">CBAHI Standards</h4><span class="text-xs text-on-surface-variant">Accreditation guidelines</span></div>
+        </a>
+        <a href="https://www.moh.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">monitor_heart</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">MOH Guidelines</h4><span class="text-xs text-on-surface-variant">Ministry of Health</span></div>
+        </a>
+        <a href="https://www.vision2030.gov.sa" target="_blank" class="flex items-start gap-sm p-xs rounded-lg hover:bg-surface-container-low transition-colors group cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[18px]">visibility</span>
+          </div>
+          <div><h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Vision 2030</h4><span class="text-xs text-on-surface-variant">Health transformation</span></div>
+        </a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- BottomNavBar - Mobile Only -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-lg flex justify-around items-center h-20 px-4">
+  <a href="/" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">dashboard</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Home</span>
+  </a>
+  <a href="/courses/" class="flex flex-col items-center justify-center text-primary cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Courses</span>
+  </a>
+  <button onclick="showLearningMobile()" class="flex flex-col items-center justify-center text-on-surface-variant/60 cursor-pointer w-16">
+    <span class="material-symbols-outlined mb-1">school</span>
+    <span class="text-[10px] font-label-md truncate w-full text-center">Learning</span>
+  </button>
+</nav>
+
+<script>
+  // Dark Mode
+  function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark')); }
+  if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+
+  // Accordion
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    item.classList.toggle('active');
+    setTimeout(updateProgress, 100);
+  }
+
+  // Progress
+  function updateProgress() {
+    const total = document.querySelectorAll('.accordion-item').length;
+    const active = document.querySelectorAll('.accordion-item.active').length;
+    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+    const circle = document.getElementById('progressCircle');
+    const text = document.getElementById('progressText');
+    const sectionP = document.getElementById('sectionProgress');
+    const circumference = 2 * Math.PI * 45;
+    if (circle) circle.setAttribute('stroke-dashoffset', circumference - (pct / 100) * circumference);
+    if (text) text.textContent = pct + '%';
+    if (sectionP) sectionP.textContent = active + '/' + total;
+  }
+  setTimeout(updateProgress, 500);
+
+  // Enrollment
+  function enrollCourse() {
+    const isEnrolled = localStorage.getItem('enrolled-qi-104') === 'true';
+    if (!isEnrolled) {
+      localStorage.setItem('enrolled-qi-104', 'true');
+      let list = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (!list.includes('qi-104')) list.push('qi-104');
+      localStorage.setItem('enrolledCourses', JSON.stringify(list));
+      document.getElementById('enrollIcon').textContent = 'check_circle';
+      document.getElementById('enrollText').textContent = 'Enrolled';
+      document.getElementById('enrollBtn').className = 'flex items-center gap-xs bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary/20 shadow-sm group';
+      showToast('✅ Enrolled successfully!');
+    }
+  }
+
+  // Bookmark
+  function bookmarkCourse() {
+    const isSaved = localStorage.getItem('saved-qi-104') === 'true';
+    localStorage.setItem('saved-qi-104', !isSaved);
+    document.getElementById('bookmarkIcon').textContent = !isSaved ? 'bookmark' : 'bookmark_add';
+    document.getElementById('bookmarkText').textContent = !isSaved ? 'Saved' : 'Save';
+    document.getElementById('bookmarkBtn').className = !isSaved
+      ? 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group'
+      : 'flex items-center gap-xs bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors border border-outline-variant/20 group';
+    showToast(!isSaved ? '💾 Course saved!' : 'Course removed');
+  }
+  if (localStorage.getItem('saved-qi-104') === 'true') {
+    document.getElementById('bookmarkIcon').textContent = 'bookmark';
+    document.getElementById('bookmarkText').textContent = 'Saved';
+    document.getElementById('bookmarkBtn').className = 'flex items-center gap-xs bg-primary/10 text-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-primary/20 group';
+  }
+
+  // Mark Complete
+  function markComplete() {
+    const isComplete = localStorage.getItem('complete-qi-104') === 'true';
+    localStorage.setItem('complete-qi-104', !isComplete);
+    if (!isComplete) {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+      document.getElementById('completeText').textContent = 'Completed';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+      document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('progressText').textContent = '100%';
+      document.getElementById('sectionProgress').textContent = document.querySelectorAll('.accordion-item').length + '/' + document.querySelectorAll('.accordion-item').length;
+      showToast('🎉 Course completed!');
+    } else {
+      document.getElementById('completeIcon').textContent = 'check_circle';
+      document.getElementById('completeText').textContent = 'Mark Complete';
+      document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-transparent text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors border border-secondary border-dashed group';
+      setTimeout(updateProgress, 100);
+    }
+  }
+  if (localStorage.getItem('complete-qi-104') === 'true') {
+    document.getElementById('completeIcon').textContent = 'check_circle';
+    document.getElementById('completeIcon').style.fontVariationSettings = "'FILL' 1";
+    document.getElementById('completeText').textContent = 'Completed';
+    document.getElementById('completeBtn').className = 'flex items-center gap-xs bg-secondary/10 text-secondary px-4 py-2 rounded-lg font-label-md text-label-md transition-all border border-secondary group';
+    document.getElementById('progressCircle').setAttribute('stroke-dashoffset', '0');
+    document.getElementById('progressText').textContent = '100%';
+  }
+
+  // Quiz
+  const quizAnswers = {0: 1, 1: 2};
+  const selectedAnswers = {};
+  function selectQuiz(q, a) {
+    selectedAnswers[q] = a;
+    document.querySelectorAll('#q'+q+'o0, #q'+q+'o1, #q'+q+'o2, #q'+q+'o3').forEach(el => {
+      el.textContent = ''; el.className = 'w-5 h-5 rounded-full border-2 border-outline flex items-center justify-center text-xs font-bold';
+    });
+    const el = document.getElementById('q'+q+'o'+a);
+    if (el) { el.textContent = '✓'; el.className = 'w-5 h-5 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center text-xs font-bold'; }
+  }
+  function submitQuiz() {
+    let correct = 0;
+    const total = Object.keys(quizAnswers).length;
+    for (const [q, a] of Object.entries(quizAnswers)) { if (selectedAnswers[q] === a) correct++; }
+    const pct = Math.round((correct / total) * 100);
+    const result = document.getElementById('quizResult');
+    result.classList.remove('hidden');
+    if (pct >= 80) {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-secondary/10 text-secondary border border-secondary';
+      result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت!';
+      localStorage.setItem('quiz-pass-qi-104', 'true');
+    } else {
+      result.className = 'p-sm rounded-lg font-label-md text-label-md bg-tertiary/10 text-tertiary border border-tertiary';
+      result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح.';
+    }
+  }
+
+  // Generate Notes
+  function generateNotes() {
+    const notes = document.getElementById('aiNotes');
+    notes.innerHTML = '<p class="font-label-md text-label-md text-primary mb-1">Generated AI Notes:</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant">✅ Based on your progress, key concepts covered include quality improvement frameworks, PDSA cycles, and Saudi healthcare context.</p>' +
+      '<p class="bg-surface-container-low p-xs rounded-lg border border-outline-variant/10 text-body-md text-on-surface-variant mt-xs">📊 Review the Model for Improvement's three questions: Aim, Measures, Changes.</p>' +
+      '<div class="mt-xs p-xs bg-tertiary-container/10 border border-tertiary/20 rounded-lg flex gap-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">recommend</span><p class="text-sm text-on-surface-variant">🎯 Apply these concepts to CBAHI standards in your facility.</p></div>';
+    showToast('🧠 AI notes generated!');
+  }
+
+  // Export Progress
+  function exportProgress() {
+    const data = { course: 'Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools', slug: 'qi-104', enrolled: localStorage.getItem('enrolled-qi-104') === 'true', complete: localStorage.getItem('complete-qi-104') === 'true', quizPassed: localStorage.getItem('quiz-pass-qi-104') === 'true', exported: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'progress-qi-104.json'; a.click();
+    URL.revokeObjectURL(blob); showToast('📤 Progress exported!');
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-24 lg:bottom-6 right-4 bg-on-surface text-surface px-md py-sm rounded-xl shadow-lg z-[9999] font-label-md text-label-md animate-bounce';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  function showLearningMobile() {
+    const enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    showToast('📚 ' + (enrolled.length || 'No') + ' courses enrolled');
+  }
+</script>
+</body>
+</html>

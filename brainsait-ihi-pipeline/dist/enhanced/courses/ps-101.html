@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to Patient Safety | BrainSAIT Academy</title>
+  <meta name="description" content="Intro to Patient Safety - Full bilingual course on Patient Safety">
+  <meta name="keywords" content="Patient Safety, IHI, Open School, Health Care, PS">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/enhanced.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading BrainSAIT Academy...</div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">BrainSAIT Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses/" class="nav-link active">All Courses</a>
+        <a href="/stitch/index.html" class="nav-link">Stitch Hub</a>
+        <a href="#" class="nav-link" onclick="showSaved()">📚 My Learning</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="course-main">
+    <!-- Sidebar -->
+    <aside class="course-sidebar" id="sidebar">
+      <a href="/" class="back-link">← All Courses | جميع الدورات</a>
+      
+      <!-- Enroll Card -->
+      <div class="enroll-card">
+        <h3>Intro to Patient Safety</h3>
+        <p>PS-101 • 75 min • 1.25 CE Credits</p>
+        <button class="btn-enroll-sidebar" id="btnEnrollSide" onclick="toggleEnroll()">
+          ✅ Enroll Now | التسجيل الآن
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-sidebar">
+        <div class="progress-ring-small">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bar" id="progressBarSidebar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+          <span class="progress-text-small" id="progressTextSidebar">0%</span>
+        </div>
+        <div class="progress-label-small">Course Progress | تقدم الدورة</div>
+      </div>
+
+      <!-- Course Navigation -->
+      <div class="course-nav-section">
+        <div class="course-nav-title">Course Content | محتوى الدورة</div>
+        <ul class="section-list" id="sectionList">
+          
+          <li class="section-item active" data-section="0" onclick="scrollToSection(0)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">مقدمة في سلامة المرضى</span>
+          </li>
+          <li class="section-item " data-section="1" onclick="scrollToSection(1)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Overview | نظرة عامة على الد...</span>
+          </li>
+          <li class="section-item " data-section="2" onclick="scrollToSection(2)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Objectives | أهداف الدورة</span>
+          </li>
+          <li class="section-item " data-section="3" onclick="scrollToSection(3)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Lessons | الدروس</span>
+          </li>
+          <li class="section-item " data-section="4" onclick="scrollToSection(4)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Saudi Healthcare Application | التط...</span>
+          </li>
+          <li class="section-item " data-section="5" onclick="scrollToSection(5)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Case Studies | دراسات الحالة</span>
+          </li>
+          <li class="section-item " data-section="6" onclick="scrollToSection(6)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Practical Activities & Assessment |...</span>
+          </li>
+          <li class="section-item " data-section="7" onclick="scrollToSection(7)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Bilingual Glossary | معجم ثنائي الل...</span>
+          </li>
+          <li class="section-item " data-section="8" onclick="scrollToSection(8)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">References & Resources | المراجع وا...</span>
+          </li>
+          <li class="section-item " data-section="9" onclick="scrollToSection(9)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Apply in Your Hospital/Clinic | الت...</span>
+          </li>
+          <li class="section-item " data-section="10" onclick="scrollToSection(10)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Course Details | تفاصيل الدورة</span>
+          </li>
+          <li class="section-item " data-section="11" onclick="scrollToSection(11)">
+            <span class="section-icon">📘</span>
+            <span class="section-title">Continuing Education Credits | ساعا...</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-sidebar" id="btnSave" onclick="toggleSaveCourse()">
+          <span id="saveIcon">☆</span> <span id="saveText">Save for Later</span>
+        </button>
+        <button class="btn-sidebar" onclick="exportProgress()">📤 Export Progress</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="course-content">
+      <header class="course-header">
+        <div class="course-header-badges">
+          <span class="course-badge topic">Patient Safety</span>
+          <span class="course-badge format">IHI Open School</span>
+          <span class="course-badge lang">AR/EN</span>
+          <span class="course-badge level">🌱 Foundation</span>
+        </div>
+        <h1 class="course-title-main">Intro to Patient Safety</h1>
+        <p class="course-title-ar rtl">PS 101: مقدمة في سلامة المرضى</p>
+
+        <div class="course-stats">
+          <div class="course-stat">
+            <div class="course-stat-icon">⏱️</div>
+            <div class="course-stat-value">75</div>
+            <div class="course-stat-label">minutes | دقائق</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📊</div>
+            <div class="course-stat-value">Foundation</div>
+            <div class="course-stat-label">Level | المستوى</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">🎓</div>
+            <div class="course-stat-value">1.25</div>
+            <div class="course-stat-label">CE Credits | ساعات</div>
+          </div>
+          <div class="course-stat">
+            <div class="course-stat-icon">📖</div>
+            <div class="course-stat-value">12</div>
+            <div class="course-stat-label">Sections | أقسام</div>
+          </div>
+        </div>
+
+        <div class="enrollment-actions">
+          <button class="btn-enroll-main" id="btnEnrollMain" onclick="toggleEnroll()">
+            🎯 Enroll & Start Learning
+          </button>
+          <button class="btn-save-course" id="btnSaveMain" onclick="toggleSaveCourse()">
+            ☆ Save | حفظ
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">📚 Lessons</button>
+          <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">📝 Quiz</button>
+          <button class="tab-btn" data-tab="resources" onclick="switchTab('resources')">📎 Resources</button>
+          <button class="tab-btn" data-tab="activities" onclick="switchTab('activities')">✍️ Activities</button>
+        </div>
+
+        <div id="tab-lessons" class="tab-content active">
+          <h2 class="section-heading">📖 Course Sections | أقسام الدورة</h2>
+          
+    <div class="accordion-item active">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-0">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">مقدمة في سلامة المرضى</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <strong>PS 101: مقدمة في سلامة المرضى</strong>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-1">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Overview | نظرة عامة على الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English</h3>
+Patient safety is the foundation of quality healthcare. This comprehensive course equips healthcare professionals with the knowledge, skills, and attitudes necessary to create and sustain a culture of safety in their organizations. Through evidence-based frameworks and real-world scenarios, you will learn how to identify risks, prevent harm, and build more reliable systems.
+
+The course is specifically adapted for Saudi Arabia's healthcare environment, addressing the unique challenges and opportunities in MOH facilities, private hospital groups, and Primary Health Care (PHC) clusters. You will explore how to align patient safety initiatives with CBAHI accreditation standards and Saudi Vision 2030 health transformation goals.
+
+<strong>Why This Course Matters in Saudi Arabia | لماذا هذه الدورة مهمة في السعودية:</strong>
+
+The Saudi healthcare system is undergoing unprecedented transformation under Vision 2030. The National Health Transformation Program aims to position Saudi Arabia among the top countries in healthcare quality and patient safety. The Saudi Patient Safety Center (SPSC), established in 2017, leads national initiatives including:
+- Patient Safety Friendly Hospital Initiative
+- National Reporting and Learning System
+- Adverse Event Following Immunization (AEFI) surveillance
+- Medication safety programs
+- Healthcare-associated infection surveillance
+
+The CBAHI (Saudi Central Board for Accreditation of Healthcare Institutions) mandates comprehensive patient safety standards that healthcare organizations must meet for accreditation. This course provides the foundational knowledge to achieve and maintain these standards.
+
+<h3 class="section-title">العربية</h3>
+تُعد سلامة المرضى الأساس الذي تقوم عليه الرعاية الصحية عالية الجودة. تزود هذه الدورة الشاملة المهنيين الصحيين بالمعرفة والمهارات والمواقف اللازمة لإنشاء ثقافة سلامة مستدامة والحفاظ عليها في مؤسساتهم. من خلال أُطر عمل مبنية على الأدلة وسيناريوهات واقعية، ستتعلم كيفية تحديد المخاطر ومنع الضرر وبناء أنظمة أكثر موثوقية.
+
+تم تكييف الدورة خصيصاً لبيئة الرعاية الصحية في المملكة العربية السعودية، مع معالجة التحديات والفرص الفريدة في مرافق وزارة الصحة ومجموعات المستشفيات الخاصة وتجمعات الرعاية الصحية الأولية (PHC). ستستكشف كيفية مواءمة مبادرات سلامة المرضى مع معايير الاعتماد الخاصة بهيئة CBAHI وأهداف التحول الصحي لرؤية السعودية 2030.
+
+<strong>لماذا هذه الدورة مهمة في السعودية | Why This Course Matters in Saudi Arabia:</strong>
+
+يخضع النظام الصحي السعودي لتحويل غير مسبوق تحت مظلة رؤية 2030. يهدف برنامج التحول الصحي الوطني إلى تصنيف المملكة العربية السعودية ضمن الدول الرائدة في جودة الرعاية وسلامة المرضى. يقود المركز السعودي لسلامة المرضى (SPSC)، الذي أنشئ عام 2017، المبادرات الوطنية تشمل:
+- مبادرة المستشفيات الصديقة لسلامة المرضى
+- نظام الإبلاغ والتعلم الوطني
+- مراقبة الأحداث الضارة التالية للتطعيم
+- برامج سلامة الأدوية
+- مراقبة العدوى المرتبطة بالرعاية الصحية
+
+تفرض هيئة CBAHI (المجلس المركزي السعودي لاعتماد المؤسسات الصحية) معايير شاملة لسلامة Patients يجب أن تستوفيها المنشآت الصحية للحصول على الاعتماد. توفر هذه الدورة المعرفة الأساسية لتحقيق هذه المعايير والحفاظ عليها.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-2">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Objectives | أهداف الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Learning Outcomes</h3>
+After completing this course, you will be able to:
+
+- <strong>Understand</strong> why improving patient safety is critical to healthcare quality
+- <strong>Describe</strong> the Swiss Cheese Model and how system defenses prevent harm
+- <strong>Identify</strong> the four key elements of a Culture of Safety
+- <strong>Explain</strong> the difference between active errors and latent conditions
+- <strong>Apply</strong> Just Culture principles when responding to safety events
+- <strong>Conduct</strong> a basic root cause analysis (RCA) for adverse events
+- <strong>Develop</strong> escalation pathways for near misses and safety concerns
+- <strong>Implement</strong> safety huddles and regular team briefings
+- <strong>Translate</strong> course concepts into measurable improvement plans for Saudi facilities
+
+<h3 class="section-title">مخرجات التعلم بالعربية</h3>
+بنهاية هذه الدورة، ستكون قادراً على:
+
+- <strong>فهم</strong> لماذا يُعد تحسين سلامة المرضى أمراً بالغ الأهمية لجودة الرعاية الصحية
+- <strong>وصف</strong> نموذج الجبن السويسري وكيف تمنع دفاعات النظام الضرر
+- <strong>تحديد</strong> العناصر الأربعة الرئيسية لثقافة السلامة
+- <strong>شرح</strong> الفرق بين الأخطاء النشطة والحالات الكامنة
+- <strong>تطبيق</strong> مبادئ الثقافة العادلة عند الاستجابة لأحداث السلامة
+- <strong>إجراء</strong> تحليل السبب الجذري (RCA) أساسي للحوادث الضارة
+- <strong>تطوير</strong> مسارات التصعيد للحوادث الوشيكة ومخاوف السلامة
+- <strong>تنفيذ</strong> اجتماعات السلامة القصيرة والوجيهات الفريقية المنتظمة
+- <strong>ترجمة</strong> مفاهيم الدورة إلى خطط تحسين قابلة للقياس للمنشآت السعودية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-3">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Lessons | الدروس</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Lesson 1: Understanding Adverse Events and Patient Safety</h3>
+<h3 class="section-title">الدرس الأول: فهم الأحداث الضارة وسلامة المرضى</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Foundation
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Scope of Harm</strong>
+
+Patient safety harm affects millions of people worldwide each year. In developed healthcare systems, adverse events contribute to a significant burden of preventable morbidity and mortality. Understanding this scope helps us prioritize safety improvement efforts.
+
+<strong>Key Concepts:</strong>
+
+- <strong>Adverse Event:</strong> An injury caused by medical care rather than the underlying disease
+- <strong>Preventable Harm:</strong> Harm that could have been avoided with evidence-based care
+- <strong>Near Miss:</strong> An event that could have caused harm but didn't (due to chance or intervention)
+- <strong>Never Event:</strong> A serious, preventable event that should never occur
+
+<strong>The Swiss Cheese Model</strong>
+
+Developed by James Reason, this model illustrates how defenses against errors work in complex systems. Each slice of cheese represents a layer of protection, and holes represent vulnerabilities. When holes align, harm can reach the patient.
+
+<strong>Saudi Context:</strong>
+
+According to Saudi Arabia's MOH statistics, medication errors and healthcare-associated infections remain top safety priorities. The Saudi Patient Safety Center (SPSC) has launched national initiatives to address these challenges through the "Patient Safety First" campaign aligned with Vision 2030.
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>نطاق الضرر</strong>
+
+يؤثر ضرر سلامة المرضى على ملايين الأشخاص حول العالم كل عام. في أنظمة الرعاية الصحية المتطورة، تساهم الأحداث الضارة في عبء كبير من الاعتلال والوفيات التي يمكن الوقاية منها. يساعد فهم هذا النطاق على تحديد أولويات جهود تحسين السلامة.
+
+<strong>المفاهيم الرئيسية:</strong>
+
+- <strong>الحدث الضار:</strong> إصابة ناجمة عن الرعاية الطبية وليس عن المرض الأساسي
+- <strong>الضرر الذي يمكن الوقاية منه:</strong> الضرر الذي كان يمكن تجنبه برعاية مبنية على الأدلة
+- <strong>الحادث الوشيك:</strong> حدث كان يمكن أن يسبب ضرراً لكنه لم يحدث (بسبب الصدفة أو التدخل)
+- <strong>حدث لا يجب أن يحدث أبداً:</strong> حدث خطير يمكن الوقاية منه يجب ألا يحدث أبداً
+
+<strong>نموذج الجبن السويسري</strong>
+
+طوّره جيمس ريزن لتوضيح كيف تعمل الدفاعات ضد الأخطاء في الأنظمة المعقدة. يمثل كل شريحة من الجبن طبقة حماية، والثقوب تمثل نقاط الضعف. عندما تتوافق الثقوب، يمكن أن يصل الضرر إلى المريض.
+
+<strong>السياق السعودي:</strong>
+
+وفقاً لإحصائيات وزارة الصحة السعودية، تظل أخطاء الأدوية والعدوى المرتبطة بالرعاية الصحية من أبرز أولويات السلامة. أطلق المركز السعودي لسلامة المرضى (SPSC) مبادرات وطنية لمعالجة هذه التحديات من خلال حملة "سلامة المرضى أولاً" التي تتوافق مع رؤية 2030.
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Conduct a 30-minute patient safety walkthrough in your unit:
+
+1. Observe medication preparation and administration
+2. Identify at least 3 potential safety risks
+3. Document your findings using the safety observation form
+4. Prioritize risks by severity and likelihood
+5. Present findings to your supervisor
+
+<strong>نشاط عملي:</strong>
+
+قم بجولة سلامة مرضى لمدة 30 دقيقة في وحدتك:
+
+1. راقب تحضير وإعطاء الأدوية
+2. حدد ما لا يقل عن 3 مخاطر سلامة محتملة
+3. وثّق نتائجك باستخدام نموذج ملاحظة السلامة
+4. صنف المخاطر حسب الشدة والاحتمالية
+5. قدم النتائج لمشرفك
+
+---
+
+<h3 class="section-title">Lesson 2: Your Role in a Culture of Safety</h3>
+<h3 class="section-title">الدرس الثاني: دورك في ثقافة السلامة</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Intermediate
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Four Elements of a Culture of Safety</strong>
+
+1. <strong>Just Culture:</strong> A balance between accountability and learning
+   - Distinguishes between human error, at-risk behavior, and reckless behavior
+   - Focuses on system design rather than individual blame
+   - Promotes reporting and learning from mistakes
+
+2. <strong>Reporting Culture:</strong> An environment where safety events are reported
+   - Encourages transparent communication about errors
+   - Protects reporters from punishment for good-faith reporting
+   - Uses reports to drive improvement
+
+3. <strong>Flexible Culture:</strong> Ability to adapt based on demand
+   - Responds appropriately to changing circumstances
+   - Empowers staff to make decisions during emergencies
+   - Maintains safety during high-stress situations
+
+4. <strong>Learning Culture:</strong> Commitment to continuous improvement
+   - Analyzes safety events to understand root causes
+   - Implements changes based on lessons learned
+   - Shares knowledge across the organization
+
+<strong>Psychological Safety in Saudi Healthcare</strong>
+
+Creating an environment where team members feel safe to speak up is essential. In Saudi Arabia's healthcare settings, cultural factors may influence how safety concerns are raised. Effective leaders actively encourage diverse perspectives and model respectful questioning.
+
+<strong>TeamSTEPPS Saudi Adaptation:</strong>
+
+The TeamSTEPPS framework has been adapted for Saudi healthcare, emphasizing:
+
+- Briefs: Daily safety huddles at shift start
+- Huddles: Problem-solving briefings for emerging issues
+- SBAR: Structured communication for clinical handover
+- Cross-check: Two-person verification for high-risk tasks
+- CUS: Speaking up about safety concerns ("I am Concerned...")
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>العناصر الأربعة لثقافة السلامة</strong>
+
+1. <strong>الثقافة العادلة:</strong> التوازن بين المساءلة والتعلم
+   - تمييز بين الخطأ البشري والسلوك المتهور والسلوك المخاطر
+   - التركيز على تصميم النظام بدلاً من لوم الفرد
+   - تعزيز الإبلاغ والتعلم من الأخطاء
+
+2. <strong>ثقافة الإبلاغ:</strong> بيئة يتم فيها الإبلاغ عن أحداث السلامة
+   - تشجيع التواصل الشفاف حول الأخطاء
+   - حماية المبلّغين من العقاب مقابل الإبلاغ بحسن نية
+   - استخدام البلاغات لدفع التحسين
+
+3. <strong>الثقافة المرنة:</strong> القدرة على التكيف بناءً على الطلب
+   - الاستجابة بشكل مناسب للظروف المتغيرة
+   - تمكين الموظفين من اتخاذ القرارات خلال حالات الطوارئ
+   - الحفاظ على السلامة أثناء المواقف عالية الضغط
+
+4. <strong>ثقافة التعلم:</strong> الالتزام بالتحسين المستمر
+   - تحليل أحداث السلامة لفهم الأسباب الجذرية
+   - تنفيذ التغييرات بناءً على الدروس المستفادة
+   - مشاركة المعرفة عبر المؤسسة
+
+<strong>الأمان النفسي في الرعاية الصحية السعودية</strong>
+
+إن خلق بيئة يشعر فيها أعضاء الفريق بالأمان للتحدث أمر ضروري. في بيئات الرعاية الصحية السعودية، قد تؤثر العوامل الثقافية على كيفية إثارة مخاوف السلامة. يشجع القادة الفعالون بنشاط وجهات النظر المتنوعة وينمذجون الاستجواب المحترم.
+
+<strong>تكييف TeamSTEPPS للسعودية:</strong>
+
+تم تكييف إطار TeamSTEPPS للرعاية الصحية السعودية مع التأكيد على:
+
+- الموجزات: اجتماعات السلامة اليومية في بداية الوردية
+- الاجتماعات القصيرة: موجزات حل المشكلات للمشاكل الناشئة
+- SBAR: التواصل المنظم لتسليم الحالة السريرية
+- التحقق المتبادل: التحقق من شخصين للمهام عالية المخاطر
+- CUS: رفع مخاوف السلامة ("أنا قلق...")
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Implement a Just Culture response to a safety scenario:
+
+1. Review the case scenario (near miss with medication)
+2. Identify the type of behavior (human error, at-risk, or reckless)
+3. Apply appropriate response algorithm
+4. Document your rationale
+5. Discuss with your quality team
+
+<strong>نشاط عملي:</strong>
+
+طبّق استجابة ثقافة عادلة لسيناريو سلامة:
+
+1. راجع سيناريو الحالة (حادث وشيك بالأدوية)
+2. حدد نوع السلوك (خطأ بشري، متهور، أو خطر)
+3. طبّق خوارزمية الاستجابة المناسبة
+4. وثّق تبريرك
+5. ناقش مع فريق الجودة لديك
+
+---
+
+<h3 class="section-title">Lesson 3: Building Safer, More Reliable Systems</h3>
+<h3 class="section-title">الدرس الثالث: بناء أنظمة أكثر أمانًا وموثوقية</h3>
+
+<strong>Duration:</strong> 25 minutes | <strong>Level:</strong> Advanced
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>From Individual Blame to System Improvement</strong>
+
+Traditional approaches to safety focused on individual errors. Modern safety science recognizes that most errors result from system factors. By improving system design, we can prevent future harm.
+
+<strong>High Reliability Organizations (HROs)</strong>
+
+Healthcare organizations can learn from HROs in other industries:
+
+- <strong>Aviation:</strong> Crew Resource Management, checklists, simulation training
+- <strong>Nuclear:</strong> Defense-in-depth, redundant systems, safety culture programs
+- <strong>Military:</strong> Standard operating procedures, mission briefing, after-action review
+
+<strong>Key Principles for Healthcare:</strong>
+
+1. <strong>Preoccupation with Failure:</strong> Always thinking about what could go wrong
+2. <strong>Reluctance to Simplify:</strong> Recognizing that complex systems have complex risks
+3. <strong>Sensitivity to Operations:</strong> Maintaining awareness of frontline conditions
+4. <strong>Commitment to Resilience:</strong> Building capacity to adapt to unexpected events
+5. <strong>Deference to Expertise:</strong> Listening to those with the most relevant knowledge
+
+<strong>Escalation Pathways in Saudi Facilities</strong>
+
+Effective escalation requires clear pathways, trained staff, and leadership support:
+
+<div class="table-wrapper"><table><tbody>
+<tr><td>Level</td><td>Trigger</td><td>Action</td><td>Response Time</td></tr>
+|-------|---------|--------|---------------|
+<tr><td>1</td><td>Routine concern</td><td>Discuss with charge nurse</td><td>Within shift</td></tr>
+<tr><td>2</td><td>Patient safety risk</td><td>Escalate to physician</td><td>Within 1 hour</td></tr>
+<tr><td>3</td><td>Urgent safety issue</td><td>Activate rapid response</td><td>Within 15 min</td></tr>
+<tr><td>4</td><td>Emergency</td><td>Code Blue / Emergency response</td><td>Immediate</td></tr>
+
+<strong>Saudi Healthcare-Specific Considerations:</strong>
+
+- <strong>CBAHI Standards:</strong> Mandate patient safety committees, incident reporting, and root cause analysis
+- <strong>MOH Requirements:</strong> Weekly safety huddles, monthly quality review, quarterly RCA
+- <strong>Vision 2030:</strong> Health sector transformation aims to achieve world-class safety standards
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>من لوم الفرد إلى تحسين النظام</strong>
+
+ركزت المقاربات التقليدية للسلامة على الأخطاء الفردية. تدرك علوم السلامة الحديثة أن معظم الأخطاء تنتج عن عوامل النظام. من خلال تحسين تصميم النظام، يمكننا منع الضرر المستقبلي.
+
+<strong>المنظمات عالية الموثوقية (HROs)</strong>
+
+يمكن لمنظمات الرعاية الصحية التعلم من HROs في الصناعات الأخرى:
+
+- <strong>الطيران:</strong> إدارة موارد الطاقم، قوائم الفحص، تدريب المحاكاة
+- <strong>النووي:</strong> الدفاع المتدرج، الأنظمة المكررة، برامج ثقافة السلامة
+- <strong>العسكري:</strong> إجراءات التشغيل القياسية، موجز المهمة، مراجعة ما بعد الإجراء
+
+<strong>المبادئ الرئيسية للرعاية الصحية:</strong>
+
+1. <strong>الانشغال بالفشل:</strong> التفكير دائماً فيما يمكن أن يسوء
+2. <strong>تردد في التبسيط:</strong> إدراك أن الأنظمة المعقدة لها مخاطر معقدة
+3. <strong>الحساسية للعمليات:</strong> الحفاظ على الوعي بظروف خط الدفاع الأول
+4. <strong>الالتزام بالمرونة:</strong> بناء القدرة على التكيف مع الأحداث غير المتوقعة
+5. <strong>احترام الخبرة:</strong> الاستماع لمن لديه المعرفة الأكثر ملاءمة
+
+<strong>مسارات التصعيد في المنشآت السعودية</strong>
+
+يتطلب التصعيد الفعال مسارات واضحة وموظفين مدربين ودعم القيادة:
+
+<tr><td>المستوى</td><td>المحفز</td><td>الإجراء</td><td>وقت الاستجابة</td></tr>
+|---------|--------|---------|---------------|
+<tr><td>1</td><td>قلق روتيني</td><td>ناقش مع مشرف التمريض</td><td>خلال الوردية</td></tr>
+<tr><td>2</td><td>خطر سلامة المريض</td><td>تصعيد للطبيب</td><td>خلال ساعة</td></tr>
+<tr><td>3</td><td>مشكلة سلامة عاجلة</td><td>تفعيل الاستجابة السريعة</td><td>خلال 15 دقيقة</td></tr>
+<tr><td>4</td><td>طوارئ</td><td>كود أزرق / استجابة طوارئ</td><td>فوري</td></tr>
+
+<strong>اعتبارات خاصة بالرعاية الصحية السعودية:</strong>
+
+- <strong>معايير CBAHI:</strong> تفرض لجان سلامة المرضى، والإبلاغ عن الحوادث، وتحليل السبب الجذري
+- <strong>متطلبات وزارة الصحة:</strong> اجتماعات السلامة الأسبوعية، مراجعة الجودة الشهرية، تحليل السبب الجذري الربع سنوي
+- <strong>رؤية 2030:</strong> يهدف التحول الصحي إلى تحقيق معايير سلامة عالمية المستوى
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Design an escalation pathway for your unit:
+
+1. Map current escalation process
+2. Identify gaps and barriers
+3. Design improved pathway with clear triggers
+4. Train team on new pathway
+5. Test through simulation
+6. Measure and refine
+
+<strong>نشاط عملي:</strong>
+
+صمم مسار تصعيد لوحدتك:
+
+1. ارسم عملية التصعيد الحالية
+2. حدد الفجوات والحواجز
+3. صمم مسار محسن مع محفزات واضحة
+4. درب الفريق على المسار الجديد
+5. اختبر من خلال المحاكاة
+6. قس وصقل
+
+---
+
+<h3 class="section-title">Lesson 4: Understanding Systems Thinking and Complexity in Healthcare</h3>
+<h3 class="section-title">الدرس الرابع: فهم التفكير المنظومي والتعقيد في الرعاية الصحية</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Intermediate
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Nature of Healthcare Systems | طبيعة أنظمة الرعاية الصحية</strong>
+
+Healthcare systems are among the most complex systems in any industry. They involve:
+- Multiple professions (physicians, nurses, pharmacists, technicians, administrators)
+- Numerous departments and units that must coordinate
+- Thousands of processes and procedures
+- Advanced technology that requires specialized knowledge
+- Patients with unique needs, preferences, and conditions
+- Families who play critical roles in care
+- External factors (regulations, insurance, supply chains)
+
+Understanding this complexity is essential for improving patient safety.
+
+<strong>Systems Thinking Principles | مبادئ التفكير المنظومي:</strong>
+
+1. <strong>Interdependence:</strong> Parts of the system affect each other
+2. <strong>Feedback Loops:</strong> Actions create reactions that influence future actions
+3. <strong>Emergence:</strong> System behavior emerges from interactions of parts
+4. <strong>Boundaries:</strong> Systems exist within larger systems (and contain smaller systems)
+5. <strong>Time Delays:</strong> Effects of changes may not be immediately visible
+
+<strong>The Donabedian Model for Healthcare Quality | نموذج دونابيديان لجودة الرعاية الصحية:</strong>
+
+<tr><td>Component</td><td>Description</td><td>Example</td></tr>
+|-----------|-------------|---------|
+<tr><td><strong>Structure</strong></td><td>Physical facilities, equipment, personnel</td><td>Nurse-to-patient ratio, EHR system</td></tr>
+<tr><td><strong>Process</strong></td><td>What is done in giving/receiving care</td><td>Medication administration protocol</td></tr>
+<tr><td><strong>Outcome</strong></td><td>Results of care on health status</td><td>Patient recovery, complication rate</td></tr>
+
+This model helps us understand that improving safety requires attention to all three components.
+
+<strong>Complexity in Saudi Healthcare | التعقيد في الرعاية الصحية السعودية:</strong>
+
+Saudi Arabia's healthcare system has unique complexity factors:
+- Large expatriate workforce from diverse backgrounds
+- Rapid expansion of healthcare infrastructure under Vision 2030
+- Integration of traditional and modern medicine
+- Varying standards across MOH, private, and university hospitals
+- Geographic challenges across the Kingdom's regions
+- Cultural considerations in patient care
+
+<strong>Case Study: Medication Errors in a Saudi Hospital | حالة دراسية: أخطاء الأدوية في مستشفى سعودي</strong>
+
+A Riyadh-based hospital implemented a new computerized physician order entry (CPOE) system. Despite initial success, medication errors increased in the first six months due to:
+- Alert fatigue from excessive warnings
+- Workflow interruptions during implementation
+- Insufficient training on system features
+- Staff resistance to new processes
+
+Through systems thinking analysis, they identified root causes beyond individual error:
+- Poor interface design causing confusion
+- Inadequate change management
+- Missing integration with pharmacy systems
+- Insufficient user support during transition
+
+The solution required system redesign, not just retraining individuals.
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>طبيعة أنظمة الرعاية الصحية</strong>
+
+تعد أنظمة الرعاية الصحية من أكثر الأنظمة تعقيداً في أي صناعة. تشمل:
+- مهن متعددة (أطباء، ممرضون، صيادلة، فنيون، إداريون)
+- أقسام ووحدات عديدة يجب أن تت协调
+- آلاف العمليات والإجراءات
+- تقنية متقدمة تتطلب معرفة متخصصة
+- مرضى باحتياجات وتفضيلات وحالات فريدة
+- أسر تلعب أدواراً حاسمة في الرعاية
+- عوامل خارجية (اللوائح، التأمين، سلاسل التوريد)
+
+فهم هذا التعقيد ضروري لتحسين سلامة المرضى.
+
+<strong>مبادئ التفكير المنظومي:</strong>
+
+1. <strong>التبعية المتبادلة:</strong> أجزاء النظام تؤثر على بعضها البعض
+2. <strong>حلقات التغذية الراجعة:</strong> الإجراءات تخلق ردود تؤثر على الإجراءات المستقبلية
+3. <strong>الظهور:</strong> سلوك النظام ينبع من تفاعلات الأجزاء
+4. <strong>الحدود:</strong> الأنظمة موجودة داخل أنظمة أكبر (وتحتوي أنظمة أصغر)
+5. <strong>التأخيرات الزمنية:</strong> قد لا تكون تأثيرات التغييرات مرئية فوراً
+
+<strong>نموذج دونابيديان لجودة الرعاية الصحية:</strong>
+
+<tr><td>المكون</td><td>الوصف</td><td>المثال</td></tr>
+|--------|-------|--------|
+<tr><td><strong>الهيكل</strong></td><td>المرافق المادية، المعدات، الموظفين</td><td>نسبة الممرضين للمرضى، نظام السجل الصحي الإلكتروني</td></tr>
+<tr><td><strong>العملية</strong></td><td>ما يتم في إعطاء/تلقي الرعاية</td><td>بروتوكول إعطاء الأدوية</td></tr>
+<tr><td><strong>النتيجة</strong></td><td>نتائج الرعاية على الحالة الصحية</td><td>تعافي المريض، معدل المضاعفات</td></tr>
+
+يساعدنا هذا النموذج على فهم أن تحسين السلامة يتطلب الانتباه إلى المكونات الثلاثة.
+
+<strong>التعقيد في الرعاية الصحية السعودية:</strong>
+
+يتميز النظام الصحي السعودي بعوامل تعقيد فريدة:
+- قوة عمل كبيرة من العمالة الوافدة من خلفيات متنوعة
+- توسع سريع في البنية التحتية الصحية تحت مظلة رؤية 2030
+- دمج الطب التقليدي والحديث
+- معايير متفاوتة عبر مستشفيات وزارة الصحة والخاص والجامعي
+- التحديات الجغرافية عبر مناطق المملكة
+- الاعتبارات الثقافية في رعاية المرضى
+
+<strong>حالة دراسية: أخطاء الأدوية في مستشفى سعودي</strong>
+
+نفذت مستشفى في الرياض نظام إدخال أوامر الأطباء计算机ي (CPOE). على الرغم من النجاح الأولي، زادت أخطاء الأدوية في الأشهر الستة الأولى بسبب:
+- إرهاق التنبيهات من التحذيرات المفرطة
+- مقاطعة سير العمل أثناء التنفيذ
+- تدريب غير كافٍ على ميزات النظام
+- مقاومة الموظفين للعمليات الجديدة
+
+من خلال تحليل التفكير المنظومي، حددوا الأسباب الجذرية بما يتجاوز الخطأ الفردي:
+- واجهةpoor design causing confusion
+- إدارة التغيير غير الكافية
+- عدم التكامل مع أنظمة الصيدلة
+- دعم المستخدم غير الكافي أثناء الانتقال
+
+تطلب الحل إعادة تصميم النظام، وليس مجرد إعادة التدريب.
+
+<strong>Interactive Exercise | تمرين تفاعلي:</strong>
+
+Map your unit's medication administration process and identify:
+1. At least 5 handoff points where communication occurs
+2. 2 potential failure points where information could be lost
+3. One system-level intervention to prevent errors
+
+<strong>تمرين تفاعلي:</strong>
+
+ارسم عملية إعطاء الأدوية في وحدتك وحدد:
+1. نقاط تسليم التواصل على الأقل 5
+2. نقطتا فشل محتملتان حيث يمكن فقدان المعلومات
+3. تدخل واحد على مستوى النظام لمنع الأخطاء
+
+---
+
+<h3 class="section-title">Lesson 6: Measuring and Monitoring Patient Safety</h3>
+<h3 class="section-title">الدرس السادس: قياس ومراقبة سلامة المرضى</h3>
+
+<strong>Duration:</strong> 30 minutes | <strong>Level:</strong> Intermediate
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Importance of Measurement | أهمية القياس:</strong>
+
+You cannot improve what you cannot measure. Measurement allows us to:
+- Understand current performance
+- Identify improvement opportunities
+- Track progress over time
+- Demonstrate the impact of interventions
+- Compare performance across units and organizations
+
+<strong>Categories of Safety Metrics | فئات مقاييس السلامة:</strong>
+
+<tr><td>Category</td><td>Description</td><td>Examples</td></tr>
+|----------|-------------|----------|
+<tr><td><strong>Structure</strong></td><td>Resources and organization</td><td>Staffing levels, equipment availability</td></tr>
+<tr><td><strong>Process</strong></td><td>Actions taken</td><td>Protocol adherence, timely interventions</td></tr>
+<tr><td><strong>Outcome</strong></td><td>Patient results</td><td>Adverse events, complications, mortality</td></tr>
+
+<strong>Key Patient Safety Metrics in Saudi Arabia | مقاييس سلامة المرضى الرئيسية في السعودية:</strong>
+
+1. <strong>Healthcare-Associated Infections (HAI)</strong>
+   - Central Line-Associated Bloodstream Infection (CLABSI) rate
+   - Catheter-Associated Urinary Tract Infection (CAUTI) rate
+   - Surgical Site Infection (SSI) rate
+   - Target: Below national benchmarks (NHSN rates)
+
+2. <strong>Medication Errors</strong>
+   - Medication error rate per 1,000 patient days
+   - High-alert medication errors
+   - Transcription errors
+   - Target: Zero preventable errors
+
+3. <strong>Falls</strong>
+   - Fall rate per 1,000 patient days
+   - Fall rate with injury
+   - Target: Reduce preventable falls by 50%
+
+4. <strong>Mortality</strong>
+   - Hospital Standardized Mortality Ratio (HSMR)
+   - Risk-adjusted mortality
+   - Target: Below expected based on patient acuity
+
+5. <strong>Safety Culture</strong>
+   - AHRQ SOPS scores
+   - Incident reporting rates
+   - Staff perception surveys
+   - Target: Continuous improvement
+
+<strong>Measurement Tools and Techniques | أدوات وتقنيات القياس:</strong>
+
+1. <strong>Retrospective Chart Review | مراجعة السجلات بأثر رجعي:</strong>
+   - Review medical records for adverse events
+   - Use trigger tools to identify potential events
+   - Example: Institute for Healthcare Improvement (IHI) Global Trigger Tool
+
+2. <strong>Prospective Surveillance | المراقبة الاستباقية:</strong>
+   - Real-time monitoring of high-risk processes
+   - Direct observation of care delivery
+   - Real-time reporting systems
+
+3. <strong>Survey Methods | طرق الاستطلاع:</strong>
+   - Patient safety culture surveys (SOPS)
+   - Staff perception surveys
+   - Patient experience surveys
+
+4. <strong>Administrative Data Analysis | تحليل البيانات الإدارية:</strong>
+   - Claims data analysis
+   - Quality indicators from EHR
+   - Benchmarking against national databases
+
+<strong>Data Visualization for Safety | تصور البيانات للسلامة:</strong>
+
+Effective safety dashboards should include:
+
+1. <strong>Run Charts:</strong> Show trends over time
+2. <strong>Control Charts:</strong> Identify special cause variation
+3. <strong>Heat Maps:</strong> Display performance by unit/time
+4. <strong>Pie Charts:</strong> Show distribution of event types
+
+<strong>Example Dashboard Metrics for Saudi Hospital | مثال على لوحة المقاييس لمستشفى سعودي:</strong>
+
+```
+Monthly Safety Dashboard - King Abdullah Medical City
+
+Category | This Month | Last Month | Target | Status
+---------|------------|------------|--------|-------
+CLABSI Rate | 0.8/1000 line-days | 1.2/1000 | <1.0 | Green
+CAUTI Rate | 1.5/1000 cath-days | 1.8/1000 | <1.5 | Yellow
+Medication Errors | 3/1000 doses | 4/1000 | <2 | Red
+Fall Rate | 2.1/1000 pt-days | 2.5/1000 | <2.0 | Yellow
+Incident Reports | 45 reports | 38 reports | >30 | Green
+SOPS Score | 72% | 70% | >75% | Yellow
+```
+
+<strong>Building a Measurement Culture | بناء ثقافة القياس:</strong>
+
+Steps to develop measurement capabilities:
+
+1. Define key metrics aligned with organizational priorities
+2. Establish clear data collection processes
+3. Train staff on measurement definitions and methods
+4. Create feedback mechanisms to share results
+5. Use data for improvement, not just monitoring
+6. Celebrate improvements to reinforce measurement culture
+
+<strong>Quality Improvement Methods | طرق تحسين الجودة:</strong>
+
+- <strong>PDSA Cycles:</strong> Plan-Do-Study-Act methodology
+- <strong>Lean Principles:</strong> Eliminate waste, improve flow
+- <strong>Six Sigma:</strong> Reduce variation, improve processes
+- <strong>FMEA:</strong> Failure Mode and Effects Analysis
+- <strong>Root Cause Analysis:</strong> System-based investigation
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>أهمية القياس</strong>
+
+لا يمكنك تحسين ما لا يمكنك قياسه.allows us to:
+- فهم الأداء الحالي
+- تحديد فرص التحسين
+- تتبع التقدم بمرور الوقت
+- إظهار تأثير التدخلات
+- مقارنة الأداء عبر الوحدات والمنظمات
+
+<strong>فئات مقاييس السلامة:</strong>
+
+<tr><td>الفئة</td><td>الوصف</td><td>الأمثلة</td></tr>
+|--------|-------|--------|
+<tr><td><strong>الهيكل</strong></td><td>الموارد والتنظيم</td><td>مستويات الموظفين، توفر المعدات</td></tr>
+<tr><td><strong>العملية</strong></td><td>الإجراءات المتخذة</td><td>الالتزام بالبروتوكولات، التدخلات في الوقت المناسب</td></tr>
+<tr><td><strong>النتيجة</strong></td><td>نتائج المرضى</td><td>الأحداث الضارة، المضاعفات، الوفيات</td></tr>
+
+<strong>مقاييس سلامة المرضى الرئيسية في السعودية:</strong>
+
+1. <strong>العدوى المرتبطة بالرعاية الصحية (HAI)</strong>
+   - معدل العدوى المرتبطة بالخط المركزي (CLABSI)
+   - معدل عدوى المسالك البولية المرتبطة بالقسطرة (CAUTI)
+   - معدل عدوى موقع الجراحة (SSI)
+   - الهدف: أقل من المعايير الوطنية
+
+2. <strong>أخطاء الأدوية</strong>
+   - معدل أخطاء الأدوية لكل 1000 يوم مريض
+   - أخطاء الأدوية عالية التنبيه
+   - أخطاء النسخ
+   - الهدف: صفر أخطاء يمكن الوقاية منها
+
+3. <strong>السقوط</strong>
+   - معدل السقوط لكل 1000 يوم مريض
+   - معدل السقوط مع injury
+   - الهدف: تقليل السقوط الذي يمكن الوقاية منه بنسبة 50%
+
+4. <strong>الوفيات</strong>
+   - نسبة الوفيات المعيارية للمستشفى (HSMR)
+   - الوفيات المعدلة حسب المخاطر
+   - الهدف: أقل من المتوقع بناءً على حالة المريض
+
+5. <strong>ثقافة السلامة</strong>
+   - درجات AHRQ SOPS
+   - معدلات الإبلاغ عن الحوادث
+   - استبيانات تصور الموظفين
+   - الهدف: تحسين مستمر
+
+<strong>أدوات وتقنيات القياس:</strong>
+
+1. <strong>مراجعة السجلات بأثر رجعي:</strong>
+   - مراجعة السجلات الطبية للأحداث الضارة
+   - استخدام أدوات التحفيز لتحديد الأحداث المحتملة
+   - مثال: أداة الزناد العالمية لمعهد تحسين الرعاية الصحية (IHI)
+
+2. <strong>المراقبة الاستباقية:</strong>
+   - المراقبة في الوقت الفعلي للعمليات عالية المخاطر
+   - الملاحظة المباشرة لتقديم الرعاية
+   - أنظمة الإبلاغ في الوقت الفعلي
+
+3. <strong>طرق الاستطلاع:</strong>
+   - استبيانات ثقافة سلامة المرضى (SOPS)
+   - استبيانات تصور الموظفين
+   - استبيانات تجربة المريض
+
+4. <strong>تحليل البيانات الإدارية:</strong>
+   - تحليل بيانات المطالبات
+   - مؤشرات الجودة من السجل الصحي الإلكتروني
+   - المعارنة مع قواعد البيانات الوطنية
+
+<strong>تصور البيانات للسلامة:</strong>
+
+يجب أن تتضمن لوحات السلامة الفعالة:
+
+1. <strong>رسوم بيانية:</strong> إظهار الاتجاهات بمرور الوقت
+2. <strong>رسوم بيانية تحكم:</strong> تحديد التباين الخاص بالسبب
+3. <strong>خرائط حرارية:</strong> عرض الأداء حسب الوحدة/الوقت
+4. <strong>رسوم بيانية دائرية:</strong> عرض توزيع أنواع الأحداث
+
+<strong>مثال على لوحة المقاييس:</strong>
+
+```
+لوحة السلامة الشهرية - مدينة الملك Abdullah الطبية
+
+الفئة | هذا الشهر | الشهر الماضي | الهدف | الحالة
+---------|------------|------------|--------|-------
+معدل CLABSI | 0.8/1000 يوم قسطرة | 1.2/1000 | <1.0 | أخضر
+معدل CAUTI | 1.5/1000 يوم قسطرة | 1.8/1000 | <1.5 | أصفر
+أخطاء الأدوية | 3/1000 جرعة | 4/1000 | <2 | أحمر
+معدل السقوط | 2.1/1000 يوم مريض | 2.5/1000 | <2.0 | أصفر
+تقارير الحوادث | 45 تقرير | 38 تقرير | >30 | أخضر
+درجة SOPS | 72% | 70% | >75% | أصفر
+```
+
+<strong>بناء ثقافة القياس:</strong>
+
+خطوات لتطوير قدرات القياس:
+
+1. تحديد المقاييس الرئيسية المحاذاة مع أولويات المنظمة
+2. وضع عمليات واضحة لجمع البيانات
+3. تدريب الموظفين على تعريفات وطرق القياس
+4. إنشاء آليات ردود فعل لمشاركة النتائج
+5. استخدام البيانات للتحسين، وليس فقط المراقبة
+6. الاحتفال بالتحسينات لتعزيز ثقافة القياس
+
+<strong>Interactive Quiz | اختبار تفاعلي:</strong>
+
+<strong>Question 1:</strong> Which type of metric best measures whether staff are following established safety protocols?
+A) Structure metric
+B) Process metric
+C) Outcome metric
+D) Balancing metric
+
+<strong>Question 2:</strong> In Saudi Arabia, which organization sets the national benchmarks for healthcare-associated infection rates?
+A) Saudi FDA
+B) CBAHI
+C) SPSC
+D) MOH
+
+<strong>Question 3:</strong> What is the primary purpose of a run chart in patient safety monitoring?
+A) Compare performance across hospitals
+B) Show trends over time
+C) Identify root causes
+D) Calculate statistical significance
+
+<strong>Test your knowledge and verify answers with course instructor.</strong>
+
+<strong>اختبار تفاعلي:</strong>
+
+<strong>السؤال 1:</strong> أي نوع من المقاييس يقيس بشكل أفضل ما إذا كان الموظفون يتبعون بروتوكولات السلامة established؟
+A) مقياس الهيكل
+B) مقياس العملية
+C) مقياس النتيجة
+D) مقياس التوازن
+
+<strong>السؤال 2:</strong> في المملكة العربية السعودية، أي منظمة تحدد المعايير الوطنية لمعدلات العدوى المرتبطة بالرعاية الصحية؟
+A) الهيئة السعودية للغذاء والدواء
+B) CBAHI
+C) SPSC
+D) وزارة الصحة
+
+<strong>السؤال 3:</strong> ما الغرض الرئيسي من الرسم البياني في مراقبة سلامة المرضى؟
+A) مقارنة الأداء عبر hospitals
+B) إظهار الاتجاهات بمرور الوقت
+C) تحديد الأسباب الجذرية
+D) حساب الأهمية الإحصائية
+
+<strong>اختبر معرفتك وتحقق من الإجابات مع مدرب الدورة.</strong>
+
+---
+
+<h3 class="section-title">Additional Case Studies and Practical Exercises | دراسات الحالة والتمارين العملية الإضافية</h3>
+
+<h4 class="section-sub">Case Study 3: Preventing Patient Identification Errors in Saudi Arabia</h4>
+<h4 class="section-sub">حالة دراسية 3: منع أخطاء تحديد هوية المريض في المملكة العربية السعودية</h4>
+
+<strong>English Scenario:</strong>
+
+A 450-bed tertiary hospital in Jeddah reported 15 patient identification errors over 6 months. The errors included:
+- Blood transfusion to wrong patient (near miss)
+- Medication administered to wrong patient
+- Lab samples mislabeled
+- Patient taken to wrong procedure room
+
+<strong>Root Cause Analysis Findings:</strong>
+
+1. <strong>Workload Factors:</strong>
+   - High patient-to-staff ratios
+   - Multiple handoffs per patient
+   - Interruptions during medication administration
+
+2. <strong>System Factors:</strong>
+   - Inconsistent use of two patient identifiers
+   - Barcoding system not fully implemented
+   - Wristband printing issues
+
+3. <strong>Process Factors:</strong>
+   - No standardized verification protocol
+   - Lack of barcode scanning compliance
+   - Insufficient monitoring of identification processes
+
+<strong>Intervention Plan:</strong>
+
+<tr><td>Intervention</td><td>Responsible</td><td>Timeline</td><td>Expected Impact</td></tr>
+|--------------|-------------|----------|-----------------|
+<tr><td>Implement barcoded medication administration</td><td>Pharmacy/IT</td><td>3 months</td><td>75% reduction in medication errors</td></tr>
+<tr><td>Standardize two-identifier verification</td><td>Nursing</td><td>1 month</td><td>50% reduction in ID errors</td></tr>
+<tr><td>Replace wristband printers</td><td>Facilities</td><td>2 months</td><td>Improve band readability</td></tr>
+<tr><td>Add patient photo to EHR</td><td>IT</td><td>4 months</td><td>Visual verification capability</td></tr>
+<tr><td>Staff training on ID protocols</td><td>Education</td><td>1 month</td><td>100% staff compliance</td></tr>
+
+<strong>Results After 6 Months:</strong>
+- 85% reduction in patient identification errors
+- 92% compliance with barcode scanning
+- Zero wrong-blood transfusions
+- Improved patient satisfaction scores
+
+<strong>Arabic Scenario:</strong>
+
+أبلغ مستشفى tertiarion ثانوي يضم 450 سريراً في جدة عن 15 خطأ في تحديد هوية المريض خلال 6 أشهر. تضمنت الأخطاء:
+- نقل دم لمريض خاطئ (حادث وشيك)
+- دواء给定 لمريض خاطئ
+- عينات lab مُعلمة بشكل خاطئ
+- المريض taken إلى غرفة إجراء خاطئة
+
+<strong>نتائج تحليل السبب الجذري:</strong>
+
+1. <strong>عوامل عبء العمل:</strong>
+   - نسب عالية من المرضى للموظفين
+   - عمليات تسليم متعددة لكل مريض
+   - مقاطعات أثناء إعطاء الأدوية
+
+2. <strong>عوامل النظام:</strong>
+   - استخدام غير متسق لمعرفين للمريض
+   - نظام الرمز الشريطي not fully implemented
+   - مشاكل في طباعة سوار المعصم
+
+3. <strong>عوامل العملية:</strong>
+   - لا يوجد بروتوكول التحقق القياسي
+   - lack of barcode scanning compliance
+   - مراقبة غير كافية لعمليات تحديد الهوية
+
+<strong>خطة التدخل:</strong>
+
+<tr><td>التدخل</td><td>المسؤول</td><td>الجدول الزمني</td><td>التأثير المتوقع</td></tr>
+|--------|---------|--------------|----------------|
+<tr><td>تنفيذ إعطاء الأدوية بالرمز الشريطي</td><td>الصيدلة/تكنولوجيا المعلومات</td><td>3 أشهر</td><td>انخفاض 75% في أخطاء الأدوية</td></tr>
+<tr><td>توحيد التحقق من معرفين للمريض</td><td>التمريض</td><td>شهر واحد</td><td>انخفاض 50% في أخطاء الهوية</td></tr>
+<tr><td>استبدال طابعات السوار</td><td>المرافق</td><td>شهرين</td><td>تحسين وضوح السوار</td></tr>
+<tr><td>إضافة صورة المريض للسجل الصحي الإلكتروني</td><td>تكنولوجيا المعلومات</td><td>4 أشهر</td><td>إمكانية التحقق البصري</td></tr>
+<tr><td>تدريب الموظفين على بروتوكولات الهوية</td><td>التعليم</td><td>شهر واحد</td><td>امتثال 100% من الموظفين</td></tr>
+
+<strong>النتائج بعد 6 أشهر:</strong>
+- انخفاض 85% في أخطاء تحديد هوية المريض
+- امتثال 92% بالرمز الشريطي
+- صفر حالات نقل دم خاطئة
+- تحسن في درجات رضا المريض
+
+---
+
+<h4 class="section-sub">Case Study 4: Fall Prevention in Elderly Patients</h4>
+<h4 class="section-sub">حالة دراسية 4: الوقاية من السقوط لدى المرضى كبار السن</h4>
+
+<strong>English:</strong>
+
+King Abdullah Medical Complex (a 600-bed academic medical center) implemented a comprehensive fall prevention program after noting a fall rate of 8.5 per 1,000 patient days—significantly above the national benchmark of 3.5.
+
+<strong>Risk Assessment Implementation:</strong>
+
+The hospital adopted the Morse Fall Scale as their standard assessment tool, integrated into the EHR with automatic risk stratification:
+
+<tr><td>Risk Level</td><td>Score Range</td><td>Interventions Required</td></tr>
+|------------|-------------|------------------------|
+<tr><td>Low</td><td>0-24</td><td>Standard precautions</td></tr>
+<tr><td>Moderate</td><td>25-50</td><td>Additional measures (bed alarm, non-slip footwear)</td></tr>
+<tr><td>High</td><td>>50</td><td>Full protocol (restraint assessment, 1:1 supervision if needed)</td></tr>
+
+<strong>Multi-Component Intervention:</strong>
+
+1. <strong>Environmental modifications:</strong>
+   - Improved lighting in patient rooms and bathrooms
+   - Non-slip flooring in high-risk areas
+   - Bed height standardization
+   - Regular equipment checks
+
+2. <strong>Staff education:</strong>
+   - Mandatory annual fall prevention training
+   - Competency assessment for high-risk unit staff
+   - Just-in-time training for new equipment
+
+3. <strong>Patient and family engagement:</strong>
+   - Fall prevention education at admission
+   - Personalized risk communication
+   - Involvement in care planning
+
+4. <strong>Technology integration:</strong>
+   - Bed exit alarm system
+   - Video monitoring for high-risk patients
+   - Automated risk alerts to care team
+
+<strong>Results:</strong>
+
+After 12 months, the fall rate decreased to 2.8 per 1,000 patient days—a 67% reduction. The hospital also achieved:
+- 45% reduction in fall-related injuries
+- 62% reduction in fall-related length of stay
+- Cost savings of 2.4 million SAR annually
+
+<strong>Arabic:</strong>
+
+نفذ مجمع الملك Abdullah الطبي (مركز طبي أكاديمي يضم 600 سرير) برنامجاً شاملاً للوقاية من السقوط بعد ملاحظة معدل سقوط 8.5 لكل 1000 يوم مريض—أعلى بشكل ملحوظ من المعيار الوطني 3.5.
+
+<strong>تنفيذ تقييم المخاطر:</strong>
+
+تبنى المستشفى مقياس Morse للسقوط كأداة تقييم standard، مُدمجة في السجل الصحي الإلكتروني مع تحديد تلقائي للمخاطر:
+
+<tr><td>مستوى المخاطر</td><td>نطاق النتيجة</td><td>التدخلات المطلوبة</td></tr>
+|--------------|-------------|-------------------|
+<tr><td>منخفض</td><td>0-24</td><td>احتياطات قياسية</td></tr>
+<tr><td>معتدل</td><td>25-50</td><td>تدابير إضافية (إنذار السرير، أحذيةAnti-slip)</td></tr>
+<tr><td>عالي</td><td>>50</td><td>البروتوكول الكامل (تقييم القيود، الإشراف 1:1 إذا لزم الأمر)</td></tr>
+
+<strong>تدخل متعدد المكونات:</strong>
+
+1. <strong>تعديلات بيئية:</strong>
+   - تحسين الإضاءة في غرف المرضى والحمامات
+   - أرضيات Anti-slip في areas عالية المخاطر
+   - توحيد ارتفاع السرير
+   - فحوصات منتظمة للمعدات
+
+2. <strong>تعليم الموظفين:</strong>
+   - تدريب إلزامي سنوي على الوقاية من السقوط
+   - تقييم الكفاءة لموظفي الوحدات عالية المخاطر
+   - تدريب في الوقت المناسب للمعدات الجديدة
+
+3. <strong>إشراك المريض والعائلة:</strong>
+   - تعليم الوقاية من السقوط عند الدخول
+   - التواصل الشخصي حول المخاطر
+   - المشاركة في تخطيط الرعاية
+
+4. <strong>تكامل التقنية:</strong>
+   - نظام إنذار خروج السرير
+   - المراقبة بالفيديو للمرضى عاليي المخاطر
+   - تنبيهات المخاطر التلقائية لفريق الرعاية
+
+<strong>النتائج:</strong>
+
+بعد 12 شهراً، انخفض معدل السقوط إلى 2.8 لكل 1000 يوم مريض—انخفاض 67%. حقق المستشفى أيضاً:
+- انخفاض 45% في إصابات السقوط
+- انخفاض 62% في مدة stay المرتبطة بالسقوط
+- وفورات مالية 2.4 مليون ريال سنوياً
+
+---
+
+<h4 class="section-sub">Interactive Exercise: Safety Culture Assessment</h4>
+<h4 class="section-sub">تمرين تفاعلي: تقييم ثقافة السلامة</h4>
+
+<strong>Step 1: Complete the AHRQ SOPS Survey | الخطوة 1: أكمل استبيان SOPS:</strong>
+
+The AHRQ Survey on Patient Safety Culture (SOPS) measures staff perceptions across 12 dimensions:
+
+1. Communication Openness
+2. Communication About Error
+3. Communication Frequency
+4. Feedback and Communication About Error
+5. Nonpunitive Response to Error
+6. Staffing
+7. Supervisor/Manager Expectations
+8. Manager Support for Patient Safety
+9. Organizational Learning-Continuous Improvement
+10. Overall Perceptions of Patient Safety
+11. Teamwork Across Units
+12. Teamwork Within Units
+
+<strong>Action:</strong> Request the SOPS survey from your quality department or download from AHRQ website. Administer to your unit and analyze results.
+
+<strong>الإجراء:</strong> اطلب استبيان SOPS من قسم الجودة أو قم بتنزيله من موقع AHRQ. قدمه لوحدتك وحلل النتائج.
+
+<strong>Step 2: Interpret Results | الخطوة 2: تفسير النتائج:</strong>
+
+<tr><td>Dimension</td><td>< 50%</td><td>50-70%</td><td>> 70%</td></tr>
+|-----------|-------|--------|-------|
+<tr><td>Areas of Concern</td><td>Requires urgent improvement</td><td>Needs attention</td><td>Good performance</td></tr>
+<tr><td>Action Priority</td><td>Immediate intervention</td><td>Planned improvement</td><td>Maintain and share</td></tr>
+
+<strong>Step 3: Develop Action Plan | الخطوة 3: خطة العمل التطويرية:</strong>
+
+For each dimension below 70%, complete this template:
+
+```
+Dimension: ___________
+Current Score: ___%
+Target Score: ___%
+Barriers: 
+1. ___________
+2. ___________
+
+Interventions:
+1. ___________
+2. ___________
+
+Responsible Person: ___________
+Timeline: ___________
+```
+
+---
+
+<h3 class="section-title">Extended Bilingual Glossary | معجم ثنائي اللغة موسع</h3>
+
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Category</td><td>Definition</td></tr>
+|--------------|---------------|----------|------------|
+<tr><td>Adverse Event</td><td>حدث ضار</td><td>Core Concept</td><td>Injury caused by medical care</td></tr>
+<tr><td>Near Miss</td><td>حادث وشيك</td><td>Reporting</td><td>Event that could have caused harm but didn't</td></tr>
+<tr><td>Sentinel Event</td><td>حدث مركزي</td><td>Classification</td><td>Unexpected event causing death or serious injury</td></tr>
+<tr><td>Never Event</td><td>حدث لا يجب أن يحدث</td><td>Classification</td><td>Serious, preventable event</td></tr>
+<tr><td>Root Cause Analysis</td><td>تحليل السبب الجذري</td><td>Methodology</td><td>System-based investigation</td></tr>
+<tr><td>Failure Mode and Effects Analysis</td><td>تحليل نمط الفشل والآثار</td><td>Proactive</td><td>Prospective risk assessment</td></tr>
+<tr><td>Swiss Cheese Model</td><td>نموذج الجبن سويسري</td><td>Model</td><td>Defense layers concept</td></tr>
+<tr><td>High Reliability Organization</td><td>منظمة عالية الموثوقية</td><td>Concept</td><td>Organization with minimal accidents</td></tr>
+<tr><td>Just Culture</td><td>ثقافة عادلة</td><td>Culture</td><td>Accountability balanced with learning</td></tr>
+<tr><td>Safety Culture</td><td>ثقافة السلامة</td><td>Culture</td><td>Shared values and behaviors</td></tr>
+<tr><td>Human Factors</td><td>العوامل البشرية</td><td>Science</td><td>Study of human performance</td></tr>
+<tr><td>Cognitive Bias</td><td>التحيز المعرفي</td><td>Psychology</td><td>Systematic thinking errors</td></tr>
+<tr><td>Active Error</td><td>خطأ نشط</td><td>Error Type</td><td>Error at point of interface</td></tr>
+<tr><td>Latent Error</td><td>خطأ كامن</td><td>Error Type</td><td>Hidden system weakness</td></tr>
+<tr><td>System Defense</td><td>دفاعة النظام</td><td>System</td><td>Barrier preventing error</td></tr>
+<tr><td>Defensive Medicine</td><td>الطب الدفاعي</td><td>Practice</td><td>Ordering tests to avoid liability</td></tr>
+<tr><td>Evidence-Based Medicine</td><td>الطب المبني على الأدلة</td><td>Practice</td><td>Care based on research</td></tr>
+<tr><td>Clinical Pathway</td><td>المسار السريري</td><td>Process</td><td>Standardized care plan</td></tr>
+<tr><td>Benchmarking</td><td>المعايير المعيارية</td><td>Measurement</td><td>Comparison to best practice</td></tr>
+<tr><td>Key Performance Indicator</td><td>مؤشر الأداء الرئيسي</td><td>Measurement</td><td>Quantitative measure</td></tr>
+<tr><td>PDSA Cycle</td><td>دورة PDSA</td><td>Methodology</td><td>Plan-Do-Study-Act</td></tr>
+<tr><td>SBAR</td><td>SBAR</td><td>Communication</td><td>Situation-Background-Assessment-Recommendation</td></tr>
+<tr><td>Handoff</td><td>التسليم</td><td>Communication</td><td>Transfer of care responsibility</td></tr>
+<tr><td>Simulation Training</td><td>تدريب المحاكاة</td><td>Education</td><td>Practice in simulated environment</td></tr>
+<tr><td>Crew Resource Management</td><td>إدارة موارد الطاقم</td><td>Methodology</td><td>Aviation safety practices</td></tr>
+<tr><td>Trigger Tool</td><td>أداة التحفيز</td><td>Methodology</td><td>Tool to identify adverse events</td></tr>
+<tr><td>Incident Report</td><td>تقرير حادث</td><td>Documentation</td><td>Formal event documentation</td></tr>
+<tr><td>Peer Review</td><td>المراجعة الزملاء</td><td>Quality</td><td>Colleague evaluation</td></tr>
+<tr><td>Mortality Review</td><td>مراجعة الوفيات</td><td>Quality</td><td>Death investigation</td></tr>
+<tr><td>Morbidity Review</td><td>مراجعة المراضة</td><td>Quality</td><td>Complication analysis</td></tr>
+<tr><td>Rapid Response Team</td><td>فريق الاستجابة السريعة</td><td>Response</td><td>Emergency response team</td></tr>
+<tr><td>Code Blue</td><td>كود أزرق</td><td>Response</td><td>Cardiac arrest response</td></tr>
+<tr><td>Bar Code Medication Administration</td><td>إعطاء الأدوية بالرمز الشريطي</td><td>Technology</td><td>Scanning-based administration</td></tr>
+<tr><td>Clinical Decision Support</td><td>دعم القرار السريري</td><td>Technology</td><td>Computer-based guidance</td></tr>
+<tr><td>Electronic Health Record</td><td>السجل الصحي الإلكتروني</td><td>Technology</td><td>Digital patient record</td></tr>
+<tr><td>Computerized Physician Order Entry</td><td>إدخال أوامر الطبيب计算机ي</td><td>Technology</td><td>Electronic prescribing</td></tr>
+<tr><td>Patient Safety Officer</td><td>مسؤول سلامة المريض</td><td>Role</td><td>Safety program leadership</td></tr>
+<tr><td>Quality Manager</td><td>مدير الجودة</td><td>Role</td><td>Quality program leadership</td></tr>
+<tr><td>Risk Manager</td><td>مدير المخاطر</td><td>Role</td><td>Risk assessment and mitigation</td></tr>
+<tr><td>CBAHI</td><td>CBAHI</td><td>Organization</td><td>Saudi accreditation body</td></tr>
+<tr><td>SPSC</td><td>المركز السعودي لسلامة المرضى</td><td>Organization</td><td>National patient safety center</td></tr>
+<tr><td>MOH</td><td>وزارة الصحة</td><td>Organization</td><td>Ministry of Health</td></tr>
+<tr><td>Vision 2030</td><td>رؤية 2030</td><td>Initiative</td><td>Saudi transformation program</td></tr>
+<tr><td>NPHIES</td><td>NPHIES</td><td>System</td><td>National Health Information Exchange</td></tr>
+
+---
+
+<h3 class="section-title">Comprehensive Reference List | قائمة المراجع الشاملة</h3>
+
+<h4 class="section-sub">English References:</h4>
+
+1. Institute for Healthcare Improvement. (2024). Patient Safety Essentials. Boston, MA: IHI.
+
+2. World Health Organization. (2021). Global Patient Safety Action Plan 2021-2030. Geneva: WHO.
+
+3. Agency for Healthcare Research and Quality. (2024). Hospital Survey on Patient Safety Culture. Rockville, MD: AHRQ.
+
+4. Saudi Central Board for Accreditation of Healthcare Institutions. (2024). National Hospital Standards. Riyadh: CBAHI.
+
+5. Saudi Patient Safety Center. (2024). Patient Safety Guidelines. Riyadh: SPSC.
+
+6. Ministry of Health. (2024). National Patient Safety Framework. Riyadh: MOH.
+
+7. Reason, J. (2000). Human Error: Models and Management. BMJ, 320(7237), 768-770.
+
+8. Donabedian, A. (1988). The Quality of Care: How Can It Be Assessed? JAMA, 260(12), 1743-1748.
+
+9. Kalisch, B.J., & Overhage, J.M. (2009). Nursing Errors: Leading Contributions to Patient Injury. JAMA, 301(13), 1381-1388.
+
+10. Classen, D.C., et al. (2011). 'Global Trigger Tool' Shows That Adverse Events in Hospitals May Be Ten Times Greater Than Previously Measured. Health Affairs, 30(4), 581-589.
+
+11. Wachter, R.M. (2012). Understanding Patient Safety (2nd ed.). New York: McGraw-Hill.
+
+12. National Patient Safety Foundation. (2015). RCA2: Root Cause Analysis and Actions. Boston: NPSF.
+
+13. IHI Framework for Improving Quality. (2024). Institute for Healthcare Improvement.
+
+14. TeamSTEPPS® 2.0. (2024). Agency for Healthcare Research and Quality.
+
+<h4 class="section-sub">مصادر عربية:</h4>
+
+1. المركز السعودي لسلامة المرضى. (2024). دليل سلامة المرضى. الرياض: SPSC.
+
+2. المجلس المركزي السعودي لاعتماد المؤسسات الصحية. (2024). معايير المستشفيات الوطنية. الرياض: CBAHI.
+
+3. وزارة الصحة. (2024). إطار سلامة المرضى الوطني. الرياض: وزارة الصحة.
+
+4. مستشفى الملك فيصل التخصصي ومركز الأبحاث. (2024). دليل سياسات وإجراءات السلامة. الرياض.
+
+5. جمعية سلامة المرضى الدولية - الفرع العربي. (2024). الموارد التدريبية.
+
+6. رؤية المملكة العربية السعودية 2030 - قطاع الصحة. (2024). Riyadh.
+
+7. برنامج التحول الصحي - وزارة الصحة. (2024). الأهداف والمؤشرات.
+
+---
+
+<h3 class="section-title">Self-Assessment Quiz | اختبار التقييم الذاتي</h3>
+
+<strong>Part A: Knowledge Questions | الأسئلة المعرفية (Select the correct answer):</strong>
+
+1. According to the Swiss Cheese Model, when can patient harm occur?
+   a) When a single defense fails
+   b) When multiple defenses fail simultaneously
+   c) Only when an active error occurs
+   d) Never in well-designed systems
+
+2. Which of the following is an example of a latent error?
+   a) Nurse administers wrong medication
+   b) Physician misdiagnoses patient
+   c) Inadequate staffing levels leading to fatigue
+   d) Patient falls due to unsafe ambulation
+
+3. Under CBAHI standards, how often must the Patient Safety Committee meet?
+   a) Weekly
+   b) Monthly
+   c) Quarterly
+   d) Annually
+
+4. Which communication framework is recommended for clinical handoffs?
+   a) AIDET
+   b) SBAR
+   c) HELLO
+   d) WIN-WIN
+
+5. What is the primary focus of a Just Culture approach?
+   a) Punishing errors to prevent recurrence
+   b) Blaming individuals for system failures
+   c) Balancing accountability with system improvement
+   d) Encouraging reporting through rewards
+
+<strong>Part B: Application Questions | أسئلة التطبيق:</strong>
+
+6. You discover a near miss where the wrong patient received insulin but was caught before harm occurred. What is the appropriate first response?
+   a) Blame the nurse for not checking properly
+   b) Report the event and investigate system factors
+   c) Hide the incident to avoid scrutiny
+   d) Suspend the nurse pending investigation
+
+7. A patient falls in your unit. The root cause analysis reveals that the bed alarm was broken and the patient was high-risk for falls. What is the most appropriate action?
+   a) Counsel the nurse for not watching the patient closely
+   b) Replace the bed alarm and review equipment maintenance
+   c) Discharge the patient to another facility
+   d) Document the fall as an expected outcome
+
+8. Your unit's safety culture survey shows low scores on "Nonpunitive Response to Error." What intervention would be most effective?
+   a) Implement a reward system for error reporting
+   b) Train leaders on Just Culture principles
+   c) Increase monitoring of staff activities
+   d) Require all errors to be reported to administration
+
+<strong>Part C: Reflection Questions | أسئلة التأمل (Write your response):</strong>
+
+9. Describe a patient safety event you have witnessed or been involved in. What system factors contributed to the event? What would you do differently?
+
+10. How will you apply the concepts from this course to improve safety in your current role? Provide three specific actions.
+
+<strong>Answer Key | مفتاح الإجابات:</strong>
+1. b, 2. c, 3. b, 4. b, 5. c, 6. b, 7. b, 8. b
+(Part C: Instructor-evaluated)
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>The Role of Healthcare Leaders in Patient Safety | دور القادة في سلامة المرضى</strong>
+
+Effective leadership is essential for creating and sustaining a culture of safety. Leaders at all levels—executives, department heads, charge nurses, team leaders—must demonstrate commitment to safety and create systems that support safe care.
+
+<strong>Leadership Behaviors for Safety | سلوكيات القيادة للسلامة:</strong>
+
+<tr><td>Behavior</td><td>Description</td><td>Example</td></tr>
+|----------|-------------|---------|
+<tr><td><strong>Visible Commitment</strong></td><td>Leaders regularly demonstrate safety priority</td><td>Rounding on units, attending safety meetings</td></tr>
+<tr><td><strong>Openness to Learning</strong></td><td>Leaders acknowledge errors and learn from them</td><td>Sharing lessons from incidents</td></tr>
+<tr><td><strong>Empowerment</strong></td><td>Leaders enable staff to speak up</td><td>Supporting nurses to question physicians</td></tr>
+<tr><td><strong>Resource Allocation</strong></td><td>Leaders provide resources for safety</td><td>Funding safety equipment, training</td></tr>
+<tr><td><strong>Accountability</strong></td><td>Leaders hold themselves and others accountable</td><td>Addressing unsafe behaviors</td></tr>
+
+<strong>Just Culture Algorithm for Leaders | خوارزمية الثقافة العادلة للقادة:</strong>
+
+```
+1. Assess the behavior type:
+   - Human Error: Unintentional mistake (e.g., slip, lapse)
+   - At-Risk Behavior: Behavior that increases risk but provides no benefit
+   - Reckless Behavior: Conscious disregard of substantial risk
+
+2. Response based on behavior type:
+   - Human Error → Consolation + System Improvement
+   - At-Risk Behavior → Coaching + Remove Triggers
+   - Reckless Behavior → Disciplinary Action (consistent with policy)
+
+3. Document the process and outcomes
+```
+
+<strong>Creating Safety Infrastructure | بناء بنية السلامة:</strong>
+
+Key structural elements for patient safety programs:
+
+1. <strong>Patient Safety Committee</strong> (mandatory under CBAHI)
+   - Multi-disciplinary membership
+   - Regular meetings (monthly minimum)
+   - Authority to implement changes
+   - Reporting to executive leadership
+
+2. <strong>Incident Reporting System</strong>
+   - Anonymous reporting option
+   - Non-punitive approach
+   - Timely feedback to reporters
+   - Analysis and action on trends
+
+3. <strong>Safety Huddles</strong>
+   - Daily brief meetings
+   - Focus on current risks
+   - Standardized format
+   - Escalation pathway for issues
+
+4. <strong>Safety Metrics Dashboard</strong>
+   - Key performance indicators
+   - Trend analysis
+   - Benchmarking against targets
+   - Regular review at governance meetings
+
+<strong>Saudi Context: CBAHI Requirements | السياق السعودي: متطلبات CBAHI:</strong>
+
+CBAHI National Hospital Standards (2024) require:
+
+- Chapter on Patient Safety:
+  - PS.1: Patient Safety Program
+  - PS.2: Patient Identification
+  - PS.3: Communication
+  - PS.4: Medication Safety
+  - PS.5: Fall Prevention
+  - PS.6: Restraint and Seclusion
+  - PS.7: Medical Equipment Safety
+  - PS.8: Infection Prevention and Control
+  - PS.9: Surgical Safety
+  - PS.10: Adverse Events Reporting and Learning
+
+- Governance requirements:
+  - Board reporting on quality metrics
+  - Executive responsibility for safety
+  - Staff training on patient safety
+  - Patient involvement in safety programs
+
+<strong>Leadership Case Study: King Faisal Specialist Hospital | حالة دراسية للقيادة: مستشفى الملك فيصل التخصصي</strong>
+
+King Faisal Specialist Hospital and Research Center achieved JCI accreditation and is a leader in patient safety in Saudi Arabia. Their success factors included:
+
+1. <strong>Executive Commitment:</strong> CEO and senior leadership actively participated in safety initiatives
+2. <strong>Safety Culture Survey:</strong> Regular measurement using AHRQ SOPS with action plans
+3. <strong>High Reliability Practices:</strong> Implementation of aviation-style safety practices
+4. <strong>Technology Integration:</strong> Advanced EHR with clinical decision support
+5. <strong>Staff Engagement:</strong> Empowerment to report and resolve safety concerns
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>دور القادة في سلامة المرضى</strong>
+
+القيادة الفعالة ضرورية لإنشاء ثقافة سلامة مستدامة والحفاظ عليها. يجب أن يُظهر القادة على جميع المستويات—التنفيذيين، رؤساء الأقسام، مشرفو التمريض، قادة الفرق—التزاماً بالسلامة ويخلقون أنظمة تدعم الرعاية الآمنة.
+
+<strong>سلوكيات القيادة للسلامة:</strong>
+
+<tr><td>السلوك</td><td>الوصف</td><td>المثال</td></tr>
+|--------|-------|--------|
+<tr><td><strong>الالتزام المرئي</strong></td><td>يوضح القادة بشكل منتظم أولوية السلامة</td><td>الجولات على الأقسام، حضور اجتماعات السلامة</td></tr>
+<tr><td><strong>الانفتاح على التعلم</strong></td><td>يعترف القادة بالأخطاء ويتعلمون منها</td><td>مشاركة الدروس من الحوادث</td></tr>
+<tr><td><strong>التمكين</strong></td><td>يتيح القادة للموظفين التحدث</td><td>دعم الممرضين في استشارة الأطباء</td></tr>
+<tr><td><strong>تخصيص الموارد</strong></td><td>يوفر القادة موارد للسلامة</td><td>تمويل معدات السلامة والتدريب</td></tr>
+<tr><td><strong>المساءلة</strong></td><td>يحاسب القادة أنفسهم والآخرين</td><td>معالجة السلوك غير الآمن</td></tr>
+
+<strong>خوارزمية الثقافة العادلة للقادة:</strong>
+
+```
+1. تقييم نوع السلوك:
+   - الخطأ البشري: خطأ غير مقصود (انزلاق، نسيان)
+   - السلوك الخطر: سلوك يزيد المخاطر لكنه لا يوفر فائدة
+   - السلوك المتهور: تجاهل واعٍ للمخاطر الجوهرية
+
+2. الاستجابة بناءً على نوع السلوك:
+   - الخطأ البشري → تسلية + تحسين النظام
+   - السلوك الخطر → تدريب + إزالة المحفزات
+   - السلوك المتهور → إجراء تأديبي (وفقاً للسياسة)
+
+3. توثيق العملية والنتائج
+```
+
+<strong>بناء بنية السلامة:</strong>
+
+العناصر الهيكلية الرئيسية لبرامج سلامة المرضى:
+
+1. <strong>لجنة سلامة المرضى</strong> (إلزامية بموجب CBAHI)
+   - عضوية متعددة التخصصات
+   - اجتماعات منتظمة (شهرياً كحد أدنى)
+   -_authority to implement changes
+   - reporting to executive leadership
+
+2. <strong>نظام الإبلاغ عن الحوادث</strong>
+   - خيار الإبلاغ المجهول
+   - نهج غير عقابي
+   - ردود فعل سريعة للمبلّغين
+   - تحليل واتخاذ إجراءات على الاتجاهات
+
+3. <strong>اجتماعات السلامة القصيرة</strong>
+   - اجتماعات يومية موجزة
+   - التركيز على المخاطر الحالية
+   - تنسيق موحد
+   - مسار تصعيد للقضايا
+
+4. <strong>لوحة مقاييس السلامة</strong>
+   - مؤشرات الأداء الرئيسية
+   - تحليل الاتجاهات
+   - المعارنة مع الأهداف
+   - مراجعة منتظمة في اجتماعات الحوكمة
+
+<strong>السياق السعودي: متطلبات CBAHI:</strong>
+
+تتطلب معايير CBAHI الوطنية للمستشفيات (2024):
+
+- فصل عن سلامة المرضى:
+  - PS.1: برنامج سلامة المرضى
+  - PS.2: تحديد المريض
+  - PS.3: التواصل
+  - PS.4: سلامة الأدوية
+  - PS.5: الوقاية من السقوط
+  - PS.6: تحديد الحركة والisolation
+  - PS.7: سلامة المعدات الطبية
+  - PS.8: الوقاية من العدوى ومكافحتها
+  - PS.9: سلامة الجراحة
+  - PS.10: الإبلاغ عن الأحداث الضارة والتعلم
+
+- متطلبات الحوكمة:
+  - مجلس الإدارة reporting on quality metrics
+  - المسؤولية التنفيذية عن السلامة
+  - تدريب الموظفين على سلامة المريض
+  - مشاركة المرضى في برامج السلامة
+
+<strong>حالة دراسية للقيادة: مستشفى الملك فيصل التخصصي</strong>
+
+حصل مستشفى الملك فيصل التخصصي ومركز الأبحاث على اعتماد JCI وهو رائد في سلامة المرضى في السعودية. تضمنت عوامل نجاحهم:
+
+1. <strong>الالتزام التنفيذي:</strong> شارك الرئيس التنفيذي والقيادة العليا بنشاط في مبادرات السلامة
+2. <strong>مسح ثقافة السلامة:</strong> قياس منتظم باستخدام AHRQ SOPS مع خطط عمل
+3.مارسات عالية الموثوقية:** تنفيذ ممارسات سلامة على النمط航空公司
+4. <strong>تكامل التقنية:</strong> نظام EHR متقدم مع دعم القرار السريري
+5. <strong>إشراك الموظفين:</strong> تمكين البلاغ عن مخاوف السلامة وحلها
+
+<strong>Reflection Questions | أسئلة للتأمل:</strong>
+
+1. What patient safety initiatives has your organization implemented in the past year?
+2. How do you as a leader demonstrate commitment to patient safety daily?
+3. What barriers exist in your organization to creating a stronger safety culture?
+
+<strong>أسئلة للتأمل:</strong>
+
+1. ما المبادرات سلامة المرضى التي نفذها مؤسستك في العام الماضي؟
+2. كيف تُظهر أنت كقائد التزامك بسلامة المرضى يومياً؟
+3. ما العوائق الموجودة في مؤسستك لخلق ثقافة سلامة أقوى؟
+
+<h4 class="section-sub">English Content</h4>
+
+<strong>From Individual Blame to System Improvement</strong>
+
+Traditional approaches to safety focused on individual errors. Modern safety science recognizes that most errors result from system factors. By improving system design, we can prevent future harm.
+
+<strong>High Reliability Organizations (HROs)</strong>
+
+Healthcare organizations can learn from HROs in other industries:
+
+- <strong>Aviation:</strong> Crew Resource Management, checklists, simulation training
+- <strong>Nuclear:</strong> Defense-in-depth, redundant systems, safety culture programs
+- <strong>Military:</strong> Standard operating procedures, mission briefing, after-action review
+
+<strong>Key Principles for Healthcare:</strong>
+
+1. <strong>Preoccupation with Failure:</strong> Always thinking about what could go wrong
+2. <strong>Reluctance to Simplify:</strong> Recognizing that complex systems have complex risks
+3. <strong>Sensitivity to Operations:</strong> Maintaining awareness of frontline conditions
+4. <strong>Commitment to Resilience:</strong> Building capacity to adapt to unexpected events
+5. <strong>Deference to Expertise:</strong> Listening to those with the most relevant knowledge
+
+<strong>Escalation Pathways in Saudi Facilities</strong>
+
+Effective escalation requires clear pathways, trained staff, and leadership support:
+
+<tr><td>Level</td><td>Trigger</td><td>Action</td><td>Response Time</td></tr>
+|-------|---------|--------|---------------|
+<tr><td>1</td><td>Routine concern</td><td>Discuss with charge nurse</td><td>Within shift</td></tr>
+<tr><td>2</td><td>Patient safety risk</td><td>Escalate to physician</td><td>Within 1 hour</td></tr>
+<tr><td>3</td><td>Urgent safety issue</td><td>Activate rapid response</td><td>Within 15 min</td></tr>
+<tr><td>4</td><td>Emergency</td><td>Code Blue / Emergency response</td><td>Immediate</td></tr>
+
+<strong>Saudi Healthcare-Specific Considerations:</strong>
+
+- <strong>CBAHI Standards:</strong> Mandate patient safety committees, incident reporting, and root cause analysis
+- <strong>MOH Requirements:</strong> Weekly safety huddles, monthly quality review, quarterly RCA
+- <strong>Vision 2030:</strong> Health sector transformation aims to achieve world-class safety standards
+
+<h4 class="section-sub">المحتوى العربي</h4>
+
+<strong>من لوم الفرد إلى تحسين النظام</strong>
+
+ركزت المقاربات التقليدية للسلامة على الأخطاء الفردية. تدرك علوم السلامة الحديثة أن معظم الأخطاء تنتج عن عوامل النظام. من خلال تحسين تصميم النظام، يمكننا منع الضرر المستقبلي.
+
+<strong>المنظمات عالية الموثوقية (HROs)</strong>
+
+يمكن لمنظمات الرعاية الصحية التعلم من HROs في الصناعات الأخرى:
+
+- <strong>الطيران:</strong> إدارة موارد الطاقم، قوائم الفحص، تدريب المحاكاة
+- <strong>النووي:</strong> الدفاع المتدرج، الأنظمة redundantly، برامج ثقافة السلامة
+- <strong>العسكري:</strong> إجراءات التشغيل القياسية، موجز المهمة، مراجعة ما بعد الإجراء
+
+<strong>المبادئ الرئيسية للرعاية الصحية:</strong>
+
+1. <strong>الانشغال بالفشل:</strong> التفكير دائماً فيما يمكن أن يسوء
+2. <strong>تردد في التبسيط:</strong> إدراك أن الأنظمة المعقدة لها مخاطر معقدة
+3. <strong>الحساسية للعمليات:</strong> الحفاظ على الوعي بظروف خط الدفاع الأول
+4. <strong>الالتزام بالمرونة:</strong> بناء القدرة على التكيف مع الأحداث غير المتوقعة
+5. <strong>احترام الخبرة:</strong> الاستماع لمن لديه المعرفة الأكثر ملاءمة
+
+<strong>مسارات التصعيد في المنشآت السعودية</strong>
+
+يتطلب التصعيد الفعال مسارات واضحة وموظفين مدربين ودعم القيادة:
+
+<tr><td>المستوى</td><td>المحفز</td><td>الإجراء</td><td>وقت الاستجابة</td></tr>
+|---------|--------|---------|---------------|
+<tr><td>1</td><td>قلق روتيني</td><td>ناقش مع مشرف التمريض</td><td>خلال الوردية</td></tr>
+<tr><td>2</td><td>خطر سلامة المريض</td><td>تصعيد للطبيب</td><td>خلال ساعة</td></tr>
+<tr><td>3</td><td>مشكلة سلامة عاجلة</td><td>تفعيل الاستجابة السريعة</td><td>خلال 15 دقيقة</td></tr>
+<tr><td>4</td><td>طوارئ</td><td>كود أزرق / استجابة طوارئ</td><td>فوري</td></tr>
+</tbody></table></div>
+<strong>اعتبارات خاصة بالرعاية الصحية السعودية:</strong>
+
+- <strong>معايير CBAHI:</strong> تفرض لجان سلامة المرضى، والإبلاغ عن الحوادث، وتحليل السبب الجذري
+- <strong>متطلبات وزارة الصحة:</strong> اجتماعات السلامة الأسبوعية، مراجعة الجودة الشهرية، تحليل السبب الجذري الربع سنوي
+- <strong>رؤية 2030:</strong> يهدف التحول الصحي إلى تحقيق معايير سلامة عالمية المستوى
+
+<strong>Practical Activity | النشاط العملي:</strong>
+
+Design an escalation pathway for your unit:
+
+1. Map current escalation process
+2. Identify gaps and barriers
+3. Design improved pathway with clear triggers
+4. Train team on new pathway
+5. Test through simulation
+6. Measure and refine
+
+<strong>نشاط عملي:</strong>
+
+صمم مسار تصعيد لوحدتك:
+
+1. ارسم عملية التصعيد الحالية
+2. حدد الفجوات والحواجز
+3. صمم مسار محسن مع محفزات واضحة
+4. درب الفريق على المسار الجديد
+5. اختبر من خلال المحاكاة
+6. قس وصقل
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-4">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Saudi Healthcare Application | التطبيق في الرعاية الصحية السعودية</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Application</h3>
+- <strong>Care Settings:</strong> MOH hospitals, private hospital groups, PHC clusters
+- <strong>Regulatory Alignment:</strong> CBAHI National Hospital Standards, MOH Patient Safety Guidelines, SPSC initiatives
+- <strong>Vision 2030 Alignment:</strong> Quality and safety transformation targets
+- <strong>Role-Based Relevance:</strong>
+  - <strong>Physicians:</strong> Safe prescribing, clinical handover, error disclosure
+  - <strong>Nurses:</strong> Medication safety, patient monitoring, incident reporting
+  - <strong>Pharmacists:</strong> Medication reconciliation, high-alert medications, formulary safety
+  - <strong>Quality Teams:</strong> RCA facilitation, safety metrics, governance reporting
+
+<h3 class="section-title">التطبيق بالعربية</h3>
+- <strong>بيئات الرعاية:</strong> مستشفيات وزارة الصحة، مجموعات المستشفيات الخاصة، تجمعات الرعاية الأولية
+- <strong>المواءمة التنظيمية:</strong> معايير CBAHI الوطنية للمستشفيات، إرشادات سلامة المرضى بوزارة الصحة، مبادرات SPSC
+- <strong>مواءمة رؤية 2030:</strong> أهداف التحول في الجودة والسلامة
+- <strong>الملاءمة حسب الدور:</strong>
+  - <strong>الأطباء:</strong> الوصف الآمن، تسليم الحالة السريرية، الكشف عن الأخطاء
+  - <strong>التمريض:</strong> سلامة الأدوية، مراقبة المريض، الإبلاغ عن الحوادث
+  - <strong>الصيادلة:</strong> المراجعة الدوائية، الأدوية عالية التنبيه، سلامة القائمة الأساسية
+  - <strong>فرق الجودة:</strong> تسهيل تحليل السبب الجذري، مقاييس السلامة، التقارير الحوكمية
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-5">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Case Studies | دراسات الحالة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">Case Study 1: Medication Error in ICU | حالة 1: خطأ دوائي في العناية المركزة</h3>
+
+<strong>English:</strong>
+A nurse administered insulin to the wrong patient due to similar medication packaging. The patient experienced hypoglycemia but recovered after treatment.
+
+<strong>Analysis:</strong>
+- Active error: Wrong patient identification
+- Latent condition: Similar packaging design
+- System defense failed: Two-patient identifiers not verified
+- Just Culture response: System redesign needed
+
+<strong>Arabic:</strong>
+أعطى ممرض الأنسولين لمريض خاطئ بسبب تشابه تغليف الأدوية. عانى المريض من نقص سكر الدم لكنه تعافى بعد العلاج.
+
+<strong>التحليل:</strong>
+- خطأ نشط: تحديد هوية المريض الخاطئ
+- حالة كامنة: تصميم التغليف المتشابه
+- فشلت دفاعة النظام: لم يتم التحقق من معرفتي المريض
+- استجابة الثقافة العادلة: الحاجة إلى إعادة تصميم النظام
+
+<h3 class="section-title">Case Study 2: Communication Failure During Handover | حالة 2: فشل التواصل أثناء التسليم</h3>
+
+<strong>English:</strong>
+A patient's allergy information was not communicated during shift handover. The incoming team administered a penicillin derivative, causing an allergic reaction.
+
+<strong>Arabic:</strong>
+لم يتم التواصل حول معلومات حساسية المريض أثناء تسليم الوردية. أعطى الفريق القادم مشتقاً من البنسلين مما تسبب في رد فعل تحسسي.
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-6">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Practical Activities & Assessment | الأنشطة العملية والتقييم</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Assessment Tasks</h3>
+1. <strong>Safety Culture Survey:</strong> Complete the AHRQ SOPS survey for your unit
+2. <strong>Incident Report Analysis:</strong> Review 3 incident reports and identify system factors
+3. <strong>Escalation Pathway Design:</strong> Create an escalation pathway for your unit
+4. <strong>Safety Huddle Observation:</strong> Observe and document a safety huddle
+5. <strong>RCA Practice:</strong> Complete a mock RCA for a provided case scenario
+
+<h3 class="section-title">التقييم بالعربية</h3>
+1. <strong>مسح ثقافة السلامة:</strong> أكمل استبيان SOPS الخاص بـ AHRQ لوحدتك
+2. <strong>تحليل تقارير الحوادث:</strong> راجع 3 تقارير حوادث وحدد عوامل النظام
+3. <strong>تصميم مسار التصعيد:</strong> أنشئ مسار تصعيد لوحدتك
+4. <strong>ملاحظة اجتماع السلامة:</strong> راقب ووثّق اجتماع سلامة قصير
+5. <strong>تمرين تحليل السبب الجذري:</strong> أكمل تحليل السبب الجذري النموذجي لحالة مزودة
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-7">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Bilingual Glossary | معجم ثنائي اللغة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>English Term</td><td>المصطلح العربي</td><td>Category</td></tr>
+|--------------|---------------|----------|
+<tr><td>Adverse Event</td><td>حدث ضار</td><td>Core Concept</td></tr>
+<tr><td>Near Miss</td><td>حادث وشيك</td><td>Reporting</td></tr>
+<tr><td>Just Culture</td><td>ثقافة عادلة</td><td>Culture</td></tr>
+<tr><td>Root Cause Analysis</td><td>تحليل السبب الجذري</td><td>Methodology</td></tr>
+<tr><td>Safety Huddle</td><td>اجتماع سلامة قصير</td><td>Communication</td></tr>
+<tr><td>Escalation</td><td>التصعيد</td><td>Process</td></tr>
+<tr><td>Psychological Safety</td><td>الأمان النفسي</td><td>Culture</td></tr>
+<tr><td>Human Factors</td><td>العوامل البشرية</td><td>Science</td></tr>
+<tr><td>Latent Condition</td><td>الحالة الكامنة</td><td>System</td></tr>
+<tr><td>Active Error</td><td>خطأ نشط</td><td>Error Type</td></tr>
+<tr><td>Swiss Cheese Model</td><td>نموذج الجبن السويسري</td><td>Model</td></tr>
+<tr><td>High Reliability Organization</td><td>منظمة عالية الموثوقية</td><td>Concept</td></tr>
+<tr><td>SBAR</td><td>هيكل التواصل</td><td>Communication</td></tr>
+<tr><td>Never Event</td><td>حدث لا يجب أن يحدث</td><td>Classification</td></tr>
+<tr><td>Two-Patient Identifier</td><td>معرف المريضين</td><td>Safety Practice</td></tr>
+<tr><td>Rapid Response Team</td><td>فريق الاستجابة السريعة</td><td>Response</td></tr>
+<tr><td>Incident Report</td><td>تقرير حادث</td><td>Documentation</td></tr>
+<tr><td>Culture of Safety</td><td>ثقافة السلامة</td><td>Culture</td></tr>
+<tr><td>System Defense</td><td>دفاعة النظام</td><td>System</td></tr>
+<tr><td>Medication Reconciliation</td><td>المراجعة الدوائية</td><td>Process</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-8">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">References & Resources | المراجع والموارد</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Resources</h3>
+- <a href="https://www.ihi.org/topics/PatientSafety" target="_blank" rel="noopener">IHI Patient Safety</a>
+- <a href="https://www.ahrq.gov/sops/" target="_blank" rel="noopener">AHRQ SOPS Survey</a>
+- <a href="https://www.spsc.gov.sa/" target="_blank" rel="noopener">Saudi Patient Safety Center</a>
+- <a href="https://www.who.int/teams/patient-safety" target="_blank" rel="noopener">WHO Patient Safety</a>
+- <a href="https://www.ahrq.gov/teamstepps/" target="_blank" rel="noopener">TeamSTEPPS</a>
+- <a href="https://www.cbahi.gov.sa/" target="_blank" rel="noopener">CBAHI Standards</a>
+
+<h3 class="section-title">مصادر عربية</h3>
+- <a href="https://www.spsc.gov.sa/" target="_blank" rel="noopener">المركز السعودي لسلامة المرضى</a>
+- <a href="https://www.moh.gov.sa/" target="_blank" rel="noopener">إرشادات وزارة الصحة لسلامة المرضى</a>
+- <a href="https://www.cbahi.gov.sa/" target="_blank" rel="noopener">معايير اعتماد المستشفيات</a>
+- <a href="https://www.vision2030.gov.sa/" target="_blank" rel="noopener">رؤية 2030 - التحول الصحي</a>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-9">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Apply in Your Hospital/Clinic | التطبيق في المستشفى/العيادة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <h3 class="section-title">English Action Checklist</h3>
+<div class="checklist-item"><span class="checkbox"></span>Complete the AHRQ SOPS survey for your unit</div>
+<div class="checklist-item"><span class="checkbox"></span>Identify your unit's top 3 patient safety risks</div>
+<div class="checklist-item"><span class="checkbox"></span>Design and implement a weekly safety huddle</div>
+<div class="checklist-item"><span class="checkbox"></span>Create an escalation pathway poster for your unit</div>
+<div class="checklist-item"><span class="checkbox"></span>Report at least 3 near misses this month</div>
+<div class="checklist-item"><span class="checkbox"></span>Participate in a root cause analysis training</div>
+<div class="checklist-item"><span class="checkbox"></span>Complete medication safety competency</div>
+<div class="checklist-item"><span class="checkbox"></span>Share patient safety learning with your team</div>
+
+<h3 class="section-title">قائمة الإجراءات بالعربية</h3>
+<div class="checklist-item"><span class="checkbox"></span>أكمل استبيان SOPS لوحدتك</div>
+<div class="checklist-item"><span class="checkbox"></span>حدد أعلى 3 مخاطر سلامة لمرضى في وحدتك</div>
+<div class="checklist-item"><span class="checkbox"></span>صمم ونفّذ اجتماع سلامة أسبوعي</div>
+<div class="checklist-item"><span class="checkbox"></span>أنشئ ملصق مسار التصعيد لوحدتك</div>
+<div class="checklist-item"><span class="checkbox"></span>بلّغ عن 3 حوادث وشيكاء على الأقل هذا الشهر</div>
+<div class="checklist-item"><span class="checkbox"></span>شارك في تدريب تحليل السبب الجذري</div>
+<div class="checklist-item"><span class="checkbox"></span>أكمل الكفاءة في سلامة الأدوية</div>
+<div class="checklist-item"><span class="checkbox"></span>شارك تعلم سلامة المرضى مع فريقك</div>
+
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-10">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Course Details | تفاصيل الدورة</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          <div class="table-wrapper"><table><tbody>
+<tr><td>Property</td><td>English</td><td>العربية</td></tr>
+|----------|---------|---------|
+<tr><td><strong>Code</strong></td><td>PS 101</td><td>الكود</td></tr>
+<tr><td><strong>Format</strong></td><td>Online, On-Demand</td><td>عبر الإنترنت</td></tr>
+<tr><td><strong>Duration</strong></td><td>75 minutes</td><td>75 دقيقة</td></tr>
+<tr><td><strong>CE Credits</strong></td><td>1.25 Credits</td><td>1.25 ساعة معتمدة</td></tr>
+<tr><td><strong>Level</strong></td><td>Foundation</td><td>مستوى تمهيدي</td></tr>
+<tr><td><strong>Language</strong></td><td>Bilingual AR/EN</td><td>ثنائي اللغة</td></tr>
+<tr><td><strong>Provider</strong></td><td>IHI Open School</td><td>مقدم الدورة</td></tr>
+</tbody></table></div>
+---
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <button class="accordion-header rtl" onclick="toggleAccordion(this)" data-section="section-11">
+        <span class="accordion-icon">📘</span>
+        <span class="accordion-title">Continuing Education Credits | ساعات التعليم المستمر</span>
+        <span class="accordion-arrow">▼</span>
+      </button>
+      <div class="accordion-content rtl">
+        <div class="section-content-inner">
+          This course offers continuing education credits recognized by:
+- AMA PRA Category 1 Credit(s)™
+- CPPS Recertification
+- ANCC Nursing Credits
+
+<em>قد تختلف الساعات المعتمدة حسب مجلس الاعتماد. تحقق من القبول لدى جهة الاعتماد الخاصة بك.</em>
+
+---
+
+<strong>© 2026 BrainSAIT Academy | Powered by IHI Open School</strong>
+        </div>
+      </div>
+    </div>
+        </div>
+
+        <div id="tab-quiz" class="tab-content">
+          
+  <div class="quiz-section">
+    <h3 class="section-title" style="margin-bottom:16px;">📝 Knowledge Check | اختبار المعرفة</h3>
+    <div id="quiz-container">
+      <div class="quiz-question">
+        <h4>1. What is the primary purpose of the Model for Improvement?</h4>
+        <div class="quiz-options" data-question="0">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) To replace all existing quality systems</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) To provide a structured approach for testing and implementing changes</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) To create regulatory compliance documentation</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) To reduce healthcare costs only</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>2. ما هي الخطوة الأولى في دورة PDSA؟</h4>
+        <div class="quiz-options" data-question="1">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">أ) التنفيذ (Do)</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">ب) الدراسة (Study)</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">ج) التخطيط (Plan)</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">د) التطبيق (Act)</div>
+        </div>
+      </div>
+      <div class="quiz-question">
+        <h4>3. Which CBAHI goal focuses on preventing infection?</h4>
+        <div class="quiz-options" data-question="2">
+          <div class="quiz-option" data-answer="0" onclick="selectAnswer(this, 0)">A) Identify patients correctly</div>
+          <div class="quiz-option" data-answer="1" onclick="selectAnswer(this, 1)">B) Prevent infection</div>
+          <div class="quiz-option" data-answer="2" onclick="selectAnswer(this, 2)">C) Use medicines safely</div>
+          <div class="quiz-option" data-answer="3" onclick="selectAnswer(this, 3)">D) Improve staff communication</div>
+        </div>
+      </div>
+      <button class="quiz-submit" onclick="submitQuiz()">📊 Submit Answers | تقديم الإجابات</button>
+      <div id="quiz-result" class="quiz-result"></div>
+    </div>
+  </div>
+        </div>
+
+        <div id="tab-resources" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">📖 Key Resources | الموارد الرئيسية</h3>
+            <ul class="content-list">
+              <li><a href="https://www.ihi.org/resources" target="_blank">IHI Resource Hub</a></li>
+              <li><a href="https://www.cbahi.gov.sa" target="_blank">CBAHI Standards | معايير المجلس الصحي السعودي</a></li>
+              <li><a href="https://www.moh.gov.sa" target="_blank">MOH Guidelines | إرشادات وزارة الصحة</a></li>
+              <li><a href="https://www.vision2030.gov.sa" target="_blank">Vision 2030 Health | رؤية 2030 الصحية</a></li>
+              <li><a href="https://nphies.sa" target="_blank">NPHIES Platform | منصة التبادل الصحي</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="tab-activities" class="tab-content">
+          <div class="section-content-inner">
+            <h3 class="section-title">✍️ Practical Activities | الأنشطة العملية</h3>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Complete lesson readings | إكمال قراءة الدروس</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Pass knowledge check quiz | اجتياز اختبار المعرفة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Apply one concept in practice | تطبيق مفهوم في الممارسة</span>
+            </div>
+            <div class="checklist-item">
+              <span class="checkbox" onclick="this.classList.toggle('checked')"></span>
+              <span>Share learning with colleague | مشاركة التعلم مع زميل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="course-footer">
+        <div class="completion-section">
+          <label class="completion-checkbox">
+            <input type="checkbox" id="markComplete" onchange="markComplete()">
+            <span>✅ Mark as Complete | وضع كمكتمل</span>
+          </label>
+          <span style="margin-left:auto;font-size:0.85rem;color:var(--text-secondary);">Certificate available upon completion</span>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>BrainSAIT Academy</span>
+      </div>
+      <p class="footer-tagline">Empowering Healthcare Excellence Through AI-Driven Learning</p>
+      <p class="footer-tagline-ar rtl">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
+      <div class="footer-strip">
+        <a href="/">Home</a>
+        <a href="/courses/">Courses</a>
+        <a href="/stitch/index.html">Stitch Hub</a>
+        <a href="https://brainsait.org">BrainSAIT.org</a>
+      </div>
+      <p class="footer-copy">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="/" class="mobile-nav-item"><span class="mobile-nav-item-icon">🏠</span> Home</a>
+    <a href="/courses/" class="mobile-nav-item active"><span class="mobile-nav-item-icon">📚</span> Courses</a>
+    <a href="/stitch/index.html" class="mobile-nav-item"><span class="mobile-nav-item-icon">🎨</span> Stitch</a>
+    <a href="#" class="mobile-nav-item" onclick="showSaved()"><span class="mobile-nav-item-icon">💾</span> Saved</a>
+  </nav>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 300);
+    });
+
+    // Dark Mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+
+    // Accordion
+    function toggleAccordion(btn) {
+      const item = btn.closest('.accordion-item');
+      item.classList.toggle('active');
+      const sectionIdx = btn.dataset.section?.replace('section-', '');
+      if (sectionIdx !== undefined) {
+        document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+        const si = document.querySelector('.section-item[data-section="' + sectionIdx + '"]');
+        if (si) si.classList.add('active');
+      }
+      updateProgress();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      const btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      if (btn) btn.classList.add('active');
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
+    }
+
+    // Scroll to Section
+    function scrollToSection(idx) {
+      document.querySelectorAll('.section-item').forEach(i => i.classList.remove('active'));
+      const si = document.querySelector('.section-item[data-section="' + idx + '"]');
+      if (si) si.classList.add('active');
+      const accordion = document.querySelector('.accordion-item:nth-child(' + (idx + 1) + ')');
+      if (accordion) {
+        accordion.classList.add('active');
+        accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Toast
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Enrollment
+    let isEnrolled = localStorage.getItem('enrolled-ps-101') === 'true';
+    function toggleEnroll() {
+      isEnrolled = !isEnrolled;
+      localStorage.setItem('enrolled-ps-101', isEnrolled);
+      document.getElementById('btnEnrollSide').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll Now';
+      document.getElementById('btnEnrollSide').className = 'btn-enroll-sidebar' + (isEnrolled ? ' enrolled' : '');
+      document.getElementById('btnEnrollMain').textContent = isEnrolled ? '✅ Enrolled | مسجل' : 'Enroll & Start Learning';
+      document.getElementById('btnEnrollMain').className = 'btn-enroll-main' + (isEnrolled ? ' enrolled' : '');
+      showToast(isEnrolled ? '✅ Enrolled successfully!' : 'Enrollment cancelled', isEnrolled ? 'success' : '');
+      // Update enrolled list
+      let enrolled = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (isEnrolled) {
+        if (!enrolled.includes('ps-101')) enrolled.push('ps-101');
+      } else {
+        enrolled = enrolled.filter(s => s !== 'ps-101');
+      }
+      localStorage.setItem('enrolledCourses', JSON.stringify(enrolled));
+    }
+    if (isEnrolled) {
+      document.getElementById('btnEnrollSide').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollSide').classList.add('enrolled');
+      document.getElementById('btnEnrollMain').textContent = '✅ Enrolled | مسجل';
+      document.getElementById('btnEnrollMain').classList.add('enrolled');
+    }
+
+    // Save Course
+    let isSaved = localStorage.getItem('saved-ps-101') === 'true';
+    function toggleSaveCourse() {
+      isSaved = !isSaved;
+      localStorage.setItem('saved-ps-101', isSaved);
+      document.getElementById('saveIcon').textContent = isSaved ? '★' : '☆';
+      document.getElementById('saveText').textContent = isSaved ? 'Saved | محفوظ' : 'Save for Later';
+      document.getElementById('btnSaveMain').textContent = isSaved ? '★ Saved' : '☆ Save | حفظ';
+      document.getElementById('btnSaveMain').className = 'btn-save-course' + (isSaved ? ' saved' : '');
+      showToast(isSaved ? '💾 Course saved!' : 'Course removed from saved', isSaved ? 'success' : '');
+    }
+    if (isSaved) {
+      document.getElementById('saveIcon').textContent = '★';
+      document.getElementById('saveText').textContent = 'Saved | محفوظ';
+      document.getElementById('btnSaveMain').textContent = '★ Saved';
+      document.getElementById('btnSaveMain').classList.add('saved');
+    }
+
+    // Show Saved
+    function showSaved() {
+      const saved = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      if (saved.length === 0) {
+        showToast('No enrolled courses yet. Start learning!', '');
+      } else {
+        showToast('📚 ' + saved.length + ' courses enrolled', 'success');
+      }
+    }
+
+    // Progress
+    function updateProgress() {
+      const total = document.querySelectorAll('.accordion-item').length;
+      const active = document.querySelectorAll('.accordion-item.active').length;
+      const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+      const bar = document.getElementById('progressBarSidebar');
+      const text = document.getElementById('progressTextSidebar');
+      if (bar) bar.setAttribute('stroke-dasharray', pct + ', 100');
+      if (text) text.textContent = pct + '%';
+    }
+    document.querySelectorAll('.accordion-header').forEach(h => {
+      h.addEventListener('click', () => setTimeout(updateProgress, 100));
+    });
+    setTimeout(updateProgress, 500);
+
+    // Quiz
+    const quizAnswers = { 0: 1, 1: 2, 2: 1 };
+    let selectedAnswers = {};
+    function selectAnswer(el, qIdx) {
+      const parent = el.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAnswers[qIdx] = parseInt(el.dataset.answer);
+    }
+    function submitQuiz() {
+      let correct = 0;
+      const total = Object.keys(quizAnswers).length;
+      document.querySelectorAll('.quiz-options').forEach((q, i) => {
+        q.querySelectorAll('.quiz-option').forEach(o => {
+          if (parseInt(o.dataset.answer) === quizAnswers[i]) {
+            if (selectedAnswers[i] === quizAnswers[i]) {
+              o.classList.add('correct');
+            } else if (selectedAnswers[i] !== undefined) {
+              o.classList.remove('selected');
+            }
+          } else if (selectedAnswers[i] === parseInt(o.dataset.answer)) {
+            o.classList.add('incorrect');
+          }
+        });
+      });
+      for (const [q, a] of Object.entries(quizAnswers)) {
+        if (selectedAnswers[q] === a) correct++;
+      }
+      const result = document.getElementById('quiz-result');
+      const pct = Math.round((correct / total) * 100);
+      if (pct >= 80) {
+        result.className = 'quiz-result pass';
+        result.textContent = '🎉 ' + pct + '% - Passed! You earned a certificate. | نجحت! يمكنك الحصول على الشهادة.';
+        localStorage.setItem('quiz-pass-ps-101', 'true');
+      } else {
+        result.className = 'quiz-result fail';
+        result.textContent = '📚 ' + pct + '% - Need 80% to pass. Review and try again. | تحتاج 80% للنجاح. راجع وحاول مرة أخرى.';
+      }
+    }
+
+    // Mark Complete
+    function markComplete() {
+      const cb = document.getElementById('markComplete');
+      if (cb.checked) {
+        localStorage.setItem('complete-ps-101', 'true');
+        document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+        document.getElementById('progressTextSidebar').textContent = '100%';
+        showToast('🎉 Course completed! Certificate available.', 'success');
+      } else {
+        localStorage.setItem('complete-ps-101', 'false');
+        updateProgress();
+      }
+    }
+    if (localStorage.getItem('complete-ps-101') === 'true') {
+      document.getElementById('markComplete').checked = true;
+      document.getElementById('progressBarSidebar').setAttribute('stroke-dasharray', '100, 100');
+      document.getElementById('progressTextSidebar').textContent = '100%';
+    }
+
+    // Export Progress
+    function exportProgress() {
+      const data = {
+        course: 'Intro to Patient Safety',
+        slug: 'ps-101',
+        enrolled: isEnrolled,
+        saved: isSaved,
+        complete: document.getElementById('markComplete').checked,
+        quizPassed: localStorage.getItem('quiz-pass-ps-101') === 'true',
+        sections: document.querySelectorAll('.accordion-item.active').length + '/' + document.querySelectorAll('.accordion-item').length,
+        exported: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'progress-ps-101.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📤 Progress exported!', 'success');
+    }
+  </script>
+</body>
+</html>

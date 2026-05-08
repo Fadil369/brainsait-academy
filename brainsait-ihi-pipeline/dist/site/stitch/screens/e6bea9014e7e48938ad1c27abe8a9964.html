@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brain Power Shop - BrainSAIT Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#464554",
+                      "outline-variant": "#c7c4d7",
+                      "tertiary-fixed": "#ffdadb",
+                      "on-surface": "#111c2d",
+                      "secondary-fixed": "#acedff",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "primary": "#4648d4",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface-container-low": "#f0f3ff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-fixed": "#001f26",
+                      "on-background": "#111c2d",
+                      "tertiary": "#b90538",
+                      "on-tertiary-fixed": "#40000d",
+                      "inverse-surface": "#263143",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#07006c",
+                      "inverse-on-surface": "#ecf1ff",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "surface-container-highest": "#d8e3fb",
+                      "background": "#f9f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#dc2c4f",
+                      "surface-dim": "#cfdaf2",
+                      "inverse-primary": "#c0c1ff",
+                      "tertiary-fixed-dim": "#ffb2b7",
+                      "on-tertiary-fixed-variant": "#92002a",
+                      "on-secondary-container": "#006172",
+                      "primary-container": "#6063ee",
+                      "secondary-container": "#57dffe",
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "surface-tint": "#494bd6",
+                      "surface-variant": "#d8e3fb",
+                      "surface-bright": "#f9f9ff",
+                      "surface-container": "#e7eeff",
+                      "surface-container-high": "#dee8ff",
+                      "secondary": "#00687a",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#fffbff",
+                      "primary-fixed": "#e1e0ff",
+                      "outline": "#767586",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "48px",
+                      "gutter": "16px",
+                      "base": "4px",
+                      "lg": "32px",
+                      "sm": "16px",
+                      "md": "24px",
+                      "container-padding": "20px",
+                      "xs": "8px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "arabic-body": [
+                              "Noto Naskh Arabic"
+                      ],
+                      "headline-md": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "arabic-body": [
+                              "17px",
+                              {
+                                      "lineHeight": "30px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-container-padding h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<button class="md:hidden text-on-surface-variant dark:text-outline scale-95 active:opacity-80 transition-all hover:bg-primary/5 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="User Profile Avatar" class="object-cover w-full h-full" data-alt="A close up portrait of a smiling female healthcare professional wearing scrubs, set against a bright, modern, minimalist clinical background with soft, diffused white lighting. The aesthetic aligns with a clean, light-mode corporate modern design system using deep professional blues and vibrant gradients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Fhd6xghaKlTQ1AFpcQztVW8ZgOqdonm-gsgdR_DeYxWKy-dELIe5tc08XMWtpVn3Vo_jAVfOcX4i2kOADkbZ2q7wVuWIFPaKSdIst_FHY1bQd_qxyJRRwb-QdNPHWMMcTUzUDwR8MBHNTk-rANGB2ywzYRLg8h81XBAxi263bppjusTaxnUaJKeSfOME7KKlUMGTp2tzyWcTX-5uHGKdnDicGX2Gs80AqaCMUC0cp_kx1ylqHtuqEtR_cCvqHuN1dyJA3JjMKqpI"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-extrabold text-primary dark:text-primary-fixed ml-xs">BrainsAIT Academy</h1>
+</div>
+<!-- Top Nav for Web -->
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant dark:text-outline hover:bg-primary/5 transition-colors font-label-md text-label-md px-3 py-2 rounded-lg" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-outline hover:bg-primary/5 transition-colors font-label-md text-label-md px-3 py-2 rounded-lg" href="#">Workspace</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold font-label-md text-label-md px-3 py-2 rounded-lg relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" href="#">Brain Power Shop</a>
+<a class="text-on-surface-variant dark:text-outline hover:bg-primary/5 transition-colors font-label-md text-label-md px-3 py-2 rounded-lg" href="#">Community</a>
+</nav>
+<button class="text-primary dark:text-primary-fixed-dim font-label-md text-label-md scale-95 active:opacity-80 transition-all hover:bg-primary/5 px-3 py-2 rounded-lg">AR/EN</button>
+</div>
+</header>
+<div class="flex-1 flex max-w-7xl mx-auto w-full">
+<!-- NavigationDrawer (Web) -->
+<aside class="hidden lg:flex flex-col h-full py-8 w-80 rounded-r-xl overflow-hidden bg-surface dark:bg-surface-container shadow-xl border-r border-outline-variant/10 divide-y divide-outline-variant/10 shrink-0 sticky top-16" style="height: calc(100vh - 64px);">
+<div class="px-md pb-md flex flex-col gap-xs">
+<div class="flex items-center gap-sm mb-sm">
+<div class="h-12 w-12 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary">
+<img alt="Learner Avatar" class="object-cover w-full h-full" data-alt="A close up portrait of a smiling female healthcare professional wearing scrubs, set against a bright, modern, minimalist clinical background with soft, diffused white lighting. The aesthetic aligns with a clean, light-mode corporate modern design system using deep professional blues and vibrant gradients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkarB2tEfiAv8OI7_mm7ud6meJqjg3i5aAjx8bByjbU9KjvZ_WbTZrSJglzutO7PgUq3TsqDOeNwnKmQVndsLpRUQzi9LgAhcONYV6EDMiWkgH_KV6eSJf5T78VcZt2eC7WeX7B-RA6HvyhDm6Kih4qfjzaFDbzDmuVadh5yM_Ss5zXY0B2tZc-vjju5CIdMZktn1qM9cU8zygg6wLjVG66VAAb-xqlOni9JKl45KatanjSksvPVuBtInbWXgzxjqsPG_LQTXmhHLL"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Dr. Sarah Ahmed</h2>
+<p class="font-body-md text-body-md text-secondary">Level 14 Senior Resident</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-lg p-3 border border-primary/20 flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary">Balance</span>
+<span class="font-headline-md text-headline-md text-primary flex items-center gap-1"><span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>1,250 BPP</span>
+</div>
+</div>
+<nav class="flex-1 px-sm pt-md flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 hover:bg-surface-container-high transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                    My Courses
+                </a>
+<a class="flex items-center gap-sm px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-lg m-2 translate-x-1 shadow-sm font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Brain Power Shop
+                </a>
+<a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 hover:bg-surface-container-high transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+                    Certificates
+                </a>
+<a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-lg m-2 hover:bg-surface-container-high transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 px-container-padding py-lg flex flex-col gap-xl">
+<!-- Hero / Balance Section -->
+<section class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-secondary p-lg shadow-[0_10px_30px_rgba(30,41,59,0.05)] text-on-primary flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay pointer-events-none" data-alt="Abstract glowing geometric shapes and light rays on a dark background, evoking a sense of advanced technology, gamification, and intelligent digital workspaces. Clean, high-tech modern aesthetic."></div>
+<div class="relative z-10 flex flex-col gap-sm w-full md:w-auto">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-xl text-headline-xl text-on-primary">Rewards Marketplace</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80">Redeem your hard-earned Brain Power Points.</p>
+</div>
+</div>
+<div class="relative z-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-md flex flex-col items-center justify-center min-w-[200px] shadow-lg">
+<span class="font-label-md text-label-md text-on-primary/80 uppercase tracking-wider mb-1">Current Balance</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline-xl text-headline-xl text-on-primary text-5xl">1,250</span>
+</div>
+<span class="font-label-md text-label-md text-on-primary/60 mt-1">BPP</span>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Rewards Grid -->
+<section class="flex-[3] flex flex-col gap-md">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Featured Rewards</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Item 1: Advanced Leadership Certificate -->
+<div class="group bg-surface/70 backdrop-blur-xl border border-outline-variant/30 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(30,41,59,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+<div class="absolute top-4 right-4 z-10 bg-surface/80 backdrop-blur-md rounded-full px-3 py-1 border border-outline-variant/20 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">5,000</span>
+</div>
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img alt="Advanced Leadership Certificate" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A pristine, professionally framed physical certificate with an ornate gold seal, resting on a clean white desk in a brightly lit modern office space. Soft, diffused lighting emphasizes clinical authority and achievement. Light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg1OsM7YZ2A-PWzhZ9d85DffawQ1kwCFakJj0zp9lM8CfMc1N93pOERw2yBfmsvhfemNxO7H2Bj-EKKvAZASkqT_XoPhN8QoGQS9VbNh698KMLt5-7f7w6APypzo7KorsICfeEN9kA3JPgT3CNdrCOWCO9WiWb-InZYflM7VyX08VWycXN6K8Su9rikvYTB97w8RQquOKhQbvanNRsucX80CdPjo_5diRSbAy0TsxmChlivp1aCtB3t_nor8aaOkXeZT2qAVF-Jqgs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-md flex flex-col flex-1 justify-between gap-sm">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Advanced Leadership Certificate</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Official certification recognizing mastery in clinical team management.</p>
+</div>
+<button class="w-full py-3 rounded-lg font-label-md text-label-md border border-primary text-primary hover:bg-primary/5 transition-colors text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+                                    Insufficient BPP
+                                </button>
+</div>
+</div>
+<!-- Item 2: Clinical Guide PDF -->
+<div class="group bg-surface/70 backdrop-blur-xl border border-outline-variant/30 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(30,41,59,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+<div class="absolute top-4 right-4 z-10 bg-surface/80 backdrop-blur-md rounded-full px-3 py-1 border border-outline-variant/20 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">800</span>
+</div>
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img alt="Clinical Guide PDF" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A sleek digital tablet displaying a medical document, resting on a minimalist white table next to a stethoscope. Bright, natural lighting creates a clean, professional clinical setting suitable for a modern digital workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAy4nuFwG45v2U79CuR-Fa318uZzbrhRhNYXaWJctTURXcisSDChUNyV9syVnnsSHATGJJTZANjACZDHsFMAE37AO1Im31vbU4KKBiNBIm3ZBwH_rWh6HgphLgYiEwoqYa17Wse0Xe4slLXtDrrP3wifIQZhjcF6ASTZ7-J_AJEeizAAVkd4QtPrXOcBNMqu_bjDG6Upx0Ejy32Ve1Fz-BzgXwyX_rHVwbm4fzTzkiN9F_ZYhQBPxIxjWOrSchlQmAD-1Vq-zxvhE5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-md flex flex-col flex-1 justify-between gap-sm">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Clinical Guide PDF</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Comprehensive quick-reference guide for emergency diagnostics.</p>
+</div>
+<button class="w-full py-3 rounded-lg font-label-md text-label-md bg-gradient-to-r from-primary to-secondary text-on-primary hover:opacity-90 transition-opacity shadow-md shadow-primary/20 text-center relative overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-[2px] bg-white/30"></div>
+                                    Redeem Now
+                                </button>
+</div>
+</div>
+<!-- Item 3: 1-on-1 Mentorship -->
+<div class="group bg-surface/70 backdrop-blur-xl border border-outline-variant/30 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(30,41,59,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col h-full relative md:col-span-2 lg:col-span-1">
+<div class="absolute top-4 right-4 z-10 bg-surface/80 backdrop-blur-md rounded-full px-3 py-1 border border-outline-variant/20 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">10,000</span>
+</div>
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img alt="1-on-1 Mentorship" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Two medical professionals in pristine white coats engaged in a serious discussion in a modern, brightly lit hospital corridor. The scene conveys clinical authority, mentorship, and professional growth in a light-mode corporate setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLOBWm9y2mVfvxEW5-YycTMBx6mQaa-O7y20l4KY5q-1msVAp1VAyLNbJ0MJvSriA1bq_d5rOwOK7g9lFeaUrlYbRPbkg6T8fFHnzKX6zkJqwvWDV9CyzImdCCzFlPCr-grrE2wwUIMc7FzUwfbEmW1mGlzlRLXKquyIqPxzR_6o8rxDlXoAm61CKSgaLYmtmcUqd094JuJ18da2_oYh0S0TyRfzyrm_9KhJmxgvhB-yzaG88_BciMIvhpll7lU58I8CvYHDKW9Gn6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-md flex flex-col flex-1 justify-between gap-sm">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">1-on-1 Mentorship</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A personalized 60-minute session with a senior specialist in your field.</p>
+</div>
+<button class="w-full py-3 rounded-lg font-label-md text-label-md border border-primary text-primary hover:bg-primary/5 transition-colors text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+                                    Insufficient BPP
+                                </button>
+</div>
+</div>
+<!-- Item 4: Exclusive AR Anatomy Pack -->
+<div class="group bg-surface/70 backdrop-blur-xl border border-outline-variant/30 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(30,41,59,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+<div class="absolute top-4 right-4 z-10 bg-surface/80 backdrop-blur-md rounded-full px-3 py-1 border border-outline-variant/20 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">3,500</span>
+</div>
+<div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+<img alt="Exclusive AR Anatomy Pack" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic glowing 3D holographic projection of a human heart floating above a sleek digital interface. The background is a clean, modern workspace. The lighting is crisp and cool, emphasizing advanced medical technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFc-_ARBgwynVaoAuAdic9paSAv06RF4B5bdZorhh3OUGMH_LSd-A-pL-dQtS7_sZB6kkzcDTZX6OjCafXEXEDqQylghwDiJF2PtYqi1II1EPK9b8-JJYH2xR7MNT7mKA1jCtpTLyKW4A1fH-MzI9e55MUSEfIo3knIs_KLOoAKtBWJae6VrvA5ua4NRPJ3VVj8AFTqU5D43icrma3ZqEfrCqV_HWql9D-0c1-quI2Hey8ICD7RhA25BO5N3QM1SAU6XoRQOVZOIzF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-md flex flex-col flex-1 justify-between gap-sm">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Exclusive AR Anatomy Pack</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Unlock high-fidelity 3D models for the Lumina AR learning module.</p>
+</div>
+<button class="w-full py-3 rounded-lg font-label-md text-label-md border border-primary text-primary hover:bg-primary/5 transition-colors text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+                                    Insufficient BPP
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Feed -->
+<aside class="flex-[1] min-w-[300px] flex flex-col gap-md">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Recent Activity</h3>
+<div class="bg-surface border border-outline-variant/20 rounded-xl p-md shadow-sm flex flex-col gap-sm">
+<!-- Feed Item 1 -->
+<div class="flex gap-3 items-start pb-sm border-b border-outline-variant/10 last:border-0 last:pb-0">
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">You redeemed <span class="font-bold text-primary">Clinical Guide PDF</span>.</p>
+<p class="font-label-md text-label-md text-on-surface-variant/60 mt-1">2 hours ago • -800 BPP</p>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="flex gap-3 items-start pb-sm border-b border-outline-variant/10 last:border-0 last:pb-0">
+<div class="h-10 w-10 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Earned <span class="font-bold text-tertiary">Diagnostic Master Badge</span>.</p>
+<p class="font-label-md text-label-md text-on-surface-variant/60 mt-1">Yesterday • +500 BPP</p>
+</div>
+</div>
+<!-- Feed Item 3 -->
+<div class="flex gap-3 items-start pb-sm border-b border-outline-variant/10 last:border-0 last:pb-0">
+<div class="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="menu_book">menu_book</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Completed Module: <span class="font-bold text-secondary">Cardiology Basics</span>.</p>
+<p class="font-label-md text-label-md text-on-surface-variant/60 mt-1">3 days ago • +250 BPP</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden border-t border-outline-variant/20 bg-surface/80 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.05)] fixed bottom-0 w-full z-50 rounded-t-xl flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md text-[10px]">Workspace</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-[10px]">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md text-[10px]">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-outline hover:text-primary dark:hover:text-primary-fixed Active: scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px]">Account</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full py-xl text-surface font-body-md text-body-md flex flex-col items-center justify-center space-y-md text-center px-container-padding pb-32 md:pb-xl mt-auto">
+<h2 class="font-headline-lg text-headline-lg text-surface">BrainsAIT Academy</h2>
+<div class="flex gap-md">
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Help Center</a>
+</div>
+<p class="text-surface-variant opacity-60">© 2024 BrainSAIT Academy. All rights reserved.</p>
+</footer>
+</body></html>
