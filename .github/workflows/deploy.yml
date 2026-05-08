@@ -1,34 +1,49 @@
-name: Deploy Courses to CF Pages
+name: BrainSAIT IHI pipeline
 
 on:
   push:
-    branches: [main]
-    paths:
-      - "courses/**"
+    branches:
+      - main
+      - copilot/**
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  build-test-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    defaults:
+      run:
+        working-directory: brainsait-ihi-pipeline
+
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.2
 
-      - name: Setup Node
-        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.4.0
         with:
-          node-version: "18"
+          node-version: 20
+          cache: npm
+          cache-dependency-path: brainsait-ihi-pipeline/package-lock.json
 
-      - name: Generate HTML pages
-        run: |
-          npm install gray-matter@4.0.3 showdown@2.1.0
-          node scripts/generate-html.js
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@f0a1cd58cd66095dee69bfa18fa5efd1dde93bca
+      - name: Build and smoke-test pipeline
+        run: npm test
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v7.0.1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: brainsait-academy
-          directory: build
-          productionBranch: main
+          name: brainsait-ihi-preview
+          path: brainsait-ihi-pipeline/dist/site
+
+      - name: Deploy preview to Cloudflare Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' && secrets.CLOUDFLARE_PAGES_PROJECT_NAME != '' }}
+        uses: cloudflare/wrangler-action@v3.15.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/site --project-name ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
