@@ -1,0 +1,38 @@
+{
+  "id": "review-checklist",
+  "title": "Review Checklist",
+  "original_filename": "Review-Checklist.pdf",
+  "description": "Course material: Review-Checklist.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:04:00.463041",
+  "file_size": 38257,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-review-checklist-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-review-checklist-1",
+          "title": "Course Material: Review-Checklist.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Review-Checklist.pdf",
+              "title": "Review-Checklist.pdf",
+              "size": 38257
+            }
+          ],
+          "content": "PAGE_1:\nBUSINESS WRITING CHECKLIST Use this checklist to review and improve each piece of your writing. PREPARATION  ü  Identify your goal  Describe your audience  Select the appropriate tone  Choose relevant language  Create an outline  TEXT  Add the purpose in first paragraph  Cover one idea per paragraph  Use first and second person (I, me, you, your, etc)  Cut out redundant words  Avoid repetition  Vary your vocabulary  Add words that tap senses and emotions  Avoid jargon (or explain it)  Vary the length of sentences  Simplify sentences and words  Write an attention-grabbing headline  Include subheadings  Include bullet points  Add a call to action  Check spelling  Check grammar and punctuation  Edit (twice)  Proofread (twice)\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nBUSINESS WRITING CHECKLIST Use this checklist to review and improve each piece of your writing. PREPARATION  ü  Identify your goal  Describe your audience  Select the appropriate tone  Choose relevant language  Create an outline  TEXT  Add the purpose in first paragraph  Cover one idea per paragraph  Use first and second person (I, me, you, your, etc)  Cut out redundant words  Avoid repetition  Vary your vocabulary  Add words that tap senses and emotions  Avoid jargon (or explain it)  Va...",
+  "has_extracted_content": true
+}

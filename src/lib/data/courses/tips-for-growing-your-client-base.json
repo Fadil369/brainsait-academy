@@ -1,0 +1,38 @@
+{
+  "id": "tips-for-growing-your-client-base",
+  "title": "Tips For Growing Your Client Base",
+  "original_filename": "Tips-for-Growing-Your-Client-Base.mp3.zip",
+  "description": "Course material: Tips-for-Growing-Your-Client-Base.mp3.zip",
+  "duration": "N/A",
+  "level": "Beginner",
+  "created_at": "2026-04-09T11:58:45.430613",
+  "file_size": 36078598,
+  "file_type": "archive",
+  "modules": [
+    {
+      "id": "module-tips-for-growing-your-client-base-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-tips-for-growing-your-client-base-1",
+          "title": "Course Material: Tips-for-Growing-Your-Client-Base.mp3.zip",
+          "type": "archive",
+          "duration": "N/A",
+          "resources": [
+            {
+              "type": "zip",
+              "url": "/courses/Tips-for-Growing-Your-Client-Base.mp3.zip",
+              "title": "Tips-for-Growing-Your-Client-Base.mp3.zip",
+              "size": 36078598
+            }
+          ],
+          "content": "File content extraction not implemented for .zip",
+          "full_content_available": false,
+          "content_type": "zip"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .zip",
+  "has_extracted_content": true
+}

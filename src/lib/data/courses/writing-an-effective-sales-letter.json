@@ -1,0 +1,38 @@
+{
+  "id": "writing-an-effective-sales-letter",
+  "title": "Writing An Effective Sales Letter",
+  "original_filename": "Writing-an-Effective-Sales-Letter.mp3.zip",
+  "description": "Course material: Writing-an-Effective-Sales-Letter.mp3.zip",
+  "duration": "N/A",
+  "level": "Beginner",
+  "created_at": "2026-04-09T11:58:42.290964",
+  "file_size": 121083934,
+  "file_type": "archive",
+  "modules": [
+    {
+      "id": "module-writing-an-effective-sales-letter-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-writing-an-effective-sales-letter-1",
+          "title": "Course Material: Writing-an-Effective-Sales-Letter.mp3.zip",
+          "type": "archive",
+          "duration": "N/A",
+          "resources": [
+            {
+              "type": "zip",
+              "url": "/courses/Writing-an-Effective-Sales-Letter.mp3.zip",
+              "title": "Writing-an-Effective-Sales-Letter.mp3.zip",
+              "size": 121083934
+            }
+          ],
+          "content": "File content extraction not implemented for .zip",
+          "full_content_available": false,
+          "content_type": "zip"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .zip",
+  "has_extracted_content": true
+}

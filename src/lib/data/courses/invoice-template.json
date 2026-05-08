@@ -1,0 +1,38 @@
+{
+  "id": "invoice-template",
+  "title": "Invoice Template",
+  "original_filename": "Invoice-Template.pdf",
+  "description": "Course material: Invoice-Template.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:01:15.483257",
+  "file_size": 31819,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-invoice-template-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-invoice-template-1",
+          "title": "Course Material: Invoice-Template.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Invoice-Template.pdf",
+              "title": "Invoice-Template.pdf",
+              "size": 31819
+            }
+          ],
+          "content": "PAGE_1:\nBusiness Name • Email • Phone  Invoice # Date: Client/Company: Contact Name:  DESCRIPTION QUANTITY/HOURS UNIT PRICE/ PRICE PER HOUR TOTAL                                      SUBTOTAL $  SALES TAX NA  TOTAL due $\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nBusiness Name • Email • Phone  Invoice # Date: Client/Company: Contact Name:  DESCRIPTION QUANTITY/HOURS UNIT PRICE/ PRICE PER HOUR TOTAL                                      SUBTOTAL $  SALES TAX NA  TOTAL due $\n",
+  "has_extracted_content": true
+}

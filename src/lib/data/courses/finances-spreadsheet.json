@@ -1,0 +1,38 @@
+{
+  "id": "finances-spreadsheet",
+  "title": "Finances Spreadsheet",
+  "original_filename": "Finances-Spreadsheet.xlsx",
+  "description": "Course material: Finances-Spreadsheet.xlsx",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:01:23.411473",
+  "file_size": 12244,
+  "file_type": "document",
+  "modules": [
+    {
+      "id": "module-finances-spreadsheet-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-finances-spreadsheet-1",
+          "title": "Course Material: Finances-Spreadsheet.xlsx",
+          "type": "document",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "xlsx",
+              "url": "/courses/Finances-Spreadsheet.xlsx",
+              "title": "Finances-Spreadsheet.xlsx",
+              "size": 12244
+            }
+          ],
+          "content": "File content extraction not implemented for .xlsx",
+          "full_content_available": false,
+          "content_type": "xlsx"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .xlsx",
+  "has_extracted_content": true
+}

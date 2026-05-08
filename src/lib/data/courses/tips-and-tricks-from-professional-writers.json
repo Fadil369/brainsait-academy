@@ -1,0 +1,38 @@
+{
+  "id": "tips-and-tricks-from-professional-writers",
+  "title": "Tips And Tricks From Professional Writers",
+  "original_filename": "Tips-and-Tricks-from-Professional-Writers.mp3.zip",
+  "description": "Course material: Tips-and-Tricks-from-Professional-Writers.mp3.zip",
+  "duration": "N/A",
+  "level": "Beginner",
+  "created_at": "2026-04-09T11:57:57.897110",
+  "file_size": 63104638,
+  "file_type": "archive",
+  "modules": [
+    {
+      "id": "module-tips-and-tricks-from-professional-writers-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-tips-and-tricks-from-professional-writers-1",
+          "title": "Course Material: Tips-and-Tricks-from-Professional-Writers.mp3.zip",
+          "type": "archive",
+          "duration": "N/A",
+          "resources": [
+            {
+              "type": "zip",
+              "url": "/courses/Tips-and-Tricks-from-Professional-Writers.mp3.zip",
+              "title": "Tips-and-Tricks-from-Professional-Writers.mp3.zip",
+              "size": 63104638
+            }
+          ],
+          "content": "File content extraction not implemented for .zip",
+          "full_content_available": false,
+          "content_type": "zip"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .zip",
+  "has_extracted_content": true
+}

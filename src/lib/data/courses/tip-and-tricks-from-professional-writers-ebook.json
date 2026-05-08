@@ -1,0 +1,38 @@
+{
+  "id": "tip-and-tricks-from-professional-writers-ebook",
+  "title": "Tip And Tricks From Professional Writers Ebook",
+  "original_filename": "Tip-and-Tricks-from-Professional-Writers-Ebook.zip",
+  "description": "Course material: Tip-and-Tricks-from-Professional-Writers-Ebook.zip",
+  "duration": "N/A",
+  "level": "Beginner",
+  "created_at": "2026-04-09T11:57:28.119761",
+  "file_size": 576886,
+  "file_type": "archive",
+  "modules": [
+    {
+      "id": "module-tip-and-tricks-from-professional-writers-ebook-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-tip-and-tricks-from-professional-writers-ebook-1",
+          "title": "Course Material: Tip-and-Tricks-from-Professional-Writers-Ebook.zip",
+          "type": "archive",
+          "duration": "N/A",
+          "resources": [
+            {
+              "type": "zip",
+              "url": "/courses/Tip-and-Tricks-from-Professional-Writers-Ebook.zip",
+              "title": "Tip-and-Tricks-from-Professional-Writers-Ebook.zip",
+              "size": 576886
+            }
+          ],
+          "content": "File content extraction not implemented for .zip",
+          "full_content_available": false,
+          "content_type": "zip"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .zip",
+  "has_extracted_content": true
+}

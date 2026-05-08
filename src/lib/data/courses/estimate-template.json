@@ -1,0 +1,38 @@
+{
+  "id": "estimate-template",
+  "title": "Estimate Template",
+  "original_filename": "Estimate-Template.pdf",
+  "description": "Course material: Estimate-Template.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:00:59.916240",
+  "file_size": 49931,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-estimate-template-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-estimate-template-1",
+          "title": "Course Material: Estimate-Template.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Estimate-Template.pdf",
+              "title": "Estimate-Template.pdf",
+              "size": 49931
+            }
+          ],
+          "content": "PAGE_1:\nBusiness Name • Email • Phone  Estimate # Date: Client/Company: Contact Name:  DESCRIPTION QUANTITY/HOURS UNIT PRICE/ PRICE PER HOUR TOTAL Example: Logo and tagline development + email signature design Includes: • Font and color palette selection • 2 rounds of edits Additional work or client changes will be billed per hour Terms: 50% payment up front, 50% upon receipt    \n             SUBTOTAL $  SALES TAX $  TOTAL due $\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nBusiness Name • Email • Phone  Estimate # Date: Client/Company: Contact Name:  DESCRIPTION QUANTITY/HOURS UNIT PRICE/ PRICE PER HOUR TOTAL Example: Logo and tagline development + email signature design Includes: • Font and color palette selection • 2 rounds of edits Additional work or client changes will be billed per hour Terms: 50% payment up front, 50% upon receipt    \n             SUBTOTAL $  SALES TAX $  TOTAL due $\n",
+  "has_extracted_content": true
+}

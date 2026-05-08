@@ -1,0 +1,38 @@
+{
+  "id": "content-planner",
+  "title": "Content Planner",
+  "original_filename": "Content-Planner.xlsx",
+  "description": "Course material: Content-Planner.xlsx",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:11:42.776426",
+  "file_size": 10433,
+  "file_type": "document",
+  "modules": [
+    {
+      "id": "module-content-planner-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-content-planner-1",
+          "title": "Course Material: Content-Planner.xlsx",
+          "type": "document",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "xlsx",
+              "url": "/courses/Content-Planner.xlsx",
+              "title": "Content-Planner.xlsx",
+              "size": 10433
+            }
+          ],
+          "content": "File content extraction not implemented for .xlsx",
+          "full_content_available": false,
+          "content_type": "xlsx"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .xlsx",
+  "has_extracted_content": true
+}

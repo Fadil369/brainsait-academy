@@ -1,0 +1,38 @@
+{
+  "id": "marketing-plan",
+  "title": "Marketing Plan",
+  "original_filename": "Marketing-Plan.pdf",
+  "description": "Course material: Marketing-Plan.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:11:31.579584",
+  "file_size": 74513,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-marketing-plan-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-marketing-plan-1",
+          "title": "Course Material: Marketing-Plan.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Marketing-Plan.pdf",
+              "title": "Marketing-Plan.pdf",
+              "size": 74513
+            }
+          ],
+          "content": "PAGE_1:\nLOW COST MARKETING STRATEGIES  \n  IAPWE Professional Development Series 1 Low Cost Marketing Plan This plan will help you bring everything together for a snapshot of your low-cost marketing makeover. Take your work from the Action Guide and use it to complete this high-level plan with your goals, budget, timing, and metrics. Then use the plan to create a detailed list of actions in your preferred project management tool, such as asana or Trello. You will have 3 short tactics and 1 longer tactic. You can reuse this planner for any further tactics you identify. For each tactic complete as follows:  Tactic 1: What action you intend to take Goal: Set your goal for this tactic Budget: How much money you need to allocate to this tactic, if any Start date: When you will implement the tactic Tracking metrics: How you will measure the success of the tactic Check results (date): When you will review success e.g. 3 months, 6 months, 1 year Continue? Decide if you want to repeat the tactic, either now or at a later date or if you want to drop it entirely\n\nPAGE_2:\nLOW COST MARKETING STRATEGIES  \n  IAPWE Professional Development Series 2 Here’s an example:  Tactic 1: Optimize and update key blog posts for traffic, add lead magnet opt-in Goal: Increase traffic to free strategy call offer page Budget: 0 Start date: X date Tracking metrics: Visitors, bounce rate, opt-ins, sales Check results (date): 3 months Continue? Yes/No\n\nPAGE_3:\nLOW COST MARKETING STRATEGIES  \n  IAPWE Professional Development Series 3 Quick Tactic 1  Budget:  Start date:  Tracking metrics:  Check results (date):  Continue?   Quick Tactic 2  Budget:  Start date:  Tracking metrics:  Check results (date):  Continue?\n\nPAGE_4:\nLOW COST MARKETING STRATEGIES  \n  IAPWE Professional Development Series 4 Quick Tactic 3  Budget:  Start date:  Tracking metrics:  Check results (date):  Continue?   Longer Tactic   Budget:  Start date:  Tracking metrics:  Check results (date):  Continue?\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nLOW COST MARKETING STRATEGIES  \n  IAPWE Professional Development Series 1 Low Cost Marketing Plan This plan will help you bring everything together for a snapshot of your low-cost marketing makeover. Take your work from the Action Guide and use it to complete this high-level plan with your goals, budget, timing, and metrics. Then use the plan to create a detailed list of actions in your preferred project management tool, such as asana or Trello. You will have 3 short tactics and 1 longer...",
+  "has_extracted_content": true
+}

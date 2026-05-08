@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Contextualizing Care",
+    "slug": "contextualizing-care",
+    "count": 1,
+    "icon": "🤝"
+  },
+  {
+    "name": "ClaimLINC",
+    "slug": "claimlinc",
+    "count": 1,
+    "icon": "⚡"
+  },
+  {
+    "name": "AI Healthcare",
+    "slug": "ai-healthcare",
+    "count": 1,
+    "icon": "🤖"
+  },
+  {
+    "name": "Decarbonization",
+    "slug": "decarbonization",
+    "count": 1,
+    "icon": "🌿"
+  },
+  {
+    "name": "Dental Care",
+    "slug": "dental-care",
+    "count": 1,
+    "icon": "🦷"
+  },
+  {
+    "name": "FHIR R4",
+    "slug": "fhir-r4",
+    "count": 1,
+    "icon": "🔗"
+  },
+  {
+    "name": "Graduate Medical Education",
+    "slug": "graduate-medical-education",
+    "count": 4,
+    "icon": "📚"
+  },
+  {
+    "name": "Leadership",
+    "slug": "leadership",
+    "count": 3,
+    "icon": "👔"
+  },
+  {
+    "name": "Advanced Leadership",
+    "slug": "advanced-leadership",
+    "count": 1,
+    "icon": "👔"
+  },
+  {
+    "name": "NPHIES",
+    "slug": "nphies",
+    "count": 1,
+    "icon": "🏥"
+  },
+  {
+    "name": "Person- and Family-Centered Care",
+    "slug": "person-and-family-centered-care",
+    "count": 7,
+    "icon": "💼"
+  },
+  {
+    "name": "Patient Safety",
+    "slug": "patient-safety",
+    "count": 8,
+    "icon": "🛡️"
+  },
+  {
+    "name": "Quality Improvement",
+    "slug": "quality-improvement",
+    "count": 7,
+    "icon": "📊"
+  },
+  {
+    "name": "Triple Aim",
+    "slug": "triple-aim",
+    "count": 6,
+    "icon": "🎯"
+  },
+  {
+    "name": "Healthcare Content Processing",
+    "slug": "healthcare-content",
+    "count": 0,
+    "icon": "📚"
+  },
+  {
+    "name": "PDF Processing",
+    "slug": "pdf-processing",
+    "count": 0,
+    "icon": "📄"
+  },
+  {
+    "name": "Audio Content Processing",
+    "slug": "audio-content",
+    "count": 0,
+    "icon": "🎵"
+  },
+  {
+    "name": "Course Materials",
+    "slug": "course-materials",
+    "count": 0,
+    "icon": "🎓"
+  },
+  {
+    "name": "Professional Development",
+    "slug": "professional-development",
+    "count": 0,
+    "icon": "💼"
+  }
+]

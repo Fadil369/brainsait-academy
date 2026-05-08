@@ -1,0 +1,38 @@
+{
+  "id": "online-tools",
+  "title": "Online Tools",
+  "original_filename": "Online-Tools.pdf",
+  "description": "Course material: Online-Tools.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:08:35.371335",
+  "file_size": 40097,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-online-tools-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-online-tools-1",
+          "title": "Course Material: Online-Tools.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Online-Tools.pdf",
+              "title": "Online-Tools.pdf",
+              "size": 40097
+            }
+          ],
+          "content": "PAGE_1:\nIAPWE Professional Development Series 1 Get More Clients – Online Tools  Build a Website WordPress Wix Squarespace GoDaddy Website Builder  Blogging WordPress Blogger Blog  Social Media Facebook Twitter LinkedIn Google+  Email Marketing MailChimp Aweber\n\nPAGE_2:\nIAPWE Professional Development Series 2 GetResponse Active Campaign  Webinars GoToMeeting WebinarJam Google Hangouts On Air  Podcasts BossJock Studio  Advertising Google AdWords Facebook Ads LinkedIn Ads  Online Groups and Forums Yelp Angie’s List Google My Business Yahoo! Local Listings\n\nPAGE_3:\nIAPWE Professional Development Series 3 Publish Books Lulu Xlibris  Videos YouTube Vimeo\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nIAPWE Professional Development Series 1 Get More Clients – Online Tools  Build a Website WordPress Wix Squarespace GoDaddy Website Builder  Blogging WordPress Blogger Blog  Social Media Facebook Twitter LinkedIn Google+  Email Marketing MailChimp Aweber\n\nPAGE_2:\nIAPWE Professional Development Series 2 GetResponse Active Campaign  Webinars GoToMeeting WebinarJam Google Hangouts On Air  Podcasts BossJock Studio  Advertising Google AdWords Facebook Ads LinkedIn Ads  Online Groups and Forums...",
+  "has_extracted_content": true
+}

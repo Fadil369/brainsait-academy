@@ -1,0 +1,38 @@
+{
+  "id": "planner-tracker",
+  "title": "Planner Tracker",
+  "original_filename": "Planner-TRacker.xlsx",
+  "description": "Course material: Planner-TRacker.xlsx",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:03:00.173457",
+  "file_size": 24208,
+  "file_type": "document",
+  "modules": [
+    {
+      "id": "module-planner-tracker-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-planner-tracker-1",
+          "title": "Course Material: Planner-TRacker.xlsx",
+          "type": "document",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "xlsx",
+              "url": "/courses/Planner-TRacker.xlsx",
+              "title": "Planner-TRacker.xlsx",
+              "size": 24208
+            }
+          ],
+          "content": "File content extraction not implemented for .xlsx",
+          "full_content_available": false,
+          "content_type": "xlsx"
+        }
+      ]
+    }
+  ],
+  "content_summary": "File content extraction not implemented for .xlsx",
+  "has_extracted_content": true
+}

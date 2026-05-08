@@ -1,0 +1,38 @@
+{
+  "id": "brand-blueprint",
+  "title": "Brand Blueprint",
+  "original_filename": "Brand-Blueprint.pdf",
+  "description": "Course material: Brand-Blueprint.pdf",
+  "duration": "Self-paced",
+  "level": "Beginner",
+  "created_at": "2026-04-09T12:00:50.170518",
+  "file_size": 47451,
+  "file_type": "pdf",
+  "modules": [
+    {
+      "id": "module-brand-blueprint-1",
+      "title": "Introduction",
+      "lessons": [
+        {
+          "id": "lesson-brand-blueprint-1",
+          "title": "Course Material: Brand-Blueprint.pdf",
+          "type": "pdf",
+          "duration": "Self-paced",
+          "resources": [
+            {
+              "type": "pdf",
+              "url": "/courses/Brand-Blueprint.pdf",
+              "title": "Brand-Blueprint.pdf",
+              "size": 47451
+            }
+          ],
+          "content": "PAGE_1:\nSTART YOUR OWN FREELANCE BUSINESS \n  IAPWE Professional Development Series 1 Brand Blueprint  Corporate brand documents are usually detailed and labor-intensive, prepared by an outside party of branding and marketing experts. For your purposes, you will create a simplified brand document that will serve as a blueprint for all your brand and marketing activities. Limit yourself to 1-2 sentence answers for each question.  Brand Vision The main ambition of your freelance brand: What do you want to accomplish for your clients and for yourself?\n\nPAGE_2:\nSTART YOUR OWN FREELANCE BUSINESS \n  IAPWE Professional Development Series 2 Brand Purpose The reason your freelance company exists: What problem do you solve?    \n Brand Belief  The ‘why’ behind your freelance business: What are your core beliefs?\n\nPAGE_3:\nSTART YOUR OWN FREELANCE BUSINESS \n  IAPWE Professional Development Series 3 Emotional Benefit The emotional benefit of your offering: How do you make your clients feel?    \n Functional Benefit The functional benefit of your offering: What do you accomplish for your clients?\n\nPAGE_4:\nSTART YOUR OWN FREELANCE BUSINESS \n  IAPWE Professional Development Series 4 Core Offering  The core of what you do: Beyond your list of services, what do you offer clients?\n",
+          "full_content_available": false,
+          "content_type": "pdf"
+        }
+      ]
+    }
+  ],
+  "content_summary": "PAGE_1:\nSTART YOUR OWN FREELANCE BUSINESS \n  IAPWE Professional Development Series 1 Brand Blueprint  Corporate brand documents are usually detailed and labor-intensive, prepared by an outside party of branding and marketing experts. For your purposes, you will create a simplified brand document that will serve as a blueprint for all your brand and marketing activities. Limit yourself to 1-2 sentence answers for each question.  Brand Vision The main ambition of your freelance brand: What do you ...",
+  "has_extracted_content": true
+}
