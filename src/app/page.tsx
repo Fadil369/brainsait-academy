@@ -2,107 +2,179 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
+import { CourseCard } from "@/components/course-card";
+import { NavBar, MobileNav } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { toast } from "sonner";
 import coursesData from "@/lib/data/courses.json";
 import topicsData from "@/lib/data/topics.json";
 
 type Course = (typeof coursesData)[0];
-type Topic = (typeof topicsData)[0];
 
 const TOPIC_ICONS: Record<string, string> = {
-  "Quality Improvement": "📊", "Patient Safety": "🛡️", "Leadership": "👔",
-  "Person- and Family-Centered Care": "💼", "Triple Aim": "🎯", "Graduate Medical Education": "🎓",
-  "Contextualizing Care": "🤝", "ClaimLINC": "⚡", "AI Healthcare": "🤖",
-  "NPHIES": "🏥", "FHIR R4": "🔗", "Decarbonization": "🌿", "Dental Care": "🦷",
-  "Advanced Leadership": "👔"
+  "Quality Improvement": "📊",
+  "Patient Safety": "🛡️",
+  "Leadership": "👔",
+  "Person- and Family-Centered Care": "💼",
+  "Triple Aim": "🎯",
+  "Graduate Medical Education": "🎓",
+  "Contextualizing Care": "🤝",
+  "ClaimLINC": "⚡",
+  "AI Healthcare": "🤖",
+  "NPHIES": "🏥",
+  "FHIR R4": "🔗",
+  "Decarbonization": "🌿",
+  "Dental Care": "🦷",
+  "Advanced Leadership": "🏆",
 };
 
+const TOPIC_GRADIENTS: Record<string, string> = {
+  "Patient Safety": "from-emerald-500 to-teal-600",
+  "Quality Improvement": "from-indigo-500 to-violet-600",
+  "Leadership": "from-amber-500 to-orange-600",
+  "Advanced Leadership": "from-rose-500 to-pink-600",
+  "Triple Aim": "from-purple-500 to-violet-700",
+  "Person- and Family-Centered Care": "from-pink-500 to-rose-600",
+  "Graduate Medical Education": "from-sky-500 to-blue-600",
+  "AI Healthcare": "from-violet-500 to-purple-700",
+  "NPHIES": "from-teal-500 to-cyan-600",
+  "FHIR R4": "from-blue-500 to-indigo-600",
+  "Decarbonization": "from-green-500 to-emerald-600",
+  "Dental Care": "from-cyan-500 to-sky-600",
+  "ClaimLINC": "from-orange-500 to-amber-600",
+  "Contextualizing Care": "from-fuchsia-500 to-pink-600",
+};
+
+const FEATURED_SLUGS = ["ps-101", "qi-101", "l-101", "cc-101", "ta-101", "nphies-ai-mastery"];
+const activeTopics = topicsData.filter((t) => t.count > 0);
+
 export default function HomePage() {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [search, setSearch] = useState("");
   const [activeTopic, setActiveTopic] = useState("all");
-  const [enrolled, setEnrolled] = useState<string[]>([]);
+  const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
+  const [progressMap, setProgressMap] = useState<Record<string, number>>({});
+  const [completedSlugs, setCompletedSlugs] = useState<string[]>([]);
 
-  useEffect(() => { setMounted(true); setEnrolled(JSON.parse(localStorage.getItem("enrolledCourses") || "[]")); }, []);
+  useEffect(() => {
+    setMounted(true);
+    const enrolled = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+    setEnrolledSlugs(enrolled);
+    const pm: Record<string, number> = {};
+    const completed: string[] = [];
+    coursesData.forEach((c) => {
+      const p = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
+      if (p > 0) pm[c.slug] = p;
+      if (localStorage.getItem(`complete-${c.slug}`) === "true") completed.push(c.slug);
+    });
+    setProgressMap(pm);
+    setCompletedSlugs(completed);
+  }, []);
 
   const filteredCourses = useMemo(() => {
-    return coursesData.filter(c => {
-      const matchSearch = !search || 
+    return coursesData.filter((c) => {
+      const matchSearch =
+        !search ||
         c.title.toLowerCase().includes(search.toLowerCase()) ||
-        c.titleArabic?.toLowerCase().includes(search.toLowerCase()) ||
-        c.topic.toLowerCase().includes(search.toLowerCase());
-      const matchTopic = activeTopic === "all" || c.topic.toLowerCase().replace(/[^a-z0-9]+/g, "-") === activeTopic;
+        (c.titleArabic || "").toLowerCase().includes(search.toLowerCase()) ||
+        c.topic.toLowerCase().includes(search.toLowerCase()) ||
+        (c.code || "").toLowerCase().includes(search.toLowerCase());
+      const matchTopic =
+        activeTopic === "all" ||
+        c.topic.toLowerCase().replace(/[^a-z0-9]+/g, "-") === activeTopic;
       return matchSearch && matchTopic;
     });
   }, [search, activeTopic]);
 
-  const handleEnroll = (slug: string, title: string) => {
-    const newEnrolled = enrolled.includes(slug) ? enrolled : [...enrolled, slug];
-    setEnrolled(newEnrolled);
-    localStorage.setItem("enrolledCourses", JSON.stringify(newEnrolled));
-    toast.success(`✅ Enrolled in ${title}`);
-  };
+  const featuredCourses = useMemo(
+    () =>
+      FEATURED_SLUGS.map((s) => coursesData.find((c) => c.slug === s)).filter(Boolean) as Course[],
+    []
+  );
+
+  const continueCourses = useMemo(
+    () =>
+      coursesData.filter(
+        (c) => enrolledSlugs.includes(c.slug) && !completedSlugs.includes(c.slug)
+      ).slice(0, 6),
+    [enrolledSlugs, completedSlugs]
+  );
 
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen">
-      {/* Glassmorphic Nav */}
-      <nav className="sticky top-0 z-50 glass border-b">
-        <div className="max-w-7xl mx-auto px-container-padding h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary text-[20px]">school</span>
-            </div>
-            <span className="font-headline text-lg font-extrabold text-primary hidden sm:block">BrainsAIT Academy</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-semibold text-primary">Dashboard</Link>
-            <Link href="#courses" className="text-sm text-muted-foreground hover:text-primary transition-colors">Courses</Link>
-            <Button variant="ghost" size="sm" className="gap-1" onClick={() => {
-              const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
-              toast(e.length ? `📚 ${e.length} courses enrolled` : "Browse courses to enroll!");
-            }}>
-              <span className="material-symbols-outlined text-[18px]">school</span> My Learning
-            </Button>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="icon" className="rounded-full w-9 h-9" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-              <span className="material-symbols-outlined text-[18px]">{theme === "dark" ? "light_mode" : "dark_mode"}</span>
-            </Button>
-            <Badge variant="outline" className="gap-1 px-3 py-1">
-              <span className="material-symbols-outlined text-[14px]">language</span> AR/EN
-            </Badge>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen flex flex-col">
+      <NavBar />
 
       {/* Hero */}
-      <section className="hero-gradient text-white px-container-padding py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 blur-3xl rounded-full" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-2xl space-y-4">
-            <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">✦ IHI Open School Partner</Badge>
-            <h1 className="font-headline text-4xl lg:text-5xl font-extrabold tracking-tight">BrainsAIT Academy</h1>
-            <p className="text-lg text-white/80">
-              Professional healthcare training in Arabic & English. {coursesData.length} courses powered by IHI Open School.
-              <span className="block mt-1 text-white/60 font-arabic text-base">تدريب مهني صحي باللغة العربية والإنجليزية</span>
+      <section className="hero-gradient text-white relative overflow-hidden">
+        {/* Orbs */}
+        <div className="hero-orb w-[500px] h-[500px] bg-white/8 -top-32 -right-32" />
+        <div className="hero-orb w-64 h-64 bg-cyan-400/15 top-1/2 left-1/4" />
+        <div className="hero-orb w-48 h-48 bg-indigo-300/10 bottom-0 right-1/3" />
+
+        <div className="max-w-7xl mx-auto px-5 py-16 lg:py-24 relative z-10">
+          <div className="max-w-3xl space-y-5">
+            <div className="animate-slide-down flex items-center gap-2 flex-wrap">
+              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm gap-1">
+                <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
+                IHI Open School Partner
+              </Badge>
+              <Badge className="bg-white/15 text-white border-white/20 backdrop-blur-sm text-[10px]">
+                CBAHI Aligned
+              </Badge>
+              <Badge className="bg-white/15 text-white border-white/20 backdrop-blur-sm text-[10px]">
+                Vision 2030
+              </Badge>
+            </div>
+
+            <h1 className="animate-slide-up font-headline text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1]">
+              Premium Healthcare
+              <span className="block text-cyan-300">Training Academy</span>
+            </h1>
+
+            <p className="animate-slide-up delay-100 text-base lg:text-lg text-white/80 max-w-xl leading-relaxed">
+              {coursesData.length} IHI-accredited courses in Arabic & English — designed for Saudi healthcare professionals committed to excellence.
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <p className="animate-slide-up delay-150 text-sm text-white/55 font-arabic" dir="rtl">
+              دورات معتمدة من IHI بالعربية والإنجليزية للمهنيين الصحيين
+            </p>
+
+            {/* Hero CTAs */}
+            <div className="animate-slide-up delay-200 flex flex-wrap gap-3 pt-2">
+              <a href="#courses">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 gap-2 font-semibold shadow-lg">
+                  <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>auto_stories</span>
+                  Explore Courses
+                </Button>
+              </a>
+              <Link href="/topics">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2">
+                  <span className="material-symbols-outlined text-[20px]">category</span>
+                  Browse Topics
+                </Button>
+              </Link>
+            </div>
+
+            {/* Stat Pills */}
+            <div className="animate-slide-up delay-300 flex flex-wrap gap-2.5 pt-2">
               {[
                 { icon: "menu_book", label: `${coursesData.length} Courses`, color: "text-blue-200" },
-                { icon: "category", label: `${topicsData.length} Topics`, color: "text-emerald-200" },
+                { icon: "category", label: `${activeTopics.length} Topics`, color: "text-emerald-200" },
                 { icon: "translate", label: "Bilingual AR/EN", color: "text-amber-200" },
+                { icon: "timer", label: "Self-paced", color: "text-purple-200" },
               ].map((stat, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/10 flex items-center gap-2">
-                  <span className={`material-symbols-outlined text-[20px] ${stat.color}`}>{stat.icon}</span>
-                  <span className="text-sm font-medium">{stat.label}</span>
+                <div
+                  key={i}
+                  className="bg-white/10 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10 flex items-center gap-2"
+                >
+                  <span className={`material-symbols-outlined text-[18px] ${stat.color}`}>{stat.icon}</span>
+                  <span className="text-xs font-medium">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -110,162 +182,296 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Search */}
-      <div className="max-w-3xl mx-auto px-container-padding -mt-6 relative z-20">
-        <div className="glass rounded-xl shadow-lg p-1 flex items-center">
-          <span className="material-symbols-outlined text-muted-foreground px-3">search</span>
+      {/* Search Bar */}
+      <div className="max-w-3xl mx-auto px-5 w-full -mt-6 relative z-20 animate-slide-up delay-200">
+        <div className="glass rounded-2xl shadow-xl p-1 flex items-center">
+          <span className="material-symbols-outlined text-muted-foreground px-3 text-[22px]">search</span>
           <Input
             value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Search courses, topics, keywords..."
-            className="flex-1 border-0 bg-transparent shadow-none focus-visible:ring-0"
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search courses, topics, keywords... / ابحث بالعربية أو الإنجليزية"
+            className="flex-1 border-0 bg-transparent shadow-none focus-visible:ring-0 text-sm"
           />
           {search && (
-            <Button variant="ghost" size="icon" className="mr-1" onClick={() => setSearch("")}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="mr-1 rounded-full"
+              onClick={() => setSearch("")}
+            >
               <span className="material-symbols-outlined text-[18px]">close</span>
             </Button>
           )}
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-container-padding py-8 space-y-8 pb-24" id="courses">
-        {/* Filter Pills */}
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
-          <Button key="all" variant={activeTopic === "all" ? "default" : "outline"} size="sm" className="rounded-full whitespace-nowrap" onClick={() => setActiveTopic("all")}>
-            All
-          </Button>
-          {topicsData.map(t => (
-            <Button
-              key={t.slug}
-              variant={activeTopic === t.slug ? "default" : "outline"}
-              size="sm"
-              className="rounded-full whitespace-nowrap"
-              onClick={() => setActiveTopic(t.slug)}
-            >
-              {TOPIC_ICONS[t.name] || "📚"} {t.name}
-            </Button>
-          ))}
-        </div>
+      <main className="flex-1 max-w-7xl mx-auto px-5 py-8 space-y-10 pb-24 w-full" id="courses">
+        {/* Continue Learning (only if enrolled) */}
+        {continueCourses.length > 0 && !search && (
+          <section className="animate-slide-up space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-amber-600 text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>pending</span>
+                </div>
+                <h2 className="font-headline text-lg font-bold">Continue Learning</h2>
+              </div>
+              <Link href="/my-learning">
+                <Button variant="ghost" size="sm" className="gap-1 text-primary text-sm">
+                  View All <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {continueCourses.map((course, i) => (
+                <CourseCard
+                  key={course.slug}
+                  course={course}
+                  enrolled
+                  progress={progressMap[course.slug] || 0}
+                  index={i}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {[
-            { icon: "play_circle", value: coursesData.length, label: "Courses", color: "text-primary" },
-            { icon: "category", value: topicsData.length, label: "Topics", color: "text-secondary" },
-            { icon: "translate", value: 2, label: "Languages", color: "text-tertiary" },
-            { icon: "workspace_premium", value: "IHI", label: "Partner", color: "text-emerald-600" },
-          ].map((stat, i) => (
-            <Card key={i} className="text-center py-4">
-              <CardContent className="p-0 space-y-1">
-                <span className={`material-symbols-outlined text-[28px] ${stat.color}`} style={{ fontVariationSettings: "'FILL' 1" }}>{stat.icon}</span>
-                <div className="font-headline text-xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-xs text-muted-foreground">{stat.label}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Topic Grid */}
-        <div>
-          <h2 className="font-headline text-xl font-bold mb-4">Browse by Topic</h2>
-          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2">
-            {topicsData.map(t => (
-              <button
-                key={t.slug}
-                onClick={() => setActiveTopic(t.slug)}
-                className="glass rounded-xl p-3 text-center hover:border-primary/30 transition-all group"
-              >
-                <div className="text-2xl mb-1">{TOPIC_ICONS[t.name] || "📚"}</div>
-                <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate">{t.name}</div>
-                <div className="text-[10px] text-muted-foreground">{t.count}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Course Grid */}
-        <div>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="font-headline text-xl font-bold">
-              {activeTopic === "all" ? "All Courses" : topicsData.find(t => t.slug === activeTopic)?.name || "Courses"}
-            </h2>
-            <Badge variant="secondary" className="rounded-full">{filteredCourses.length} courses</Badge>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredCourses.map(course => (
-              <Link key={course.slug} href={`/courses/${course.slug}`} className="group">
-                <Card className="h-full overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all">
-                  <div className="h-36 bg-gradient-to-br from-primary/10 to-primary/5 relative flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[56px] text-primary/20" style={{ fontVariationSettings: "'FILL' 1" }}>auto_stories</span>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                    <Badge className="absolute top-2 left-2 bg-background/80 backdrop-blur-sm text-foreground border-0">
-                      {TOPIC_ICONS[course.topic] || "📚"} {course.topic}
-                    </Badge>
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-headline font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">{course.title}</h3>
-                    {course.titleArabic && (
-                      <p className="font-arabic text-sm text-muted-foreground mt-1 line-clamp-2">{course.titleArabic}</p>
-                    )}
-                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-border">
-                      <span className="text-xs text-muted-foreground flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[14px]">schedule</span> {course.duration} min
-                      </span>
-                      <span className="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        {/* Stats Grid */}
+        {!search && (
+          <section className="animate-slide-up delay-100">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {[
+                {
+                  icon: "play_circle",
+                  value: coursesData.length,
+                  label: "Total Courses",
+                  sublabel: "IHI-accredited",
+                  color: "text-primary",
+                  bg: "bg-primary/8 dark:bg-primary/15",
+                },
+                {
+                  icon: "category",
+                  value: activeTopics.length,
+                  label: "Topics",
+                  sublabel: "Specialized tracks",
+                  color: "text-secondary",
+                  bg: "bg-secondary/8 dark:bg-secondary/15",
+                },
+                {
+                  icon: "translate",
+                  value: 2,
+                  label: "Languages",
+                  sublabel: "Arabic & English",
+                  color: "text-tertiary",
+                  bg: "bg-tertiary/8 dark:bg-tertiary/15",
+                },
+                {
+                  icon: "workspace_premium",
+                  value: "IHI",
+                  label: "Partner",
+                  sublabel: "Open School",
+                  color: "text-amber-600",
+                  bg: "bg-amber-50 dark:bg-amber-900/15",
+                },
+              ].map((stat, i) => (
+                <Card key={i} className={`${stat.bg} border-0 shadow-none`}>
+                  <CardContent className="p-4 space-y-1.5">
+                    <span
+                      className={`material-symbols-outlined text-[26px] ${stat.color}`}
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      {stat.icon}
+                    </span>
+                    <div className="font-headline text-2xl font-extrabold text-foreground">{stat.value}</div>
+                    <div>
+                      <div className="text-sm font-semibold text-foreground">{stat.label}</div>
+                      <div className="text-[11px] text-muted-foreground">{stat.sublabel}</div>
                     </div>
                   </CardContent>
                 </Card>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Topic Explorer */}
+        {!search && (
+          <section className="animate-slide-up delay-150 space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="font-headline text-xl font-bold">Browse by Topic</h2>
+              <Link href="/topics">
+                <Button variant="ghost" size="sm" className="gap-1 text-primary text-sm">
+                  All Topics <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Button>
               </Link>
-            ))}
+            </div>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2">
+              <button
+                onClick={() => setActiveTopic("all")}
+                className={`rounded-xl p-3 text-center transition-all group border ${
+                  activeTopic === "all"
+                    ? "border-primary bg-primary/5"
+                    : "border-border hover:border-primary/30 bg-surface-container-lowest"
+                }`}
+              >
+                <div className="text-2xl mb-1">🌐</div>
+                <div className={`text-xs font-semibold truncate ${activeTopic === "all" ? "text-primary" : "text-foreground"}`}>All</div>
+                <div className="text-[10px] text-muted-foreground">{coursesData.length}</div>
+              </button>
+              {activeTopics.map((t) => (
+                <button
+                  key={t.slug}
+                  onClick={() => setActiveTopic(t.slug)}
+                  className={`rounded-xl p-3 text-center transition-all group border ${
+                    activeTopic === t.slug
+                      ? "border-primary bg-primary/5"
+                      : "border-border hover:border-primary/30 bg-surface-container-lowest"
+                  }`}
+                >
+                  <div className="text-2xl mb-1">{TOPIC_ICONS[t.name] || "📚"}</div>
+                  <div className={`text-[11px] font-semibold truncate leading-tight ${activeTopic === t.slug ? "text-primary" : "text-foreground group-hover:text-primary transition-colors"}`}>
+                    {t.name.split(" ").slice(0, 2).join(" ")}
+                  </div>
+                  <div className="text-[10px] text-muted-foreground">{t.count}</div>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Featured Courses (when no filter) */}
+        {!search && activeTopic === "all" && (
+          <section className="space-y-4 animate-slide-up delay-200">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center">
+                <span className="material-symbols-outlined text-amber-600 text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+              </div>
+              <h2 className="font-headline text-xl font-bold">Featured Courses</h2>
+              <Badge className="badge-new text-xs">Popular</Badge>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {featuredCourses.map((course, i) => (
+                <CourseCard
+                  key={course.slug}
+                  course={course}
+                  enrolled={enrolledSlugs.includes(course.slug)}
+                  completed={completedSlugs.includes(course.slug)}
+                  progress={progressMap[course.slug] || 0}
+                  index={i}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* All Courses / Filtered */}
+        <section className="space-y-4 animate-slide-up delay-250">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-2">
+              <h2 className="font-headline text-xl font-bold">
+                {search
+                  ? `Search Results`
+                  : activeTopic === "all"
+                  ? "All Courses"
+                  : topicsData.find((t) => t.slug === activeTopic)?.name || "Courses"}
+              </h2>
+              <Badge variant="secondary" className="rounded-full text-xs">
+                {filteredCourses.length} courses
+              </Badge>
+            </div>
+
+            {/* Topic Filter Pills */}
+            <div className="flex gap-1.5 overflow-x-auto scrollbar-none pb-1">
+              <Button
+                size="sm"
+                variant={activeTopic === "all" ? "default" : "outline"}
+                className="rounded-full whitespace-nowrap h-7 px-3 text-xs"
+                onClick={() => setActiveTopic("all")}
+              >
+                All
+              </Button>
+              {activeTopics.slice(0, 8).map((t) => (
+                <Button
+                  key={t.slug}
+                  size="sm"
+                  variant={activeTopic === t.slug ? "default" : "outline"}
+                  className="rounded-full whitespace-nowrap h-7 px-3 text-xs"
+                  onClick={() => setActiveTopic(t.slug)}
+                >
+                  {TOPIC_ICONS[t.name] || "📚"} {t.name}
+                </Button>
+              ))}
+            </div>
           </div>
-          {filteredCourses.length === 0 && (
-            <div className="text-center py-12 text-muted-foreground">
-              <span className="material-symbols-outlined text-[48px] block mb-2">search_off</span>
-              No courses found. Try a different search or filter.
+
+          {filteredCourses.length === 0 ? (
+            <div className="text-center py-16 text-muted-foreground animate-fade-in">
+              <span className="material-symbols-outlined text-[48px] block mb-3 opacity-30">search_off</span>
+              <p className="font-headline font-semibold">No courses found</p>
+              <p className="text-sm mt-1">Try a different search or topic filter</p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-4 gap-1"
+                onClick={() => { setSearch(""); setActiveTopic("all"); }}
+              >
+                <span className="material-symbols-outlined text-[16px]">refresh</span>
+                Reset filters
+              </Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredCourses.map((course, i) => (
+                <div key={course.slug} className="animate-scale-in" style={{ animationDelay: `${Math.min(i * 30, 300)}ms` }}>
+                  <CourseCard
+                    course={course}
+                    enrolled={enrolledSlugs.includes(course.slug)}
+                    completed={completedSlugs.includes(course.slug)}
+                    progress={progressMap[course.slug] || 0}
+                    index={i}
+                  />
+                </div>
+              ))}
             </div>
           )}
-        </div>
+        </section>
+
+        {/* Topic Cards Section (bottom) */}
+        {!search && activeTopic === "all" && (
+          <section className="space-y-4 pt-4">
+            <div className="flex items-center justify-between">
+              <h2 className="font-headline text-xl font-bold">Learning Tracks</h2>
+              <Link href="/topics">
+                <Button variant="ghost" size="sm" className="gap-1 text-primary text-sm">
+                  View All <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+              {activeTopics.slice(0, 8).map((t, i) => {
+                const gradient = TOPIC_GRADIENTS[t.name] || "from-indigo-500 to-purple-600";
+                return (
+                  <Link key={t.slug} href={`/topics/${t.slug}`} className="group">
+                    <div className={`h-24 rounded-xl bg-gradient-to-br ${gradient} relative overflow-hidden p-4 flex items-end`}>
+                      <div className="absolute top-3 right-3 text-2xl opacity-30">{TOPIC_ICONS[t.name] || "📚"}</div>
+                      <div>
+                        <div className="font-headline font-bold text-white text-sm leading-tight">{t.name}</div>
+                        <div className="text-white/60 text-[10px] mt-0.5">{t.count} course{t.count !== 1 ? "s" : ""}</div>
+                      </div>
+                      <span className="material-symbols-outlined text-white/60 group-hover:text-white text-[18px] absolute top-3 left-3 group-hover:translate-x-0.5 transition-all">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
       </main>
 
-      {/* Mobile Nav */}
-      <nav className="mobile-nav fixed bottom-0 w-full z-50 glass border-t rounded-t-xl py-2 px-4 justify-around items-center hidden">
-        {[
-          { icon: "dashboard", label: "Home", href: "/", active: true },
-          { icon: "auto_stories", label: "Courses", href: "#courses" },
-          { icon: "school", label: "Learning", action: () => { const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]"); toast(e.length ? `📚 ${e.length} enrolled` : "Browse to enroll!"); } },
-          { icon: theme === "dark" ? "light_mode" : "dark_mode", label: "Theme", action: () => setTheme(theme === "dark" ? "light" : "dark") },
-        ].map((item, i) => (
-          item.href ? (
-            <Link key={i} href={item.href} className="flex flex-col items-center gap-0.5 text-muted-foreground">
-              <span className="material-symbols-outlined text-[22px]">{item.icon}</span>
-              <span className="text-[10px] font-medium">{item.label}</span>
-            </Link>
-          ) : (
-            <button key={i} onClick={item.action} className="flex flex-col items-center gap-0.5 text-muted-foreground">
-              <span className="material-symbols-outlined text-[22px]">{item.icon}</span>
-              <span className="text-[10px] font-medium">{item.label}</span>
-            </button>
-          )
-        ))}
-      </nav>
-
-      {/* Footer */}
-      <footer className="bg-foreground text-background py-8 px-container-padding">
-        <div className="max-w-7xl mx-auto text-center space-y-3">
-          <div className="flex items-center justify-center gap-2">
-            <span className="material-symbols-outlined">school</span>
-            <span className="font-headline font-bold text-lg">BrainsAIT Academy</span>
-          </div>
-          <p className="text-sm opacity-80">Empowering Healthcare Excellence Through AI-Driven Learning</p>
-          <p className="text-sm opacity-60 font-arabic">تمكين التميز الصحي من خلال التعلم القائم على الذكاء الاصطناعي</p>
-          <div className="flex justify-center gap-6 text-sm opacity-60">
-            <Link href="/" className="hover:opacity-100">Home</Link>
-            <Link href="#courses" className="hover:opacity-100">Courses</Link>
-            <Link href="https://brainsait.org" className="hover:opacity-100">BrainSAIT.org</Link>
-          </div>
-          <p className="text-xs opacity-40">© 2026 BrainSAIT. All rights reserved. Powered by IHI Open School</p>
-        </div>
-      </footer>
+      <Footer />
+      <MobileNav activeItem="home" />
     </div>
   );
 }
