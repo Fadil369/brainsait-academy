@@ -11,7 +11,7 @@ This repository now contains a minimal, production-ready scaffold for the BrainS
 - `brainsait-ihi-pipeline/import-notion.ts` for Notion payload generation/import
 - `brainsait-ihi-pipeline/import-d1.ts` for Cloudflare D1 SQL generation/import
 - `brainsait-ihi-pipeline/scripts/generate-html.js` for HTML preview generation
-- `.github/workflows/deploy.yml` for build, smoke-test, artifact upload, and optional Cloudflare deployment
+- `.github/workflows/deploy-courses.yml` for build, smoke-test, artifact upload, and automated Cloudflare Pages deployment (main + PR previews)
 
 ## Local setup
 

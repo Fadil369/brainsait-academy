@@ -1,34 +1,78 @@
-name: Deploy Courses to CF Pages
+name: Deploy BrainSAIT Academy to CF Pages
 
 on:
   push:
     branches: [main]
     paths:
-      - "courses/**"
+      - "brainsait-ihi-pipeline/courses/**"
+      - "brainsait-ihi-pipeline/scripts/**"
+      - "brainsait-ihi-pipeline/pipeline.ts"
+      - "brainsait-ihi-pipeline/package.json"
+      - "brainsait-ihi-pipeline/package-lock.json"
+      - ".github/workflows/deploy-courses.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "brainsait-ihi-pipeline/courses/**"
+      - "brainsait-ihi-pipeline/scripts/**"
+      - "brainsait-ihi-pipeline/pipeline.ts"
+      - "brainsait-ihi-pipeline/package.json"
+      - "brainsait-ihi-pipeline/package-lock.json"
+      - ".github/workflows/deploy-courses.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "cf-pages-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}"
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: brainsait-ihi-pipeline
+    env:
+      CF_PAGES_PROJECT: brainsait-academy
     steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 20
+          cache: npm
+          cache-dependency-path: brainsait-ihi-pipeline/package-lock.json
 
-      - name: Generate HTML pages
-        run: |
-          npm install gray-matter@4.0.3 showdown@2.1.0
-          node scripts/generate-html.js
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate site
+        run: node scripts/generate-site.mjs
+
+      - name: Build pipeline
+        run: npm run build
+
+      - name: Run smoke test
+        run: npm test
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@f0a1cd58cd66095dee69bfa18fa5efd1dde93bca
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: brainsait-academy
-          directory: build
-          productionBranch: main
+          command: >-
+            pages deploy dist/site
+            --project-name ${{ env.CF_PAGES_PROJECT }}
+            --branch ${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brainsait-academy-site
+          path: brainsait-ihi-pipeline/dist/site
+          retention-days: 30
