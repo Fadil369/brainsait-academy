@@ -105,7 +105,25 @@ export default function HomePage() {
     [enrolledSlugs, completedSlugs]
   );
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="min-h-screen flex flex-col">
+      <NavBar />
+      <section className="hero-gradient text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 py-16 lg:py-24 relative z-10">
+          <div className="h-10 w-48 rounded-lg bg-white/20 mb-4" />
+          <div className="h-16 w-96 rounded-xl bg-white/20 mb-4" />
+          <div className="h-6 w-72 rounded-lg bg-white/15" />
+        </div>
+      </section>
+      <div className="max-w-7xl mx-auto px-5 py-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="h-48 skeleton-shimmer rounded-xl" />
+        ))}
+      </div>
+      <Footer />
+      <MobileNav />
+    </div>
+  );
 
   return (
     <div className="min-h-screen flex flex-col">
