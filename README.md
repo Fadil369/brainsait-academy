@@ -1,6 +1,6 @@
 # BrainSAIT Academy
 
-This repository now contains a minimal, production-ready scaffold for the BrainSAIT IHI course migration pipeline in `/home/runner/work/brainsait-academy/brainsait-academy/brainsait-ihi-pipeline`.
+This repository now contains a minimal, production-ready scaffold for the BrainSAIT IHI course migration pipeline in `brainsait-ihi-pipeline/`.
 
 ## Included scaffold
 
@@ -28,7 +28,7 @@ This repository now contains a minimal, production-ready scaffold for the BrainS
 4. Run:
 
    ```bash
-   cd /home/runner/work/brainsait-academy/brainsait-academy/brainsait-ihi-pipeline
+   cd brainsait-ihi-pipeline
    npm install
    npm test
    ```
