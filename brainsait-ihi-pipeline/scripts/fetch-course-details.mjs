@@ -23,17 +23,22 @@ const SLUGS = [
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function extractText(html) {
-  // Remove scripts, styles, nav, footer
+  // Remove scripts, styles, nav, footer, cookie banners
   let text = html
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<style[\s\S]*?<\/style>/gi, '')
     .replace(/<nav[\s\S]*?<\/nav>/gi, '')
     .replace(/<footer[\s\S]*?<\/footer>/gi, '')
-    .replace(/<header[\s\S]*?<\/header>/gi, '');
+    .replace(/<header[\s\S]*?<\/header>/gi, '')
+    .replace(/<div[^>]*class="[^"]*cookie[^"]*"[\s\S]*?<\/div>/gi, '')
+    .replace(/<div[^>]*id="[^"]*cookie[^"]*"[\s\S]*?<\/div>/gi, '');
   
   // Extract main content area
   const mainMatch = text.match(/<main[\s\S]*?>([\s\S]*?)<\/main>/i);
   if (mainMatch) text = mainMatch[1];
+  
+  // Remove breadcrumb navigation
+  text = text.replace(/<nav[^>]*aria-label="[^"]*breadcrumb[^"]*"[\s\S]*?<\/nav>/gi, '');
   
   // Convert common HTML to markdown-ish
   text = text
@@ -58,6 +63,7 @@ function extractText(html) {
     .replace(/&#39;/g, "'")
     .replace(/\n{3,}/g, '\n\n')
     .replace(/[ \t]+/g, ' ')
+    .replace(/^\s+$/gm, '')
     .trim();
   
   return text;
@@ -141,8 +147,25 @@ function buildMarkdown(fm, detail, existingBody) {
   
   // Filter out navigation/header noise
   const meaningfulSections = sections.filter(s => {
-    const skip = ['breadcrumb', 'navigation', 'cookie', 'sign in', 'my ihi', 'help', 'donate'];
-    return !skip.some(k => s.title.toLowerCase().includes(k)) && s.content.length > 20;
+    const skip = ['breadcrumb', 'navigation', 'cookie', 'sign in', 'my ihi', 'help', 'donate', 'related training', 'subscriptions'];
+    const titleLower = s.title.toLowerCase();
+    // Skip if title matches noise patterns
+    if (skip.some(k => titleLower.includes(k))) return false;
+    // Skip if content is too short or just whitespace/links
+    if (s.content.replace(/[\s\n\r]/g, '').length < 40) return false;
+    // Skip if title looks like a course code duplicate (e.g., "QI 101: Introduction...")
+    if (/^[A-Z]{2,4}\s+\d+:\s/.test(s.title)) return false;
+    // Skip duplicate "Overview" sections (keep only the first real one)
+    return true;
+  });
+  
+  // Deduplicate sections by title
+  const seen = new Set();
+  const deduped = meaningfulSections.filter(s => {
+    const key = s.title.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
   });
   
   let content = `---
@@ -160,8 +183,8 @@ keywords: ${fm.keywords || ''}
 ${fm.titleArabic ? `**${fm.titleArabic}**\n` : ''}
 `;
 
-  if (meaningfulSections.length > 0) {
-    for (const sec of meaningfulSections) {
+  if (deduped.length > 0) {
+    for (const sec of deduped) {
       content += `\n## ${sec.title}\n\n${sec.content}\n`;
     }
   } else {
