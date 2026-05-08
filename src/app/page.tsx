@@ -29,7 +29,21 @@ export default function HomePage() {
   const [activeTopic, setActiveTopic] = useState("all");
   const [enrolled, setEnrolled] = useState<string[]>([]);
 
-  useEffect(() => { setMounted(true); setEnrolled(JSON.parse(localStorage.getItem("enrolledCourses") || "[]")); }, []);
+  const readEnrolledCourses = (): string[] => {
+    try {
+      const raw = localStorage.getItem("enrolledCourses");
+      if (!raw) return [];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
+    } catch {
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    setMounted(true);
+    setEnrolled(readEnrolledCourses());
+  }, []);
 
   const filteredCourses = useMemo(() => {
     return coursesData.filter(c => {
@@ -49,7 +63,13 @@ export default function HomePage() {
     toast.success(`✅ Enrolled in ${title}`);
   };
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+        <p className="text-sm text-muted-foreground">Loading BrainsAIT Academy...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -66,7 +86,7 @@ export default function HomePage() {
             <Link href="/" className="text-sm font-semibold text-primary">Dashboard</Link>
             <Link href="#courses" className="text-sm text-muted-foreground hover:text-primary transition-colors">Courses</Link>
             <Button variant="ghost" size="sm" className="gap-1" onClick={() => {
-              const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+              const e = readEnrolledCourses();
               toast(e.length ? `📚 ${e.length} courses enrolled` : "Browse courses to enroll!");
             }}>
               <span className="material-symbols-outlined text-[18px]">school</span> My Learning
@@ -232,7 +252,7 @@ export default function HomePage() {
         {[
           { icon: "dashboard", label: "Home", href: "/", active: true },
           { icon: "auto_stories", label: "Courses", href: "#courses" },
-          { icon: "school", label: "Learning", action: () => { const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]"); toast(e.length ? `📚 ${e.length} enrolled` : "Browse to enroll!"); } },
+          { icon: "school", label: "Learning", action: () => { const e = readEnrolledCourses(); toast(e.length ? `📚 ${e.length} enrolled` : "Browse to enroll!"); } },
           { icon: theme === "dark" ? "light_mode" : "dark_mode", label: "Theme", action: () => setTheme(theme === "dark" ? "light" : "dark") },
         ].map((item, i) => (
           item.href ? (

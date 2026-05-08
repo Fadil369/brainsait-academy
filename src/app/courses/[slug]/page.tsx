@@ -55,17 +55,34 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   const [completed, setCompleted] = useState(false);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
 
+  const readEnrolledCourses = (): string[] => {
+    try {
+      const raw = localStorage.getItem("enrolledCourses");
+      if (!raw) return [];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const readProgress = (): number => {
+    const raw = localStorage.getItem(`progress-${slug}`);
+    const parsed = raw ? Number.parseInt(raw, 10) : 0;
+    return Number.isFinite(parsed) ? Math.min(100, Math.max(0, parsed)) : 0;
+  };
+
   useEffect(() => {
     setMounted(true);
     setEnrolled(localStorage.getItem(`enrolled-${slug}`) === "true");
     setSaved(localStorage.getItem(`saved-${slug}`) === "true");
     setCompleted(localStorage.getItem(`complete-${slug}`) === "true");
-    setProgress(parseInt(localStorage.getItem(`progress-${slug}`) || "0"));
+    setProgress(readProgress());
   }, [slug]);
 
   const handleEnroll = () => {
     localStorage.setItem(`enrolled-${slug}`, "true");
-    let list = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+    let list = readEnrolledCourses();
     if (!list.includes(slug)) { list.push(slug); localStorage.setItem("enrolledCourses", JSON.stringify(list)); }
     setEnrolled(true);
     toast.success("✅ Enrolled successfully!");
@@ -114,7 +131,13 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   const relatedCourses = coursesData.filter(c => c.topic === course.topic && c.slug !== slug).slice(0, 3);
   const lang = course.lang;
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+        <p className="text-sm text-muted-foreground">Loading course...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
