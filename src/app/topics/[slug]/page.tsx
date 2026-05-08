@@ -11,6 +11,8 @@ import { Footer } from "@/components/footer";
 import topicsData from "@/lib/data/topics.json";
 import coursesData from "@/lib/data/courses.json";
 
+export const runtime = 'edge';
+
 const TOPIC_GRADIENTS: Record<string, string> = {
   "Patient Safety": "from-emerald-500 to-teal-600",
   "Quality Improvement": "from-indigo-500 to-violet-600",

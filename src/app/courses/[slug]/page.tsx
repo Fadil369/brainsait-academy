@@ -20,6 +20,8 @@ import { Footer } from "@/components/footer";
 import { toast } from "sonner";
 import coursesData from "@/lib/data/courses.json";
 
+export const runtime = 'edge';
+
 type Section = { heading: string; isArabic: boolean; content: string };
 type Course = {
   title: string;
