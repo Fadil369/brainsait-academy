@@ -1,28 +1,35 @@
-name: BrainSAIT IHI pipeline
+name: Deploy BrainSAIT Academy
 
 on:
   push:
-    branches:
-      - main
-      - copilot/**
-  pull_request:
+    branches: [main]
+    paths:
+      - "brainsait-ihi-pipeline/courses/**"
+      - "brainsait-ihi-pipeline/scripts/**"
+      - "brainsait-ihi-pipeline/pipeline.ts"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-test-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     defaults:
       run:
         working-directory: brainsait-ihi-pipeline
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6.0.2
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -31,19 +38,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and smoke-test pipeline
+      - name: Generate site
+        run: node scripts/generate-site.mjs
+
+      - name: Build pipeline
+        run: npm run build
+
+      - name: Run smoke test
         run: npm test
 
-      - name: Upload preview artifact
-        uses: actions/upload-artifact@v7.0.1
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          name: brainsait-ihi-preview
-          path: brainsait-ihi-pipeline/dist/site
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy dist/site --project-name brainsait-academy --branch main
 
-      - name: Deploy preview to Cloudflare Pages
-        if: ${{ github.event_name == 'workflow_dispatch' && secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' && secrets.CLOUDFLARE_PAGES_PROJECT_NAME != '' }}
-        uses: cloudflare/wrangler-action@v3.15.0
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist/site --project-name ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
+          name: brainsait-academy-site
+          path: brainsait-ihi-pipeline/dist/site
+          retention-days: 30

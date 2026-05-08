@@ -7,7 +7,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tsc --noEmit -p tsconfig.json",
+    "scrape": "node scripts/scrape-ihi-courses.mjs",
+    "generate-site": "node scripts/generate-site.mjs",
     "preview": "node scripts/generate-html.js --input courses/sample-course.md --output dist/site/index.html",
+    "deploy": "npm run scrape && npm run generate-site && npx wrangler pages deploy dist/site --project-name brainsait-academy",
     "test": "npm run build && node dist/pipeline.js --input courses/sample-course.md --output dist/sample-course.json && node dist/import-notion.js --input dist/sample-course.json --output dist/notion-import-preview.json --dry-run && node dist/import-d1.js --input dist/sample-course.json --output dist/d1-import-preview.sql --dry-run && npm run preview"
   },
   "keywords": [
