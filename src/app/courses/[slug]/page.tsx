@@ -1,7 +1,5 @@
 "use client";
 
-export const runtime = 'edge';
-
 import { useState, useEffect, use, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -21,6 +19,8 @@ import { NavBar, MobileNav } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { toast } from "sonner";
 import coursesData from "@/lib/data/courses.json";
+
+export const runtime = 'edge';
 
 type Section = { heading: string; isArabic: boolean; content: string };
 type Course = {

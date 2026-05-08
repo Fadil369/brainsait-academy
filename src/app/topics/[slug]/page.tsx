@@ -1,7 +1,5 @@
 "use client";
 
-export const runtime = 'edge';
-
 import { use, useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -12,6 +10,8 @@ import { NavBar, MobileNav } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import topicsData from "@/lib/data/topics.json";
 import coursesData from "@/lib/data/courses.json";
+
+export const runtime = 'edge';
 
 const TOPIC_GRADIENTS: Record<string, string> = {
   "Patient Safety": "from-emerald-500 to-teal-600",
