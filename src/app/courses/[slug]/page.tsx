@@ -258,7 +258,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
     const score = quizBank.reduce((correct, item, qi) => {
       return quizAnswers[qi] === item.ans ? correct + 1 : correct;
     }, 0);
-    const pct = Math.round((score / quizBank.length) * 100);
+    const pct = quizBank.length > 0 ? Math.round((score / quizBank.length) * 100) : 0;
     setQuizScore(pct);
     setQuizSubmitted(true);
     localStorage.setItem(`quiz-score-${slug}`, String(pct));
