@@ -1,0 +1,29 @@
+{
+  "name": "brainsait-ihi-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/pipeline.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "preview": "node scripts/generate-html.js --input courses/sample-course.md --output dist/site/index.html",
+    "test": "npm run build && node dist/pipeline.js --input courses/sample-course.md --output dist/sample-course.json && node dist/import-notion.js --input dist/sample-course.json --output dist/notion-import-preview.json --dry-run && node dist/import-d1.js --input dist/sample-course.json --output dist/d1-import-preview.sql --dry-run && npm run preview"
+  },
+  "keywords": [
+    "brainsait",
+    "ihi",
+    "pipeline"
+  ],
+  "author": "BrainSAIT",
+  "license": "ISC",
+  "description": "Infrastructure scaffold for the BrainSAIT IHI course conversion pipeline.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.95.1",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "typescript": "^6.0.3"
+  }
+}
