@@ -465,14 +465,13 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                             <span className="flex items-center gap-3 text-left flex-1 min-w-0 mr-2">
                               {/* Section Number / Check */}
                               <span
-                                className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 cursor-pointer transition-all ${
+                                className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
                                   isDone
                                     ? "bg-emerald-500"
                                     : section.isArabic
                                     ? "bg-tertiary/10"
                                     : "bg-primary/10"
                                 }`}
-                                onClick={(e) => { e.stopPropagation(); toggleSection(i); }}
                               >
                                 {isDone ? (
                                   <span className="material-symbols-outlined text-white text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>check</span>
