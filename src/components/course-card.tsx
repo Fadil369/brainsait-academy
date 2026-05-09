@@ -3,46 +3,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-
-const TOPIC_ICONS: Record<string, string> = {
-  "Quality Improvement": "📊",
-  "Patient Safety": "🛡️",
-  "Leadership": "👔",
-  "Person- and Family-Centered Care": "💼",
-  "Triple Aim": "🎯",
-  "Graduate Medical Education": "🎓",
-  "Contextualizing Care": "🤝",
-  "ClaimLINC": "⚡",
-  "AI Healthcare": "🤖",
-  "NPHIES": "🏥",
-  "FHIR R4": "🔗",
-  "Decarbonization": "🌿",
-  "Dental Care": "🦷",
-  "Advanced Leadership": "🏆",
-};
-
-const THUMB_GRADIENTS = [
-  "from-indigo-500 to-purple-600",
-  "from-teal-500 to-cyan-600",
-  "from-violet-500 to-purple-700",
-  "from-emerald-500 to-teal-600",
-  "from-amber-500 to-orange-600",
-  "from-rose-500 to-pink-600",
-  "from-sky-500 to-blue-600",
-  "from-fuchsia-500 to-violet-600",
-];
-
-const TOPIC_BADGE_COLORS: Record<string, string> = {
-  "Quality Improvement": "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300",
-  "Patient Safety": "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300",
-  "Leadership": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300",
-  "Triple Aim": "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300",
-  "Person- and Family-Centered Care": "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
-  "Graduate Medical Education": "bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300",
-  "AI Healthcare": "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
-  "NPHIES": "bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300",
-  "FHIR R4": "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
-};
+import { getTopicBranding } from "@/lib/topic-branding";
 
 interface CourseCardProps {
   course: {
@@ -71,85 +32,82 @@ export function CourseCard({
   className,
   compact = false,
 }: CourseCardProps) {
-  const gradient = THUMB_GRADIENTS[index % THUMB_GRADIENTS.length];
-  const topicBadgeColor = TOPIC_BADGE_COLORS[course.topic] || "bg-surface-container-high text-foreground";
-  const icon = TOPIC_ICONS[course.topic] || "📚";
+  const branding = getTopicBranding(course.topic);
+  const bodySummary = course.body?.split(".")[0]?.trim();
 
   return (
     <Link href={`/courses/${course.slug}`} className={cn("group block", className)}>
-      <div className="premium-card card-shine h-full overflow-hidden rounded-xl">
-        {/* Thumbnail */}
-        <div className={`relative h-32 bg-gradient-to-br ${gradient} overflow-hidden`}>
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-2 right-2 w-24 h-24 rounded-full bg-white/20" />
-            <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full bg-white/10" />
-          </div>
-
-          {/* Big icon */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-5xl opacity-30 select-none">{icon}</span>
-          </div>
-
-          {/* Topic badge */}
-          <div className="absolute top-2 left-2">
-            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-semibold ${topicBadgeColor} backdrop-blur-sm`}>
-              {icon} {course.topic}
-            </span>
-          </div>
-
-          {/* Status badges */}
-          <div className="absolute top-2 right-2 flex gap-1">
+      <div className="premium-card card-shine h-full overflow-hidden rounded-[1.4rem]">
+        <div className={cn("relative overflow-hidden border-b border-white/10 bg-gradient-to-br", compact ? "h-32" : "h-40", branding.gradient)}>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.3),transparent_30%)]" />
+          <div className="absolute -bottom-8 -left-6 h-24 w-24 rounded-full bg-white/10 blur-md" />
+          <div className="absolute right-4 top-4 flex items-center gap-1">
             {completed && (
-              <span className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center shadow-sm">
-                <span className="material-symbols-outlined text-white text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>check</span>
+              <span className="inline-flex items-center rounded-full bg-white/18 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+                Completed
               </span>
             )}
             {enrolled && !completed && (
-              <span className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-sm">
-                <span className="material-symbols-outlined text-white text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
+              <span className="inline-flex items-center rounded-full bg-white/18 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+                In Progress
               </span>
             )}
           </div>
-
-          {/* Progress bar */}
-          {enrolled && progress > 0 && (
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-              <div
-                className="h-full bg-white transition-all"
-                style={{ width: `${progress}%` }}
-              />
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4 text-white">
+            <div className="space-y-2">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-white/12 font-headline text-sm font-semibold tracking-[0.2em] backdrop-blur-sm">
+                {branding.mark}
+              </div>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-white/72">
+                <span>{course.code || branding.mark}</span>
+                <span className="h-1 w-1 rounded-full bg-white/60" />
+                <span>{course.duration} min</span>
+              </div>
             </div>
-          )}
+            {enrolled && progress > 0 && (
+              <div className="rounded-full border border-white/20 bg-black/10 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+                {progress}%
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Content */}
-        <div className={cn("p-4 space-y-2", compact && "p-3 space-y-1.5")}>
+        <div className={cn("space-y-3 p-5", compact && "space-y-2 p-4")}>
+          <div className="flex items-center justify-between gap-3">
+            <Badge className={cn("rounded-full border-0 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]", branding.badgeClass)}>
+              {course.topic}
+            </Badge>
+            <span className="text-xs text-muted-foreground">{course.code}</span>
+          </div>
+
           <h3 className={cn(
-            "font-headline font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight",
-            compact ? "text-sm" : "text-base"
+            "font-headline leading-tight text-foreground transition-colors group-hover:text-primary",
+            compact ? "text-base font-semibold line-clamp-2" : "text-[1.2rem] font-semibold line-clamp-2"
           )}>
             {course.title}
           </h3>
 
-          {course.titleArabic && !compact && (
-            <p className="font-arabic text-xs text-muted-foreground line-clamp-1" dir="rtl">
+          {course.titleArabic && (
+            <p className={cn("font-arabic text-muted-foreground", compact ? "text-xs line-clamp-1" : "text-sm line-clamp-2")} dir="rtl">
               {course.titleArabic}
             </p>
           )}
 
-          <div className="flex items-center justify-between pt-1 border-t border-border">
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
-              <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[13px]">schedule</span>
+          {!compact && bodySummary && (
+            <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+              {bodySummary}.
+            </p>
+          )}
+
+          <div className="flex items-center justify-between border-t border-border/70 pt-3 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex h-7 items-center rounded-full bg-surface-container-low px-2.5 font-medium">
                 {course.duration} min
               </span>
-              {course.code && (
-                <span className="font-mono text-[10px] opacity-60">{course.code}</span>
-              )}
+              {completed && <span className="text-emerald-600 dark:text-emerald-400">Certified</span>}
             </div>
-            <span className="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-1 transition-transform">
-              arrow_forward
+            <span className="font-semibold uppercase tracking-[0.16em] text-primary transition-transform group-hover:translate-x-1">
+              Open
             </span>
           </div>
         </div>

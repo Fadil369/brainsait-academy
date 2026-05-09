@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ArrowUpRight, HeartPulse, ShieldCheck, Sparkles } from "lucide-react";
+import { topicBranding } from "@/lib/topic-branding";
 
 const FOOTER_TOPICS = [
   { name: "Patient Safety", slug: "patient-safety" },
@@ -24,44 +26,53 @@ const RESOURCES = [
 ];
 
 export function Footer() {
+  const featuredTopics = topicBranding.filter((topic) => !topic.slug.includes("processing")).slice(0, 6);
+
   return (
-    <footer className="bg-foreground text-background mt-12">
-      <div className="max-w-7xl mx-auto px-5 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          {/* Brand Column */}
-          <div className="lg:col-span-1 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
+    <footer className="mt-16 overflow-hidden border-t border-border/70 bg-[linear-gradient(180deg,#10242b_0%,#0a171c_100%)] text-[#f7f1e6]">
+      <div className="max-w-7xl mx-auto px-container-padding py-14">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
+          <div className="space-y-5">
+            <div className="section-kicker border-white/10 bg-white/5 text-[#e8dcc8]">Premium Health Education</div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0f5b5c] to-[#c08a3e] text-white shadow-[0_18px_40px_rgba(0,0,0,0.25)]">
+                <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <div className="font-headline font-extrabold text-base leading-tight">BrainSAIT Academy</div>
-                <div className="text-[10px] opacity-50 font-arabic">أكاديمية برين سايت</div>
+                <div className="font-headline text-2xl font-semibold leading-none">BrainSAIT Academy</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.24em] text-[#cebda4]">Designed For Clinical Excellence</div>
               </div>
             </div>
-            <p className="text-sm opacity-70 leading-relaxed">
-              Empowering healthcare professionals with premium bilingual training powered by IHI Open School.
+            <p className="max-w-md text-sm leading-relaxed text-[#d8cdbd]">
+              A more refined home for bilingual healthcare learning, built for quality leaders, patient-safety teams, clinicians, and digital health operators.
             </p>
-            <p className="text-xs opacity-50 font-arabic text-right" dir="rtl">
+            <p className="text-xs text-[#9fb0aa] font-arabic text-right" dir="rtl">
               تمكين المهنيين الصحيين بتدريب متميز ثنائي اللغة
             </p>
-            <div className="flex items-center gap-2 text-xs opacity-50">
-              <span className="material-symbols-outlined text-[14px]">workspace_premium</span>
-              IHI Open School Partner
+            <div className="flex flex-wrap gap-2 pt-1">
+              {featuredTopics.map((topic) => (
+                <Link
+                  key={topic.slug}
+                  href={`/topics/${topic.slug}`}
+                  className={`inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs transition-opacity hover:opacity-100 ${topic.badgeClass}`}
+                >
+                  <span className="font-headline text-[11px]">{topic.mark}</span>
+                  {topic.name}
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-wider opacity-60">Quick Links</h4>
+            <h4 className="font-headline text-sm font-semibold uppercase tracking-[0.2em] text-[#cebda4]">Navigation</h4>
             <ul className="space-y-2">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm opacity-70 hover:opacity-100 hover:text-background transition-opacity flex items-center gap-1.5"
+                    className="flex items-center gap-2 text-sm text-[#d8cdbd] transition-colors hover:text-white"
                   >
-                    <span className="material-symbols-outlined text-[12px] opacity-50">arrow_forward_ios</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-[#c08a3e]" />
                     {link.label}
                   </Link>
                 </li>
@@ -69,17 +80,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Topics */}
           <div className="space-y-4">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-wider opacity-60">Topics</h4>
+            <h4 className="font-headline text-sm font-semibold uppercase tracking-[0.2em] text-[#cebda4]">Core Topics</h4>
             <ul className="space-y-2">
               {FOOTER_TOPICS.map((topic) => (
                 <li key={topic.slug}>
                   <Link
                     href={`/topics/${topic.slug}`}
-                    className="text-sm opacity-70 hover:opacity-100 transition-opacity flex items-center gap-1.5"
+                    className="flex items-center gap-2 text-sm text-[#d8cdbd] transition-colors hover:text-white"
                   >
-                    <span className="material-symbols-outlined text-[12px] opacity-50">arrow_forward_ios</span>
+                    <ShieldCheck className="h-3.5 w-3.5 text-[#1d7b7a]" />
                     {topic.name}
                   </Link>
                 </li>
@@ -87,9 +97,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
           <div className="space-y-4">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-wider opacity-60">Resources</h4>
+            <h4 className="font-headline text-sm font-semibold uppercase tracking-[0.2em] text-[#cebda4]">Standards & Partners</h4>
             <ul className="space-y-2">
               {RESOURCES.map((r) => (
                 <li key={r.href}>
@@ -97,9 +106,9 @@ export function Footer() {
                     href={r.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm opacity-70 hover:opacity-100 transition-opacity flex items-center gap-1.5"
+                    className="flex items-center gap-2 text-sm text-[#d8cdbd] transition-colors hover:text-white"
                   >
-                    <span className="material-symbols-outlined text-[12px] opacity-50">open_in_new</span>
+                    <HeartPulse className="h-3.5 w-3.5 text-[#c08a3e]" />
                     {r.label}
                   </a>
                 </li>
@@ -108,12 +117,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs opacity-40">
+        <div className="mt-10 editorial-rule" />
+
+        <div className="pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-[#9fb0aa]">
             © 2026 BrainSAIT. All rights reserved. Powered by IHI Open School.
           </p>
-          <div className="flex items-center gap-4 text-xs opacity-40">
+          <div className="flex items-center gap-4 text-xs text-[#9fb0aa]">
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
             <span>Support</span>
