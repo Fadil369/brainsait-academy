@@ -177,7 +177,6 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
   const [activeTab, setActiveTab] = useState("content");
 
   useEffect(() => {
-    setMounted(true);
     setEnrolled(localStorage.getItem(`enrolled-${slug}`) === "true");
     setSaved(localStorage.getItem(`saved-${slug}`) === "true");
     setCompleted(localStorage.getItem(`complete-${slug}`) === "true");
@@ -190,6 +189,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
       setQuizScore(parseInt(prevQuiz));
       setQuizSubmitted(true);
     }
+    setMounted(true);
   }, [slug]);
 
   const progress = useMemo(() => {

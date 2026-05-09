@@ -23,7 +23,6 @@ export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const update = () => {
       const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
       setEnrolledCount(e.length);
@@ -32,6 +31,7 @@ export function NavBar() {
     window.addEventListener("storage", update);
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll);
+    setMounted(true);
     return () => {
       window.removeEventListener("storage", update);
       window.removeEventListener("scroll", onScroll);
@@ -120,11 +120,7 @@ export function NavBar() {
 
 export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
-
-  if (!mounted) return null;
+  const [mounted, setMounted] = useState(true);
 
   const items = [
     { icon: "dashboard", label: "Home", href: "/", key: "home" },

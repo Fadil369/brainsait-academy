@@ -11,9 +11,6 @@ import { toast } from "sonner";
 import coursesData from "@/lib/data/courses.json";
 import topicsData from "@/lib/data/topics.json";
 
-type Course = (typeof coursesData)[0];
-type Topic = (typeof topicsData)[0];
-
 const TOPIC_ICONS: Record<string, string> = {
   "Quality Improvement": "📊", "Patient Safety": "🛡️", "Leadership": "👔",
   "Person- and Family-Centered Care": "💼", "Triple Aim": "🎯", "Graduate Medical Education": "🎓",
@@ -22,27 +19,26 @@ const TOPIC_ICONS: Record<string, string> = {
   "Advanced Leadership": "👔"
 };
 
+const readEnrolledCourses = (): string[] => {
+  try {
+    const raw = localStorage.getItem("enrolledCourses");
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
+  } catch {
+    return [];
+  }
+};
+
 export default function HomePage() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [search, setSearch] = useState("");
   const [activeTopic, setActiveTopic] = useState("all");
-  const [enrolled, setEnrolled] = useState<string[]>([]);
-
-  const readEnrolledCourses = (): string[] => {
-    try {
-      const raw = localStorage.getItem("enrolledCourses");
-      if (!raw) return [];
-      const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
-    } catch {
-      return [];
-    }
-  };
+  const [enrolled, setEnrolled] = useState<string[]>(readEnrolledCourses());
 
   useEffect(() => {
     setMounted(true);
-    setEnrolled(readEnrolledCourses());
   }, []);
 
   const filteredCourses = useMemo(() => {
@@ -55,13 +51,6 @@ export default function HomePage() {
       return matchSearch && matchTopic;
     });
   }, [search, activeTopic]);
-
-  const handleEnroll = (slug: string, title: string) => {
-    const newEnrolled = enrolled.includes(slug) ? enrolled : [...enrolled, slug];
-    setEnrolled(newEnrolled);
-    localStorage.setItem("enrolledCourses", JSON.stringify(newEnrolled));
-    toast.success(`✅ Enrolled in ${title}`);
-  };
 
   if (!mounted) {
     return (

@@ -2,41 +2,31 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CourseCard } from "@/components/course-card";
-import { NavBar, MobileNav } from "@/components/navbar";
+import { Progress } from "@/components/ui/progress";
+import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { toast } from "sonner";
+import { MobileNav } from "@/components/navbar";
+import { CourseCard } from "@/components/course-card";
 import coursesData from "@/lib/data/courses.json";
 
-type Course = (typeof coursesData)[0];
-
-function CircularProgress({ value, size = 64 }: { value: number; size?: number }) {
-  const radius = (size - 8) / 2;
+function CircularProgress({ value, size = 80 }: { value: number; size?: number }) {
+  const radius = (size - 10) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (value / 100) * circumference;
-
   return (
     <svg width={size} height={size} className="-rotate-90">
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="var(--color-surface-container)"
-        strokeWidth="5"
-      />
+      <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="var(--color-surface-container)" strokeWidth="6" />
       <circle
         cx={size / 2}
         cy={size / 2}
         r={radius}
         fill="none"
         stroke="var(--color-primary)"
-        strokeWidth="5"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeDasharray={circumference}
         strokeDashoffset={offset}
@@ -331,9 +321,9 @@ export default function MyLearningPage() {
                       <span className="material-symbols-outlined text-amber-500 text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>emoji_events</span>
                       <h3 className="font-headline font-bold text-lg">{completedCourses.length} Course{completedCourses.length !== 1 ? "s" : ""} Completed!</h3>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      You've earned {completedCourses.length * 1.25} CE credits · {totalMinutes} min of learning
-                    </p>
+                      <p className="text-sm text-muted-foreground">
+                        You&apos;ve earned {completedCourses.length * 1.25} CE credits · {totalMinutes} min of learning
+                      </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

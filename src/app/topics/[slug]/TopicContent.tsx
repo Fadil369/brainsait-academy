@@ -81,13 +81,13 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const [progressMap, setProgressMap] = useState<Record<string, number>>({});
 
   useEffect(() => {
-    setMounted(true);
     setEnrolledSlugs(JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
     const pm: Record<string, number> = {};
     topicCourses.forEach((c) => {
       pm[c.slug] = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
     });
     setProgressMap(pm);
+    setMounted(true);
   }, [topicCourses]);
 
   const sortedCourses = useMemo(() => {

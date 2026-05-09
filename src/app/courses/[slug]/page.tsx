@@ -78,11 +78,11 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
     setSaved(localStorage.getItem(`saved-${slug}`) === "true");
     setCompleted(localStorage.getItem(`complete-${slug}`) === "true");
     setProgress(readProgress());
-  }, [slug]);
+  }, [slug, readProgress]);
 
   const handleEnroll = () => {
     localStorage.setItem(`enrolled-${slug}`, "true");
-    let list = readEnrolledCourses();
+    const list = readEnrolledCourses();
     if (!list.includes(slug)) { list.push(slug); localStorage.setItem("enrolledCourses", JSON.stringify(list)); }
     setEnrolled(true);
     toast.success("✅ Enrolled successfully!");
