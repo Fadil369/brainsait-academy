@@ -105,20 +105,55 @@ function getLevel(body: string, locale: Locale) {
   };
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function sanitizeHref(rawHref: string): string {
+  const href = rawHref.trim();
+  const normalized = href.toLowerCase();
+  if (
+    normalized.startsWith("https://")
+    || normalized.startsWith("http://")
+    || normalized.startsWith("mailto:")
+    || normalized.startsWith("tel:")
+    || normalized.startsWith("/")
+    || normalized.startsWith("#")
+  ) {
+    return href;
+  }
+  return "#";
+}
+
 function mdToHtml(md: string): string {
-  return md
+  const linkTokens: string[] = [];
+  const withLinkTokens = md.replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => {
+    const token = `__LINK_TOKEN_${linkTokens.length}__`;
+    const sanitizedHref = sanitizeHref(href);
+    linkTokens.push(
+      `<a href="${escapeHtml(sanitizedHref)}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+    );
+    return token;
+  });
+  const escaped = escapeHtml(withLinkTokens);
+  return escaped
     .replace(/^#### (.+)$/gm, '<h4 class="font-headline text-base font-semibold mt-4 mb-2 text-foreground">$1</h4>')
     .replace(/^### (.+)$/gm, '<h3 class="font-headline text-lg font-bold mt-5 mb-2 text-foreground">$1</h3>')
     .replace(/^## (.+)$/gm, '<h2 class="font-headline text-xl font-extrabold text-primary mt-6 mb-3 pb-2 border-b border-border">$1</h2>')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
     .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener">$1</a>')
     .replace(/^- \[ \] (.+)$/gm, '<div class="flex items-start gap-2 p-2.5 bg-surface-container-low rounded-lg mb-1.5 border border-border"><span class="w-4 h-4 rounded border-2 border-outline shrink-0 mt-0.5"></span><span class="text-sm text-foreground">$1</span></div>')
     .replace(/^- \[x\] (.+)$/gm, '<div class="flex items-start gap-2 p-2.5 bg-emerald-50 dark:bg-emerald-900/10 rounded-lg mb-1.5 border border-emerald-200 dark:border-emerald-800"><span class="w-4 h-4 rounded border-2 border-emerald-500 bg-emerald-500 shrink-0 mt-0.5 flex items-center justify-center text-white text-[10px]">✓</span><span class="text-sm line-through opacity-60">$1</span></div>')
     .replace(/---/g, '<hr class="border-border my-5" />')
     .replace(/^- (.+)$/gm, '<li class="flex items-start gap-2 py-1.5 px-2 bg-surface-container-low rounded-lg mb-1 text-sm text-foreground border-l-2 border-primary/30">$1</li>')
     .replace(/(<li[^>]*>[\s\S]*?<\/li>\n?)+/g, '<ul class="space-y-0.5 my-3">$&</ul>')
-    .replace(/^(?!<[hluad]|\s*$)(.+)$/gm, '<p class="text-sm text-muted-foreground my-2 leading-relaxed">$1</p>');
+    .replace(/^(?!<[hluad]|\s*$)(.+)$/gm, '<p class="text-sm text-muted-foreground my-2 leading-relaxed">$1</p>')
+    .replace(/__LINK_TOKEN_(\d+)__/g, (_match, index: string) => linkTokens[Number(index)] ?? "");
 }
 
 function CircularProgress({ value, size = 72 }: { value: number; size?: number }) {
@@ -264,7 +299,11 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
   const [quizSubmitted, setQuizSubmitted] = useState(() => typeof window !== "undefined" ? !!localStorage.getItem(`quiz-score-${slug}`) : false);
   const [quizScore, setQuizScore] = useState(() => readNumber(`quiz-score-${slug}`));
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
-  const [activeTab, setActiveTab] = useState("content");
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window === "undefined") return "content";
+    const stored = localStorage.getItem(`course-tab-${slug}`);
+    return stored === "content" || stored === "quiz" || stored === "activities" ? stored : "content";
+  });
 
   const progress = useMemo(() => {
     if (completed) return 100;
@@ -358,6 +397,10 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
     localStorage.setItem(`progress-${slug}`, String(progress));
   }, [progress, slug]);
 
+  useEffect(() => {
+    localStorage.setItem(`course-tab-${slug}`, activeTab);
+  }, [activeTab, slug]);
+
   const handleEnroll = useCallback(() => {
     localStorage.setItem(`enrolled-${slug}`, "true");
     const list = readStringArray("enrolledCourses");
@@ -398,9 +441,12 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
       if (next.has(idx)) next.delete(idx);
       else next.add(idx);
       localStorage.setItem(`sections-${slug}`, JSON.stringify([...next]));
+      const allSectionsComplete = course.sections.length > 0 && next.size === course.sections.length;
+      setCompleted(allSectionsComplete);
+      localStorage.setItem(`complete-${slug}`, String(allSectionsComplete));
       return next;
     });
-  }, [slug]);
+  }, [course.sections.length, slug]);
 
   const quizBank = useMemo(() => {
     const topicKey = course.topic.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -435,6 +481,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
     setQuizSubmitted(false);
     setQuizScore(null);
     localStorage.removeItem(`quiz-score-${slug}`);
+    localStorage.removeItem(`quiz-pass-${slug}`);
   }, [slug]);
 
   const quizPassed = quizScore !== null && quizScore >= 80;
@@ -799,12 +846,12 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                     const showResult = quizSubmitted;
                     return (
                       <div key={qi} className="space-y-2.5">
-                        <p className={`text-sm font-semibold leading-relaxed ${item.arabic ? "text-right font-arabic" : ""}`} dir={item.arabic ? "rtl" : "ltr"}>
+                        <p id={`quiz-question-${qi}`} className={`text-sm font-semibold leading-relaxed ${item.arabic ? "text-right font-arabic" : ""}`} dir={item.arabic ? "rtl" : "ltr"}>
                           {item.q}
                         </p>
-                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"}>
+                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"} role="radiogroup" aria-labelledby={`quiz-question-${qi}`}>
                           {item.opts.map((opt, oi) => {
-                            let cls = "quiz-option flex items-center gap-2.5 p-3 rounded-xl border text-sm";
+                            let cls = "quiz-option flex w-full items-center gap-2.5 p-3 rounded-xl border text-start text-sm";
                             if (showResult) {
                               if (oi === item.ans) cls += " quiz-option correct";
                               else if (chosen === oi) cls += " quiz-option incorrect";
@@ -813,7 +860,15 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                               cls += chosen === oi ? " quiz-option selected" : " quiz-option";
                             }
                             return (
-                              <div key={oi} className={cls} onClick={() => handleQuizAnswer(qi, oi)}>
+                              <button
+                                key={oi}
+                                type="button"
+                                className={cls}
+                                onClick={() => handleQuizAnswer(qi, oi)}
+                                disabled={showResult}
+                                role="radio"
+                                aria-checked={chosen === oi}
+                              >
                                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 text-[10px] font-bold transition-all ${
                                   showResult
                                     ? oi === item.ans
@@ -830,7 +885,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                                     : chosen === oi ? "●" : ""}
                                 </div>
                                 <span className={item.arabic ? "font-arabic" : ""}>{opt}</span>
-                              </div>
+                              </button>
                             );
                           })}
                         </div>
