@@ -229,7 +229,7 @@ export default function TopicsPage() {
                         <h3 className="font-headline font-bold text-foreground group-hover:text-primary transition-colors text-base leading-snug">
                           {localizedName}
                         </h3>
-                        <Arrow className="h-4 w-4 shrink-0 mt-0.5 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-0.5" />
+<Arrow className={cn("h-4 w-4 shrink-0 mt-0.5 text-muted-foreground group-hover:text-primary transition-all", isAr ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5")} />
                       </div>
 
                       {alternateName !== localizedName && (
