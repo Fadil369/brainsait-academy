@@ -119,6 +119,7 @@ function sanitizeHref(rawHref: string): string {
   const normalized = href.toLowerCase();
   if (
     normalized.startsWith("https://")
+    || normalized.startsWith("http://")
     || normalized.startsWith("mailto:")
     || normalized.startsWith("tel:")
     || normalized.startsWith("/")
@@ -134,7 +135,7 @@ function mdToHtml(md: string): string {
   const withLinkTokens = md.replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => {
     const token = `__LINK_TOKEN_${linkTokens.length}__`;
     linkTokens.push(
-      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)} (opens in new tab)">${escapeHtml(label)}</a>`
     );
     return token;
   });
@@ -861,7 +862,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                               <button
                                 key={oi}
                                 type="button"
-                                className={`${cls} w-full text-left`}
+                                className={`${cls} w-full text-start`}
                                 onClick={() => handleQuizAnswer(qi, oi)}
                                 disabled={showResult}
                                 role="radio"
