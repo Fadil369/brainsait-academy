@@ -136,7 +136,7 @@ function mdToHtml(md: string): string {
     const token = `__LINK_TOKEN_${linkTokens.length}__`;
     const sanitizedHref = sanitizeHref(href);
     linkTokens.push(
-      `<a href="${encodeURI(sanitizedHref)}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+      `<a href="${escapeHtml(sanitizedHref)}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     );
     return token;
   });
