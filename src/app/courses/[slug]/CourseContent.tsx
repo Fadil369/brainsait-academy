@@ -134,8 +134,9 @@ function mdToHtml(md: string): string {
   const linkTokens: string[] = [];
   const withLinkTokens = md.replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => {
     const token = `__LINK_TOKEN_${linkTokens.length}__`;
+    const sanitizedHref = sanitizeHref(href);
     linkTokens.push(
-      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+      `<a href="${encodeURI(sanitizedHref)}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     );
     return token;
   });
@@ -845,10 +846,10 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                     const showResult = quizSubmitted;
                     return (
                       <div key={qi} className="space-y-2.5">
-                        <p className={`text-sm font-semibold leading-relaxed ${item.arabic ? "text-right font-arabic" : ""}`} dir={item.arabic ? "rtl" : "ltr"}>
+                        <p id={`quiz-question-${qi}`} className={`text-sm font-semibold leading-relaxed ${item.arabic ? "text-right font-arabic" : ""}`} dir={item.arabic ? "rtl" : "ltr"}>
                           {item.q}
                         </p>
-                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"} role="radiogroup" aria-label={item.q}>
+                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"} role="radiogroup" aria-labelledby={`quiz-question-${qi}`}>
                           {item.opts.map((opt, oi) => {
                             let cls = "quiz-option flex w-full items-center gap-2.5 p-3 rounded-xl border text-start text-sm";
                             if (showResult) {
