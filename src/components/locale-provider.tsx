@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore } from "react";
 
 export type Locale = "en" | "ar";
 
@@ -14,23 +14,46 @@ const STORAGE_KEY = "preferredLocale";
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-function readStoredLocale(): Locale {
-  if (typeof window === "undefined") return "en";
+// Module-level listener set. A single LocaleProvider wraps the entire app
+// (see layout.tsx), so this singleton is intentional and safe.
+const listeners = new Set<() => void>();
+
+function notifyListeners() {
+  listeners.forEach((cb) => cb());
+}
+
+function subscribe(callback: () => void) {
+  listeners.add(callback);
+  // Also listen for cross-tab storage events so tabs stay in sync.
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) callback();
+  };
+  window.addEventListener("storage", onStorage);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+function getSnapshot(): Locale {
   const raw = window.localStorage.getItem(STORAGE_KEY);
   return raw === "ar" ? "ar" : "en";
 }
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+function getServerSnapshot(): Locale {
+  return "en";
+}
 
-  useEffect(() => {
-    setLocaleState(readStoredLocale());
+export function LocaleProvider({ children }: { children: React.ReactNode }) {
+  const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  const setLocale = useCallback((next: Locale) => {
+    window.localStorage.setItem(STORAGE_KEY, next);
+    notifyListeners();
   }, []);
 
+  // Sync DOM attributes for RTL layout and language-specific font selection.
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    window.localStorage.setItem(STORAGE_KEY, locale);
-
     const html = document.documentElement;
     const body = document.body;
     html.setAttribute("lang", locale);
@@ -39,13 +62,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     body.classList.toggle("lang-en", locale !== "ar");
   }, [locale]);
 
-  const value = useMemo<LocaleContextValue>(() => {
-    return {
-      locale,
-      setLocale: setLocaleState,
-      toggleLocale: () => setLocaleState((prev) => (prev === "ar" ? "en" : "ar")),
-    };
-  }, [locale]);
+  const value = useMemo<LocaleContextValue>(() => ({
+    locale,
+    setLocale,
+    toggleLocale: () => setLocale(locale === "ar" ? "en" : "ar"),
+  }), [locale, setLocale]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }

@@ -210,7 +210,7 @@ export default function TopicsPage() {
       </main>
 
       <Footer />
-      <MobileNav activeItem="topics" />
+      <MobileNav />
     </div>
   );
 }

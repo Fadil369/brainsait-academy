@@ -24,7 +24,6 @@ import { CourseCard } from "@/components/course-card";
 import { Footer } from "@/components/footer";
 import { MobileNav, NavBar } from "@/components/navbar";
 import { useLocale } from "@/components/locale-provider";
-import { toast } from "sonner";
 import coursesData from "@/lib/data/courses.json";
 import topicsData from "@/lib/data/topics.json";
 import { getTopicBranding } from "@/lib/topic-branding";
@@ -387,13 +386,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {visibleCourses.map((course, index) => (
+            {visibleCourses.map((course) => (
               <CourseCard
                 key={course.slug}
                 course={course}
                 enrolled={enrolled.includes(course.slug)}
                 progress={enrolled.includes(course.slug) ? 45 : 0}
-                index={index}
               />
             ))}
           </div>
@@ -418,7 +416,7 @@ export default function HomePage() {
       </main>
 
       <Footer />
-      <MobileNav activeItem="courses" />
+      <MobileNav />
     </div>
   );
 }

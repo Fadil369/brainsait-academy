@@ -44,7 +44,7 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const breadcrumbChevron = locale === "ar" ? "chevron_left" : "chevron_right";
 
   const [sort, setSort] = useState("default");
-  const [enrolledSlugs, setEnrolledSlugs] = useState(() => {
+  const [enrolledSlugs] = useState(() => {
     if (typeof window === "undefined") return [];
     try {
       const parsed = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
@@ -55,7 +55,7 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
       return [];
     }
   });
-  const [progressMap, setProgressMap] = useState(() => {
+  const [progressMap] = useState(() => {
     if (typeof window === "undefined") return {};
     const pm: Record<string, number> = {};
     topicCourses.forEach((c) => {
@@ -187,7 +187,6 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
                 enrolled={enrolledSlugs.includes(course.slug)}
                 completed={typeof window !== "undefined" ? localStorage.getItem(`complete-${course.slug}`) === "true" : false}
                 progress={progressMap[course.slug] || 0}
-                index={i}
               />
             </div>
           ))}
@@ -216,7 +215,7 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
       </main>
 
       <Footer />
-      <MobileNav activeItem="topics" />
+      <MobileNav />
     </div>
   );
 }
