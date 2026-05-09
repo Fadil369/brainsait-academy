@@ -84,7 +84,7 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const description = getLocalizedTopicDescription(topic.name, locale, branding.description);
   const enrolledInTopic = topicCourses.filter(c => enrolledSlugs.includes(c.slug)).length;
   const totalDuration = topicCourses.reduce((sum, c) => sum + parseInt(String(c.duration)), 0);
-  const totalHours = Math.round(totalDuration / 60);
+const totalHours = totalDuration < 60 ? (totalDuration / 60).toFixed(1) : Math.round(totalDuration / 60);
 
   const sortOptions = isAr
     ? [
