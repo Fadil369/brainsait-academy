@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, use } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { notFound } from "next/navigation";
@@ -48,23 +48,6 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   if (!course) notFound();
 
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [enrolled, setEnrolled] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const [completed, setCompleted] = useState(false);
-  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
-
-  const readEnrolledCourses = (): string[] => {
-    try {
-      const raw = localStorage.getItem("enrolledCourses");
-      if (!raw) return [];
-      const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
-    } catch {
-      return [];
-    }
-  };
 
   const readProgress = (): number => {
     const raw = localStorage.getItem(`progress-${slug}`);
@@ -72,13 +55,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
     return Number.isFinite(parsed) ? Math.min(100, Math.max(0, parsed)) : 0;
   };
 
-  useEffect(() => {
-    setMounted(true);
-    setEnrolled(localStorage.getItem(`enrolled-${slug}`) === "true");
-    setSaved(localStorage.getItem(`saved-${slug}`) === "true");
-    setCompleted(localStorage.getItem(`complete-${slug}`) === "true");
-    setProgress(readProgress());
-  }, [slug, readProgress]);
+  const [progress, setProgress] = useState(() => readProgress());
 
   const handleEnroll = () => {
     localStorage.setItem(`enrolled-${slug}`, "true");
@@ -130,14 +107,6 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   const level = getLevel();
   const relatedCourses = coursesData.filter(c => c.topic === course.topic && c.slug !== slug).slice(0, 3);
   const lang = course.lang;
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-        <p className="text-sm text-muted-foreground">Loading course...</p>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen">

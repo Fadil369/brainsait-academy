@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -76,19 +76,14 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const slug = topic.slug;
 
   const [sort, setSort] = useState("default");
-  const [mounted, setMounted] = useState(false);
-  const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
-  const [progressMap, setProgressMap] = useState<Record<string, number>>({});
-
-  useEffect(() => {
-    setEnrolledSlugs(JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
+  const [enrolledSlugs, setEnrolledSlugs] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
+  const [progressMap, setProgressMap] = useState(() => {
     const pm: Record<string, number> = {};
     topicCourses.forEach((c) => {
       pm[c.slug] = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
     });
-    setProgressMap(pm);
-    setMounted(true);
-  }, [topicCourses]);
+    return pm;
+  });
 
   const sortedCourses = useMemo(() => {
     const courses = [...topicCourses];
@@ -104,13 +99,6 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const description = TOPIC_DESCRIPTIONS[topic.name] || `${topic.count} courses in this specialized track.`;
   const enrolledInTopic = topicCourses.filter((c) => enrolledSlugs.includes(c.slug)).length;
   const totalDuration = topicCourses.reduce((sum, c) => sum + parseInt(String(c.duration)), 0);
-
-  if (!mounted) return (
-    <div className="min-h-screen flex flex-col">
-      <NavBar />
-      <div className="h-48 skeleton-shimmer mx-5 mt-5 rounded-xl" />
-    </div>
-  );
 
   return (
     <div className="min-h-screen flex flex-col">

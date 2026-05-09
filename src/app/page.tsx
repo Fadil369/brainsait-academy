@@ -32,14 +32,9 @@ const readEnrolledCourses = (): string[] => {
 
 export default function HomePage() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [search, setSearch] = useState("");
   const [activeTopic, setActiveTopic] = useState("all");
   const [enrolled, setEnrolled] = useState<string[]>(readEnrolledCourses());
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const filteredCourses = useMemo(() => {
     return coursesData.filter(c => {
@@ -51,14 +46,6 @@ export default function HomePage() {
       return matchSearch && matchTopic;
     });
   }, [search, activeTopic]);
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-        <p className="text-sm text-muted-foreground">Loading BrainsAIT Academy...</p>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen">

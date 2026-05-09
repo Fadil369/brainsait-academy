@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -167,30 +166,21 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
   const slug = course.slug;
 
   const [mounted, setMounted] = useState(false);
-  const [enrolled, setEnrolled] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const [completed, setCompleted] = useState(false);
-  const [completedSections, setCompletedSections] = useState<Set<number>>(new Set());
-  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
-  const [quizSubmitted, setQuizSubmitted] = useState(false);
-  const [quizScore, setQuizScore] = useState<number | null>(null);
+  const [enrolled, setEnrolled] = useState(() => localStorage.getItem(`enrolled-${slug}`) === "true");
+  const [saved, setSaved] = useState(() => localStorage.getItem(`saved-${slug}`) === "true");
+  const [completed, setCompleted] = useState(() => localStorage.getItem(`complete-${slug}`) === "true");
+  const [completedSections, setCompletedSections] = useState(() => {
+    const secJson = localStorage.getItem(`sections-${slug}`);
+    return secJson ? new Set(JSON.parse(secJson)) : new Set<number>();
+  });
+  const [quizSubmitted, setQuizSubmitted] = useState(() => !!localStorage.getItem(`quiz-score-${slug}`));
+  const [quizScore, setQuizScore] = useState(() => {
+    const prev = localStorage.getItem(`quiz-score-${slug}`);
+    return prev ? parseInt(prev) : null;
+  });
   const [activeTab, setActiveTab] = useState("content");
 
   useEffect(() => {
-    setEnrolled(localStorage.getItem(`enrolled-${slug}`) === "true");
-    setSaved(localStorage.getItem(`saved-${slug}`) === "true");
-    setCompleted(localStorage.getItem(`complete-${slug}`) === "true");
-    const secJson = localStorage.getItem(`sections-${slug}`);
-    if (secJson) {
-      setCompletedSections(new Set(JSON.parse(secJson)));
-    }
-    const prevQuiz = localStorage.getItem(`quiz-score-${slug}`);
-    if (prevQuiz) {
-      setQuizScore(parseInt(prevQuiz));
-      setQuizSubmitted(true);
-    }
-    setMounted(true);
-  }, [slug]);
 
   const progress = useMemo(() => {
     if (completed) return 100;
@@ -292,16 +282,6 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
   const topicBadge = TOPIC_BADGE[course.topic] || "bg-surface-container-high text-foreground";
   const quizPassed = quizScore !== null && quizScore >= 80;
   const ceCredits = (1.25).toFixed(2);
-
-  if (!mounted) return (
-    <div className="min-h-screen flex flex-col">
-      <NavBar />
-      <div className="max-w-7xl mx-auto px-5 py-8 w-full space-y-4">
-        <div className="h-48 skeleton-shimmer rounded-xl" />
-        <div className="h-32 skeleton-shimmer rounded-xl" />
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen flex flex-col">

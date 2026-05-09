@@ -18,8 +18,7 @@ const NAV_LINKS = [
 export function NavBar() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [enrolledCount, setEnrolledCount] = useState(0);
+  const [enrolledCount, setEnrolledCount] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]").length);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,11 +26,9 @@ export function NavBar() {
       const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
       setEnrolledCount(e.length);
     };
-    update();
     window.addEventListener("storage", update);
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll);
-    setMounted(true);
     return () => {
       window.removeEventListener("storage", update);
       window.removeEventListener("scroll", onScroll);
@@ -42,10 +39,6 @@ export function NavBar() {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
-
-  if (!mounted) return (
-    <nav className="sticky top-0 z-50 glass border-b h-16" />
-  );
 
   return (
     <nav className={`sticky top-0 z-50 glass border-b transition-all duration-200 ${scrolled ? "shadow-md" : ""}`}>

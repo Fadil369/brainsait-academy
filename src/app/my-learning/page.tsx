@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -37,32 +36,29 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
 }
 
 export default function MyLearningPage() {
-  const [mounted, setMounted] = useState(false);
-  const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
-  const [savedSlugs, setSavedSlugs] = useState<string[]>([]);
-  const [completedSlugs, setCompletedSlugs] = useState<string[]>([]);
-  const [progressMap, setProgressMap] = useState<Record<string, number>>({});
-
-  useEffect(() => {
-    setMounted(true);
-    const enrolled = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
-    setEnrolledSlugs(enrolled);
-
+  const [enrolledSlugs, setEnrolledSlugs] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
+  const [savedSlugs, setSavedSlugs] = useState(() => {
     const saved: string[] = [];
-    const completed: string[] = [];
-    const pm: Record<string, number> = {};
-
     coursesData.forEach((c) => {
       if (localStorage.getItem(`saved-${c.slug}`) === "true") saved.push(c.slug);
+    });
+    return saved;
+  });
+  const [completedSlugs, setCompletedSlugs] = useState(() => {
+    const completed: string[] = [];
+    coursesData.forEach((c) => {
       if (localStorage.getItem(`complete-${c.slug}`) === "true") completed.push(c.slug);
+    });
+    return completed;
+  });
+  const [progressMap, setProgressMap] = useState(() => {
+    const pm: Record<string, number> = {};
+    coursesData.forEach((c) => {
       const p = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
       if (p > 0) pm[c.slug] = p;
     });
-
-    setSavedSlugs(saved);
-    setCompletedSlugs(completed);
-    setProgressMap(pm);
-  }, []);
+    return pm;
+  });
 
   const enrolledCourses = useMemo(
     () => coursesData.filter((c) => enrolledSlugs.includes(c.slug)),
@@ -91,19 +87,6 @@ export default function MyLearningPage() {
     () => completedCourses.reduce((sum, c) => sum + parseInt(String(c.duration)), 0),
     [completedCourses]
   );
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <NavBar />
-        <div className="max-w-7xl mx-auto px-5 py-8 w-full space-y-4">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="h-24 skeleton-shimmer rounded-xl" />
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   const hasAnyActivity = enrolledCourses.length > 0 || savedCourses.length > 0;
 
