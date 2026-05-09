@@ -5,16 +5,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { BookOpenText, GraduationCap, Grid2x2, Languages, MoonStar, Sparkles, SunMedium } from "lucide-react";
+import { useLocale } from "@/components/locale-provider";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
-const NAV_LINKS = [
-  { href: "/", label: "Dashboard", icon: Grid2x2 },
-  { href: "/topics", label: "Tracks", icon: Sparkles },
-  { href: "/#courses", label: "Courses", icon: BookOpenText },
-  { href: "/my-learning", label: "My Learning", icon: GraduationCap },
-];
+const NAV_LINKS = {
+  en: [
+    { href: "/", label: "Dashboard", icon: Grid2x2 },
+    { href: "/topics", label: "Tracks", icon: Sparkles },
+    { href: "/#courses", label: "Courses", icon: BookOpenText },
+    { href: "/my-learning", label: "My Learning", icon: GraduationCap },
+  ],
+  ar: [
+    { href: "/", label: "الرئيسية", icon: Grid2x2 },
+    { href: "/topics", label: "المسارات", icon: Sparkles },
+    { href: "/#courses", label: "الدورات", icon: BookOpenText },
+    { href: "/my-learning", label: "تعلمي", icon: GraduationCap },
+  ],
+} as const;
 
 function readEnrolledCourses(): string[] {
   if (typeof window === "undefined") return [];
@@ -33,8 +42,10 @@ function readEnrolledCourses(): string[] {
 export function NavBar() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
+  const { locale, toggleLocale } = useLocale();
   const [enrolledCount, setEnrolledCount] = useState(() => readEnrolledCourses().length);
   const [scrolled, setScrolled] = useState(false);
+  const navItems = NAV_LINKS[locale];
 
   useEffect(() => {
     const update = () => {
@@ -65,12 +76,12 @@ export function NavBar() {
             </div>
             <div className="hidden sm:block">
               <div className="font-headline text-lg font-semibold leading-none text-foreground">BrainSAIT Academy</div>
-              <div className="mt-1 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Premium Clinical Learning</div>
+              <div className="mt-1 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{locale === "ar" ? "تعلم سريري احترافي" : "Premium Clinical Learning"}</div>
             </div>
           </Link>
 
           <div className="hidden md:flex items-center gap-1 rounded-full border border-border/70 bg-background/70 px-2 py-1">
-            {NAV_LINKS.map((link) => (
+            {navItems.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -89,18 +100,29 @@ export function NavBar() {
           <div className="flex items-center gap-2">
             {enrolledCount > 0 && (
               <button
-                onClick={() => toast(`📚 ${enrolledCount} course${enrolledCount > 1 ? "s" : ""} enrolled`)}
+                onClick={() => toast(locale === "ar" ? `📚 ${enrolledCount} دورة مسجلة` : `📚 ${enrolledCount} course${enrolledCount > 1 ? "s" : ""} enrolled`)}
                 className="hidden rounded-full border border-secondary/25 bg-secondary/10 px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-secondary/15 sm:inline-flex sm:items-center sm:gap-2"
               >
                 <Sparkles className="h-3.5 w-3.5 text-secondary" />
-                {enrolledCount} active
+                {locale === "ar" ? `${enrolledCount} نشط` : `${enrolledCount} active`}
               </button>
             )}
 
             <Badge variant="outline" className="hidden gap-2 rounded-full border-border/70 bg-background/70 px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground sm:inline-flex">
               <Languages className="h-3.5 w-3.5" />
-              Arabic + English
+              {locale === "ar" ? "العربية" : "English"}
             </Badge>
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-10 rounded-full border-border/70 bg-background/70 px-3"
+              onClick={toggleLocale}
+              aria-label="Toggle language"
+            >
+              <Languages className="mr-1 h-4 w-4" />
+              {locale === "ar" ? "EN" : "AR"}
+            </Button>
 
             <Button
               variant="outline"
@@ -120,13 +142,21 @@ export function NavBar() {
 
 export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
   const { theme, setTheme } = useTheme();
+  const { locale, toggleLocale } = useLocale();
 
-  const items = [
-    { icon: Grid2x2, label: "Home", href: "/", key: "home" },
-    { icon: Sparkles, label: "Tracks", href: "/topics", key: "topics" },
-    { icon: BookOpenText, label: "Courses", href: "/#courses", key: "courses" },
-    { icon: GraduationCap, label: "Learning", href: "/my-learning", key: "learning" },
-  ];
+  const items = locale === "ar"
+    ? [
+        { icon: Grid2x2, label: "الرئيسية", href: "/", key: "home" },
+        { icon: Sparkles, label: "المسارات", href: "/topics", key: "topics" },
+        { icon: BookOpenText, label: "الدورات", href: "/#courses", key: "courses" },
+        { icon: GraduationCap, label: "تعلمي", href: "/my-learning", key: "learning" },
+      ]
+    : [
+        { icon: Grid2x2, label: "Home", href: "/", key: "home" },
+        { icon: Sparkles, label: "Tracks", href: "/topics", key: "topics" },
+        { icon: BookOpenText, label: "Courses", href: "/#courses", key: "courses" },
+        { icon: GraduationCap, label: "Learning", href: "/my-learning", key: "learning" },
+      ];
 
   return (
     <nav className="mobile-nav fixed bottom-4 left-1/2 z-50 hidden w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 justify-around rounded-full border border-border/70 bg-background/90 px-2 py-2 shadow-[0_18px_40px_rgba(16,36,43,0.18)] backdrop-blur-xl">
@@ -145,11 +175,18 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
         </Link>
       ))}
       <button
+        onClick={toggleLocale}
+        className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-muted-foreground"
+      >
+        <Languages className="h-4.5 w-4.5" />
+        <span className="text-[10px] font-medium">{locale === "ar" ? "اللغة" : "Lang"}</span>
+      </button>
+      <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-muted-foreground"
       >
         {theme === "dark" ? <SunMedium className="h-4.5 w-4.5" /> : <MoonStar className="h-4.5 w-4.5" />}
-        <span className="text-[10px] font-medium">Theme</span>
+        <span className="text-[10px] font-medium">{locale === "ar" ? "المظهر" : "Theme"}</span>
       </button>
     </nav>
   );

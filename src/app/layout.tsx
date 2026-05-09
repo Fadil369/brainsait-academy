@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Noto_Naskh_Arabic, Manrope } from "next/font/google";
+import { LocaleProvider } from "@/components/locale-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
@@ -34,10 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${manrope.variable} ${notoNaskhArabic.variable}`}>
       <body className="min-h-screen bg-background text-foreground antialiased selection:bg-secondary/20 selection:text-foreground">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <TooltipProvider>
-            {children}
-            <Toaster position="bottom-right" richColors closeButton />
-          </TooltipProvider>
+          <LocaleProvider>
+            <TooltipProvider>
+              {children}
+              <Toaster position="bottom-right" richColors closeButton />
+            </TooltipProvider>
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>
