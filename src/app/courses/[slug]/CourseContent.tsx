@@ -121,6 +121,8 @@ function sanitizeHref(rawHref: string): string {
     normalized.startsWith("https://")
     || normalized.startsWith("mailto:")
     || normalized.startsWith("tel:")
+    || normalized.startsWith("/")
+    || normalized.startsWith("#")
   ) {
     return href;
   }
@@ -128,22 +130,28 @@ function sanitizeHref(rawHref: string): string {
 }
 
 function mdToHtml(md: string): string {
-  const escaped = escapeHtml(md);
+  const linkTokens: string[] = [];
+  const withLinkTokens = md.replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => {
+    const token = `__LINK_TOKEN_${linkTokens.length}__`;
+    linkTokens.push(
+      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+    );
+    return token;
+  });
+  const escaped = escapeHtml(withLinkTokens);
   return escaped
     .replace(/^#### (.+)$/gm, '<h4 class="font-headline text-base font-semibold mt-4 mb-2 text-foreground">$1</h4>')
     .replace(/^### (.+)$/gm, '<h3 class="font-headline text-lg font-bold mt-5 mb-2 text-foreground">$1</h3>')
     .replace(/^## (.+)$/gm, '<h2 class="font-headline text-xl font-extrabold text-primary mt-6 mb-3 pb-2 border-b border-border">$1</h2>')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
     .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => (
-      `<a href="${sanitizeHref(href)}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${label}</a>`
-    ))
     .replace(/^- \[ \] (.+)$/gm, '<div class="flex items-start gap-2 p-2.5 bg-surface-container-low rounded-lg mb-1.5 border border-border"><span class="w-4 h-4 rounded border-2 border-outline shrink-0 mt-0.5"></span><span class="text-sm text-foreground">$1</span></div>')
     .replace(/^- \[x\] (.+)$/gm, '<div class="flex items-start gap-2 p-2.5 bg-emerald-50 dark:bg-emerald-900/10 rounded-lg mb-1.5 border border-emerald-200 dark:border-emerald-800"><span class="w-4 h-4 rounded border-2 border-emerald-500 bg-emerald-500 shrink-0 mt-0.5 flex items-center justify-center text-white text-[10px]">✓</span><span class="text-sm line-through opacity-60">$1</span></div>')
     .replace(/---/g, '<hr class="border-border my-5" />')
     .replace(/^- (.+)$/gm, '<li class="flex items-start gap-2 py-1.5 px-2 bg-surface-container-low rounded-lg mb-1 text-sm text-foreground border-l-2 border-primary/30">$1</li>')
     .replace(/(<li[^>]*>[\s\S]*?<\/li>\n?)+/g, '<ul class="space-y-0.5 my-3">$&</ul>')
-    .replace(/^(?!<[hluad]|\s*$)(.+)$/gm, '<p class="text-sm text-muted-foreground my-2 leading-relaxed">$1</p>');
+    .replace(/^(?!<[hluad]|\s*$)(.+)$/gm, '<p class="text-sm text-muted-foreground my-2 leading-relaxed">$1</p>')
+    .replace(/__LINK_TOKEN_(\d+)__/g, (_match, index: string) => linkTokens[Number(index)] ?? "");
 }
 
 function CircularProgress({ value, size = 72 }: { value: number; size?: number }) {
