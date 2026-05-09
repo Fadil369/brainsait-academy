@@ -162,25 +162,60 @@ interface CourseContentProps {
   relatedCourses: Course[];
 }
 
+function readStringArray(key: string): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed)
+      ? parsed.filter((item): item is string => typeof item === "string")
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function readNumberSet(key: string): Set<number> {
+  if (typeof window === "undefined") return new Set<number>();
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return new Set<number>();
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return new Set<number>();
+    const values = parsed
+      .map((item) => Number(item))
+      .filter((item) => Number.isInteger(item) && item >= 0);
+    return new Set<number>(values);
+  } catch {
+    return new Set<number>();
+  }
+}
+
+function readNumber(key: string): number | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = Number.parseInt(raw, 10);
+    return Number.isFinite(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function CourseContent({ course, relatedCourses }: CourseContentProps) {
   const slug = course.slug;
 
   const [mounted, setMounted] = useState(false);
-  const [enrolled, setEnrolled] = useState(() => localStorage.getItem(`enrolled-${slug}`) === "true");
-  const [saved, setSaved] = useState(() => localStorage.getItem(`saved-${slug}`) === "true");
-  const [completed, setCompleted] = useState(() => localStorage.getItem(`complete-${slug}`) === "true");
-  const [completedSections, setCompletedSections] = useState(() => {
-    const secJson = localStorage.getItem(`sections-${slug}`);
-    return secJson ? new Set(JSON.parse(secJson)) : new Set<number>();
-  });
-  const [quizSubmitted, setQuizSubmitted] = useState(() => !!localStorage.getItem(`quiz-score-${slug}`));
-  const [quizScore, setQuizScore] = useState(() => {
-    const prev = localStorage.getItem(`quiz-score-${slug}`);
-    return prev ? parseInt(prev) : null;
-  });
+  const [enrolled, setEnrolled] = useState(() => typeof window !== "undefined" ? localStorage.getItem(`enrolled-${slug}`) === "true" : false);
+  const [saved, setSaved] = useState(() => typeof window !== "undefined" ? localStorage.getItem(`saved-${slug}`) === "true" : false);
+  const [completed, setCompleted] = useState(() => typeof window !== "undefined" ? localStorage.getItem(`complete-${slug}`) === "true" : false);
+  const [completedSections, setCompletedSections] = useState(() => readNumberSet(`sections-${slug}`));
+  const [quizSubmitted, setQuizSubmitted] = useState(() => typeof window !== "undefined" ? !!localStorage.getItem(`quiz-score-${slug}`) : false);
+  const [quizScore, setQuizScore] = useState(() => readNumber(`quiz-score-${slug}`));
+  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [activeTab, setActiveTab] = useState("content");
-
-  useEffect(() => {
 
   const progress = useMemo(() => {
     if (completed) return 100;
@@ -189,14 +224,12 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
   }, [completedSections, course.sections.length, completed]);
 
   useEffect(() => {
-    if (mounted) {
-      localStorage.setItem(`progress-${slug}`, String(progress));
-    }
-  }, [progress, slug, mounted]);
+    localStorage.setItem(`progress-${slug}`, String(progress));
+  }, [progress, slug]);
 
   const handleEnroll = useCallback(() => {
     localStorage.setItem(`enrolled-${slug}`, "true");
-    const list = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+    const list = readStringArray("enrolledCourses");
     if (!list.includes(slug)) {
       list.push(slug);
       localStorage.setItem("enrolledCourses", JSON.stringify(list));

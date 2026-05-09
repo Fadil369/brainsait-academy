@@ -36,8 +36,19 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
 }
 
 export default function MyLearningPage() {
-  const [enrolledSlugs, setEnrolledSlugs] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
+  const [enrolledSlugs, setEnrolledSlugs] = useState(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const parsed = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+      return Array.isArray(parsed)
+        ? parsed.filter((item): item is string => typeof item === "string")
+        : [];
+    } catch {
+      return [];
+    }
+  });
   const [savedSlugs, setSavedSlugs] = useState(() => {
+    if (typeof window === "undefined") return [];
     const saved: string[] = [];
     coursesData.forEach((c) => {
       if (localStorage.getItem(`saved-${c.slug}`) === "true") saved.push(c.slug);
@@ -45,6 +56,7 @@ export default function MyLearningPage() {
     return saved;
   });
   const [completedSlugs, setCompletedSlugs] = useState(() => {
+    if (typeof window === "undefined") return [];
     const completed: string[] = [];
     coursesData.forEach((c) => {
       if (localStorage.getItem(`complete-${c.slug}`) === "true") completed.push(c.slug);
@@ -52,9 +64,10 @@ export default function MyLearningPage() {
     return completed;
   });
   const [progressMap, setProgressMap] = useState(() => {
+    if (typeof window === "undefined") return {};
     const pm: Record<string, number> = {};
     coursesData.forEach((c) => {
-      const p = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
+      const p = Number.parseInt(localStorage.getItem(`progress-${c.slug}`) || "0", 10);
       if (p > 0) pm[c.slug] = p;
     });
     return pm;

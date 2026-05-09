@@ -76,11 +76,23 @@ export default function TopicContent({ topic, topicCourses }: TopicContentProps)
   const slug = topic.slug;
 
   const [sort, setSort] = useState("default");
-  const [enrolledSlugs, setEnrolledSlugs] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]"));
+  const [enrolledSlugs, setEnrolledSlugs] = useState(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const parsed = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
+      return Array.isArray(parsed)
+        ? parsed.filter((item): item is string => typeof item === "string")
+        : [];
+    } catch {
+      return [];
+    }
+  });
   const [progressMap, setProgressMap] = useState(() => {
+    if (typeof window === "undefined") return {};
     const pm: Record<string, number> = {};
     topicCourses.forEach((c) => {
-      pm[c.slug] = parseInt(localStorage.getItem(`progress-${c.slug}`) || "0");
+      const p = Number.parseInt(localStorage.getItem(`progress-${c.slug}`) || "0", 10);
+      if (p > 0) pm[c.slug] = p;
     });
     return pm;
   });

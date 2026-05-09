@@ -15,16 +15,29 @@ const NAV_LINKS = [
   { href: "/my-learning", label: "My Learning", icon: "school" },
 ];
 
+function readEnrolledCourses(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem("enrolledCourses");
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed)
+      ? parsed.filter((item): item is string => typeof item === "string")
+      : [];
+  } catch {
+    return [];
+  }
+}
+
 export function NavBar() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-  const [enrolledCount, setEnrolledCount] = useState(() => JSON.parse(localStorage.getItem("enrolledCourses") || "[]").length);
+  const [enrolledCount, setEnrolledCount] = useState(() => readEnrolledCourses().length);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const update = () => {
-      const e = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
-      setEnrolledCount(e.length);
+      setEnrolledCount(readEnrolledCourses().length);
     };
     window.addEventListener("storage", update);
     const onScroll = () => setScrolled(window.scrollY > 8);
