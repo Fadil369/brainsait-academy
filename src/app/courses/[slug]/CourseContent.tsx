@@ -119,7 +119,6 @@ function sanitizeHref(rawHref: string): string {
   const normalized = href.toLowerCase();
   if (
     normalized.startsWith("https://")
-    || normalized.startsWith("http://")
     || normalized.startsWith("mailto:")
     || normalized.startsWith("tel:")
   ) {
@@ -840,7 +839,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                         <p className={`text-sm font-semibold leading-relaxed ${item.arabic ? "text-right font-arabic" : ""}`} dir={item.arabic ? "rtl" : "ltr"}>
                           {item.q}
                         </p>
-                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"}>
+                        <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"} role="radiogroup" aria-label={item.q}>
                           {item.opts.map((opt, oi) => {
                             let cls = "quiz-option flex items-center gap-2.5 p-3 rounded-xl border text-sm";
                             if (showResult) {
@@ -857,7 +856,8 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                                 className={`${cls} w-full text-left`}
                                 onClick={() => handleQuizAnswer(qi, oi)}
                                 disabled={showResult}
-                                aria-pressed={chosen === oi}
+                                role="radio"
+                                aria-checked={chosen === oi}
                               >
                                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 text-[10px] font-bold transition-all ${
                                   showResult
