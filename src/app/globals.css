@@ -391,7 +391,7 @@ body.lang-en {
 
 /* Certificate card decorative border */
 .certificate-border {
-  border: 1px solid color-mix(in srgb, var(--color-secondary) 40%, var(--color-border));
+  border: 1px solid transparent;
   background: linear-gradient(
     var(--color-card),
     var(--color-card)

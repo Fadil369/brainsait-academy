@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -9,6 +9,17 @@ import { useLocale } from "@/components/locale-provider";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
+
+/** Subscribes to hash fragment changes for use with useSyncExternalStore. */
+function subscribeHash(callback: () => void) {
+  window.addEventListener("hashchange", callback);
+  return () => window.removeEventListener("hashchange", callback);
+}
+
+/** Returns the current URL hash on the client. */
+const getHashSnapshot = () => window.location.hash;
+/** Returns empty string during SSR / static generation (no window). */
+const getHashServerSnapshot = () => "";
 
 const NAV_LINKS = {
   en: [
@@ -159,8 +170,11 @@ export function MobileNav() {
         { icon: GraduationCap, label: "Learning", href: "/my-learning", key: "learning" },
       ];
 
+  const hash = useSyncExternalStore(subscribeHash, getHashSnapshot, getHashServerSnapshot);
+
   const isActive = (href: string) => {
-    if (href === "/" || href === "/#courses") return pathname === "/";
+    if (href === "/") return pathname === "/" && hash !== "#courses";
+    if (href === "/#courses") return pathname === "/" && hash === "#courses";
     return pathname.startsWith(href);
   };
 

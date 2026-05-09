@@ -14,9 +14,25 @@ const STORAGE_KEY = "preferredLocale";
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+// Module-level listener set. A single LocaleProvider wraps the entire app
+// (see layout.tsx), so this singleton is intentional and safe.
+const listeners = new Set<() => void>();
+
+function notifyListeners() {
+  listeners.forEach((cb) => cb());
+}
+
 function subscribe(callback: () => void) {
-  window.addEventListener("storage", callback);
-  return () => window.removeEventListener("storage", callback);
+  listeners.add(callback);
+  // Also listen for cross-tab storage events so tabs stay in sync.
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) callback();
+  };
+  window.addEventListener("storage", onStorage);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", onStorage);
+  };
 }
 
 function getSnapshot(): Locale {
@@ -33,8 +49,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     window.localStorage.setItem(STORAGE_KEY, next);
-    // Dispatch a storage event so same-window listeners (useSyncExternalStore) are notified.
-    window.dispatchEvent(new StorageEvent("storage", { key: STORAGE_KEY, newValue: next }));
+    notifyListeners();
   }, []);
 
   // Sync DOM attributes for RTL layout and language-specific font selection.
