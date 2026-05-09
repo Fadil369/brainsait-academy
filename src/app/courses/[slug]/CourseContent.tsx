@@ -19,6 +19,12 @@ import { Footer } from "@/components/footer";
 import { getTopicBranding } from "@/lib/topic-branding";
 import { getLocalizedTopicDescription, getLocalizedTopicLabel } from "@/lib/topic-localization";
 import { toast } from "sonner";
+import { GemDrawer } from "@/components/gem-drawer";
+import { CourseNotes } from "@/components/course-notes";
+import { TimeRoadmap } from "@/components/time-roadmap";
+import { SocialShare } from "@/components/social-share";
+import { StudyEnhancement } from "@/components/study-enhancement";
+import { ProUpgradeCard, PremiumSectionCard } from "@/components/premium-badge";
 
 type Section = { heading: string; isArabic: boolean; content: string };
 export type Course = {
@@ -1007,34 +1013,59 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
             </CardContent>
           </Card>
 
-          {/* AI Study Notes */}
-          <Card className="overflow-hidden">
-            <div className="h-1 animated-gradient" />
-            <CardContent className="p-4 space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="p-1.5 gradient-primary rounded-lg shadow-sm">
-                  <span className="material-symbols-outlined text-white text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
-                </div>
-                <h3 className="font-headline text-sm font-bold">{locale === "ar" ? "ملاحظات دراسية بالذكاء الاصطناعي" : "AI Study Notes"}</h3>
-                <Badge className="badge-new text-[10px] h-4 px-1.5">Beta</Badge>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {locale === "ar"
-                  ? "أكمل الأقسام لتوليد ملاحظات دراسية مخصصة حسب تقدمك."
-                  : "Complete sections to generate personalized AI study notes tailored to your learning progress."}
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full gap-1.5 text-xs border-primary/30 text-primary hover:bg-primary/5"
-                onClick={() => toast(locale === "ar" ? "الميزة قريبًا. أكمل مزيدًا من الأقسام أولًا." : "AI Study Notes coming soon! Complete more sections first.")}
-              >
-                <span className="material-symbols-outlined text-[14px]">psychology</span>
-                {locale === "ar" ? "توليد الملاحظات" : "Generate Notes"}
-                {progress > 0 && <span className="ml-auto text-[10px] opacity-60">{progress}% {locale === "ar" ? "مكتمل" : "done"}</span>}
-              </Button>
-            </CardContent>
-          </Card>
+          {/* Time & Roadmap */}
+          <TimeRoadmap
+            sections={course.sections}
+            locale={locale}
+            completedSections={completedSections}
+            totalDuration={parseInt(course.duration, 10)}
+            courseTitle={courseTitle}
+          />
+
+          {/* Study Enhancement */}
+          <StudyEnhancement
+            sections={course.sections}
+            locale={locale}
+            completedSections={completedSections}
+          />
+
+          {/* Social Share */}
+          <SocialShare
+            courseSlug={course.slug}
+            courseTitle={course.title}
+            courseTitleArabic={course.titleArabic}
+            locale={locale}
+            progress={progress}
+            completed={completed}
+            quizPassed={quizPassed}
+            quizScore={quizScore}
+          />
+
+          {/* Course Notes */}
+          <CourseNotes
+            courseSlug={course.slug}
+            sections={course.sections}
+            locale={locale}
+          />
+
+          {/* Pro Upgrade Card */}
+          <ProUpgradeCard locale={locale} courseSlug={course.slug} />
+
+          {/* Premium Section: AI Study Notes (locked) */}
+          <PremiumSectionCard
+            locale={locale}
+            title="AI Study Notes"
+            titleAr="ملاحظات الذكاء الاصطناعي"
+            badgeText="PRO"
+          />
+
+          {/* Premium Section: Advanced Analytics */}
+          <PremiumSectionCard
+            locale={locale}
+            title="Advanced Analytics"
+            titleAr="تحليلات متقدمة"
+            badgeText="PRO"
+          />
 
           {/* Course Info */}
           <Card>
@@ -1060,6 +1091,14 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
 
       <Footer />
       <MobileNav />
+
+      {/* AI Study Assistant - Floating Gem Drawer */}
+      <GemDrawer
+        course={course}
+        locale={locale}
+        progress={progress}
+        currentSection={visibleSections.find(({ index }) => !completedSections.has(index))?.section.heading}
+      />
     </div>
   );
 }
