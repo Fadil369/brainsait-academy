@@ -135,7 +135,7 @@ function mdToHtml(md: string): string {
   const withLinkTokens = md.replace(/\[(.+?)\]\((.+?)\)/g, (_match, label: string, href: string) => {
     const token = `__LINK_TOKEN_${linkTokens.length}__`;
     linkTokens.push(
-      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)} (opens in new tab)">${escapeHtml(label)}</a>`
+      `<a href="${escapeHtml(sanitizeHref(href))}" class="text-primary underline underline-offset-2 hover:text-primary-dark transition-colors" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     );
     return token;
   });
@@ -850,7 +850,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                         </p>
                         <div className="space-y-2" dir={item.arabic ? "rtl" : "ltr"} role="radiogroup" aria-label={item.q}>
                           {item.opts.map((opt, oi) => {
-                            let cls = "quiz-option flex items-center gap-2.5 p-3 rounded-xl border text-sm";
+                            let cls = "quiz-option flex w-full items-center gap-2.5 p-3 rounded-xl border text-start text-sm";
                             if (showResult) {
                               if (oi === item.ans) cls += " quiz-option correct";
                               else if (chosen === oi) cls += " quiz-option incorrect";
@@ -862,7 +862,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                               <button
                                 key={oi}
                                 type="button"
-                                className={`${cls} w-full text-start`}
+                                className={cls}
                                 onClick={() => handleQuizAnswer(qi, oi)}
                                 disabled={showResult}
                                 role="radio"
