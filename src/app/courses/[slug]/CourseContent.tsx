@@ -907,12 +907,11 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
                 </Link>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {relatedCourses.map((c, i) => (
+                {relatedCourses.map((c) => (
                   <CourseCard
                     key={c.slug}
                     course={c}
                     enrolled={typeof window !== "undefined" && localStorage.getItem(`enrolled-${c.slug}`) === "true"}
-                    index={i}
                     compact
                   />
                 ))}
@@ -1060,7 +1059,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
       </div>
 
       <Footer />
-      <MobileNav activeItem="courses" />
+      <MobileNav />
     </div>
   );
 }

@@ -40,7 +40,7 @@ function CircularProgress({ value, size = 80 }: { value: number; size?: number }
 export default function MyLearningPage() {
   const { locale } = useLocale();
   const directionalArrow = locale === "ar" ? "arrow_back" : "arrow_forward";
-  const [enrolledSlugs, setEnrolledSlugs] = useState(() => {
+  const [enrolledSlugs] = useState(() => {
     if (typeof window === "undefined") return [];
     try {
       const parsed = JSON.parse(localStorage.getItem("enrolledCourses") || "[]");
@@ -51,7 +51,7 @@ export default function MyLearningPage() {
       return [];
     }
   });
-  const [savedSlugs, setSavedSlugs] = useState(() => {
+  const [savedSlugs] = useState(() => {
     if (typeof window === "undefined") return [];
     const saved: string[] = [];
     coursesData.forEach((c) => {
@@ -59,7 +59,7 @@ export default function MyLearningPage() {
     });
     return saved;
   });
-  const [completedSlugs, setCompletedSlugs] = useState(() => {
+  const [completedSlugs] = useState(() => {
     if (typeof window === "undefined") return [];
     const completed: string[] = [];
     coursesData.forEach((c) => {
@@ -67,7 +67,7 @@ export default function MyLearningPage() {
     });
     return completed;
   });
-  const [progressMap, setProgressMap] = useState(() => {
+  const [progressMap] = useState(() => {
     if (typeof window === "undefined") return {};
     const pm: Record<string, number> = {};
     coursesData.forEach((c) => {
@@ -284,7 +284,6 @@ export default function MyLearningPage() {
                           enrolled
                           completed={completedSlugs.includes(course.slug)}
                           progress={progressMap[course.slug] || 0}
-                          index={i}
                         />
                       </div>
                     ))}
@@ -353,7 +352,6 @@ export default function MyLearningPage() {
                           enrolled
                           completed
                           progress={100}
-                          index={i}
                         />
                       </div>
                     ))}
@@ -377,7 +375,6 @@ export default function MyLearningPage() {
                           course={course}
                           enrolled={enrolledSlugs.includes(course.slug)}
                           progress={progressMap[course.slug] || 0}
-                          index={i}
                         />
                       </div>
                     ))}
@@ -390,7 +387,7 @@ export default function MyLearningPage() {
       </main>
 
       <Footer />
-      <MobileNav activeItem="learning" />
+      <MobileNav />
     </div>
   );
 }

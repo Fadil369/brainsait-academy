@@ -20,7 +20,6 @@ interface CourseCardProps {
   enrolled?: boolean;
   completed?: boolean;
   progress?: number;
-  index?: number;
   className?: string;
   compact?: boolean;
 }
@@ -30,7 +29,6 @@ export function CourseCard({
   enrolled = false,
   completed = false,
   progress = 0,
-  index = 0,
   className,
   compact = false,
 }: CourseCardProps) {

@@ -140,7 +140,8 @@ export function NavBar() {
   );
 }
 
-export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
+export function MobileNav() {
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const { locale, toggleLocale } = useLocale();
 
@@ -158,6 +159,11 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
         { icon: GraduationCap, label: "Learning", href: "/my-learning", key: "learning" },
       ];
 
+  const isActive = (href: string) => {
+    if (href === "/" || href === "/#courses") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
     <nav className="mobile-nav fixed bottom-4 left-1/2 z-50 hidden w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 justify-around rounded-full border border-border/70 bg-background/90 px-2 py-2 shadow-[0_18px_40px_rgba(16,36,43,0.18)] backdrop-blur-xl">
       {items.map((item) => (
@@ -165,7 +171,7 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
           key={item.key}
           href={item.href}
           className={`flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-all ${
-            activeItem === item.key
+            isActive(item.href)
               ? "bg-foreground text-background"
               : "text-muted-foreground"
           }`}
@@ -177,6 +183,7 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
       <button
         onClick={toggleLocale}
         className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-muted-foreground"
+        aria-label="Toggle language"
       >
         <Languages className="h-4.5 w-4.5" />
         <span className="text-[10px] font-medium">{locale === "ar" ? "اللغة" : "Lang"}</span>
@@ -184,6 +191,7 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl text-muted-foreground"
+        aria-label="Toggle theme"
       >
         {theme === "dark" ? <SunMedium className="h-4.5 w-4.5" /> : <MoonStar className="h-4.5 w-4.5" />}
         <span className="text-[10px] font-medium">{locale === "ar" ? "المظهر" : "Theme"}</span>
@@ -191,3 +199,4 @@ export function MobileNav({ activeItem = "home" }: { activeItem?: string }) {
     </nav>
   );
 }
+
