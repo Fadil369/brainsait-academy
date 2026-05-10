@@ -27,7 +27,10 @@ import { StudyEnhancement } from "@/components/study-enhancement";
 import { ProUpgradeCard, PremiumSectionCard } from "@/components/premium-badge";
 
 type Section = { heading: string; isArabic: boolean; content: string };
+export type QuizQuestion = { q: string; opts: string[]; ans: number; arabic?: boolean };
+
 export type Course = {
+  quiz?: QuizQuestion[];
   title: string;
   titleArabic: string;
   slug: string;
@@ -410,7 +413,7 @@ export default function CourseContent({ course, relatedCourses }: CourseContentP
 
   const quizBank = useMemo(() => {
     const topicKey = course.topic.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    const all = QUIZ_BANK[topicKey] || QUIZ_BANK.default;
+    const all = course.quiz && course.quiz.length > 0 ? course.quiz : (QUIZ_BANK[topicKey] || QUIZ_BANK.default);
     const filtered = all.filter((q) => (locale === "ar" ? !!q.arabic : !q.arabic));
     return filtered.length > 0 ? filtered : all;
   }, [course.topic, locale]);

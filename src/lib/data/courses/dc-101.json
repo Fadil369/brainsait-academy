@@ -84,5 +84,17 @@
       "content": "- **الشكل:** عبر الإنترنت، حسب الطلب\n- **المزود:** IHI Open School\n- **المصدر:** [منصة IHI التعليمية](https://www.ihi.org/learn/courses/open-school/catalog/dc-101)\n- **المدة:** 60 دقيقة"
     }
   ],
-  "body": "# Climate and Health\n\n**DC 101: المناخ والصحة**\nTopic:\n\nDecarbonization\n\nFormat:\n\nOnline\n\nCourses:\n\n1\n\nCE Credits:\n\nOptional\n\nFee:\n\n$10–20 USD*\n\n Subscribe with CE Credits: $20 USD \n\n Subscribe without CE Credits: $10 USD \n\n [View all subscriptions >](https://www.ihi.org/education/ihi-open-school/subscriptions)\n\n ##\n\n## Course Objectives\n\nAfter completing this course, you’ll be able to:\n\n- Summarize the relationship between climate and health\n- Describe the distribution of greenhouse gas emissio"
+  "body": "# Climate and Health\n\n**DC 101: المناخ والصحة**\nTopic:\n\nDecarbonization\n\nFormat:\n\nOnline\n\nCourses:\n\n1\n\nCE Credits:\n\nOptional\n\nFee:\n\n$10–20 USD*\n\n Subscribe with CE Credits: $20 USD \n\n Subscribe without CE Credits: $10 USD \n\n [View all subscriptions >](https://www.ihi.org/education/ihi-open-school/subscriptions)\n\n ##\n\n## Course Objectives\n\nAfter completing this course, you’ll be able to:\n\n- Summarize the relationship between climate and health\n- Describe the distribution of greenhouse gas emissio",
+  "quiz": [
+    {
+      "q": "1. What is the primary focus of Lesson 1 in DC 101?",
+      "opts": [
+        "Hospital finance",
+        "Understanding Climate Change and Human Health",
+        "Purchasing new equipment",
+        "Staff management"
+      ],
+      "ans": 1
+    }
+  ]
 }
